@@ -1,147 +1,117 @@
 <!DOCTYPE html>
 <html>
-
-<head>
- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="bootstrap-3.1.1-dist/css/bootstrap.min.css">
-<title>Buck Shlegeris</title>
-</head>
-
-<body>
-
-<div id="sidebar-wrapper">
-<div class="sidebar-nav navbar-affix">
-    <ul class="nav">
-      <li><a href="#background">Background</a></li>
-      <li><a href="#programming">Programming</a>
-        <ul class="nav-nested">
-          <li><a href="#submissionapp">Submission app</a></li>
-          <li><a href="#gem">GEM</a></li>
-          <li><a href="#other-coding">Other cool stuff</a></li>
-        </ul>
-      </li>
-      <li><a href="#music">Music</a></li>
-    </ul>
-  </div>
-</div>
-
-<div class="col-xs-4 col-xs-offset-3">
-<h1>Buck Shlegeris</h1>
-
-<p><a href="http://github.com/BuckShlegeris">github</a>, <a href="https://www.facebook.com/endofunctor">facebook</a>,
-<a href="mailto:bshlegeris@gmail.com">email</a></p>
-
-<p class="lead">I'm a programmer, musician, and effective altruist from Australia, living in San Francisco.</p>
-
-<p>Currently, I work at <a href="http://www.appacademy.io">App Academy</a>, a Ruby on Rails coding bootcamp, as a TA.</p>
-</div>
-<div class="col-xs-4">
-<img src="./img/buck_small.jpg" width="100%" style="margin-top:30px;">
-</div>
-
-<div data-spy="scroll" data-target="#navbarExample" data-offset="50" class="scrollspy-example wrapper">
-<div class="col-xs-8 col-xs-offset-3">
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="bootstrap-3.1.1-dist/css/bootstrap.min.css">
+        <title>Buck Shlegeris</title>
+    </head>
+    <body>
+        <div id="wrapper">
+        <div id="sidebar-wrapper">
+            <div class="sidebar-nav navbar-affix">
+                <ul class="nav">
+                    <li><a href="#"><h2>Buck</h2></a></li>
+                    <li><a href="#background">Background</a></li>
+                    <li>
+                        <a href="#programming">Programming</a>
+                        <ul class="nav-nested">
+                            <li><a href="#submissionapp">Submission app</a></li>
+                            <li><a href="#gem">GEM</a></li>
+                            <li><a href="#other-coding">Other cool stuff</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#music">Music</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="page-content-wrapper">
+            <div class="row">
+                <div class="col-sm-5 col-sm-offset-1">
+                    <h1>Buck Shlegeris</h1>
+                    <p><a href="http://github.com/BuckShlegeris">github</a>, <a href="https://www.facebook.com/endofunctor">facebook</a>,
+                        <a href="mailto:bshlegeris@gmail.com">email</a>
+                    </p>
+                    <p class="lead">I'm a programmer, musician, and effective altruist from Australia, living in San Francisco.</p>
+                    <p>Currently, I work at <a href="http://www.appacademy.io">App Academy</a>, a Ruby on Rails coding bootcamp, as a TA.</p>
+                </div>
+                <div class="col-sm-3 col-md-4 col-sm-offset-2 col-md-offset-0">
+                    <img src="./img/buck_small.jpg" width="100%" style="margin-top:30px;">
+                </div>
+            </div>
 
 
+            <div class="col-sm-9 col-md-6 col-xs-offset-1">
 
-<h2 id="background">Background</h2>
-
-<p>I studied computer science and physics at the Australian National University for two years. At the end of 2012, I had completed enough courses to get a computer science major, but was becoming frustrated with the pace of my courses. So I moved to San Francisco for App Academy. After the nine week course, App Academy offered me a job teaching the course I'd just done. I've been happily working there since then.</p>
-
-<h2 id="programming">Programming</h2>
-
-<p>My particular intrests in programming are:</p>
-
-<ul>
-  <li>Education: I've written software for <a href="#gem">physics</a> and <a href="#submissionapp">computer science</a> education, and work teaching web development.</li>
-  <li>Functional programming: I used to teach Haskell, and presented on <a href="#algebraic">some theoretical properties of it.</a> I love static typing, and desperately miss it in the scripting languages I end up using most of the time.</li>
-</ul>
-
-<!-- <p>Skills</p>
-
-<ul>
-  <li>Python (advanced)
-    <ul>
-      <li>Scipy, Sympy, Numpy</li>
-    </ul></li>
-  <li>Ruby (advanced)
-    <ul><li>Rails (advanced)</li></ul></li>
-  <li>Javascript (and Coffeescript)</li>
-    <ul><li>Jquery</li>
-    <li>Backbone</li></ul>
-  <li>Haskell</li>
-  <li>Java</li>
-  <li>C</li>
-</ul> -->
-
-<h2>Past projects</h2>
-<h3 id="submissionapp">SubmissionApp <small></small></h3>
-
-<img src="./img/submission_app.jpg" width="50%">
-
-<ul>
-  <li>
-    <a href="http://www.github.com/BuckShlegeris/SubmissionApp">Github</a>
-  </li>
-  <li>
-    <a href="https:varese.anu.edu.au:3000/">Live site</a>
-  </li>
-</ul>
-
-<p>I wrote an as-yet-unnamed submission app for my university. It's currently being used in the <a href="http://cs.anu.edu.au/student/comp1100/">Intro to Programming and Algorithms</a> course. It's in Rails, with some shell scripting.</p>
-
-<p>It has a variety of nifty features, including support for automatic compilation, test cases, and grading.</p>
-
-<p>I am enthusiastic about the prospect of developing this software into the future, and modifying it for the use of other courses which want it.</p>
-
-<h3 id="gem">Graphical Equation Manipulator</h3>
-
-<iframe width="420" height="315" src="http://www.youtube.com/embed/16eiGLrX248" frameborder="0" allowfullscreen></iframe>
-
-<ul>
-  <li>
-    <a href="http://www.github.com/BuckShlegeris/SubmissionApp">Python prototype on Github</a>
-  </li>
-  <li>
-    <a href="http://matthewja.com/gem">Coffeescript version</a>
-  </li>
-  <li>
-    <a href="https://docs.google.com/document/d/19vom2sE0ZQ0jblOtGTpDqjvt50U1lGj0ccZha7ZE3aU/pub">Report summarising the project and user studies</a>
-  </li>
-</ul>
-
-<p>GEM is physics software to intuitively manipulate equations.</p>
-
-<p>I invented the concept and wrote a Python prototype. With my supervisor <a href="http://www.anu.edu.au/physics/Savage/">Craig Savage</a>, I ran user studies on it, and found evidence of its effectiveness. After securing some funding, I supervised and assisted <a href="http://matthewja.com">Matt Alger</a> as he ported the software to a Coffeescript web app. We're still working on finishing that and doing more user studies.</p>
-
-<p>Along the way, Matt and I wrote <a href="http://matthewja.com/Coffeequate/">Coffeequate</a>, currently the best Javascript computer algebra system on the market. We just need to give it a few upgrades before we can release a v1.0.</p>
-
-  <h3 id="other-coding">Other small, interesting projects</h3>
-  <h4><a href="https://github.com/BuckShlegeris/ZipClassifier">Zip classifier</a></h4>
-
-  <p>In a fit of frustration after spending about eight hours trying to install <a href="http://www.complearn.org/">CompLearn</a> on a variety of operating systems, I reimplemented the backend functionality one night in Python. It does cool things like reproducing phylogenetic trees based on the DNA sequences of various mammals.</p>
-
-  <h4><a href="https://github.com/BuckShlegeris/TISE_flux_solver">TISE flux solver</a></h4>
-  <p>I wrote a program which takes stepwise potential functions and solves the time-independent Schroedinger equation for a particle flux over them. This lets us do fun things like view the transmission amplitude of a finite square well as a function of particle frequency.</p>
-
-  <h4>Brute force approximation of Solomonoff prior</h4>
-  <p>The Solomonoff prior is a probability distribution over binary strings. So for example, if you know you're going to see a string, "000" seems more likely than "101100100110100101": Solomonoff's prior formalises that. It (sort of) defines the prior of a string as the proportion of Turing machines which output that string, with simple TMs having higher weight. This is incomputable, because of the halting problem.</p>
-
-  <p>However, that didn't stop me from writing a Python script which generated random Turing machines and ran them for ages, then saved their output to a file. I ran this script on about twenty computers overnight, then collated the result of the trillion trials into one file which I then could use for sequence prediction. It correctly predicted things like the next character in the sequence "01010101". Tragically, I've lost that output file.</p>
-
-  <p>One of the big items on my to-do list is rewriting my Turing machine simulator to be heavily optimized, then running a slight variation of the experiment again. I will update this when I've done that.</p>
-
-  <h4>Data structures stuff</h4>
-  <p>We can use a mathematical tool called generating functions to analyse the behavior of data structures. I presented on this at a student conference. I wrote a short script for the project: my code, and an explanation, are available <a href="https://github.com/BuckShlegeris/DataStructuresStuff">here</a>.</p>
-
-<h2 id="music">Music</h2>
-<iframe width="100%" height="200" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/26754032&amp;auto_play=false&amp;hide_related=false&amp;visual=true"></iframe>
-
-<p>I write songs and played them with my band <a href="https://www.facebook.com/bucketal">Buck et al</a> in Canberra. Currently I'm writing and hoping to record in San Francisco sometime.</p>
-
-</div>
-</div>
-</div>
-</body>
+                <h2 id="background">Background</h2>
+                <p>I studied computer science and physics at the Australian National University for two years. At the end of 2012, I had completed enough courses to get a computer science major, but was becoming frustrated with the pace of university life. So I moved to San Francisco for App Academy. After the nine week course, App Academy offered me a job teaching the course I'd just done. I've been happily working there since then.</p>
+                <h2 id="programming">Programming</h2>
+                <p>My particular intrests in programming are:</p>
+                <ul>
+                    <li>Education: I've written software for <a href="#gem">physics</a> and <a href="#submissionapp">computer science</a> education, and work teaching web development.</li>
+                    <li>Functional programming: I used to teach Haskell, and presented on <a href="#algebraic">some theoretical properties of it.</a> I love static typing, and desperately miss it in the scripting languages I end up using most of the time.</li>
+                </ul>
+                <!-- <p>Skills</p>
+                    <ul>
+                      <li>Python (advanced)
+                        <ul>
+                          <li>Scipy, Sympy, Numpy</li>
+                        </ul></li>
+                      <li>Ruby (advanced)
+                        <ul><li>Rails (advanced)</li></ul></li>
+                      <li>Javascript (and Coffeescript)</li>
+                        <ul><li>Jquery</li>
+                        <li>Backbone</li></ul>
+                      <li>Haskell</li>
+                      <li>Java</li>
+                      <li>C</li>
+                    </ul> -->
+                <h2>Past projects</h2>
+                <h3 id="submissionapp">SubmissionApp <small></small></h3>
+                <img src="./img/submission_app.jpg" width="50%">
+                <ul>
+                    <li>
+                        <a href="http://www.github.com/BuckShlegeris/SubmissionApp">Github</a>
+                    </li>
+                    <li>
+                        <a href="https:varese.anu.edu.au:3000/">Live site</a>
+                    </li>
+                </ul>
+                <p>I wrote an as-yet-unnamed submission app for my university. It's currently being used in the <a href="http://cs.anu.edu.au/student/comp1100/">Intro to Programming and Algorithms</a> course. It's in Rails, with some shell scripting.</p>
+                <p>It has a variety of nifty features, including support for automatic compilation, test cases, and grading.</p>
+                <p>I am enthusiastic about the prospect of developing this software into the future, and modifying it for the use of other courses which want it.</p>
+                <h3 id="gem">Graphical Equation Manipulator</h3>
+                <iframe width="420" height="315" src="http://www.youtube.com/embed/16eiGLrX248" frameborder="0" allowfullscreen></iframe>
+                <ul>
+                    <li>
+                        <a href="http://www.github.com/BuckShlegeris/SubmissionApp">Python prototype on Github</a>
+                    </li>
+                    <li>
+                        <a href="http://matthewja.com/gem">Coffeescript version</a>
+                    </li>
+                    <li>
+                        <a href="https://docs.google.com/document/d/19vom2sE0ZQ0jblOtGTpDqjvt50U1lGj0ccZha7ZE3aU/pub">Report summarising the project and user studies</a>
+                    </li>
+                </ul>
+                <p>GEM is physics software to intuitively manipulate equations.</p>
+                <p>I invented the concept and wrote a Python prototype. With my supervisor <a href="http://www.anu.edu.au/physics/Savage/">Craig Savage</a>, I ran user studies on it, and found evidence of its effectiveness. After securing some funding, I supervised and assisted <a href="http://matthewja.com">Matt Alger</a> as he ported the software to a Coffeescript web app. We're still working on finishing that and doing more user studies.</p>
+                <p>Along the way, Matt and I wrote <a href="http://matthewja.com/Coffeequate/">Coffeequate</a>, currently the best Javascript computer algebra system on the market. We just need to give it a few upgrades before we can release a v1.0.</p>
+                <h3 id="other-coding">Other small, interesting projects</h3>
+                <h4><a href="https://github.com/BuckShlegeris/ZipClassifier">Zip classifier</a></h4>
+                <p>In a fit of frustration after spending about eight hours trying to install <a href="http://www.complearn.org/">CompLearn</a> on a variety of operating systems, I reimplemented the backend functionality one night in Python. It does cool things like reproducing phylogenetic trees based on the DNA sequences of various mammals.</p>
+                <h4><a href="https://github.com/BuckShlegeris/TISE_flux_solver">TISE flux solver</a></h4>
+                <p>I wrote a program which takes stepwise potential functions and solves the time-independent Schroedinger equation for a particle flux over them. This lets us do fun things like view the transmission amplitude of a finite square well as a function of particle frequency.</p>
+                <h4>Brute force approximation of Solomonoff prior</h4>
+                <p>The Solomonoff prior is a probability distribution over binary strings. So for example, if you know you're going to see a string, "000" seems more likely than "101100100110100101": Solomonoff's prior formalises that. It (sort of) defines the prior of a string as the proportion of Turing machines which output that string, with simple TMs having higher weight. This is incomputable, because of the halting problem.</p>
+                <p>However, that didn't stop me from writing a Python script which generated random Turing machines and ran them for ages, then saved their output to a file. I ran this script on about twenty computers overnight, then collated the result of the trillion trials into one file which I then could use for sequence prediction. It correctly predicted things like the next character in the sequence "01010101". Tragically, I've lost that output file.</p>
+                <p>One of the big items on my to-do list is rewriting my Turing machine simulator to be heavily optimized, then running a slight variation of the experiment again. I will update this when I've done that.</p>
+                <h4>Data structures stuff</h4>
+                <p>We can use a mathematical tool called generating functions to analyse the behavior of data structures. I presented on this at a student conference. I wrote a short script for the project: my code, and an explanation, are available <a href="https://github.com/BuckShlegeris/DataStructuresStuff">here</a>.</p>
+                <h2 id="music">Music</h2>
+                <iframe width="100%" height="200" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/26754032&amp;auto_play=false&amp;hide_related=false&amp;visual=true"></iframe>
+                <p>I write songs and played them with my band <a href="https://www.facebook.com/bucketal">Buck et al</a> in Canberra. Currently I'm writing and hoping to record in San Francisco sometime.</p>
+            </div>
+        </div>
+        </div>
+    </body>
 </html>
