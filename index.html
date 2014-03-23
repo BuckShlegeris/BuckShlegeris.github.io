@@ -90,10 +90,12 @@
                 <p>In a fit of frustration after spending about eight hours trying to install <a href="http://www.complearn.org/">CompLearn</a> on a variety of operating systems, I reimplemented the backend functionality one night in Python. It does cool things like reproducing phylogenetic trees based on the DNA sequences of various mammals.</p>
                 <h4><a href="https://github.com/BuckShlegeris/TISE_flux_solver">TISE flux solver</a></h4>
                 <p>I wrote a program which takes stepwise potential functions and solves the time-independent Schroedinger equation for a particle flux over them. This lets us do fun things like view the transmission amplitude of a finite square well as a function of particle frequency.</p>
+
                 <h4>Brute force approximation of Solomonoff prior</h4>
                 <p>The Solomonoff prior is a probability distribution over binary strings. So for example, if you know you're going to see a string, "000" seems more likely than "101100100110100101": Solomonoff's prior formalises that. It (sort of) defines the prior of a string as the proportion of Turing machines which output that string, with simple TMs having higher weight. This is incomputable, because of the halting problem.</p>
                 <p>However, that didn't stop me from writing a Python script which generated random Turing machines and ran them for ages, then saved their output to a file. I ran this script on about twenty computers overnight, then collated the result of the trillion trials into one file which I then could use for sequence prediction. It correctly predicted things like the next character in the sequence "01010101". Tragically, I've lost that output file.</p>
-                <p>One of the big items on my to-do list is rewriting my Turing machine simulator to be heavily optimized, then running a slight variation of the experiment again. I will update this when I've done that.</p>
+                <p>I've rewritten my Turing machine simulator in C++, and now it's much faster. Pretty soon, I'll recreate all the data I lost.</p>
+
                 <h4>Data structures stuff</h4>
                 <p>We can use a mathematical tool called generating functions to analyse the behavior of data structures. I presented on this at a student conference. I wrote a short script for the project: my code, and an explanation, are available <a href="https://github.com/BuckShlegeris/DataStructuresStuff">here</a>.</p>
                 <h2 id="music">Music</h2>
