@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+      <script src="bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="bootstrap-3.1.1-dist/css/bootstrap.min.css">
+      <title>Buck Shlegeris</title>
+  </head>
+<body>
+
+<div class="wrapper">
+<div class="row">
+<div class="col-xs-8 col-xs-offset-2">
+<h1>Upgoer five, but for semantic primes</h1>
+<p>list of semantic primes from <a href="http://www.griffith.edu.au/humanities-languages/school-languages-linguistics/research/natural-semantic-metalanguage-homepage/in-brief">here</a></p>
+
+<textarea id="area" class="form-control" rows="3">
+</textarea>
+
+<p id="goddammit">
+
+</p>
+
+</div>
+</div>
+</div>
+<script>
+acceptableWords = "KIND PART THIS THE SAME OTHER ELSE ONE TWO SOME ALL MUCH MANY LITTLE GOOD BIG SMALL THINK KNOW WANT FEEL SEE HEAR SAY WORDS TRUEDO HAPPEN MOVE TOUCH BE THERE IS HAVE LIVE DIE WHEN NOW BEFORE AFTER LONG TIME A SHORT TIME FOR SOME TIME MOMENT WHERE HERE ABOVE BELOW FAR NEAR SIDE INSIDE NOT MAYBE CAN BECAUSE IF VERY MORE LIKE AS WAY".toUpperCase().split(" ");
+
+$("#area").on("keydown", function () {
+  var words = $("#area").val().split(" ")
+  var violators = []
+  for (var i = 0; i < words.length - 1; i++) {
+    if (words[i] && acceptableWords.indexOf(words[i].toUpperCase()) === -1) {
+      violators.push(words[i])
+    }
+  }
+
+  if (violators.length > 0) {
+    $("#goddammit").html("<div class=\"alert alert-danger\">You have illegal words: "+violators.join(", ") + "</div>");
+  } else {
+    $("#goddammit").html("<div class=\"alert alert-success\">All good :)</div>");
+  }
+});
+</script>
+</body>
+</html>
