@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  8 MAY 2014 22:08
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  9 MAY 2014 14:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -534,7 +534,13 @@ File: omsptm.fd
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 27.
- [1
+
+Overfull \hbox (14.10101pt too wide) in paragraph at lines 86--87
+[]\T1/ptm/m/it/10 In de-scend-ing or-der of ex-per-tise: \T1/ptm/m/n/10 Ruby, P
+ython, Rails, Scala, Haskell, Javascript, C/C++, Unix, HTML/CSS,
+ []
+
+[1
 
 {/usr/local/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 (./buck_shlegeris_resume.aux) ) 
@@ -553,7 +559,7 @@ ips/base/8r.enc}</usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts
 /usr/local/texlive/2011/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local
 /texlive/2011/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2
 011/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on buck_shlegeris_resume.pdf (1 page, 69603 bytes).
+Output written on buck_shlegeris_resume.pdf (1 page, 69608 bytes).
 PDF statistics:
  48 PDF objects out of 1000 (max. 8388607)
  32 compressed objects within 1 object stream
