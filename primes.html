@@ -33,7 +33,7 @@ $("#area").on("keydown", function () {
   var words = $("#area").val().split(" ")
   var violators = []
   for (var i = 0; i < words.length - 1; i++) {
-    if (words[i] && acceptableWords.indexOf(words[i].toUpperCase().strip()) === -1) {
+    if (words[i] && acceptableWords.indexOf(words[i].toUpperCase().trim()) === -1) {
       violators.push(words[i])
     }
   }
