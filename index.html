@@ -4,7 +4,9 @@
         <link href='http://fonts.googleapis.com/css?family=Anonymous+Pro' rel='stylesheet' type='text/css'>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
         <link rel="stylesheet" type="text/css" href="retro_bootstrap.css">
+        <script src="./lol.js"></script>
         <title>Buck Shlegeris</title>
     </head>
     <body style="visibility: visible;" data-twttr-rendered="true">
@@ -13,13 +15,14 @@
             <div class="span3 bs-docs-sidebar" style="margin-top: 80px;">
 
                 <ul class="nav nav-list bs-docs-sidenav affix">
-                    <li><a href="#"><strong>Buck</strong></a></li>
+                    <li><a href="#buck"><strong>Buck</strong></a></li>
                     <li><a href="./buck_shlegeris_resume.pdf">Resume</a></li>
                     <li><a href="#background">Background</a></li>
+                    <li><a href="#programming">Programming</a></li>
                     <li>
-                        <a href="#programming">Programming</a>
+                        <a href="#past-projects">Past projects</a>
                         <ul class="nav-nested">
-                            <li><a href="#submissionapp">Submission app</a></li>
+                            <li><a href="#submission-app">Submission app</a></li>
                             <li><a href="#gem">GEM</a></li>
                             <li><a href="#compiler">rPeANUt compiler</a></li>
                             <li><a href="#other-coding">Other cool stuff</a></li>
@@ -40,17 +43,18 @@
 
             <div class="span8" style="margin-left: 40px;">
                 <div class="page-header">
-                <img src="./img/buck_small.jpg" width="30%" style="display: block;"><h1 style="float: right;">Buck Shlegeris</h1>
+                <!-- <img src="./img/buck_small.jpg" width="30%" style="display: block;"> -->
+                <h1 id="buck">Buck Shlegeris</h1>
                 </div>
-                <p><a href="http://github.com/bshlgrs">GitHub</a>, <a href="https://www.facebook.com/endofunctor">Facebook</a>,
-                    <a href="mailto:bshlegeris@gmail.com">Email</a>,
-                    <a href="http://lnkd.in/bnBJ6EF">LinkedIn</a>,
-                    <a href="./buck_shlegeris_resume.pdf"><strong>resume</strong></a>
-                </p>
+                <a class="btn" href="http://github.com/bshlgrs">GitHub</a> <a class="btn" href="https://www.facebook.com/endofunctor">Facebook</a>
+                    <a class="btn" href="mailto:bshlegeris@gmail.com">Email</a>
+                    <a class="btn" href="http://lnkd.in/bnBJ6EF">LinkedIn</a>
+                    <a class="btn btn-lg" href="./buck_shlegeris_resume.pdf"><strong>resume</strong></a>
+
 
                 <div class="lead">
                 <p>I'm a web developer, musician, and effective altruist from Australia, living in San Francisco.</p>
-                <p>Currently, I work at <a href="http://www.appacademy.io">App Academy</a>, a coding bootcamp. I've talked about it <a href="http://80000hours.org/blog/329-interview-with-buck-shlegeris-from-app-academy">here</a>.
+                <p>Currently, I work at <a href="http://www.appacademy.io">App Academy</a>, a coding bootcamp.
 
 
                 </p>
@@ -58,11 +62,14 @@
 
 
 
-            <hr class="bs-docs-separator">
+            <!-- <hr class="bs-docs-separator"> -->
 
             <h2 id="background">Background</h2>
 
-            <p>I studied computer science and physics at the Australian National University for two years. At the end of 2012, after completing enough courses to get a computer science major, I moved to San Francisco for App Academy. After the nine week course, App Academy offered me a job teaching the course I'd just done. I've been happily working there since then.</p>
+            <p>I studied computer science and physics at the Australian National University for two years. At the end of 2012, after completing enough courses to get a computer science major, I moved to San Francisco for App Academy. After the nine week course, App Academy offered me a job teaching the course I'd just done. I've been happily working there since then. You can read an interview I did about App Academy <a href="http://80000hours.org/blog/329-interview-with-buck-shlegeris-from-app-academy">here</a>.</p>
+
+            <!-- <hr class="bs-docs-separator"> -->
+
             <h2 id="programming">Programming</h2>
             <p>My particular intrests in programming are:</p>
             <ul>
@@ -70,9 +77,10 @@
                 <li><strong>Functional programming:</strong> I used to teach Haskell, and presented on <a href="#algebraic">some theoretical properties of it.</a> I love static typing, and desperately miss it in the scripting languages I end up using most of the time.</li>
             </ul>
 
-            <h2>Past projects</h2>
-            <h3 id="submissionapp">SubmissionApp <small></small></h3>
-            <img style="display: block" src="./img/submission_app.jpg">
+            <!-- <hr class="bs-docs-separator"> -->
+
+            <h2 id="past-projects">Past projects</h2>
+            <h3 id="submission-app">SubmissionApp <small></small></h3>
             <ul>
                 <li>
                     <a href="http://www.github.com/bshlgrs/SubmissionApp">Github</a>
@@ -86,10 +94,11 @@
             <p>I am enthusiastic about the prospect of developing this software into the future, and modifying it for the use of other courses which want it.</p>
 
 
-            <hr class="bs-docs-separator">
 
             <h3 id="gem">Graphical Equation Manipulator</h3>
-            <iframe width="420" height="315" src="http://www.youtube.com/embed/16eiGLrX248" frameborder="0" allowfullscreen></iframe>
+            <div class="well">
+                <iframe width="420" height="315" src="http://www.youtube.com/embed/16eiGLrX248" frameborder="0" allowfullscreen></iframe>
+            </div>
             <ul>
                 <li>
                     <a href="http://www.github.com/bshlgrs/SubmissionApp">Python prototype on Github</a>
@@ -105,7 +114,6 @@
             <p>I invented the concept and wrote a Python prototype. With my supervisor <a href="http://www.anu.edu.au/physics/Savage/">Craig Savage</a>, I ran user studies on it, and found evidence of its effectiveness. After securing some funding, I supervised and assisted <a href="http://matthewja.com">Matt Alger</a> as he ported the software to a Coffeescript web app. We're still working on finishing that and doing more user studies.</p>
             <p>Along the way, Matt and I wrote <a href="http://matthewja.com/Coffeequate/">Coffeequate</a>, currently the best Javascript computer algebra system on the market. We just need to give it a few upgrades before we can release a v1.0.</p>
 
-            <hr class="bs-docs-separator">
 
             <h3 id="compiler"><a href="https://github.com/bshlgrs/rpeanut-compiler">rPeANUt compiler</a></h3>
 
@@ -115,7 +123,6 @@
 
             <p>I'll probably rewrite the backend to target a real microprocessor sometime.</p>
 
-            <hr class="bs-docs-separator">
 
             <h3 id="other-coding">Other small, interesting projects</h3>
 
@@ -132,14 +139,18 @@
             <h4>Data structures stuff</h4>
             <p>We can use a mathematical tool called generating functions to analyse the behavior of data structures. I presented on this at a student conference. I wrote a short script for the project: my code, and an explanation, are available <a href="https://github.com/bshlgrs/DataStructuresStuff">here</a>.</p>
 
-            <hr class="bs-docs-separator">
+            <!-- <hr class="bs-docs-separator"> -->
 
             <h2 id="music">Music</h2>
             <img src="./img/music.jpg">
 
+            <div class="well">
+                <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/26754032&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+            </div>
+
             <p>I write songs and played them with my band <a href="https://www.facebook.com/bucketal">Buck et al</a> in Canberra. Currently I'm writing lots of music, and hoping to record it in the Bay Area sometime.</p>
 
-            <hr class="bs-docs-separator">
+            <!-- <hr class="bs-docs-separator"> -->
 
             <h2 id="effective-altruism">Effective altruism</h2>
             <p>I want to use my career to help the world. For someone like me, the best way to do that is probably trying to maximise my income and then spending my money on useful things. This strategy is known as <a href="http://80000hours.org/earning-to-give">earning to give</a>.</p>

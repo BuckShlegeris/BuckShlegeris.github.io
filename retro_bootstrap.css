@@ -244,9 +244,20 @@ a {
 }
 
 a:hover,
-a:focus {
+a:focus,
+a.selected,
+h1.selected,
+h2.selected,
+h3.selected {
   color: #fefe54;
   background: #aa5500;
+}
+
+a:before{
+  content: "- "
+}
+a.selected:before {
+  content: "> ";
 }
 
 .img-rounded {
