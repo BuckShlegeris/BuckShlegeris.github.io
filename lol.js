@@ -12,7 +12,7 @@ $(function () {
       $(selectedPlace).removeClass("selected");
     }
 
-    var newLink = $(_($("a")).filter(function(x) { return $(x).attr("href") == place; }))
+    var newLink = $(_($("a")).filter(function(x) { return $(x).attr("href") == place; }))[0]
     $(newLink).addClass("selected");
 
     if (place[0] == "#") {
@@ -36,8 +36,11 @@ $(function () {
   "http://bshlgrs.tumblr.com"]
 
   $(document).keydown(function(e){
-
-    if (e.keyCode == 38) {
+    if (e.which == 13) {
+      window.open(places[placeIndex])
+      e.preventDefault();
+    }
+    if (e.which == 38) {
       placeIndex -= 1;
       if (placeIndex == -1) {
         placeIndex += places.length;
@@ -46,7 +49,7 @@ $(function () {
 
       e.preventDefault();
     }
-    if (e.keyCode == 40) {
+    if (e.which == 40) {
       placeIndex += 1;
       if (placeIndex == places.length) {
         placeIndex = 0;

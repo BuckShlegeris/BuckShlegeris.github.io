@@ -253,7 +253,7 @@ h3.selected {
   background: #aa5500;
 }
 
-a:before{
+a.arrow:before{
   content: "- "
 }
 a.selected:before {
