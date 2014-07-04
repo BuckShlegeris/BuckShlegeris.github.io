@@ -21,26 +21,18 @@ $(function () {
     }
 
     selectedPlace = place;
+
+    $("#helpful-hint").hide();
   }
 
-  places = ["#buck","./buck_shlegeris_resume.pdf","#background",
-  "#programming",
-  "#past-projects",
-  "#submission-app",
-  "#gem",
-  "#compiler",
-  "#other-coding",
-  "#music",
-  "#effective-altruism",
-  "#donations",
-  "http://bshlgrs.tumblr.com"]
+  places = _($("#sidebar").find("a")).map(function(x) { return $(x).attr("href") });
 
   $(document).keydown(function(e){
     if (e.which == 13) {
       window.open(places[placeIndex])
       e.preventDefault();
     }
-    if (e.which == 38) {
+    if (e.which == 38 || e.which == 37) {
       placeIndex -= 1;
       if (placeIndex == -1) {
         placeIndex += places.length;
@@ -49,7 +41,7 @@ $(function () {
 
       e.preventDefault();
     }
-    if (e.which == 40) {
+    if (e.which == 40 || e.which == 39) {
       placeIndex += 1;
       if (placeIndex == places.length) {
         placeIndex = 0;
@@ -63,6 +55,7 @@ $(function () {
   placeIndex = 0;
 
   moveToPlace("#buck");
+  $("#helpful-hint").show();
 })
 
 
