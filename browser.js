@@ -3,7 +3,7 @@ $(function () {
   var selectedIndex = 0;
   var relevantFileList = [];
   var currentFolder;
-  var parentFolders = ["."];
+  var parentFolders = [];
 
   var isFolder = function (path) {
     return (allSubdirectories.indexOf(path) !== -1);
@@ -12,7 +12,7 @@ $(function () {
 
   window.drawBrowser = function (folder) {
     var $p = $("#folder_name");
-    $p.html(folder);
+    $p.html("bshlgrs.github.io"+folder.slice(1,folder.length));
 
     console.log(folder);
     currentFolder = folder;
@@ -69,7 +69,12 @@ $(function () {
     if (e.which == 13) { // enter
       if (selectedIndex === 0) {
         // go up a directory
-        window.drawBrowser(parentFolders.pop() || ".");
+        if (parentFolders.length > 0) {
+          window.drawBrowser(parentFolders.pop());
+        } else {
+          window.open("./index.html", "_self");
+        }
+
       } else {
         var newPlace = currentFolder + "/"+ $($("#file_list").children()[selectedIndex]).html();
         if (allSubdirectories.indexOf(newPlace) === -1) {

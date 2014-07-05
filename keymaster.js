@@ -29,7 +29,7 @@ $(function () {
 
   $(document).keydown(function(e){
     if (e.which == 13) {
-      window.open(places[placeIndex])
+      window.open(places[placeIndex], places[placeIndex]=="./browser.html"? "_self" : 0)
       e.preventDefault();
     }
     if (e.which == 38 || e.which == 37) {
