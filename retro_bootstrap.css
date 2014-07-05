@@ -169,6 +169,7 @@ textarea {
   vertical-align: top;
 }
 
+
 @media print {
   * {
     color: #000 !important;
@@ -221,17 +222,9 @@ textarea {
   }
 }
 
-@font-face {
-  font-family: 'DOS';
-  font-style: normal;
-  font-weight: normal;
-  src: url('fonts/Fixedsys500c.eot');
-  src: local('☺'), url('fonts/Fixedsys500c.woff') format('woff'), url('fonts/Fixedsys500c.ttf') format('truetype'), url('fonts/Fixedsys500c.svg') format('svg');
-}
-
 body {
   margin: 0;
-  font-family: DOS, Monaco, Menlo, Consolas, "Anonymous Pro", monospace;
+  font-family: Monaco, Menlo, Consolas, "Anonymous Pro", monospace;
   font-size: 18px;
   line-height: 20px;
   color: #bbbbbb;
@@ -248,9 +241,14 @@ a:focus,
 a.selected,
 h1.selected,
 h2.selected,
-h3.selected {
+h3.selected,
+li.selected {
   color: #fefe54;
   background: #aa5500;
+}
+
+li.folder {
+  color: blue;
 }
 
 a.arrow:before{
@@ -258,6 +256,14 @@ a.arrow:before{
 }
 a.selected:before {
   content: "> ";
+}
+
+li.menu.selected:before {
+  content: "> ";
+}
+
+li.menu:before {
+  content: "- ";
 }
 
 .img-rounded {
