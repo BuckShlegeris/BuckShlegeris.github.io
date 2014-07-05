@@ -94,7 +94,7 @@ $(function () {
     else if (e.which == 38 || e.which == 37) { // left/up
       selectedIndex -= 1;
       if (selectedIndex == -1) {
-        selectedIndex += relevantFileList.length;
+        selectedIndex += relevantFileList.length + 1;
       }
       moveToIndex(selectedIndex);
 
