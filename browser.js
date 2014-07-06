@@ -9,7 +9,6 @@ $(function () {
     return (allSubdirectories.indexOf(path) !== -1);
   };
 
-
   window.drawBrowser = function (folder) {
     var $p = $("#folder_name");
     $p.html("bshlgrs.github.io"+folder.slice(1,folder.length));
@@ -55,9 +54,10 @@ $(function () {
     return relevantFileList;
   }
 
-  // var displayFile = function (path) {
-  //   $('#file_list').load(path);
-  // }
+  var displayFile = function (path) {
+    window.open(path);
+    // $('#file_place').load(path);
+  }
 
   var moveToIndex = function (index) {
     var $ul = $("#file_list");
@@ -74,13 +74,12 @@ $(function () {
         } else {
           window.open("./index.html", "_self");
         }
-
       } else {
         var newPlace = currentFolder + "/"+ $($("#file_list").children()[selectedIndex]).html();
         if (allSubdirectories.indexOf(newPlace) === -1) {
           // open file
-          window.open(newPlace);
-          // displayFile(newPlace);
+          // window.open(newPlace);
+          displayFile(newPlace);
         } else {
           // open folder
           parentFolders.push(currentFolder);
