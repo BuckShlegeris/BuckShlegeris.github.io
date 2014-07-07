@@ -251,6 +251,10 @@ li.folder {
   color: blue;
 }
 
+li.html-file {
+  color: green;
+}
+
 a.arrow:before{
   content: "- "
 }

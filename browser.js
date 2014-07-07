@@ -40,7 +40,11 @@ $(function () {
       if (isFolder(thing)) {
         folders.push("<li class='menu folder'>"+removeFolderName(thing)+"</li>");
       } else {
-        files.push("<li class='menu'>"+removeFolderName(thing)+"</li>");
+        if (thing.indexOf(".html") === -1) {
+          files.push("<li class='menu'>"+removeFolderName(thing)+"</li>");
+        } else {
+          files.push("<li class='menu html-file'>"+removeFolderName(thing)+"</li>");
+        }
       }
     });
     _(folders.concat(files)).each(function(thing) {
@@ -108,6 +112,11 @@ $(function () {
       moveToIndex(selectedIndex);
       e.preventDefault();
     }
+  })
+
+  $("#help-button").on("click", function(e) {
+    $("#help").css("display", $("#help").css("display") == "block" ? "none" : "block");
+    e.preventDefault();
   })
 
   window.drawBrowser(".");
