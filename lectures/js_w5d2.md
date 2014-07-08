@@ -2,9 +2,10 @@
 
 Javascript history: When he wrote it, Brendan Eich was under crazy time and design restrictions. Quotes from him:
 
-"JS had to "look like Java" only less so, be Java's dumb kid brother or boy-hostage sidekick. Plus, I had to be done in ten days or something worse than JS would have happened."
+> JS had to "look like Java" only less so, be Java's dumb kid brother or boy-hostage sidekick. Plus, I had to be done in ten days or something worse than JS would have happened.
 
-"If I had done classes in JavaScript back in May 1995, I would have been told that it was too much like Java or that JavaScript was competing with Java … I was under marketing orders to make it look like Java but not make it too big for its britches … [it] needed to be a silly little brother language."
+
+> If I had done classes in JavaScript back in May 1995, I would have been told that it was too much like Java or that JavaScript was competing with Java … I was under marketing orders to make it look like Java but not make it too big for its britches … [it] needed to be a silly little brother language.
 
 Most important features of Javascript design:
 - The language had to be very simple. No classes or anything built in. This is because the language was intended to be simple to use, and not look like a Java competitor, and because Eich was time constrained.

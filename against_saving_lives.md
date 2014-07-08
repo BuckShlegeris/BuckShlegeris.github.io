@@ -18,7 +18,7 @@ In the far future, if all goes well, the population of the universe will be limi
 
 I think that our interest in saving lives, as opposed to creating happy lives, partially comes from confusing a good game theory heuristic for a moral rule. Just like we're all better off with a rule against theft, even though theft sometimes has a utilitarian justification, the people who currently exist and thus make the rules are better off with a rule against murder. It's also a lot harder to see a life lost when you choose not to have a child compared to when someone dies: when you know someone, you're already used to thinking about what they'll be doing in ten years time, and suddenly you have to revise that. You don't get such a shock when you choose to not create a hypothetical person, because you don't know anything about what they'll do.
 
-##  How should this make us think about what charity to give to?
+##  How should this make us think about charity choice?
 
 For one, I don't care about saving the lives of factory farmed animals: I'm happy with them being killed as soon as possible. Some animal welfare advocates disagree with me on this one.
 

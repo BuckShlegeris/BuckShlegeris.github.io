@@ -58,9 +58,29 @@ $(function () {
     return relevantFileList;
   }
 
+  var converter = new Markdown.Converter();
+
   var displayFile = function (path) {
-    window.open(path);
-    // $('#file_place').load(path);
+    if (path.indexOf(".md") === -1) {
+      window.open(path);
+    } else {
+      bindKeysForFileView();
+
+      parentFolders.push(currentFolder);
+
+      var $p = $("#folder_name");
+      $p.html("bshlgrs.github.io"+path.slice(1,path.length));
+
+      $("#file_list").empty();
+      $("#file_place").html("loading...");
+      $.ajax({
+        url: path,
+        success: function (text) {
+          $("#file_place").html(converter.makeHtml(text));
+        }
+      });
+    }
+    //
   }
 
   var moveToIndex = function (index) {
@@ -69,50 +89,66 @@ $(function () {
     $($ul.children()[index]).addClass("selected");
   }
 
-  $(document).keydown(function(e) {
-    if (e.which == 13) { // enter
-      if (selectedIndex === 0) {
-        // go up a directory
-        if (parentFolders.length > 0) {
-          window.drawBrowser(parentFolders.pop());
+  var bindKeysForFileView = function () {
+    $(document).off("keydown");
+    $(document).keydown(function(e) {
+      if (e.which == 37) { // left
+        e.preventDefault();
+        $("#file_place").empty();
+        window.drawBrowser(parentFolders.pop());
+        bindKeysForFolderView();
+      }
+    })
+  }
+
+  var bindKeysForFolderView = function () {
+    $(document).off("keydown");
+    $(document).keydown(function(e) {
+      if (e.which == 13) { // enter
+        if (selectedIndex === 0) {
+          // go up a directory
+          if (parentFolders.length > 0) {
+            window.drawBrowser(parentFolders.pop());
+          } else {
+            window.open("./index.html", "_self");
+          }
         } else {
-          window.open("./index.html", "_self");
+          var newPlace = currentFolder + "/"+ $($("#file_list").children()[selectedIndex]).html();
+          if (allSubdirectories.indexOf(newPlace) === -1) {
+            // open file
+            // window.open(newPlace);
+            displayFile(newPlace);
+          } else {
+            // open folder
+            parentFolders.push(currentFolder);
+
+            window.drawBrowser(newPlace);
+          }
+
         }
-      } else {
-        var newPlace = currentFolder + "/"+ $($("#file_list").children()[selectedIndex]).html();
-        if (allSubdirectories.indexOf(newPlace) === -1) {
-          // open file
-          // window.open(newPlace);
-          displayFile(newPlace);
-        } else {
-          // open folder
-          parentFolders.push(currentFolder);
+        e.preventDefault();
+      }
+      else if (e.which == 38 || e.which == 37) { // left/up
+        selectedIndex -= 1;
+        if (selectedIndex == -1) {
+          selectedIndex += relevantFileList.length + 1;
+        }
+        moveToIndex(selectedIndex);
 
-          window.drawBrowser(newPlace);
+        e.preventDefault();
+      }
+      else if (e.which == 40 || e.which == 39) { // right/down
+        selectedIndex += 1;
+        if (selectedIndex == relevantFileList.length + 1) {
+          selectedIndex = 0;
         }
 
+        moveToIndex(selectedIndex);
+        e.preventDefault();
       }
-      e.preventDefault();
-    }
-    else if (e.which == 38 || e.which == 37) { // left/up
-      selectedIndex -= 1;
-      if (selectedIndex == -1) {
-        selectedIndex += relevantFileList.length + 1;
-      }
-      moveToIndex(selectedIndex);
+    })
+  }
 
-      e.preventDefault();
-    }
-    else if (e.which == 40 || e.which == 39) { // right/down
-      selectedIndex += 1;
-      if (selectedIndex == relevantFileList.length + 1) {
-        selectedIndex = 0;
-      }
-
-      moveToIndex(selectedIndex);
-      e.preventDefault();
-    }
-  })
 
   $("#help-button").on("click", function(e) {
     $("#help").css("display", $("#help").css("display") == "block" ? "none" : "block");
@@ -120,4 +156,5 @@ $(function () {
   })
 
   window.drawBrowser(".");
+  bindKeysForFolderView();
 })
