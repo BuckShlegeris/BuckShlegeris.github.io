@@ -2,13 +2,15 @@
 
 Javascript history
 
+"JS had to "look like Java" only less so, be Java's dumb kid brother or boy-hostage sidekick. Plus, I had to be done in ten days or something worse than JS would have happened."
+
 "If I had done classes in JavaScript back in May 1995, I would have been told that it was too much like Java or that JavaScript was competing with Java … I was under marketing orders to make it look like Java but not make it too big for its britches … [it] needed to be a silly little brother language."
 
 All you need to know about Javascript design:
 - Very simple.
 - Massive rush job and needs to look like c, and you can't fix it.
 - Needs to have callbacks
-- Massively underdesigned for how important it is, like King Joffrey.
+- Can't break visibly
 
 The theme of this lecture is that Javascript is really small, and we build things out of it in slightly weird ways. Because it's small, and we have to.
 
@@ -43,6 +45,8 @@ How about this:
 	  var x = 5;
 	  h();
 	}
+
+Why is this? Alpha-equivalence. You couldn't locally refactor code otherwise.
 
 ## Callbacks
 A callback is a function passed to another function to be called later.
@@ -114,3 +118,7 @@ Third try: Inside a closure, setting a module object
 Problem: Behaves badly with multiple files
 
 True Path: thing || {}
+
+## Epilogue
+
+JS is lovely, and you get lots of intuition about things from it.
