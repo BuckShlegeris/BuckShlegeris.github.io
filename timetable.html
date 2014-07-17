@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AnuCalendar</title>
+  <script src="./underscore.js"></script>
+  <script src="./jquery.js"></script>
+  <link rel="stylesheet" type="text/css" href="./bootstrap.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="row">
+
+    <div class="row">
+      <div class="col-xs-2">
+              <h1>timetable</h1>
+      </div>
+
+      <div class="col-xs-10">
+        <div class="well">
+          <input id="course-name">
+          <button id="add-course" class="btn btn-default">add course</button>
+          <button id="download-ical" class="btn btn-primary">download</button>
+          <div id="courses" style="display: inline;"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+<div class="row">
+  <div class="col-xs-12">
+    <table class="table table-striped table-condensed">
+      <tbody>
+        <table class="table table-striped table-condensed">
+      <tbody>
+        <tr>
+          <td class="col-sm-1"></td>
+            <th class="col-sm-2">mon</th>
+            <th class="col-sm-2">tue</th>
+            <th class="col-sm-2">wed</th>
+            <th class="col-sm-2">thu</th>
+            <th class="col-sm-2">fri</th>
+        </tr>
+
+          <tr>
+            <th>
+              9:00
+            </th>
+              <td class="timeslot" data-hour="9" data-day="mon">
+              </td>
+              <td class="timeslot" data-hour="9" data-day="tue">
+              </td>
+              <td class="timeslot" data-hour="9" data-day="wed">
+              </td>
+              <td class="timeslot" data-hour="9" data-day="thu">
+              </td>
+              <td class="timeslot" data-hour="9" data-day="fri">
+              </td>
+          </tr>
+          <tr>
+            <th>
+              10:00
+            </th>
+              <td class="timeslot" data-hour="10" data-day="mon">
+              </td>
+              <td class="timeslot" data-hour="10" data-day="tue">
+              </td>
+              <td class="timeslot" data-hour="10" data-day="wed">
+              </td>
+              <td class="timeslot" data-hour="10" data-day="thu">
+              </td>
+              <td class="timeslot" data-hour="10" data-day="fri">
+              </td>
+          </tr>
+          <tr>
+            <th>
+              11:00
+            </th>
+              <td class="timeslot" data-hour="11" data-day="mon">
+              </td>
+              <td class="timeslot" data-hour="11" data-day="tue">
+              </td>
+              <td class="timeslot" data-hour="11" data-day="wed">
+              </td>
+              <td class="timeslot" data-hour="11" data-day="thu">
+              </td>
+              <td class="timeslot" data-hour="11" data-day="fri">
+              </td>
+          </tr>
+          <tr>
+            <th>
+              12:00
+            </th>
+              <td class="timeslot" data-hour="12" data-day="mon">
+              </td>
+              <td class="timeslot" data-hour="12" data-day="tue">
+              </td>
+              <td class="timeslot" data-hour="12" data-day="wed">
+              </td>
+              <td class="timeslot" data-hour="12" data-day="thu">
+              </td>
+              <td class="timeslot" data-hour="12" data-day="fri">
+              </td>
+          </tr>
+          <tr>
+            <th>
+              13:00
+            </th>
+              <td class="timeslot" data-hour="13" data-day="mon">
+              </td>
+              <td class="timeslot" data-hour="13" data-day="tue">
+              </td>
+              <td class="timeslot" data-hour="13" data-day="wed">
+              </td>
+              <td class="timeslot" data-hour="13" data-day="thu">
+              </td>
+              <td class="timeslot" data-hour="13" data-day="fri">
+              </td>
+          </tr>
+          <tr>
+            <th>
+              14:00
+            </th>
+              <td class="timeslot" data-hour="14" data-day="mon">
+              </td>
+              <td class="timeslot" data-hour="14" data-day="tue">
+              </td>
+              <td class="timeslot" data-hour="14" data-day="wed">
+              </td>
+              <td class="timeslot" data-hour="14" data-day="thu">
+              </td>
+              <td class="timeslot" data-hour="14" data-day="fri">
+              </td>
+          </tr>
+          <tr>
+            <th>
+              15:00
+            </th>
+              <td class="timeslot" data-hour="15" data-day="mon">
+              </td>
+              <td class="timeslot" data-hour="15" data-day="tue">
+              </td>
+              <td class="timeslot" data-hour="15" data-day="wed">
+              </td>
+              <td class="timeslot" data-hour="15" data-day="thu">
+              </td>
+              <td class="timeslot" data-hour="15" data-day="fri">
+              </td>
+          </tr>
+          <tr>
+            <th>
+              16:00
+            </th>
+              <td class="timeslot" data-hour="16" data-day="mon">
+              </td>
+              <td class="timeslot" data-hour="16" data-day="tue">
+              </td>
+              <td class="timeslot" data-hour="16" data-day="wed">
+              </td>
+              <td class="timeslot" data-hour="16" data-day="thu">
+              </td>
+              <td class="timeslot" data-hour="16" data-day="fri">
+              </td>
+          </tr>
+          <tr>
+            <th>
+              17:00
+            </th>
+              <td class="timeslot" data-hour="17" data-day="mon">
+              </td>
+              <td class="timeslot" data-hour="17" data-day="tue">
+              </td>
+              <td class="timeslot" data-hour="17" data-day="wed">
+              </td>
+              <td class="timeslot" data-hour="17" data-day="thu">
+              </td>
+              <td class="timeslot" data-hour="17" data-day="fri">
+              </td>
+          </tr>
+      </tbody>
+    </table>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+
+<script>
+  var timetable_data = [];
+
+  $.get("/timetable.json", {}, function (data) {
+    timetable_data = data;
+
+  })
+
+  var lesson_template = "<div class='lesson' data-name='<%= item.name %>' data-id='<%= item.id %>'><p><b><%= item.name %></b>. <i><%= item.location %></i>. <%= item.info %> <a>(remove)</a></p></div>";
+
+  var putItemInCalendar = function (item) {
+    var place = _($(".timeslot")).filter(function(x) {
+      return $(x).data("day") == item.day &&
+                  $(x).data("hour") == item.hour; })[0];
+    var thing = $(_.template(lesson_template, { item: item }));
+    $(thing.find("a")[0]).on("click", function (event) {
+      event.preventDefault();
+      thing.remove();
+    })
+    $(place).append(thing);
+  }
+
+  var courses = [];
+
+  var getCourse = function() {
+    var course_name = $("#course-name").val().toUpperCase();
+    if (course_name.length == 8 && courses.indexOf(course_name) === -1) {
+      $("#add-course").html("adding...");
+      $("#course-name").val("");
+      addCourse(course_name);
+    }
+  }
+
+  var addCourse = function (course_name) {
+    data = _(timetable_data).filter(function (x) {return x.name == course_name;})
+    $("#add-course").html("add course");
+    _(data).each(putItemInCalendar);
+    var new_course_label = $("<a class='btn btn-danger'>delete " + course_name + "</a>");
+    $("#courses").append(new_course_label);
+    new_course_label.on("click", function (event) {
+      removeCourse(course_name, event);
+    })
+    courses.push(course_name);
+  }
+
+  var removeCourse = function(course_name, event) {
+    event.preventDefault();
+    event.target.remove();
+    courses = _(courses).without(course_name);
+    $(".lesson").each(function(index, lesson) {
+      var $lesson = $(lesson);
+      if ($lesson.data("name") == course_name) {
+        $lesson.remove();
+      }
+    });
+
+
+  }
+
+  $(function() {
+    $(document).keydown(function(e) {
+      if (e.which == 13) {
+        event.preventDefault();
+        getCourse();
+      }
+    });
+
+    $("#add-course").on("click", function(event) {
+      event.preventDefault();
+      getCourse();
+    })
+  })
+</script>
+</div>
+
+</body>
+</html>
