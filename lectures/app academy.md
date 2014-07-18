@@ -234,6 +234,14 @@ To get into the course, you need to have reasonable competance messing around wi
 
 *check my notes from the conversation with Jay*
 
+### Where there are spaces in the application to add more info is it important/beneficial to do so or for extreme circumstances? 
+
+I don't think it matters much.
+
+###  Does being legally allowed to work in the US mean have a visa to work already, or just being eligible for a working visa?
+
+The former.
+
 ## Conclusion
 
 So I think App Academy's pretty great. It was a great decision for me. I learned a lot and had great fun.
