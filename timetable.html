@@ -10,27 +10,24 @@
 <body>
 
 <div class="container">
-
-    <div class="row">
-
-    <div class="row">
-      <div class="col-xs-2">
-        <h1>timetable</h1>
-      </div>
-
-      <div class="col-xs-10">
-        <div class="well">
-          <input id="course-name" placeholder="course code to add">
-          <button id="add-course" class="btn btn-default">add course</button>
-          <button id="download" class="btn btn-primary">download</button>
-          <div id="courses" style="display: inline;"></div>
-          </div>
-
-        </div>
-      </div>
+  <div class="row">
+    <div class="col-xs-2">
+      <h1>timetable</h1>
     </div>
 
+    <div class="col-xs-10">
+      <div class="well">
+        <input id="course-name" placeholder="course code to add">
+        <button id="add-course" class="btn btn-default">add course</button>
+        <button id="download" class="btn btn-primary">download</button>
+        <div id="courses" style="display: inline;"></div>
+      </div>
+    </div>
+  </div>
 
+<div class="alert alert-info alert-dismissible" role="alert">
+  You can download your timetable to Google Calendar or whatever. However, I haven't used recurring events, so it just manually makes a new event for every lecture every week. It's probably a good idea to put these events into their own calendar just in case.
+</div>
 
 <div class="row">
   <div class="col-xs-12">
@@ -275,13 +272,18 @@
         var lesson = timetable_data[id];
         var day = ["mon","tue","wed","thu","fri"].indexOf(lesson.day);
 
-        // var start_date = '8/7/2013 5:30 pm'
-        var start_date = "7/"+(21+day)+"/2014 "+((lesson.hour - 1) % 12 + 1)+":05 "+(lesson.hour > 11 ? "pm" : "am");
-        var end_date = "7/"+(21+day)+"/2014 "+((lesson.hour -1) %12 + 1)+":55 "+(lesson.hour > 11 ? "pm" : "am");
+        var start_date = new Date("7/"+(21+day)+"/2014 "+((lesson.hour - 1) % 12 + 1)+":05 "+(lesson.hour > 11 ? "pm" : "am"));
 
-        console.log(start_date + " " + end_date);
-        cal.addEvent(lesson.name, lesson.info, lesson.location, start_date,
-                    end_date);
+        while (start_date.getTime() < new Date("2014/10/31").getTime()) {
+          var end_date = new Date(start_date.getTime() + 50 * 60 * 1000);
+
+          console.log(start_date + " " + end_date);
+          cal.addEvent(lesson.name, lesson.info, lesson.location, start_date,
+                      end_date);
+          start_date = new Date(start_date.getTime() + 7 * 24 * 60 * 60 *1000);
+        }
+        // var start_date = '8/7/2013 5:30 pm'
+
       });
 
       // debugger;
@@ -302,6 +304,7 @@
   ga('send', 'pageview');
 
 </script>
+
 </div>
 
 </body>
