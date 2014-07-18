@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>AnuCalendar</title>
+  <title>ANU timetable builder</title>
   <script src="./underscore.js"></script>
   <script src="./jquery.js"></script>
+  <script src="./ics.js"></script>
   <link rel="stylesheet" type="text/css" href="./bootstrap.css">
 </head>
 <body>
@@ -14,14 +15,14 @@
 
     <div class="row">
       <div class="col-xs-2">
-              <h1>timetable</h1>
+        <h1>timetable</h1>
       </div>
 
       <div class="col-xs-10">
         <div class="well">
           <input id="course-name">
           <button id="add-course" class="btn btn-default">add course</button>
-          <button id="download-ical" class="btn btn-primary">download</button>
+          <button id="download" class="btn btn-primary">download</button>
           <div id="courses" style="display: inline;"></div>
           </div>
 
@@ -261,6 +262,25 @@
     $("#add-course").on("click", function(event) {
       event.preventDefault();
       getCourse();
+    })
+
+    $("#download").on("click", function (event) {
+      var ids = _($(".lesson")).map(function(x) { return $(x).data("id") } );
+
+      var cal = ics();
+
+      _(ids).each(function (id) {
+        var lesson = timetable_data[id];
+        var day = ["mon","tue","wed","thu","fri"].indexOf(lesson.day)
+        var start_date = new Date(2014, 6, 21+day, lesson.hour, 0, 0, 0);
+        var end_date = new Date(2014, 6, 21+day, lesson.hour + 1, 0, 0, 0);
+
+        cal.addEvent(lesson.name, lesson.info, lesson.location, start_date,
+           end_date);
+      });
+
+      cal.download("anu_s2");
+
     })
   })
 </script>
