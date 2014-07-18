@@ -88,6 +88,7 @@ I loved living at App Academy. The complete lack of a commute made my life much 
 
 I have a few personality quirks which inclined me to enjoy living there more than most people, though. I'm very extraverted, so I had no problem being around people pretty much all the time. Also, I don't mind living in places which are extremely messy and dirty, as long as I'm not actually going to get illnesses from them. Many of the office's inhabitants do not like living there as much as I did.
 
+It was not just guys living at the office: there are a few girls. They're outnumbered while living there even more than in the course as a whole, but they seem to have managed living there in the past.
 
 ## Commentary
 
@@ -241,6 +242,10 @@ I don't think it matters much.
 ###  Does being legally allowed to work in the US mean have a visa to work already, or just being eligible for a working visa?
 
 The former.
+
+### Why did you decide to take time off from uni to do this course? Why not wait til after graduation?
+
+
 
 ## Conclusion
 
