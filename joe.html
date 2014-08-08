@@ -2,6 +2,7 @@
 <head>
   <link rel="stylesheet" type="text/css" href="./readable.css">
   <title>Joe Shlegeris</title>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -33,7 +34,7 @@
 
 
 <div class="container">
-    <div class="row">
+    <div class="row" style="padding-top: 100px;">
       <div class="col-md-4 col-md-offset-2">
           <img style="width: 80%; height:80%;" class="img-responsive" src="https://media-dcdn.licdn.com/media/p/5/005/074/37e/05d282c.jpg">
       </div>
@@ -41,6 +42,7 @@
         <div class="page-header">
           <h1>Joe Shlegeris</h1>
           <p class="lead">Joe Shlegeris is the Greens candidate for the Noosa state seat of the Queensland Legislative Assembly.</p>
+          <p><a>facebook</a> <a>twitter</a> <a>tumblr</a> <a>list</a></p>
         </div>
       </div>
 
@@ -49,6 +51,8 @@
 
 <div class="row">
 <div class="col-md-8 col-md-offset-2">
+
+
 
 <h2 id="issues">Issues</h2>
 
@@ -77,8 +81,8 @@
 <p>THIS CONTENT WAS TAKEN FROM SARAH HANSON-YOUNG'S WEBPAGE AND SHOULD BE REMOVED</p>
 
 <p>If you are an Australian citizen aged 18 or over, you are eligible to vote. But first you have to enrol – and you need to be careful you don’t miss your chance.</p>
-<p>In many Australian States and Territories, you can’t enrol after the&nbsp;<a href="http://www.aec.gov.au/Elections/australian_electoral_system/Electoral_Procedures/Federal_Election_Timetable.htm" target="_blank">‘close of rolls’</a>&nbsp;which occurs shortly after an election is called – and that could happen without notice. If you don’t enrol by then, you won’t be able to vote in that election.</p>
-<p>Don’t get caught out! It’s important to have your say. Enrol now and be sure that you’ll be able to cast your vote on election day.</p>
+<p>In many Australian States and Territories, you can’t enrol after the&nbsp;<a href="http://www.aec.gov.au/Elections/australian_electoral_system/Electoral_Procedures/Federal_Election_Timetable.htm" target="_blank">‘close of rolls'</a>&nbsp;which occurs shortly after an election is called – and that could happen without notice. If you don’t enrol by then, you won’t be able to vote in that election.</p>
+<p>Don’t get caught out! It's important to have your say. Enrol now and be sure that you'll be able to cast your vote on election day.</p>
 <p>Not sure if you are enrolled?&nbsp;<a href="https://oevf.aec.gov.au/" target="_blank">Check your enrolment</a>&nbsp;online.</p>
 <p>Not enrolled? <a href="https://secure.aec.gov.au/OnlineForms/Enrolment/Form/Apply/83056040-0525-4745-bc91-a04d00a11c5d?mode=Wizard" target="_blank">Click here to enrol online</a> via the Australian Electoral Commission <a href="https://secure.aec.gov.au/OnlineForms/Enrolment/Form/Apply/83056040-0525-4745-bc91-a04d00a11c5d?mode=Wizard" target="_blank">website</a>.</p>
 
@@ -97,3 +101,23 @@
 </div>
 </div>
 </body>
+
+<script>
+$(document).ready(function(){
+    $("html,body").scrollTop(55);
+
+    // window.addEventListener("hashchange", function() {
+    //   setTimeout(function() {
+    //     console.log("whatever");
+    //     scrollBy(0, -100);
+    //   }, 100);
+    // });
+
+    $("a").on("click", function() {
+      setTimeout(function() {
+        console.log("whatever");
+        scrollBy(0, -100);
+      }, 10);
+    });
+});
+</script>
