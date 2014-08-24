@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <head>
   <link rel="stylesheet" type="text/css" href="./readable.css">
-  <title>Joe Shlegeris</title>
+  <title>Joe Shlegeris for Noosa Greens</title>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="./bootstrap.min.js"></script>
+  <meta name="description=" content="Joe Shlegeris is the Greens candidate for the Queensland state seat of Noosa. This website contains details about his policies and various media snippets.">
 </head>
 
 <body>
@@ -19,15 +20,15 @@
 
     <!-- </div> -->
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="http://greens.org.au/"><img style="width: 50%; height:50%;" class="img-responsive" src="http://greens.org.au/sites/greens.org.au/files/greens3col_0_0.png"></a></li>
+        <li><a href="http://greens.org.au/"><img alt="greens logo" style="width: 50%; height:50%;" class="img-responsive" src="http://greens.org.au/sites/greens.org.au/files/greens3col_0_0.png"></a></li>
 
 
 
         <li class="divider"></li>
         <li><a href="#">Joe</a></li>
         <li><a href="#issues">Key Policies</a></li>
-        <li><a href="#print">Print media</a></li>
-        <li><a href="#video">Video media</a></li>
+        <li><a href="http://joefornoosagreens.tumblr.com/tagged/print">Print media</a></li>
+        <li><a href="http://joefornoosagreens.tumblr.com/tagged/video">Video media</a></li>
         <li><a href="#enrol">Enrol to Vote</a></li>
         <li><a href="#help">Please help</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -41,7 +42,7 @@
 <div class="container">
     <div class="row" style="padding-top: 100px;">
       <div class="col-xs-4 col-xs-offset-2">
-          <img  class="img-responsive" src="https://media-dcdn.licdn.com/media/p/5/005/074/37e/05d282c.jpg">
+          <img alt="Picture of Joe" class="img-responsive" src="./joe_face.jpg">
       </div>
       <div class="col-xs-4">
         <div class="page-header">
@@ -76,7 +77,7 @@ Guarantee fair and accessible health care--keep the Noosa Hospital
         </a>
       </h4>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse in">
+    <div id="collapseOne" class="panel-collapse collapse">
       <div class="panel-body">
         <p>A Queensland Government document I found in August shows that the LNP
 government plans to close the public services of the Noosa Hospital.  This
@@ -233,6 +234,8 @@ your next birthday onward.</p>
 <p>Not sure if you are enrolled? Check your enrolment
 <a href="https://oevf.aec.gov.au">online</a>.</p>
 
+<p>See a map of the seat of Noosa <a href="http://www.ecq.qld.gov.au/myDistrict.aspx?id=756">here</a>.</p>
+
 <p>Not enrolled? <a href="https://secure.aec.gov.au/OnlineForms/Enrolment/Form/Apply/83056040-0525-4745-bc91-a04d00a11c5d?mode=Wizard">Click here to enrol online</a>
 via the Australian Electoral Commission website.</p>
 
@@ -262,7 +265,7 @@ via the Australian Electoral Commission website.</p>
 <p>Please send a confirmation of your gift by email to joe@noosagreens.org.  A
 receipt for your tax-deductible gift will be returned by email.</p>
 
-<strong>insert a "donate by paypal" button here</strong>
+<!-- <strong>insert a "donate by paypal" button here</strong> -->
       </div>
     </div>
   </div>
@@ -290,14 +293,18 @@ receipt for your tax-deductible gift will be returned by email.</p>
 
 <script>
 $(document).ready(function(){
-    $("html,body").scrollTop(55);
+    debugger;
+    if (window.location.hash != "") {
+      $("html,body").scrollTop(55);
+    }
 
-    window.addEventListener("hashchange", function() {
-      setTimeout(function() {
-        console.log("whatever");
-        scrollBy(0, -100);
-      }, 100);
-    });
+
+    // window.addEventListener("hashchange", function() {
+    //   setTimeout(function() {
+    //     console.log("whatever");
+    //     scrollBy(0, -100);
+    //   }, 100);
+    // });
 
     $("a").on("click", function(e) {
       if (e.currentTarget.classList[0] == "nojump") {
