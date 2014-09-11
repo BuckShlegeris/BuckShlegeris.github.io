@@ -13,17 +13,19 @@ $(function() {
 
   var playingEvent = undefined;
 
-  var colors = {"head": "rgb(200,0,0)",
-                "tail": "rgb(0,200,0)",
-                "wire": "rgb(0,0,200)"};
+  var colors = {"head": "rgb(255,0,0)",
+                "tail": "rgb(0,0,255)",
+                "wire": "rgb(200,200,100)"};
 
   var mode = "view";
 
   var drawCell = function(x, y, cellType) {
-    var startX = (x - screenX) * pixelsPerCell;
-    var startY = (y - screenY) * pixelsPerCell;
-    ctx.fillStyle = colors[cellType];
-    ctx.fillRect(startX, startY, pixelsPerCell, pixelsPerCell);
+    if (cellType) {
+      var startX = (x - screenX) * pixelsPerCell;
+      var startY = (y - screenY) * pixelsPerCell;
+      ctx.fillStyle = colors[cellType];
+      ctx.fillRect(startX, startY, pixelsPerCell, pixelsPerCell);
+    }
   }
 
   var drawWorld = function () {
@@ -115,9 +117,9 @@ $(function() {
   var mousePressed = false;
 
   var handleClick = function(e) {
+    mousePressed = true;
     if (mode=="view") {
       var pos = getMousePos(canvas, e);
-      mousePressed = true;
       dragX = pos["x"];
       dragY = pos["y"];
     } else if (mode == "draw") {
@@ -125,26 +127,57 @@ $(function() {
       if (!world[cell["y"]]) {
         world[cell["y"]] = {};
       }
-      world[cell["y"]][cell["x"]] = "wire";
+      if (!world[cell["y"]][cell["x"]])
+        world[cell["y"]][cell["x"]] = "wire";
+      else if (world[cell["y"]][cell["x"]] == "wire")
+        world[cell["y"]][cell["x"]] = "head";
+      else if (world[cell["y"]][cell["x"]] == "head")
+        world[cell["y"]][cell["x"]] = "tail";
+      else if (world[cell["y"]][cell["x"]] == "tail")
+        world[cell["y"]][cell["x"]] = undefined;
+
 
       drawWorld();
     }
+    e.preventDefault();
   };
 
   var handleUnclick = function(e) {
-    console.log('unclicked');
     mousePressed = false;
-    console.log(mousePressed);
   }
 
   var handleDrag = function(e) {
     if (mode=="view" && mousePressed) {
       var pos = getMousePos(canvas, e);
-      screenX += (dragX - pos["x"])/pixelsPerCell;
-      screenY += (dragY - pos["y"])/pixelsPerCell;
-      dragX = pos["x"];
-      dragY = pos["y"];
+      screenX += (dragX - pos.x)/pixelsPerCell;
+      screenY += (dragY - pos.y)/pixelsPerCell;
+      dragX = pos.x;
+      dragY = pos.y;
       drawWorld();
+    } else if (mode=="draw" && mousePressed) {
+      var cell = getMouseCell(canvas, e);
+      if (!world[cell.y] || !world[cell.y][cell.x]) {
+        var count = 0;
+        var x = cell.x;
+        var y = cell.y;
+        for (var dx = -1; dx <= 1; dx++) {
+          for (var dy = -1; dy <= 1; dy++) {
+            if (world[y+dy] && world[y+dy][x+dx] == "wire") {
+              count++;
+            }
+          };
+        };
+
+        if (count == 1 || count == 0) {
+          if (!world[cell["y"]]) {
+            world[cell["y"]] = {};
+          }
+          if (!world[cell["y"]][cell["x"]]) {
+            world[cell["y"]][cell["x"]] = "wire";
+            drawWorld();
+          }
+        }
+      }
     }
   }
 
