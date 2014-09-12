@@ -8,6 +8,7 @@ $(function() {
   var canvas = $("#c")[0];
   var ctx = canvas.getContext("2d");
 
+
   var dragX;
   var dragY;
 
@@ -18,6 +19,7 @@ $(function() {
                 "wire": "rgb(200,200,100)"};
 
   var mode = "view";
+
 
   var drawCell = function(x, y, cellType) {
     if (cellType) {
@@ -147,6 +149,9 @@ $(function() {
   }
 
   var handleDrag = function(e) {
+    var cell = getMouseCell(canvas, e);
+
+    $("#coords").html(cell.x + "," + cell.y)
     if (mode=="view" && mousePressed) {
       var pos = getMousePos(canvas, e);
       screenX += (dragX - pos.x)/pixelsPerCell;
@@ -155,7 +160,6 @@ $(function() {
       dragY = pos.y;
       drawWorld();
     } else if (mode=="draw" && mousePressed) {
-      var cell = getMouseCell(canvas, e);
       if (!world[cell.y] || !world[cell.y][cell.x]) {
         var count = 0;
         var x = cell.x;
@@ -203,6 +207,11 @@ $(function() {
 
   $("#zoom_out").on("click", function() {
     pixelsPerCell /= 1.5;
+    drawWorld();
+  })
+
+  $("#clear").on("click", function() {
+    world = {};
     drawWorld();
   })
 
