@@ -8,6 +8,11 @@ $(function() {
   var canvas = $("#c")[0];
   var ctx = canvas.getContext("2d");
 
+  var selecting = false;
+  var selectStartX = 0;
+  var selectStartY = 0;
+  var selectEndX = 0;
+  var selectEndY = 0;
 
   var dragX;
   var dragY;
@@ -45,6 +50,12 @@ $(function() {
     if (!playingEvent) {
       ctx.fillStyle = "rgba(100, 100, 200, 0.2)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
+    }
+
+    if (selecting) {
+      ctx.strokeStyle = "rgba(100, 100, 200, 0.2)";
+      var pos = getMousePos();
+      ctx.strokeRect(selectStartX, selectStartY, pos.x, pos.y);
     }
   }
 
@@ -102,7 +113,7 @@ $(function() {
     }
   }
 
-  function getMousePos(canvas, evt) {
+  var getMousePos = function (canvas, evt) {
     var rect = canvas.getBoundingClientRect();
     return {
       x: evt.clientX - rect.left,
@@ -110,7 +121,7 @@ $(function() {
     };
   }
 
-  function getMouseCell(canvas, evt) {
+  var getMouseCell = function (canvas, evt) {
     var pos = getMousePos(canvas, evt);
     return {x: Math.floor(pos["x"] / pixelsPerCell + screenX),
             y: Math.floor(pos["y"] / pixelsPerCell + screenY)};
@@ -122,30 +133,37 @@ $(function() {
     mousePressed = true;
     if (mode=="view") {
       var pos = getMousePos(canvas, e);
-      dragX = pos["x"];
-      dragY = pos["y"];
+      dragX = pos.x;
+      dragY = pos.y;
     } else if (mode == "draw") {
       var cell = getMouseCell(canvas, e);
-      if (!world[cell["y"]]) {
-        world[cell["y"]] = {};
+      if (!world[cell.y]) {
+        world[cell.y] = {};
       }
-      if (!world[cell["y"]][cell["x"]])
-        world[cell["y"]][cell["x"]] = "wire";
-      else if (world[cell["y"]][cell["x"]] == "wire")
-        world[cell["y"]][cell["x"]] = "head";
-      else if (world[cell["y"]][cell["x"]] == "head")
-        world[cell["y"]][cell["x"]] = "tail";
-      else if (world[cell["y"]][cell["x"]] == "tail")
-        world[cell["y"]][cell["x"]] = undefined;
-
+      if (!world[cell.y][cell.x])
+        world[cell.y][cell.x] = "wire";
+      else if (world[cell.y][cell.x] == "wire")
+        world[cell.y][cell.x] = "head";
+      else if (world[cell.y][cell.x] == "head")
+        world[cell.y][cell.x] = "tail";
+      else if (world[cell.y][cell.x] == "tail")
+        world[cell.y][cell.x] = undefined;
 
       drawWorld();
+    } else if (mode == "select") {
+      debugger;
+      var pos = getMousePos(canvas, e);
+      selecting = true;
+      selectStartX = pos.x;
+      selectStartY = pos.y;
     }
     e.preventDefault();
   };
 
   var handleUnclick = function(e) {
     mousePressed = false;
+    selecting = false;
+    drawWorld();
   }
 
   var handleDrag = function(e) {
@@ -182,6 +200,10 @@ $(function() {
           }
         }
       }
+    } else if (mode=="select" && mousePressed) {
+      debugger;
+      drawWorld();
+
     }
   }
 
@@ -192,12 +214,22 @@ $(function() {
   $("#c").on("mouseup", handleUnclick);
   $("#c").on("mousemove", handleDrag);
 
+  var changeMode = function(newMode) {
+    $("#"+mode).toggleClass("active");
+    mode = newMode;
+    $("#"+mode).toggleClass("active");
+  }
+
   $("#view").on("click", function () {
-    mode = "view";
+    changeMode("view")
   });
 
   $("#draw").on("click", function() {
-    mode = "draw";
+    changeMode("draw");
+  });
+
+  $("#select").on("click", function() {
+    changeMode("select");
   });
 
   $("#zoom_in").on("click", function() {

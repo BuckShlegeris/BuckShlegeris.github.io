@@ -7,6 +7,7 @@
   <link rel="stylesheet" type="text/css" href="./../bootstrap.css">
     <script src="./jquery.js"></script>
     <script type="text/javascript" src="./wireworld.js" defer></script>
+    <script type="text/javascript" src="./wireworld_compiler.js" defer></script>
     <style type="text/css">
       body {
         background-color: #b0c4de;
@@ -34,19 +35,19 @@
 
     <div class="col-xs-2">
       <div class="btn-group-vertical">
-        <button class="btn btn-default" id="step">Step</button>
-        <button class="btn btn-default" id="play">Play</button>
-        <button class="btn btn-default" id="pause">Pause</button>
-        <button class="btn btn-default" id="clear">Clear</button>
+        <button class="btn btn-lg btn-default" id="step"><span class="glyphicon glyphicon-step-forward"></span></button>
+        <button class="btn btn-lg btn-default" id="play"><span class="glyphicon glyphicon-play"></span></button>
+        <button class="btn btn-lg btn-default" id="pause"><span class="glyphicon glyphicon-pause"></span></button>
+        <button class="btn btn-lg btn-default" id="clear"><span class="glyphicon glyphicon-trash"></span></button>
       </div>
       <div class="btn-group-vertical">
-        <button class="btn btn-default" id="zoom_in">Zoom in</button>
-        <button class="btn btn-default" id="zoom_out">Zoom out</button>
+        <button class="btn btn-lg btn-default" id="zoom_in"><span class="glyphicon glyphicon-zoom-in"></span></button>
+        <button class="btn btn-lg btn-default" id="zoom_out"><span class="glyphicon glyphicon-zoom-out"></span></button>
       </div>
       <div class="btn-group-vertical">
-        <button class="btn btn-default" id="view">View</button>
-        <button class="btn btn-default" id="draw">Draw</button>
-        <button class="btn btn-default" id="select">Select</button>
+        <button class="btn btn-lg btn-default active" id="view"><span class="glyphicon glyphicon-move"></span></button>
+        <button class="btn btn-lg btn-default" id="draw"><span class="glyphicon glyphicon-pencil"></span></button>
+        <button class="btn btn-lg btn-default" id="select">Select</button>
       </div>
     </div>
     </div>
