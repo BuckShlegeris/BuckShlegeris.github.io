@@ -25,6 +25,8 @@ $(function() {
 
   var mode = "view";
 
+  var stepTime = 100;
+
 
   var drawCell = function(x, y, cellType) {
     if (cellType) {
@@ -53,6 +55,7 @@ $(function() {
     }
 
     if (selecting) {
+      debugger;
       ctx.strokeStyle = "rgba(100, 100, 200, 0.2)";
       var pos = getMousePos();
       ctx.strokeRect(selectStartX, selectStartY, pos.x, pos.y);
@@ -101,7 +104,7 @@ $(function() {
 
   var play = function () {
     if (!playingEvent) {
-      playingEvent = setInterval(evolve, 100);
+      playingEvent = setInterval(evolve, stepTime);
     }
   }
 
@@ -114,7 +117,7 @@ $(function() {
   }
 
   var getMousePos = function (canvas, evt) {
-    var rect = canvas.getBoundingClientRect();
+    var rect = ctx.canvas.getBoundingClientRect();
     return {
       x: evt.clientX - rect.left,
       y: evt.clientY - rect.top
@@ -151,7 +154,6 @@ $(function() {
 
       drawWorld();
     } else if (mode == "select") {
-      debugger;
       var pos = getMousePos(canvas, e);
       selecting = true;
       selectStartX = pos.x;
@@ -167,6 +169,7 @@ $(function() {
   }
 
   var handleDrag = function(e) {
+    console.log("what");
     var cell = getMouseCell(canvas, e);
 
     $("#coords").html(cell.x + "," + cell.y)
@@ -201,9 +204,8 @@ $(function() {
         }
       }
     } else if (mode=="select" && mousePressed) {
-      debugger;
+      console.log(selecting);
       drawWorld();
-
     }
   }
 
@@ -212,7 +214,7 @@ $(function() {
   $("#pause").on("click", pause);
   $("#c").on("mousedown", handleClick);
   $("#c").on("mouseup", handleUnclick);
-  $("#c").on("mousemove", handleDrag);
+  $("#c").mousemove(handleDrag);
 
   var changeMode = function(newMode) {
     $("#"+mode).toggleClass("active");
@@ -245,6 +247,17 @@ $(function() {
   $("#clear").on("click", function() {
     world = {};
     drawWorld();
+  })
+
+  $("#speed-controller").on("input", function () {
+    var newSpeed = parseInt($("#speed-controller").val());
+    stepTime = 150 - newSpeed*1.4;
+    $("#speed-display").html(stepTime);
+
+    if (playingEvent)
+      clearInterval(playingEvent);
+
+    playingEvent = setInterval(evolve, stepTime);
   })
 
   drawWorld();

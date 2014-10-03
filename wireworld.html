@@ -31,24 +31,22 @@
         </div>
       </div>
       <canvas id="c" style="background-color: black;" width="550" height="400"></canvas>
-    </div>
 
-    <div class="col-xs-2">
-      <div class="btn-group-vertical">
-        <button class="btn btn-lg btn-default" id="step"><span class="glyphicon glyphicon-step-forward"></span></button>
-        <button class="btn btn-lg btn-default" id="play"><span class="glyphicon glyphicon-play"></span></button>
-        <button class="btn btn-lg btn-default" id="pause"><span class="glyphicon glyphicon-pause"></span></button>
-        <button class="btn btn-lg btn-default" id="clear"><span class="glyphicon glyphicon-trash"></span></button>
+      <div style="font-size:30px;">
+        <a id="step"><span class="glyphicon glyphicon-step-forward"></span></a>
+        <a id="play"><span class="glyphicon glyphicon-play"></span></a>
+        <a id="pause"><span class="glyphicon glyphicon-pause"></span></a>
+        <a id="clear"><span class="glyphicon glyphicon-trash"></span></a>
+        <a id="zoom_in"><span class="glyphicon glyphicon-zoom-in"></span></a>
+        <a id="zoom_out"><span class="glyphicon glyphicon-zoom-out"></span></a>
+        <a id="view"><span class="glyphicon glyphicon-move"></span></a>
+        <a id="draw"><span class="glyphicon glyphicon-pencil"></span></a>
+        <a id="select">Select</a>
       </div>
-      <div class="btn-group-vertical">
-        <button class="btn btn-lg btn-default" id="zoom_in"><span class="glyphicon glyphicon-zoom-in"></span></button>
-        <button class="btn btn-lg btn-default" id="zoom_out"><span class="glyphicon glyphicon-zoom-out"></span></button>
-      </div>
-      <div class="btn-group-vertical">
-        <button class="btn btn-lg btn-default active" id="view"><span class="glyphicon glyphicon-move"></span></button>
-        <button class="btn btn-lg btn-default" id="draw"><span class="glyphicon glyphicon-pencil"></span></button>
-        <button class="btn btn-lg btn-default" id="select">Select</button>
-      </div>
+      <label>
+        <input type="range" value="50" id="speed-controller">
+        Speed: <p id="speed-display">50</p>
+      </label>
     </div>
     </div>
   </body>
