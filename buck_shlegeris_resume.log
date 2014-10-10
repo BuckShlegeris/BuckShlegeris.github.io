@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  7 SEP 2014 23:17
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  10 OCT 2014 12:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -629,12 +629,6 @@ File: omsptm.fd
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 35.
 
-Overfull \hbox (4.62097pt too wide) in paragraph at lines 91--92
-[]\T1/ptm/m/it/10 General: \T1/ptm/m/n/10 Ma-chine learn-ing, deep learn-ing, a
-l-go-rithms, op-er-at-ing sys-tems (esp. Linux ker-nel), C/C++/Java 
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 93--94
 
  []
@@ -667,7 +661,7 @@ xlive/2011/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/local/texlive/20
 -dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2011/texmf-dist/font
 s/type1/urw/times/utmr8a.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/ur
 w/times/utmri8a.pfb>
-Output written on buck_shlegeris_resume.pdf (1 page, 69517 bytes).
+Output written on buck_shlegeris_resume.pdf (1 page, 69744 bytes).
 PDF statistics:
  55 PDF objects out of 1000 (max. 8388607)
  39 compressed objects within 1 object stream
