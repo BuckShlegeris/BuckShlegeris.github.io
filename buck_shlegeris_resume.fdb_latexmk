@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1416275812 "buck_shlegeris_resume.tex" "buck_shlegeris_resume.pdf" "buck_shlegeris_resume" 
+["pdflatex"] 1416311838 "buck_shlegeris_resume.tex" "buck_shlegeris_resume.pdf" "buck_shlegeris_resume" 
   "/usr/local/texlive/2011/texmf-dist/tex/context/base/supp-pdf.mkii" 1306918461 71592 fe353e1fbd982ffc647f3e98ff74da96 ""
   "/usr/local/texlive/2011/texmf-dist/tex/generic/ifxetex/ifxetex.sty" 1284331290 1458 43ab4710dc82f3edeabecd0d099626b2 ""
   "/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/gettitlestring.sty" 1303254447 8237 52810bdb4db2270e717422560a104aea ""
@@ -94,9 +94,9 @@
   "/usr/local/texlive/2011/texmf-dist/tex/latex/tools/tabularx.sty" 1254151720 6076 90ca6002d5df607cc27699a4af5ff84e ""
   "/usr/local/texlive/2011/texmf-dist/tex/latex/url/url.sty" 1264379145 21932 e3a9cf32ee9b853b42be14c2f25b873c ""
   "/usr/local/texlive/2011/texmf-dist/tex/latex/xcolor/xcolor.sty" 1169481954 55224 a43bab84e0ac5e6efcaf9a98bde73a94 ""
-  "buck_shlegeris_resume.aux" 1416275813 576 535f218c00a29ef8eec1862a968a18ff ""
-  "buck_shlegeris_resume.out" 1416275813 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "buck_shlegeris_resume.tex" 1416275803 3601 f4f90b93277d2a759ee5ff40f55c34ff ""
+  "buck_shlegeris_resume.aux" 1416311844 576 535f218c00a29ef8eec1862a968a18ff ""
+  "buck_shlegeris_resume.out" 1416311843 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "buck_shlegeris_resume.tex" 1416311830 3602 307fa2400859768d020994f0457be302 ""
   "resume.cls" 1394866491 4379 db11e96d32672c84ad6e32a09b88777c ""
   (generated)
   "buck_shlegeris_resume.aux"
