@@ -11,7 +11,7 @@
       }
       div { padding: 128px 0 0 0; }
 
-      #swipeBox:before {
+/*      #swipeBox:before {
         content: "";
         position: absolute;
         z-index: -1;
@@ -20,7 +20,7 @@
         width: 100%;
         height: 30%;
         background: linear-gradient(transparent, black);
-      }
+      }*/
     </style>
     <script type="text/javascript">
       // TOUCH-EVENTS SINGLE-FINGER SWIPE-SENSING JAVASCRIPT
@@ -38,6 +38,7 @@
       var deltaY = 0;
       var horzDiff = 0;
       var vertDiff = 0;
+      var prevY = 0;
       var minLength = 72; // the shortest distance the user may swipe
       var swipeLength = 0;
       var swipeAngle = null;
@@ -51,7 +52,7 @@
 
       function touchStart(event,passedName) {
         // disable the standard ability to select the touched object
-        event.preventDefault();
+        // event.preventDefault();
         // get the total number of fingers touching the screen
         fingerCount = event.touches.length;
         // since we're looking for a swipe (single finger) and not a gesture (multiple fingers),
@@ -60,6 +61,7 @@
           // get the coordinates of the touch
           startX = event.touches[0].pageX;
           startY = event.touches[0].pageY;
+          prevY = startY;
           // store the triggering element ID
           triggerElementID = passedName;
         } else {
@@ -73,6 +75,9 @@
         if ( event.touches.length == 1 ) {
           curX = event.touches[0].pageX;
           curY = event.touches[0].pageY;
+          $('html, body').animate({ scrollTop: prevY - startY }, 10);
+          prevY = curY;
+
         } else {
           touchCancel(event);
         }
@@ -164,6 +169,7 @@
     </script>
   <style type="text/css"></style></head>
   <body>
+    <h1 style="margin: 0px;">fuck.com</h1>
     <div id="swipeBox" ontouchstart="touchStart(event,'swipeBox');" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchcancel="touchCancel(event);" style="position: relative; width: 100%; height: 100%;">
       <img src="./buck1.png"/>
       <p>Swipe the page with one finger to change the background color</p>
