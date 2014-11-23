@@ -10,6 +10,17 @@
         font-size:100px;
       }
       div { padding: 128px 0 0 0; }
+
+      #swipeBox:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 30%;
+        background: linear-gradient(transparent, black);
+      }
     </style>
     <script type="text/javascript">
       // TOUCH-EVENTS SINGLE-FINGER SWIPE-SENSING JAVASCRIPT
@@ -154,7 +165,7 @@
   <style type="text/css"></style></head>
   <body>
     <div id="swipeBox" ontouchstart="touchStart(event,'swipeBox');" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchcancel="touchCancel(event);" style="position: relative; width: 100%; height: 100%;">
-
+      <img src="./buck1.png"/>
       <p>Swipe the page with one finger to change the background color</p>
       <p>LEFT = ORANGE</p>
       <p>RIGHT = GREEN</p>
