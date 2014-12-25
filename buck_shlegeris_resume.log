@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  25 DEC 2014 09:08
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  25 DEC 2014 09:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -637,9 +637,9 @@ Package atveryend Info: Empty hook `BeforeClearDocument' on input line 94.
 [1
 
 {/usr/local/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+[2]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 94.
-
-(./buck_shlegeris_resume.aux)
+ (./buck_shlegeris_resume.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 94.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 94.
 Package rerunfilecheck Info: File `buck_shlegeris_resume.out' has not changed.
@@ -647,8 +647,8 @@ Package rerunfilecheck Info: File `buck_shlegeris_resume.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 94.
  ) 
 Here is how much of TeX's memory you used:
- 12493 strings out of 493633
- 215749 string characters out of 3143378
+ 12494 strings out of 493633
+ 215755 string characters out of 3143378
  294338 words of memory out of 3000000
  15551 multiletter control sequences out of 15000+200000
  32855 words of font info for 42 fonts, out of 3000000 for 9000
@@ -661,10 +661,10 @@ xlive/2011/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/local/texlive/20
 -dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2011/texmf-dist/font
 s/type1/urw/times/utmr8a.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/ur
 w/times/utmri8a.pfb>
-Output written on buck_shlegeris_resume.pdf (1 page, 69404 bytes).
+Output written on buck_shlegeris_resume.pdf (2 pages, 69847 bytes).
 PDF statistics:
- 55 PDF objects out of 1000 (max. 8388607)
- 39 compressed objects within 1 object stream
- 2 named destinations out of 1000 (max. 500000)
+ 59 PDF objects out of 1000 (max. 8388607)
+ 42 compressed objects within 1 object stream
+ 3 named destinations out of 1000 (max. 500000)
  49 words of extra memory for PDF output out of 10000 (max. 10000000)
 
