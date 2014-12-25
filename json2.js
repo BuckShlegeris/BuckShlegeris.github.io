@@ -237,7 +237,7 @@ if (typeof JSON !== 'object') {
         }
 
 // If we were called with a replacer function, then call the replacer to
-// obtain a replacement value.
+// obtain a r eplacement value.
 
         if (typeof rep === 'function') {
             value = rep.call(holder, key, value);
