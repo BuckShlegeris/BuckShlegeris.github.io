@@ -44,6 +44,9 @@
         removeCourse(course_name, event);
       })
       courses.push(course_name);
+      if (course_name == "MATH1115") {
+        $("#math1115_ad").removeClass("hidden");
+      }
     } else {
       $("#add-course").html("course not found!");
       setTimeout(function () {
@@ -110,7 +113,7 @@
         }
       });
 
-      cal_string += "\nEND:VCALENDAR"
-      console.log(cal_string);
+      cal_string += "\nEND:VCALENDAR";
+      download(cal_string, "anu_s1_timetable.ics", "text/plain");
     })
   })
