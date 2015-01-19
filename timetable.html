@@ -205,7 +205,9 @@
 
         <p>Here are some testimonials from other past students of Discovering Engineering:</p>
 
-        <p>INSERT QUOTES HERE</p>
+        <ul>
+          <li>"ENGN1211 and its ilk drove me away from engineering" - Anon</li>
+        </ul>
 
         <p>So are you really sure?</p>
 
@@ -258,14 +260,21 @@
 
   var addCourse = function (course_name) {
     data = _(timetable_data).filter(function (x) {return x.name == course_name;})
-    $("#add-course").html("add course");
-    _(data).each(putItemInCalendar);
-    var new_course_label = $("<a class='btn btn-danger'>delete " + course_name + "</a>");
-    $("#courses").append(new_course_label);
-    new_course_label.on("click", function (event) {
-      removeCourse(course_name, event);
-    })
-    courses.push(course_name);
+    if (data.length > 0) {
+      $("#add-course").html("add course");
+      _(data).each(putItemInCalendar);
+      var new_course_label = $("<a class='btn btn-danger'>delete " + course_name + "</a>");
+      $("#courses").append(new_course_label);
+      new_course_label.on("click", function (event) {
+        removeCourse(course_name, event);
+      })
+      courses.push(course_name);
+    } else {
+      $("#add-course").html("course not found!");
+      setTimeout(function () {
+        $("#add-course").html("add course");
+      }, 500);
+    }
   }
 
   var removeCourse = function(course_name, event) {
