@@ -5,6 +5,7 @@
   <script src="./underscore.js"></script>
   <script src="./jquery.js"></script>
   <script src="./ics.js"></script>
+  <script src="./bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="./bootstrap.css">
 </head>
 <body>
@@ -188,7 +189,23 @@
   </div>
 </div>
 
-
+<div class="modal fade" id="warningModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Are you sure you want to do that course?</h4>
+      </div>
+      <div class="modal-body">
+        <p>It appears you have selected Discovering Engineering as a course.&hellip;</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 
 <script>
@@ -196,7 +213,6 @@
 
   $.get("/timetable.json", {}, function (data) {
     timetable_data = data;
-
   })
 
   var lesson_template = "<div class='lesson' data-name='<%= item.name %>' data-id='<%= item.id %>'><p><b><%= item.name %></b>. <i><%= item.location %></i>. <%= item.info %> <a>(remove)</a></p></div>";
@@ -218,6 +234,9 @@
   var getCourse = function() {
     var course_name = $("#course-name").val().toUpperCase();
     if (course_name.length == 8 && courses.indexOf(course_name) === -1) {
+      if (course_name == "ENGN1211") {
+        $("#warningModal").modal();
+      };
       $("#add-course").html("adding...");
       $("#course-name").val("");
       addCourse(course_name);
