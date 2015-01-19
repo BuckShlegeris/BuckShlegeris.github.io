@@ -27,7 +27,7 @@
   </div>
 
 <div class="alert alert-info alert-dismissible" role="alert">
-  Use the download button to import your calendar to iCal or whatever. However, I haven't used recurring events, so the download button manually makes a new event for every lecture every week. This means that it is annoying to delete all of them. It's probably a good idea to put these events into their own calendar just in case. I don't think it works on Google Calendar atm :/
+  Use the download button to import your calendar to iCal or whatever. However, I haven't used recurring events, so the download button manually makes a new event for every lecture every week. This means that it is annoying to delete all of them. This feature might be improved in future.
 </div>
 
 <div class="row">
@@ -197,11 +197,23 @@
         <h4 class="modal-title">Are you sure you want to do that course?</h4>
       </div>
       <div class="modal-body">
-        <p>It appears you have selected Discovering Engineering as a course.&hellip;</p>
+        <p>It appears you have selected Discovering Engineering as a course. If you don't absolutely have to do ENGN1211, I sincerely urge you not to do so.</p>
+
+        <p>The ANU needs to fulfill a bunch of bullshit requirements for their engineering program to be approved by Engineers Australia. Instead of polluting their other courses with this, they've decided to stick it all in this course.</p>
+
+        <p>This means that Discovering Engineering is basically just a series of non sequiter random shit. Ethics! Sustainability! CAD! Teamwork! Project management! Accessibility! I don't have anything against any of those subjects, but it's not fun having random shitty slices of them thrown at you.</p>
+
+        <p>Here are some testimonials from other past students of Discovering Engineering:</p>
+
+        <p>INSERT QUOTES HERE</p>
+
+        <p>So are you really sure?</p>
+
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-warning confirmDE" data-dismiss="modal">Yes, I'm a fuckwit.</button>
+        <button type="button" class="btn btn-warning confirmDE" data-dismiss="modal">I'm an engineer, I have no choice.</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal">No, I'll do something else</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -236,10 +248,11 @@
     if (course_name.length == 8 && courses.indexOf(course_name) === -1) {
       if (course_name == "ENGN1211") {
         $("#warningModal").modal();
-      };
-      $("#add-course").html("adding...");
-      $("#course-name").val("");
-      addCourse(course_name);
+      } else {
+        $("#add-course").html("adding...");
+        $("#course-name").val("");
+        addCourse(course_name);
+      }
     }
   }
 
@@ -278,9 +291,15 @@
     });
 
     $("#add-course").on("click", function(event) {
-      event.preventDefault();
       getCourse();
-    })
+      event.preventDefault();
+    });
+
+    $(".confirmDE").on("click", function(event) {
+      $("#add-course").html("adding...");
+      $("#course-name").val("");
+      addCourse("ENGN1211");
+    });
 
     $("#download").on("click", function (event) {
       var ids = _($(".lesson")).map(function(x) { return $(x).data("id") } );
