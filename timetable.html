@@ -245,12 +245,13 @@ METHOD:PUBLISH
 X-WR-CALNAME:ANU Semester 1
 X-WR-TIMEZONE:Australia/Sydney
 X-WR-CALDESC:This is the classes for semester 1.
+
 </script>
 
 <script type="text/template" id="event-template">
 BEGIN:VEVENT
 DTSTART;TZID=Australia/Sydney:201502<%= first_day %>T<%= padded_hour %>0000
-DTEND;TZID=Australia/Sydney:201502<%= first_day %>T<%= padded_next_hour %>0000
+DTEND;TZID=Australia/Sydney:201502<%= first_day %>T<%= padded_end_hour %>0000
 RRULE:FREQ=WEEKLY;COUNT=15;BYDAY=<%= day.slice(0,2).toUpperCase() %>
 EXDATE;TZID=Australia/Sydney:201504<%= holiday2 %>T<%= padded_hour %>0000
 EXDATE;TZID=Australia/Sydney:201504<%= holiday1 %>T<%= padded_hour %>0000
@@ -260,7 +261,7 @@ DESCRIPTION:<%= description %>
 LAST-MODIFIED:20150119T172540Z
 LOCATION:<%= location %>
 SEQUENCE:1
-UID:<%= id %>
+UID:buck_anu2015s1_<%= id %>
 STATUS:CONFIRMED
 SUMMARY:<%= course %>
 TRANSP:OPAQUE

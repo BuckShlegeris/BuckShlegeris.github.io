@@ -34,10 +34,13 @@
   }
 
   var addCourse = function (course_name) {
-    data = _(timetable_data).filter(function (x) {return x.name == course_name;})
+    data = _(timetable_data).filter(function (x) {return x.name == course_name;}).sort();
+
     if (data.length > 0) {
       $("#add-course").html("add course");
+
       _(data).each(putItemInCalendar);
+
       var new_course_label = $("<a class='btn btn-danger'>delete " + course_name + "</a>");
       $("#courses").append(new_course_label);
       new_course_label.on("click", function (event) {
@@ -100,7 +103,7 @@
           var day = ["mon","tue","wed","thu","fri"].indexOf(lesson.day);
           cal_string += event_template({
             padded_hour: (lesson.hour < 10 ? "0" : "") + lesson.hour,
-            padded_next_hour: (lesson.hour < 9 ? "0" : "") + (lesson.hour + 1),
+            padded_end_hour: (lesson.hour < 9 ? "0" : "") + (lesson.hour + 1),
             first_day: 16 + day,
             day: lesson.day,
             description: lesson.info,
