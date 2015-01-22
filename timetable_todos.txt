@@ -1,0 +1,5 @@
+- typeahead
+- delete other tutorials
+- nicely render longer classes, including when downloaded
+- generalise, more colleges
+- paid ics downloads

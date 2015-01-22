@@ -6,21 +6,23 @@
   <script src="./jquery.js"></script>
   <script src="./download.js"></script>
   <script src="./bootstrap.min.js"></script>
+  <script src="./timetable.js" defer></script>
+  <script src="./timetable_analyser.js"></script>
   <link rel="stylesheet" type="text/css" href="./bootstrap.css">
 </head>
 <body>
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-2">
+    <div class="col-sm-3">
       <h1>timetable</h1>
     </div>
 
-    <div class="col-xs-10">
+    <div class="col-sm-9">
       <div class="well">
         <input id="course-name" placeholder="course code to add">
         <button id="add-course" class="btn btn-default">add course</button>
-        <button id="download" class="btn btn-primary">download as iCal</button>
+        <button id="download" class="btn btn-primary">download as .ics</button>
         <div id="courses" style="display: inline;"></div>
       </div>
     </div>
@@ -220,8 +222,6 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-
-<script src="./timetable.js" defer></script>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

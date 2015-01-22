@@ -1,122 +1,123 @@
- var timetable_data = [];
+var rawLessons = [];
+var timetableData = {};
 
-  $.get("/timetable.json", {}, function (data) {
-    timetable_data = data;
-  })
+$.get("/timetable.json", {}, function (data) {
+  rawLessons = data;
+  timetableData = rearrangeLessons(rawLessons);
 
-  var lesson_template = "<div class='lesson' data-name='<%= item.name %>' data-id='<%= item.id %>'><p><b><%= item.name %></b>. <i><%= item.location %></i>. <%= item.info %> <a>(remove)</a></p></div>";
+});
 
-  var putItemInCalendar = function (item) {
-    var place = _($(".timeslot")).filter(function(x) {
-      return $(x).data("day") == item.day &&
-                  $(x).data("hour") == item.hour; })[0];
-    var thing = $(_.template(lesson_template, { item: item }));
-    $(thing.find("a")[0]).on("click", function (event) {
-      event.preventDefault();
-      thing.remove();
-    })
-    $(place).append(thing);
-  }
+var lessonTemplate = "<div class='lesson' data-name='<%= item.name %>' data-id='<%= item.id %>'><p><b><%= item.name %></b>. <i><%= item.location %></i>. <%= item.info %> <a>(remove)</a></p></div>";
 
-  var courses = [];
-
-  var getCourse = function() {
-    var course_name = $("#course-name").val().toUpperCase();
-    if (course_name.length == 8 && courses.indexOf(course_name) === -1) {
-      if (course_name == "ENGN1211") {
-        $("#warningModal").modal();
-      } else {
-        $("#add-course").html("adding...");
-        $("#course-name").val("");
-        addCourse(course_name);
-      }
-    }
-  }
-
-  var addCourse = function (course_name) {
-    data = _(timetable_data).filter(function (x) {return x.name == course_name;}).sort();
-
-    if (data.length > 0) {
-      $("#add-course").html("add course");
-
-      _(data).each(putItemInCalendar);
-
-      var new_course_label = $("<a class='btn btn-danger'>delete " + course_name + "</a>");
-      $("#courses").append(new_course_label);
-      new_course_label.on("click", function (event) {
-        removeCourse(course_name, event);
-      })
-      courses.push(course_name);
-      if (course_name == "MATH1115") {
-        $("#math1115_ad").removeClass("hidden");
-      }
-    } else {
-      $("#add-course").html("course not found!");
-      setTimeout(function () {
-        $("#add-course").html("add course");
-      }, 500);
-    }
-  }
-
-  var removeCourse = function(course_name, event) {
+var putItemInCalendar = function (item) {
+  var place = _($(".timeslot")).filter(function(x) {
+    return $(x).data("day") == item.day &&
+                $(x).data("hour") == item.hour; })[0];
+  var thing = $(_.template(lessonTemplate, { item: item }));
+  $(thing.find("a")[0]).on("click", function (event) {
     event.preventDefault();
-    event.target.remove();
-    courses = _(courses).without(course_name);
-    $(".lesson").each(function(index, lesson) {
-      var $lesson = $(lesson);
-      if ($lesson.data("name") == course_name) {
-        $lesson.remove();
-      }
-    });
+    thing.remove();
+  })
+  $(place).append(thing);
+}
 
+var courses = [];
 
-  }
-
-  $(function() {
-    $(document).keydown(function(e) {
-      if (e.which == 13) {
-        event.preventDefault();
-        getCourse();
-      }
-    });
-
-    $("#add-course").on("click", function(event) {
-      getCourse();
-      event.preventDefault();
-    });
-
-    $(".confirmDE").on("click", function(event) {
+var getCourse = function() {
+  var courseName = $("#course-name").val().toUpperCase();
+  if (courseName.length == 8 && courses.indexOf(courseName) === -1) {
+    if (courseName == "ENGN1211") {
+      $("#warningModal").modal();
+    } else {
       $("#add-course").html("adding...");
       $("#course-name").val("");
-      addCourse("ENGN1211");
+      addCourse(courseName);
+    }
+  }
+}
+
+var addCourse = function (courseName) {
+  data = _(rawLessons).filter(function (x) {return x.name == courseName;}).sort();
+
+  if (data.length > 0) {
+    $("#add-course").html("add course");
+
+    _(data).each(putItemInCalendar);
+
+    var newCourseLabel = $("<a class='btn btn-danger'>delete " + courseName + "</a>");
+    $("#courses").append(newCourseLabel);
+    newCourseLabel.on("click", function (event) {
+      removeCourse(courseName, event);
+    })
+    courses.push(courseName);
+    if (courseName == "MATH1115") {
+      $("#math1115_ad").removeClass("hidden");
+    }
+  } else {
+    $("#add-course").html("course not found!");
+    setTimeout(function () {
+      $("#add-course").html("add course");
+    }, 500);
+  }
+}
+
+var removeCourse = function(courseName, event) {
+  event.preventDefault();
+  event.target.remove();
+  courses = _(courses).without(courseName);
+  $(".lesson").each(function(index, lesson) {
+    var $lesson = $(lesson);
+    if ($lesson.data("name") == courseName) {
+      $lesson.remove();
+    }
+  });
+}
+
+$(function() {
+  $(document).keydown(function(e) {
+    if (e.which == 13) {
+      event.preventDefault();
+      getCourse();
+    }
+  });
+
+  $("#add-course").on("click", function(event) {
+    getCourse();
+    event.preventDefault();
+  });
+
+  $(".confirmDE").on("click", function(event) {
+    $("#add-course").html("adding...");
+    $("#course-name").val("");
+    addCourse("ENGN1211");
+  });
+
+  $("#download").on("click", function (event) {
+    var ids = _($(".lesson")).map(function(x) { return $(x).data("id") } );
+
+    var calString = $("#cal-header").text();
+
+    var eventTemplate = _.template($("#event-template").html());
+
+    _(rawLessons).each(function (lesson) {
+      if (ids.indexOf(lesson.id) >= 0) {
+        var day = ["mon","tue","wed","thu","fri"].indexOf(lesson.day);
+        calString += eventTemplate({
+          padded_hour: (lesson.hour < 10 ? "0" : "") + lesson.hour,
+          padded_end_hour: (lesson.hour < 9 ? "0" : "") + (lesson.hour + 1),
+          first_day: 16 + day,
+          day: lesson.day,
+          description: lesson.info,
+          location: lesson.location,
+          course: lesson.name + " " + lesson.info,
+          id: lesson.id,
+          holiday1: (6 + day < 10) ? "0" + (6 + day) : (6 + day),
+          holiday2: 13 + day
+        });
+      }
     });
 
-    $("#download").on("click", function (event) {
-      var ids = _($(".lesson")).map(function(x) { return $(x).data("id") } );
-
-      var cal_string = $("#cal-header").text();
-
-      var event_template = _.template($("#event-template").html());
-
-      _(timetable_data).each(function (lesson) {
-        if (ids.indexOf(lesson.id) >= 0) {
-          var day = ["mon","tue","wed","thu","fri"].indexOf(lesson.day);
-          cal_string += event_template({
-            padded_hour: (lesson.hour < 10 ? "0" : "") + lesson.hour,
-            padded_end_hour: (lesson.hour < 9 ? "0" : "") + (lesson.hour + 1),
-            first_day: 16 + day,
-            day: lesson.day,
-            description: lesson.info,
-            location: lesson.location,
-            course: lesson.name + " " + lesson.info,
-            id: lesson.id,
-            holiday1: (6 + day < 10) ? "0" + (6 + day) : (6 + day),
-            holiday2: 13 + day
-          });
-        }
-      });
-
-      cal_string += "\nEND:VCALENDAR";
-      download(cal_string, "anu_s1_timetable.ics", "text/plain");
-    })
+    calString += "\nEND:VCALENDAR";
+    download(calString, "anu_s1_timetable.ics", "text/plain");
   })
+})
