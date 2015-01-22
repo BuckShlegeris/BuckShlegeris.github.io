@@ -7,18 +7,28 @@ $.get("/timetable.json", {}, function (data) {
 
 });
 
-var lessonTemplate = "<div class='lesson' data-name='<%= item.name %>' data-id='<%= item.id %>'><p><b><%= item.name %></b>. <i><%= item.location %></i>. <%= item.info %> <a>(remove)</a></p></div>";
+var lessonTemplate = $("#compulsary-event-template").text();
 
 var putItemInCalendar = function (item) {
   var place = _($(".timeslot")).filter(function(x) {
     return $(x).data("day") == item.day &&
                 $(x).data("hour") == item.hour; })[0];
-  var thing = $(_.template(lessonTemplate, { item: item }));
-  $(thing.find("a")[0]).on("click", function (event) {
+  var displayDiv = $(_.template(lessonTemplate, { item: item }));
+  $(displayDiv.find("a")[0]).on("click", function (event) {
     event.preventDefault();
-    thing.remove();
+    displayDiv.remove();
   })
-  $(place).append(thing);
+  $(place).append(displayDiv);
+}
+
+var putLessonGroupInCalendar = function (group) {
+  if (group[0] == "group") {
+    for (var i = group[1].length - 1; i >= 0; i--) {
+      putItemInCalendar(group[1][i]);
+    };
+  } else {
+    putItemInCalendar(group[1]);
+  }
 }
 
 var courses = [];
@@ -37,12 +47,12 @@ var getCourse = function() {
 }
 
 var addCourse = function (courseName) {
-  data = _(rawLessons).filter(function (x) {return x.name == courseName;}).sort();
+  data = timetableData[courseName];
 
   if (data.length > 0) {
     $("#add-course").html("add course");
 
-    _(data).each(putItemInCalendar);
+    _(data).each(putLessonGroupInCalendar);
 
     var newCourseLabel = $("<a class='btn btn-danger'>delete " + courseName + "</a>");
     $("#courses").append(newCourseLabel);

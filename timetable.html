@@ -268,5 +268,16 @@ TRANSP:OPAQUE
 END:VEVENT
 </script>
 
+<script type="text/template" id="compulsary-event-template">
+  <div class='lesson' data-name='<%= item.name %>' data-id='<%= item.id %>'>
+    <p>
+      <strong><%= item.name %></strong>.
+      <em><%= item.location %></em>.
+      <%= item.info %>
+      <a>(remove)</a>
+    </p>
+  </div>
+</script>
+
 </body>
 </html>
