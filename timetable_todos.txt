@@ -1,5 +1,7 @@
 - typeahead
-- delete other tutorials
+- delete other tutorials DONE
+- other timeslots
 - nicely render longer classes, including when downloaded
 - generalise, more colleges
 - paid ics downloads
+- generalize everything

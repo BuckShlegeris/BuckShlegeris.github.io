@@ -7,27 +7,49 @@ $.get("/timetable.json", {}, function (data) {
 
 });
 
-var lessonTemplate = $("#compulsary-event-template").text();
+var compulsaryLessonTemplate = $("#compulsary-event-template").text();
 
-var putItemInCalendar = function (item) {
+var putCompulsaryItemInCalendar = function (item) {
   var place = _($(".timeslot")).filter(function(x) {
     return $(x).data("day") == item.day &&
                 $(x).data("hour") == item.hour; })[0];
-  var displayDiv = $(_.template(lessonTemplate, { item: item }));
-  $(displayDiv.find("a")[0]).on("click", function (event) {
+  var displayDiv = $(_.template(compulsaryLessonTemplate, { item: item }));
+
+  $(place).append(displayDiv);
+}
+
+var groupLessonTemplate = $("#group-event-template").text();
+
+var putGroupItemInCalendar = function (item) {
+  var place = _($(".timeslot")).filter(function(x) {
+    return $(x).data("day") == item.day &&
+                $(x).data("hour") == item.hour; })[0];
+  var displayDiv = $(_.template(groupLessonTemplate, { item: item }));
+
+  $(displayDiv.find("a.choose")[0]).on("click", function (event) {
     event.preventDefault();
-    displayDiv.remove();
-  })
+    _($(".lesson")).each(function(item) {
+      var $item = $(item);
+      if ($item.data("group") == displayDiv.data("group")) {
+        if ($item.data("id") != displayDiv.data("id")) {
+          $item.remove();
+        } else {
+          displayDiv.find("a.choose").remove();
+        }
+      }
+    });
+  });
+
   $(place).append(displayDiv);
 }
 
 var putLessonGroupInCalendar = function (group) {
   if (group[0] == "group") {
     for (var i = group[1].length - 1; i >= 0; i--) {
-      putItemInCalendar(group[1][i]);
+      putGroupItemInCalendar(group[1][i]);
     };
   } else {
-    putItemInCalendar(group[1]);
+    putCompulsaryItemInCalendar(group[1]);
   }
 }
 

@@ -269,12 +269,25 @@ END:VEVENT
 </script>
 
 <script type="text/template" id="compulsary-event-template">
-  <div class='lesson' data-name='<%= item.name %>' data-id='<%= item.id %>'>
+  <div class='lesson' data-eventtype='compulsary'
+    data-name='<%= item.name %>' data-id='<%= item.id %>'>
     <p>
       <strong><%= item.name %></strong>.
       <em><%= item.location %></em>.
       <%= item.info %>
-      <a>(remove)</a>
+    </p>
+  </div>
+</script>
+
+<script type="text/template" id="group-event-template">
+  <div class='lesson' data-eventtype='group'
+    data-group='<%= item.name + filterNumbers(item.info) %>'
+    data-name='<%= item.name %>' data-id='<%= item.id %>'>
+    <p>
+      <strong><%= item.name %></strong>.
+      <em><%= item.location %></em>.
+      <%= item.info %>
+      <a class="choose">(choose)</a>
     </p>
   </div>
 </script>
