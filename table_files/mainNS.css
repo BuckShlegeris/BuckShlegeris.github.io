@@ -1,0 +1,402 @@
+body   
+{ margin: 0px; 
+  font-family: verdana, arial, helvetica; 
+  font-size: small; 
+   background: #ffffff;
+  <!-- color: #005A94; -->
+  color: #000000;  }
+ 
+p
+{ margin-left: 12px;  
+  margin-right: 12px;
+  margin-top: 6px ; }
+
+.nav, .notes
+{ font-family: verdana, arial, helvetica; 
+  font-size: x-small;
+  color: #005A94; }
+  
+H1
+{ color: maroon;
+  font-family: verdana, arial, helvetica; 
+  font-size: medium;
+}
+
+
+H2
+{ color: blue;
+  font-family: verdana, arial, helvetica; 
+  font-size: medium;
+}
+
+H3
+{ color: maroon;
+  font-family: verdana, arial, helvetica; 
+  font-size: small;
+}
+
+/******* TABLE STYLES ***  *****/
+
+tr 
+{ font-family: verdana, arial, helvetica;
+  font-size: small; }
+  
+td 
+{ font-family: verdana, arial, helvetica; 
+  font-size: small;  }
+  
+.title
+{ font-family: verdana, arial, helvetica;
+  font-size: medium;
+  font-weight: bold;
+  color: #ffcc00; }   
+  
+.tbdr
+{ background: #ffffff;
+  font-family: verdana, arial, helvetica; 
+  font-size: small; 
+  border-left: 1px solid #999999; 
+  border-top: 1px solid #999999;
+  border-bottom: 1px solid #999999; }
+  
+.tbdrlogin
+{ border: 1px solid #666666; }
+  
+.hbdr
+{ background: #cccccc; 
+  font-weight: bold;
+  border-right: 1px solid #999999;
+  border-bottom: 1px solid #999999; }
+.hbdrLeft
+{ background: #cccccc; 
+  font-weight: bold;  
+  text-align: left;
+  border-right: 1px solid #999999;
+  border-bottom: 1px solid #999999; }
+.hbdrRight
+{ background: #cccccc; 
+  font-weight: bold; 
+  text-align: right;
+  border-right: 1px solid #999999;
+  border-bottom: 1px solid #999999; }
+.hbdrCenter
+{ background: #cccccc; 
+  font-weight: bold;  
+  text-align: center;
+  border-right: 1px solid #999999;
+  border-bottom: 1px solid #999999; }
+  
+.altbdr
+{ background: #eaeaea;
+  border-right: 1px solid #999999;
+  border-top: 1px solid #dddddd; }  
+.altbdrLeft
+{ background: #eaeaea; 
+  text-align: left; 
+  border-right: 1px solid #999999;
+  border-top: 1px solid #dddddd;}
+.altbdrRight
+{ background: #eaeaea; 
+  text-align: right; 
+  border-right: 1px solid #999999;
+  border-top: 1px solid #dddddd;}
+.altbdrCenter
+{ background: #eaeaea; 
+  text-align: center;
+  border-right: 1px solid #999999;
+  border-top: 1px solid #dddddd; }
+  
+.bdr
+{ border-right: 1px solid #999999;
+  border-top: 1px solid #dddddd; } 
+.bdrLeft
+{ text-align: left;
+  border-right: 1px solid #999999;
+  border-top: 1px solid #dddddd; }
+.bdrRight
+{ text-align: right;
+  border-right: 1px solid #999999;
+  border-top: 1px solid #dddddd; }
+.bdrCenter
+{ text-align: center;
+  border-right: 1px solid #999999;
+  border-top: 1px solid #dddddd; }
+
+.footerWhite
+{ font-family: arial, helvetica; 
+  font-size: x-small;
+  color: #ffffff; }
+  
+.footerBlue
+{ font-family: arial, helvetica; 
+  font-size: x-small;
+  color: #005A94; }
+  
+.footerTitle
+{ font-family: arial, helvetica; 
+  font-size: medium;
+  font-weight: bold;
+  color: #ffffff; }
+
+/******* LINK STYLES ********/
+
+a:link, a:visited, a:active
+{ font-family: verdana, arial, helvetica; 
+  font-size: small;
+  color: blue; 
+  text-decoration: none; }
+  
+a:hover
+{ font-family: verdana, arial, helvetica; 
+  font-size: small;
+  color: #005Add; 
+  text-decoration: underline; }
+  
+a.nav:link, a.nav:visited, a.nav:active
+{ font-family: verdana, arial, helvetica; 
+  font-size: x-small;
+  color: #005Add; 
+  text-decoration: none; }
+  
+a.nav:hover
+{ font-family: verdana, arial, helvetica; 
+  font-size: x-small;
+ /* color: maroon; 
+  background: #ffcccc;*/
+  text-decoration: underline; }
+  
+a.footer:link, a.footer:visited, a.footer:active
+{ font-family: verdana, arial, helvetica; 
+  font-size: x-small;
+  color: #ffffff;
+  text-decoration: underline; }
+
+a.footer:hover
+{ font-family: verdana, arial, helvetica; 
+  font-size: xx-small;
+  color: maroon;
+  background: #ffffcc;
+  text-decoration: underline; }
+
+a.cright:link, a.cright:visited, a.cright:active
+{ font-family: arial, helvetica; 
+  font-size: x-small;
+  color: #005A94;
+  text-decoration: underline; }
+
+a.cright:hover
+{ font-family: arial, helvetica; 
+  font-size: x-small;
+  color: #ff0000;
+  text-decoration: underline; }
+  
+
+/******* ERROR STYLES ********/
+
+.alert
+{ color: #ff0000; }
+
+.error
+{ color: #ff0000;
+  font-weight: bold; }
+  
+
+/******** FORM STYLES ********/
+ 
+select, input, option
+{ font-family: verdana, arial, helvetica; 
+  font-size: small; }
+  
+
+/******** buttons *********/
+
+.btnLgeGreen
+{ font-size: small; 
+  font-weight: bold; }
+  
+.btnLgeWideGreen
+{ font-size: small; 
+  font-weight: bold; }
+
+.btnLgeWidestGreen
+{ font-size: small; 
+  font-weight: bold; }
+  
+    
+.btnLgeGrey
+{ font-size: small; 
+  font-weight: bold; }
+    
+.btnLgeWideGrey
+{ font-size: small; 
+  font-weight: bold; }
+    
+.btnLgeWidestGrey
+{ font-size: small; 
+  font-weight: bold; }
+  
+    
+.btnLgeRed
+{ font-size: small; 
+  font-weight: bold; }
+  
+.btnLgeWideRed
+{ font-size: small; 
+  font-weight: bold; }
+  
+.btnLgeWidestRed
+{ font-size: small; 
+  font-weight: bold; }
+    
+    
+.btnLgeOrange
+{ font-size: small; 
+  font-weight: bold; }
+  
+.btnLgeWideOrgange
+{ font-size: small; 
+  font-weight: bold; }
+  
+.btnLgeWidestOrange
+{ font-size: small; 
+  font-weight: bold; }
+  
+  
+.btnLgeBlue
+{ font-size: small; 
+  font-weight: bold; }
+  
+.btnLgeWideBlue
+{ font-size: small; 
+  font-weight: bold; }
+  
+.btnLgeWidestBlue
+{ font-size: small; 
+  font-weight: bold; }
+  
+  
+.btnSmlGreen
+{ font-size: x-small; 
+  font-weight: normal; } 
+  
+   
+.btnSmlRed
+{ font-size: x-small; 
+  font-weight: normal; }
+  
+   
+.btnSmlOrange
+{ font-size: x-small; 
+  font-weight: normal; }
+  
+.btnSmlGrey
+{ font-size: x-small; 
+  font-weight: normal; }
+
+
+
+
+ 
+  /****   menus   *******************************************************/
+
+.menuBody {
+		border-left: 1px solid #666666;
+		border-right: 1px solid #666666;
+		border-bottom: 1px solid #666666;
+	}
+	
+	.menuTable {
+		border-right: 1px solid #DDDDDD;
+	}
+	
+	.menuSelectedItem {
+		background-color: #DAC97E;
+		background-image: URL(_images/menu/menu_sel_bg.gif);
+		border-top: 1px solid #FEF2B7;
+		border-bottom: 1px solid #C7A401;
+
+		padding-top: 2px; 
+		padding-bottom: 2px;
+
+	}
+	
+	.menuItem {
+		background-color: #FFFFFF;
+		background-image: URL(http://styles.anu.edu.au/_images/menu/menu_bg.gif);
+		border-top: 1px solid #EFEFEF;
+		border-bottom: 1px solid #DDDDDD;
+
+		padding-top: 2px; 
+		padding-bottom: 2px;
+
+	}
+	
+	/****************************************************/
+
+.navBlack
+{
+    color:              #000000;
+    font-size:          xx-small;
+}
+
+a.navBlack,
+a.navBlack:link, 
+a.navBlack:visited
+{
+    color:              #000000; 
+    text-decoration:    none;
+}
+
+a.navBlack:hover, 
+a.navBlack:active
+{ 
+    color:              #000000; 
+    text-decoration:    underline;
+}
+
+/****************************************************/
+
+/****************************************************/
+
+a.lftNav,
+a.lftNav:link
+{
+    color:              #444444;
+    text-decoration:    none;
+}
+
+a.lftNav:visited
+{
+    color:              #002266;
+    text-decoration:    none;
+}
+
+a.lftNav:active
+{
+    color:              #8C7C3C;
+}
+
+a.lftNav:hover
+{
+    color:              #8C7C3C;
+    text-decoration:    underline;
+}
+
+/**** link and navigation styles **********************************************/
+
+a,
+a:link
+{
+    color:              #005ADD;
+}
+
+a:visited
+{
+    color:              #002266;
+}
+
+a:hover,
+a:active
+{
+    color:              #8C7C3C;
+}
