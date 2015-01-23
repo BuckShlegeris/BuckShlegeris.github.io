@@ -4,7 +4,20 @@ var timetableData = {};
 $.get("/timetable.json", {}, function (data) {
   rawLessons = data;
   timetableData = rearrangeLessons(rawLessons);
+  var courses = Object.keys(timetableData);
 
+  // $('input.typeahead').typeahead({
+  //   hint: true,
+  //   highlight: true,
+  //   minLength: 1,
+  //   limit: 10
+  // }, {
+  //     name: 'states',
+  //     displayKey: 'value',
+  //     source: substringMatcher(courses)
+  // });
+  // $('.typeahead.input-sm').siblings('input.tt-hint').addClass('hint-small');
+  // $('.typeahead.input-lg').siblings('input.tt-hint').addClass('hint-large');
 });
 
 var compulsaryLessonTemplate = $("#compulsary-event-template").text();
@@ -32,9 +45,9 @@ var putGroupItemInCalendar = function (item) {
       var $item = $(item);
       if ($item.data("group") == displayDiv.data("group")) {
         if ($item.data("id") != displayDiv.data("id")) {
-          $item.remove();
+          $item.hide();
         } else {
-          displayDiv.find("a.choose").remove();
+          displayDiv.find("a.choose").hide("scale");
         }
       }
     });
@@ -95,23 +108,23 @@ var addCourse = function (courseName) {
 
 var removeCourse = function(courseName, event) {
   event.preventDefault();
-  event.target.remove();
+  $(event.target).hide("slide");
   courses = _(courses).without(courseName);
   $(".lesson").each(function(index, lesson) {
     var $lesson = $(lesson);
     if ($lesson.data("name") == courseName) {
-      $lesson.remove();
+      $lesson.hide();
     }
   });
 }
 
 $(function() {
-  $(document).keydown(function(e) {
+  document.onkeydown = function(e) {
     if (e.which == 13) {
       event.preventDefault();
       getCourse();
     }
-  });
+  };
 
   $("#add-course").on("click", function(event) {
     getCourse();
@@ -152,4 +165,4 @@ $(function() {
     calString += "\nEND:VCALENDAR";
     download(calString, "anu_s1_timetable.ics", "text/plain");
   })
-})
+});

@@ -20,7 +20,7 @@
 
     <div class="col-sm-9">
       <div class="well">
-        <input id="course-name" placeholder="course code to add">
+        <input type="text" id="course-name" placeholder="course code to add">
         <button id="add-course" class="btn btn-default">add course</button>
         <button id="download" class="btn btn-primary">download as .ics</button>
         <div id="courses" style="display: inline;"></div>
@@ -31,6 +31,9 @@
 <div class="row">
   <div class="col-xs-12">
     <p id="math1115_ad" class="hidden"><a href="https://soundcloud.com/buckmbs/sets/buck-et-al" target="_blank">listen to the 1115 song</a></p>
+
+    <p>calendar downloads currently don't work in safari. For the moment, try not using a shit browser.</p>
+
     <table class="table table-striped table-condensed">
       <tbody>
         <table class="table table-striped table-condensed">
@@ -43,7 +46,21 @@
             <th class="col-sm-2">thu</th>
             <th class="col-sm-2">fri</th>
         </tr>
-
+          <tr>
+            <th>
+              8:00
+            </th>
+              <td class="timeslot" data-hour="8" data-day="mon">
+              </td>
+              <td class="timeslot" data-hour="8" data-day="tue">
+              </td>
+              <td class="timeslot" data-hour="8" data-day="wed">
+              </td>
+              <td class="timeslot" data-hour="8" data-day="thu">
+              </td>
+              <td class="timeslot" data-hour="8" data-day="fri">
+              </td>
+          </tr>
           <tr>
             <th>
               9:00

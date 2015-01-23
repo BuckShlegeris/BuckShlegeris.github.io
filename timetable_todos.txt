@@ -1,7 +1,10 @@
-- typeahead
+- typeahead GIVEN UP
 - delete other tutorials DONE
 - other timeslots
 - nicely render longer classes, including when downloaded
 - generalise, more colleges
 - paid ics downloads
 - generalize everything
+
+- fix firefox
+- fix safari ics
