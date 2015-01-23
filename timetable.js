@@ -92,7 +92,7 @@ var addCourse = function (courseName) {
 
     _(data).each(putLessonGroupInCalendar);
 
-    var newCourseLabel = $("<a class='btn btn-danger'>delete " + courseName + "</a>");
+    var newCourseLabel = $("<a class='btn btn-sm btn-danger'>delete " + courseName + "</a>");
     $("#courses").append(newCourseLabel);
     newCourseLabel.on("click", function (event) {
       removeCourse(courseName, event);
@@ -122,6 +122,16 @@ var removeCourse = function(courseName, event) {
 }
 
 $(function() {
+  var calendarTemplate = _.template($("#calendar-template").text());
+  var calendarHtml = calendarTemplate({
+    start_hour: 8,
+    normal_start_hour: 9,
+    normal_end_hour: 18,
+    end_hour: 20
+  });
+
+  $("#cal-container").append(calendarHtml);
+
   document.onkeydown = function(e) {
     if (e.which == 13) {
       event.preventDefault();
