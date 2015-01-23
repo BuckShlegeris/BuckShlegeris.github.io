@@ -122,6 +122,16 @@ var removeCourse = function(courseName, event) {
 }
 
 $(function() {
+  var calendarTemplate = _.template($("#calendar-template").text());
+  var calendarHtml = calendarTemplate({
+    start_hour: 8,
+    normal_start_hour: 9,
+    normal_end_hour: 18,
+    end_hour: 20
+  });
+
+  $("#cal-container").append(calendarHtml);
+
   document.onkeydown = function(e) {
     if (e.which == 13) {
       event.preventDefault();
