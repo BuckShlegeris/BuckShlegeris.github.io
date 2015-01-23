@@ -20,6 +20,12 @@ var putItemInCalendar = function (item, displayDiv) {
         $(row).show();
       }
     })
+  } else if (item.hour > 17) {
+    _($(".timetable-row")).each(function(row) {
+      if (parseInt($(row).data("hour")) > 16) {
+        $(row).show();
+      }
+    })
   }
 
   $(place).append(displayDiv);

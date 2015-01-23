@@ -1,6 +1,6 @@
 - typeahead GIVEN UP
 - delete other tutorials DONE
-- other timeslots
+- other timeslots DONE
 - nicely render longer classes, including when downloaded
 - generalise, more colleges
 - paid ics downloads
