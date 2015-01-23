@@ -28,7 +28,7 @@ var putItemInCalendar = function (item, displayDiv) {
     })
   }
 
-  $(place).append(displayDiv);
+  $(place).prepend(displayDiv);
 }
 
 var putCompulsaryItemInCalendar = function (item) {
