@@ -92,7 +92,7 @@ var addCourse = function (courseName) {
 
     _(data).each(putLessonGroupInCalendar);
 
-    var newCourseLabel = $("<a class='btn btn-danger'>delete " + courseName + "</a>");
+    var newCourseLabel = $("<a class='btn btn-sm btn-danger'>delete " + courseName + "</a>");
     $("#courses").append(newCourseLabel);
     newCourseLabel.on("click", function (event) {
       removeCourse(courseName, event);
