@@ -37,6 +37,7 @@ for (var hour = 1; hour < $rows.length; hour++) {
       lesson.day = ["mon","tue","wed","thu","fri"][day - 1];
       lessons.push(lesson);
     }
+    console.log(lesson.name);
   };
 };
 

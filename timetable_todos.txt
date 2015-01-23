@@ -6,5 +6,5 @@
 - paid ics downloads
 - generalize everything
 
-- fix firefox
-- fix safari ics
+- fix firefox CBF
+- fix safari ics CBF
