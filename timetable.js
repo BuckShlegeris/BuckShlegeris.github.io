@@ -5,38 +5,35 @@ $.get("/timetable.json", {}, function (data) {
   rawLessons = data;
   timetableData = rearrangeLessons(rawLessons);
   var courses = Object.keys(timetableData);
-
-  // $('input.typeahead').typeahead({
-  //   hint: true,
-  //   highlight: true,
-  //   minLength: 1,
-  //   limit: 10
-  // }, {
-  //     name: 'states',
-  //     displayKey: 'value',
-  //     source: substringMatcher(courses)
-  // });
-  // $('.typeahead.input-sm').siblings('input.tt-hint').addClass('hint-small');
-  // $('.typeahead.input-lg').siblings('input.tt-hint').addClass('hint-large');
 });
 
 var compulsaryLessonTemplate = $("#compulsary-event-template").text();
 
-var putCompulsaryItemInCalendar = function (item) {
+var putItemInCalendar = function (item, displayDiv) {
   var place = _($(".timeslot")).filter(function(x) {
     return $(x).data("day") == item.day &&
                 $(x).data("hour") == item.hour; })[0];
-  var displayDiv = $(_.template(compulsaryLessonTemplate, { item: item }));
+
+  if (item.hour == 8) {
+    _($(".timetable-row")).each(function(row) {
+      if ($(row).data("hour") == 8) {
+        $(row).show();
+      }
+    })
+  }
 
   $(place).append(displayDiv);
+}
+
+var putCompulsaryItemInCalendar = function (item) {
+  var displayDiv = $(_.template(compulsaryLessonTemplate, { item: item }));
+
+  putItemInCalendar(item, displayDiv);
 }
 
 var groupLessonTemplate = $("#group-event-template").text();
 
 var putGroupItemInCalendar = function (item) {
-  var place = _($(".timeslot")).filter(function(x) {
-    return $(x).data("day") == item.day &&
-                $(x).data("hour") == item.hour; })[0];
   var displayDiv = $(_.template(groupLessonTemplate, { item: item }));
 
   $(displayDiv.find("a.choose")[0]).on("click", function (event) {
@@ -45,7 +42,7 @@ var putGroupItemInCalendar = function (item) {
       var $item = $(item);
       if ($item.data("group") == displayDiv.data("group")) {
         if ($item.data("id") != displayDiv.data("id")) {
-          $item.hide();
+          $item.remove();
         } else {
           displayDiv.find("a.choose").hide("scale");
         }
@@ -53,8 +50,8 @@ var putGroupItemInCalendar = function (item) {
     });
   });
 
-  $(place).append(displayDiv);
-}
+  putItemInCalendar(item, displayDiv);
+};
 
 var putLessonGroupInCalendar = function (group) {
   if (group[0] == "group") {
@@ -64,7 +61,7 @@ var putLessonGroupInCalendar = function (group) {
   } else {
     putCompulsaryItemInCalendar(group[1]);
   }
-}
+};
 
 var courses = [];
 
@@ -84,7 +81,7 @@ var getCourse = function() {
 var addCourse = function (courseName) {
   data = timetableData[courseName];
 
-  if (data.length > 0) {
+  if (data) {
     $("#add-course").html("add course");
 
     _(data).each(putLessonGroupInCalendar);
@@ -113,7 +110,7 @@ var removeCourse = function(courseName, event) {
   $(".lesson").each(function(index, lesson) {
     var $lesson = $(lesson);
     if ($lesson.data("name") == courseName) {
-      $lesson.hide();
+      $lesson.remove();
     }
   });
 }
