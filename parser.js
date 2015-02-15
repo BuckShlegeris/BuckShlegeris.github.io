@@ -26,14 +26,14 @@ for (var hour = 1; hour < $rows.length; hour++) {
         }
       }
       else if (shitty_thing.is("hr")) {
-        lesson.hour = hour + 7;
+        lesson.hour = hour + 6;
         lesson.day = ["mon","tue","wed","thu","fri"][day - 1];
         lessons.push(lesson);
         lesson = {id: num++};
       }
     };
     if (lesson.course) {
-      lesson.hour = hour + 7;
+      lesson.hour = hour + 6;
       lesson.day = ["mon","tue","wed","thu","fri"][day - 1];
       lessons.push(lesson);
     }
