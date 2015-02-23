@@ -8998,9 +8998,9 @@ ScalaJS.c.Lwebapp_WebInterface$.prototype.getStr$1__p1__T__sjs_js_Dictionary__T 
 ScalaJS.c.Lwebapp_WebInterface$.prototype.handleClick__O__V = (function(x) {
   var this$1 = ScalaJS.m.Last_Counter$();
   this$1.counter$1 = 0;
-  var input = ScalaJS.as.T(ScalaJS.g["Parser"]["getBody"]());
-  var ast = ScalaJS.g["Parser"]["parse"](input);
-  (0, ScalaJS.g["jQuery"])("#ast-output")["html"](ScalaJS.as.T(ScalaJS.g["Parser"]["jsonTree"](ast)));
+  var input = ScalaJS.as.T(ScalaJS.g["JsInterface"]["getBody"]());
+  var ast = ScalaJS.g["JsInterface"]["parse"](input);
+  (0, ScalaJS.g["jQuery"])("#ast-output")["html"](ScalaJS.as.T(ScalaJS.g["JsInterface"]["jsonTree"](ast)));
   var this$3 = ScalaJS.m.sci_List$();
   var cbf = this$3.ReusableCBFInstance$2;
   var b = cbf.apply__scm_Builder();
