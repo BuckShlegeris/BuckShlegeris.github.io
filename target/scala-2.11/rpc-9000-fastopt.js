@@ -9191,13 +9191,6 @@ ScalaJS.c.Lwebapp_WebInterface$.prototype.wrapBooleanExpr__sjs_js_Dictionary__La
     throw new ScalaJS.c.s_MatchError().init___O(x1)
   }
 });
-ScalaJS.c.Lwebapp_WebInterface$.prototype.get$1__p1__T__sjs_js_Dictionary__sjs_js_Dictionary = (function(name, ast$2) {
-  if (ScalaJS.uZ(ScalaJS.m.sjs_js_WrappedDictionary$Cache$().safeHasOwnProperty$1["call"](ast$2, name))) {
-    return ast$2[name]
-  } else {
-    throw new ScalaJS.c.ju_NoSuchElementException().init___T(("key not found: " + name))
-  }
-});
 ScalaJS.c.Lwebapp_WebInterface$.prototype.wrapBooleanBinOperator__T__Last_BoolBinOperator = (function(op) {
   if ((op === "==")) {
     return ScalaJS.m.Last_Equals$()
@@ -9207,6 +9200,13 @@ ScalaJS.c.Lwebapp_WebInterface$.prototype.wrapBooleanBinOperator__T__Last_BoolBi
     return ScalaJS.m.Last_GreaterOrEqual$()
   } else {
     throw new ScalaJS.c.s_MatchError().init___O(op)
+  }
+});
+ScalaJS.c.Lwebapp_WebInterface$.prototype.get$1__p1__T__sjs_js_Dictionary__sjs_js_Dictionary = (function(name, ast$2) {
+  if (ScalaJS.uZ(ScalaJS.m.sjs_js_WrappedDictionary$Cache$().safeHasOwnProperty$1["call"](ast$2, name))) {
+    return ast$2[name]
+  } else {
+    throw new ScalaJS.c.ju_NoSuchElementException().init___T(("key not found: " + name))
   }
 });
 ScalaJS.c.Lwebapp_WebInterface$.prototype.wrapStatement__sjs_js_Dictionary__Last_Statement = (function(ast) {
@@ -9324,6 +9324,9 @@ ScalaJS.c.Lwebapp_WebInterface$.prototype.wrapStatement__sjs_js_Dictionary__Last
     ScalaJS.m.s_Predef$().$$qmark$qmark$qmark__sr_Nothing$()
   }
 });
+ScalaJS.c.Lwebapp_WebInterface$.prototype.$$js$exported$meth$handleClick__O__O = (function(x) {
+  this.handleClick__O__V(x)
+});
 ScalaJS.c.Lwebapp_WebInterface$.prototype.$$js$exported$meth$main__O = (function() {
   this.main__V()
 });
@@ -9431,6 +9434,10 @@ ScalaJS.c.Lwebapp_WebInterface$.prototype.wrapFunctionDef__sjs_js_Dictionary__La
 });
 ScalaJS.c.Lwebapp_WebInterface$.prototype["main"] = (function() {
   return this.$$js$exported$meth$main__O()
+});
+ScalaJS.c.Lwebapp_WebInterface$.prototype["handleClick"] = (function(arg$1) {
+  var preparg$1 = arg$1;
+  return this.$$js$exported$meth$handleClick__O__O(preparg$1)
 });
 ScalaJS.c.Lwebapp_WebInterface$.prototype["wrapExpr"] = (function(arg$1) {
   var preparg$1 = arg$1;
