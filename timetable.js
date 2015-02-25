@@ -72,7 +72,7 @@ var putLessonGroupInCalendar = function (group) {
 var courses = [];
 
 var getCourse = function() {
-  var courseName = $("#course-name").val().toUpperCase();
+  var courseName = $("#course-name").val().toUpperCase().trim();
   if (courseName.length == 8 && courses.indexOf(courseName) === -1) {
     if (courseName == "ENGN1211") {
       $("#warningModal").modal();
