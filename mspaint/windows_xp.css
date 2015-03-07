@@ -97,10 +97,8 @@ body {
   float:left; /* add this */
 }
 
-.bitmap {
+#bitmap {
   background-color: white;
-  height: 200px;
-  width: 200px;
 }
 
 
