@@ -1,11 +1,13 @@
 <head>
   <link rel="stylesheet" type="text/css" href="./windows_xp.css">
-  <title>windows xp</title>
+  <title>untitled - Paint</title>
+  <script src="./jquery.js"></script>
+  <script src="//code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
 </head>
 
 <body>
 <div class="container">
-  <div class="main-window">
+  <div id="main-window">
     <div class="top-thing">
       <img src="./paint_icon.png" height="20px">
       untitled - Paint
@@ -27,3 +29,7 @@
     </div>
   </div>
 </div>
+
+<script>
+  $('#main-window').draggable();
+</script>

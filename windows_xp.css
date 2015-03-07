@@ -11,7 +11,7 @@ body {
   padding: 0px;
 }
 
-.main-window {
+#main-window {
   top: 50px;
   height: 80%;
   width: 50%;
