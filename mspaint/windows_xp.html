@@ -14,7 +14,12 @@
         untitled - Paint
       </div>
       <div class="menu">
-        <div class="menu-item"><u>F</u>ile</div>
+        <div class="menu-item dropdown-wrapper" id="file-menu"><u>F</u>ile
+          <ul class="dropdown">
+            <li class="dropdown-item">New</li>
+            <li class="dropdown-item">Open</li>
+          </ul>
+        </div>
         <div class="menu-item"><u>E</u>dit</div>
         <div class="menu-item"><u>V</u>iew</div>
         <div class="menu-item"><u>I</u>mage</div>
@@ -29,6 +34,7 @@
         </div>
       </div>
       <div class="bottom-menu">
+        <p>la la la la</p>
       </div>
     </div>
   </div>
@@ -39,5 +45,5 @@
 </div> 
 
 <script>
-  $('#paint-window').draggable({handle: ".top-thing", containment: "parent"});
+  $('#paint-window').draggable({handle: ".top-thing"});
 </script>

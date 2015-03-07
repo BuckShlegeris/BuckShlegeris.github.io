@@ -1,19 +1,15 @@
-@font-face {
-    font-family: 'Minecraft';
-    src: url('./minecraft.ttf');
-}
 
 body {
   background-image: url("./bliss.jpg");
   background-color: lightgrey; 
   font-family: Verdana, Arial, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 11px;
   padding: 0px;
 }
 
 #paint-window {
-  height: 80%;
-  width: 50%;
+  height: 70%;
+  width: 70%;
   margin: 2;
   background-color: #F7F0DE;
   border: solid 2px;
@@ -37,7 +33,20 @@ body {
 
 .menu {
   border: 1px solid lightgrey;
-  overflow: hidden; /* will contain if #first is longer than #second */
+  overflow: hidden;
+}
+
+.dropdown {
+  position: absolute;
+  margin-top:3px;
+  margin-left: -5px;
+  list-style: none;
+  background-color: #F7F0DE;
+  padding: 3;
+  border: grey;
+  width: 100px;
+  border: solid 1px;
+  border-color: grey;
 }
 
 .menu-item {
@@ -46,6 +55,20 @@ body {
   margin-left: 2px;  
   float:left;
   overflow: hidden;
+}
+
+.dropdown-item {
+  padding: 2px;
+  margin-right: 2px; 
+  margin-left: 2px;
+}
+
+.menu-item:hover {
+  background-color: grey;
+}
+
+.dropdown-item:hover {
+  background-color: grey;
 }
 
 .main-wrapper {
@@ -118,6 +141,6 @@ html, body {
 }
 
 .bottom-menu {
-   position:fixed;
+   position:relative;
    bottom:0;  
 }
