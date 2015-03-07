@@ -1,0 +1,34 @@
+body {
+  background-image: url("./bliss.jpg");
+  background-color: lightgrey; 
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  padding: 0px;
+}
+
+.main-window {
+  top: 50px;
+  height: 80%;
+  width: 50%;
+  margin: 0 auto;
+  background-color: lightgrey;
+  border: solid 2px;
+  border-radius: 2px;
+  border-color: blue;
+}
+
+.top-thing {
+
+background: -moz-linear-gradient(top,  #1e5799 0%, #6e80e5 5%, #1e5799 10%, #284ad3 77%, #1f5dc6 87%, #18339b 97%, #7593ff 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1e5799), color-stop(5%,#6e80e5), color-stop(10%,#1e5799), color-stop(77%,#284ad3), color-stop(87%,#1f5dc6), color-stop(97%,#18339b), color-stop(100%,#7593ff)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #1e5799 0%,#6e80e5 5%,#1e5799 10%,#284ad3 77%,#1f5dc6 87%,#18339b 97%,#7593ff 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #1e5799 0%,#6e80e5 5%,#1e5799 10%,#284ad3 77%,#1f5dc6 87%,#18339b 97%,#7593ff 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #1e5799 0%,#6e80e5 5%,#1e5799 10%,#284ad3 77%,#1f5dc6 87%,#18339b 97%,#7593ff 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #1e5799 0%,#6e80e5 5%,#1e5799 10%,#284ad3 77%,#1f5dc6 87%,#18339b 97%,#7593ff 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7593ff',GradientType=0 ); /* IE6-9 */
+
+  padding-top: 3px;
+  padding-bottom: 3px;
+  color: white;
+}
+
