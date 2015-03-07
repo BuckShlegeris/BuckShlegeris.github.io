@@ -87,12 +87,14 @@ body {
 html, body {
   height: 100%;
 }
-.desktop {
+
+.screen {
   min-height: 100%;
   height: auto !important;
   height: 100%;
   margin: 0 auto -2.5em;
 }
+
 .startbar, .push {
   height: 2.5em;
 }
