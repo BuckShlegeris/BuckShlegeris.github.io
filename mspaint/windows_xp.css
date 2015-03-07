@@ -17,7 +17,7 @@ body {
   margin: 2;
   background-color: #F7F0DE;
   border: solid 2px;
-  border-radius: 2px;
+  border-radius: 5px 5px 0px 0px; 
   border-color: blue;
   resize:both;
   overflow:auto;
@@ -95,6 +95,12 @@ html, body {
 }
 .startbar, .push {
   height: 2.5em;
+}
+
+.start-menu {
+  background-color: darkgreen;
+  width: 50px;
+  height: 100%;
 }
 
 .startbar {
