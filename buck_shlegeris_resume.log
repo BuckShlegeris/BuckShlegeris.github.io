@@ -1,26 +1,16 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  25 DEC 2014 09:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.2.20)  31 MAR 2015 01:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **buck_shlegeris_resume.tex
 (./buck_shlegeris_resume.tex
-LaTeX2e <2009/09/24>
-Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
-rman-x-2009-06-19, ngerman-x-2009-06-19, afrikaans, ancientgreek, ibycus, arabi
-c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
-h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
-h, french, galician, german, ngerman, swissgerman, monogreek, greek, hungarian,
- icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, marathi, or
-iya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, kurmanji,
- lao, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nynorsk, pol
-ish, portuguese, romanian, russian, sanskrit, serbian, serbianc, slovak, sloven
-ian, spanish, swedish, turkish, turkmen, ukrainian, uppersorbian, welsh, loaded
-.
+LaTeX2e <2014/05/01>
+Babel <3.9k> and hyphenation patterns for 21 languages loaded.
 (./resume.cls
 Document Class: resume 
-(/usr/local/texlive/2011/texmf-dist/tex/latex/base/article.cls
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/local/texlive/2011/texmf-dist/tex/latex/base/size10.clo
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -35,7 +25,7 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/local/texlive/2011/texmf-dist/tex/latex/tools/calc.sty
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count87
 \calc@Bcount=\count88
@@ -43,22 +33,22 @@ Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Bdimen=\dimen104
 \calc@Askip=\skip43
 \calc@Bskip=\skip44
-LaTeX Info: Redefining \setlength on input line 76.
-LaTeX Info: Redefining \addtolength on input line 77.
+LaTeX Info: Redefining \setlength on input line 75.
+LaTeX Info: Redefining \addtolength on input line 76.
 \calc@Ccount=\count89
 \calc@Cskip=\skip45
 )
-(/usr/local/texlive/2011/texmf-dist/tex/latex/base/ifthen.sty
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
-(/usr/local/texlive/2011/texmf-dist/tex/latex/url/url.sty
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
-Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-(/usr/local/texlive/2011/texmf-dist/tex/latex/tools/tabularx.sty
-Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2014/05/13 v2.10 `tabularx' package (DPC)
 
-(/usr/local/texlive/2011/texmf-dist/tex/latex/tools/array.sty
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/tools/array.sty
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen105
 \extrarowheight=\dimen106
@@ -74,106 +64,120 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \TX@cols=\count90
 \TX@ftn=\toks15
 )
-(/usr/local/texlive/2011/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
-(/usr/local/texlive/2011/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
-x
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/utilities/pgfutil-comm
+on.tex
 \pgfutil@everybye=\toks16
-)
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@tempdima=\dimen112
+\pgfutil@tempdimb=\dimen113
+
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/utilities/pgfutil-comm
+on-lists.tex))
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/utilities/pgfutil-late
+x.def
 \pgfutil@abb=\box26
-(/usr/local/texlive/2011/texmf-dist/tex/latex/ms/everyshi.sty
+ (/usr/local/texlive/2014basic/texmf-dist/tex/latex/ms/everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 ))
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
-Package: pgfrcs 2010/10/25 v2.10 (rcs-revision 1.24)
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.
+tex
+Package: pgfrcs 2013/12/20 v3.0.0 (rcs-revision 1.28)
 ))
-Package: pgf 2008/01/15 v2.10 (rcs-revision 1.12)
-(/usr/local/texlive/2011/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
-(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+Package: pgf 2013/12/18 v3.0.0 (rcs-revision 1.14)
 
-(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
 )
-(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/trig.sty
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/graphics.cfg
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/latexconfig/graphics.cfg
 File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(/usr/local/texlive/2011/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count91
 ))
-\Gin@req@height=\dimen112
-\Gin@req@width=\dimen113
+\Gin@req@height=\dimen114
+\Gin@req@width=\dimen115
 )
-(/usr/local/texlive/2011/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
-Package: pgfsys 2010/06/30 v2.10 (rcs-revision 1.37)
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.cod
+e.tex
+Package: pgfsys 2013/11/30 v3.0.0 (rcs-revision 1.47)
+
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code
+.tex
 \pgfkeys@pathtoks=\toks18
 \pgfkeys@temptoks=\toks19
 
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
-ode.tex
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/utilities/pgfkeysfilte
+red.code.tex
 \pgfkeys@tmptoks=\toks20
 ))
-\pgf@x=\dimen114
-\pgf@y=\dimen115
-\pgf@xa=\dimen116
-\pgf@ya=\dimen117
-\pgf@xb=\dimen118
-\pgf@yb=\dimen119
-\pgf@xc=\dimen120
-\pgf@yc=\dimen121
+\pgf@x=\dimen116
+\pgf@y=\dimen117
+\pgf@xa=\dimen118
+\pgf@ya=\dimen119
+\pgf@xb=\dimen120
+\pgf@yb=\dimen121
+\pgf@xc=\dimen122
+\pgf@yc=\dimen123
 \w@pgf@writea=\write3
 \r@pgf@reada=\read1
 \c@pgf@counta=\count92
 \c@pgf@countb=\count93
 \c@pgf@countc=\count94
 \c@pgf@countd=\count95
+\t@pgf@toka=\toks21
+\t@pgf@tokb=\toks22
+\t@pgf@tokc=\toks23
 
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
 )
-Package pgfsys Info: Driver file for pgf: pgfsys-pdftex.def on input line 900.
+Driver file for pgf: pgfsys-pdftex.def
 
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.d
-ef
-File: pgfsys-pdftex.def 2009/05/22  (rcs-revision 1.26)
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdf
+tex.def
+File: pgfsys-pdftex.def 2013/07/18  (rcs-revision 1.33)
 
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
-df.def
-File: pgfsys-common-pdf.def 2008/05/19  (rcs-revision 1.10)
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-com
+mon-pdf.def
+File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
 )))
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
-code.tex
-File: pgfsyssoftpath.code.tex 2008/07/18  (rcs-revision 1.7)
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoft
+path.code.tex
+File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
 \pgfsyssoftpath@smallbuffer@items=\count96
 \pgfsyssoftpath@bigbuffer@items=\count97
 )
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
-code.tex
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprot
+ocol.code.tex
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
-)) (/usr/local/texlive/2011/texmf-dist/tex/latex/xcolor/xcolor.sty
+))
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
-(/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/color.cfg
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
@@ -187,484 +191,247 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 )
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
-Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen122
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.cod
+e.tex
+Package: pgfcore 2010/04/11 v3.0.0 (rcs-revision 1.7)
+
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.
+tex
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.
+tex)
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/math/pgfmathparser.cod
+e.tex
+\pgfmath@dimen=\dimen124
 \pgfmath@count=\count98
 \pgfmath@box=\box27
-\pgfmath@toks=\toks21
-\pgfmath@stack@operand=\toks22
-\pgfmath@stack@operation=\toks23
+\pgfmath@toks=\toks24
+\pgfmath@stack@operand=\toks25
+\pgfmath@stack@operation=\toks26
 )
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
-tex
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
-.code.tex)
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
-nometric.code.tex)
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
-m.code.tex)
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
-rison.code.tex)
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
-code.tex)
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
-.code.tex)
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
-code.tex)))
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.
+code.tex
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.
+basic.code.tex)
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.
+trigonometric.code.tex)
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.
+random.code.tex)
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.
+comparison.code.tex)
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.
+base.code.tex)
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.
+round.code.tex)
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.
+misc.code.tex)
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.
+integerarithmetics.code.tex)))
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code
+.tex
 \c@pgfmathroundto@lastzeros=\count99
 ))
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
-de.tex
-File: pgfcorepoints.code.tex 2010/04/09  (rcs-revision 1.20)
-\pgf@picminx=\dimen123
-\pgf@picmaxx=\dimen124
-\pgf@picminy=\dimen125
-\pgf@picmaxy=\dimen126
-\pgf@pathminx=\dimen127
-\pgf@pathmaxx=\dimen128
-\pgf@pathminy=\dimen129
-\pgf@pathmaxy=\dimen130
-\pgf@xx=\dimen131
-\pgf@xy=\dimen132
-\pgf@yx=\dimen133
-\pgf@yy=\dimen134
-\pgf@zx=\dimen135
-\pgf@zy=\dimen136
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoin
+ts.code.tex
+File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
+\pgf@picminx=\dimen125
+\pgf@picmaxx=\dimen126
+\pgf@picminy=\dimen127
+\pgf@picmaxy=\dimen128
+\pgf@pathminx=\dimen129
+\pgf@pathmaxx=\dimen130
+\pgf@pathminy=\dimen131
+\pgf@pathmaxy=\dimen132
+\pgf@xx=\dimen133
+\pgf@xy=\dimen134
+\pgf@yx=\dimen135
+\pgf@yy=\dimen136
+\pgf@zx=\dimen137
+\pgf@zy=\dimen138
 )
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
-ruct.code.tex
-File: pgfcorepathconstruct.code.tex 2010/08/03  (rcs-revision 1.24)
-\pgf@path@lastx=\dimen137
-\pgf@path@lasty=\dimen138
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepath
+construct.code.tex
+File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
+\pgf@path@lastx=\dimen139
+\pgf@path@lasty=\dimen140
 )
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
-.code.tex
-File: pgfcorepathusage.code.tex 2008/04/22  (rcs-revision 1.12)
-\pgf@shorten@end@additional=\dimen139
-\pgf@shorten@start@additional=\dimen140
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepath
+usage.code.tex
+File: pgfcorepathusage.code.tex 2013/12/13  (rcs-revision 1.23)
+\pgf@shorten@end@additional=\dimen141
+\pgf@shorten@start@additional=\dimen142
 )
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
-de.tex
-File: pgfcorescopes.code.tex 2010/09/08  (rcs-revision 1.34)
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescop
+es.code.tex
+File: pgfcorescopes.code.tex 2013/10/09  (rcs-revision 1.44)
 \pgfpic=\box28
 \pgf@hbox=\box29
 \pgf@layerbox@main=\box30
 \pgf@picture@serial@count=\count100
 )
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
-ate.code.tex
-File: pgfcoregraphicstate.code.tex 2008/04/22  (rcs-revision 1.9)
-\pgflinewidth=\dimen141
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregrap
+hicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2013/09/19  (rcs-revision 1.11)
+\pgflinewidth=\dimen143
 )
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
-ations.code.tex
-File: pgfcoretransformations.code.tex 2009/06/10  (rcs-revision 1.11)
-\pgf@pt@x=\dimen142
-\pgf@pt@y=\dimen143
-\pgf@pt@temp=\dimen144
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretran
+sformations.code.tex
+File: pgfcoretransformations.code.tex 2013/10/10  (rcs-revision 1.17)
+\pgf@pt@x=\dimen144
+\pgf@pt@y=\dimen145
+\pgf@pt@temp=\dimen146
 )
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
-e.tex
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequic
+k.code.tex
 File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
 )
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
-ode.tex
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobje
+cts.code.tex
 File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
 )
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
-ssing.code.tex
-File: pgfcorepathprocessing.code.tex 2008/10/09  (rcs-revision 1.8)
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepath
+processing.code.tex
+File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
 )
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
-de.tex
-File: pgfcorearrows.code.tex 2008/04/23  (rcs-revision 1.11)
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearro
+ws.code.tex
+File: pgfcorearrows.code.tex 2013/11/07  (rcs-revision 1.40)
+\pgfarrowsep=\dimen147
 )
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
-e.tex
-File: pgfcoreshade.code.tex 2008/11/23  (rcs-revision 1.13)
-\pgf@max=\dimen145
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshad
+e.code.tex
+File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
+\pgf@max=\dimen148
 \pgf@sys@shading@range@num=\count101
 )
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
-e.tex
-File: pgfcoreimage.code.tex 2010/03/25  (rcs-revision 1.16)
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimag
+e.code.tex
+File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
 
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
-code.tex
-File: pgfcoreexternal.code.tex 2010/09/01  (rcs-revision 1.17)
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexte
+rnal.code.tex
+File: pgfcoreexternal.code.tex 2013/07/15  (rcs-revision 1.20)
 \pgfexternal@startupbox=\box31
 ))
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
-de.tex
-File: pgfcorelayers.code.tex 2010/08/27  (rcs-revision 1.2)
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelaye
+rs.code.tex
+File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
 )
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
-ncy.code.tex
-File: pgfcoretransparency.code.tex 2008/01/17  (rcs-revision 1.2)
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretran
+sparency.code.tex
+File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
 )
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
-code.tex
-File: pgfcorepatterns.code.tex 2009/07/02  (rcs-revision 1.3)
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatt
+erns.code.tex
+File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
 )))
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
-e.tex
-File: pgfmoduleshapes.code.tex 2010/09/09  (rcs-revision 1.13)
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/modules/pgfmoduleshape
+s.code.tex
+File: pgfmoduleshapes.code.tex 2013/10/31  (rcs-revision 1.34)
 \pgfnodeparttextbox=\box32
 )
-(/usr/local/texlive/2011/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
-tex
-File: pgfmoduleplot.code.tex 2010/10/22  (rcs-revision 1.8)
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.
+code.tex
+File: pgfmoduleplot.code.tex 2013/07/31  (rcs-revision 1.12)
 )
-(/usr/local/texlive/2011/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
--0-65.sty
-Package: pgfcomp-version-0-65 2007/07/03 v2.10 (rcs-revision 1.7)
-\pgf@nodesepstart=\dimen146
-\pgf@nodesepend=\dimen147
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-ve
+rsion-0-65.sty
+Package: pgfcomp-version-0-65 2007/07/03 v3.0.0 (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen149
+\pgf@nodesepend=\dimen150
 )
-(/usr/local/texlive/2011/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
--1-18.sty
-Package: pgfcomp-version-1-18 2007/07/23 v2.10 (rcs-revision 1.1)
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-ve
+rsion-1-18.sty
+Package: pgfcomp-version-1-18 2007/07/23 v3.0.0 (rcs-revision 1.1)
 ))
-(/usr/local/texlive/2011/texmf-dist/tex/latex/pgf/compatibility/pgfshade.sty
-Package: pgfshade 2006/10/11 v2.10 (rcs-revision 1.3)
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/pgf/compatibility/pgfshade.s
+ty
+Package: pgfshade 2006/10/11 v3.0.0 (rcs-revision 1.3)
 
 
 Package pgfshade Warning: This package is obsolete. pgf.sty will load shade man
 agement automatically on input line 17.
 
-) (/usr/local/texlive/2011/texmf-dist/tex/latex/pgf/utilities/xxcolor.sty
+) (/usr/local/texlive/2014basic/texmf-dist/tex/latex/pgf/utilities/xxcolor.sty
 Package: xxcolor 2003/10/24 ver 0.1
 \XC@nummixins=\count102
 \XC@countmixins=\count103
-)
-(/usr/local/texlive/2011/texmf-dist/tex/latex/psnfss/times.sty
+) (/usr/local/texlive/2014basic/texmf-dist/tex/latex/psnfss/times.sty
 Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
 )
-(/usr/local/texlive/2011/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-(/usr/local/texlive/2011/texmf-dist/tex/latex/base/t1enc.def
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/base/t1enc.def
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 ))
-(/usr/local/texlive/2011/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
-(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
-(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/ifvtex.sty
-Package: ifvtex 2010/03/01 v1.5 Switches for detecting VTeX and its modes (HO)
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-(/usr/local/texlive/2011/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 \Gm@cnth=\count104
 \Gm@cntv=\count105
 \c@Gm@tempcnt=\count106
-\Gm@bindingoffset=\dimen148
-\Gm@wd@mp=\dimen149
-\Gm@odd@mp=\dimen150
-\Gm@even@mp=\dimen151
-\Gm@layoutwidth=\dimen152
-\Gm@layoutheight=\dimen153
-\Gm@layouthoffset=\dimen154
-\Gm@layoutvoffset=\dimen155
-\Gm@dimlist=\toks24
+\Gm@bindingoffset=\dimen151
+\Gm@wd@mp=\dimen152
+\Gm@odd@mp=\dimen153
+\Gm@even@mp=\dimen154
+\Gm@layoutwidth=\dimen155
+\Gm@layoutheight=\dimen156
+\Gm@layouthoffset=\dimen157
+\Gm@layoutvoffset=\dimen158
+\Gm@dimlist=\toks27
 )
 \headerbuffer=\skip48
 \secskip=\skip49
 \@headerscratch=\skip50
 )
-(/usr/local/texlive/2011/texmf-dist/tex/latex/paralist/paralist.sty
-Package: paralist 2002/03/18 v2.3b Extended list environments (BS)
-\pltopsep=\skip51
-\plpartopsep=\skip52
-\plitemsep=\skip53
-\plparsep=\skip54
-\pl@lab=\toks25
-)
-(/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2011/04/17 v6.82g Hypertext links for LaTeX
 
-(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
-Package: hobsub-hyperref 2011/04/23 v1.4 Bundle oberdiek, subset hyperref (HO)
+! LaTeX Error: File `paralist.sty' not found.
 
-(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
-Package: hobsub-generic 2011/04/23 v1.4 Bundle oberdiek, subset generic (HO)
-Package: hobsub 2011/04/23 v1.4 Subsetting bundle oberdiek (HO)
-Package hobsub Info: Skipping package `infwarerr' (already loaded).
-Package hobsub Info: Skipping package `ltxcmds' (already loaded).
-Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-Package hobsub Info: Skipping package `ifvtex' (already loaded).
-Package: intcalc 2007/09/27 v1.1 Expandable integer calculations (HO)
-Package hobsub Info: Skipping package `ifpdf' (already loaded).
-Package: etexcmds 2011/02/16 v1.5 Prefix for e-TeX command names (HO)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-Package: kvsetkeys 2011/04/07 v1.13 Key value parser (HO)
-Package: kvdefinekeys 2011/04/07 v1.3 Defining keys (HO)
-Package: pdftexcmds 2011/04/22 v0.16 Utilities of pdfTeX for LuaTeX (HO)
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-Package: pdfescape 2011/04/04 v1.12 Provides string conversions (HO)
-Package: bigintcalc 2011/01/30 v1.2 Expandable big integer calculations (HO)
-Package: bitset 2011/01/30 v1.1 Data type bit set (HO)
-Package: uniquecounter 2011/01/30 v1.2 Provides unlimited unique counter (HO)
-)
-Package hobsub Info: Skipping package `hobsub' (already loaded).
-Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
-Package: hopatch 2011/01/30 v1.0 Wrapper for package hooks (HO)
-Package: xcolor-patch 2011/01/30 xcolor patch
-Package: atveryend 2011/04/23 v1.7 Hooks at very end of document (HO)
-Package atveryend Info: \enddocument detected (standard).
-Package: atbegshi 2011/01/30 v1.15 At begin shipout hook (HO)
-Package: refcount 2010/12/01 v3.2 Data extraction from references (HO)
-Package: hycolor 2011/01/30 v1.7 Color options of hyperref/bookmark (HO)
-)
-(/usr/local/texlive/2011/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2010/12/23 v3.10 Keyval support for LaTeX options (HO)
-)
-\@linkdim=\dimen156
-\Hy@linkcounter=\count107
-\Hy@pagecounter=\count108
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: sty)
 
-(/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2011/04/17 v6.82g Hyperref: PDFDocEncoding definition (HO)
-)
-\Hy@SavedSpaceFactor=\count109
+Enter file name: 
+! Emergency stop.
+<read *> 
+         
+\@missingfileerror ...obal \read \m@ne to\@gtempa 
+                                                  }\ifx \@gtempa \@empty \el...
+<argument> ...singfileerror \@currname \@currext }
+                                                  \let \@unprocessedoptions ...
 
-(/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/hyperref.cfg
-File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
-)
-Package hyperref Info: Hyper figures OFF on input line 4026.
-Package hyperref Info: Link nesting OFF on input line 4031.
-Package hyperref Info: Hyper index ON on input line 4034.
-Package hyperref Info: Plain pages OFF on input line 4041.
-Package hyperref Info: Backreferencing OFF on input line 4046.
-Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4264.
-\c@Hy@tempcnt=\count110
-LaTeX Info: Redefining \url on input line 4617.
-\Fld@menulength=\count111
-\Field@Width=\dimen157
-\Fld@charsize=\dimen158
-Package hyperref Info: Hyper figures OFF on input line 5701.
-Package hyperref Info: Link nesting OFF on input line 5706.
-Package hyperref Info: Hyper index ON on input line 5709.
-Package hyperref Info: backreferencing OFF on input line 5716.
-Package hyperref Info: Link coloring OFF on input line 5721.
-Package hyperref Info: Link coloring with OCG OFF on input line 5726.
-Package hyperref Info: PDF/A mode OFF on input line 5731.
-LaTeX Info: Redefining \ref on input line 5771.
-LaTeX Info: Redefining \pageref on input line 5775.
-\Hy@abspage=\count112
-\c@Item=\count113
-)
+\@secondoftwo #1#2->#2
+                      
+\reserved@a ... \@undefined \@unprocessedoptions }
+                                                   \@ifl@ter \@currext {para...
 
-Package hyperref Message: Driver (autodetected): hpdftex.
+\reserved@a ...ons paralist[{}][{}]\@pkgextension 
+                                                  \relax 
+<to be read again> 
+                   \par 
+l.9 ^^M
+       
+End of file on the terminal!
 
-(/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2011/04/17 v6.82g Hyperref driver for pdfTeX
-\Fld@listcount=\count114
-\c@bookmark@seq@number=\count115
-
-(/usr/local/texlive/2011/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
-Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
-Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
-82.
-)
-\Hy@SectionHShift=\skip55
-)
-Package hyperref Info: Option `colorlinks' set `false' on input line 15.
-
-(./buck_shlegeris_resume.aux)
-\openout1 = `buck_shlegeris_resume.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 20.
-
-(/usr/local/texlive/2011/texmf-dist/tex/latex/psnfss/t1ptm.fd
-File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
-)
-ABD: EveryShipout initializing macros
-(/usr/local/texlive/2011/texmf-dist/tex/context/base/supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count116
-\scratchdimen=\dimen159
-\scratchbox=\box33
-\nofMPsegments=\count117
-\nofMParguments=\count118
-\everyMPshowfont=\toks26
-\MPscratchCnt=\count119
-\MPscratchDim=\dimen160
-\MPnumerator=\count120
-\makeMPintoPDFobject=\count121
-\everyMPtoPDFconversion=\toks27
-) (/usr/local/texlive/2011/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
-
-(/usr/local/texlive/2011/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2010/08/19 v1.1 Managing graphics extensions (HO)
-)
-Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 452.
-
-(/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
-*geometry* driver: auto-detecting
-*geometry* detected driver: pdftex
-*geometry* verbose mode - [ preamble ] result:
-* driver: pdftex
-* paper: letterpaper
-* layout: <same size as paper>
-* layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: 
-* h-part:(L,W,R)=(92.14519pt, 430.00462pt, 92.14519pt)
-* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
-* \paperwidth=614.295pt
-* \paperheight=794.96999pt
-* \textwidth=430.00462pt
-* \textheight=650.43001pt
-* \oddsidemargin=19.8752pt
-* \evensidemargin=19.8752pt
-* \topmargin=-37.0pt
-* \headheight=12.0pt
-* \headsep=25.0pt
-* \topskip=10.0pt
-* \footskip=30.0pt
-* \marginparwidth=65.0pt
-* \marginparsep=11.0pt
-* \columnsep=10.0pt
-* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
-* \hoffset=0.0pt
-* \voffset=0.0pt
-* \mag=1000
-* \@twocolumnfalse
-* \@twosidefalse
-* \@mparswitchfalse
-* \@reversemarginfalse
-* (1in=72.27pt=25.4mm, 1cm=28.453pt)
-
-\AtBeginShipoutBox=\box34
-Package hyperref Info: Link coloring OFF on input line 20.
-(/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/nameref.sty
-Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
-
-(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
-Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
-)
-\c@section@level=\count122
-)
-LaTeX Info: Redefining \ref on input line 20.
-LaTeX Info: Redefining \pageref on input line 20.
-LaTeX Info: Redefining \nameref on input line 20.
-
-(./buck_shlegeris_resume.out) (./buck_shlegeris_resume.out)
-\@outlinefile=\write4
-\openout4 = `buck_shlegeris_resume.out'.
-
-LaTeX Info: Redefining \@email on input line 23.
-LaTeX Info: Redefining \@webpage on input line 24.
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 26.
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 26.
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 26.
-
-(/usr/local/texlive/2011/texmf-dist/tex/latex/psnfss/t1pcr.fd
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
-LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/pcr/b/n' tried instead on input line 26.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 26.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 26.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 26.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 26.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 26.
-LaTeX Font Info:    Font shape `T1/ptm/bx/sc' in size <10> not available
-(Font)              Font shape `T1/ptm/b/sc' tried instead on input line 28.
-LaTeX Font Info:    Font shape `T1/ptm/bx/sc' in size <12> not available
-(Font)              Font shape `T1/ptm/b/sc' tried instead on input line 28.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 32.
-
-(/usr/local/texlive/2011/texmf-dist/tex/latex/psnfss/omsptm.fd
-File: omsptm.fd 
-)
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 32.
-
-Underfull \hbox (badness 10000) in paragraph at lines 90--91
-
- []
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 94.
-[1
-
-{/usr/local/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 94.
- (./buck_shlegeris_resume.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 94.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 94.
-Package rerunfilecheck Info: File `buck_shlegeris_resume.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 94.
- ) 
+ 
 Here is how much of TeX's memory you used:
- 12494 strings out of 493633
- 215755 string characters out of 3143378
- 294338 words of memory out of 3000000
- 15551 multiletter control sequences out of 15000+200000
- 32855 words of font info for 42 fonts, out of 3000000 for 9000
- 831 hyphenation exceptions out of 8191
- 56i,9n,55p,436b,314s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/local/texlive/2011/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
-xlive/2011/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/local/texlive/20
-11/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2011/texmf
--dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2011/texmf-dist/font
-s/type1/urw/times/utmr8a.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/ur
-w/times/utmri8a.pfb>
-Output written on buck_shlegeris_resume.pdf (2 pages, 69847 bytes).
-PDF statistics:
- 59 PDF objects out of 1000 (max. 8388607)
- 42 compressed objects within 1 object stream
- 3 named destinations out of 1000 (max. 500000)
- 49 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 9247 strings out of 494522
+ 178057 string characters out of 6167205
+ 212618 words of memory out of 5000000
+ 12353 multiletter control sequences out of 15000+600000
+ 4403 words of font info for 15 fonts, out of 8000000 for 9000
+ 319 hyphenation exceptions out of 8191
+ 55i,0n,47p,427b,93s stack positions out of 5000i,500n,10000p,200000b,80000s
+!  ==> Fatal error occurred, no output PDF file produced!
