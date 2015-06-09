@@ -2,12 +2,12 @@
 <html>
 <head>
   <title>ANU timetable builder</title>
-  <script src="./underscore.js"></script>
-  <script src="./jquery.js"></script>
-  <script src="./download.js"></script>
-  <script src="./bootstrap.min.js"></script>
-  <script src="./timetable.js" defer></script>
-  <script src="./timetable_analyser.js"></script>
+  <script not-src="./underscore.js"></script>
+  <script not-src="./jquery.js"></script>
+  <script not-src="./download.js"></script>
+  <script not-src="./bootstrap.min.js"></script>
+  <script not-src="./timetable.js" defer></script>
+  <script not-src="./timetable_analyser.js"></script>
   <link rel="stylesheet" type="text/css" href="./bootstrap.css">
   <meta name="description" content="Intuitive timetable builder for the Australian National University.">
 </head>
@@ -17,6 +17,7 @@
   <div class="row">
     <div class="col-sm-3 col-md-2">
       <h1>timetable</h1>
+      <h2>This timetable is now out of date. Please refer to <a href="http://timetabling.anu.edu.au/SWS2015/">the new official timetable</a>. I might update this sometime; who knows?</h2>
     </div>
 
     <div class="col-sm-9 col-md-10">
@@ -25,7 +26,7 @@
         <button id="add-course" class="btn btn-default">add course</button>
         <button id="download" class="btn btn-primary">download as .ics</button>
         <!-- <div id="courses" style="display: inline;"></div> -->
-        <p>This timetable is now out of date. Please refer to <a href="http://timetabling.anu.edu.au/SWS2015/">the new official timetable</a>. I might update this sometime; who knows?</p>
+
       </div>
     </div>
   </div>
