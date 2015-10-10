@@ -1,10 +1,23 @@
 # Writing a compiler
 
+## Types
+
+The input is going to be a string. Multiple files are a complication, but who cares.
+
+
+
 ## Steps
 
 ### Parser
 
-you know this stuff.
+you know this stuff. TODO: decide a good parser library to use. Options:
+
+- Java parser generator
+- Scala parser generator
+- java C parser
+- maybe https://github.com/itsmeritesh/Java-Parser-for-C/tree/master/C_parser
+
+You don't need this for the moment, because you can just create the AST directly to start with.
 
 ### Type checker
 
