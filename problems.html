@@ -1,0 +1,48 @@
+<body id="preview">
+<h1><a id="CS_technical_interview_preparation_advice_0"></a>CS technical interview preparation advice</h1>
+<h2><a id="Bucks_background_2"></a>Buck’s background</h2>
+<p>I taught at App Academy. I’ve done onsites at Google, Twitter, Apple, PayPal (on their Stingray team, so the experience probably doesn’t generalize), Uber, and a whole bunch of smaller companies. I passed all these interviews except Uber. I used to teach at App Academy, so I’ve watched lots of people without traditional backgrounds get tech jobs.</p>
+<h2><a id="What_things_should_you_know_6"></a>What things should you know?</h2>
+<p>I particularly recommend being able to write the following algorithms pretty much at the speed of typing:</p>
+<ul>
+<li>Breadth first search through a graph (I swear that at least 20% of my technical interviews involve writing a BFS)</li>
+<li>Binary search</li>
+<li>Quicksort (you don’t have to know how to do it in place)</li>
+</ul>
+<p>other good resources:</p>
+<ul>
+<li>Steve Yegge’s classic <a href="http://steve-yegge.blogspot.com/2008/03/get-that-job-at-google.html">Get That Job At Google</a> I think slightly exaggerates the difficulty of Google interviews, but is good advice. The sections from Tech Prep Tips through Operating Systems are a pretty good summary of good things to know.</li>
+<li>Cracking the Coding Interview is great. I think it’s worth reading the solutions even if you don’t want to bother figuring them out yourself.</li>
+</ul>
+<h2><a id="Questions_18"></a>Questions</h2>
+<h3><a id="Two_sum_20"></a>Two sum</h3>
+<p>Given an array of integers and a target number, find the indices of two numbers in the array that they add up to the target. For example, <code>two_sum([1, 2, 7, 3], 5)</code> should return <code>[1, 3]</code>.</p>
+<p>Initially, a solution with <code>O(n^2)</code> time is okay. Then, do it in <code>O(n)</code> time.</p>
+<h3><a id="Find_the_repeated_element_26"></a>Find the repeated element</h3>
+<p>You’re given an array which is a permutation of the integers from 0 to n with a single repeat. For example, you might be given <code>[0, 1, 2, 2]</code> or <code>[2, 1, 0, 1]</code> or <code>[4, 2, 1, 2, 3, 0]</code>.</p>
+<p>Given such an array, return the repeated element. You can do it in <code>O(n)</code> time.</p>
+<h3><a id="Island_perimeter_32"></a>Island perimeter</h3>
+<p>You’re given an ASCII map, like this:</p>
+<pre><code><span class="hljs-code">........
+...XXXX.
+..XXXXX.
+..XXXXX.
+...XXX..
+........</span>
+</code></pre>
+<p>which has a single island on it. A point on the map is said to be on the perimeter of the island if it’s horizonally or vertically next to the water. Here’s the perimeter of that previous map:</p>
+<pre><code><span class="hljs-code">........
+...PPPP.
+..PXXXP.
+..PXXXP.
+...PPP..
+........</span>
+</code></pre>
+<p>Write a function which takes that map and returns the number of points on the map which are on the island.</p>
+<h3><a id="Make_change_58"></a>Make change</h3>
+<p>Write a function which takes a list of coin denominations, and a number, and returns the way that you can make that change with the fewest coins. For example, if I had to make 31 cents using American coins, I’d use a quarter, a nickel, and a penny. So <code>make_change([1, 5, 10, 25], 31)</code> returns <code>[25, 5, 1]</code>. Some countries have wonkier denominations which are harder: <code>make_change([1, 7, 10], 9)</code> returns <code>[7, 1, 1]</code>, and <code>make_change([1, 7, 10], 15)</code> returns <code>[7, 7, 1]</code>.</p>
+<h3><a id="Maximum_sum_subarray_62"></a>Maximum sum subarray</h3>
+<p>Given an array, like <code>[2, 4, -5, -3, 5, 6, 4, -1, 5, -2]</code>, return two indices <code>i</code> and <code>j</code> to maximize the sum of the array from <code>i</code> to <code>j</code>. In that case above, it would return <code>[4, 8]</code>.</p>
+<p>The fastest solution takes <code>O(n)</code> time.</p>
+
+</body>
