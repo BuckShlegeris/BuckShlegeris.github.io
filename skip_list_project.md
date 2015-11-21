@@ -19,7 +19,7 @@ Add an optional `ordering` argument to the `SkipList.new` method, which lets you
 ```ruby
 SkipList.new([1, 2, 3]) # orders normally
 SkipList.new([1, 2, 3], ordering: :to_s) # orders by alphabetical order
-SkipList.new([1, 2, 3], ->(x) { -x } ) # orders backwards!
+SkipList.new([1, 2, 3], ordering: ->(x) { -x } ) # orders backwards!
 ```
 
 ## Stage 4: custom monoids
