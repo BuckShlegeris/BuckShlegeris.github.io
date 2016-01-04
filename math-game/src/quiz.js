@@ -124,5 +124,3 @@ var sets = ["constant", "linear", "polynomial", "analytic", "smooth", "continuou
   "continuous", "Lipschitz continuous"];
 
 ReactDOM.render(<Quiz quizName="Analysis game!" theorems={theorems} sets={sets}/>, document.getElementById("quiz"));
-
-
