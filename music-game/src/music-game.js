@@ -47,6 +47,9 @@ var MusicGame = React.createClass({
     }
     return out;
   },
+  replayNote: function () {
+    window.play(this.state.currentNote, 0, 1);
+  },
   render: function () {
     var value = this.state.value;
     var log = this.state.log;
@@ -68,7 +71,8 @@ var MusicGame = React.createClass({
          : <button
           onClick={this.getNote}
           className="btn btn-primary">give me a note!</button>}
-
+        {this.state.currentNote &&
+          <button className="btn btn-default" onClick={this.replayNote}>replay</button>}
         <p>{this.getKeys(this.state.currentNote)}</p>
       </div>
     );
