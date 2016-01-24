@@ -65,6 +65,8 @@ var MusicGame = React.createClass({
 
         <p>Notes guessed: {this.state.notesGuessed}</p>
         <p>Guesses: {this.state.guesses}</p>
+        {this.state.notesGuessed > 0 && <p>Average number of guesses required:
+         {this.state.guesses / this.state.notesGuessed}</p>}
 
         {this.state.currentNote ? <button disabled="disabled"
           className="btn btn-primary">give me a note!</button>
