@@ -5,7 +5,8 @@ var MusicGame = React.createClass({
       currentNote: null,
       notesGuessed: 0,
       guesses: 0,
-      previousNote: null
+      previousNote: null,
+      blackKeysOn: true
     };
   },
   getNote: function () {
@@ -13,7 +14,12 @@ var MusicGame = React.createClass({
     var lowestNum = noteNameToNumber(this.props.lowestNote);
 
     var noteNum = this.state.previousNote;
-    while (noteNum == this.state.previousNote) {
+
+    var isBlackKey = function (n) {
+      return noteNumberToName(n).indexOf("#") != -1;
+    }
+
+    while (noteNum == this.state.previousNote || (!this.state.blackKeysOn && isBlackKey(noteNum))) {
       noteNum = Math.random() * (highestNum - lowestNum + 1) | 0 + lowestNum;
     }
 
@@ -35,18 +41,29 @@ var MusicGame = React.createClass({
 
     window.play(noteNum, 0, 1);
   },
+  toggleBlackNotes: function () {
+    this.setState({ blackKeysOn: !this.state.blackKeysOn });
+  },
   getKeys: function (currentNote) {
     var out = [];
     var black_key = {"backgroundImage": "linear-gradient(#000000, #222222, #555555)"};
     var white_key = {"backgroundImage": "linear-gradient(#AAAAAA, #EEEEEE, #FFFFFF)"};
 
     for (var i = noteNameToNumber(this.props.lowestNote); i <= noteNameToNumber(this.props.highestNote); i++) {
+      var color = noteNumberToName(i).indexOf("#") == -1 ? white_key : black_key;
 
+      if (color == white_key || this.state.blackKeysOn) {
+        out.push(
+          <a
+            className="btn btn-sml btn-default"
+            style={color}
+            disabled={currentNote ? "" : "disabled"}
+            key={i}
+            onClick={currentNote && this.tryNote}>
+            {noteNumberToName(i)}
+          </a>);
+      }
 
-      var colored = noteNumberToName(i).indexOf("#") == -1 ? white_key : black_key;
-
-      out.push(<a className="btn btn-sml btn-default" style={colored} disabled={currentNote ? "" : "disabled"}
-        key={i} onClick={currentNote && this.tryNote}>{noteNumberToName(i)}</a>);
       if (i % 12 == 11) {
         out.push(<br key={i+0.5}/>)
       }
@@ -69,10 +86,16 @@ var MusicGame = React.createClass({
           </div>
         </div>
 
+        <button className="btn btn-default" onClick={this.toggleBlackNotes}>
+          {this.state.blackKeysOn ? "dis" : "en"}able black keys
+        </button>
+
         <p>Notes guessed: {this.state.notesGuessed}</p>
         <p>Guesses: {this.state.guesses}</p>
         {this.state.notesGuessed > 0 && <p>Average number of guesses required:
          {this.state.guesses / this.state.notesGuessed}</p>}
+
+
 
         {this.state.currentNote ? <button disabled="disabled"
           className="btn btn-primary">give me a note!</button>
@@ -82,6 +105,8 @@ var MusicGame = React.createClass({
         {this.state.currentNote &&
           <button className="btn btn-default" onClick={this.replayNote}>replay</button>}
         <p>{this.getKeys(this.state.currentNote)}</p>
+
+        <p>This game uses <a href="https://github.com/mudcube/MIDI.js/">MIDI.js</a>.</p>
       </div>
     );
   }
