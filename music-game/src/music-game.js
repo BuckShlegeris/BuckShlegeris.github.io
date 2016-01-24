@@ -4,14 +4,19 @@ var MusicGame = React.createClass({
       value: 'c4',
       currentNote: null,
       notesGuessed: 0,
-      guesses: 0
+      guesses: 0,
+      previousNote: null
     };
   },
   getNote: function () {
     var highestNum = noteNameToNumber(this.props.highestNote);
     var lowestNum = noteNameToNumber(this.props.lowestNote);
 
-    var noteNum = Math.random() * (highestNum - lowestNum + 1) | 0 + lowestNum;
+    var noteNum = this.state.previousNote;
+    while (noteNum == this.state.previousNote) {
+      noteNum = Math.random() * (highestNum - lowestNum + 1) | 0 + lowestNum;
+    }
+
     this.setState({ currentNote: noteNum });
     window.play(noteNum, 0, 1);
   },
@@ -20,6 +25,7 @@ var MusicGame = React.createClass({
     var noteNum = noteNameToNumber(event.target.text);
 
     if (noteNum == this.state.currentNote) {
+      this.setState({previousNote: this.state.currentNote});
       this.setState({currentNote: null});
       this.setState({ notesGuessed: this.state.notesGuessed + 1 });
       this.setState({ guesses: this.state.guesses + 1 });
