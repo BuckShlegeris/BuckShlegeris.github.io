@@ -106,7 +106,7 @@ var MusicGame = React.createClass({
           <button className="btn btn-default" onClick={this.replayNote}>replay</button>}
         <p>{this.getKeys(this.state.currentNote)}</p>
 
-        <p>This game uses <a href="https://github.com/mudcube/MIDI.js/">MIDI.js</a>.</p>
+        <p>This game was built with React and <a href="https://github.com/mudcube/MIDI.js/">MIDI.js</a>.</p>
       </div>
     );
   }
