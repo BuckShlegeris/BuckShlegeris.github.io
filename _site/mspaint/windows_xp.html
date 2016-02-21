@@ -1,0 +1,50 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="./windows_xp.css">
+  <title>untitled - Paint</title>
+  <script src="../jquery.js"></script>
+  <script src="./mspaint.js"></script>
+  <script src="//code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
+</head>
+
+<body>
+<div class="screen">
+  <div id="desktop">
+    <div id="paint-window">
+      <div class="top-thing">
+        <img src="./paint_icon.png" height="20px">
+        untitled - Paint
+      </div>
+      <div class="menu">
+        <div class="menu-item dropdown-wrapper" id="file-menu"><u>F</u>ile
+          <ul class="dropdown" style="display: none;">
+            <li class="dropdown-item">New</li>
+            <li class="dropdown-item">Open</li>
+          </ul>
+        </div>
+        <div class="menu-item"><u>E</u>dit</div>
+        <div class="menu-item"><u>V</u>iew</div>
+        <div class="menu-item"><u>I</u>mage</div>
+        <div class="menu-item"><u>C</u>olors</div>
+        <div class="menu-item"><u>H</u>elp</div>
+      </div>
+      <div class="main-wrapper">
+        <div class="sidebar"><img src="./sidebar.png" class="sidebar-image"></div>
+        <div class="bitmap-wrapper">
+          <canvas id="bitmap" width="200" height="100">
+          </canvas>
+        </div>
+      </div>
+      <div class="bottom-menu">
+        <p>la la la la</p>
+      </div>
+    </div>
+  </div>
+  <div class="push"></div>
+</div>
+<div class="startbar">
+  <div class="start-menu">Start</div>
+</div> 
+
+<script>
+  $('#paint-window').draggable({handle: ".top-thing"});
+</script>

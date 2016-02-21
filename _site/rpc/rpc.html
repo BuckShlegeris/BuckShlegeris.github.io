@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>rPeANUt compiler</title>
+    <!-- Include JavaScript dependencies -->
+    <script type="text/javascript" src="./js/jquery.js"></script>
+    <script type="text/javascript" src="../target/scala-2.11/rpc-9000-fastopt.js"></script>
+    <script type="text/javascript" src="./js/utils.js"></script>
+    <script type="text/javascript" src="./js/parser.js"></script>
+    <script type="text/javascript" src="./js/jsonTree.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/jsInterface.js"></script>
+    <script src="./jquery-ace/ace/ace.js"></script>
+    <script src="./jquery-ace/ace/theme-monokai.js"></script>
+    <script src="./jquery-ace/ace/mode-c_cpp.js"></script>
+    <script src="./jquery-ace/jquery-ace.min.js"></script>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/jsonTree.css">
+    <style type="text/css" media="screen">
+        #editor {
+        position: absolute;
+        top: 0;
+        height: 0;
+        width: 0;
+        left: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>rPeANUt compiler <small>by <a href="http://bshlgrs.github.io">Buck Shlegeris</a></small></h1>
+
+            <p><a href="http://www.github.com/bshlgrs/rpc-9000">view source on github</a></p>
+
+            <textarea class="my-code-area" rows="14" style="width: 100%">
+int hailstone(int x) {
+    if (x % 2 == 0) {
+        return x / 2;
+    } else {
+        return 3 * x;
+    }
+}
+
+int square(int x) {
+    return x * x;
+}</textarea>
+            <button class="btn btn-primary" id="compile-button">compile!</button>
+
+            <h3>ast <small><a data-toggle="collapse" href="#ast-well">show/hide</a></small></h3>
+
+            <div class="collapse" id="ast-well">
+                <div class="well" id="ast-output"></div>
+            </div>
+
+            <h3>intermediate <small><a data-toggle="collapse" href="#intermediate-well">show/hide</a></small></h3>
+            <div class="collapse" id="intermediate-well">
+                <pre id="intermediate-output"></pre>
+            </div>
+
+            <h3>assembly</h3>
+            <div id="assembly-output"></div>
+        </div>
+
+    </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+  webapp.WebInterface().main();
+  $(function() {
+    webapp.WebInterface().handleClick();
+  });
+
+  var editor = $('.my-code-area').ace({ theme: 'monokai', lang: 'c_cpp' });
+</script>
+
+</html>

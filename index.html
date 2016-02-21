@@ -1,3 +1,7 @@
+---
+layout: none
+---
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -48,6 +52,16 @@
                     </li>
 <!--                     <li><a class="arrow external" href="http://bshlgrs.tumblr.com">Blog</a></li> -->
                     <li><a class="arrow external" href="https://docs.google.com/forms/d/1SOombLPHlKIMut-wJzIRg7DGdJjh9PJV4yAkrmTXKn4/viewform?usp=send_form">Anonymous feedback</a></li>
+
+                    <li><a class="arrow">Blog posts
+                      <ul class="post-list">
+                        {% for post in site.posts %}
+                          <li>
+                            <a class="arrow" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    </li>
                 </ul>
 
             </div>
@@ -68,6 +82,9 @@
                 <p>I make fun music like <a href="http://soundcloud.com/buckmbs" target="_blank">this</a>.
                 </div>
 
+
+
+
             <h2 id="background">Background</h2>
 
             <p>I studied computer science and physics at the Australian National University for two years. At the end of 2013, after completing enough courses to get a computer science major, I moved to San Francisco for App Academy. After the nine week course, App Academy offered me a job teaching the course I'd just done. I worked there until returning to Australia for university in June. You can read an interview I did about App Academy <a href="http://80000hours.org/blog/329-interview-with-buck-shlegeris-from-app-academy">here</a>.</p>
@@ -76,13 +93,13 @@
 
             <h2 id="programming">Programming</h2>
 
-            <p>Interests and skills: Functional programming, data structures and algorithms, web development, UI design.</p>
+            <p>My favorite parts of computer science have shifted a lot over the years. I'm really excited about front end web development at the moment, but in the past I've been more interested in data structures. I also love functional programming, programming language implementation, and computer systems stuff.<p>
 
-            <p>My most interesting programming project is an effort to automatically choose fast data structures, given a description of the API they need to support. You can see my efforts on <a href="https://github.com/bshlgrs/ruining-the-coding-interview">GitHub</a>, or in this talk I gave at Scala By The Bay 2015:</p>
+            <p>One of my most interesting programming projects is an effort to automatically choose fast data structures, given a description of the API they need to support. You can see my efforts on <a href="https://github.com/bshlgrs/ruining-the-coding-interview">GitHub</a>, or in this talk I gave at Scala By The Bay 2015:</p>
 
             <iframe width="560" height="315" src="https://www.youtube.com/embed/oPFga7eg3Uw" frameborder="0" allowfullscreen></iframe>
 
-            <!-- <hr class="bs-docs-separator"> -->
+            <p>More entertainingly, you can play <a href="./music-game">this game</a> which I made to practise relative pitch.</p>
 
             <h2 id="music">Music</h2>
 

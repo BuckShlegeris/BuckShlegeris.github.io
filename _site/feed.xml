@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Buck Shlegeris</title>
+    <description>Website of Buck Shlegeris.
+</description>
+    <link>http://bshlgrs.github.io/</link>
+    <atom:link href="http://bshlgrs.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 21 Feb 2016 11:11:02 -0800</pubDate>
+    <lastBuildDate>Sun, 21 Feb 2016 11:11:02 -0800</lastBuildDate>
+    <generator>Jekyll v3.1.2</generator>
+    
+      <item>
+        <title>Bleg for intro to web architecture</title>
+        <description>&lt;p&gt;Does anyone know of a good resource for learning about general concepts in web application architecture?
+Most of the content would be grouped by application layer. So the main sections would be like: data persistence, application servers, caching layers…&lt;/p&gt;
+
+&lt;p&gt;For example, the data persistence section would cover material like this: the current landscape of relational databases, basic SQL table design stuff, database indexes (what they are, a little about how they’re implemented, what a composite index is), what a query planner is, what the sql command EXPLAIN is, what normalization is, what an ORM is and why it makes sense to use it (eg reducing SQL injection vulnerability, agnosticism about database configuation). Then it would talk about database scaling: “When you want to scale a database, start out by checking your indexes and looking for the most time-consuming queries. Scale up before scaling out. To deal with read load, use read slaves. Then you might consider splitting up your database by concerns. If that’s not enough, you might need to shard your database. You also might consider batched writes.” Then it would give an introduction to distributed databases and why they’re a nightmare. Then it would talk about NoSQL databases like Mongo and Cassandra, and talk about their advantages and disadvantages and scaling properties. Finally it would talk about how you should use S3 or your own FTP server to store user-provided files.&lt;/p&gt;
+
+&lt;p&gt;One problem with this topic is that it’s rapidly changing, and a lot of it is quite subjective, so it’s kind of hard to write about.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.airpair.com/aws/posts/building-a-scalable-web-app-on-amazon-web-services-p1&quot;&gt;This article&lt;/a&gt; covers similar material to what I’m interested in, but talks too much about practicalities and not enough about the relevant concepts. &lt;a href=&quot;http://highscalability.com/&quot;&gt;highscalability.com&lt;/a&gt; is full of case studies which you can read one at a time to get many of these concepts, but that isn’t quite as systematic as I’d like.&lt;/p&gt;
+
+&lt;p&gt;In lieu of this resource, my current approach is to ask people about a bunch of subtopics (database indexes, what normalization is…) and then for every subtopic, send them a link to a short article on it if they don’t know much about it. But this doesn’t work very well when they know very little about a topic and need an introduction to all of it.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 21 Feb 2016 10:23:59 -0800</pubDate>
+        <link>http://bshlgrs.github.io/2016/02/21/bleg-for-intro-to-web-architecture.html</link>
+        <guid isPermaLink="true">http://bshlgrs.github.io/2016/02/21/bleg-for-intro-to-web-architecture.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Talking at tech conferences</title>
+        <description>&lt;p&gt;If you’re a good programmer, you can probably give a talk at a mediocre tech conference with as little as 20 hours of work. I think this is plausibly a good use of your time.&lt;/p&gt;
+
+&lt;h2 id=&quot;my-story&quot;&gt;My story&lt;/h2&gt;
+
+&lt;p&gt;Last year, on a whim I submitted an abstract to Scala By The Bay. My abstract was about an open source project which I hadn’t actually started writing yet. At the time, I had about four months of experience as a full time software engineer. They accepted my talk. (They gave me a 20 minute slot because I asked for one; in retrospect I should have asked for more.)&lt;/p&gt;
+
+&lt;p&gt;After recovering from the surprise of my abstract being accepted, I then spent 100+ hours writing the software that I eventually presented on, and 10+ hours practicing my presentation.&lt;/p&gt;
+
+&lt;p&gt;I then went to the conference (which I attended for free as a speaker; my manager was happy to give me the time off work without me using up PTO, which I think is typical.) My presentation was fun to give, and I got a neat video of it:&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/oPFga7eg3Uw&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;After I did this presentation, I started getting way more recruiter spam for Scala jobs. More interestingly, a software book publishing company contacted me and asked if I was interested in writing a book for them. (It seemed like I’d end up making ballpark $25 an hour for writing the book, and I thought I could create career capital and income more effectively other ways, so I didn’t end up doing it. But it was nice that they asked.)&lt;/p&gt;
+
+&lt;p&gt;I didn’t get that much value from networking with the people I met at the conference; a bunch of people tried to get me to apply to their companies/startups, but I could have found most of those jobs anyway on the internet.&lt;/p&gt;
+
+&lt;p&gt;However, I’ve gotten a shit ton of value out of putting this project on my resume, and talking about it to potential employers. I think it’s plausible that this presentation increased my annual salary by $10k. If I did 100 hours of work for $10k annual salary boost that only lasted for a year, that’s $100 per hour, which is a pretty nice wage. (I also got other advantages out of doing this project, like becoming much more knowledgeable about data structures, and getting experience designing pretty complex and abstract software. I don’t know how much benefit I got from the actual learning vs the looking smarter.)&lt;/p&gt;
+
+&lt;h2 id=&quot;how-to&quot;&gt;How to&lt;/h2&gt;
+
+&lt;p&gt;Suppose that you wanted to get this kind of advantage without putting in that much work, and without having particular inspiration for a project. How do you do it? Here are some ideas for talks that you can do without even doing any programming:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Talk about something you’ve done at work. “How we used functional programming constructs to make hardened, well tested production code” is a totally passable talk.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Give an introduction to a technical topic. Offer to explain technical details of eg efficiency considerations and best practices with Rails view rendering. (If they accept you, you can then probably learn enough about the topic to interest your audience.)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Look up the hot new libraries in your programming language of choice; give a presentation about the basics of that library. As an example, John Backus’s &lt;a href=&quot;https://blog.blockscore.com/how-to-write-better-code-using-mutation-testing/&quot;&gt;blog post about mutation testing&lt;/a&gt; is just begging to be adapted into a conference presentation. You can find other blog posts to plagiarize on Hacker News.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Got slightly more time and want to present on your hot open source project? I have the best sense of the Scala landscape, so I’ll be talking only about that here. Here are some ideas I have for projects which I bet I could get into a Scala conference with. I will probably present something like this at a conference this year.&lt;/p&gt;
+
+&lt;p&gt;There’s a bunch of hype about Scala.js, which means easy conference presentations about it. These ideas look like some of the low hanging fruit to me. Easiest project: make Scala.js work with Meteor by writing the type shims for it, present on that. Alternative ideas: Implement a shitty prototype of something like Meteor in Scala. Implement a framework which can compile either to JS React apps or native Android apps: this just involves coming up with a UI DSL then writing functions which export from that to Android or Javascript, which involves me learning Android, which is like 10 hours of learning (less if I convince a friend to help me with it).&lt;/p&gt;
+
+&lt;p&gt;If you want to steal any of these ideas and present on them at a conference, please be my guest (but if you talk to me about it I can give you more advice, and I’d appreciate knowing about my influence &lt;img class=&quot;emoji&quot; title=&quot;:smile:&quot; alt=&quot;:smile:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f604.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt; ).&lt;/p&gt;
+
+&lt;p&gt;If you want to talk to me about doing tech conferences, I’m happy to try and share advice with you.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 01 Feb 2016 10:23:59 -0800</pubDate>
+        <link>http://bshlgrs.github.io/2016/02/01/text_conferences.html</link>
+        <guid isPermaLink="true">http://bshlgrs.github.io/2016/02/01/text_conferences.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>How to play songs on piano</title>
+        <description>&lt;p&gt;A friend asked me how I go about playing songs on piano just from their chords. Here are the preliminary notes on the subject which I sent her:&lt;/p&gt;
+
+&lt;p&gt;When I’m playing a piano, I switch between several different behaviors:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;playing a bassline with my left hand and chords with my right. This is my default behavior.&lt;/li&gt;
+  &lt;li&gt;Playing riffs (eg if I were playing Gronlandic Edit, most of my time would be spent playing the bassline).&lt;/li&gt;
+  &lt;li&gt;playing parts which are copied note-for-note from the original piece, because they’re intricate or important enough that I can’t replace them. Eg playing the intro for Sirens Of Your Toxic Spirit.&lt;/li&gt;
+  &lt;li&gt;sometimes I’m playing a bassline with my lefthand and a melody in my right. Eg when I play the instrumental sections of We Will Fall Together. In this situation, my left hand is doing what I’d be doing in my default behavior.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;As a pianist, you’re well equipped to play the parts of songs which have particular notes specified. The skill of taking a song’s chord sequence and rhythm and turning that into a piano part is less obvious though.&lt;/p&gt;
+
+&lt;h2 id=&quot;meta-level-notes&quot;&gt;meta level notes&lt;/h2&gt;
+
+&lt;p&gt;I mostly got good at this through playing pieces on piano for a long time until I had an intuition for what sounded good. I also tried to imitate piano parts from piano driven songs I particularly admired.&lt;/p&gt;
+
+&lt;p&gt;When you start playing songs on piano, your parts will probably sound somewhat boring. I think that it’s worth playing pieces boringly, because playing them boringly you’re still practicing chord shapes and transitions between chords.&lt;/p&gt;
+
+&lt;h2 id=&quot;object-level-notes&quot;&gt;object level notes&lt;/h2&gt;
+
+&lt;p&gt;Let’s take Triumph of Disintegration as an example. When we sing that song, I spend the verses just playing the root note of the chord with my left hand and playing some inversion of the chord with my right hand.&lt;/p&gt;
+
+&lt;p&gt;The rhythm I play is something like this: https://flat.io/score/569c0ce0f172c541242f5265-my-first-score (that experiment with online music writing was interesting but overall not worth it. So it goes)&lt;/p&gt;
+
+&lt;p&gt;So I start out playing with that rhythm, with the root note in my left hand and the chord in my right hand.&lt;/p&gt;
+
+&lt;h3 id=&quot;rhythm&quot;&gt;Rhythm&lt;/h3&gt;
+
+&lt;p&gt;When I’m playing piano without any other accompaniment, I often play rhythms which correspond to drum rhythms. I play the left hand when I’d play the kick drum, and I play the right hand approximately when I’d hit a snare drum. Here’s what that previous rhythm sounds like as a drum beat: https://dl.dropboxusercontent.com/u/98145731/triumph1.mp3. This rhythm would be excessively busy if I were playing with a full band. I’d want to let the bass guitar take most of the rhythm of the bass notes, and think more carefully about what I wanted the chords to sound like. To some extent, playing busy rhythms is a bad habit of mine, learned through all my years of playing music on a piano and wanting it to sound to me like I was playing with a whole band.&lt;/p&gt;
+
+&lt;p&gt;How can you choose good rhythms? Here are a few ideas:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Go with some of the super simple default options. Eg play the root note on the 1st and 4th beat of the bar, and play the chord with half notes starting on the 1st and 3rd beats.&lt;/li&gt;
+  &lt;li&gt;Use the drum rhythm from the original song, as I suggested above.&lt;/li&gt;
+  &lt;li&gt;Play the root note with a rhythm matching the kick drum, play the chord at regular intervals (quarter or half notes, probably)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;right-hand&quot;&gt;Right hand&lt;/h3&gt;
+
+&lt;p&gt;I play chords with a lot of extensions. For example, I often play a Cmaj7 or a C7 or a C9 in place of the original chord. Using the dominant seventh is most appropriate on the dominant chord (the G if you’re in C). Using the major seventh is most appropriate on the subdominant or tonic chord (F or C in C). Both of those sound jazzy. Pop and rock music often sound good with extensions that aren’t sevenths.&lt;/p&gt;
+
+&lt;p&gt;It’s worth learning these two jazz chords: https://www.noteflight.com/scores/view/7260f1f64e1ae7e4727d71f92636561729709d8c&lt;/p&gt;
+
+&lt;p&gt;You can learn more about chord voicings by copying the parts of keyboardists in good songs, or by asking jazz pianists to teach you about them.&lt;/p&gt;
+
+&lt;p&gt;As I change chord, I try to move to an inversion of the right hand chord which requires me to move my hands the least. For example, to go from C to F I might change from the first inversion of C (C, E, G) to the third inversion of F (C, F, A). This makes your transitions sound more natural and smooth than moving your whole hand from (C, E, G) to (F, A, C). Changing inversion between chords evokes the way that chord changes sound on an acoustic guitar with open chords, or how they sound in an orchestral arrangement with several monophonic parts. (On the other hand, sometimes I play all the chords in first inversion, to make my piano part sound somewhat more aggressive and rocky. I use this device in the chorus of many of my songs. Playing the same inversion is more evocative of electric guitar parts, because when you’re playing barre chords on a guitar the chord shape is maintained through chord changes.)&lt;/p&gt;
+
+&lt;p&gt;Another classic device when you’re changing chord is to maintain some of the the notes from the last chord which aren’t actually part of the new chord, and using them as extensions (this is often called a suspension). For example, to go from a C to an F, I might play the C as (C, E, G) and then the F as (C, F, G), which is an Fsus2 chord. This is a common device in jazz piano.&lt;/p&gt;
+
+&lt;h3 id=&quot;left-hand&quot;&gt;Left hand&lt;/h3&gt;
+
+&lt;p&gt;I usually play the root note in two octaves simultaneously. Like my rhythm choice, this is somewhat inappropriate when I’m playing with a full band, but fills out the sound nicely when I’m playing on my own.&lt;/p&gt;
+
+&lt;p&gt;Instead of playing the root note, you can play the bassline of the original song, or use some of it in your left hand part.&lt;/p&gt;
+
+&lt;p&gt;More notes on writing basslines: http://music.tutsplus.com/tutorials/beginners-guide-to-writing-better-bass-lines–cms-19879&lt;/p&gt;
+</description>
+        <pubDate>Sun, 17 Jan 2016 00:00:00 -0800</pubDate>
+        <link>http://bshlgrs.github.io/2016/01/17/piano.html</link>
+        <guid isPermaLink="true">http://bshlgrs.github.io/2016/01/17/piano.html</guid>
+        
+        
+      </item>
+    
+  </channel>
+</rss>
