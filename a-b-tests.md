@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "A visual explanation of A-B tests"
+title:  "A-B tests"
 date:   2016-02-21
 uses_react: true
 ---
