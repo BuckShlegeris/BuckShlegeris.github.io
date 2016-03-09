@@ -80,21 +80,21 @@ var ABApp = renderThings.ABApp = React.createClass({
               <tbody>
                 <tr>
                   <th/>
-                  <th>Conversions</th>
                   <th>Total</th>
+                  <th>Conversions</th>
                   <th>Percentage</th>
                 </tr>
                 <tr>
                   <td>Control group</td>
                   <td>
                     <input
-                      value={this.state.controlConversions}
-                      onChange={this.setA1}/>
+                      value={this.state.controlTotal}
+                      onChange={this.setA2}/>
                   </td>
                   <td>
                     <input
-                      value={this.state.controlTotal}
-                      onChange={this.setA2}/>
+                      value={this.state.controlConversions}
+                      onChange={this.setA1}/>
                   </td>
                   <td>{(this.controlFraction() * 100).toPrecision(2)}%</td>
                 </tr>
@@ -102,20 +102,20 @@ var ABApp = renderThings.ABApp = React.createClass({
                   <td>Experimental group</td>
                   <td>
                     <input
-                      value={this.state.experimentalConversions}
-                      onChange={this.setB1}/>
+                      value={this.state.experimentalTotal}
+                      onChange={this.setB2}/>
                   </td>
                   <td>
                     <input
-                      value={this.state.experimentalTotal}
-                      onChange={this.setB2}/>
+                      value={this.state.experimentalConversions}
+                      onChange={this.setB1}/>
                   </td>
                   <td>{(this.experimentalFraction() * 100).toPrecision(2)}%</td>
                 </tr>
                 <tr>
                   <td>Overall</td>
-                  <td>{this.overallConversions()}</td>
                   <td>{this.overallTotal()}</td>
+                  <td>{this.overallConversions()}</td>
                   <td>{(this.overallFraction() * 100).toPrecision(2)}%</td>
                 </tr>
               </tbody>
@@ -170,10 +170,12 @@ var LikelihoodRatioGraph = React.createClass({
           minX={-controlP}
           maxX={1-controlP}
           paddingBottom={35}
+          paddingLeft={5 + 8 * showPercent(maxY).length}
           graphedFunctions={[{func: this.likelihoodFunction, strokeStyle: "blue"}]}
           onCanvasMouseMove={this.onCanvasMouseMove}
           indexOfGraphToTrace={0}
-          xAxisLabel="difference in conversion rate between control and experimental"/>
+          xAxisLabel="difference in conversion rate between control and experimental"
+          showYAxis={true}/>
         {this.state.mouseIsOver && <div>
           <p>
             If people in the experimental group
@@ -189,6 +191,67 @@ var LikelihoodRatioGraph = React.createClass({
     );
   }
 });
+
+
+var NullHypothesisGraph = React.createClass({
+  getInitialState() {
+    return {
+      mouseIsOver: false,
+      mouseEffectSize: null,
+      mouseLikelihood: null
+    }
+  },
+  onCanvasMouseMove(info) {
+    this.setState({
+      mouseIsOver: true,
+      mouseEffectSize: info.graphX,
+      mouseLikelihood: this.likelihoodFunction(info.graphX)
+    });
+  },
+  likelihoodFunction (skew) {
+    var controlP = this.props.controlConversions / this.props.controlTotal;
+    var successes = this.props.experimentalConversions;
+    var failures = this.props.experimentalTotal - this.props.experimentalConversions;
+
+    var p = effectSize + controlP;
+    return p ** successes * (1 - p) ** failures;
+  },
+  render() {
+    var controlP = this.props.controlConversions / this.props.controlTotal;
+    var successes = this.props.experimentalConversions;
+    var failures = this.props.experimentalTotal - this.props.experimentalConversions;
+
+    var maxY = this.likelihoodFunction((successes / this.props.experimentalTotal) - controlP);
+    return (
+      <div>
+        <LineGraph
+          minY={0}
+          maxY={maxY * 1.1}
+          minX={-controlP}
+          maxX={1-controlP}
+          paddingBottom={35}
+          paddingLeft={5 + 8 * showPercent(maxY).length}
+          graphedFunctions={[{func: this.likelihoodFunction, strokeStyle: "blue"}]}
+          onCanvasMouseMove={this.onCanvasMouseMove}
+          indexOfGraphToTrace={0}
+          xAxisLabel="difference in conversion rate between control and experimental"
+          showYAxis={true}/>
+        {this.state.mouseIsOver && <div>
+          <p>
+            If people in the experimental group
+            are <span style={{color: "darkred"}}>{showPercent(this.state.mouseEffectSize)}</span> more
+             likely to convert than people in the control group</p>
+          <p>--that is, the probability of someone converting in the experimental group
+             is {showPercent(this.state.mouseEffectSize + controlP)}--</p>
+          <p>then the chance of seeing exactly {successes} successes
+            and {failures} failures is <span style={{color: "green"}}>
+              {showPercent(this.state.mouseLikelihood)}</span>.</p>
+        </div>}
+      </div>
+    );
+  }
+});
+
 
 var LineGraph = React.createClass({
   getInitialState () {
@@ -207,6 +270,10 @@ var LineGraph = React.createClass({
       var pixelY = e.clientY - rect.top;
 
       var [graphX, graphY] = pixelToPos(that.planeInfo, pixelX, pixelY);
+
+      if (graphX < that.props.minX || graphX >= that.props.maxX) {
+        return;
+      }
 
       that.setState({mousePixelX: pixelX, mouseGraphX: graphX});
 
@@ -237,32 +304,44 @@ var LineGraph = React.createClass({
       drawLine(ctx, x, y, x, y+5);
     }
 
-    var yTickSpan = chooseReasonableTickIntervals(ySpan, 10);
+    if (this.props.showYAxis) {
+      var yTickSpan = chooseReasonableTickIntervals(ySpan, 10);
 
-    var yTickPosition = (this.props.minY / yTickSpan | 0) * yTickSpan;
+      var yTickPosition = (this.props.minY / yTickSpan | 0) * yTickSpan;
 
-    ctx.textAlign="right";
+      ctx.textAlign="right";
 
-    for(yTickPosition; yTickPosition < this.props.maxY; yTickPosition += yTickSpan) {
-      if (yTickPosition === 0.0) {
-        continue;
+      for(yTickPosition; yTickPosition < this.props.maxY; yTickPosition += yTickSpan) {
+        if (yTickPosition === 0.0) {
+          continue;
+        }
+        var [x, y] = posToPixel(this.planeInfo, 0, yTickPosition);
+        ctx.fillText(showPercent(yTickPosition), x-10, y + 5);
+        drawLine(ctx, x, y, x - 5, y);
       }
-      var [x, y] = posToPixel(this.planeInfo, 0, yTickPosition);
-      ctx.fillText(showPercent(yTickPosition), x-10, y + 5);
-      drawLine(ctx, x, y, x - 5, y);
+
+      ctx.beginPath();
+      ctx.moveTo(this.planeInfo.xOriginCanvasOffset, this.planeInfo.yOriginCanvasOffset);
+      ctx.lineTo(this.planeInfo.xOriginCanvasOffset, 0);
+      ctx.stroke();
     }
 
+    // draw x axis
     ctx.lineWidth = 2;
     ctx.strokeStyle = "black";
     ctx.beginPath();
     ctx.moveTo(0, this.planeInfo.yOriginCanvasOffset);
     ctx.lineTo(this.width, this.planeInfo.yOriginCanvasOffset);
     ctx.stroke();
-
-    ctx.beginPath();
-    ctx.moveTo(this.planeInfo.xOriginCanvasOffset, this.planeInfo.yOriginCanvasOffset);
-    ctx.lineTo(this.planeInfo.xOriginCanvasOffset, 0);
-    ctx.stroke();
+  },
+  paddingLeft() {
+    return this.props.paddingLeft || this.props.paddingSides || 10;
+  },
+  paddingRight() {
+    return this.props.paddingRight || this.props.paddingSides || 10;
+  },
+  paddingBottom() {
+    return this.props.paddingBottom || 10;
   },
   renderCanvas() {
     var canvas = this.refs.canvas;
@@ -270,17 +349,16 @@ var LineGraph = React.createClass({
     canvas.width = $(canvasContainer).width();
     this.width = $(canvas).width();
     var height = $(canvas).height();
-    var paddingBottom = this.props.paddingBottom;
-
-    var paddingSides = 55;
 
     var ctx = canvas.getContext("2d");
     ctx.clearRect(0, 0, this.width, height);
 
-    var xUnitInPixels = (this.width - paddingSides * 2) / (this.props.maxX - this.props.minX);
-    var yUnitInPixels = (height - paddingBottom) / (this.props.maxY - this.props.minY);
-    var xOriginCanvasOffset = -this.props.minX * xUnitInPixels + paddingSides;
-    var yOriginCanvasOffset = height - this.props.minY * yUnitInPixels - paddingBottom;
+    var innerWidth = this.width - this.paddingLeft() - this.paddingRight();
+
+    var xUnitInPixels = innerWidth / (this.props.maxX - this.props.minX);
+    var yUnitInPixels = (height - this.paddingBottom()) / (this.props.maxY - this.props.minY);
+    var xOriginCanvasOffset = -this.props.minX * xUnitInPixels + this.paddingLeft();
+    var yOriginCanvasOffset = height - this.props.minY * yUnitInPixels - this.paddingBottom();
 
     this.planeInfo = {
       xOriginCanvasOffset: xOriginCanvasOffset,
@@ -296,7 +374,7 @@ var LineGraph = React.createClass({
     ctx.fillText(this.props.xAxisLabel, this.width / 2, height - 5);
 
     this.props.graphedFunctions.forEach((f) => {
-      graphFunction(ctx, f, this.planeInfo, this.width - 2 * paddingSides, paddingSides);
+      graphFunction(ctx, f, this.planeInfo, innerWidth, this.paddingLeft());
     });
 
     if (this.props.indexOfGraphToTrace != -1 && this.state.mouseGraphX) {
@@ -328,7 +406,7 @@ function getFunctionRange(f, startX, endX, slices) {
   var yMax = 0;
   var pixel;
 
-  for (pixel = 0; pixel < slices; pixel++) {
+  for (pixel = 0; pixel <= slices; pixel++) {
     var x = startX + pixel * (endX - startX) / slices;
     var y = f(x);
     if (pixel == 0) {
@@ -350,7 +428,7 @@ function graphFunction(ctx, func, plane, width, offset) {
   ctx.beginPath();
   var pixel;
 
-  for (pixel = offset; pixel < width; pixel++) {
+  for (pixel = offset; pixel <= width; pixel++) {
     var x = (pixel - plane.xOriginCanvasOffset) / plane.xUnitInPixels;
     var y = f(x);
     var yPixel = - (y * plane.yUnitInPixels - plane.yOriginCanvasOffset);
