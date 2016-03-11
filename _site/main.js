@@ -192,6 +192,67 @@ var LikelihoodRatioGraph = React.createClass({
   }
 });
 
+
+var NullHypothesisGraph = React.createClass({
+  getInitialState() {
+    return {
+      mouseIsOver: false,
+      mouseEffectSize: null,
+      mouseLikelihood: null
+    }
+  },
+  onCanvasMouseMove(info) {
+    this.setState({
+      mouseIsOver: true,
+      mouseEffectSize: info.graphX,
+      mouseLikelihood: this.likelihoodFunction(info.graphX)
+    });
+  },
+  likelihoodFunction (skew) {
+    var controlP = this.props.controlConversions / this.props.controlTotal;
+    var successes = this.props.experimentalConversions;
+    var failures = this.props.experimentalTotal - this.props.experimentalConversions;
+
+    var p = effectSize + controlP;
+    return p ** successes * (1 - p) ** failures;
+  },
+  render() {
+    var controlP = this.props.controlConversions / this.props.controlTotal;
+    var successes = this.props.experimentalConversions;
+    var failures = this.props.experimentalTotal - this.props.experimentalConversions;
+
+    var maxY = this.likelihoodFunction((successes / this.props.experimentalTotal) - controlP);
+    return (
+      <div>
+        <LineGraph
+          minY={0}
+          maxY={maxY * 1.1}
+          minX={-controlP}
+          maxX={1-controlP}
+          paddingBottom={35}
+          paddingLeft={5 + 8 * showPercent(maxY).length}
+          graphedFunctions={[{func: this.likelihoodFunction, strokeStyle: "blue"}]}
+          onCanvasMouseMove={this.onCanvasMouseMove}
+          indexOfGraphToTrace={0}
+          xAxisLabel="difference in conversion rate between control and experimental"
+          showYAxis={true}/>
+        {this.state.mouseIsOver && <div>
+          <p>
+            If people in the experimental group
+            are <span style={{color: "darkred"}}>{showPercent(this.state.mouseEffectSize)}</span> more
+             likely to convert than people in the control group</p>
+          <p>--that is, the probability of someone converting in the experimental group
+             is {showPercent(this.state.mouseEffectSize + controlP)}--</p>
+          <p>then the chance of seeing exactly {successes} successes
+            and {failures} failures is <span style={{color: "green"}}>
+              {showPercent(this.state.mouseLikelihood)}</span>.</p>
+        </div>}
+      </div>
+    );
+  }
+});
+
+
 var LineGraph = React.createClass({
   getInitialState () {
     return {
