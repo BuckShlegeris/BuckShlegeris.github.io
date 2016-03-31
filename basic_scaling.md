@@ -1,8 +1,9 @@
 ---
 layout: post
-title:  "Basic scaling advice"
 date:   2016-03-11
 ---
+
+# Basic scaling advice
 
 So you’ve made a pretty standard web application which currently has two components: a database and an application server. Your website suddenly gets super popular. How do you scale it? Here’s my opinionated and incomplete answer.
 
