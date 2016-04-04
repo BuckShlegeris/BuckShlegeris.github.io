@@ -8,6 +8,8 @@ Here are some ideas for fun projects with data structures! I get really excited 
 
 ## Heap insertion time
 
+**Edit: Jim Terry figured this one out for me! He says that Bollobas and Simon, "Repeated random insertion into a priority queue." proves that it's average case constant time.**
+
 What's the average case insertion time for a binary heap? For some reason, this super simple question doesn't have a crisp answer obviously available on the internet. There are some [shitty hand-wavy proofs](http://wcipeg.com/wiki/Binary_heap#Insertion_2) that it's constant time, but nothing that I find very legit. Wikipedia's [talk page for Binary Heap](https://en.wikipedia.org/wiki/Talk:Binary_heap#Weak_proof_for_O.281.29_average-case_insertion) has some information on the controversy. To add to the confusion, CLRS sort of implies that it's log(n) time.
 
 The primary problem with the proof attempts I've seen is that the product of inserting a random value into a random heap is not a random heap, and so the proof would require proving things about the kinds of heaps produced by random insertions. I’d also be somewhat satisfied with strong numerical evidence for constant time.
