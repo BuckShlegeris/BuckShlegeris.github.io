@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Data structure projects"
-date:   2016-02-01 10:23:59 -0800
+date:   2016-04-03
 ---
 
 Here are some ideas for fun projects with data structures! I get really excited about data structures and if you want to ask me for clarification of any of these I'm super super happy to talk to you about them!
