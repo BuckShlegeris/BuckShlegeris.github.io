@@ -27,5 +27,10 @@
   <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
   <script src="/jquery.js"></script>
   <script type="text/babel" src="/main.js"></script>
-  {% if page.uses_react %}<script src="/bundle.js"></script>{% endif %}
+  {% if page.uses_react %}
+    <script src="/bundle.js"></script>
+    <script src="/math-game/build/react.js"></script>
+    <script src="/math-game/build/react-dom.js"></script>
+    <script src="/math-game/build/babel.min.js"></script>
+  {% endif %}
 </head>
