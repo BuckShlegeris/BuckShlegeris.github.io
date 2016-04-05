@@ -15,7 +15,7 @@ date:   2016-02-21
     <body>
     <div class="container">
         <div class="row">
-            <div id="sidebar" class="col-xs-3" style="margin-top: 80px; padding-left:0px;">
+            <div id="sidebar" class="col-sm-3 hidden-xs hidden-sm" style="margin-top: 80px; padding-left:0px;">
                 <ul class="nav nav-list bs-docs-sidenav affix">
                     <li><a class="arrow" href="#buck"><strong>Buck</strong></a>
                         <ul class="nav-nested">
@@ -70,12 +70,67 @@ date:   2016-02-21
 
             </div>
 
-            <div class="col-xs-7 col-xs-offset-1" style="margin-left: 40px;">
+            <div class="col-sm-7 col-sm-offset-1" style="margin-left: 40px;">
+
                 <div class="page-header">
                 <!-- <img src="./img/buck_small.jpg" width="30%" style="display: block;"> -->
                 <h1 id="buck">Buck Shlegeris</h1>
                 </div>
                     <img src="https://scontent-sjc2-1.xx.fbcdn.net/hphotos-xtp1/t31.0-8/11154688_10205041372168719_3725604149367069581_o.jpg" class="img-responsive" alt="Picture of Buck">
+
+                <div class="hidden-md hidden-lg">
+                    <ul class="nav nav-list">
+                        <li><a class="arrow" href="#buck"><strong>Buck</strong></a>
+                            <ul class="nav-nested">
+                                <li>
+                                    <a class="arrow" href="http://github.com/bshlgrs">GitHub</a>
+                                </li>
+                                <li>
+                                    <a class="arrow" href="mailto:bshlegeris@gmail.com">Email</a>
+                                </li>
+                                <li>
+                                    <a class="arrow" href="http://lnkd.in/bnBJ6EF">LinkedIn</a>
+                                </li>
+                                <li>
+                                    <a class="arrow" href="./resume.pdf">resume</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a class="arrow" href="#programming">Programming</a>
+                            <ul class="nav-nested">
+                                <li>
+                                    <a class="arrow" href="http://bshlgrs.github.io/music-game">Music game</a>
+                                </li>
+                                <li>
+                                    <a class="arrow" href="http://bshlgrs.github.io/math-game">Math game</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a class="arrow" href="#music">Music</a></li>
+                        <li><a class="arrow" href="#effective-altruism">Effective altruism</a>
+      <!--                       <ul>
+                            <li>
+                                <a class="arrow" href="#donations">Donations</a>
+                            </li>
+                            </ul> -->
+                        </li>
+    <!--                     <li><a class="arrow external" href="http://bshlgrs.tumblr.com">Blog</a></li> -->
+                        <li><a class="arrow external" href="https://docs.google.com/forms/d/1SOombLPHlKIMut-wJzIRg7DGdJjh9PJV4yAkrmTXKn4/viewform?usp=send_form">Anonymous feedback</a></li>
+
+                        <li><a class="arrow">Some things I have written
+                          <ul class="post-list">
+                            {% for post in site.posts %}
+                              <li>
+                                <a class="arrow" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                              </li>
+                            {% endfor %}
+                          </ul>
+                        </li>
+                        <li>
+                            <a class="arrow" href="http://bshlgrs.tumblr.com/post/142105173308">Cute pictures of me</a>
+                        </li>
+                    </ul>
+                </div>
 
 
                 <div class="lead">
