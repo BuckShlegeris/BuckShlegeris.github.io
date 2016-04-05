@@ -15,9 +15,20 @@
   <link rel="stylesheet" href="/bootstrap.css">
   <link rel="canonical" href="http://bshlgrs.github.io/htmlwell.html">
   <link rel="alternate" type="application/rss+xml" title="Buck Shlegeris" href="http://bshlgrs.github.io/feed.xml">
-  <script src="/math-game/build/react.js"></script>
-  <script src="/math-game/build/react-dom.js"></script>
-  <script src="/math-game/build/babel.min.js"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$latex', '$'] ],
+        displayMath: [ ['$$', '$$']],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      messageStyle: "none",
+      "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+    });
+  </script>
+  <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
   <script src="/jquery.js"></script>
   <script type="text/babel" src="/main.js"></script>
   
