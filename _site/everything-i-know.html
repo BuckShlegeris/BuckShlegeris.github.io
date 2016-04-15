@@ -6,13 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Bleg for intro to web architecture</title>
-  <meta name="description" content="I want a good resource for learning about general concepts in web application architecture?Most of the content would be grouped by application layer. So the ...">
+  <title>Buck Shlegeris</title>
+  <meta name="description" content="Website of Buck Shlegeris.
+">
 
 
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/bootstrap.css">
-  <link rel="canonical" href="http://bshlgrs.github.io/2016/02/19/bleg-for-intro-to-web-architecture.html">
+  <link rel="canonical" href="http://bshlgrs.github.io/everything-i-know.html">
   <link rel="alternate" type="application/rss+xml" title="Buck Shlegeris" href="http://bshlgrs.github.io/feed.xml">
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -80,21 +81,67 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Bleg for intro to web architecture</h1>
-    <p class="post-meta"><time datetime="2016-02-19T00:00:00-08:00" itemprop="datePublished">Feb 19, 2016</time></p>
+    <h1 class="post-title" itemprop="name headline"></h1>
+    <p class="post-meta"><time datetime="2016-02-01T10:23:59-08:00" itemprop="datePublished">Feb 1, 2016</time></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>I want a good resource for learning about general concepts in web application architecture?
-Most of the content would be grouped by application layer. So the main sections would be like: data persistence, application servers, caching layers…</p>
+    <h1 id="everything-i-know-in-detail">Everything I know, in detail</h1>
 
-<p>For example, the data persistence section would cover material like this: the current landscape of relational databases, basic SQL table design stuff, database indexes (what they are, a little about how they’re implemented, what a composite index is), what a query planner is, what the sql command EXPLAIN is, what normalization is, what an ORM is and why it makes sense to use it (eg reducing SQL injection vulnerability, agnosticism about database configuation). Then it would talk about database scaling: “When you want to scale a database, start out by checking your indexes and looking for the most time-consuming queries. Scale up before scaling out. To deal with read load, use read slaves. Then you might consider splitting up your database by concerns. If that’s not enough, you might need to shard your database. You also might consider batched writes.” Then it would give an introduction to distributed databases and why they’re a nightmare. Then it would talk about NoSQL databases like Mongo and Cassandra, and talk about their advantages and disadvantages and scaling properties. Finally it would talk about how you should use S3 or your own FTP server to store user-provided files.</p>
+<blockquote>
+  <p>Please list everything you know, in detail.</p>
+</blockquote>
 
-<p>One problem with this topic is that it’s rapidly changing, and a lot of it is quite subjective, so it’s kind of hard to write about.</p>
+<ul>
+  <li><a href="http://thenavelobservatory.com/2014/12/07/the-where-are-you-coming-from-survey-part-i/">“The “Where Are You Coming From” Survey, Part I”</a></li>
+</ul>
 
-<p><a href="https://www.airpair.com/aws/posts/building-a-scalable-web-app-on-amazon-web-services-p1">This article</a> covers similar material to what I’m interested in, but talks too much about practicalities and not enough about the relevant concepts. <a href="http://highscalability.com/">highscalability.com</a> is full of case studies which you can read one at a time to get many of these concepts, but that isn’t quite as systematic as I’d like.</p>
+<h2 id="computer-science">Computer science</h2>
 
-<p>In lieu of this resource, my current approach is to ask people about a bunch of subtopics (database indexes, what normalization is…) and then for every subtopic, send them a link to a short article on it if they don’t know much about it. But this doesn’t work very well when they know very little about a topic and need an introduction to all of it.</p>
+<p>I know more about computer science than about anything else.</p>
+
+<h3 id="programming-languages">Programming languages</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Language</td>
+      <td>My level</td>
+      <td>Example code/notes</td>
+    </tr>
+    <tr>
+      <td>Ruby</td>
+      <td>Advanced</td>
+      <td>Mostly proprietary, sadly</td>
+    </tr>
+    <tr>
+      <td>Scala</td>
+      <td>Advanced</td>
+      <td><a href="https://github.com/bshlgrs/rpeanut-compiler">Compiler</a>, <a href="https://github.com/bshlgrs/ruining-the-coding-interview">project which I presented at a conference</a></td>
+    </tr>
+    <tr>
+      <td>Javascript</td>
+      <td>Advanced</td>
+      <td>Mostly proprietary</td>
+    </tr>
+    <tr>
+      <td>Python</td>
+      <td>Advanced</td>
+      <td><a href="https://github.com/bshlgrs/pyGem">Project from two years ago</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="web-technology">Web technology</h3>
+
+<h3 id="core-cs">Core CS</h3>
+
+<h4 id="data-structures-and-algorithms">Data structures and algorithms</h4>
+
+<h4 id="operating-systems">Operating systems</h4>
+
+<h2 id="math">Math</h2>
+
 
   </div>
 
