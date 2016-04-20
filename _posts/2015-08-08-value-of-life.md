@@ -22,25 +22,35 @@ So we need to have a way of comparing the damage done by reducing the consumptio
 
 It’s pretty common to approximate happiness as linear in the logarithm of income, which I’m going to equivocate with consumption for the rest of this post. Consumption just means “the total value of all the things you consume in a given year”. Average happiness in a population where everyone has consumption $latex c$ can be written as:
 
+<div class="math">
 average happiness = $latex \log c + k$
+</div>
 
 where $latex c$ is consumption and $latex k$ is a constant that tells us about the consumption level at which a life is so meagre and deprived that it isn’t worth living, and also tells us how rapidly happiness increases relative to wealth. If people have a life expectancy of $latex t$ years, then we have the total happiness-years of a person as $latex t \log c + t k$.
 
 Anyway, back to the math. The derivative of this function with respect to consumption is $latex \frac{1}{y}$. So if we reduce the size of an entire economy by some small amount $latex \Delta c$ evenly spread across the whole population of n people, then the reduction in happiness per person is:
 
+<div class="math">
 $latex \Delta \text{happiness per person} = \frac{\Delta c}{c n}$
+</div>
 
 but there are $latex n$ people, so the total reduction in happiness is:
 
+<div class="math">
 $latex \Delta \text{total happiness} = \frac{n \Delta c}{n c} = \frac{\Delta c}c$.
+</div>
 
 So if we have the option to spend $latex \Delta c$ to save a life, we should be indifferent to doing so if the total reduction of happiness caused by reducing the total consumption by $latex \Delta c$ would be the same as the happiness of a given person:
 
+<div class="math">
 $latex t (\log c + k) = \frac{\Delta c}{c}$
+</div>
 
 We can solve this for $latex \Delta c$:
 
+<div class="math">
 $latex \Delta c = c t (\log c + k)$
+</div>
 
 Now we can substitute the value that we end up choosing for $latex k$ below to figure out that America should be willing to spend up to about $10 million to save an American baby. You can see the calculation [here](https://docs.google.com/spreadsheets/d/1ofwjlxGFlgG7cVnuySiga8yApl6AWLDlyZPa-c5ZHRc/edit#gid=0).
 
@@ -72,7 +82,7 @@ Here’s another fact about consumption levels and happiness. Under most natural
 
 The variability of consumption also plays into this. If it costs you a dollar a day to not die of hunger, then if your monthly consumption has a standard deviation of 50c per day, I suspect you’d die in a few months. So even if the lowest survivable level of poverty is bad enough that your life is barely worth living, perhaps not many people will live at that level of poverty for long.
 
-My co-blogger Marie points out that another way of estimating this would be to look at the mortal risks people take when they are starving. We could look at situations where people had a choice between remaining in a place suffering from famine, or doing something extremely dangerous to escape. She points out the example of post-war Vietnam, where the South Vietnamese who tried to escape faced about a 50% chance of death and tried to escape anyway, partially because they were so enormously hungry. One particularly good way of estimating this would be to look at neighboring regions where escaping is roughly as risky but the levels of famine were different, and comparing the rates at which people tried to escape. There would obviously be a million confounders here, like how unpleasant the regime was or how much people expected the situation to improve, but we might get some useful data regardless.
+Marie points out that another way of estimating this would be to look at the mortal risks people take when they are starving. We could look at situations where people had a choice between remaining in a place suffering from famine, or doing something extremely dangerous to escape. She points out the example of post-war Vietnam, where the South Vietnamese who tried to escape faced about a 50% chance of death and tried to escape anyway, partially because they were so enormously hungry. One particularly good way of estimating this would be to look at neighboring regions where escaping is roughly as risky but the levels of famine were different, and comparing the rates at which people tried to escape. There would obviously be a million confounders here, like how unpleasant the regime was or how much people expected the situation to improve, but we might get some useful data regardless.
 
 That’s all been trying to estimate $latex k$ by looking at happiness at the lowest end: how about if we try to estimate it by looking at how much a 10% change in consumption changes happiness in a nation? This has fewer philosophical issues, so I’m not going to discuss them. This way of indirectly estimating $latex k$ is closer to how we’re going to estimate it in the next section.
 
