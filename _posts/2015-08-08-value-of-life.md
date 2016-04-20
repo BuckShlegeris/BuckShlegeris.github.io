@@ -114,3 +114,5 @@ If I donated to global poverty causes, I really don’t know which of these I’
 The value of saving a life increases linearithmicly with consumption. This is neat. I am pretty sure this is correct, and I’m really happy to have a principled derivation for it.
 
 I think my equation for the value of saving a life is quite good for richer countries where it’s easier to measure consumption. Maybe one day, we will have ended global poverty, and the $latex \Delta c = c t (\log c + k)$ equation will be actually useful when we’re trying to decide whether a particular hovercar safety measure is worth it.
+
+*You can see earlier comments on this post [here](effective-altruism.com/ea/m1/a_way_of_thinking_about_saving_vs_improving_lives/)*.
