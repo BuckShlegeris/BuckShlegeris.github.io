@@ -31,6 +31,8 @@ Here are the main slightly obscure BST implementations (from Wikipedia):
 
 (I feel like skip lists belong on that list too.)
 
+**Edit: as it happens, the course in question already teaches 2-3 trees, so they're slightly less exciting to learn about seperately.**
+
 ## Optimal treap priority-changing parameters
 
 Treaps are a great randomized data structure: they're an unholy fusion of BST and heap, involving randomly choosing the priority for nodes. There's a reasonably obvious set of parameters that they contain that you could try to optimize in different settings. As [described on Wikipedia](https://en.wikipedia.org/wiki/Treap):
@@ -46,6 +48,8 @@ I had a neat idea for a somewhat original data structure related to BSTs, but my
 ## Reduction-memoizing BSTs
 
 These are binary search trees where each node memoizes a function of its subtrees. For example, you could have a BST of humans, ordered by age, and have each node store the maximum income of the humans stored in its children. This is neat because then you can then answer queries like "what's the maximum income of people with ages between 20.3 and 25.3" in log time. You can also update in log time. This is related to finger trees. This structure is not very hard to implement--it's just a self-balancing BST with some extra book-keeping. For bonus points, implement it in C but with bindings to a nice language like Ruby, and a convenient API which lets me specify both my ordering function and my sub-tree memoizing function as lambda functions.
+
+**Edit: These are nicely described in [this fantastic set of slides](http://web.stanford.edu/class/cs166/lectures/06/Small06.pdf) from the class which inspired me to write this post.**
 
 ## Self-balancing KD trees
 
