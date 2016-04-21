@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "To learn, optimize first for fun"
+title:  "Optimize for fun when you're trying to learn"
 date:   2016-02-21
 ---
 
