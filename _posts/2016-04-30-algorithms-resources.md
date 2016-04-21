@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Algorithms and data structure resources"
-date:   2016-04-14
+date:   2016-04-30
 ---
 
 Here are my recommendations for good materials on algorithms.
