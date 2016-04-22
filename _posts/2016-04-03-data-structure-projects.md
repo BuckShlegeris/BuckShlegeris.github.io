@@ -45,6 +45,8 @@ This one is fun because there's a chance of making an original and somewhat usef
 
 I had a neat idea for a somewhat original data structure related to BSTs, but my implementation is wrong and it has a logical error (if you insert in descending order, it gets arbitrarily unbalanced). [Here's the repo](https://github.com/bshlgrs/random-balanced-trees) describing it. You could read my description of the data structure, figure out a way to fix the problem with it, and fix it, then implement it and benchmark it. This project is certainly possible, but might be too easy.
 
+**Edit: This is already a question in the CS166 assignment 3, so you probably can't do it.**
+
 ## Reduction-memoizing BSTs
 
 These are binary search trees where each node memoizes a function of its subtrees. For example, you could have a BST of humans, ordered by age, and have each node store the maximum income of the humans stored in its children. This is neat because then you can then answer queries like "what's the maximum income of people with ages between 20.3 and 25.3" in log time. You can also update in log time. This is related to finger trees. This structure is not very hard to implement--it's just a self-balancing BST with some extra book-keeping. For bonus points, implement it in C but with bindings to a nice language like Ruby, and a convenient API which lets me specify both my ordering function and my sub-tree memoizing function as lambda functions.
