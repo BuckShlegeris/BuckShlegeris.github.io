@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Giving more"
-date:   2016-04-30
+date:   2016-09-30
 ---
 
 <div class="panel panel-default">
