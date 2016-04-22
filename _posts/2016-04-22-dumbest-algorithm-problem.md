@@ -6,21 +6,21 @@ date:   2016-04-22
 
 Want to know the dumbest algorithm problem in the entire world? Here it is:
 
-"Find the $latex k$th last element of a linked list, in a single pass, with constant memory."
+> Find the $latex k$th last element of a linked list, in a single pass, with constant memory.
 
 Let the length of the linked list be $latex n$. If we didn't have to follow the single-pass constraint, we'd solve this by finding the length of the linked list (which takes $latex n$ steps), then looking for the $latex(n - k)$th element. In total, we traversed $latex(2n - k)$ links.
 
-However, my interviewer apparently measures code efficiency by "number of while loops in the function body", so we have to do better.
+However, this interviewer apparently measures code efficiency by "number of while loops in the function body", so we have to do better.
 
 The canonical answer to this question is to make a while loop with two pointers, one of which trails $latex k$ links behind the other. As soon as you get to the end with your leading pointer, you return whatever's at your trailing pointer.
 
 Wow, so efficient, only one while loop! Let's see how much faster we made it!
 
-Well, the leading pointer traversed n links, and the trailing pointer traversed $latex (n - k)$ links. That's...uh... exactly the same as the previous answer! Except you had to write a custom function instead of just calling `.length` and `.get`, which I assume your linked list already had! And now you're more exposed to a bug when the linked list is too short to have a $latex k$th last element!
+Well, the leading pointer traversed $latex n$ links, and the trailing pointer traversed $latex (n - k)$ links. That's...uh...exactly the same as the previous answer! Except you had to write a custom function instead of just calling `.length` and `.get`, which I assume your linked list already had! And now you're more exposed to a bug when the linked list is too short to have a $latex k$th last element!
 
-(Full disclosure: for small $latex k$, this solution might be faster because of memory locality. But I've never heard anyone mention that as the rationale for this problem, so I'm not going to give the problem credit.)
+(Full disclosure: for small $latex k$, this solution might be faster because of memory locality. But I've never heard anyone mention that as the rationale for this problem, so I'm not going to give any credit for that.)
 
-In real life, if this was method call was going to happen a lot you'd just store the length of your linked list in a wrapper object. Knowing that you can maintain the length as a field is a million times more useful than being able to solve the problem as written.
+In real life, if this was method call was going to happen a lot you'd just store the length of your linked list in a wrapper object. Knowing that you should maintain the length as a field is a million times more useful than being able to solve the problem as written.
 
 It makes me really sad that this question appears so often on lists of most common interview questions. Cracking the Coding Interview mentions this question and gives this answer but doesn't claim it's better. Elements of Programming Interviews actively claims that this answer is the better one (page 105).
 
