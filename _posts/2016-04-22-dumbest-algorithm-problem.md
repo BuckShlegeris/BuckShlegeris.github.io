@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "The dumbest algorithm problem"
+title:  "The dumbest algorithm problem in the entire world"
 date:   2016-04-22
 ---
 
