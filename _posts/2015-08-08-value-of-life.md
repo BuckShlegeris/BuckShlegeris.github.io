@@ -74,7 +74,7 @@ The book [Poor Economics](https://www.dropbox.com/s/vwtxhtjokdokvcx/Poor-Economi
 
 That life is being classified as significantly less than $2 PPP a day, which I don’t think includes the benefits of free rice, his brother’s food, or fishing in the river.
 
-I’m not trying to trivialize extreme poverty here: that life sounds pretty shit, and I’m incredibly glad I don’t have it. But I don’t think it’s entirely sensible to call that "living on $1 a day”.
+I’m not trying to trivialize extreme poverty here: that life sounds pretty unpleasant, and I’m incredibly glad I don’t have it. But I don’t think it’s entirely sensible to call that "living on $1 a day”.
 
 On the other hand, I get the benefits of a lot of government spending which Malawians don’t: I have subsidized public transport, and reasonably good police, and good roads, and so on.
 
@@ -113,7 +113,7 @@ We’ve got a plethora of extra factors in this particular case. To start with, 
 
 I think that my formula is totally useless for answering the question of how much we should be willing to spend per life saved by AMF if our alternative is giving to GiveDirectly, because it’s so sensitive to changes in my $latex k$, and estimating $latex c$ is also really hard for super poor people. However, I did get some feeling about it from doing the research into poverty in Malawi and Kenya I did to write this discussion section. The people whose lives you save by giving to AMF seem to be pretty intensely impoverished. If 30% of Malawians are undernourished in general, and people saved by AMF are unusually poor, I suspect that probably a majority of the lives saved there are undernourished. That means that these people feel hungry _all the time_. I have a lot of sympathy for the perspective that those lives sound perhaps not worth living, in which case making them better is the better option. I also think it’s pretty plausible that these lives are actually pretty okay.
 
-GiveWell has obviously thought about how to compare saving lives to increasing consumption, but AFAICT they haven’t considered it this explicitly. In 2012 they said that they suspected AMF was a [much better deal](http://blog.givewell.org/2012/12/19/cost-effectiveness-of-nets-vs-deworming-vs-cash-transfers/) than GiveDirectly. However, GiveWell hasn’t tried to quantify the value of increasing consumption vs saving lives like I have here. They probably haven’t tried because it turns out that when you do, you get shit results, as I did above.
+GiveWell has obviously thought about how to compare saving lives to increasing consumption, but AFAICT they haven’t considered it this explicitly. In 2012 they said that they suspected AMF was a [much better deal](http://blog.givewell.org/2012/12/19/cost-effectiveness-of-nets-vs-deworming-vs-cash-transfers/) than GiveDirectly. However, GiveWell hasn’t tried to quantify the value of increasing consumption vs saving lives like I have here. They probably haven’t tried because it turns out that when you do, you get relatively difficult-to-interpret results, as I did above.
 
 Carl Shulman has also written about [happiness as log of consumption and GiveDirectly](http://reflectivedisequilibrium.blogspot.com/2014/03/givedirectly-happiness-and-log-income.html?m=1) before--I hadn't seen his post before I wrote all this.
 
