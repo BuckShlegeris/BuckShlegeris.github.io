@@ -115,7 +115,7 @@ I think that my formula is totally useless for answering the question of how muc
 
 GiveWell has obviously thought about how to compare saving lives to increasing consumption, but AFAICT they haven’t considered it this explicitly. In 2012 they said that they suspected AMF was a [much better deal](http://blog.givewell.org/2012/12/19/cost-effectiveness-of-nets-vs-deworming-vs-cash-transfers/) than GiveDirectly. However, GiveWell hasn’t tried to quantify the value of increasing consumption vs saving lives like I have here. They probably haven’t tried because it turns out that when you do, you get shit results, as I did above.
 
-Carl Shulman has also written about [happiness as log of consumption and GiveDirectly](reflectivedisequilibrium.blogspot.com/2014/03/givedirectly-happiness-and-log-income.html?m=1) before--I hadn't seen his post before I wrote all this.
+Carl Shulman has also written about [happiness as log of consumption and GiveDirectly](http://reflectivedisequilibrium.blogspot.com/2014/03/givedirectly-happiness-and-log-income.html?m=1) before--I hadn't seen his post before I wrote all this.
 
 If I donated to global poverty causes, I really don’t know which of these I’d give to.
 
@@ -125,4 +125,4 @@ The value of saving a life increases linearithmicly with consumption. This is ne
 
 I think my equation for the value of saving a life is quite good for richer countries where it’s easier to measure consumption. Maybe one day, we will have ended global poverty, and the $latex \Delta c = c t (\log c + k)$ equation will be actually useful when we’re trying to decide whether a particular hovercar safety measure is worth it.
 
-*You can see earlier comments on this post [here](effective-altruism.com/ea/m1/a_way_of_thinking_about_saving_vs_improving_lives/)*.
+*You can see earlier comments on this post [here](http://effective-altruism.com/ea/m1/a_way_of_thinking_about_saving_vs_improving_lives/)*.
