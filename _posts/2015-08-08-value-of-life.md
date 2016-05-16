@@ -99,7 +99,7 @@ Here’s a few data points to use to estimate $latex k$:
 
 I’m a lot more averse to poverty than SSC readers, apparently.
 
-From these [we get an average estimate](https://docs.google.com/spreadsheets/d/1ofwjlxGFlgG7cVnuySiga8yApl6AWLDlyZPa-c5ZHRc/edit?usp=sharing) of $latex k$ as about -2.2\. This number is low enough that nations with average consumption PPP less than $latex 10^{2.2} = 158$ are classified to have a negative quality of life. I think this is stupid. I removed the China data point because I think that the people answering the Slate Star Codex survey overestimated how rich China is. I vaguely recall the survey implying that you lived in a city in China or something, as opposed to living in rural China as 50% of Chinese actually do.
+From these [we get an average estimate](https://docs.google.com/spreadsheets/d/1ofwjlxGFlgG7cVnuySiga8yApl6AWLDlyZPa-c5ZHRc/edit?usp=sharing) of $latex k$ as about -2.2\. This number is low enough that nations with average consumption PPP less than $latex 10^{2.2} = 158$ are classified to have a negative quality of life. I think this is an inaccurately high bar. I removed the China data point because I think that the people answering the Slate Star Codex survey overestimated how rich China is. I vaguely recall the survey implying that you lived in a city in China or something, as opposed to living in rural China as 50% of Chinese actually do.
 
 Overall, I think that this model of happiness as logarithmic in consumption is good but gives bad results for extremely poor countries, because we are underestimating the consumption of extremely poor people.
 
