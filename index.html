@@ -66,7 +66,7 @@ date:   2016-02-21
 
                         <li><a class="arrow">Some things I have written
                           <ul class="post-list">
-                            {% for post in site.posts limit:5 %}
+                            {% for post in site.posts limit:8 %}
                               <li>
                                 <a class="arrow" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
                               </li>
@@ -222,7 +222,7 @@ date:   2016-02-21
 
                     <li style="width: 300px;"><a class="arrow">Some things I have written
                       <ul class="post-list">
-                        {% for post in site.posts limit:5 %}
+                        {% for post in site.posts limit:8 %}
                           <li>
                             <a class="arrow" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
                           </li>

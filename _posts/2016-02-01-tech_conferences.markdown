@@ -2,6 +2,8 @@
 layout: post
 title:  "For Programmers, Giving a Talk at a Conference May Be Worth $100/hr in Career Capital"
 date:   2016-02-01 10:23:59 -0800
+tags:
+- programming
 ---
 
 
