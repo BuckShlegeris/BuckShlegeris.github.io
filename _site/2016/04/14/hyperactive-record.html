@@ -58,7 +58,7 @@
 
 <p>There are some super fun places you could take this project. For example, a SQL enthusiast could devote themselves to the project of building a query generator for recursive method calls. That is, compiling</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Comment</span>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Comment</span>
   <span class="k">def</span> <span class="nf">descendants</span>
      <span class="no">Hyperactive</span><span class="p">.</span><span class="nf">union</span><span class="p">(</span><span class="nb">self</span><span class="p">,</span> <span class="nb">self</span><span class="p">.</span><span class="nf">children</span><span class="p">.</span><span class="nf">flat_map</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:descendants</span><span class="p">)</span>
   <span class="k">end</span>
@@ -81,6 +81,10 @@
       <hr/>
       <p>Other posts</p>
       <ul>
+        
+          <li>
+            <a class="arrow" href="/2016/05/24/mistakes.html">My main effective altruism mistakes so far</a>
+          </li>
         
           <li>
             <a class="arrow" href="/2016/04/22/dumbest-algorithm-problem.html">The dumbest algorithm problem in the entire world</a>
