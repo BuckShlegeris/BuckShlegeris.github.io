@@ -1,6 +1,7 @@
 ---
 layout: nocomment_post
 title: "Is Buck still weird about dating?"
+date: ""
 ---
 
 Yes, unbearably so!
