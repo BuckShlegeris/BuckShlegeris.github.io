@@ -2,7 +2,7 @@ Glossary of concepts which often come up in EA
 
 I wrote the other day about how people who show up to EA meetings without knowing anything about EA often don't know what we're talking about. Several people suggested making a glossary. I responded by saying that the glossary would need to be super long, and mostly consist of links to external posts.
 
-But upon further consideration, I decided to write a glossary anyway. This isn't intended to be a good introduction to EA; for one of those consult HERE. Instead, this is meant to be a summary of different concepts and jargon which often come up in EA discussions. I think that if you know all of this, you should understand almost everything we talk about at Stanford EA. (Obviously, you're welcome along even if you don't understand all of it, and not all of this comes up every week. Most people at the meetup don't know all of this, and there are probably things that most of the other attendees know about which I don't know.)
+But upon further consideration, I decided to write a glossary anyway. This isn't intended to be a good introduction to EA; for one of those consult HERE. Instead, this is meant to be a list of different concepts and jargon which often come up in EA discussions. I think that if you know all of this, you should understand almost everything say at Stanford EA. (Obviously, you're welcome along even if you don't understand all of it, and not all of this comes up every week. Most people at the meetup don't know all of this, and there are probably things that most of the other attendees know about which I don't know.)
 
 - generally useful resources
     - Wikipedia
@@ -34,11 +34,13 @@ But upon further consideration, I decided to write a glossary anyway. This isn't
 - cause prioritization
 - science
     - RCTs
+    - CRISPR
 - global poverty
     - AMF, SCI, GiveDirectly
     - Innovations for Poverty Action, J-PAL
     - open borders
         - http://www.vox.com/2014/9/13/6135905/open-borders-bryan-caplan-interview-gdp-double
+    - happiness research
 - far future
     - astronomical waste
         - http://www.nickbostrom.com/astronomical/waste.html

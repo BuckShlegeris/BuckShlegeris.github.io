@@ -6,14 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Buck Shlegeris</title>
+  <title>Not thinking of things I can&#39;t say</title>
   <meta name="description" content="Website of Buck Shlegeris.
 ">
 
 
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/bootstrap.css">
-  <link rel="canonical" href="http://bshlgrs.github.io/basic_scaling.html">
+  <link rel="canonical" href="http://bshlgrs.github.io/2016-06-02-say.html">
   <link rel="alternate" type="application/rss+xml" title="Buck Shlegeris" href="http://bshlgrs.github.io/feed.xml">
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -42,46 +42,18 @@
     <div class="container">
   <div class="row">
     <div class="col-xs-6 col-xs-offset-1">
-      <h1 class="post-title" itemprop="name headline"></h1>
-      <p class="post-meta"><time datetime="2016-03-11T00:00:00-08:00" itemprop="datePublished">Mar 11, 2016</time></p>
+      <h1 class="post-title" itemprop="name headline">Not thinking of things I can't say</h1>
+      <p class="post-meta"><time datetime="2016-06-02T00:00:00-07:00" itemprop="datePublished">Jun 2, 2016</time></p>
 
       <hr/>
 
-      <h1 id="basic-scaling-advice">Basic scaling advice</h1>
+      <p>I noticed recently that I usually don’t think of thoughts which I’m not going to be able to say for political correctness reasons. Occasionally when I talk to people who don’t care about offending progressives, they say really insightful things which I would never have thought of on my own, because my brain just blocks those thoughts out before I can think them.</p>
 
-<p>So you’ve made a pretty standard web application which currently has two components: a database and an application server. Your website suddenly gets super popular. How do you scale it? Here’s my opinionated and incomplete answer.</p>
+<p>This is annoying, because I’d rather think of things like that and not say them publicly than not think of them at all.</p>
 
-<p>The first step in scaling a system is to make sure you have thorough monitoring and logging. This way, when something breaks, you’ll know what it is. Common tools for this include NewRelic, Nagios, and platform specific tools on AWS</p>
+<p>I think the main cause of this is that I do a lot of my thinking while talking to people about things, and if certain kinds of discussion are stifled, I don’t get practice thinking about them.</p>
 
-<p>Typically the first bottlenecks in your application will be that your database is getting too many reads, and that your application server is getting too many requests.</p>
-
-<h2 id="scaling-your-application-layer">Scaling your application layer</h2>
-
-<p>When your application server is too slow, you have to split it into multiple servers. This is normally relatively easy because your application server should be stateless, so you don’t need any synchronization between machines. You can just put it on multiple machines and have a load balancer give incoming requests to different servers, typically using a round-robin approach where they take turns.</p>
-
-<h2 id="scaling-your-database">Scaling your database</h2>
-
-<p>The first step for scaling your database is optimizing your queries. Use your monitoring tool to determine which queries are taking the most time. Add or change indexes on the appropriate tables to make those queries faster. If your database is still struggling, next you want to try vertical scaling.</p>
-
-<p>The next step is adding a caching layer. Caching layers let you store particular data for a predetermined amount of time. For example, Reddit probably caches their front page so that they don’t have to recalculate the top posts every time someone goes to reddit.com. The most popular caching server is Redis.</p>
-
-<p>One obvious question with caching is how you decide what pages to cache. I often hear people propose super complicated schemes for determining popularity of pages. It turns out that the easiest and most popular solution is a least-recently-used or LRU cache. This means that when your cache is full and you want to add a new thing to it, you replace the item in your cache which was least recently used.</p>
-
-<p>When you’ve done as much caching as you can, you probably want to try adding read slaves. Read slaves are basically clones of your database which let you run queries, but don’t let you modify data. So all write requests are still directed to the master database. Every few minutes the read slaves update their data to match the contents of the master database.</p>
-
-<h2 id="sharding">Sharding</h2>
-
-<p>Sharding is when you split your SQL database into multiple databases. You can shard either by concern, eg having all your user-related tables on one machine and all your product-related tables on another, or by location, eg having one database for California and another for New York.</p>
-
-<p>Sharding is really annoying and difficult to do. It is not a good idea to immediately suggest sharding as soon as someone asks you how to scale your database. People often suggest it anyway :(</p>
-
-<h2 id="other-resources">Other resources</h2>
-
-<p>To solidify some of these concepts, I recommend reading some descriptions of the stacks of various mid-sized websites, like <a href="https://blog.imgur.com/2013/06/04/tech-tuesday-our-technology-stack/">Imgur</a> and <a href="http://highscalability.squarespace.com/blog/2016/2/1/a-patreon-architecture-short.html">Patreon</a>. I also like the links and advice provided <a href="http://www.hiredintech.com/system-design">here</a>.</p>
-
-<p><a href="https://blog.hartleybrody.com/scale-load/">This</a> is a good blog post which says the same things I said here, but it’s more detailed about specific technologies.</p>
-
-<p><a href="https://www.airpair.com/aws/posts/building-a-scalable-web-app-on-amazon-web-services-p1">This</a> is a great post with even more detail about scaling, specifically on AWS. It’s really long and detailed, but it’s a good read.</p>
+<p>This has a few implications. Firstly, it means that efforts to stifle offensive thoughts concern me somewhat more than they did previously, because I am more concerned that restricting speech restricts thoughts. Secondly, it makes me think more that private spaces for conversations are important. Third, it makes me really glad for circle-jerking EAs who are privately enjoy biting bullets and saying purposefully controversial things—I’d previously thought of that as harmless fun, but now I think that it might have the important function of countering the natural push towards orthodoxy.</p>
 
 
     </div>
@@ -92,10 +64,6 @@
       <hr/>
       <p>Other posts</p>
       <ul>
-        
-          <li>
-            <a class="arrow" href="/2016/06/02/say.html">Not thinking of things I can't say</a>
-          </li>
         
           <li>
             <a class="arrow" href="/2016/05/29/explicit.html">Optimize dating for non-interference with platonic relationships</a>

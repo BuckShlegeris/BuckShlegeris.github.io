@@ -8,6 +8,19 @@
     <atom:link href="http://bshlgrs.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Not thinking of things I can&#39;t say</title>
+        
+        
+          <description>&lt;p&gt;I noticed recently that I usually don’t think of thoughts which I’m not going to be able to say for political correctness reasons. Occasionally when I talk to people who don’t care about offending progressives, they say really insightful things which I would never have thought of on my own, because my brain just blocks those thoughts out before I can think them.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Thu, 02 Jun 2016 00:00:00 -0700</pubDate>
+        <link>http://bshlgrs.github.io/2016/06/02/say.html</link>
+        <guid isPermaLink="true">http://bshlgrs.github.io/2016/06/02/say.html</guid>
+      </item>
+    
+      <item>
         <title>Optimize dating for non-interference with platonic relationships</title>
         
         
@@ -122,20 +135,6 @@
         <pubDate>Sun, 21 Feb 2016 00:00:00 -0800</pubDate>
         <link>http://bshlgrs.github.io/2016/02/21/learning-fun.html</link>
         <guid isPermaLink="true">http://bshlgrs.github.io/2016/02/21/learning-fun.html</guid>
-      </item>
-    
-      <item>
-        <title>Bleg for intro to web architecture</title>
-        
-        
-          <description>&lt;p&gt;I want a good resource for learning about general concepts in web application architecture?
-Most of the content would be grouped by application layer. So the main sections would be like: data persistence, application servers, caching layers…&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Fri, 19 Feb 2016 00:00:00 -0800</pubDate>
-        <link>http://bshlgrs.github.io/2016/02/19/bleg-for-intro-to-web-architecture.html</link>
-        <guid isPermaLink="true">http://bshlgrs.github.io/2016/02/19/bleg-for-intro-to-web-architecture.html</guid>
       </item>
     
   </channel>
