@@ -1,0 +1,101 @@
+Glossary of concepts which often come up in EA
+
+I wrote the other day about how people who show up to EA meetings without knowing anything about EA often don't know what we're talking about. Several people suggested making a glossary. I responded by saying that the glossary would need to be super long, and mostly consist of links to external posts.
+
+But upon further consideration, I decided to write a glossary anyway. This isn't intended to be a good introduction to EA; for one of those consult HERE. Instead, this is meant to be a summary of different concepts and jargon which often come up in EA discussions. I think that if you know all of this, you should understand almost everything we talk about at Stanford EA. (Obviously, you're welcome along even if you don't understand all of it, and not all of this comes up every week. Most people at the meetup don't know all of this, and there are probably things that most of the other attendees know about which I don't know.)
+
+- generally useful resources
+    - Wikipedia
+    - 80000 Hours
+    - foundational-research.org
+    - GiveWell blog, OpenPhil blog
+
+- general questions
+    - systemic change vs small scale change
+    - robustness of evidence
+        - http://www.openphilanthropy.org/blog/hits-based-giving
+- ethics
+    - utilitarianism
+        - http://raikoth.net/consequentialism.html
+        - hedonic vs preference utilitarianism
+        - http://foundational-research.org/hedonistic-vs-preference-utilitarianism/
+    - how much to care about animals
+        - It is probably possible to do much more good by reducing suffering of nonhumans than humans, because most people care much more about humans.
+            - http://reducing-suffering.org/suffering-in-animals-vs-humans/
+    - population ethics
+    - suffering subroutines
+    - metaethics http://plato.stanford.edu/entries/metaethics/
+    - anti-death https://carcinisation.com/2014/07/13/an-anti-deathist-f-a-q/
+    - hedonium
+        - http://hedweb.com/hedab.htm
+- career things
+    - earning to give
+        - https://80000hours.org/articles/earning-to-give/
+- cause prioritization
+- science
+    - RCTs
+- global poverty
+    - AMF, SCI, GiveDirectly
+    - Innovations for Poverty Action, J-PAL
+    - open borders
+        - http://www.vox.com/2014/9/13/6135905/open-borders-bryan-caplan-interview-gdp-double
+- far future
+    - astronomical waste
+        - http://www.nickbostrom.com/astronomical/waste.html
+        - http://foundational-research.org/risks-of-astronomical-future-suffering/
+    - existential risk
+        - http://www.nickbostrom.com/existential/risks.html
+        - https://en.wikipedia.org/wiki/Global_catastrophic_risk
+    - AI safety
+        - intro
+            - http://waitbutwhy.com/2015/01/artificial-intelligence-revolution-2.html
+            - corrections at http://lukemuehlhauser.com/a-reply-to-wait-but-why-on-machine-superintelligence/
+            - http://www.openphilanthropy.org/blog/some-background-our-views-regarding-advanced-artificial-intelligence
+            - http://www.openphilanthropy.org/blog/potential-risks-advanced-artificial-intelligence-philanthropic-opportunity
+        - complexity of value
+        - orthogonality thesis
+        - paperclippers
+        - intelligence explosion
+        - superintelligence
+    - Organizations
+        - MIRI
+        - FHI
+        - FLI
+- animal stuff
+    - Different interventions
+        - corporate outreach
+            - www.openphilanthropy.org/blog/initial-grants-support-corporate-cage-free-reforms
+        - leaflets
+            - http://www.animalcharityevaluators.org/research/interventions/leafleting/
+        - online ads
+            - http://www.animalcharityevaluators.org/research/interventions/online-ads/
+        - animal product alternatives
+            - http://www.openphilanthropy.org/research/cause-reports/animal-product-alternatives#Our_process
+        - protests
+            - https://www.academia.edu/13749264/Confrontation_Consumer_Action_and_Triggering_Events
+    - history of social movements
+        - feminism, civil rights movement
+        - http://www.animalcharityevaluators.org/blog/social-movements-case-study-childrens-rights/
+    - welfarism vs liberationism
+    - wild animal suffering
+        - http://foundational-research.org/the-importance-of-wild-animal-suffering/
+    - Organizations:
+        - MFA
+        - THL
+        - DxE
+        - ACE
+        - Animal Equality
+- Internal politics and history
+    - GiveWell
+        - AMF
+        - SCI
+        - GiveDirectly
+        - Open Philanthropy Project
+    - Good Ventures
+    - LessWrong origin
+        - Overcoming Bias
+        - Hanson
+            - https://www.reddit.com/r/slatestarcodex/comments/3sjtar/a_robin_hanson_primer/
+    - Toby Ord and GWWC
+    - 80000 Hours
+    - Peter Singer
