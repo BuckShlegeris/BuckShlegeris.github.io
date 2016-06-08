@@ -1,6 +1,6 @@
 ---
 layout: nocomment_post
-title:  "Cute pictures of me"
+title:  "Pictures of me"
 date:  ""
 ---
 
