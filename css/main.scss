@@ -73,3 +73,17 @@ div.math {
 .markdownify h3::before {
   content: "### "
 }
+
+.markdownify {
+  ul {
+    list-style: none;
+  }
+
+  ul > li {
+    text-indent: -5px;
+  }
+  ul > li:before {
+    content: "- ";
+    text-indent: -10px;
+  }
+}
