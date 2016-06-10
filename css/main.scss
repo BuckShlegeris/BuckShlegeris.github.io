@@ -79,6 +79,7 @@ div.math {
 .markdownify {
   ul {
     list-style: none;
+    margin-left: 10px;
   }
 
   ul > li {
@@ -86,6 +87,5 @@ div.math {
   }
   ul > li:before {
     content: "- ";
-    text-indent: -10px;
   }
 }

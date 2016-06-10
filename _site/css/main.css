@@ -477,9 +477,9 @@ div.math {
   content: "### "; }
 
 .markdownify ul {
-  list-style: none; }
+  list-style: none;
+  margin-left: 10px; }
 .markdownify ul > li {
   text-indent: -5px; }
 .markdownify ul > li:before {
-  content: "- ";
-  text-indent: -10px; }
+  content: "- "; }
