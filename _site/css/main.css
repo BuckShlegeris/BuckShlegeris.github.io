@@ -456,7 +456,8 @@ pre {
   .highlight .il {
     color: #099; }
 
-h1, h2 {
+.markdownify h1, h2, h3 {
+  color: darkred;
   font-family: serif; }
 
 div.math {
@@ -466,7 +467,8 @@ div.math {
   margin-bottom: 20px; }
 
 .markdownify h1::before {
-  content: "# "; }
+  content: "# ";
+  text-color: grey; }
 
 .markdownify h2::before {
   content: "## "; }

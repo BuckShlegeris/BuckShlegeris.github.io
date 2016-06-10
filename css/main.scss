@@ -46,15 +46,16 @@ $on-laptop:        800px;
 
 
 // Import partials from `sass_dir` (defaults to `_sass`)
-@import
-        "base",
+@import "base",
         "layout",
         "syntax-highlighting"
 ;
 
-h1,h2 {
-  font-family: $base-font-family
+.markdownify h1,h2,h3 {
+  color: darkred;
+  font-family: $base-font-family;
 }
+
 div.math {
   width: 60%;
   margin: 0 auto;
@@ -63,7 +64,8 @@ div.math {
 }
 
 .markdownify h1::before {
-  content: "# "
+  content: "# ";
+  text-color: grey;
 }
 
 .markdownify h2::before {
