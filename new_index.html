@@ -1,0 +1,16 @@
+---
+layout: nocomment_post
+date:   ""
+---
+
+<h1>Buck Shlegeris</h1>
+
+{%for post in site.posts limit:8 %}
+  <h2><a href="{{ post.url }}"> {{ post.title }}</a></h2>
+
+  {{ post.content }}
+
+  <hr />
+{% endfor %}
+
+<p><a href="/feed.xml">RSS feed</a></p>
