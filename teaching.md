@@ -1,5 +1,5 @@
 ---
-layout: nocomment_post
+layout: post
 date:   2016-02-21
 ---
 

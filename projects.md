@@ -1,5 +1,5 @@
 ---
-layout: nocomment_post
+layout: post
 title:  "Projects"
 date:  ""
 ---

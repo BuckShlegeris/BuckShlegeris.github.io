@@ -11,7 +11,7 @@ dl, dd, ol, ul, figure {
  * Basic styling
  */
 body {
-  font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 400 16px/1.5 serif;
   color: #111;
   background-color: #fdfdfd;
   -webkit-text-size-adjust: 100%;
@@ -456,8 +456,20 @@ pre {
   .highlight .il {
     color: #099; }
 
+h1, h2 {
+  font-family: serif; }
+
 div.math {
   width: 60%;
   margin: 0 auto;
   margin-top: 20px;
   margin-bottom: 20px; }
+
+.markdownify h1::before {
+  content: "# "; }
+
+.markdownify h2::before {
+  content: "## "; }
+
+.markdownify h3::before {
+  content: "### "; }

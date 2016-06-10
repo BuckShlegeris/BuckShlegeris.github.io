@@ -1,5 +1,5 @@
 ---
-layout: nocomment_post
+layout: post
 title: "Is Buck still weird about dating?"
 date: ""
 ---
