@@ -3,7 +3,7 @@ layout: default
 ---
 <div class="container">
   <div class="row">
-    <div class="col-xs-6 col-xs-offset-1">
+    <div class="col-xs-7 col-xs-offset-1">
       <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
       <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
 
@@ -15,49 +15,9 @@ layout: default
     </div>
     <div class="col-xs-3 col-xs-offset-1">
       <img src="https://scontent-sjc2-1.xx.fbcdn.net/hphotos-xtp1/t31.0-8/11154688_10205041372168719_3725604149367069581_o.jpg" class="img-responsive" alt="Picture of Buck">
-      <hr/>
-                        <a class="arrow" href="/"><strong>Buck</strong></a>
-                            <ul>
-                                <li><a class="arrow" href="/about">About</a>
-                                <li>
-                                    <a class="arrow" href="http://github.com/bshlgrs">GitHub</a>
-                                </li>
-                                <li>
-                                    <a class="arrow" href="mailto:bshlegeris@gmail.com">Email</a>
-                                </li>
-                                <li>
-                                    <a class="arrow" href="http://lnkd.in/bnBJ6EF">LinkedIn</a>
-                                </li>
-                                <li>
-                                    <a class="arrow" href="/resume.pdf">Resume</a>
-                                </li>
-                                </li>
-                              <li><a class="arrow external" href="https://docs.google.com/forms/d/1SOombLPHlKIMut-wJzIRg7DGdJjh9PJV4yAkrmTXKn4/viewform?usp=send_form">Anonymous feedback</a></li>
-
-                              <li><a href="/posts" class="arrow">Blog</a>
-                                <ul>
-                                  {% for post in site.posts limit:8 %}
-                                    <li>
-                                      <a class="arrow" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-                                    </li>
-                                  {% endfor %}
-                                </ul>
-                              </li>
-                              <li>
-                                  <a class="arrow" href="/cute">Pictures of me</a>
-                              </li>
-                    </ul>
+      {% include sidebar.html %}
     </div>
   </div>
 </div>
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-52980069-1', 'auto');
-  ga('send', 'pageview');
-
-</script>

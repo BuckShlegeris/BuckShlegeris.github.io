@@ -3,7 +3,7 @@ layout: nocomment_post
 date:   2016-02-21
 ---
 
-# Teaching
+# Tutoring service
 
 I sometimes work as a programming tutor. I charge $100 an hour. I'm particuarly good at helping people prepare for technical interviews. I love teaching functional programming and algorithms, and I can charge less for that.
 
