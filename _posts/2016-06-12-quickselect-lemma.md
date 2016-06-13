@@ -8,9 +8,9 @@ date:   2016-06-12
 
 Suppose I have an [order statistic tree](https://en.wikipedia.org/wiki/Order_statistic_tree) with $latex n$ elements and an unordered list with $latex m$ elements. Let's say for the sake of simplicity that both are representing a set of items with no duplicates, and their intersection is empty.
 
-I want to find the $latex k$th smallest item in the union of these sets.
+If you want to find the $latex k$th element of an order statistic tree, you can do that in $latex O(log(n))$ time. And if you want to find the $latex k$th element of the array, you can use [quickselect](https://en.wikipedia.org/wiki/Quickselect) and get it in $latex O(m)$ time. I want to find the $latex k$th smallest item in the *union* of these sets. How quickly can I do this?
 
-You can do this trivially in $latex O(m + n)$ time, by flattening the order statistic tree (which I'll call an OST from here onwards) onto the end of the array. Or you can add everything in the array to the OST and then query the OST, in $latex O(m \cdot \log(n + m))$ time.
+You can do it trivially in $latex O(m + n)$ time, by flattening the order statistic tree (which I'll call an OST from here onwards) onto the end of the array. Or you can add everything in the array to the OST and then query the OST, in $latex O(m \cdot \log(n + m))$ time.
 
 I have found solutions that run in $latex O(m \cdot \log(n))$, $latex O(m + \log(m) \cdot \log(n))$, and $latex O(m + \log(n))$. The last of these is really complicated and annoying; the first two are pretty simple.
 
@@ -184,7 +184,6 @@ Once they're the same size, I think that at least one of them will both shrink b
 $$f(n, m) = f \left( \frac {2n}3, \frac {2m}3\right) + m + 1$$
 
 which evaluates to $latex \log(n) + m$.
-
 
 
 ## Conclusion
