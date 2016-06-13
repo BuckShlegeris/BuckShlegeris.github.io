@@ -17,6 +17,6 @@ I know a lot about how technical interviews work, thanks to spending maybe 500 h
 ## Teaching experience
 
 - I TA'd three different CS courses at ANU, in Python, Java, and Haskell.
-- I TA'd at App Academy, teaching Ruby and Javascript
+- I TA'd at App Academy, teaching Ruby and Javascript.
 - At Triplebyte, I run interview preparation sessions over Skype. The teaching component of this mostly involves teaching algorithms and web system design.
 - I have worked as a private tutor teaching Python and Scala.

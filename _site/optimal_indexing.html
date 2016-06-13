@@ -6,14 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Buck Shlegeris</title>
+  <title>Optimal indexing</title>
   <meta name="description" content="Website of Buck Shlegeris.
 ">
 
 
   <link rel="stylesheet" href="/bootstrap.css">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://bshlgrs.github.io/teaching.html">
+  <link rel="canonical" href="http://bshlgrs.github.io/optimal_indexing.html">
   <link rel="alternate" type="application/rss+xml" title="Buck Shlegeris" href="http://bshlgrs.github.io/feed.xml">
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -42,32 +42,65 @@
     <div class="container">
   <div class="row">
     <div class="col-xs-7 col-xs-offset-1 markdownify">
-      
+      <h1 class="post-title " itemprop="name headline">Optimal indexing</h1>
       <p class="post-meta"><time datetime="1969-12-31T16:00:00-08:00" itemprop="datePublished"></time></p>
 
       <hr/>
 
-      <h1 id="tutoring-service">Tutoring service</h1>
+      <p><strong>this is in progress</strong></p>
 
-<p>I sometimes work as a programming tutor. I charge $100 an hour. I love teaching functional programming and algorithms, and I can charge less for that.</p>
+<p>This is my notes on how to index collections of data for fast support of various queries.</p>
 
-<p>I know a lot about how technical interviews work, thanks to spending maybe 500 hours so far conducting them. I’m particularly good at teaching people to do well on technical interviews. I also know the bootcamp admissions process well, and I can help you get into bootcamps.</p>
+<h2 id="where-clauses-are-easy-when-constant">Where clauses are easy when constant</h2>
 
-<h2 id="programming-resume">Programming resume</h2>
+<p>For any query which contains a predicate like this:</p>
+
+<p><code class="highlighter-rouge">WHERE f(item) = arg</code></p>
+
+<p>you can just split up any other indexing structure according to that, and keep them in a hash map.</p>
+
+<h2 id="where-clauses-with-a-single-range-component">Where clauses with a single range component</h2>
+
+<p>use B-trees</p>
+
+<h2 id="general-phrasing">General phrasing</h2>
+
+<p>Given a list <code class="highlighter-rouge">xs</code> of items, choose a data structure such that the following call is fast:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>class Query[NodeType, ArgumentsType, OrderingType &lt;: Comparable, ResultType](
+  predicate: (NodeType, ArgumentsType) =&gt; Boolean,
+  ordering: (NodeType, ArgumentsType) =&gt; OrderingType,
+  limit: (ArgumentsType =&gt; Option[Integer]),
+  reduction: (List[NodeType], ArgumentsType) =&gt; ResultType) {
+
+  def compute(args: ArgumentType) = {
+    nodes.filter((x) =&gt; predicate(x, args))
+         .orderBy((x) =&gt; ordering(x, args))
+         .maybeTake((x) =&gt; limit(args))
+         .apply(reduction(_, args))
+  }
+}
+</code></pre>
+</div>
+
+<p>Properties:</p>
+
+<p>predicate:
+  - Try splitting it into a conjunction. Then classify conditions like this:
+    - ignores arguments: this makes it trivial
+    - of the form <code class="highlighter-rouge">f(args) = g(node)</code>. This means you make a hash map from the range of <code class="highlighter-rouge">f(args)</code> to
+      whatever other data structure you wanted.
+reduction:
+  - I think this is always trivial to store if you can store the other things.</p>
+
+<p>Other cases:</p>
 
 <ul>
-  <li>First employee at Triplebyte. My job involves interviewing a wide variety of people; I was hired partially because of the breadth of my knowledge.</li>
-  <li>I <a href="https://github.com/bshlgrs/ruining-the-coding-interview">presented at a programming conference</a> in 2015.</li>
+  <li>Predicate is like <code class="highlighter-rouge">f(args) &lt; g(node)</code> or <code class="highlighter-rouge">f(args) &lt; g(node) &lt; h(args)</code>. In this case just use a BST.</li>
+  <li>Predicate is conjunction of d range queries. In this case use a KD tree. Construction is log time. Queries are O(n**{1-1/d} + m).</li>
+  <li>No predicate, ordering which .</li>
 </ul>
 
-<h2 id="teaching-experience">Teaching experience</h2>
-
-<ul>
-  <li>I TA’d three different CS courses at ANU, in Python, Java, and Haskell.</li>
-  <li>I TA’d at App Academy, teaching Ruby and Javascript.</li>
-  <li>At Triplebyte, I run interview preparation sessions over Skype. The teaching component of this mostly involves teaching algorithms and web system design.</li>
-  <li>I have worked as a private tutor teaching Python and Scala.</li>
-</ul>
 
 
       <hr/>

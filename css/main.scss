@@ -64,16 +64,13 @@ div.math {
 }
 
 .markdownify h1::before {
-  content: "# ";
   text-color: grey;
 }
 
 .markdownify h2::before {
-  content: "## "
 }
 
 .markdownify h3::before {
-  content: "### "
 }
 
 .markdownify {

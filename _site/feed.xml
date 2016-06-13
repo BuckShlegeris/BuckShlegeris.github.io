@@ -8,6 +8,19 @@
     <atom:link href="http://bshlgrs.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Quickselect on an unordered array and an order statistic tree</title>
+        
+        
+          <description>&lt;p&gt;&lt;strong&gt;I did this work myself, so there are probably mistakes. I think the conclusion is right though.&lt;/strong&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 12 Jun 2016 00:00:00 -0700</pubDate>
+        <link>http://bshlgrs.github.io/2016/06/12/quickselect-lemma.html</link>
+        <guid isPermaLink="true">http://bshlgrs.github.io/2016/06/12/quickselect-lemma.html</guid>
+      </item>
+    
+      <item>
         <title>Not thinking of things I can&#39;t say</title>
         
         
@@ -122,19 +135,6 @@
         <pubDate>Sun, 21 Feb 2016 00:00:00 -0800</pubDate>
         <link>http://bshlgrs.github.io/2016/02/21/dxe.html</link>
         <guid isPermaLink="true">http://bshlgrs.github.io/2016/02/21/dxe.html</guid>
-      </item>
-    
-      <item>
-        <title>Optimize for fun when you&#39;re trying to learn</title>
-        
-        
-          <description>&lt;p&gt;When people ask me what they should learn to get better at something–playing piano, programming, doing math–they want me to tell them a particular skill which they should focus on.&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Sun, 21 Feb 2016 00:00:00 -0800</pubDate>
-        <link>http://bshlgrs.github.io/2016/02/21/learning-fun.html</link>
-        <guid isPermaLink="true">http://bshlgrs.github.io/2016/02/21/learning-fun.html</guid>
       </item>
     
   </channel>
