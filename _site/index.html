@@ -56,9 +56,9 @@
 
 <p>Suppose I have an <a href="https://en.wikipedia.org/wiki/Order_statistic_tree">order statistic tree</a> with $latex n$ elements and an unordered list with $latex m$ elements. Let’s say for the sake of simplicity that both are representing a set of items with no duplicates, and their intersection is empty.</p>
 
-<p>I want to find the $latex k$th smallest item in the union of these sets.</p>
+<p>If you want to find the $latex k$th element of an order statistic tree, you can do that in $latex O(log(n))$ time. And if you want to find the $latex k$th element of the array, you can use <a href="https://en.wikipedia.org/wiki/Quickselect">quickselect</a> and get it in $latex O(m)$ time. I want to find the $latex k$th smallest item in the <em>union</em> of these sets. How quickly can I do this?</p>
 
-<p>You can do this trivially in $latex O(m + n)$ time, by flattening the order statistic tree (which I’ll call an OST from here onwards) onto the end of the array. Or you can add everything in the array to the OST and then query the OST, in $latex O(m \cdot \log(n + m))$ time.</p>
+<p>You can do it trivially in $latex O(m + n)$ time, by flattening the order statistic tree (which I’ll call an OST from here onwards) onto the end of the array. Or you can add everything in the array to the OST and then query the OST, in $latex O(m \cdot \log(n + m))$ time.</p>
 
 <p>I have found solutions that run in $latex O(m \cdot \log(n))$, $latex O(m + \log(m) \cdot \log(n))$, and $latex O(m + \log(n))$. The last of these is really complicated and annoying; the first two are pretty simple.</p>
 
@@ -75,7 +75,7 @@
   <li><code class="highlighter-rouge">count</code>: returns the number of items in the node</li>
   <li><code class="highlighter-rouge">find_kth_smallest(k)</code>: as discussed above</li>
   <li><code class="highlighter-rouge">rank(x)</code>: finds the number of elements in the OST smaller than <code class="highlighter-rouge">x</code>. This takes $latex O(\log(n))$ in an OST.</li>
-  <li><code class="highlighter-rouge">split_on_left_by_value(x)</code>: returns a new tree with only the items in the OST which are less than <code class="highlighter-rouge">x</code>. If our OSTs are immutable, this only takes <code class="highlighter-rouge">\log(n)</code> time.</li>
+  <li><code class="highlighter-rouge">split_on_left_by_value(x)</code>: returns a new tree with only the items in the OST which are less than <code class="highlighter-rouge">x</code>. If our OSTs are immutable, this only takes $latex\log(n)$ time.</li>
   <li><code class="highlighter-rouge">split_on_right_by_value(x)</code>: like <code class="highlighter-rouge">split_on_left_by_value</code>, but the other side.</li>
 </ul>
 

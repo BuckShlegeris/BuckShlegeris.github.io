@@ -26,7 +26,7 @@ I'm going to assume that my OSTs have the following methods:
 - `count`: returns the number of items in the node
 - `find_kth_smallest(k)`: as discussed above
 - `rank(x)`: finds the number of elements in the OST smaller than `x`. This takes $latex O(\log(n))$ in an OST.
-- `split_on_left_by_value(x)`: returns a new tree with only the items in the OST which are less than `x`. If our OSTs are immutable, this only takes `\log(n)` time.
+- `split_on_left_by_value(x)`: returns a new tree with only the items in the OST which are less than `x`. If our OSTs are immutable, this only takes $latex\log(n)$ time.
 - `split_on_right_by_value(x)`: like `split_on_left_by_value`, but the other side.
 
 ## Standard quickselect
