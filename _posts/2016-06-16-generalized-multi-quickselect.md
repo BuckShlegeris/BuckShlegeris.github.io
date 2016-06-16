@@ -4,7 +4,7 @@ title:  "General multi-quickselect"
 date:   2016-06-16
 ---
 
-I've been thinking a lot recently about how you find the $latex k$th smallest element in the union of several data structures.
+I've been thinking a lot recently about how you find the $latex k$th smallest element in the sum of several data structures.
 
 ## Multi-quickselect on data structures with fast `rank`
 
