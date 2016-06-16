@@ -50,6 +50,136 @@
       <h1>Buck Shlegeris</h1>
 
 
+  <h2><a href="/2016/06/12/multi-sorted-array-quickselect.html"> Quickselect on multiple sorted arrays</a></h2>
+
+  <p>Suppose I have $latex m$ sorted arrays of length $latex n$. How quickly can I search to find the $latex k$th item in them?</p>
+
+<p><a href="http://stackoverflow.com/a/26299986/1360429">This StackOverflow answer</a> mentions this problem offhandedly, but doesn’t clearly explain the answer, and it implies that the answer it’s thinking of is $latex O(m^2 \log^2(n))$ .</p>
+
+<p>We can do better. You can modify quickselect to get an algorithm which takes $latex m \log(m) \log^2(n)$ average case, and I suspect you can adapt <a href="https://en.wikipedia.org/wiki/Median_of_medians">median of medians</a> to get that time in the worst case.</p>
+
+<p>The quickselect adaptation is pretty simple. We’re going to be do a simultaneous binary search on every array. For simplicity, let’s assume that all items in arrays are unique.</p>
+
+<p>We’re going to need a <code class="highlighter-rouge">rank</code> method, which does a binary search to determine the number of items in an array smaller than its argument <code class="highlighter-rouge">x</code>. Here is such a method:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># Returns the number of items in arr smaller than x.</span>
+<span class="k">def</span> <span class="nf">rank</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">start_idx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">end_idx</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">)</span>
+  <span class="k">return</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">arr</span><span class="p">.</span><span class="nf">empty?</span>
+
+  <span class="n">end_idx</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="nf">length</span> <span class="k">if</span> <span class="n">end_idx</span><span class="p">.</span><span class="nf">nil?</span>
+
+  <span class="c1"># this makes sense I promise, I'll explain later</span>
+  <span class="k">return</span> <span class="n">arr</span><span class="p">.</span><span class="nf">length</span> <span class="k">if</span> <span class="n">start_idx</span> <span class="o">==</span> <span class="n">arr</span><span class="p">.</span><span class="nf">length</span>
+  <span class="k">return</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">end_idx</span> <span class="o">==</span> <span class="mi">0</span>
+
+  <span class="kp">loop</span> <span class="k">do</span>
+    <span class="n">mid_idx</span> <span class="o">=</span> <span class="p">((</span><span class="n">start_idx</span> <span class="o">+</span> <span class="n">end_idx</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">).</span><span class="nf">floor</span>
+
+    <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">mid_idx</span><span class="p">]</span> <span class="o">==</span> <span class="n">x</span>
+      <span class="k">return</span> <span class="n">mid_idx</span>
+    <span class="k">elsif</span> <span class="n">arr</span><span class="p">[</span><span class="n">mid_idx</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">x</span>
+      <span class="k">return</span> <span class="n">start_idx</span> <span class="k">if</span> <span class="n">end_idx</span> <span class="o">-</span> <span class="n">start_idx</span> <span class="o">&lt;=</span> <span class="mi">1</span>
+      <span class="n">end_idx</span> <span class="o">=</span> <span class="n">mid_idx</span>
+    <span class="k">else</span>
+      <span class="k">return</span> <span class="n">end_idx</span> <span class="k">if</span> <span class="n">end_idx</span> <span class="o">-</span> <span class="n">start_idx</span> <span class="o">&lt;=</span> <span class="mi">1</span>
+      <span class="n">start_idx</span> <span class="o">=</span> <span class="n">mid_idx</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>Now here’s how the select method is going to work. We’re going to start by setting up a <code class="highlighter-rouge">limits</code> variable. Normally in binary search, you need to store two variables, <code class="highlighter-rouge">start_idx</code> and <code class="highlighter-rouge">end_idx</code>. In our case, we’re going to store these two variables for every array we’re working with.</p>
+
+<p>Every iteration, we’re going to randomly choose a pivot from the elements that haven’t been ruled out yet. Then we’re going to binary search all of the arrays to find the rank of the pivot in each of the arrays. We can add all these ranks together to find the rank of the pivot overall.</p>
+
+<p>If the rank of the pivot is equal to <code class="highlighter-rouge">k</code>, then we return our pivot and stop recursing.</p>
+
+<p>If the rank of the pivot is greater than <code class="highlighter-rouge">k</code>, our pivot is larger than the true result. So we can rule out every value which is larger than our pivot. For every array, we set its <code class="highlighter-rouge">end_idx</code> to the rank which it computed for the pivot.</p>
+
+<p>If the rank of the pivot is smaller than k, then do the opposite: set the <code class="highlighter-rouge">start_idx</code> array to the rank array.</p>
+
+<p>Here’s an implementation of that:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">quickselect_in_sorted_arrays</span><span class="p">(</span><span class="n">arrays</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">arrays</span><span class="p">.</span><span class="nf">first</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">if</span> <span class="n">arrays</span><span class="p">.</span><span class="nf">length</span> <span class="o">==</span> <span class="mi">1</span>
+
+  <span class="n">arrays</span><span class="p">.</span><span class="nf">select!</span> <span class="p">{</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="n">x</span><span class="p">.</span><span class="nf">length</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">}</span>
+
+  <span class="k">return</span> <span class="kp">nil</span> <span class="k">if</span> <span class="n">k</span> <span class="o">&gt;=</span> <span class="n">arrays</span><span class="p">.</span><span class="nf">map</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:count</span><span class="p">).</span><span class="nf">reduce</span><span class="p">(</span><span class="o">&amp;</span><span class="p">:</span><span class="o">+</span><span class="p">)</span>
+
+  <span class="c1"># In a single binary search, we have variables `start_idx`</span>
+  <span class="c1"># and `end_idx`.</span>
+
+  <span class="c1"># In this binary search, we need those variables for</span>
+  <span class="c1"># every array. So we'll keep them in these arrays.</span>
+  <span class="n">start_indexes</span> <span class="o">=</span> <span class="n">arrays</span><span class="p">.</span><span class="nf">map</span> <span class="p">{</span> <span class="mi">0</span> <span class="p">}</span>
+  <span class="n">end_indexes</span> <span class="o">=</span> <span class="n">arrays</span><span class="p">.</span><span class="nf">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">arr</span><span class="o">|</span> <span class="n">arr</span><span class="p">.</span><span class="nf">length</span> <span class="p">}</span>
+
+  <span class="kp">loop</span> <span class="k">do</span>
+    <span class="c1"># Randomly select an item from the viable candidates.</span>
+    <span class="c1"># (This is obviously not an efficient implementation)</span>
+    <span class="n">pivot</span> <span class="o">=</span> <span class="n">arrays</span><span class="p">.</span><span class="nf">map</span>
+                  <span class="p">.</span><span class="nf">with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">arr</span><span class="p">,</span> <span class="n">idx</span><span class="o">|</span>
+                    <span class="n">arr</span><span class="p">[</span><span class="n">start_indexes</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">end_indexes</span><span class="p">[</span><span class="n">idx</span><span class="p">]]</span>
+                  <span class="k">end</span>
+                  <span class="p">.</span><span class="nf">flatten</span>
+                  <span class="p">.</span><span class="nf">sample</span>
+
+
+    <span class="c1"># Find the rank of the pivot in every array.</span>
+    <span class="n">pivot_ranks</span> <span class="o">=</span> <span class="n">arrays</span><span class="p">.</span><span class="nf">map</span><span class="p">.</span><span class="nf">with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">arr</span><span class="p">,</span> <span class="n">idx</span><span class="o">|</span>
+      <span class="n">rank</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">pivot</span><span class="p">,</span> <span class="n">start_indexes</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">end_indexes</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span>
+    <span class="k">end</span>
+
+    <span class="c1"># What is `pivot`'s overall rank in these arrays?</span>
+    <span class="n">overall_rank_of_pivot</span> <span class="o">=</span> <span class="n">pivot_ranks</span><span class="p">.</span><span class="nf">reduce</span><span class="p">(</span><span class="o">&amp;</span><span class="p">:</span><span class="o">+</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">overall_rank_of_pivot</span> <span class="o">==</span> <span class="n">k</span>
+      <span class="c1"># we're done! woohoo!</span>
+      <span class="k">return</span> <span class="n">pivot</span>
+    <span class="k">elsif</span> <span class="n">overall_rank_of_pivot</span> <span class="o">&gt;</span> <span class="n">k</span>
+      <span class="c1"># our pivot was apparently too big.</span>
+
+      <span class="c1"># On the plus side, we now know that wherever our binary</span>
+      <span class="c1"># searches just finished, everything to the right of that</span>
+      <span class="c1"># in that array is now guaranteed not to be the result.</span>
+      <span class="n">pivot_ranks</span><span class="p">.</span><span class="nf">each_with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">rank</span><span class="p">,</span> <span class="n">idx</span><span class="o">|</span>
+        <span class="n">end_indexes</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">rank</span>
+      <span class="k">end</span>
+    <span class="k">else</span>
+      <span class="c1"># If our pivot was too small, then we can rule out</span>
+      <span class="c1"># everything to the left of those ranks.</span>
+      <span class="n">pivot_ranks</span><span class="p">.</span><span class="nf">each_with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">rank</span><span class="p">,</span> <span class="n">idx</span><span class="o">|</span>
+        <span class="n">start_indexes</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">rank</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>For full source code including some random testcases, <a href="https://gist.github.com/bshlgrs/14801efbb27d447fa7a2afba97ab70b4">look here</a>.</p>
+
+<p>How fast is this method? The main loop costs $latex m \log(n)$ per iteration. How many times will we run it? Well, every time we run the iteration, we cut out all the elements which are on the wrong side of the result from our pivot. Worst case, we keep choosing the worst possible pivot and only ruling it out, which means we need to run that iteration once for every item in all of the arrays. This is $latex O(m^2 n \log(n))$.</p>
+
+<p>But on average, we’ll cut a constant fraction of our search space out every time. So we should expect to have to do that iteration $latex \log(m\cdot n)$ times, for an overall time complexity of $latex O(m \log(m) \log^2(n))$.</p>
+
+<p>(Incidentally, when I was initially thinking about this, I thought we might get some speedup because our call to <code class="highlighter-rouge">rank</code> is going to be on a smaller and smaller section of its array every iteration throuhgh the loop. But I don’t think that’s true, because to get an asympotic decrease in the sum of a bunch of logarithms, you need to make your problem sizes decrease extremely quickly; exponentially decaying problem size doesn’t cut it. For example:</p>
+
+<script type="math/tex; mode=display">O\left(\sum_{i=0}^n \log(2^i) \right) = O(\log^2(n)) = O\left(\sum_{i=0}^n \log(2^n) \right)</script>
+
+<p>because</p>
+
+<script type="math/tex; mode=display">O\left(\sum_{i=0}^n i \right) = O(n^2) = O\left(\sum_{i=0}^n n \right)</script>
+
+<p>So I don’t think we can make that work.)</p>
+
+<p>One final question: can we generalize the <a href="https://en.wikipedia.org/wiki/Median_of_medians">median of medians</a> algorithm to get this to be guaranteed fast, rather than expected fast? The answer is almost certainly yes; I’ll probably try to prove it sometime.</p>
+
+
+  <hr />
+
   <h2><a href="/2016/06/12/quickselect-lemma.html"> Quickselect on an unordered array and an order statistic tree</a></h2>
 
   <p><strong>I did this work myself, so there are probably mistakes. I think the conclusion is right though.</strong></p>
@@ -439,37 +569,6 @@
 
   <hr />
 
-  <h2><a href="/2016/04/14/hyperactive-record.html"> Hyperactive Record</a></h2>
-
-  <p>Here is a fun open source project which someone should build! I’ve written a readme and put it <a href="https://github.com/bshlgrs/HyperactiveRecord/blob/master/README.md">on Github</a> but I don’t think I have the time to actually build this. I present it here in the hope that one of you might decide that you like it and want to build it!</p>
-
-<p>It’s called HyperactiveRecord. It’s an ActiveRecord plugin which tries harder to provide an intuitive, consistent, simple interface for SQL.</p>
-
-<p>For example. You’re making a blog site. You have posts and comments. Posts are either public or private. I want to load all of the publicly available comments of a user–that is, all their comments which are on public posts. (I use this example because it’s analogous to something that I did at work today.)</p>
-
-<p>Here’s what I intuitively want to do: <code class="highlighter-rouge">user.comments.filter { |c| c.post.public }</code>. This is much simpler and more readable than the ActiveRecord solution. I want to make a library whose goal is to be as simple, composable, and unsurprising as that. We’re already used to the APIs of map, flatMap, filter, reduce, and so on. That’s how our queries should work.</p>
-
-<p>This would be written basically the same way ActiveRecord is: each query method is just constructing a lazy query object which is only actually executed when accessed. Making DSLs which accept blocks is already done in Ruby all over the place; why not do it here too?</p>
-
-<p>There are some super fun places you could take this project. For example, a SQL enthusiast could devote themselves to the project of building a query generator for recursive method calls. That is, compiling</p>
-
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Comment</span>
-  <span class="k">def</span> <span class="nf">descendants</span>
-     <span class="no">Hyperactive</span><span class="p">.</span><span class="nf">union</span><span class="p">(</span><span class="nb">self</span><span class="p">,</span> <span class="nb">self</span><span class="p">.</span><span class="nf">children</span><span class="p">.</span><span class="nf">flat_map</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:descendants</span><span class="p">)</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre>
-</div>
-
-<p>into something which you can do in SQL with stored procedures or whatever. You’d have to do this by building the query graph, detecting the cycle, and doing magic SQL things which I don’t understand.</p>
-
-<p>I think this would be a super fun project! The one downside is that it involves learning to deal with ActiveRecord, which seems potentially difficult. If you want to just build a proof of concept, you could build this as a standalone library with Arel or just building SQL queries manually.</p>
-
-<p>I’d love to work with someone on this if they wanted to do the bulk of the implementation work!</p>
-
-
-  <hr />
-
 
 <p><a href="/posts">All posts</a></p>
 
@@ -520,6 +619,10 @@
     <ul>
       
         <li>
+          <a class="arrow" href="/2016/06/12/multi-sorted-array-quickselect.html">Quickselect on multiple sorted arrays</a>
+        </li>
+      
+        <li>
           <a class="arrow" href="/2016/06/12/quickselect-lemma.html">Quickselect on an unordered array and an order statistic tree</a>
         </li>
       
@@ -545,10 +648,6 @@
       
         <li>
           <a class="arrow" href="/2016/04/20/overteaching.html">Overteaching and overlearning</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/04/14/hyperactive-record.html">Hyperactive Record</a>
         </li>
       
     </ul>

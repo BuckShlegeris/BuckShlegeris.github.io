@@ -458,7 +458,7 @@ pre {
 
 .markdownify h1, h2, h3 {
   color: darkred;
-  font-family: Helvetica, sans; }
+  font-family: sans-serif; }
 
 div.math {
   width: 60%;

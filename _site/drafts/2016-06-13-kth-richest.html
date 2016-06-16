@@ -55,7 +55,7 @@
 
 <p>I have been somewhat interested in this question for about a year, and I’ve asked about it <a href="https://www.facebook.com/bshlgrs/posts/10205556609689335">a few</a> <a href="http://stackoverflow.com/questions/31153033/data-structure-to-support-a-particular-query-on-a-set-of-2d-points">times</a>. But no-one’s ever managed to give me a complete answer.</p>
 
-<p>The other day, I ran across <a href="http://stackoverflow.com/questions/26296624/order-statistic-on-intervals">this StackOverflow answer</a>, which is only a small modification away from my now-favorite answer, which I’ll present here.</p>
+<p>The other day, I ran across <a href="http://stackoverflow.com/a/26299986/1360429">this StackOverflow answer</a>, which is only a small modification away from my now-favorite answer, which I’ll present here.</p>
 
 <h2 id="solution">Solution</h2>
 
@@ -63,7 +63,7 @@
 
 <h3 id="query">Query</h3>
 
-<p>You should go read <a href="http://stackoverflow.com/questions/26296624/order-statistic-on-intervals">that second StackOverflow answer</a> again, because this algorithm is slightly more intuitive on arrays.</p>
+<p>You should go read <a href="http://stackoverflow.com/a/26299986/1360429">that second StackOverflow answer</a> again, because this algorithm is slightly more intuitive on arrays.</p>
 
 <p>To compute a reduction (eg sum, maximum, or product) on a subsection of a binary tree, you start out by finding a set of nodes whose descendants contain the whole subsection you care about. There will be $latex \log(n)$ of these nodes, and finding all of them takes $latex \log(n)$ time.</p>
 
@@ -72,12 +72,6 @@
 <p>Let’s think about this using some different variable names: how do we find the $latex k$th smallest item in $latex m$ different OSTs of size $latex s$?</p>
 
 <p>Here’s the explanation that that Stack Overflow answer gives about doing this on sorted arrays:</p>
-
-<blockquote>
-  <p>The easiest way to solve it is nested binary search: first use binary search to choose some candidate element from every array starting from largest one; then use binary search in other (smaller) arrays to determine rank of this candidate element.</p>
-</blockquote>
-
-<p>I hadn’t heard of this algorithm and I like it. Here’s my attempt at writing it more exactly:</p>
 
 
 
@@ -125,6 +119,10 @@
     <ul>
       
         <li>
+          <a class="arrow" href="/2016/06/12/multi-sorted-array-quickselect.html">Quickselect on multiple sorted arrays</a>
+        </li>
+      
+        <li>
           <a class="arrow" href="/2016/06/12/quickselect-lemma.html">Quickselect on an unordered array and an order statistic tree</a>
         </li>
       
@@ -150,10 +148,6 @@
       
         <li>
           <a class="arrow" href="/2016/04/20/overteaching.html">Overteaching and overlearning</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/04/14/hyperactive-record.html">Hyperactive Record</a>
         </li>
       
     </ul>

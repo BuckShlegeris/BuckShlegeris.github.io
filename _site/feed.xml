@@ -8,6 +8,19 @@
     <atom:link href="http://bshlgrs.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Quickselect on multiple sorted arrays</title>
+        
+        
+          <description>&lt;p&gt;Suppose I have $latex m$ sorted arrays of length $latex n$. How quickly can I search to find the $latex k$th item in them?&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 12 Jun 2016 00:00:00 -0700</pubDate>
+        <link>http://bshlgrs.github.io/2016/06/12/multi-sorted-array-quickselect.html</link>
+        <guid isPermaLink="true">http://bshlgrs.github.io/2016/06/12/multi-sorted-array-quickselect.html</guid>
+      </item>
+    
+      <item>
         <title>Quickselect on an unordered array and an order statistic tree</title>
         
         
@@ -122,19 +135,6 @@
         <pubDate>Sun, 03 Apr 2016 00:00:00 -0700</pubDate>
         <link>http://bshlgrs.github.io/2016/04/03/data-structure-projects.html</link>
         <guid isPermaLink="true">http://bshlgrs.github.io/2016/04/03/data-structure-projects.html</guid>
-      </item>
-    
-      <item>
-        <title>DxE at Stanford</title>
-        
-        
-          <description>&lt;p&gt;(originally posted on Facebook &lt;a href=&quot;https://www.facebook.com/endofunctor/posts/10206999785607831&quot;&gt;here&lt;/a&gt;)&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Sun, 21 Feb 2016 00:00:00 -0800</pubDate>
-        <link>http://bshlgrs.github.io/2016/02/21/dxe.html</link>
-        <guid isPermaLink="true">http://bshlgrs.github.io/2016/02/21/dxe.html</guid>
       </item>
     
   </channel>
