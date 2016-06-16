@@ -52,11 +52,13 @@
 
   <h2><a href="/2016/06/12/multi-sorted-array-quickselect.html"> Quickselect on multiple sorted arrays</a></h2>
 
-  <p>Suppose I have $latex m$ sorted arrays of length $latex n$. How quickly can I search to find the $latex k$th item in them?</p>
+  <p><strong>Edit: Thanks heaps to <a href="http://stackoverflow.com/users/1009831/evgeny-kluev">Evgeny Kluev</a>, the author of that original StackOverflow answer, for noticing that I’d made a mistake in the total time complexity calculation.</strong></p>
 
-<p><a href="http://stackoverflow.com/a/26299986/1360429">This StackOverflow answer</a> mentions this problem offhandedly, but doesn’t clearly explain the answer, and it implies that the answer it’s thinking of is $latex O(m^2 \log^2(n))$ .</p>
+<p>Suppose I have $latex m$ sorted arrays of length $latex n$. How quickly can I search to find the $latex k$th item in them?</p>
 
-<p>We can do better. You can modify quickselect to get an algorithm which takes $latex m \log(m) \log^2(n)$ average case, and I suspect you can adapt <a href="https://en.wikipedia.org/wiki/Median_of_medians">median of medians</a> to get that time in the worst case.</p>
+<p><a href="http://stackoverflow.com/a/26299986/1360429">This StackOverflow answer</a> mentions this problem offhandedly, but doesn’t clearly explain the algorithm, and it implies that the answer it’s thinking of is $latex O(m^2 \log(n)^2)$.</p>
+
+<p>We can do better. You can modify quickselect to get an algorithm which takes $latex O(m \log(n) \log(m \cdot n))$ average case, and I suspect you can adapt <a href="https://en.wikipedia.org/wiki/Median_of_medians">median of medians</a> to get that time in the worst case.</p>
 
 <p>The quickselect adaptation is pretty simple. We’re going to be do a simultaneous binary search on every array. For simplicity, let’s assume that all items in arrays are unique.</p>
 
@@ -163,11 +165,11 @@
 
 <p>How fast is this method? The main loop costs $latex m \log(n)$ per iteration. How many times will we run it? Well, every time we run the iteration, we cut out all the elements which are on the wrong side of the result from our pivot. Worst case, we keep choosing the worst possible pivot and only ruling it out, which means we need to run that iteration once for every item in all of the arrays. This is $latex O(m^2 n \log(n))$.</p>
 
-<p>But on average, we’ll cut a constant fraction of our search space out every time. So we should expect to have to do that iteration $latex \log(m\cdot n)$ times, for an overall time complexity of $latex O(m \log(m) \log^2(n))$.</p>
+<p>But on average, we’ll cut a constant fraction of our search space out every time. So we should expect to have to do that iteration $latex \log(m\cdot n) = \log(m) + \log(n)$ times, for an overall time complexity of $latex O(m \log(n) \log(m \cdot n))$.</p>
 
 <p>(Incidentally, when I was initially thinking about this, I thought we might get some speedup because our call to <code class="highlighter-rouge">rank</code> is going to be on a smaller and smaller section of its array every iteration throuhgh the loop. But I don’t think that’s true, because to get an asympotic decrease in the sum of a bunch of logarithms, you need to make your problem sizes decrease extremely quickly; exponentially decaying problem size doesn’t cut it. For example:</p>
 
-<script type="math/tex; mode=display">O\left(\sum_{i=0}^n \log(2^i) \right) = O(\log^2(n)) = O\left(\sum_{i=0}^n \log(2^n) \right)</script>
+<script type="math/tex; mode=display">O\left(\sum_{i=0}^n \log(2^i) \right) = O(\log(n)^2) = O\left(\sum_{i=0}^n \log(2^n) \right)</script>
 
 <p>because</p>
 
@@ -176,6 +178,7 @@
 <p>So I don’t think we can make that work.)</p>
 
 <p>One final question: can we generalize the <a href="https://en.wikipedia.org/wiki/Median_of_medians">median of medians</a> algorithm to get this to be guaranteed fast, rather than expected fast? The answer is almost certainly yes; I’ll probably try to prove it sometime.</p>
+
 
 
   <hr />

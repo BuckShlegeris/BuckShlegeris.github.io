@@ -11,7 +11,7 @@
         <title>Quickselect on multiple sorted arrays</title>
         
         
-          <description>&lt;p&gt;Suppose I have $latex m$ sorted arrays of length $latex n$. How quickly can I search to find the $latex k$th item in them?&lt;/p&gt;
+          <description>&lt;p&gt;&lt;strong&gt;Edit: Thanks heaps to &lt;a href=&quot;http://stackoverflow.com/users/1009831/evgeny-kluev&quot;&gt;Evgeny Kluev&lt;/a&gt;, the author of that original StackOverflow answer, for noticing that I’d made a mistake in the total time complexity calculation.&lt;/strong&gt;&lt;/p&gt;
 
 </description>
         
