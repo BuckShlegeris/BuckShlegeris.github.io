@@ -67,12 +67,9 @@
 
 <p>To compute a reduction (eg sum, maximum, or product) on a subsection of a binary tree, you start out by finding a set of nodes whose descendants contain the whole subsection you care about. There will be $latex \log(n)$ of these nodes, and finding all of them takes $latex \log(n)$ time.</p>
 
-<p>In this case it’s slightly more complicated. We end up with $\latex \log(n)$ OSTs of various sizes, and we want to find the $latex k$th smallest item in their union.</p>
+<p>In this case it’s slightly more complicated. We end up with $\latex \log(n)$ OSTs of maximum size $latex O(n)$, and we want to find the $latex k$th smallest item in their disjoint union.</p>
 
-<p>Let’s think about this using some different variable names: how do we find the $latex k$th smallest item in $latex m$ different OSTs of size $latex s$?</p>
-
-<p>Here’s the explanation that that Stack Overflow answer gives about doing this on sorted arrays:</p>
-
+<p>As discussed <a href="/2016/06/16/generalized-multi-quickselect.html">here</a>, we can solve that query in $latex O\left(\log(n)^2\right)$.</p>
 
 
       <hr/>
