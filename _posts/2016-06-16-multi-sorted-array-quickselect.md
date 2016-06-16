@@ -122,7 +122,7 @@ But on average, we'll cut a constant fraction of our search space out every time
 
 (Incidentally, when I was initially thinking about this, I thought we might get some speedup because our call to `rank` is going to be on a smaller and smaller section of its array every iteration throuhgh the loop. But I don't think that's true, because to get an asympotic decrease in the sum of a bunch of logarithms, you need to make your problem sizes decrease extremely quickly; exponentially decaying problem size doesn't cut it. For example:
 
-$$O\left(\sum_{i=0}^n \log(2^i) \right) = O(\log(n)^2) = O\left(\sum_{i=0}^n \log(2^n) \right)$$
+$$O\left(\sum_{i=0}^n \log\left(2^i\right) \right) = O(\log(n)^2) = O\left(\sum_{i=0}^n \log\left(2^n\right) \right)$$
 
 because
 
