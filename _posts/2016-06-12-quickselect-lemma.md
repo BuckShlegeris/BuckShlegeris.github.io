@@ -154,7 +154,7 @@ Selecting exactly the first $latex k$ things in an OST takes $latex \log(n)$ tim
 
 Because we're using weight-balanced trees with a weight balancing factor of $latex \frac 14$, we might need to go down maybe 3 layers in order to get a node with enough weight that deleting it deletes half the weight that you'd be able to delete if you called `split_on_left_by_value`. (I'm not sure about the number 3 being correct, but I think this is true for some constant.)
 
-We could safely remove $latex \frac 12$ of the tree if we used the normal split methods. We're going to remove more than half of that, so at worst our tree will end up $\frac 34$ of its original size.
+We could safely remove $latex \frac 12$ of the tree if we used the normal split methods. We're going to remove more than half of that, so at worst our tree will end up $latex\frac 34$ of its original size.
 
 
 So in both cases, we end up with the bigger data structure being a constant factor smaller.
@@ -173,7 +173,7 @@ This is a diagram of what happens when one data structure has 30 items and the o
 
 You can draw similar diagrams for the other cases.
 
-This part is the sketchiest part of the whole algorithm. I'm pretty sure that you can always decrease at least one of the data structures by one third. I'm not sure if you can always shrink both of them. I'm not sure how much you can shrink the OST in constant time; I'm pretty sure you can do at least $\frac 16$, and I think that for any fraction less than 1/3, you can choose a node depth such that you can always cut that fraction out in constant time.
+This part is the sketchiest part of the whole algorithm. I'm pretty sure that you can always decrease at least one of the data structures by one third. I'm not sure if you can always shrink both of them. I'm not sure how much you can shrink the OST in constant time; I'm pretty sure you can do at least $latex \frac 16$, and I think that for any fraction less than $latex \frac 13$, you can choose a node depth such that you can always cut that fraction out in constant time.
 
 ### Runtime of this solution
 

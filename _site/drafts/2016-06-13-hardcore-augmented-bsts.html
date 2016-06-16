@@ -6,14 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Optimal indexing</title>
+  <title>Data structure: kth richest person older than x</title>
   <meta name="description" content="Website of Buck Shlegeris.
 ">
 
 
   <link rel="stylesheet" href="/bootstrap.css">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://bshlgrs.github.io/optimal_indexing.html">
+  <link rel="canonical" href="http://bshlgrs.github.io/drafts/2016-06-13-hardcore-augmented-bsts.html">
   <link rel="alternate" type="application/rss+xml" title="Buck Shlegeris" href="http://bshlgrs.github.io/feed.xml">
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -42,65 +42,34 @@
     <div class="container">
   <div class="row">
     <div class="col-xs-7 col-xs-offset-1 markdownify">
-      <h1 class="post-title " itemprop="name headline">Optimal indexing</h1>
-      <p class="post-meta"><time datetime="1969-12-31T16:00:00-08:00" itemprop="datePublished"></time></p>
+      <h1 class="post-title " itemprop="name headline">Data structure: kth richest person older than x</h1>
+      <p class="post-meta"><time datetime="2016-06-12T00:00:00-07:00" itemprop="datePublished">Jun 12, 2016</time></p>
 
       <hr/>
 
-      <p><strong>this is in progress</strong></p>
+      <p>Suppose I want to maintain a set of people where each has an age and a wealth. I want to be able to quickly insert people, delete people, and answer the following query:</p>
 
-<p>This is my notes on how to index collections of data for fast support of various queries.</p>
+<p>Find the $latex k$th richest person older than $latex x$.</p>
 
-<h2 id="where-clauses-are-easy-when-constant">Where clauses are easy when constant</h2>
+<p>Here’s a solution which allows insertion and deletion in $latex O(\log^2(n))$, and allows that query in $latex O(\log^3(n))$.</p>
 
-<p>For any query which contains a predicate like this:</p>
+<p>I have been somewhat interested in this question for about a year, and I’ve asked about it <a href="https://www.facebook.com/bshlgrs/posts/10205556609689335">a few</a> <a href="http://stackoverflow.com/questions/31153033/data-structure-to-support-a-particular-query-on-a-set-of-2d-points">times</a>. But no-one’s ever managed to give me a complete answer.</p>
 
-<p><code class="highlighter-rouge">WHERE f(item) = arg</code></p>
+<p>The other day, I ran across <a href="http://stackoverflow.com/questions/26296624/order-statistic-on-intervals">this StackOverflow answer</a>, which is only a small modification away from my now-favorite answer, which is:</p>
 
-<p>you can just split up any other indexing structure according to that, and keep them in a hash map.</p>
+<h2 id="solution">Solution</h2>
 
-<h2 id="where-clauses-with-a-single-range-component">Where clauses with a single range component</h2>
+<p>Store an <a href="https://en.wikipedia.org/wiki/Order_statistic_tree">order statistic tree</a> ordered on age. At every node, also store an order statistic tree of all of that node’s descendants, ordered on income.</p>
 
-<p>use B-trees</p>
+<h3 id="query">Query</h3>
 
-<h2 id="general-phrasing">General phrasing</h2>
+<p>You should go read <a href="http://stackoverflow.com/questions/26296624/order-statistic-on-intervals">that second StackOverflow answer</a> again, because this algorithm is slightly more intuitive on arrays.</p>
 
-<p>Given a list <code class="highlighter-rouge">xs</code> of items, choose a data structure such that the following call is fast:</p>
+<p>To compute a reduction (eg sum, maximum, or product) on a subsection of a binary tree, you start out by finding a set of nodes whose descendants contain the whole subsection you care about. There will be $latex \log(n)$ of these nodes, and finding all of them takes $latex \log(n)$ time.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>class Query[NodeType, ArgumentsType, OrderingType &lt;: Comparable, ResultType](
-  predicate: (NodeType, ArgumentsType) =&gt; Boolean,
-  ordering: (NodeType, ArgumentsType) =&gt; OrderingType,
-  limit: (ArgumentsType =&gt; Option[Integer]),
-  reduction: (List[NodeType], ArgumentsType) =&gt; ResultType) {
+<p>In this case it’s slightly more complicated. We end up with $\latex \log(n)$ OSTs of various sizes, and we want to find the $latex k$th smallest item in their union.</p>
 
-  def compute(args: ArgumentType) = {
-    nodes.filter((x) =&gt; predicate(x, args))
-         .orderBy((x) =&gt; ordering(x, args))
-         .maybeTake((x) =&gt; limit(args))
-         .apply(reduction(_, args))
-  }
-}
-</code></pre>
-</div>
-
-<p>Properties:</p>
-
-<p>predicate:
-  - Try splitting it into a conjunction. Then classify conditions like this:
-    - ignores arguments: this makes it trivial
-    - of the form <code class="highlighter-rouge">f(args) = g(node)</code>. This means you make a hash map from the range of <code class="highlighter-rouge">f(args)</code> to
-      whatever other data structure you wanted.
-reduction:
-  - I think this is always trivial to store if you can store the other things.</p>
-
-<p>Other cases:</p>
-
-<ul>
-  <li>Predicate is like <code class="highlighter-rouge">f(args) &lt; g(node)</code> or <code class="highlighter-rouge">f(args) &lt; g(node) &lt; h(args)</code>. In this case just use a BST.</li>
-  <li>Predicate is conjunction of d range queries. In this case use a KD tree. Construction is log time. Queries are O(n**{1-1/d} + m).</li>
-  <li>Predicate like <code class="highlighter-rouge">f(args) &lt; g(node) &lt; h(args)</code>, order by <code class="highlighter-rouge">j(node)</code>, limit <code class="highlighter-rouge">k(args)</code>. Use <a href="http://stackoverflow.com/questions/26296624/order-statistic-on-intervals">this</a> idea, but make a skip list.</li>
-</ul>
-
+<p>Let’s think about this using some different variable names: how do we find the $latex k$th smallest item in $latex m$ different OSTs of size $latex s$?</p>
 
 
       <hr/>

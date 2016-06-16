@@ -50,7 +50,7 @@
 
 <p>Suppose I have an <a href="https://en.wikipedia.org/wiki/Order_statistic_tree">order statistic tree</a> with $latex n$ elements and an unordered list with $latex m$ elements. Let’s say for the sake of simplicity that both are representing a set of items with no duplicates, and their intersection is empty.</p>
 
-<p>If you want to find the $latex k$th element of an order statistic tree, you can do that in $latex O(log(n))$ time. And if you want to find the $latex k$th element of the array, you can use <a href="https://en.wikipedia.org/wiki/Quickselect">quickselect</a> and get it in $latex O(m)$ time. I want to find the $latex k$th smallest item in the <em>union</em> of these sets. How quickly can I do this?</p>
+<p>If you want to find the $latex k$th element of the order statistic tree, you can do that in $latex O(log(n))$ time. And if you want to find the $latex k$th element of the array, you can use <a href="https://en.wikipedia.org/wiki/Quickselect">quickselect</a> and get it in $latex O(m)$ time. I want to find the $latex k$th smallest item in the <em>union</em> of these sets. How quickly can I do this?</p>
 
 <p>You can do it trivially in $latex O(m + n)$ time, by flattening the order statistic tree (which I’ll call an OST from here onwards) onto the end of the array. Or you can add everything in the array to the OST and then query the OST, in $latex O(m \cdot \log(n + m))$ time.</p>
 
@@ -216,7 +216,7 @@
 
 <p>You can draw similar diagrams for the other cases.</p>
 
-<p>This part is the sketchiest part of the whole algorithm. I’m pretty sure that you can always decrease at least one of the data structures by one third. I’m not sure if you can always shrink both of them. I’m not sure how much you can shrink the OST in constant time; I’m pretty sure you can do at least $\frac 16$, and I think that for any fraction less than 1/3, you can choose a node depth such that you can always cut that fraction out in constant time.</p>
+<p>This part is the sketchiest part of the whole algorithm. I’m pretty sure that you can always decrease at least one of the data structures by one third. I’m not sure if you can always shrink both of them. I’m not sure how much you can shrink the OST in constant time; I’m pretty sure you can do at least $latex \frac 16$, and I think that for any fraction less than $latex \frac 13$, you can choose a node depth such that you can always cut that fraction out in constant time.</p>
 
 <h3 id="runtime-of-this-solution">Runtime of this solution</h3>
 

@@ -55,5 +55,5 @@ Other cases:
 
 - Predicate is like `f(args) < g(node)` or `f(args) < g(node) < h(args)`. In this case just use a BST.
 - Predicate is conjunction of d range queries. In this case use a KD tree. Construction is log time. Queries are O(n**{1-1/d} + m).
-- No predicate, ordering which .
+- Predicate like `f(args) < g(node) < h(args)`, order by `j(node)`, limit `k(args)`. Use [this](http://stackoverflow.com/questions/26296624/order-statistic-on-intervals) idea, but make a skip list.
 
