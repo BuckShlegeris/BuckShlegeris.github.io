@@ -35,7 +35,7 @@ So the total time taken is (time to calculate rank in every data structure) * (l
   </tr>
   <tr>
     <td>$latex \log(n)$ order statistic trees of sizes $latex [1, 2, 4, ...n]$</td>
-    <td>$latex \log(n)^2$</td>
+    <td>$latex \log(n)^3$</td>
   </tr>
 </table>
 
