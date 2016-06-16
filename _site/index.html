@@ -50,7 +50,121 @@
       <h1>Buck Shlegeris</h1>
 
 
-  <h2><a href="/2016/06/12/multi-sorted-array-quickselect.html"> Quickselect on multiple sorted arrays</a></h2>
+  <h2><a href="/2016/06/16/generalized-multi-quickselect.html"> General multi-quickselect</a></h2>
+
+  <p>I’ve been thinking a lot recently about how you find the $latex k$th smallest element in the union of several data structures.</p>
+
+<h2 id="multi-quickselect-on-data-structures-with-fast-rank">Multi-quickselect on data structures with fast <code class="highlighter-rouge">rank</code></h2>
+
+<p>Yesterday I <a href="/2016/06/15/multi-sorted-array-quickselect">came up with an algorithm</a> for the version of this problem where you have multiple sorted arrays.</p>
+
+<p>But this algorithm also works on any other data structure which supports the <code class="highlighter-rouge">rank</code> method.</p>
+
+<p>On a collection of data structures with a total of $latex O(t)$ elements, the modified quickselect algorithm involves $latex O(log(t))$ iterations. In each iteration, the rank of a random element is computed in every data structure.</p>
+
+<p>So the total time taken is (time to calculate rank in every data structure) * (log of total number of elements).</p>
+
+<table class="table">
+  <tr>
+    <th>Collection</th>
+    <th>Time complexity</th>
+  </tr>
+  <tr>
+    <td>$latex m$ sorted arrays of length $latex n$</td>
+    <td>$latex \log(m n) \cdot m \cdot \log(n)$</td>
+  </tr>
+  <tr>
+    <td>Two sorted arrays, of lengths $latex a$ and $latex b$</td>
+    <td>$latex \log(a + b) \cdot \left(\log(a) + \log(b)\right)$</td>
+  </tr>
+  <tr>
+    <td>$latex m$ order statistic trees of size $latex n$</td>
+    <td>$latex \log(m n) \cdot m \cdot \log(n)$</td>
+  </tr>
+  <tr>
+    <td>$latex \log(n)$ order statistic trees of sizes $latex [1, 2, 4, ...n]$</td>
+    <td>$latex \log(n)^2$</td>
+  </tr>
+</table>
+
+<p>For data structures with $latex O(log(n))$ <code class="highlighter-rouge">rank</code>, I think this is optimal.</p>
+
+<h2 id="allowing-data-structures-without-fast-rank">Allowing data structures without fast <code class="highlighter-rouge">rank</code></h2>
+
+<p>How about if some of your data structures are unsorted?</p>
+
+<p>This algorithm needs to be modified, because there’s no particular guarantee that any data structure gets smaller on a particular iteration. This is okay in cases where <code class="highlighter-rouge">rank</code> is cheap enough that the asymptotic complexity isn’t affected by having a data structure which stays at its original size for most of the runtime of the algorithm. But on an unsorted array, <code class="highlighter-rouge">rank</code> takes $latex O(n)$ and a key part of the argument for the good runtime of quickselect is that the unordered array usually gets smaller every time you call <code class="highlighter-rouge">rank</code>.</p>
+
+<p>This issue is why my attempt at an <a href="/2016/06/12/quickselect-lemma.html">optimal algorithm for selection on an OST and an unsorted array</a> was so complex.</p>
+
+<p>Obviously there’s not going to be a sublinear time solution to this problem. So we might as well take linear time to add all our unsorted structures together into an unsorted array, in linear time. So we only need to consider the problem where we have a single unsorted array.</p>
+
+<h3 id="non-optimal-solution">Non-optimal solution</h3>
+
+<p>When I have a collection of data structures such that <code class="highlighter-rouge">rank</code> takes time $latex O(r)$ and <code class="highlighter-rouge">select</code> takes time $latex O(s)$, I can run <a href="/2016/06/12/quickselect-lemma.html">my <code class="highlighter-rouge">double_quickselect_v2</code> algorithm</a> on an unordered array of length $latex n$ and that collection, with query time $latex O(\log(n) \cdot r + s)$. For example, this algorithm can deal with a sorted array of size $latex m$ and an unsorted array of size $latex n$ in overall $latex O(\log(n) \cdot \log(m) + \log(m)) = O(\log(m)\cdot\log(n))$.</p>
+
+<h3 id="what-an-optimal-solution-might-look-like">What an optimal solution might look like</h3>
+
+<p>I bet we can generalize my alleged <a href="/2016/06/12/quickselect-lemma.html">optimal algorithm for selection on an OST and an unsorted array</a>.</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>I have a bunch of data structures and want to find the $latex k$th smallest item in their union. How long will it take me?</p>
+
+<table class="table">
+  <tr>
+    <th>Collection</th>
+    <th>Algorithm</th>
+    <th>Time complexity</th>
+  </tr>
+  <tr>
+    <td>Unsorted array of size $latex n$</td>
+    <td>Median of medians</td>
+    <td>Worst case $latex O(n)$</td>
+  </tr>
+  <tr>
+    <td>Sorted array of size $latex n$</td>
+    <td>Binary search</td>
+    <td>Worst case $latex O(\log(n))$</td>
+  </tr>
+  <tr>
+    <td>Order statistic tree</td>
+    <td>its native `find` implementation</td>
+    <td>Worst case $latex O(\log(n))$</td>
+  </tr>
+  <tr>
+    <td>A bunch of unsorted data structures, of total size $latex O(n)$</td>
+    <td>Stick it all in an array then call median of medians</td>
+    <td>Worst case $latex O(\log(n))$</td>
+  </tr>
+  <tr>
+    <td>$latex m$ data structures which support <code>rank</code> in $latex O(\log(n))$, with maximum size $latex O(n)$</td>
+    <td><a href="/2016/06/15/multi-sorted-array-quickselect.html">Multi sorted array quickselect</a></td>
+    <td>Average case $latex O(m \cdot \log(n) \cdot \log(m \cdot n))$</td>
+  </tr>
+  <tr>
+    <td>$latex m$ data structures which support <code>rank</code> in $latex O(\log(n))$, with maximum size $latex O(n)$, and also a bunch of unsorted data with total size $latex u$</td>
+    <td>"Non-optimal solution" as described above</td>
+    <td>Average case $latex O(\log(u) \cdot m \cdot \log(n) +\\ m \cdot \log(n) \cdot \log(m \cdot n))$</td>
+  </tr>
+</table>
+
+<p>I suspect that I can improve upon most of the algorithms listed there that I invented myself; I’ll keep this table updated.</p>
+
+<p>Also, I have not done due diligence trying to research for standard solutions to these problems, because I enjoy trying to solve them myself. It’s possible that there are well known solutions to these problems that I haven’t found in my journeys through Google, StackOverflow, and Wikipedia.</p>
+
+<p>TODO:</p>
+
+<ul>
+  <li>try to actually implement those supposed fast algorithms of mine</li>
+  <li>generalize that OST and unsorted array algorithm</li>
+  <li>try to modify my multi-array quickselect algorithm to be faster.</li>
+</ul>
+
+
+  <hr />
+
+  <h2><a href="/2016/06/15/multi-sorted-array-quickselect.html"> Quickselect on multiple sorted arrays</a></h2>
 
   <p><strong>Edit: Thanks heaps to <a href="http://stackoverflow.com/users/1009831/evgeny-kluev">Evgeny Kluev</a>, the author of that original StackOverflow answer, for noticing that I’d made a mistake in the total time complexity calculation.</strong></p>
 
@@ -177,8 +291,12 @@
 
 <p>So I don’t think we can make that work.)</p>
 
-<p>One final question: can we generalize the <a href="https://en.wikipedia.org/wiki/Median_of_medians">median of medians</a> algorithm to get this to be guaranteed fast, rather than expected fast? The answer is almost certainly yes; I’ll probably try to prove it sometime.</p>
+<h2 id="further-questions">Further questions</h2>
 
+<ul>
+  <li>Can we generalize the <a href="https://en.wikipedia.org/wiki/Median_of_medians">median of medians</a> algorithm to get this to be guaranteed fast, rather than expected fast? The answer is almost certainly yes; I’ll probably try to prove it sometime.</li>
+  <li>In many situations, the algorithm I described will take far fewer iterations than the $latex log(m \cdot n)$ I said. The argument above only requires that we update the limit variables for the array which contains our pivot. If we can update the limits in most of our arrays every time, then we should only need to do the iteration $\log(n)$ times. I bet that there’s some clever algorithm like <a href="/2016/06/12/quickselect-lemma">this other algorithm</a> which lets me do it that fast in general. If I can do that, the overall algorithm will only take $latex O(\log(n) \cdot \log(m \cdot n))$ time.</li>
+</ul>
 
 
   <hr />
@@ -247,18 +365,18 @@
 <div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># OST has size n</span>
 <span class="c1"># array has size m</span>
 <span class="c1"># this returns the same thing as (array + ost.to_a).sort[k]</span>
-<span class="k">def</span> <span class="nf">double_quickselect</span><span class="p">(</span><span class="n">ost</span><span class="p">,</span> <span class="n">array</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">double_quickselect_v1</span><span class="p">(</span><span class="n">ost</span><span class="p">,</span> <span class="n">array</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
   <span class="n">smallers</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="nf">select</span> <span class="p">{</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">ost</span><span class="p">.</span><span class="nf">pivot</span> <span class="p">}</span>
   <span class="n">largers</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="nf">select</span> <span class="p">{</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">ost</span><span class="p">.</span><span class="nf">pivot</span> <span class="p">}</span>
 
   <span class="n">number_of_smaller_things</span> <span class="o">=</span> <span class="n">smallers</span><span class="p">.</span><span class="nf">length</span> <span class="o">+</span> <span class="n">ost</span><span class="p">.</span><span class="nf">smallers</span><span class="p">.</span><span class="nf">count</span>
 
   <span class="k">if</span> <span class="n">number_of_smaller_things</span> <span class="o">&gt;</span> <span class="n">k</span>
-    <span class="n">double_quickselect</span><span class="p">(</span><span class="n">smallers</span><span class="p">,</span> <span class="n">ost</span><span class="p">.</span><span class="nf">smallers</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+    <span class="n">double_quickselect_v1</span><span class="p">(</span><span class="n">smallers</span><span class="p">,</span> <span class="n">ost</span><span class="p">.</span><span class="nf">smallers</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
   <span class="k">elsif</span> <span class="n">number_of_smaller_things</span> <span class="o">==</span> <span class="n">k</span>
     <span class="n">ost</span><span class="p">.</span><span class="nf">pivot</span>
   <span class="k">else</span>
-    <span class="n">double_quickselect</span><span class="p">(</span><span class="n">largers</span><span class="p">,</span> <span class="n">ost</span><span class="p">.</span><span class="nf">largers</span><span class="p">,</span> <span class="n">k</span> <span class="o">-</span> <span class="n">number_of_smaller_things</span><span class="p">)</span>
+    <span class="n">double_quickselect_v1</span><span class="p">(</span><span class="n">largers</span><span class="p">,</span> <span class="n">ost</span><span class="p">.</span><span class="nf">largers</span><span class="p">,</span> <span class="n">k</span> <span class="o">-</span> <span class="n">number_of_smaller_things</span><span class="p">)</span>
   <span class="k">end</span>
 <span class="k">end</span>
 </code></pre>
@@ -275,21 +393,21 @@
 <div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># OST has size n</span>
 <span class="c1"># array has size m</span>
 <span class="c1"># this returns the same thing as (array + ost.to_a).sort[k]</span>
-<span class="k">def</span> <span class="nf">double_quickselect</span><span class="p">(</span><span class="n">ost</span><span class="p">,</span> <span class="n">array</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">double_quickselect_v2</span><span class="p">(</span><span class="n">ost</span><span class="p">,</span> <span class="n">array</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
   <span class="n">pivot_element</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="nf">sample</span>
   <span class="n">smallers</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="nf">select</span> <span class="p">{</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">pivot_element</span> <span class="p">}</span>
   <span class="n">largers</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="nf">select</span> <span class="p">{</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">pivot_element</span> <span class="p">}</span>
 
-  <span class="n">number_of_smaller_things</span> <span class="o">=</span> <span class="n">smallers</span><span class="p">.</span><span class="nf">length</span> <span class="o">+</span> <span class="n">ost</span><span class="p">.</span><span class="nf">smallers</span><span class="p">.</span><span class="nf">count</span>
+  <span class="n">number_of_smaller_things</span> <span class="o">=</span> <span class="n">smallers</span><span class="p">.</span><span class="nf">length</span> <span class="o">+</span> <span class="n">ost</span><span class="p">.</span><span class="nf">rank</span><span class="p">(</span><span class="n">pivot_element</span><span class="p">)</span>
 
   <span class="k">if</span> <span class="n">number_of_smaller_things</span> <span class="o">&gt;</span> <span class="n">k</span>
-    <span class="n">double_quickselect</span><span class="p">(</span><span class="n">smallers</span><span class="p">,</span>
+    <span class="n">double_quickselect_v2</span><span class="p">(</span><span class="n">smallers</span><span class="p">,</span>
                         <span class="n">ost</span><span class="p">.</span><span class="nf">split_on_right_by_value</span><span class="p">(</span><span class="n">pivot_element</span><span class="p">),</span>
                         <span class="n">k</span><span class="p">)</span>
   <span class="k">elsif</span> <span class="n">number_of_smaller_things</span> <span class="o">==</span> <span class="n">k</span>
     <span class="n">ost</span><span class="p">.</span><span class="nf">pivot</span>
   <span class="k">else</span>
-    <span class="n">double_quickselect</span><span class="p">(</span><span class="n">largers</span><span class="p">,</span>
+    <span class="n">double_quickselect_v2</span><span class="p">(</span><span class="n">largers</span><span class="p">,</span>
                         <span class="n">ost</span><span class="p">.</span><span class="nf">split_on_left_by_value</span><span class="p">(</span><span class="n">pivot_element</span><span class="p">),</span>
                         <span class="n">k</span> <span class="o">-</span> <span class="n">number_of_smaller_things</span><span class="p">)</span>
   <span class="k">end</span>
@@ -298,6 +416,8 @@
 </div>
 
 <p>So now the array is going to shrink on average by a factor of 2 every recursive call, but in the worst case the tree will stay the same size every time. So we now expect to $latex \log(m)$ recursive calls, for a total cost of $latex O(m + \log(m) \cdot \log(n))$.</p>
+
+<p>(Incidentally, calling <code class="highlighter-rouge">ost.split_on_left_by_value</code> doesn’t affect the asymptotic runtime of this function, because this only decreases the size of <code class="highlighter-rouge">ost</code> by a constant multiplier in expectation, and it doesn’t cause <code class="highlighter-rouge">ost.rank(pivot_element)</code> to run asymptotically faster.)</p>
 
 <p>Okay, this is better. But can we improve it even more?</p>
 
@@ -372,8 +492,6 @@
 <p>So we can do quick select on an OST and array at the same time in $latex O(m + \log(n))$.</p>
 
 <p>My work here leaves a lot to be desired. Most obviously, my fastest algorithm is extremely complicated and inelegant; I bet that can be simplified.</p>
-
-<p>An obvious related question is to figure out what happens if you have two OSTs, or more. There’s literature on this last topic but I haven’t read it yet.</p>
 
 
   <hr />
@@ -537,41 +655,6 @@
 
   <hr />
 
-  <h2><a href="/2016/04/20/overteaching.html"> Overteaching and overlearning</a></h2>
-
-  <p>(I’m talking about computer science here because that’s the only topic I know really well, but this might generalize anyway.)</p>
-
-<p>Most university classes have a few concepts in them that you should remember forever, and a bunch of other concepts that you forget immediately after the final.</p>
-
-<p>Is it a total waste of time to teach things that people are going to forget? I don’t think so, for a few reasons. To start with, sometimes you teach people about a particular specific topic with the goal of them getting a feel for the kind of things that you do in that field more generally. A classic example is sorting algorithms—you rarely actually need to implement a sorting algorithm, but studying them is a pretty good way of getting a feel for different ways of designing algorithms[1]. Even though people will forget the fiddly details of implementing quicksort in place, hopefully they’ll remember the insight that you can split things into smaller subproblems, recursively solve those, and merge the results. Relatedly, it often works nicely to teach people about an important problem by making them study the solutions to it—for example, I don’t remember the algorithms which are actually used in practice for scheduling in operating systems, but I remember the concepts better because I studied them in my OS class.</p>
-
-<p>More generally, students empirically learn concepts better if they then practice using those concepts in more advanced ways. For example, you remember your algebra course better if you then do a calculus course that relies on it. A lot of practical computer science courses could be justified by pointing out that even if they teach you totally useless things, you hopefully at least practiced programming.</p>
-
-<p>However, for this to work, the more advanced material needs to actually rely on the core material. I think many computer science courses do not do a good job of this.</p>
-
-<p>For example. Suppose you want to ensure that your students finish their algorithms course and remember binary search trees. You spend the obligatory week on binary search trees, and teach them about red-black trees to the extent that when I interview them a year later they can say “uh, some nodes are red and some nodes are black and black children only have red parents or something like that.” And now you’re not sure what to teach them next.</p>
-
-<p>Algorithms courses often say “Well, I guess we’re done with BSTs. Now that the core stuff is out of the way, let’s teach them about max flow and spanning tree algorithms!”</p>
-
-<p>I think this is a terrible idea! Students learn those algorithms, but they’re kind of confusing and don’t come up much in the rest of your life, so they forget them. And the learning process didn’t even work as over learning, because it wasn’t giving them practice reasoning about BSTs.</p>
-
-<p>Instead, you should teach them more advanced things about BSTs! Teach them about BTrees (and the <a href="http://web.stanford.edu/class/cs166/lectures/05/Small05.pdf">isometry between those and red-black trees</a>)! Make them implement splay trees and treaps. Tell them about <a href="http://web.stanford.edu/class/cs166/lectures/06/Small06.pdf">augmented binary search</a> trees.</p>
-
-<p>These things are not particularly easier or harder than just teaching them about other algorithms stuff. And the students will probably forget all of it in a year. But they will do a much better job of giving the students excuses to think really carefully about how BSTs work, so they’ll be more fluent with those when they come up.</p>
-
-<p>(This is the approach taken by the amazing course CS166 at Stanford, which I was linking above. As far as I’m concerned, all other algorithms courses should imitate CS166 as much as possible.)</p>
-
-<p>Classic examples of things which CS classes teach which do not work well as over learning: Minimum spanning tree algorithms. The Floyd Marshall algorithm. Dijkstra’s algorithm, when it isn’t taught as uniform cost search. (This one particularly annoys me because most students try to learn it, but most of them don’t realize the connection between it and BFS. AFAICT this is just for historical reasons: when Dijkstra originally presented the algorithm it wasn’t written as BFS with a priority queue, and CS departments have a bizarre fixation on presenting ideas as they’ve been historically presented.</p>
-
-<p>[1] Sadly, most courses which do this teach you about things like divide and conquer and greedy algorithms, but neglect the single most important part of designing a good algorithm, which is choosing the right data structures. Skiena’s textbook does a great job of avoiding this mistake: it presents heapsort as selection sort optimized by using a faster data structure.</p>
-
-<hr />
-
-<p><a href="https://www.facebook.com/endofunctor/posts/10207490190427645?pnref=story">view comments on Facebook</a></p>
-
-
-  <hr />
-
 
 <p><a href="/posts">All posts</a></p>
 
@@ -622,7 +705,11 @@
     <ul>
       
         <li>
-          <a class="arrow" href="/2016/06/12/multi-sorted-array-quickselect.html">Quickselect on multiple sorted arrays</a>
+          <a class="arrow" href="/2016/06/16/generalized-multi-quickselect.html">General multi-quickselect</a>
+        </li>
+      
+        <li>
+          <a class="arrow" href="/2016/06/15/multi-sorted-array-quickselect.html">Quickselect on multiple sorted arrays</a>
         </li>
       
         <li>
@@ -647,10 +734,6 @@
       
         <li>
           <a class="arrow" href="/2016/04/22/dumbest-algorithm-problem.html">The dumbest algorithm problem in the entire world</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/04/20/overteaching.html">Overteaching and overlearning</a>
         </li>
       
     </ul>

@@ -65,18 +65,18 @@ Let's modify this to also use an OST.
 # OST has size n
 # array has size m
 # this returns the same thing as (array + ost.to_a).sort[k]
-def double_quickselect(ost, array, k)
+def double_quickselect_v1(ost, array, k)
   smallers = arr.select { |x| x < ost.pivot }
   largers = arr.select { |x| x > ost.pivot }
 
   number_of_smaller_things = smallers.length + ost.smallers.count
 
   if number_of_smaller_things > k
-    double_quickselect(smallers, ost.smallers, k)
+    double_quickselect_v1(smallers, ost.smallers, k)
   elsif number_of_smaller_things == k
     ost.pivot
   else
-    double_quickselect(largers, ost.largers, k - number_of_smaller_things)
+    double_quickselect_v1(largers, ost.largers, k - number_of_smaller_things)
   end
 end
 ```
@@ -93,21 +93,21 @@ Instead of using the OST's pivot, let's pivot on a randomly selected member of t
 # OST has size n
 # array has size m
 # this returns the same thing as (array + ost.to_a).sort[k]
-def double_quickselect(ost, array, k)
+def double_quickselect_v2(ost, array, k)
   pivot_element = arr.sample
   smallers = arr.select { |x| x < pivot_element }
   largers = arr.select { |x| x > pivot_element }
 
-  number_of_smaller_things = smallers.length + ost.smallers.count
+  number_of_smaller_things = smallers.length + ost.rank(pivot_element)
 
   if number_of_smaller_things > k
-    double_quickselect(smallers,
+    double_quickselect_v2(smallers,
                         ost.split_on_right_by_value(pivot_element),
                         k)
   elsif number_of_smaller_things == k
     ost.pivot
   else
-    double_quickselect(largers,
+    double_quickselect_v2(largers,
                         ost.split_on_left_by_value(pivot_element),
                         k - number_of_smaller_things)
   end
@@ -115,6 +115,8 @@ end
 ```
 
 So now the array is going to shrink on average by a factor of 2 every recursive call, but in the worst case the tree will stay the same size every time. So we now expect to $latex \log(m)$ recursive calls, for a total cost of $latex O(m + \log(m) \cdot \log(n))$.
+
+(Incidentally, calling `ost.split_on_left_by_value` doesn't affect the asymptotic runtime of this function, because this only decreases the size of `ost` by a constant multiplier in expectation, and it doesn't cause `ost.rank(pivot_element)` to run asymptotically faster.)
 
 Okay, this is better. But can we improve it even more?
 
@@ -191,5 +193,3 @@ which evaluates to $latex \log(n) + m$.
 So we can do quick select on an OST and array at the same time in $latex O(m + \log(n))$.
 
 My work here leaves a lot to be desired. Most obviously, my fastest algorithm is extremely complicated and inelegant; I bet that can be simplified.
-
-An obvious related question is to figure out what happens if you have two OSTs, or more. There's literature on this last topic but I haven't read it yet.

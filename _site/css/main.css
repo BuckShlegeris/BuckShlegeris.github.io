@@ -469,6 +469,9 @@ div.math {
 .markdownify h1::before {
   text-color: grey; }
 
+h2 code {
+  font-size: 30px; }
+
 .markdownify ul {
   list-style: none;
   margin-left: 10px; }

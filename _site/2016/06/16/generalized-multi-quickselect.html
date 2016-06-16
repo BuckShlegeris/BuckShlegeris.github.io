@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>General multi-quickselect</title>
+  <meta name="description" content="I’ve been thinking a lot recently about how you find the $latex k$th smallest element in the union of several data structures.">
+
+
+  <link rel="stylesheet" href="/bootstrap.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://bshlgrs.github.io/2016/06/16/generalized-multi-quickselect.html">
+  <link rel="alternate" type="application/rss+xml" title="Buck Shlegeris" href="http://bshlgrs.github.io/feed.xml">
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$latex', '$'] ],
+        displayMath: [ ['$$', '$$']],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      messageStyle: "none",
+      "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+    });
+  </script>
+  <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+  <script src="/jquery.js"></script>
+  <script type="text/babel" src="/main.js"></script>
+  
+</head>
+
+
+  <body>
+
+    
+
+    <div class="container">
+  <div class="row">
+    <div class="col-xs-7 col-xs-offset-1 markdownify">
+      <h1 class="post-title " itemprop="name headline">General multi-quickselect</h1>
+      <p class="post-meta"><time datetime="2016-06-16T00:00:00-07:00" itemprop="datePublished">Jun 16, 2016</time></p>
+
+      <hr/>
+
+      <p>I’ve been thinking a lot recently about how you find the $latex k$th smallest element in the union of several data structures.</p>
+
+<h2 id="multi-quickselect-on-data-structures-with-fast-rank">Multi-quickselect on data structures with fast <code class="highlighter-rouge">rank</code></h2>
+
+<p>Yesterday I <a href="/2016/06/15/multi-sorted-array-quickselect">came up with an algorithm</a> for the version of this problem where you have multiple sorted arrays.</p>
+
+<p>But this algorithm also works on any other data structure which supports the <code class="highlighter-rouge">rank</code> method.</p>
+
+<p>On a collection of data structures with a total of $latex O(t)$ elements, the modified quickselect algorithm involves $latex O(log(t))$ iterations. In each iteration, the rank of a random element is computed in every data structure.</p>
+
+<p>So the total time taken is (time to calculate rank in every data structure) * (log of total number of elements).</p>
+
+<table class="table">
+  <tr>
+    <th>Collection</th>
+    <th>Time complexity</th>
+  </tr>
+  <tr>
+    <td>$latex m$ sorted arrays of length $latex n$</td>
+    <td>$latex \log(m n) \cdot m \cdot \log(n)$</td>
+  </tr>
+  <tr>
+    <td>Two sorted arrays, of lengths $latex a$ and $latex b$</td>
+    <td>$latex \log(a + b) \cdot \left(\log(a) + \log(b)\right)$</td>
+  </tr>
+  <tr>
+    <td>$latex m$ order statistic trees of size $latex n$</td>
+    <td>$latex \log(m n) \cdot m \cdot \log(n)$</td>
+  </tr>
+  <tr>
+    <td>$latex \log(n)$ order statistic trees of sizes $latex [1, 2, 4, ...n]$</td>
+    <td>$latex \log(n)^2$</td>
+  </tr>
+</table>
+
+<p>For data structures with $latex O(log(n))$ <code class="highlighter-rouge">rank</code>, I think this is optimal.</p>
+
+<h2 id="allowing-data-structures-without-fast-rank">Allowing data structures without fast <code class="highlighter-rouge">rank</code></h2>
+
+<p>How about if some of your data structures are unsorted?</p>
+
+<p>This algorithm needs to be modified, because there’s no particular guarantee that any data structure gets smaller on a particular iteration. This is okay in cases where <code class="highlighter-rouge">rank</code> is cheap enough that the asymptotic complexity isn’t affected by having a data structure which stays at its original size for most of the runtime of the algorithm. But on an unsorted array, <code class="highlighter-rouge">rank</code> takes $latex O(n)$ and a key part of the argument for the good runtime of quickselect is that the unordered array usually gets smaller every time you call <code class="highlighter-rouge">rank</code>.</p>
+
+<p>This issue is why my attempt at an <a href="/2016/06/12/quickselect-lemma.html">optimal algorithm for selection on an OST and an unsorted array</a> was so complex.</p>
+
+<p>Obviously there’s not going to be a sublinear time solution to this problem. So we might as well take linear time to add all our unsorted structures together into an unsorted array, in linear time. So we only need to consider the problem where we have a single unsorted array.</p>
+
+<h3 id="non-optimal-solution">Non-optimal solution</h3>
+
+<p>When I have a collection of data structures such that <code class="highlighter-rouge">rank</code> takes time $latex O(r)$ and <code class="highlighter-rouge">select</code> takes time $latex O(s)$, I can run <a href="/2016/06/12/quickselect-lemma.html">my <code class="highlighter-rouge">double_quickselect_v2</code> algorithm</a> on an unordered array of length $latex n$ and that collection, with query time $latex O(\log(n) \cdot r + s)$. For example, this algorithm can deal with a sorted array of size $latex m$ and an unsorted array of size $latex n$ in overall $latex O(\log(n) \cdot \log(m) + \log(m)) = O(\log(m)\cdot\log(n))$.</p>
+
+<h3 id="what-an-optimal-solution-might-look-like">What an optimal solution might look like</h3>
+
+<p>I bet we can generalize my alleged <a href="/2016/06/12/quickselect-lemma.html">optimal algorithm for selection on an OST and an unsorted array</a>.</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>I have a bunch of data structures and want to find the $latex k$th smallest item in their union. How long will it take me?</p>
+
+<table class="table">
+  <tr>
+    <th>Collection</th>
+    <th>Algorithm</th>
+    <th>Time complexity</th>
+  </tr>
+  <tr>
+    <td>Unsorted array of size $latex n$</td>
+    <td>Median of medians</td>
+    <td>Worst case $latex O(n)$</td>
+  </tr>
+  <tr>
+    <td>Sorted array of size $latex n$</td>
+    <td>Binary search</td>
+    <td>Worst case $latex O(\log(n))$</td>
+  </tr>
+  <tr>
+    <td>Order statistic tree</td>
+    <td>its native `find` implementation</td>
+    <td>Worst case $latex O(\log(n))$</td>
+  </tr>
+  <tr>
+    <td>A bunch of unsorted data structures, of total size $latex O(n)$</td>
+    <td>Stick it all in an array then call median of medians</td>
+    <td>Worst case $latex O(\log(n))$</td>
+  </tr>
+  <tr>
+    <td>$latex m$ data structures which support <code>rank</code> in $latex O(\log(n))$, with maximum size $latex O(n)$</td>
+    <td><a href="/2016/06/15/multi-sorted-array-quickselect.html">Multi sorted array quickselect</a></td>
+    <td>Average case $latex O(m \cdot \log(n) \cdot \log(m \cdot n))$</td>
+  </tr>
+  <tr>
+    <td>$latex m$ data structures which support <code>rank</code> in $latex O(\log(n))$, with maximum size $latex O(n)$, and also a bunch of unsorted data with total size $latex u$</td>
+    <td>"Non-optimal solution" as described above</td>
+    <td>Average case $latex O(\log(u) \cdot m \cdot \log(n) +\\ m \cdot \log(n) \cdot \log(m \cdot n))$</td>
+  </tr>
+</table>
+
+<p>I suspect that I can improve upon most of the algorithms listed there that I invented myself; I’ll keep this table updated.</p>
+
+<p>Also, I have not done due diligence trying to research for standard solutions to these problems, because I enjoy trying to solve them myself. It’s possible that there are well known solutions to these problems that I haven’t found in my journeys through Google, StackOverflow, and Wikipedia.</p>
+
+<p>TODO:</p>
+
+<ul>
+  <li>try to actually implement those supposed fast algorithms of mine</li>
+  <li>generalize that OST and unsorted array algorithm</li>
+  <li>try to modify my multi-array quickselect algorithm to be faster.</li>
+</ul>
+
+
+      <hr/>
+
+<div class="PageNavigation">
+  
+    <a class="prev" href="/2016/06/15/multi-sorted-array-quickselect.html">&laquo; Quickselect on multiple sorted arrays</a>
+  
+  
+</div>
+
+    </div>
+    <div class="col-xs-3 col-xs-offset-1">
+      <img src="https://scontent-sjc2-1.xx.fbcdn.net/hphotos-xtp1/t31.0-8/11154688_10205041372168719_3725604149367069581_o.jpg" class="img-responsive" alt="Picture of Buck">
+      
+<hr/>
+<a class="arrow" href="/"><strong>Buck</strong></a>
+<ul>
+  <li><a class="arrow" href="/about">About</a>
+    <ul>
+      <li><a href="/teaching">Tutoring services</a></li>
+    </ul>
+  </li>
+  <li>Links
+    <ul>
+      <li>
+          <a class="arrow" href="http://github.com/bshlgrs">GitHub</a>
+      </li>
+      <li>
+          <a class="arrow" href="mailto:bshlegeris@gmail.com">Email</a>
+      </li>
+      <li>
+          <a class="arrow" href="http://www.facebook.com/bshlgrs">Facebook</a>
+      </li>
+      <li>
+          <a class="arrow" href="http://lnkd.in/bnBJ6EF">LinkedIn</a>
+      </li>
+      <li>
+          <a class="arrow" href="/resume.pdf">Resume</a>
+      </li>
+    </ul>
+  </li>
+  <li><a class="arrow external" href="https://docs.google.com/forms/d/1SOombLPHlKIMut-wJzIRg7DGdJjh9PJV4yAkrmTXKn4/viewform?usp=send_form">Anonymous feedback</a></li>
+
+  <li><a href="/posts" class="arrow">Blog</a>
+    <ul>
+      
+        <li>
+          <a class="arrow" href="/2016/06/16/generalized-multi-quickselect.html">General multi-quickselect</a>
+        </li>
+      
+        <li>
+          <a class="arrow" href="/2016/06/15/multi-sorted-array-quickselect.html">Quickselect on multiple sorted arrays</a>
+        </li>
+      
+        <li>
+          <a class="arrow" href="/2016/06/12/quickselect-lemma.html">Quickselect on an unordered array and an order statistic tree</a>
+        </li>
+      
+        <li>
+          <a class="arrow" href="/2016/06/02/say.html">Not thinking of things I can't say</a>
+        </li>
+      
+        <li>
+          <a class="arrow" href="/2016/05/29/explicit.html">Optimize dating for non-interference with platonic relationships</a>
+        </li>
+      
+        <li>
+          <a class="arrow" href="/2016/05/29/flinching.html">Flinching away from hard things</a>
+        </li>
+      
+        <li>
+          <a class="arrow" href="/2016/05/24/mistakes.html">My main effective altruism mistakes so far</a>
+        </li>
+      
+        <li>
+          <a class="arrow" href="/2016/04/22/dumbest-algorithm-problem.html">The dumbest algorithm problem in the entire world</a>
+        </li>
+      
+    </ul>
+  </li>
+  <li>
+      <a class="arrow" href="/cute">Pictures of me</a>
+  </li>
+</ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Buck Shlegeris</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>Buck Shlegeris</li>
+          <li><a href="mailto:bshlegeris@gmail.com">bshlegeris@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/bshlgrs"><span class="icon icon--github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">bshlgrs</span></a>
+
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/bshlgrs"><span class="icon icon--twitter"><svg viewBox="0 0 16 16"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</span><span class="username">bshlgrs</span></a>
+
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>Website of Buck Shlegeris.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-52980069-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</html>
+

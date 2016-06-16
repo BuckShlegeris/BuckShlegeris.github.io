@@ -70,6 +70,12 @@ div.math {
 .markdownify h2::before {
 }
 
+h2 {
+  code {
+    font-size: 30px;
+  }
+}
+
 .markdownify h3::before {
 }
 

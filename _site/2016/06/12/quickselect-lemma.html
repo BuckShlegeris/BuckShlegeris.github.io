@@ -108,18 +108,18 @@
 <div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># OST has size n</span>
 <span class="c1"># array has size m</span>
 <span class="c1"># this returns the same thing as (array + ost.to_a).sort[k]</span>
-<span class="k">def</span> <span class="nf">double_quickselect</span><span class="p">(</span><span class="n">ost</span><span class="p">,</span> <span class="n">array</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">double_quickselect_v1</span><span class="p">(</span><span class="n">ost</span><span class="p">,</span> <span class="n">array</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
   <span class="n">smallers</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="nf">select</span> <span class="p">{</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">ost</span><span class="p">.</span><span class="nf">pivot</span> <span class="p">}</span>
   <span class="n">largers</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="nf">select</span> <span class="p">{</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">ost</span><span class="p">.</span><span class="nf">pivot</span> <span class="p">}</span>
 
   <span class="n">number_of_smaller_things</span> <span class="o">=</span> <span class="n">smallers</span><span class="p">.</span><span class="nf">length</span> <span class="o">+</span> <span class="n">ost</span><span class="p">.</span><span class="nf">smallers</span><span class="p">.</span><span class="nf">count</span>
 
   <span class="k">if</span> <span class="n">number_of_smaller_things</span> <span class="o">&gt;</span> <span class="n">k</span>
-    <span class="n">double_quickselect</span><span class="p">(</span><span class="n">smallers</span><span class="p">,</span> <span class="n">ost</span><span class="p">.</span><span class="nf">smallers</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+    <span class="n">double_quickselect_v1</span><span class="p">(</span><span class="n">smallers</span><span class="p">,</span> <span class="n">ost</span><span class="p">.</span><span class="nf">smallers</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
   <span class="k">elsif</span> <span class="n">number_of_smaller_things</span> <span class="o">==</span> <span class="n">k</span>
     <span class="n">ost</span><span class="p">.</span><span class="nf">pivot</span>
   <span class="k">else</span>
-    <span class="n">double_quickselect</span><span class="p">(</span><span class="n">largers</span><span class="p">,</span> <span class="n">ost</span><span class="p">.</span><span class="nf">largers</span><span class="p">,</span> <span class="n">k</span> <span class="o">-</span> <span class="n">number_of_smaller_things</span><span class="p">)</span>
+    <span class="n">double_quickselect_v1</span><span class="p">(</span><span class="n">largers</span><span class="p">,</span> <span class="n">ost</span><span class="p">.</span><span class="nf">largers</span><span class="p">,</span> <span class="n">k</span> <span class="o">-</span> <span class="n">number_of_smaller_things</span><span class="p">)</span>
   <span class="k">end</span>
 <span class="k">end</span>
 </code></pre>
@@ -136,21 +136,21 @@
 <div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># OST has size n</span>
 <span class="c1"># array has size m</span>
 <span class="c1"># this returns the same thing as (array + ost.to_a).sort[k]</span>
-<span class="k">def</span> <span class="nf">double_quickselect</span><span class="p">(</span><span class="n">ost</span><span class="p">,</span> <span class="n">array</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">double_quickselect_v2</span><span class="p">(</span><span class="n">ost</span><span class="p">,</span> <span class="n">array</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
   <span class="n">pivot_element</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="nf">sample</span>
   <span class="n">smallers</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="nf">select</span> <span class="p">{</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">pivot_element</span> <span class="p">}</span>
   <span class="n">largers</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="nf">select</span> <span class="p">{</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">pivot_element</span> <span class="p">}</span>
 
-  <span class="n">number_of_smaller_things</span> <span class="o">=</span> <span class="n">smallers</span><span class="p">.</span><span class="nf">length</span> <span class="o">+</span> <span class="n">ost</span><span class="p">.</span><span class="nf">smallers</span><span class="p">.</span><span class="nf">count</span>
+  <span class="n">number_of_smaller_things</span> <span class="o">=</span> <span class="n">smallers</span><span class="p">.</span><span class="nf">length</span> <span class="o">+</span> <span class="n">ost</span><span class="p">.</span><span class="nf">rank</span><span class="p">(</span><span class="n">pivot_element</span><span class="p">)</span>
 
   <span class="k">if</span> <span class="n">number_of_smaller_things</span> <span class="o">&gt;</span> <span class="n">k</span>
-    <span class="n">double_quickselect</span><span class="p">(</span><span class="n">smallers</span><span class="p">,</span>
+    <span class="n">double_quickselect_v2</span><span class="p">(</span><span class="n">smallers</span><span class="p">,</span>
                         <span class="n">ost</span><span class="p">.</span><span class="nf">split_on_right_by_value</span><span class="p">(</span><span class="n">pivot_element</span><span class="p">),</span>
                         <span class="n">k</span><span class="p">)</span>
   <span class="k">elsif</span> <span class="n">number_of_smaller_things</span> <span class="o">==</span> <span class="n">k</span>
     <span class="n">ost</span><span class="p">.</span><span class="nf">pivot</span>
   <span class="k">else</span>
-    <span class="n">double_quickselect</span><span class="p">(</span><span class="n">largers</span><span class="p">,</span>
+    <span class="n">double_quickselect_v2</span><span class="p">(</span><span class="n">largers</span><span class="p">,</span>
                         <span class="n">ost</span><span class="p">.</span><span class="nf">split_on_left_by_value</span><span class="p">(</span><span class="n">pivot_element</span><span class="p">),</span>
                         <span class="n">k</span> <span class="o">-</span> <span class="n">number_of_smaller_things</span><span class="p">)</span>
   <span class="k">end</span>
@@ -159,6 +159,8 @@
 </div>
 
 <p>So now the array is going to shrink on average by a factor of 2 every recursive call, but in the worst case the tree will stay the same size every time. So we now expect to $latex \log(m)$ recursive calls, for a total cost of $latex O(m + \log(m) \cdot \log(n))$.</p>
+
+<p>(Incidentally, calling <code class="highlighter-rouge">ost.split_on_left_by_value</code> doesn’t affect the asymptotic runtime of this function, because this only decreases the size of <code class="highlighter-rouge">ost</code> by a constant multiplier in expectation, and it doesn’t cause <code class="highlighter-rouge">ost.rank(pivot_element)</code> to run asymptotically faster.)</p>
 
 <p>Okay, this is better. But can we improve it even more?</p>
 
@@ -234,8 +236,6 @@
 
 <p>My work here leaves a lot to be desired. Most obviously, my fastest algorithm is extremely complicated and inelegant; I bet that can be simplified.</p>
 
-<p>An obvious related question is to figure out what happens if you have two OSTs, or more. There’s literature on this last topic but I haven’t read it yet.</p>
-
 
       <hr/>
 
@@ -244,7 +244,7 @@
     <a class="prev" href="/2016/06/02/say.html">&laquo; Not thinking of things I can't say</a>
   
   
-    <a class="pull-right" href="/2016/06/12/multi-sorted-array-quickselect.html">Quickselect on multiple sorted arrays &raquo;</a>
+    <a class="pull-right" href="/2016/06/15/multi-sorted-array-quickselect.html">Quickselect on multiple sorted arrays &raquo;</a>
   
 </div>
 
@@ -285,7 +285,11 @@
     <ul>
       
         <li>
-          <a class="arrow" href="/2016/06/12/multi-sorted-array-quickselect.html">Quickselect on multiple sorted arrays</a>
+          <a class="arrow" href="/2016/06/16/generalized-multi-quickselect.html">General multi-quickselect</a>
+        </li>
+      
+        <li>
+          <a class="arrow" href="/2016/06/15/multi-sorted-array-quickselect.html">Quickselect on multiple sorted arrays</a>
         </li>
       
         <li>
@@ -310,10 +314,6 @@
       
         <li>
           <a class="arrow" href="/2016/04/22/dumbest-algorithm-problem.html">The dumbest algorithm problem in the entire world</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/04/20/overteaching.html">Overteaching and overlearning</a>
         </li>
       
     </ul>
