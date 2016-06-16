@@ -11,7 +11,7 @@ dl, dd, ol, ul, figure {
  * Basic styling
  */
 body {
-  font: 400 16px/1.5 serif;
+  font: 400 16px/1.5 sans-serif;
   color: #111;
   background-color: #fdfdfd;
   -webkit-text-size-adjust: 100%;
@@ -458,7 +458,7 @@ pre {
 
 .markdownify h1, h2, h3 {
   color: darkred;
-  font-family: serif; }
+  font-family: Helvetica, sans; }
 
 div.math {
   width: 60%;

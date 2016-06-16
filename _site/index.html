@@ -204,7 +204,7 @@
 
 <p>Because we’re using weight-balanced trees with a weight balancing factor of $latex \frac 14$, we might need to go down maybe 3 layers in order to get a node with enough weight that deleting it deletes half the weight that you’d be able to delete if you called <code class="highlighter-rouge">split_on_left_by_value</code>. (I’m not sure about the number 3 being correct, but I think this is true for some constant.)</p>
 
-<p>We could safely remove $latex \frac 12$ of the tree if we used the normal split methods. We’re going to remove more than half of that, so at worst our tree will end up $\frac 34$ of its original size.</p>
+<p>We could safely remove $latex \frac 12$ of the tree if we used the normal split methods. We’re going to remove more than half of that, so at worst our tree will end up $latex\frac 34$ of its original size.</p>
 
 <p>So in both cases, we end up with the bigger data structure being a constant factor smaller.</p>
 
