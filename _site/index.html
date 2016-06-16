@@ -52,7 +52,8 @@
 
   <h2><a href="/2016/06/16/generalized-multi-quickselect.html"> General multi-quickselect</a></h2>
 
-  <p>I’ve been thinking a lot recently about how you find the $latex k$th smallest element in the sum of several data structures.</p>
+  <div class="shrink-headings">
+    <p>I’ve been thinking a lot recently about how you find the $latex k$th smallest element in the disjoint union of several data structures.</p>
 
 <h2 id="multi-quickselect-on-data-structures-with-fast-rank">Multi-quickselect on data structures with fast <code class="highlighter-rouge">rank</code></h2>
 
@@ -161,12 +162,14 @@
   <li>try to modify my multi-array quickselect algorithm to be faster.</li>
 </ul>
 
+  </div>
 
   <hr />
 
   <h2><a href="/2016/06/15/multi-sorted-array-quickselect.html"> Quickselect on multiple sorted arrays</a></h2>
 
-  <p><strong>Edit: Thanks heaps to <a href="http://stackoverflow.com/users/1009831/evgeny-kluev">Evgeny Kluev</a>, the author of that original StackOverflow answer, for noticing that I’d made a mistake in the total time complexity calculation.</strong></p>
+  <div class="shrink-headings">
+    <p><strong>Edit: Thanks heaps to <a href="http://stackoverflow.com/users/1009831/evgeny-kluev">Evgeny Kluev</a>, the author of that original StackOverflow answer, for noticing that I’d made a mistake in the total time complexity calculation.</strong></p>
 
 <p>Suppose I have $latex m$ sorted arrays of length $latex n$. How quickly can I search to find the $latex k$th item in them?</p>
 
@@ -298,16 +301,18 @@
   <li>In many situations, the algorithm I described will take far fewer iterations than the $latex log(m \cdot n)$ I said. The argument above only requires that we update the limit variables for the array which contains our pivot. If we can update the limits in most of our arrays every time, then we should only need to do the iteration $\log(n)$ times. I bet that there’s some clever algorithm like <a href="/2016/06/12/quickselect-lemma">this other algorithm</a> which lets me do it that fast in general. If I can do that, the overall algorithm will only take $latex O(\log(n) \cdot \log(m \cdot n))$ time.</li>
 </ul>
 
+  </div>
 
   <hr />
 
   <h2><a href="/2016/06/12/quickselect-lemma.html"> Quickselect on an unordered array and an order statistic tree</a></h2>
 
-  <p><strong>I did this work myself, so there are probably mistakes. I think the conclusion is right though.</strong></p>
+  <div class="shrink-headings">
+    <p><strong>I did this work myself, so there are probably mistakes. I think the conclusion is right though.</strong></p>
 
 <p>Suppose I have an <a href="https://en.wikipedia.org/wiki/Order_statistic_tree">order statistic tree</a> with $latex n$ elements and an unordered list with $latex m$ elements. Let’s say for the sake of simplicity that both are representing a set of items with no duplicates, and their intersection is empty.</p>
 
-<p>If you want to find the $latex k$th element of the order statistic tree, you can do that in $latex O(log(n))$ time. And if you want to find the $latex k$th element of the array, you can use <a href="https://en.wikipedia.org/wiki/Quickselect">quickselect</a> and get it in $latex O(m)$ time. I want to find the $latex k$th smallest item in the sum of these lists. How quickly can I do this?</p>
+<p>If you want to find the $latex k$th element of the order statistic tree, you can do that in $latex O(log(n))$ time. And if you want to find the $latex k$th element of the array, you can use <a href="https://en.wikipedia.org/wiki/Quickselect">quickselect</a> and get it in $latex O(m)$ time. I want to find the $latex k$th smallest item in the disjoint union of these lists. How quickly can I do this?</p>
 
 <p>You can do it trivially in $latex O(m + n)$ time, by flattening the order statistic tree (which I’ll call an OST from here onwards) onto the end of the array. Or you can add everything in the array to the OST and then query the OST, in $latex O(m \cdot \log(n + m))$ time.</p>
 
@@ -493,12 +498,14 @@
 
 <p>My work here leaves a lot to be desired. Most obviously, my fastest algorithm is extremely complicated and inelegant; I bet that can be simplified.</p>
 
+  </div>
 
   <hr />
 
   <h2><a href="/2016/06/02/say.html"> Not thinking of things I can't say</a></h2>
 
-  <p>I noticed recently that I usually don’t think of thoughts which I’m not going to be able to say for political correctness reasons. Occasionally when I talk to people who don’t care about offending progressives, they say really insightful things which I would never have thought of on my own, because my brain just blocks those thoughts out before I can think them.</p>
+  <div class="shrink-headings">
+    <p>I noticed recently that I usually don’t think of thoughts which I’m not going to be able to say for political correctness reasons. Occasionally when I talk to people who don’t care about offending progressives, they say really insightful things which I would never have thought of on my own, because my brain just blocks those thoughts out before I can think them.</p>
 
 <p>This is annoying, because I’d rather think of things like that and not say them publicly than not think of them at all.</p>
 
@@ -510,12 +517,14 @@
 
 <p><a href="https://www.facebook.com/bshlgrs/posts/10207784018613166">view comments on Facebook</a></p>
 
+  </div>
 
   <hr />
 
   <h2><a href="/2016/05/29/explicit.html"> Optimize dating for non-interference with platonic relationships</a></h2>
 
-  <p>[content warning—I make a lot of claims that certain ways of hitting on people are much better than other ways. If you have a tendency to freak out about whether you’re a terrible person for being sexually attracted to people, maybe don’t read this.]</p>
+  <div class="shrink-headings">
+    <p>[content warning—I make a lot of claims that certain ways of hitting on people are much better than other ways. If you have a tendency to freak out about whether you’re a terrible person for being sexually attracted to people, maybe don’t read this.]</p>
 
 <p>It’s often hard for men and women to hang out with each other non-romantically. This is terrible! Terrible! So terrible that reducing this problem should be a major priority for progressive subcultures. I think we can make progress by pushing for better norms about hitting on people. Let’s look at some common dating advice:</p>
 
@@ -563,12 +572,14 @@
 
 <p><a href="https://www.facebook.com/bshlgrs/posts/10207777395247586">view comments on Facebook</a></p>
 
+  </div>
 
   <hr />
 
   <h2><a href="/2016/05/29/flinching.html"> Flinching away from hard things</a></h2>
 
-  <p>I have a strong reflex to not do complicated things when I’m writing code—I flinch away and try really hard to avoid them. I think this reflex often serves me well, because complicated code is a pain to maintain and in real life you usually don’t need it. When I watch other people code, I often see them start down a complicated path to solve a problem, and then persevere through it. When faced with the same problems as them, I’m much more inclined to start down a complicated path, then realize it’s going to be complicated and reflexively give up. Most problems that I run across actually have relatively simple solutions, so this serves me well: I end up flailing for longer at the start, but then I end up with simpler code than I would have had otherwise.</p>
+  <div class="shrink-headings">
+    <p>I have a strong reflex to not do complicated things when I’m writing code—I flinch away and try really hard to avoid them. I think this reflex often serves me well, because complicated code is a pain to maintain and in real life you usually don’t need it. When I watch other people code, I often see them start down a complicated path to solve a problem, and then persevere through it. When faced with the same problems as them, I’m much more inclined to start down a complicated path, then realize it’s going to be complicated and reflexively give up. Most problems that I run across actually have relatively simple solutions, so this serves me well: I end up flailing for longer at the start, but then I end up with simpler code than I would have had otherwise.</p>
 
 <p>But sometimes programming tasks are actually complicated and difficult. And my reflex against doing hard things really serves me wrong there. I find myself procrastinating and circling around the problem. I start attempts and then give up on them. Eventually I notice that I’m not getting anywhere and I need to just suck it up, get a coffee and sit in a quiet room and actually plough through it. But I’m sure I’m much worse at this than many other programmers who are as good as I am at easy things.</p>
 
@@ -584,12 +595,14 @@
   <p>I try to maintain separate mental modes, searching for simple solutions vs. implementing tricky ones, with a trigger to switch–if I’m stuck on a problem and it genuinely looks like there’s no easy solution, I mutter “I ain’t afraid of nothin’” (stolen from Claude Shannon: https://www.cs.utexas.edu/~dahlin/bookshelf/hamming.html) and dive in.</p>
 </blockquote>
 
+  </div>
 
   <hr />
 
   <h2><a href="/2016/05/24/mistakes.html"> My main effective altruism mistakes so far</a></h2>
 
-  <p>Here are the biggest things I got wrong in my attempts at effective altruism over the last ~3 years.</p>
+  <div class="shrink-headings">
+    <p>Here are the biggest things I got wrong in my attempts at effective altruism over the last ~3 years.</p>
 
 <p><strong>1.</strong> I thought leafleting about factory farming was more effective than GiveWell top charities. I am now unsure about this. But I was way too confident based on evidence which I now think isn’t very good.</p>
 
@@ -611,12 +624,14 @@
 
 <p><a href="https://www.facebook.com/bshlgrs/posts/10207724688649954">view many comments on Facebook</a></p>
 
+  </div>
 
   <hr />
 
   <h2><a href="/2016/04/22/dumbest-algorithm-problem.html"> The dumbest algorithm problem in the entire world</a></h2>
 
-  <p>Want to know the dumbest algorithm problem in the entire world? Here it is:</p>
+  <div class="shrink-headings">
+    <p>Want to know the dumbest algorithm problem in the entire world? Here it is:</p>
 
 <blockquote>
   <p>Find the $latex k$th last element of a linked list, in a single pass, with constant memory.</p>
@@ -652,6 +667,7 @@
 
 <p><a href="https://www.facebook.com/endofunctor/posts/10207496299980380?pnref=story">view comments on Facebook</a></p>
 
+  </div>
 
   <hr />
 
@@ -659,6 +675,20 @@
 <p><a href="/posts">All posts</a></p>
 
 <p><a href="/feed.xml">RSS feed</a></p>
+
+<script>
+$(function() {
+  $(".shrink-headings").map(function(idx, div) {
+    $(div).html(
+      $(div)
+        .html()
+        .replace(/<h4/g, "<h5")
+        .replace(/<h3/g, "<h4")
+        .replace(/<h2/g, "<h3")
+    )
+  })
+})
+</script>
 
 
       <hr/>

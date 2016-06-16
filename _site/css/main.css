@@ -472,6 +472,9 @@ div.math {
 h2 code {
   font-size: 30px; }
 
+h3 code {
+  font-size: 20px; }
+
 .markdownify ul {
   list-style: none;
   margin-left: 10px; }

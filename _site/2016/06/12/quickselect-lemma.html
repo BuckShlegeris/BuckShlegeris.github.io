@@ -50,7 +50,7 @@
 
 <p>Suppose I have an <a href="https://en.wikipedia.org/wiki/Order_statistic_tree">order statistic tree</a> with $latex n$ elements and an unordered list with $latex m$ elements. Let’s say for the sake of simplicity that both are representing a set of items with no duplicates, and their intersection is empty.</p>
 
-<p>If you want to find the $latex k$th element of the order statistic tree, you can do that in $latex O(log(n))$ time. And if you want to find the $latex k$th element of the array, you can use <a href="https://en.wikipedia.org/wiki/Quickselect">quickselect</a> and get it in $latex O(m)$ time. I want to find the $latex k$th smallest item in the sum of these lists. How quickly can I do this?</p>
+<p>If you want to find the $latex k$th element of the order statistic tree, you can do that in $latex O(log(n))$ time. And if you want to find the $latex k$th element of the array, you can use <a href="https://en.wikipedia.org/wiki/Quickselect">quickselect</a> and get it in $latex O(m)$ time. I want to find the $latex k$th smallest item in the disjoint union of these lists. How quickly can I do this?</p>
 
 <p>You can do it trivially in $latex O(m + n)$ time, by flattening the order statistic tree (which I’ll call an OST from here onwards) onto the end of the array. Or you can add everything in the array to the OST and then query the OST, in $latex O(m \cdot \log(n + m))$ time.</p>
 
