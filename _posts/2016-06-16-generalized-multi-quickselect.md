@@ -10,7 +10,7 @@ I've been thinking a lot recently about how you find the $latex k$th smallest el
 
 Yesterday I [came up with an algorithm](/2016/06/15/multi-sorted-array-quickselect) for the version of this problem where you have multiple sorted arrays.
 
-But this algorithm also works on any other data structure which supports the `rank` method.
+But this algorithm also works on any other data structure which supports the `rank` method in $latex O(\log(n))$ time.
 
 On a collection of data structures with a total of $latex O(t)$ elements, the modified quickselect algorithm involves $latex O(log(t))$ iterations. In each iteration, the rank of a random element is computed in every data structure.
 
