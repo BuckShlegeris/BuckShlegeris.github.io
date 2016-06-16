@@ -6,9 +6,9 @@ date:   2016-06-12
 
 Suppose I have $latex m$ sorted arrays of length $latex n$. How quickly can I search to find the $latex k$th item in them?
 
-[This StackOverflow answer](http://stackoverflow.com/a/26299986/1360429) mentions this problem offhandedly, but doesn't clearly explain the answer, and it implies that the answer it's thinking of is $latex O(m^2 \log^2(n))$ .
+[This StackOverflow answer](http://stackoverflow.com/a/26299986/1360429) mentions this problem offhandedly, but doesn't clearly explain the answer, and it implies that the answer it's thinking of is $latex O(m^2 \log(n)^2)$ .
 
-We can do better. You can modify quickselect to get an algorithm which takes $latex m \log(m) \log^2(n)$ average case, and I suspect you can adapt [median of medians](https://en.wikipedia.org/wiki/Median_of_medians) to get that time in the worst case.
+We can do better. You can modify quickselect to get an algorithm which takes $latex m \log(m) \log(n)^2$ average case, and I suspect you can adapt [median of medians](https://en.wikipedia.org/wiki/Median_of_medians) to get that time in the worst case.
 
 The quickselect adaptation is pretty simple. We're going to be do a simultaneous binary search on every array. For simplicity, let's assume that all items in arrays are unique.
 
@@ -115,12 +115,12 @@ For full source code including some random testcases, [look here](https://gist.g
 
 How fast is this method? The main loop costs $latex m \log(n)$ per iteration. How many times will we run it? Well, every time we run the iteration, we cut out all the elements which are on the wrong side of the result from our pivot. Worst case, we keep choosing the worst possible pivot and only ruling it out, which means we need to run that iteration once for every item in all of the arrays. This is $latex O(m^2 n \log(n))$.
 
-But on average, we'll cut a constant fraction of our search space out every time. So we should expect to have to do that iteration $latex \log(m\cdot n)$ times, for an overall time complexity of $latex O(m \log(m) \log^2(n))$.
+But on average, we'll cut a constant fraction of our search space out every time. So we should expect to have to do that iteration $latex \log(m\cdot n)$ times, for an overall time complexity of $latex O(m \log(m) \log(n)^2)$.
 
 
 (Incidentally, when I was initially thinking about this, I thought we might get some speedup because our call to `rank` is going to be on a smaller and smaller section of its array every iteration throuhgh the loop. But I don't think that's true, because to get an asympotic decrease in the sum of a bunch of logarithms, you need to make your problem sizes decrease extremely quickly; exponentially decaying problem size doesn't cut it. For example:
 
-$$O\left(\sum_{i=0}^n \log(2^i) \right) = O(\log^2(n)) = O\left(\sum_{i=0}^n \log(2^n) \right)$$
+$$O\left(\sum_{i=0}^n \log(2^i) \right) = O(\log(n)^2) = O\left(\sum_{i=0}^n \log(2^n) \right)$$
 
 because
 
