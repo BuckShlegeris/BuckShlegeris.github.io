@@ -132,4 +132,3 @@ So I don't think we can make that work.)
 ## Further questions
 
 - Can we generalize the [median of medians](https://en.wikipedia.org/wiki/Median_of_medians) algorithm to get this to be guaranteed fast, rather than expected fast? The answer is almost certainly yes; I'll probably try to prove it sometime.
-- In many situations, the algorithm I described will take far fewer iterations than the $latex log(m \cdot n)$ I said. The argument above only requires that we update the limit variables for the array which contains our pivot. If we can update the limits in most of our arrays every time, then we should only need to do the iteration $\log(n)$ times. I bet that there's some clever algorithm like [this other algorithm](/2016/06/12/quickselect-lemma) which lets me do it that fast in general. If I can do that, the overall algorithm will only take $latex O(\log(n) \cdot \log(m \cdot n))$ time.

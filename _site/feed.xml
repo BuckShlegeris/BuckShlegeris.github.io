@@ -8,7 +8,20 @@
     <atom:link href="http://bshlgrs.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>General multi-quickselect</title>
+        <title>A data structure for answering &#39;who is the kth richest person with age between x and y&#39;</title>
+        
+        
+          <description>&lt;p&gt;Suppose I want to maintain a set of people where each has an age and a wealth. I want to be able to quickly insert people, delete people, and answer queries of the form “find the $latex k$th richest person whose age is between $latex x$ and $latex y$”.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Thu, 16 Jun 2016 00:00:00 -0700</pubDate>
+        <link>http://bshlgrs.github.io/2016/06/16/kth-richest.html</link>
+        <guid isPermaLink="true">http://bshlgrs.github.io/2016/06/16/kth-richest.html</guid>
+      </item>
+    
+      <item>
+        <title>Generalized multi-quickselect</title>
         
         
           <description>&lt;p&gt;I’ve been thinking a lot recently about how you find the $latex k$th smallest element in the disjoint union of several data structures.&lt;/p&gt;
@@ -122,19 +135,6 @@
         <pubDate>Wed, 20 Apr 2016 00:00:00 -0700</pubDate>
         <link>http://bshlgrs.github.io/2016/04/20/overteaching.html</link>
         <guid isPermaLink="true">http://bshlgrs.github.io/2016/04/20/overteaching.html</guid>
-      </item>
-    
-      <item>
-        <title>Hyperactive Record</title>
-        
-        
-          <description>&lt;p&gt;Here is a fun open source project which someone should build! I’ve written a readme and put it &lt;a href=&quot;https://github.com/bshlgrs/HyperactiveRecord/blob/master/README.md&quot;&gt;on Github&lt;/a&gt; but I don’t think I have the time to actually build this. I present it here in the hope that one of you might decide that you like it and want to build it!&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Thu, 14 Apr 2016 00:00:00 -0700</pubDate>
-        <link>http://bshlgrs.github.io/2016/04/14/hyperactive-record.html</link>
-        <guid isPermaLink="true">http://bshlgrs.github.io/2016/04/14/hyperactive-record.html</guid>
       </item>
     
   </channel>

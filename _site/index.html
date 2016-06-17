@@ -49,8 +49,68 @@
 
       <h1>Buck Shlegeris</h1>
 
+<div class="lead">
+I am a software engineer from Australia. I have lived in San Francisco for most of the last three years. I'm interested in data structures and effective altruism. Here are some things that I've written recently:
+</div>
 
-  <h2><a href="/2016/06/16/generalized-multi-quickselect.html"> General multi-quickselect</a></h2>
+
+  <h2><a href="/2016/06/16/kth-richest.html"> A data structure for answering 'who is the kth richest person with age between x and y'</a></h2>
+
+  <p class="post-meta"><time datetime="2016-06-16T00:00:00-07:00" itemprop="datePublished">Jun 16, 2016</time></p>
+
+  <div class="shrink-headings">
+    <p>Suppose I want to maintain a set of people where each has an age and a wealth. I want to be able to quickly insert people, delete people, and answer queries of the form “find the $latex k$th richest person whose age is between $latex x$ and $latex y$”.</p>
+
+<p>I have been somewhat interested in this question for about a year, and I’ve asked about related questions <a href="https://www.facebook.com/bshlgrs/posts/10205556609689335">a few</a> <a href="http://stackoverflow.com/questions/31153033/data-structure-to-support-a-particular-query-on-a-set-of-2d-points">times</a>. But no-one’s ever managed to give me a complete answer.</p>
+
+<p>The other day, I ran across <a href="http://stackoverflow.com/a/26299986/1360429">this StackOverflow answer</a>, which presents an answer which I modified to make a full solution, which I’ll present here.</p>
+
+<p>My solution allows insertion and deletion in $latex O(\log^2(n))$, and allows the query in $latex O(\log^3(n))$.</p>
+
+<h2 id="solution">Solution</h2>
+
+<p>Store an <a href="https://en.wikipedia.org/wiki/Order_statistic_tree">order statistic tree</a> ordered on age. At every node, store a pointer to an auxiliary order statistic tree, of all of that node’s descendants ordered on income.</p>
+
+<p>At every node, this requires an extra amount of memory which is linear in the number of descendants of that node. So this means that the tree will take $latex O(n\cdot \log(n))$ memory overall.</p>
+
+<h3 id="query">Query</h3>
+
+<p>You might want to go read <a href="http://stackoverflow.com/a/26299986/1360429">that second StackOverflow answer</a> again, because this algorithm is similar to that one, and it’s easier to understand the algorithm on arrays.</p>
+
+<p>The query is similar to how queries across ranges of an augmented BST usually work: we start out by finding the set of nodes whose descendants contain the whole subsection of the tree that you care about. There will be $latex \log(n)$ of these nodes, and finding all of them takes $latex \log(n)$ time.</p>
+
+<p>We end up with $latex \log(n)$ OSTs of maximum size $latex O(n)$, and we want to find the $latex k$th smallest item in their disjoint union.</p>
+
+<p>As discussed <a href="/2016/06/16/generalized-multi-quickselect.html">here</a>, we can solve that query in $latex O\left(\log(n)^3\right)$. (Full disclosure: I haven’t yet modified that algorithm to be worst case $latex O\left(\log(n)^3\right)$ instead of just average case $latex O\left(\log(n)^3\right)$, but I think I probably can.)</p>
+
+<p>If your $latex k$ is small, you can directly traverse the trees to find the correct answer, which takes $latex k \log(m) + m$ time.</p>
+
+<h3 id="updates">Updates</h3>
+
+<p>When I insert a new value into my set, I need to update the auxiliary OSTs of all of the ancestor nodes of my new node.</p>
+
+<p>Usually, it’s easy to argue that maintaining auxiliary data in your OST is fast, because usually your auxiliary data is something like “the sum of your descendants” or something which is $latex O(1)$. In this data structure, the efficiency argument is somewhat more complicated.</p>
+
+<p>Inserting a single item into an OST takes $latex O(\log(n))$ time. But making the OST from scratch takes $latex O(n)$. This is concerning because it means that tree rotations are potentially extremely expensive. If I had to do tree rotations all the way up from my new node to the root of the tree every single insertion, then insertion would take linear time.</p>
+
+<p>Luckily, our OST is balanced using the red-black tree rules. Insertion in a red-black tree only involves amortized $latex O(1)$ rotations. (See <a href="web.stanford.edu/class/cs166/lectures/05/Small05.pdf">here</a> for an explanation of this.)</p>
+
+<p>The node at the lowest level will have to totally regenerate its auxiliary OST every insertion, of course. Its parent will have to do a tree rotation which requires it to totally regenerate its auxiliary OST every second insertion. Its grandparent will need to do that $latex \frac14$ of the time. And then $latex \frac18$ and so on.</p>
+
+<p>At height $latex h$ in the tree, defining the leaves to be $latex h=0$, the amortized cost of insertion is going to be $latex O(\log(2^h)) = O(h)$ for insertion plus $latex O\left(\frac{2^h}{2^h}\right) = O(1)$ for totally recreating the OST after a rebalance, for a total cost of $latex O(h)$.</p>
+
+<p>The total time required for updating all the auxiliary OSTs after an insert is therefore:</p>
+
+<script type="math/tex; mode=display">O\left(\sum_{h=0}^{log(n)} h \right)= O\left(\log(n)^2\right)</script>
+
+<p>Updating or deleting a node also takes $latex O\left(\log(n)^2\right)$, for the same reason.</p>
+
+
+  </div>
+
+  <hr />
+
+  <h2><a href="/2016/06/16/generalized-multi-quickselect.html"> Generalized multi-quickselect</a></h2>
 
   <p class="post-meta"><time datetime="2016-06-16T00:00:00-07:00" itemprop="datePublished">Jun 16, 2016</time></p>
 
@@ -642,51 +702,6 @@
 
   <hr />
 
-  <h2><a href="/2016/04/22/dumbest-algorithm-problem.html"> The dumbest algorithm problem in the entire world</a></h2>
-
-  <p class="post-meta"><time datetime="2016-04-22T00:00:00-07:00" itemprop="datePublished">Apr 22, 2016</time></p>
-
-  <div class="shrink-headings">
-    <p>Want to know the dumbest algorithm problem in the entire world? Here it is:</p>
-
-<blockquote>
-  <p>Find the $latex k$th last element of a linked list, in a single pass, with constant memory.</p>
-</blockquote>
-
-<p>Let the length of the linked list be $latex n$. If we didn’t have to follow the single-pass constraint, we’d solve this by finding the length of the linked list (which takes $latex n$ steps), then looking for the $latex(n - k)$th element. In total, we traversed $latex(2n - k)$ links.</p>
-
-<p>However, this interviewer apparently measures code efficiency by “number of while loops in the function body”, so we have to do better.</p>
-
-<p>The canonical answer to this question is to make a while loop with two pointers, one of which trails $latex k$ links behind the other. As soon as you get to the end with your leading pointer, you return whatever’s at your trailing pointer.</p>
-
-<p>Wow, so efficient, only one while loop! Let’s see how much faster we made it!</p>
-
-<p>Well, the leading pointer traversed $latex n$ links, and the trailing pointer traversed $latex (n - k)$ links. That’s…uh…exactly the same as the previous answer! Except you had to write a custom function instead of just calling <code class="highlighter-rouge">.length</code> and <code class="highlighter-rouge">.get</code>, which I assume your linked list already had! And now you’re more exposed to a bug when the linked list is too short to have a $latex k$th last element!</p>
-
-<p>(Full disclosure: for small $latex k$, this solution might be faster because of memory locality. But I’ve never heard anyone mention that as the rationale for this problem, so I’m not going to give any credit for that.)</p>
-
-<p>In real life, if this was method call was going to happen a lot you’d just store the length of your linked list in a wrapper object. Knowing that you should maintain the length as a field is a million times more useful than being able to solve the problem as written.</p>
-
-<p>It makes me really sad that this question appears so often on lists of most common interview questions. Cracking the Coding Interview mentions this question and gives this answer but doesn’t claim it’s better. Elements of Programming Interviews actively claims that this answer is the better one (page 105).</p>
-
-<p>This is algorithm interviewing at its worst. It’s a brainteaser which actively penalizes you for a good sense of algorithmics or software engineering.</p>
-
-<p>EDIT: In the comments, David gives a great solution that is way smarter than the traditional one. This makes me dislike the traditional answer even more.</p>
-
-<blockquote>
-  <p>Leading pointer is L steps ahead of trailing one. Remember where it is (say, OLD_LEAD). Move forward L more steps, while remembering how far ahead the leading one is of the trailing one (STEPS_AHEAD).</p>
-  <p>If you get to the end, do the right thing (using STEPS_AHEAD).</p>
-  <p>If STEPS_AHEAD gets to L, move trailing pointer to OLD_LEAD and update STEPS_AHEAD.</p>
-</blockquote>
-
-<hr />
-
-<p><a href="https://www.facebook.com/endofunctor/posts/10207496299980380?pnref=story">view comments on Facebook</a></p>
-
-  </div>
-
-  <hr />
-
 
 <p><a href="/posts">All posts</a></p>
 
@@ -721,11 +736,7 @@ $(function() {
 <hr/>
 <a class="arrow" href="/"><strong>Buck</strong></a>
 <ul>
-  <li><a class="arrow" href="/about">About</a>
-    <ul>
-      <li><a href="/teaching">Tutoring services</a></li>
-    </ul>
-  </li>
+  <li><a class="arrow" href="/about">About</a></li>
   <li>Links
     <ul>
       <li>
@@ -751,7 +762,11 @@ $(function() {
     <ul>
       
         <li>
-          <a class="arrow" href="/2016/06/16/generalized-multi-quickselect.html">General multi-quickselect</a>
+          <a class="arrow" href="/2016/06/16/kth-richest.html">A data structure for answering 'who is the kth richest person with age between x and y'</a>
+        </li>
+      
+        <li>
+          <a class="arrow" href="/2016/06/16/generalized-multi-quickselect.html">Generalized multi-quickselect</a>
         </li>
       
         <li>
@@ -776,10 +791,6 @@ $(function() {
       
         <li>
           <a class="arrow" href="/2016/05/24/mistakes.html">My main effective altruism mistakes so far</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/04/22/dumbest-algorithm-problem.html">The dumbest algorithm problem in the entire world</a>
         </li>
       
     </ul>

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "General multi-quickselect"
+title:  "Generalized multi-quickselect"
 date:   2016-06-16
 ---
 
@@ -105,8 +105,3 @@ I suspect that I can improve upon most of the algorithms listed there that I inv
 
 Also, I have not done due diligence trying to research for standard solutions to these problems, because I enjoy trying to solve them myself. It's possible that there are well known solutions to these problems that I haven't found in my journeys through Google, StackOverflow, and Wikipedia.
 
-TODO:
-
-- try to actually implement those supposed fast algorithms of mine
-- generalize that OST and unsorted array algorithm
-- try to modify my multi-array quickselect algorithm to be faster.
