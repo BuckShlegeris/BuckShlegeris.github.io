@@ -28,7 +28,7 @@ We end up with $latex \log(n)$ OSTs of maximum size $latex O(n)$, and we want to
 
 As discussed [here](/2016/06/16/generalized-multi-quickselect.html), we can solve that query in $latex O\left(\log(n)^3\right)$. (Full disclosure: I haven't yet modified that algorithm to be worst case $latex O\left(\log(n)^3\right)$ instead of just average case $latex O\left(\log(n)^3\right)$, but I think I probably can.)
 
-If your $latex k$ is small, you can directly traverse the trees to find the correct answer, which takes $latex k \log(m) + m$ time.
+If your $latex k$ is small, you can directly traverse the trees to find the correct answer, which takes $latex k \log(n) + n$ time.
 
 ### Updates
 
