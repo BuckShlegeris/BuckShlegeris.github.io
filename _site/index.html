@@ -41,7 +41,7 @@
 
     <div class="container">
   <div class="row">
-    <div class="col-xs-7 col-xs-offset-1 markdownify">
+    <div class="col-sm-7 col-sm-offset-1 markdownify">
       
       <p class="post-meta"><time datetime="1969-12-31T16:00:00-08:00" itemprop="datePublished"></time></p>
 
@@ -134,7 +134,7 @@ I am a software engineer from Australia. I have lived in San Francisco for most 
   </tr>
   <tr>
     <td>$latex m$ sorted arrays of length $latex n$</td>
-    <td>$latex \log(m n) \cdot m \cdot \log(n)$</td>
+    <td>$latex \log(m \cdot n) \cdot m \cdot \log(n)$</td>
   </tr>
   <tr>
     <td>Two sorted arrays, of lengths $latex a$ and $latex b$</td>
@@ -216,13 +216,6 @@ I am a software engineer from Australia. I have lived in San Francisco for most 
 
 <p>Also, I have not done due diligence trying to research for standard solutions to these problems, because I enjoy trying to solve them myself. It’s possible that there are well known solutions to these problems that I haven’t found in my journeys through Google, StackOverflow, and Wikipedia.</p>
 
-<p>TODO:</p>
-
-<ul>
-  <li>try to actually implement those supposed fast algorithms of mine</li>
-  <li>generalize that OST and unsorted array algorithm</li>
-  <li>try to modify my multi-array quickselect algorithm to be faster.</li>
-</ul>
 
   </div>
 
@@ -362,7 +355,6 @@ I am a software engineer from Australia. I have lived in San Francisco for most 
 
 <ul>
   <li>Can we generalize the <a href="https://en.wikipedia.org/wiki/Median_of_medians">median of medians</a> algorithm to get this to be guaranteed fast, rather than expected fast? The answer is almost certainly yes; I’ll probably try to prove it sometime.</li>
-  <li>In many situations, the algorithm I described will take far fewer iterations than the $latex log(m \cdot n)$ I said. The argument above only requires that we update the limit variables for the array which contains our pivot. If we can update the limits in most of our arrays every time, then we should only need to do the iteration $\log(n)$ times. I bet that there’s some clever algorithm like <a href="/2016/06/12/quickselect-lemma">this other algorithm</a> which lets me do it that fast in general. If I can do that, the overall algorithm will only take $latex O(\log(n) \cdot \log(m \cdot n))$ time.</li>
 </ul>
 
   </div>
@@ -730,7 +722,7 @@ $(function() {
 </div>
 
     </div>
-    <div class="col-xs-3 col-xs-offset-1">
+    <div class="col-sm-3 col-sm-offset-1">
       <img src="https://scontent-sjc2-1.xx.fbcdn.net/hphotos-xtp1/t31.0-8/11154688_10205041372168719_3725604149367069581_o.jpg" class="img-responsive" alt="Picture of Buck">
       
 <hr/>

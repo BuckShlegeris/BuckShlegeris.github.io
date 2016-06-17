@@ -40,7 +40,7 @@
 
     <div class="container">
   <div class="row">
-    <div class="col-xs-7 col-xs-offset-1 markdownify">
+    <div class="col-sm-7 col-sm-offset-1 markdownify">
       <h1 class="post-title " itemprop="name headline">Quickselect on multiple sorted arrays</h1>
       <p class="post-meta"><time datetime="2016-06-15T00:00:00-07:00" itemprop="datePublished">Jun 15, 2016</time></p>
 
@@ -175,7 +175,6 @@
 
 <ul>
   <li>Can we generalize the <a href="https://en.wikipedia.org/wiki/Median_of_medians">median of medians</a> algorithm to get this to be guaranteed fast, rather than expected fast? The answer is almost certainly yes; I’ll probably try to prove it sometime.</li>
-  <li>In many situations, the algorithm I described will take far fewer iterations than the $latex log(m \cdot n)$ I said. The argument above only requires that we update the limit variables for the array which contains our pivot. If we can update the limits in most of our arrays every time, then we should only need to do the iteration $\log(n)$ times. I bet that there’s some clever algorithm like <a href="/2016/06/12/quickselect-lemma">this other algorithm</a> which lets me do it that fast in general. If I can do that, the overall algorithm will only take $latex O(\log(n) \cdot \log(m \cdot n))$ time.</li>
 </ul>
 
 
@@ -191,7 +190,7 @@
 </div>
 
     </div>
-    <div class="col-xs-3 col-xs-offset-1">
+    <div class="col-sm-3 col-sm-offset-1">
       <img src="https://scontent-sjc2-1.xx.fbcdn.net/hphotos-xtp1/t31.0-8/11154688_10205041372168719_3725604149367069581_o.jpg" class="img-responsive" alt="Picture of Buck">
       
 <hr/>

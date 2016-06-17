@@ -23,7 +23,7 @@ So the total time taken is (time to calculate rank in every data structure) * (l
   </tr>
   <tr>
     <td>$latex m$ sorted arrays of length $latex n$</td>
-    <td>$latex \log(m n) \cdot m \cdot \log(n)$</td>
+    <td>$latex \log(m \cdot n) \cdot m \cdot \log(n)$</td>
   </tr>
   <tr>
     <td>Two sorted arrays, of lengths $latex a$ and $latex b$</td>
