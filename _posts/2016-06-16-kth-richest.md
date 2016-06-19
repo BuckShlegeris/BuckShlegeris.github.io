@@ -17,7 +17,7 @@ Here is a summary of solutions to different variants on this question:
     <th>Query time</th>
   </tr>
   <tr>
-    <td>No insertion or deletion, one-sized interval</td>
+    <td>No insertion or deletion, one-sided interval</td>
     <td><a href="http://stackoverflow.com/a/31162190/1360429">Persistent binary search trees</a></td>
     <td>$latex n \cdot \log(n)$</td>
     <td>N/A</td>
