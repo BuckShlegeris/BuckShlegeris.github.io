@@ -19,3 +19,5 @@ github_username:  bshlgrs
 markdown: kramdown
 gems:
   - jemoji
+kramdown:
+  extensions: ["footnotes"]

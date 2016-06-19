@@ -16,28 +16,35 @@ On a collection of data structures with a total of $latex O(t)$ elements, the mo
 
 So the total time taken is (time to calculate rank in every data structure) * (log of total number of elements).
 
-<table class="table">
+
+<table class="table" id="table1">
   <tr>
     <th>Collection</th>
     <th>Time complexity</th>
   </tr>
   <tr>
-    <td>$latex m$ sorted arrays of length $latex n$</td>
+    <td>$latex m$ sorted arrays of average length $latex n$</td>
     <td>$latex \log(m \cdot n) \cdot m \cdot \log(n)$</td>
+  </tr>
+    <tr>
+    <td>$latex m$ sorted arrays of total length $latex t$</td>
+    <td>$latex \log(t) \cdot m \cdot \log(\frac tm)$</td>
   </tr>
   <tr>
     <td>Two sorted arrays, of lengths $latex a$ and $latex b$</td>
-    <td>$latex \log(a + b) \cdot \left(\log(a) + \log(b)\right)$</td>
+    <td>$latex \log(a + b)^2$</td>
   </tr>
   <tr>
-    <td>$latex m$ order statistic trees of size $latex n$</td>
-    <td>$latex \log(m n) \cdot m \cdot \log(n)$</td>
+    <td>$latex m$ order statistic trees of average size $latex n$</td>
+    <td>$latex \log(m \cdot n) \cdot m \cdot \log(n)$</td>
   </tr>
   <tr>
-    <td>$latex \log(n)$ order statistic trees of sizes $latex [1, 2, 4, ...n]$</td>
-    <td>$latex \log(n)^3$</td>
+    <td>$latex \log(n)$ sorted arrays of sizes $latex [1, 2, 4, ...n]$</td>
+    <td>$latex \log(n)^3$ </td>
   </tr>
 </table>
+
+(See [^1] for more details on the exponentially shrinking arrays.)
 
 For data structures with $latex O(log(n))$ `rank`, I think this is optimal.
 
@@ -63,7 +70,7 @@ I bet we can generalize my alleged [optimal algorithm for selection on an OST an
 
 I have a bunch of data structures and want to find the $latex k$th smallest item in their union. How long will it take me?
 
-<table class="table">
+<table class="table" id="table1">
   <tr>
     <th>Collection</th>
     <th>Algorithm</th>
@@ -105,3 +112,16 @@ I suspect that I can improve upon most of the algorithms listed there that I inv
 
 Also, I have not done due diligence trying to research for standard solutions to these problems, because I enjoy trying to solve them myself. It's possible that there are well known solutions to these problems that I haven't found in my journeys through Google, StackOverflow, and Wikipedia.
 
+
+[^1]:
+
+    There are a total of $latex 2\cdot n - 1 = O(n)$ elements in those $latex n$ arrays. The inner loop will happen $latex \log(n)$ times.
+
+    Each iteration will need to do a binary search within its array. On the first iteration the time taken will be $latex \sum_{i=0}^{\log(n)} \log(2^i) = O(\log(n)^2)$. Further iterations obviously won't be slower than that. So we can bound above this runtime by $latex \log(n)$.
+
+    We can also give a proof sketch for bounding it below. Suppose that all our arrays have roughly the same distribution, so that on the $latex w$th iteration, every array has a size of only $latex 2^{-w}$ its original size.
+
+    $$\begin{align} &\sum_{w=0}^{\log(n)} \sum_{i=0}^{\log(n)} \log\left(max\left(2^i \cdot 2^{-w}, 0\right)\right)  \\
+            = &\sum_{w=0}^{\log(n)} \sum_{i=0}^{w} i  \\
+            = &\sum_{w=0}^{\log(n)} O\left( w^2 \right) \\
+            = &O\left(\log(n)^3\right) \end{align}$$

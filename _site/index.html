@@ -83,7 +83,7 @@ I am a software engineer from Australia. I have lived in San Francisco for most 
 
 <p>As discussed <a href="/2016/06/16/generalized-multi-quickselect.html">here</a>, we can solve that query in $latex O\left(\log(n)^3\right)$. (Full disclosure: I haven’t yet modified that algorithm to be worst case $latex O\left(\log(n)^3\right)$ instead of just average case $latex O\left(\log(n)^3\right)$, but I think I probably can.)</p>
 
-<p>If your $latex k$ is small, you can directly traverse the trees to find the correct answer, which takes $latex k \log(m) + m$ time.</p>
+<p>If your $latex k$ is small, you can directly traverse the trees to find the correct answer, which takes $latex k \log(n) + n$ time.</p>
 
 <h3 id="updates">Updates</h3>
 
@@ -93,7 +93,7 @@ I am a software engineer from Australia. I have lived in San Francisco for most 
 
 <p>Inserting a single item into an OST takes $latex O(\log(n))$ time. But making the OST from scratch takes $latex O(n)$. This is concerning because it means that tree rotations are potentially extremely expensive. If I had to do tree rotations all the way up from my new node to the root of the tree every single insertion, then insertion would take linear time.</p>
 
-<p>Luckily, our OST is balanced using the red-black tree rules. Insertion in a red-black tree only involves amortized $latex O(1)$ rotations. (See <a href="web.stanford.edu/class/cs166/lectures/05/Small05.pdf">here</a> for an explanation of this.)</p>
+<p>Luckily, we can decide that our OST is balanced using the red-black tree rules. Insertion in a red-black tree only involves amortized $latex O(1)$ rotations. (See <a href="web.stanford.edu/class/cs166/lectures/05/Small05.pdf">here</a> for an explanation of this.)</p>
 
 <p>The node at the lowest level will have to totally regenerate its auxiliary OST every insertion, of course. Its parent will have to do a tree rotation which requires it to totally regenerate its auxiliary OST every second insertion. Its grandparent will need to do that $latex \frac14$ of the time. And then $latex \frac18$ and so on.</p>
 
@@ -105,6 +105,17 @@ I am a software engineer from Australia. I have lived in San Francisco for most 
 
 <p>Updating or deleting a node also takes $latex O\left(\log(n)^2\right)$, for the same reason.</p>
 
+<h2 id="variations">Variations</h2>
+
+<h3 id="limited-latex-k">limited $latex k$</h3>
+
+<p>If $latex k$ is always going to fixed below a particular limit $latex l$–say, you know ahead of time that you’re never going to need to know farther back than the 50th richest person between two ages–each node in your main OST can store a smaller auxiliary tree with only $latex l$ elements in it.</p>
+
+<p>This reduces memory requirements to $latex O(n \cdot l)$.</p>
+
+<p><strong>Queries</strong>: Using the algorithm for OSTs in <a href="/2016/06/16/generalized-multi-quickselect.html#table1">this table</a>, the cost is now $latex \log(\log(n) \cdot l) \cdot \log(n) \cdot \log(l)$, which looks like $latex \log(\log(n)) \cdot \log(n) \cdot \log(l)$ as $latex n$ grows.</p>
+
+<p><strong>Updates</strong>: Every ancestor needs to do $latex \log(l)$ work now, instead of $latex \log(n)$, but you still have $latex \log(n)$ ancestors. So update takes overall $latex \log(n)\log(l)$ time.</p>
 
   </div>
 
@@ -127,28 +138,34 @@ I am a software engineer from Australia. I have lived in San Francisco for most 
 
 <p>So the total time taken is (time to calculate rank in every data structure) * (log of total number of elements).</p>
 
-<table class="table">
+<table class="table" id="table1">
   <tr>
     <th>Collection</th>
     <th>Time complexity</th>
   </tr>
   <tr>
-    <td>$latex m$ sorted arrays of length $latex n$</td>
+    <td>$latex m$ sorted arrays of average length $latex n$</td>
     <td>$latex \log(m \cdot n) \cdot m \cdot \log(n)$</td>
+  </tr>
+    <tr>
+    <td>$latex m$ sorted arrays of total length $latex t$</td>
+    <td>$latex \log(t) \cdot m \cdot \log(\frac tm)$</td>
   </tr>
   <tr>
     <td>Two sorted arrays, of lengths $latex a$ and $latex b$</td>
-    <td>$latex \log(a + b) \cdot \left(\log(a) + \log(b)\right)$</td>
+    <td>$latex \log(a + b)^2$</td>
   </tr>
   <tr>
-    <td>$latex m$ order statistic trees of size $latex n$</td>
-    <td>$latex \log(m n) \cdot m \cdot \log(n)$</td>
+    <td>$latex m$ order statistic trees of average size $latex n$</td>
+    <td>$latex \log(m \cdot n) \cdot m \cdot \log(n)$</td>
   </tr>
   <tr>
-    <td>$latex \log(n)$ order statistic trees of sizes $latex [1, 2, 4, ...n]$</td>
-    <td>$latex \log(n)^3$</td>
+    <td>$latex \log(n)$ sorted arrays of sizes $latex [1, 2, 4, ...n]$</td>
+    <td>$latex \log(n)^3$ </td>
   </tr>
 </table>
+
+<p>(See <sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> for more details on the exponentially shrinking arrays.)</p>
 
 <p>For data structures with $latex O(log(n))$ <code class="highlighter-rouge">rank</code>, I think this is optimal.</p>
 
@@ -174,7 +191,7 @@ I am a software engineer from Australia. I have lived in San Francisco for most 
 
 <p>I have a bunch of data structures and want to find the $latex k$th smallest item in their union. How long will it take me?</p>
 
-<table class="table">
+<table class="table" id="table1">
   <tr>
     <th>Collection</th>
     <th>Algorithm</th>
@@ -216,6 +233,25 @@ I am a software engineer from Australia. I have lived in San Francisco for most 
 
 <p>Also, I have not done due diligence trying to research for standard solutions to these problems, because I enjoy trying to solve them myself. It’s possible that there are well known solutions to these problems that I haven’t found in my journeys through Google, StackOverflow, and Wikipedia.</p>
 
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+
+      <p>There are a total of $latex 2\cdot n - 1 = O(n)$ elements in those $latex n$ arrays. The inner loop will happen $latex \log(n)$ times.</p>
+
+      <p>Each iteration will need to do a binary search within its array. On the first iteration the time taken will be $latex \sum_{i=0}^{\log(n)} \log(2^i) = O(\log(n)^2)$. Further iterations obviously won’t be slower than that. So we can bound above this runtime by $latex \log(n)$.</p>
+
+      <p>We can also give a proof sketch for bounding it below. Suppose that all our arrays have roughly the same distribution, so that on the $latex w$th iteration, every array has a size of only $latex 2^{-w}$ its original size.</p>
+
+      <script type="math/tex; mode=display">% <![CDATA[
+\begin{align} &\sum_{w=0}^{\log(n)} \sum_{i=0}^{\log(n)} \log\left(max\left(2^i \cdot 2^{-w}, 0\right)\right)  \\
+        = &\sum_{w=0}^{\log(n)} \sum_{i=0}^{w} i  \\
+        = &\sum_{w=0}^{\log(n)} O\left( w^2 \right) \\
+        = &O\left(\log(n)^3\right) \end{align} %]]></script>
+      <p><a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 
   </div>
 
@@ -228,7 +264,9 @@ I am a software engineer from Australia. I have lived in San Francisco for most 
   <div class="shrink-headings">
     <p><strong>Edit: Thanks heaps to <a href="http://stackoverflow.com/users/1009831/evgeny-kluev">Evgeny Kluev</a>, the author of that original StackOverflow answer, for noticing that I’d made a mistake in the total time complexity calculation.</strong></p>
 
-<p>Suppose I have $latex m$ sorted arrays of length $latex n$. How quickly can I search to find the $latex k$th item in them?</p>
+<p><strong>Edit 2016-06-18: I’d orignally described this with arrays of maximum length $latex n$. But it works just as well with arrays of average length $latex n$, which is a stronger statement, so I’d rather use this one.</strong></p>
+
+<p>Suppose I have $latex m$ sorted arrays of average length $latex n$. How quickly can I search to find the $latex k$th item in them?</p>
 
 <p><a href="http://stackoverflow.com/a/26299986/1360429">This StackOverflow answer</a> mentions this problem offhandedly, but doesn’t clearly explain the algorithm, and it implies that the answer it’s thinking of is $latex O(m^2 \log(n)^2)$.</p>
 

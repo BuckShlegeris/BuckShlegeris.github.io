@@ -70,7 +70,7 @@
 
 <p>As discussed <a href="/2016/06/16/generalized-multi-quickselect.html">here</a>, we can solve that query in $latex O\left(\log(n)^3\right)$. (Full disclosure: I haven’t yet modified that algorithm to be worst case $latex O\left(\log(n)^3\right)$ instead of just average case $latex O\left(\log(n)^3\right)$, but I think I probably can.)</p>
 
-<p>If your $latex k$ is small, you can directly traverse the trees to find the correct answer, which takes $latex k \log(m) + m$ time.</p>
+<p>If your $latex k$ is small, you can directly traverse the trees to find the correct answer, which takes $latex k \log(n) + n$ time.</p>
 
 <h3 id="updates">Updates</h3>
 
@@ -80,7 +80,7 @@
 
 <p>Inserting a single item into an OST takes $latex O(\log(n))$ time. But making the OST from scratch takes $latex O(n)$. This is concerning because it means that tree rotations are potentially extremely expensive. If I had to do tree rotations all the way up from my new node to the root of the tree every single insertion, then insertion would take linear time.</p>
 
-<p>Luckily, our OST is balanced using the red-black tree rules. Insertion in a red-black tree only involves amortized $latex O(1)$ rotations. (See <a href="web.stanford.edu/class/cs166/lectures/05/Small05.pdf">here</a> for an explanation of this.)</p>
+<p>Luckily, we can decide that our OST is balanced using the red-black tree rules. Insertion in a red-black tree only involves amortized $latex O(1)$ rotations. (See <a href="web.stanford.edu/class/cs166/lectures/05/Small05.pdf">here</a> for an explanation of this.)</p>
 
 <p>The node at the lowest level will have to totally regenerate its auxiliary OST every insertion, of course. Its parent will have to do a tree rotation which requires it to totally regenerate its auxiliary OST every second insertion. Its grandparent will need to do that $latex \frac14$ of the time. And then $latex \frac18$ and so on.</p>
 
@@ -92,6 +92,17 @@
 
 <p>Updating or deleting a node also takes $latex O\left(\log(n)^2\right)$, for the same reason.</p>
 
+<h2 id="variations">Variations</h2>
+
+<h3 id="limited-latex-k">limited $latex k$</h3>
+
+<p>If $latex k$ is always going to fixed below a particular limit $latex l$–say, you know ahead of time that you’re never going to need to know farther back than the 50th richest person between two ages–each node in your main OST can store a smaller auxiliary tree with only $latex l$ elements in it.</p>
+
+<p>This reduces memory requirements to $latex O(n \cdot l)$.</p>
+
+<p><strong>Queries</strong>: Using the algorithm for OSTs in <a href="/2016/06/16/generalized-multi-quickselect.html#table1">this table</a>, the cost is now $latex \log(\log(n) \cdot l) \cdot \log(n) \cdot \log(l)$, which looks like $latex \log(\log(n)) \cdot \log(n) \cdot \log(l)$ as $latex n$ grows.</p>
+
+<p><strong>Updates</strong>: Every ancestor needs to do $latex \log(l)$ work now, instead of $latex \log(n)$, but you still have $latex \log(n)$ ancestors. So update takes overall $latex \log(n)\log(l)$ time.</p>
 
 
       <hr/>

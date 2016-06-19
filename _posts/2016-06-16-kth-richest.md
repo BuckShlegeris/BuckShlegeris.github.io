@@ -38,7 +38,7 @@ Usually, it's easy to argue that maintaining auxiliary data in your OST is fast,
 
 Inserting a single item into an OST takes $latex O(\log(n))$ time. But making the OST from scratch takes $latex O(n)$. This is concerning because it means that tree rotations are potentially extremely expensive. If I had to do tree rotations all the way up from my new node to the root of the tree every single insertion, then insertion would take linear time.
 
-Luckily, our OST is balanced using the red-black tree rules. Insertion in a red-black tree only involves amortized $latex O(1)$ rotations. (See [here](web.stanford.edu/class/cs166/lectures/05/Small05.pdf) for an explanation of this.)
+Luckily, we can decide that our OST is balanced using the red-black tree rules. Insertion in a red-black tree only involves amortized $latex O(1)$ rotations. (See [here](web.stanford.edu/class/cs166/lectures/05/Small05.pdf) for an explanation of this.)
 
 The node at the lowest level will have to totally regenerate its auxiliary OST every insertion, of course. Its parent will have to do a tree rotation which requires it to totally regenerate its auxiliary OST every second insertion. Its grandparent will need to do that $latex \frac14$ of the time. And then $latex \frac18$ and so on.
 
@@ -50,3 +50,15 @@ $$O\left(\sum_{h=0}^{log(n)} h \right)= O\left(\log(n)^2\right)$$
 
 Updating or deleting a node also takes $latex O\left(\log(n)^2\right)$, for the same reason.
 
+## Variations
+
+
+### limited $latex k$
+
+If $latex k$ is always going to fixed below a particular limit $latex l$--say, you know ahead of time that you're never going to need to know farther back than the 50th richest person between two ages--each node in your main OST can store a smaller auxiliary tree with only $latex l$ elements in it.
+
+This reduces memory requirements to $latex O(n \cdot l)$.
+
+**Queries**: Using the algorithm for OSTs in [this table](/2016/06/16/generalized-multi-quickselect.html#table1), the cost is now $latex \log(\log(n) \cdot l) \cdot \log(n) \cdot \log(l)$, which looks like $latex \log(\log(n)) \cdot \log(n) \cdot \log(l)$ as $latex n$ grows.
+
+**Updates**: Every ancestor needs to do $latex \log(l)$ work now, instead of $latex \log(n)$, but you still have $latex \log(n)$ ancestors. So update takes overall $latex \log(n)\log(l)$ time.

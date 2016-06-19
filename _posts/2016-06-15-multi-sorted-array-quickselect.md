@@ -6,7 +6,9 @@ date:   2016-06-15
 
 **Edit: Thanks heaps to [Evgeny Kluev](http://stackoverflow.com/users/1009831/evgeny-kluev), the author of that original StackOverflow answer, for noticing that I'd made a mistake in the total time complexity calculation.**
 
-Suppose I have $latex m$ sorted arrays of length $latex n$. How quickly can I search to find the $latex k$th item in them?
+**Edit 2016-06-18: I'd orignally described this with arrays of maximum length $latex n$. But it works just as well with arrays of average length $latex n$, which is a stronger statement, so I'd rather use this one.**
+
+Suppose I have $latex m$ sorted arrays of average length $latex n$. How quickly can I search to find the $latex k$th item in them?
 
 [This StackOverflow answer](http://stackoverflow.com/a/26299986/1360429) mentions this problem offhandedly, but doesn't clearly explain the algorithm, and it implies that the answer it's thinking of is $latex O(m^2 \log(n)^2)$.
 
