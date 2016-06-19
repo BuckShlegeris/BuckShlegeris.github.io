@@ -24,7 +24,7 @@ Here is a summary of solutions to different variants on this question:
     <td>$latex \log(n)$</td>
   </tr>
   <tr>
-    <td>No insertion or deletion, two-sized interval</td>
+    <td>No insertion or deletion, two-sided interval</td>
     <td><a href="http://stackoverflow.com/questions/26296624/order-statistic-on-intervals/26299986#26299986">Stacked sorted arrays</a></td>
     <td>$latex n \cdot \log(n)$</td>
     <td>N/A</td>
