@@ -110,7 +110,7 @@ I have a bunch of data structures and want to find the $latex k$th smallest item
 
 I suspect that I can improve upon most of the algorithms listed there that I invented myself; I'll keep this table updated.
 
-Also, I have not done due diligence trying to research for standard solutions to these problems, because I enjoy trying to solve them myself. It's possible that there are well known solutions to these problems that I haven't found in my journeys through Google, StackOverflow, and Wikipedia.
+If you know a faster algorithm for one of these problems, please let me know!
 
 
 [^1]:
