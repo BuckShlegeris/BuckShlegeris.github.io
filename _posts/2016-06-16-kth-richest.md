@@ -1,10 +1,43 @@
 ---
 layout: post
-title:  "A data structure for answering 'who is the kth richest person with age between x and y'"
+title:  "'Who is the kth richest person with age between x and y'"
 date:   2016-06-16
 ---
 
 Suppose I want to maintain a set of people where each has an age and a wealth. I want to be able to quickly insert people, delete people, and answer queries of the form "find the $latex k$th richest person whose age is between $latex x$ and $latex y$".
+
+Here is a summary of solutions to different variants on this question:
+
+<table class="table" id="table1">
+  <tr>
+    <th>Variation</th>
+    <th>Solution details</th>
+    <th>Space</th>
+    <th>Update time</th>
+    <th>Query time</th>
+  </tr>
+  <tr>
+    <td>No insertion or deletion, one-sized interval</td>
+    <td><a href="http://stackoverflow.com/a/31162190/1360429">Persistent binary search trees</a></td>
+    <td>$latex n \cdot \log(n)$</td>
+    <td>N/A</td>
+    <td>$latex \log(n)$</td>
+  </tr>
+  <tr>
+    <td>No insertion or deletion, two-sized interval</td>
+    <td><a href="http://stackoverflow.com/questions/26296624/order-statistic-on-intervals/26299986#26299986">Stacked sorted arrays</a></td>
+    <td>$latex n \cdot \log(n)$</td>
+    <td>N/A</td>
+    <td>$latex \log(n)^3$ (see my comment on the answer)</td>
+  </tr>
+  <tr>
+    <td>Insertion, deletion, two-sided interval</td>
+    <td>My answer, presented here</td>
+    <td>$latex n \cdot \log(n)$</td>
+    <td>$latex \log^2(n)$</td>
+    <td>$latex \log^3(n)$</td>
+  </tr>
+</table>
 
 I have been somewhat interested in this question for about a year, and I've asked about related questions [a few](https://www.facebook.com/bshlgrs/posts/10205556609689335) [times](http://stackoverflow.com/questions/31153033/data-structure-to-support-a-particular-query-on-a-set-of-2d-points). But no-one's ever managed to give me a complete answer.
 
@@ -51,7 +84,6 @@ $$O\left(\sum_{h=0}^{log(n)} h \right)= O\left(\log(n)^2\right)$$
 Updating or deleting a node also takes $latex O\left(\log(n)^2\right)$, for the same reason.
 
 ## Variations
-
 
 ### limited $latex k$
 

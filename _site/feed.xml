@@ -8,7 +8,7 @@
     <atom:link href="http://bshlgrs.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>A data structure for answering &#39;who is the kth richest person with age between x and y&#39;</title>
+        <title>&#39;Who is the kth richest person with age between x and y&#39;</title>
         
         
           <description>&lt;p&gt;Suppose I want to maintain a set of people where each has an age and a wealth. I want to be able to quickly insert people, delete people, and answer queries of the form “find the $latex k$th richest person whose age is between $latex x$ and $latex y$”.&lt;/p&gt;
