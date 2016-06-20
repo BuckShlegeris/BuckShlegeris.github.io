@@ -6,7 +6,7 @@ date:   ""
 
 <div class="lead">
    <p>I am a software engineer from Australia. I have lived in San Francisco for most of the last three years. I'm interested in data structures and effective altruism.</p>
-   <p>I work at <a href="https://triplebyte.com">Triplebyte</a>.</p>
+   <p>I work at <a href="https://triplebyte.com?ref=bshlgrs.github.io">Triplebyte</a>.</p>
    <p>I make fun music like <a href="http://soundcloud.com/buckmbs" target="_blank">this</a>.</p>
 </div>
 

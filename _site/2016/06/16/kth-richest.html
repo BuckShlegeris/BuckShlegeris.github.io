@@ -59,14 +59,14 @@
     <th>Query time</th>
   </tr>
   <tr>
-    <td>No insertion or deletion, one-sized interval</td>
+    <td>No insertion or deletion, one-sided interval</td>
     <td><a href="http://stackoverflow.com/a/31162190/1360429">Persistent binary search trees</a></td>
     <td>$latex n \cdot \log(n)$</td>
     <td>N/A</td>
     <td>$latex \log(n)$</td>
   </tr>
   <tr>
-    <td>No insertion or deletion, two-sized interval</td>
+    <td>No insertion or deletion, two-sided interval</td>
     <td><a href="http://stackoverflow.com/questions/26296624/order-statistic-on-intervals/26299986#26299986">Stacked sorted arrays</a></td>
     <td>$latex n \cdot \log(n)$</td>
     <td>N/A</td>
@@ -101,9 +101,9 @@
 
 <p>We end up with $latex \log(n)$ OSTs of maximum size $latex O(n)$, and we want to find the $latex k$th smallest item in their disjoint union.</p>
 
-<p>As discussed <a href="/2016/06/16/generalized-multi-quickselect.html">here</a>, we can solve that query in $latex O\left(\log(n)^3\right)$. (Full disclosure: I haven’t yet modified that algorithm to be worst case $latex O\left(\log(n)^3\right)$ instead of just average case $latex O\left(\log(n)^3\right)$, but I think I probably can.)</p>
+<p>As discussed <a href="/2016/06/16/generalized-multi-quickselect.html">here</a>, we can solve that query in $latex O\left(\log(n)^3\right)$.</p>
 
-<p>If your $latex k$ is small, you can directly traverse the trees to find the correct answer, which takes $latex k \log(n) + n$ time.</p>
+<p>Alternatively, if your $latex k$ is small, you can directly traverse the trees to find the correct answer, which takes $latex k \log(n) + n$ time.</p>
 
 <h3 id="updates">Updates</h3>
 
@@ -154,7 +154,11 @@
 <hr/>
 <a class="arrow" href="/"><strong>Buck</strong></a>
 <ul>
-  <li><a class="arrow" href="/about">About</a></li>
+  <li><a class="arrow" href="/about">About</a>
+    <ul>
+      <li><a href="http://triplebyte.com?ref=bshlgrs.github.io">Triplebyte</a></li>
+    </ul>
+  </li>
   <li>Links
     <ul>
       <li>

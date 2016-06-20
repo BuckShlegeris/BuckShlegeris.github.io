@@ -6,13 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Sets as functions</title>
-  <meta name="description" content="```haskell– really, a set is just a function telling you whether something is in the set, right?type Set a = a -&gt; Bool">
+  <title>Hard coding projects</title>
+  <meta name="description" content="Website of Buck Shlegeris.
+">
 
 
   <link rel="stylesheet" href="/bootstrap.css">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://bshlgrs.github.io/2015/08/08/haskell_set.html">
+  <link rel="canonical" href="http://bshlgrs.github.io/drafts/2016-06-19-complex-coding-projects.html">
   <link rel="alternate" type="application/rss+xml" title="Buck Shlegeris" href="http://bshlgrs.github.io/feed.xml">
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -41,51 +42,59 @@
     <div class="container">
   <div class="row">
     <div class="col-sm-7 col-sm-offset-1 markdownify">
-      <h1 class="post-title " itemprop="name headline">Sets as functions</h1>
-      <p class="post-meta"><time datetime="2015-08-08T00:00:00-07:00" itemprop="datePublished">Aug 8, 2015</time></p>
+      <h1 class="post-title " itemprop="name headline">Hard coding projects</h1>
+      <p class="post-meta"><time datetime="2016-06-16T00:00:00-07:00" itemprop="datePublished">Jun 16, 2016</time></p>
 
       <hr/>
 
-      <div class="language-haskell highlighter-rouge"><pre class="highlight"><code><span class="c1">-- really, a set is just a function telling you whether something is in the set, right?</span>
-<span class="kr">type</span> <span class="kt">Set</span> <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="kt">Bool</span>
+      <p>skills:</p>
 
-<span class="c1">-- by that definition, the empty set is just the function which always says</span>
-<span class="c1">-- "no, that isn't in the set"</span>
-<span class="n">emptySet</span> <span class="o">::</span> <span class="kt">Eq</span> <span class="n">a</span> <span class="o">=&gt;</span> <span class="kt">Set</span> <span class="n">a</span>
-<span class="n">emptySet</span> <span class="o">=</span> <span class="nf">\</span><span class="n">x</span> <span class="o">-&gt;</span> <span class="kt">False</span>
+<ul>
+  <li>Organizing code. This involves predicting ahead of times how things will go.</li>
+  <li>Translating logic into code, when it’s confusing and might or might not be a free action</li>
+  <li>Translating fuzzy ideas into logic</li>
+</ul>
 
-<span class="c1">-- adding an item to a set gives you a new set which responds with "yep" to the added item</span>
-<span class="c1">-- and otherwise just responds how the original set would have responded</span>
-<span class="n">add</span> <span class="o">::</span> <span class="kt">Eq</span> <span class="n">a</span> <span class="o">=&gt;</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="kt">Set</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="kt">Set</span> <span class="n">a</span>
-<span class="n">add</span> <span class="n">item</span> <span class="n">set</span> <span class="o">=</span> <span class="nf">\</span><span class="n">x</span> <span class="o">-&gt;</span> <span class="kr">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">item</span> <span class="kr">then</span> <span class="kt">True</span> <span class="kr">else</span> <span class="n">set</span> <span class="n">x</span>
+<p>projects:</p>
 
-<span class="c1">-- removing an item from a set gives you a new set which responds with "nope" to the added item</span>
-<span class="c1">-- and otherwise responds the same way as the original set</span>
-<span class="n">remove</span> <span class="o">::</span> <span class="kt">Eq</span> <span class="n">a</span> <span class="o">=&gt;</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="kt">Set</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="kt">Set</span> <span class="n">a</span>
-<span class="n">remove</span> <span class="n">item</span> <span class="n">set</span> <span class="o">=</span> <span class="nf">\</span><span class="n">x</span> <span class="o">-&gt;</span> <span class="kr">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">item</span> <span class="kr">then</span> <span class="kt">False</span> <span class="kr">else</span> <span class="n">set</span> <span class="n">x</span>
-
-<span class="c1">-- a complement just returns the opposite answer than the original set</span>
-<span class="n">complement</span> <span class="o">::</span> <span class="kt">Eq</span> <span class="n">a</span> <span class="o">=&gt;</span> <span class="kt">Set</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="kt">Set</span> <span class="n">a</span>
-<span class="n">complement</span> <span class="n">set</span> <span class="o">=</span> <span class="nf">\</span><span class="n">x</span> <span class="o">-&gt;</span> <span class="n">not</span> <span class="p">(</span><span class="n">set</span> <span class="n">x</span><span class="p">)</span>
-
-<span class="c1">-- intersection of two sets is a new set which returns True if the item is in both sets</span>
-<span class="n">intersection</span> <span class="o">::</span> <span class="kt">Eq</span> <span class="n">a</span> <span class="o">=&gt;</span> <span class="kt">Set</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="kt">Set</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="kt">Set</span> <span class="n">a</span>
-<span class="n">intersection</span> <span class="n">set1</span> <span class="n">set2</span> <span class="o">=</span> <span class="nf">\</span><span class="n">x</span> <span class="o">-&gt;</span> <span class="n">set1</span> <span class="n">x</span> <span class="o">&amp;&amp;</span> <span class="n">set2</span> <span class="n">x</span>
-</code></pre>
-</div>
-
-<p><a href="https://www.facebook.com/endofunctor/posts/10205930729562098">view comments on Facebook</a></p>
-
+<ul>
+  <li>Games
+    <ul>
+      <li>Chess</li>
+      <li>Checkers</li>
+      <li>additional:
+        <ul>
+          <li>saving</li>
+          <li>play over network</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Math
+    <ul>
+      <li>Computer algebra system</li>
+    </ul>
+  </li>
+  <li>Algorithms
+    <ul>
+      <li>Classics. Sorting algorithms, searching algorithms.</li>
+      <li>Binary search trees. Insert, delete. Treaps. 2-3-4 trees.
+        <ul>
+          <li>OSTs</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h2 id="front-end">Front end</h2>
+  </li>
+</ul>
 
 
       <hr/>
 
 <div class="PageNavigation">
   
-    <a class="prev" href="/2015/08/08/value-of-life.html">&laquo; Saving lives vs improving them</a>
-  
-  
-    <a class="pull-right" href="/2015/08/08/poly-np.html">Poly NP &raquo;</a>
   
 </div>
 
