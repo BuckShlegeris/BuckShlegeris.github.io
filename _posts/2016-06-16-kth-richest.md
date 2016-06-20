@@ -25,10 +25,10 @@ Here is a summary of solutions to different variants on this question:
   </tr>
   <tr>
     <td>No insertion or deletion, two-sided interval</td>
-    <td><a href="http://stackoverflow.com/questions/26296624/order-statistic-on-intervals/26299986#26299986">Stacked sorted arrays</a></td>
+    <td><a href="http://stackoverflow.com/questions/26296624/order-statistic-on-intervals/26299986#26299986">Persistent binary search trees</a></td>
     <td>$latex n \cdot \log(n)$</td>
     <td>N/A</td>
-    <td>$latex \log(n)^3$ (see my comment on the answer)</td>
+    <td>$latex \log(n)$</td>
   </tr>
   <tr>
     <td>Insertion, deletion, two-sided interval</td>
