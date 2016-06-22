@@ -14,19 +14,20 @@ const Emaildown = React.createClass({
     var newChecks = JSON.parse(JSON.stringify(this.state.checks));
     newChecks[lineNumber] = !newChecks[lineNumber];
     this.setState({checks: newChecks});
+    e.preventDefault();
   },
 
   renderEmaildownNode(node, disabled) {
     var showing = !node.optional || this.state.checks[node.lineNumber];
-    return <div style={{color: !showing && "lightgrey"}}>
+    return <div className={!showing && "greyed-out"}>
       {node.optional && <input
         checked={this.state.checks[node.lineNumber]}
         onChange={(e) => this.handleCheckToggle(node.lineNumber, e)}
         disabled={disabled}
         type="checkbox"/>}
       <span
-        onClick={(e) => !disabled && this.handleCheckToggle(node.lineNumber, e)}>
-        {node.html}
+        onClick={(e) => !disabled && this.handleCheckToggle(node.lineNumber, e) || e.preventDefault()}
+        dangerouslySetInnerHTML={{__html: node.html}}>
       </span>
       {node.children && <ul>
         {node.children.map((x, idx) => {

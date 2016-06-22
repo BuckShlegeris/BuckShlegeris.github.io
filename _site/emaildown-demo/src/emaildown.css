@@ -13,3 +13,11 @@
 .emaildownTemplate {
   margin-left: -20px;
 }
+
+.greyed-out {
+  color: lightgrey;
+}
+
+.greyed-out a {
+  color: lightblue;
+}
