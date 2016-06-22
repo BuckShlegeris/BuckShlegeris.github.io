@@ -1,0 +1,90 @@
+Hey there
+
+It was fun talking to you today!
+
+Here are the notes I promised.
+
+  <strong>General notes:</strong>
+    <a href="http://blog.triplebyte.com/how-to-pass-a-programming-interview">Here's</a> our blog post that I mentioned.
+    Some other notes:
+    You mentioned having trouble with algorithm problems. I'll mention specific algorithm advice later in this email.
+    You mentioned getting nervous in interviews.
+    The main way to get better at doing coding questions in interviews is to practice doing them. I recommend looking at Cracking the Coding Interview or InterviewCake.com.
+      I'll mail you a copy of Cracking the Coding Interview.
+    You might want to get a friend to ask you some of these questions, to simulate the experience of an interview. Alternatively, I'm happy to give you an interview question over Hangouts some time if you want.
+
+  <strong>Algorithms:</strong>
+    You should brush up on your basic algorithmics--this is very likely to come up in interviews. In particular, knowing the basic Big O complexity of commonly used data structure methods is likely to be valuable. You can see a useful list of those <a href="http://bigocheatsheet.com">here</a>.
+    Especially as a junior developer, you'll get a lot of mileage out of getting really good at these.
+    You've got a strong math background, so you should have a comparative advantage at learning about this stuff--you should take advantage of that!
+
+  Here are some specific topics to look into:
+    <a href="https://www.interviewcake.com/article/java/big-o-notation-time-and-space-complexity">Big O notation for time complexity.</a>
+      It's really important to be comfortable with this! "Big O notation is like math except it's an awesome, not-boring kind of math where you get to wave your hands through the details and just focus on what's basically happening."
+    <a href="https://en.wikipedia.org/wiki/Linked_list">Linked lists vs arrays.</a>
+    <a href="https://www.quora.com/How-are-Python-lists-implemented-internally/answer/Adrien-Lucas-Ecoffet">Implementation of Python lists.</a>
+      (This explanation is also true for other languages.)
+    <a href="https://en.wikipedia.org/wiki/Binary_search_tree">Binary search trees.</a>
+      You should know how to search, insert, and delete in a BST.
+    <a href="https://www.ics.uci.edu/~eppstein/161/960215.html">Breadth first search vs depth first search.</a>
+      Breadth first search always gets you shortest paths, depth first search doesn't.
+      (You definitely should be comfortable implementing these. I bet that someone will ask you to implement BFS over the course of your job search.)
+    <a href="https://en.wikipedia.org/wiki/A*_search_algorithm">A* search.</a>
+    <a href="https://en.wikipedia.org/wiki/Binary_heap">Binary heaps.</a>
+    <a href="https://en.wikipedia.org/wiki/Suffix_tree">Suffix trees.</a>
+    This is advanced stuff that is reasonably unlikely to come up in interviews, but I think it's interesting anyway:
+      I mentioned the isometry between red-black trees and 2-3-4 trees: you can read about that in <a href="http://web.stanford.edu/class/cs166/lectures/05/Small05.pdf">these slides</a>, or many other places on the internet.
+      I mentioned the little-known fact that heap insertion takes constant time; you can read about it <a href="http://wcipeg.com/wiki/Binary_heap#Insertion_2">here</a> if you're interested.
+      <a href="https://en.wikipedia.org/wiki/Treap">Treaps</a> are a clever randomized BST implementation.
+      <a href="http://www.bowdoin.edu/~ltoma/teaching/cs231/fall09/Lectures/10-augmentedTrees/augtrees.pdf">Augmented binary search trees</a> are a really useful data structure that can help you solve a massive variety of problems.
+      I mentioned a neat way of making dynamic arrays with less than O(n) wasted space. <a href="http://link.springer.com/chapter/10.1007/3-540-48447-7_4">Here it is.</a>
+
+  In general, my favorite resource for learning about algorithms is Skiena's Algorithm Design Manual--you can see a (legal!) PDF of it <a href="https://github.com/addyrookie/Depot-App/blob/master/gmail/The Algorithm Design Manual 2ed  by Steven S. Skiena.pdf">here</a>. It's a super fun and practical book--it's got lots of "war stories" interspersed throughout, about how the author has used the techniques he talks about in practise.
+    For you, I'd recommend reading the book from about chapter 1 through 5, of which 3 is the highest priority chapter.
+    You probably know most of the contents already, but I think that reading chapters 3 through 6 is a great refresher and an interesting perspective on designing algorithms in general; I think you might find it an interesting read.
+    You should also take a look at chapter 12--it's fantastic, it's just a long catalogue of data structures and discussion of when different ones are useful.
+
+  <strong>Low level systems:</strong>
+    <a href="http://stackoverflow.com/questions/79923/what-and-where-are-the-stack-and-heap">The stack and the heap.
+    <a href="http://stackoverflow.com/questions/1119134/how-do-malloc-and-free-work">Implementation of Malloc.</a>
+    <a href="http://stackoverflow.com/questions/499188/how-is-the-system-call-in-linux-implemented">Implementation of system calls.</a>
+    <a href="https://en.wikipedia.org/wiki/Tracing_garbage_collection#Basic_algorithm">Mark and sweep garbage collection.</a>
+    <a href="http://stackoverflow.com/questions/16699247/what-is-cache-friendly-code/16699282#16699282">CPU caches</a>
+    If you're interested, <a href="http://danluu.com/new-cpu-features/">this long article</a> can tell you about a lot of modern CPU features.
+    <a href="http://stackoverflow.com/a/200473/1360429">Threads vs processes.</a>
+    <a href="http://c2.com/cgi/wiki?GreenVsNativeThreads">Green threads</a> are cooperative multitasking implemented by the programming language runtime, instead of being preemptive multitasking from the OS.
+    <a href="https://en.wikipedia.org/wiki/Lock_(computer_science)#Types">Locks and atomic operations.</a>
+
+  <strong>Databases:</strong>
+    <a href="http://www.dreamincode.net/forums/topic/179103-relational-database-design-normalization/">Normalization.</a> This is a really core concept.
+    <a href="http://stackoverflow.com/questions/1108/how-does-database-indexing-work">Database indexes.</a>
+      It is very important to know about these! They speed up reads for the column that they are on, but they make writes slower and increase memory requirements. They are usually implemented with <a href="https://en.wikipedia.org/wiki/B-tree">B-trees</a>.
+        B-trees are a kind of binary search tree which have fewer larger nodes, so that you don't have to do as many disk seeks.
+        You can have <a href="http://stackoverflow.com/questions/795031/how-do-composite-indexes-work">composite indexes</a>, which are indexes on multiple columns.
+    <a href="http://stackoverflow.com/questions/12915209/how-to-understand-an-explain-analyze">SQL explain.
+    <a href="http://postgresguide.com/performance/explain.html">Query planning in Postgres.</a>
+    NoSQL—It’s worth knowing a little bit about it. Mongo is probably the most famous NoSQL database. <a href="http://stackoverflow.com/questions/10553860/nosql-use-case-scenarios-or-when-to-use-nosql">Read this.</a>
+    <a href="http://stackoverflow.com/questions/1279613/what-is-an-orm-and-where-can-i-learn-more-about-it">ORMs.</a> There's kind of a cultural association with ORMs which makes it important to know about them: lots of old-school programmers in PHP or C# or whatever don't use them, and startups are wary of hiring people like that.
+      It's useful to remember that ORMs protect you from SQL injection attacks.
+
+  <strong>HTTP:</strong>
+    <a href="https://www.facebook.com/photo.php?fbid=217751861900214&set=gm.10153908057783909&type=3&theater">My favorite TCP joke.</a>
+    <a href="http://stackoverflow.com/a/5970545/1360429">TCP vs UDP.</a>
+    <a href="https://www.quora.com/How-do-browser-cookies-work/answer/Keith-Pieper">How do cookies work?</a> <a href="https://www.nczonline.net/blog/2009/05/05/http-cookies-explained/">More detail about cookies.</a>
+    <a href="http://www.tutorialspoint.com/http/http_header_fields.htm">Different HTTP headers.</a>
+    <a href="http://stackoverflow.com/a/504993/1360429">GET vs POST.</a>
+
+
+  <strong>Scaling/system design:</strong>
+    Two great resources for this are <a href="https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/">this blog post</a> and <a href="https://gist.github.com/vasanthk/485d1c25737e8e72759f">this gist</a>.
+    Reading and understanding blog posts about how real-world systems are designed can help a lot when answering systems design questions as well. A helpful resourse for this is the blog <a href="http://highscalability.com/">High Scalability</a>.
+      I like <a href="https://blog.imgur.com/2013/06/04/tech-tuesday-our-technology-stack/">this blog post</a> by Imgur about their stack.
+    <a href="https://blog.hartleybrody.com/scale-load/">This is another great scaling article.</a>
+    Specific things you should know about:
+      <a href="http://stackoverflow.com/a/5402016/1360429">horizontal vs vertical scaling</a>
+      <a href="https://www.quora.com/What-are-Master-and-Slave-databases-and-how-does-pairing-them-make-web-apps-faster/answer/Jason-Dusek">Master/slave databases.</a>
+      Do caching with Redis, use LRU as the expiration policy by default.
+
+I'm happy to answer any questions you have about any of this.
+
+Buck

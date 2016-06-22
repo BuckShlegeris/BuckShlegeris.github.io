@@ -1,12 +1,17 @@
 const Emaildown = React.createClass({
   componentWillMount () {
-    this.template = parseEmaildown(this.props.templateString)
+    this.templates = {};
+
+    for (let entry of this.props.templateStrings) {
+      this.templates[entry[0]] = parseEmaildown(entry[1]);
+    }
   },
 
   getInitialState() {
     return {
       checks: {},
-      vars: {}
+      vars: {},
+      selectedTemplate: this.props.initiallySelectedTemplate
     };
   },
 
@@ -14,6 +19,7 @@ const Emaildown = React.createClass({
     var newChecks = JSON.parse(JSON.stringify(this.state.checks));
     newChecks[lineNumber] = !newChecks[lineNumber];
     this.setState({checks: newChecks});
+
     e.preventDefault();
   },
 
@@ -43,30 +49,37 @@ const Emaildown = React.createClass({
     }
   },
 
+  currentTemplate () {
+    return this.templates[this.state.selectedTemplate];
+  },
+
   result() {
-    return <div>{this.template.map((child, idx) => {
+    return <div>{this.currentTemplate().map((child, idx) => {
       return <p key={idx} dangerouslySetInnerHTML={{__html: this.getResultString(child)}}/>
     })}</div>;
   },
 
   render () {
     return <div>
+      <span className="pull-right">
+        {Object.keys(this.templates).map((x, idx) => {
+          return <button
+                    key={idx}
+                    onClick={(e) => this.setState({selectedTemplate: x})}
+                    className="btn btn-default">{x}</button>
+        })}
+      </span>
+      <h2>Emaildown!</h2>
       <div className="row">
         <div className="col-xs-6">
-          {this.template.map((x, idx) => <div key={idx} className="emaildownTemplate">
+
+
+          {this.currentTemplate().map((x, idx) => <div key={idx} className="emaildownTemplate">
             {this.renderEmaildownNode(x, false)}
           </div>)}
         </div>
         <div className="col-xs-6">
           {this.result()}
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-xs-12">
-          <h3>Template:</h3>
-          <pre>
-            {this.props.templateString}
-          </pre>
         </div>
       </div>
     </div>;
@@ -118,9 +131,14 @@ function recursiveDescent(lines, startPos) {
   return [{ html: html, children: children, optional: level != 0, lineNumber: startPos }, i];
 }
 
-var mystr = "hello\n  what\n  what2\n    wer\n  fdssf\ndffd";
+
+$.get("./prep.txt", function (prepTemplate) {
+  $.get("./rejection.txt", function (rejectionTemplate) {
+    var templateStrings = [["prep", prepTemplate], ['rejection', rejectionTemplate]];
+    ReactDOM.render(<Emaildown templateStrings={templateStrings} initiallySelectedTemplate="prep"/>,
+      document.getElementById("emaildown"));
+  });
+});
 
 
-ReactDOM.render(<Emaildown templateString={$("#email2").text()}/>, document.getElementById("emaildown"));
-// ReactDOM.render(<Emaildown template={parseEmaildown(mystr)}/>, document.getElementById("emaildown"));
 
