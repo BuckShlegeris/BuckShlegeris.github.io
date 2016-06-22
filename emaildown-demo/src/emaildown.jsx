@@ -17,15 +17,17 @@ const Emaildown = React.createClass({
   },
 
   renderEmaildownNode(node, disabled) {
-    return <div style={{color: disabled && "lightgrey"}}>
+    var showing = !node.optional || this.state.checks[node.lineNumber];
+    return <div style={{color: !showing && "lightgrey"}}>
       {node.optional && <input
         checked={this.state.checks[node.lineNumber]}
         onChange={(e) => this.handleCheckToggle(node.lineNumber, e)}
         disabled={disabled}
         type="checkbox"/>}
       <span
-        dangerouslySetInnerHTML={{__html: node.html}}
-        onClick={(e) => !disabled && this.handleCheckToggle(node.lineNumber, e)}/>
+        onClick={(e) => !disabled && this.handleCheckToggle(node.lineNumber, e)}>
+        {node.html}
+      </span>
       {node.children && <ul>
         {node.children.map((x, idx) => {
           return <li key={idx}>{this.renderEmaildownNode(x, disabled || (node.optional && !this.state.checks[node.lineNumber]))}</li>;
