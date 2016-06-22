@@ -1,0 +1,15 @@
+.emaildownTemplate li {
+  list-style: none;
+}
+
+.emaildownTemplate ul {
+  padding-left: 20px;
+}
+
+.emaildownTemplate > div {
+  padding-left: 20px;
+}
+
+.emaildownTemplate {
+  margin-left: -20px;
+}
