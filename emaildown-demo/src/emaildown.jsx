@@ -73,7 +73,7 @@ const Emaildown = React.createClass({
         {Object.keys(this.templates).map((x, idx) => {
           return <button
                     key={idx}
-                    onClick={(e) => this.setState({selectedTemplate: x})}
+                    onClick={(e) => this.setState({selectedTemplate: x, checks: {}})}
                     className="btn btn-default">{x}</button>
         })}
       </span>
@@ -87,7 +87,7 @@ const Emaildown = React.createClass({
           checked={this.state.displayFormattedResult}
           onChange={() => this.setState({displayFormattedResult: !this.state.displayFormattedResult})}/>
       </label>
-      <h2>Emaildown!</h2>
+      <h2>Fun email generator!</h2>
       <div className="row">
         <div className="col-sm-6">
 
