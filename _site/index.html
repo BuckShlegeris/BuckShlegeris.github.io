@@ -54,9 +54,9 @@ I am a software engineer from Australia. I have lived in San Francisco for most 
 </div>
 
 
-  <h2><a href="/2016/06/16/ctci.html"> Studying for startup interviews with 'Cracking the Coding Interview'</a></h2>
+  <h2><a href="/2016/06/22/ctci.html"> Studying for startup interviews with 'Cracking the Coding Interview'</a></h2>
 
-  <p class="post-meta"><time datetime="2016-06-16T00:00:00-07:00" itemprop="datePublished">Jun 16, 2016</time></p>
+  <p class="post-meta"><time datetime="2016-06-22T00:00:00-07:00" itemprop="datePublished">Jun 22, 2016</time></p>
 
   <div class="shrink-headings">
     <p><a href="https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X">Cracking the Coding Interview</a> is by far the most popular interview prep book for software engineers. But it was written for a few years ago, and software engineering interviews seem to have changed in the meantime, at least in the Silicon Valley engineering culture which I’m most involved in.</p>
@@ -77,17 +77,21 @@ I am a software engineer from Australia. I have lived in San Francisco for most 
 
 <p><strong>At the Interview</strong>: You don’t have to use C, C++, or Java. People will possibly be biased against you if you do. Ruby, Python, and Javascript are fine choices. I think it’s fine to do the problem in whatever language you want. You can ask your recruiter about this before the interview.</p>
 
-<h2 id="comments-on-the-questions">Comments on the questions:</h2>
+<h2 id="the-most-relevant-questions">The most relevant questions</h2>
 
 <p>Here is a subset of the questions which I think reflects SF software interviews more accurately:</p>
 
 <p>1.1, 1.7, 1.8, 2.1, 3.1, 3.2, 3.3, 3.5, 4.1, 4.2, 4.3, 4.5, 4.8, 7.1, 7.2, 7.4, 8.1, 8.2, 8.3, 8.4, 8.5, 8.6, 8.7, 8.8, 9.2, 9.3, 9.6, 12.1, 12.2, 12.6, 12.7, 15.3, 17.5, 18.1, 18.2, 19.2, 19.7, 19.11, 20.10, 20.11.</p>
 
-<h3 id="chapter-1">Chapter 1</h3>
+<p>I would recommend studying this subset of questions with higher priority. You can do them in a shuffled order if that seems like more fun.</p>
+
+<h2 id="comments-on-the-questions">Comments on the questions:</h2>
+
+<h3 id="chapter-1-arrays-and-strings">Chapter 1: Arrays and Strings</h3>
 
 <p>Companies care less about seeing you edit data in place than they used to. I’d only expect questions on this if you’re applying for a C job. For this reason, questions [1.2, 1.3, 1.5, 1.6, 1.7] are lower priority.</p>
 
-<h3 id="chapter-2">Chapter 2</h3>
+<h3 id="chapter-2-linked-lists">Chapter 2: Linked Lists</h3>
 
 <p>All of these questions are less common these days because linked lists come up less because we don’t use C as much.</p>
 
@@ -95,23 +99,73 @@ I am a software engineer from Australia. I have lived in San Francisco for most 
 
 <p>2.5 is a common bullshit brainteaser question.</p>
 
-<h3 id="chapter-3">Chapter 3</h3>
+<h3 id="chapter-3-queues-and-stacks">Chapter 3: Queues and stacks</h3>
 
 <p>I agree that you’ll look good if you can flawlessly implement a queue and stack.</p>
 
-<h3 id="chapter-4">Chapter 4</h3>
+<h3 id="chapter-4-graphs-and-trees">Chapter 4: Graphs and trees</h3>
 
-<h3 id="chapter-5">Chapter 5</h3>
+<p>Study BFS, it’s a really common question.</p>
+
+<h3 id="chapter-5-bit-manipulation">Chapter 5: Bit manipulation</h3>
 
 <p>I’ve rarely seen these problems come up, even when I interviewed for a C++ systems job.</p>
 
-<h3 id="chapter-6">Chapter 6</h3>
+<h3 id="chapter-6-brainteasers">Chapter 6: Brainteasers</h3>
 
-<p>These questions are widely reviled, and seem to be getting less common.</p>
+<p>These questions are widely reviled, and seem to be getting less common. Maybe memorize the answers in case you run across a bad interviewer.</p>
 
-<h3 id="chapter-7">Chapter 7</h3>
+<h3 id="chapter-7-oop">Chapter 7: OOP</h3>
 
 <p>These questions are good. The provided answers are idiomatic Java; if you’re answering in Python you should model your answers after idiomatic Python rather than the answers given.</p>
+
+<p>I don’t hear about people being asked abstract questions like 7.3.</p>
+
+<h3 id="chapter-8-recursion">Chapter 8: Recursion</h3>
+
+<p>Many of these questions are classics which I’ve been asked many times before.</p>
+
+<h3 id="chapter-9-searching-and-sorting">Chapter 9: Searching and sorting</h3>
+
+<p>I think that it’s somewhat less common to be asked to write sorting algorithms these days.</p>
+
+<h3 id="chapter-10-math">Chapter 10: Math</h3>
+
+<p>I don’t hear about math questions being asked, except at extremely math heavy companies to applicants with a hardcore math background.</p>
+
+<h3 id="chapter-11-testing">Chapter 11: testing</h3>
+
+<p>I don’t hear about these questions very much. I’ve never heard questions like “how would you test a pen”.</p>
+
+<h3 id="chapter-12-system-design-and-memory-limits">Chapter 12: system design and memory limits</h3>
+
+<p>I don’t hear about memory limit questions very often.</p>
+
+<h3 id="chapter-13-and-14-c-and-java">Chapter 13 and 14: C++ and Java</h3>
+
+<p>Only relevant if you’re interviewing in C++ or Java, and even then I’d be slightly surprised to get these questions.</p>
+
+<h3 id="chapter-15-databases">Chapter 15: Databases</h3>
+
+<p>The advice given is somewhat out of date. I don’t think that I’ve ever heard about someone being asked to denormalize their SQL database schema for speed.</p>
+
+<p>I think the “design a database to hold certain data” type questions are more common now. The rise of ORMs has led to SQL being somewhat less important for most developers.</p>
+
+<h3 id="chapter-16-low-level">Chapter 16: Low level</h3>
+
+<p>These questions are great, but I wouldn’t expect them at most generalist job interviews.</p>
+
+<h3 id="chapter-17-networking">Chapter 17: Networking</h3>
+
+<p>This is somewhat more low level than I think most people get asked. It’s worth knowing the answer to the famous “what happens after you type a URL into a browser” question though.</p>
+
+<h3 id="chapter-18-threads-and-locks">Chapter 18: Threads and Locks</h3>
+
+<p>Companies don’t seem to ask about concurrency primitives without warning you beforehand. Some of these questions are Java-specific.</p>
+
+<h3 id="chapter-19-and-20-moderate-and-hard">Chapter 19 and 20: Moderate and Hard</h3>
+
+<p>All these questions are popular questions. I don’t particularly like them.</p>
 
   </div>
 
@@ -861,7 +915,7 @@ $(function() {
     <ul>
       
         <li>
-          <a class="arrow" href="/2016/06/16/ctci.html">Studying for startup interviews with 'Cracking the Coding Interview'</a>
+          <a class="arrow" href="/2016/06/22/ctci.html">Studying for startup interviews with 'Cracking the Coding Interview'</a>
         </li>
       
         <li>
