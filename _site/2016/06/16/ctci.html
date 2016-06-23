@@ -6,14 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Hard coding projects</title>
-  <meta name="description" content="Website of Buck Shlegeris.
-">
+  <title>Studying for startup interviews with &#39;Cracking the Coding Interview&#39;</title>
+  <meta name="description" content="Cracking the Coding Interview is by far the most popular interview prep book for software engineers. But it was written for a few years ago, and software eng...">
 
 
   <link rel="stylesheet" href="/bootstrap.css">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://bshlgrs.github.io/drafts/2016-06-19-complex-coding-projects.html">
+  <link rel="canonical" href="http://bshlgrs.github.io/2016/06/16/ctci.html">
   <link rel="alternate" type="application/rss+xml" title="Buck Shlegeris" href="http://bshlgrs.github.io/feed.xml">
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -42,58 +41,71 @@
     <div class="container">
   <div class="row">
     <div class="col-sm-7 col-sm-offset-1 markdownify">
-      <h1 class="post-title " itemprop="name headline">Hard coding projects</h1>
+      <h1 class="post-title " itemprop="name headline">Studying for startup interviews with 'Cracking the Coding Interview'</h1>
       <p class="post-meta"><time datetime="2016-06-16T00:00:00-07:00" itemprop="datePublished">Jun 16, 2016</time></p>
 
       <hr/>
 
-      <p>skills:</p>
+      <p><a href="https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X">Cracking the Coding Interview</a> is by far the most popular interview prep book for software engineers. But it was written for a few years ago, and software engineering interviews seem to have changed in the meantime, at least in the Silicon Valley engineering culture which I’m most involved in.</p>
 
-<ul>
-  <li>Organizing code. This involves predicting ahead of times how things will go.</li>
-  <li>Translating logic into code, when it’s confusing and might or might not be a free action</li>
-  <li>Translating fuzzy ideas into logic</li>
-</ul>
+<p>I think <a href="https://www.interviewcake.com/">InterviewCake</a> has content which is more relevant to the software engineering interviews I hear about. And its content is more engagingly presented. But it’s also a shit ton more expensive, and much shorter.</p>
 
-<p>projects:</p>
+<p>So I’ve collated this reading guide for CtCI.</p>
 
-<ul>
-  <li>Games
-    <ul>
-      <li>Chess</li>
-      <li>Checkers</li>
-      <li>additional:
-        <ul>
-          <li>saving</li>
-          <li>play over network</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>Math
-    <ul>
-      <li>Computer algebra system</li>
-    </ul>
-  </li>
-  <li>Algorithms
-    <ul>
-      <li>Classics. Sorting algorithms, searching algorithms.</li>
-      <li>Binary search trees. Insert, delete. Treaps. 2-3-4 trees.
-        <ul>
-          <li>OSTs</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <h2 id="front-end">Front end</h2>
-  </li>
-</ul>
+<h2 id="general-notes">General notes</h2>
+
+<p>Every chapter starts with a bunch of notes on the subject which it’s testing. I think these notes are quite good. It’s well worth reading the notes for chapters even if you don’t do questions from them.</p>
+
+<p>The first 40-ish pages of the book are general advice about software engineering interviews. I agree with all of it except the following points, organized by section:</p>
+
+<p><strong>Before the interview</strong>: Companies don’t ask behavioral questions much.</p>
+
+<p><strong>What You Need To Know (page 26)</strong>: Tries are not absolutely must-have knowledge. I’ve never heard of people being asked to implement quicksort in place. Singleton and Factory design patterns are not crucial knowledge.</p>
+
+<p><strong>At the Interview</strong>: You don’t have to use C, C++, or Java. People will possibly be biased against you if you do. Ruby, Python, and Javascript are fine choices. I think it’s fine to do the problem in whatever language you want. You can ask your recruiter about this before the interview.</p>
+
+<h2 id="comments-on-the-questions">Comments on the questions:</h2>
+
+<p>Here is a subset of the questions which I think reflects SF software interviews more accurately:</p>
+
+<p>1.1, 1.7, 1.8, 2.1, 3.1, 3.2, 3.3, 3.5, 4.1, 4.2, 4.3, 4.5, 4.8, 7.1, 7.2, 7.4, 8.1, 8.2, 8.3, 8.4, 8.5, 8.6, 8.7, 8.8, 9.2, 9.3, 9.6, 12.1, 12.2, 12.6, 12.7, 15.3, 17.5, 18.1, 18.2, 19.2, 19.7, 19.11, 20.10, 20.11.</p>
+
+<h3 id="chapter-1">Chapter 1</h3>
+
+<p>Companies care less about seeing you edit data in place than they used to. I’d only expect questions on this if you’re applying for a C job. For this reason, questions [1.2, 1.3, 1.5, 1.6, 1.7] are lower priority.</p>
+
+<h3 id="chapter-2">Chapter 2</h3>
+
+<p>All of these questions are less common these days because linked lists come up less because we don’t use C as much.</p>
+
+<p><a href="http://bshlgrs.github.io/2016/04/22/dumbest-algorithm-problem.html">Fuck question 2.2.</a></p>
+
+<p>2.5 is a common bullshit brainteaser question.</p>
+
+<h3 id="chapter-3">Chapter 3</h3>
+
+<p>I agree that you’ll look good if you can flawlessly implement a queue and stack.</p>
+
+<h3 id="chapter-4">Chapter 4</h3>
+
+<h3 id="chapter-5">Chapter 5</h3>
+
+<p>I’ve rarely seen these problems come up, even when I interviewed for a C++ systems job.</p>
+
+<h3 id="chapter-6">Chapter 6</h3>
+
+<p>These questions are widely reviled, and seem to be getting less common.</p>
+
+<h3 id="chapter-7">Chapter 7</h3>
+
+<p>These questions are good. The provided answers are idiomatic Java; if you’re answering in Python you should model your answers after idiomatic Python rather than the answers given.</p>
 
 
       <hr/>
 
 <div class="PageNavigation">
+  
+    <a class="prev" href="/2016/06/16/kth-richest.html">&laquo; 'Who is the kth richest person with age between x and y'</a>
   
   
 </div>

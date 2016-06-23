@@ -8,6 +8,19 @@
     <atom:link href="http://bshlgrs.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Studying for startup interviews with &#39;Cracking the Coding Interview&#39;</title>
+        
+        
+          <description>&lt;p&gt;&lt;a href=&quot;https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X&quot;&gt;Cracking the Coding Interview&lt;/a&gt; is by far the most popular interview prep book for software engineers. But it was written for a few years ago, and software engineering interviews seem to have changed in the meantime, at least in the Silicon Valley engineering culture which I’m most involved in.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Thu, 16 Jun 2016 00:00:00 -0700</pubDate>
+        <link>http://bshlgrs.github.io/2016/06/16/ctci.html</link>
+        <guid isPermaLink="true">http://bshlgrs.github.io/2016/06/16/ctci.html</guid>
+      </item>
+    
+      <item>
         <title>&#39;Who is the kth richest person with age between x and y&#39;</title>
         
         
@@ -122,19 +135,6 @@
         <pubDate>Fri, 22 Apr 2016 00:00:00 -0700</pubDate>
         <link>http://bshlgrs.github.io/2016/04/22/dumbest-algorithm-problem.html</link>
         <guid isPermaLink="true">http://bshlgrs.github.io/2016/04/22/dumbest-algorithm-problem.html</guid>
-      </item>
-    
-      <item>
-        <title>Overteaching and overlearning</title>
-        
-        
-          <description>&lt;p&gt;(I’m talking about computer science here because that’s the only topic I know really well, but this might generalize anyway.)&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Wed, 20 Apr 2016 00:00:00 -0700</pubDate>
-        <link>http://bshlgrs.github.io/2016/04/20/overteaching.html</link>
-        <guid isPermaLink="true">http://bshlgrs.github.io/2016/04/20/overteaching.html</guid>
       </item>
     
   </channel>
