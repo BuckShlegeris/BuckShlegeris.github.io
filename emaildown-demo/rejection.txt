@@ -7,7 +7,8 @@ Unfortunately, we're not going to move forward with your application right now. 
   Your insights on the memcache and used car problems demonstrated a very broad knowledge of systems.
   You showed good knowledge of web systems and scaling applications, which are both highly valuable skills.
   We got the impression that you're a generally strong developer.
-  You write really nice $LANGUAGE code.
+  You write nice $LANGUAGE code.
+    You seemed comfortable in your environment and with the language.
   You did a great Connect-4, with good logic and good process.
     You had good abstracted code with a simple and efficient win check.
   We were impressed by your raw ability to get things done with code and make consistent progress toward solutions. Your methods were well-factored and your variables clearly named.
@@ -15,7 +16,7 @@ Unfortunately, we're not going to move forward with your application right now. 
 
   However, you lacked depth in your knowledge of computer science.
    You didn't display the skills we need to see in working with complicated systems like in the Memcached problem.
-  However, we didn't see the coding ability that we need to see to work with people.
+  However, we didn't see the coding fluency that we need to see to work with people.
     We didn't make it as far through the connect 4 or stock runs problems as we wanted to.
      Specifically, you struggled with the win check in the connect four implementation and did not come up with a clean way to check all line directions.
     The maze problem in particular is where we got stuck, especially on the details of breadth first and depth first search. While this isn't specifically a problem, when picking problems that are more algorithmic focused we do expect to see a strong, deep understanding of these details.

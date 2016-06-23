@@ -69,16 +69,20 @@ const Emaildown = React.createClass({
                     className="btn btn-default">{x}</button>
         })}
       </span>
+
+      <button className="btn btn-danger" onClick={(e) => this.setState({checks: {}})}>
+        Clear selection
+      </button>
       <h2>Emaildown!</h2>
       <div className="row">
-        <div className="col-xs-6">
+        <div className="col-sm-6">
 
 
           {this.currentTemplate().map((x, idx) => <div key={idx} className="emaildownTemplate">
             {this.renderEmaildownNode(x, false)}
           </div>)}
         </div>
-        <div className="col-xs-6">
+        <div className="col-sm-6">
           {this.result()}
         </div>
       </div>
