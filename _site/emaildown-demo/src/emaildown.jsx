@@ -11,7 +11,8 @@ const Emaildown = React.createClass({
     return {
       checks: {},
       vars: {},
-      selectedTemplate: this.props.initiallySelectedTemplate
+      selectedTemplate: this.props.initiallySelectedTemplate,
+      displayFormattedResult: true
     };
   },
 
@@ -19,8 +20,9 @@ const Emaildown = React.createClass({
     var newChecks = JSON.parse(JSON.stringify(this.state.checks));
     newChecks[lineNumber] = !newChecks[lineNumber];
     this.setState({checks: newChecks});
-
-    e.preventDefault();
+    if (e.target.nodeName != "INPUT") {
+      e.preventDefault();
+    }
   },
 
   renderEmaildownNode(node, disabled) {
@@ -37,7 +39,9 @@ const Emaildown = React.createClass({
       </span>
       {node.children && <ul>
         {node.children.map((x, idx) => {
-          return <li key={idx}>{this.renderEmaildownNode(x, disabled || (node.optional && !this.state.checks[node.lineNumber]))}</li>;
+          return <li key={idx}>
+            {this.renderEmaildownNode(x, disabled || (node.optional && !this.state.checks[node.lineNumber]))}
+          </li>;
         })}
       </ul>}
     </div>;
@@ -55,7 +59,11 @@ const Emaildown = React.createClass({
 
   result() {
     return <div>{this.currentTemplate().map((child, idx) => {
-      return <p key={idx} dangerouslySetInnerHTML={{__html: this.getResultString(child)}}/>
+      if (this.state.displayFormattedResult) {
+        return <p key={idx} dangerouslySetInnerHTML={{__html: this.getResultString(child)}}/>;
+      } else {
+        return <p key={idx}>{this.getResultString(child)}</p>;
+      }
     })}</div>;
   },
 
@@ -73,6 +81,12 @@ const Emaildown = React.createClass({
       <button className="btn btn-danger" onClick={(e) => this.setState({checks: {}})}>
         Clear selection
       </button>
+      <label>Display formatted result:
+        <input
+          type="checkbox"
+          checked={this.state.displayFormattedResult}
+          onChange={() => this.setState({displayFormattedResult: !this.state.displayFormattedResult})}/>
+      </label>
       <h2>Emaildown!</h2>
       <div className="row">
         <div className="col-sm-6">
