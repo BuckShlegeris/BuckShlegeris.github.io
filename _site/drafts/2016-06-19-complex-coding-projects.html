@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Hard coding projects</title>
+  <title>Coding project ideas</title>
   <meta name="description" content="Website of Buck Shlegeris.
 ">
 
@@ -42,51 +42,79 @@
     <div class="container">
   <div class="row">
     <div class="col-sm-7 col-sm-offset-1 markdownify">
-      <h1 class="post-title " itemprop="name headline">Hard coding projects</h1>
-      <p class="post-meta"><time datetime="2016-06-16T00:00:00-07:00" itemprop="datePublished">Jun 16, 2016</time></p>
+      <h1 class="post-title " itemprop="name headline">Coding project ideas</h1>
+      <p class="post-meta"><time datetime="2016-06-25T00:00:00-07:00" itemprop="datePublished">Jun 25, 2016</time></p>
 
       <hr/>
 
-      <p>skills:</p>
+      <p>Sometimes I talk to someone who is a mediocre programmer, and I need to give them advice on becoming better. I often say “uh, you should practise more programming I guess”. But that’s not very specific advice. Often people aren’t sure of a good project to do to get better at programming. Here is my attempt at making a long list of programming projects which you can peruse if you’re looking for inspiration.</p>
+
+<p>You get a lot more done when you’re enjoying yourself. So I want a list with a wide variety of different kinds of projects on it. If you’re unsure which one you want to do, the answer is usually to do the project which looks like the most fun.</p>
+
+<p>Other people have tried to write similar lists before. I like <a href="http://www.dreamincode.net/forums/topic/78802-martyr2s-mega-project-ideas-list/">this attempt</a>. I’m writing my own because I want to sort them by topic, and I want to target people who are better than beginners.</p>
+
+<p>I don’t think that Project Euler is very good for this: it has lots of math and not as much programming.</p>
+
+<p>Here’s my list.</p>
+
+<h2 id="board-games">Board games</h2>
+
+<p>Any two player board game is a good exercise for basic programming logic, and you can make it into a console application. Checkers, Connect-4, Othello, Poker, Go, whatever. Chess is somewhat harder than those other games.</p>
+
+<p>Here are some ways to extend these projects:</p>
 
 <ul>
-  <li>Organizing code. This involves predicting ahead of times how things will go.</li>
-  <li>Translating logic into code, when it’s confusing and might or might not be a free action</li>
-  <li>Translating fuzzy ideas into logic</li>
+  <li>Add the ability to save and load games</li>
+  <li>Add an AI</li>
+  <li>Allow players to play over a local network.</li>
+  <li>Build these as front-end or mobile applications.</li>
+  <li>Make this into a web app–build a website which lets people play the game online. You can extend this arbitrarily far: nice GUIs, realtime play, etc.</li>
 </ul>
 
-<p>projects:</p>
+<h1 id="math">Math</h1>
+
+<p>One really fun project is to build a computer algebra system, which is a library which lets you do symbolic manipulation. It should be able to represent expressions like $latex x + 2y$. It should know that $latex 2(x + y) = 2x + 2y$. This turns out to be pretty tricky, and making it work is a great learning experience.</p>
+
+<p>Another project I enjoyed when I was younger was writing a circuit simulator. You gave the program a graph of circuit components, and it turned the graph into a system of linear equations, then solved them for current.</p>
+
+<h1 id="algorithms">Algorithms</h1>
 
 <ul>
-  <li>Games
+  <li>Classics. Sorting algorithms, searching algorithms.</li>
+  <li>Binary search trees. Insert, delete. Treaps. 2-3-4 trees.
     <ul>
-      <li>Chess</li>
-      <li>Checkers</li>
-      <li>additional:
-        <ul>
-          <li>saving</li>
-          <li>play over network</li>
-        </ul>
-      </li>
+      <li>OSTs</li>
     </ul>
   </li>
-  <li>Math
+  <li>String algorithms</li>
+  <li>AIs for video games</li>
+  <li>Front end
     <ul>
-      <li>Computer algebra system</li>
+      <li>Games</li>
+      <li>Graphing library</li>
+      <li>Rich text editor</li>
+      <li>Excel clone</li>
     </ul>
   </li>
-  <li>Algorithms
+  <li>CS
     <ul>
-      <li>Classics. Sorting algorithms, searching algorithms.</li>
-      <li>Binary search trees. Insert, delete. Treaps. 2-3-4 trees.
-        <ul>
-          <li>OSTs</li>
-        </ul>
-      </li>
+      <li>Regular expression matcher</li>
+      <li>Interpreter</li>
+      <li>Compiler</li>
     </ul>
   </li>
-  <li>
-    <h2 id="front-end">Front end</h2>
+  <li>Web
+    <ul>
+      <li>HTTP server</li>
+      <li>Web scraper</li>
+      <li>ORM</li>
+      <li>Web app framework</li>
+    </ul>
+  </li>
+  <li>Low level
+    <ul>
+      <li>Image conversion utilities</li>
+    </ul>
   </li>
 </ul>
 

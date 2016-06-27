@@ -50,7 +50,19 @@
 
 <p>So I’ve written this guide to the book. It contains notes on things which I think have changed since it was written, and a list of the questions from the book which I think are most relevant to people preparing for software engineering interviews at good companies in the Bay Area.</p>
 
-<p>I was inspired to write this by <a href="https://www.interviewcake.com/">InterviewCake</a>, which is a competitor to Cracking the Coding Interview. But InterviewCake is much more expensive than CtCI. My goal is to create a resource which lets you use Cracking the Coding Interview more effectively, so that you can save the extra $150 difference.</p>
+<p>I was inspired to write this by <a href="https://www.interviewcake.com/">InterviewCake</a>, which is a competitor to Cracking the Coding Interview. But InterviewCake is much more expensive than CtCI. I think this list of CtCI questions is about as good a list of interview questions as InterviewCake. There, I just saved you $180.</p>
+
+<p>How have things changed? Most obviously, people use more scripting languages here and less C++ and Java. This has some direct effects, eg how I don’t think there are as many questions about merging arrays given buffer space anymore–that question still makes sense in scripting languages, but it doesn’t come up as much as it does in C. And I think Silicon Valley dislikes what it sees as verbose enterprise trivia bullshit, and purposefully doesn’t talk about such things. I think this is why I don’t hear about people being asked about design patterns.</p>
+
+<p><strong>This is about the 4th edition of CtCI. I have not seen the new editions. In my defence, I almost always see version 4 in the wild (eg at bootcamps and on bookshelves).</strong></p>
+
+<h2 id="the-most-relevant-questions">The most relevant questions</h2>
+
+<p>Here is a subset of the questions which I think reflects SF software interviews more accurately:</p>
+
+<p>1.1, 1.7, 1.8, 2.1, 3.1, 3.2, 3.3, 3.5, 4.1, 4.2, 4.3, 4.5, 4.8, 7.1, 7.2, 7.4, 8.1, 8.2, 8.3, 8.4, 8.5, 8.6, 8.7, 8.8, 9.2, 9.3, 9.6, 12.1, 12.2, 12.6, 12.7, 15.3, 17.5, 18.1, 18.2, 19.2, 19.7, 19.11, 20.10, 20.11.</p>
+
+<p>I would recommend giving these questions higher priority in your study.</p>
 
 <h2 id="general-notes">General notes</h2>
 
@@ -64,14 +76,6 @@
 
 <p><strong>At the Interview</strong>: You don’t have to use C, C++, or Java. People will possibly be biased against you if you do. Ruby, Python, and Javascript are fine choices. I think it’s fine to do the problem in whatever language you want. You can ask your recruiter about this before the interview.</p>
 
-<h2 id="the-most-relevant-questions">The most relevant questions</h2>
-
-<p>Here is a subset of the questions which I think reflects SF software interviews more accurately:</p>
-
-<p>1.1, 1.7, 1.8, 2.1, 3.1, 3.2, 3.3, 3.5, 4.1, 4.2, 4.3, 4.5, 4.8, 7.1, 7.2, 7.4, 8.1, 8.2, 8.3, 8.4, 8.5, 8.6, 8.7, 8.8, 9.2, 9.3, 9.6, 12.1, 12.2, 12.6, 12.7, 15.3, 17.5, 18.1, 18.2, 19.2, 19.7, 19.11, 20.10, 20.11.</p>
-
-<p>I would recommend giving these questions higher priority in your study.</p>
-
 <h2 id="comments-on-individual-question-chapters">Comments on individual question chapters:</h2>
 
 <h3 id="chapter-1-arrays-and-strings">Chapter 1: Arrays and Strings</h3>
@@ -80,7 +84,7 @@
 
 <h3 id="chapter-2-linked-lists">Chapter 2: Linked Lists</h3>
 
-<p>All of these questions are less common these days because linked lists come up less because we don’t use C as much.</p>
+<p>All of these questions are less common these days because linked lists come up less, because we don’t use C as much and have more support for generics, leading to us coding our own data structures less often.</p>
 
 <p><a href="http://bshlgrs.github.io/2016/04/22/dumbest-algorithm-problem.html">Fuck question 2.2.</a></p>
 
@@ -92,7 +96,7 @@
 
 <h3 id="chapter-4-graphs-and-trees">Chapter 4: Graphs and trees</h3>
 
-<p>Study BFS, it’s a really common question.</p>
+<p>Study BFS: it’s a really common question. These questions all seem reasonable.</p>
 
 <h3 id="chapter-5-bit-manipulation">Chapter 5: Bit manipulation</h3>
 
@@ -120,21 +124,21 @@
 
 <p>I don’t hear about math questions being asked, except at extremely math heavy companies to applicants with a hardcore math background.</p>
 
-<h3 id="chapter-11-testing">Chapter 11: testing</h3>
+<h3 id="chapter-11-testing">Chapter 11: Testing</h3>
 
 <p>I don’t hear about these questions very much. I’ve never heard questions like “how would you test a pen”.</p>
 
-<h3 id="chapter-12-system-design-and-memory-limits">Chapter 12: system design and memory limits</h3>
+<h3 id="chapter-12-system-design-and-memory-limits">Chapter 12: System design and memory limits</h3>
 
 <p>I don’t hear about memory limit questions very often.</p>
 
 <h3 id="chapter-13-and-14-c-and-java">Chapter 13 and 14: C++ and Java</h3>
 
-<p>Only relevant if you’re interviewing in C++ or Java, and even then I’d be slightly surprised to get these questions.</p>
+<p>Only relevant if you’re interviewing in C++ or Java, and even then I’d be slightly surprised to get these questions–they seem somewhat like trivia to me. That said, I’ve been asked one of these questions before.</p>
 
 <h3 id="chapter-15-databases">Chapter 15: Databases</h3>
 
-<p>The advice given is somewhat out of date. I don’t think that I’ve ever heard about someone being asked to denormalize their SQL database schema for speed.</p>
+<p>The advice given is somewhat out of date. I don’t think that I’ve ever heard about someone being asked to denormalize their SQL database schema for speed in an interview.</p>
 
 <p>I think the “design a database to hold certain data” type questions are more common now. The rise of ORMs has led to SQL being somewhat less important for most developers.</p>
 
