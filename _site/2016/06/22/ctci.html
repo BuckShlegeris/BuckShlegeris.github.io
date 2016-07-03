@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Studying for startup interviews with &#39;Cracking the Coding Interview&#39;</title>
-  <meta name="description" content="Cracking the Coding Interview is by far the most popular interview prep book for software engineers. But it was written for a few years ago, and software eng...">
+  <meta name="description" content="Cracking the Coding Interview is by far the most popular interview prep book for software engineers. It’s a great book. But it was written for a few years ag...">
 
 
   <link rel="stylesheet" href="/bootstrap.css">
@@ -46,23 +46,33 @@
 
       <hr/>
 
-      <p><a href="https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X">Cracking the Coding Interview</a> is by far the most popular interview prep book for software engineers. But it was written for a few years ago, and software engineering interviews seem to have changed in the meantime, at least in the Silicon Valley engineering culture which I’m most involved in.</p>
+      <p><a href="https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X">Cracking the Coding Interview</a> is by far the most popular interview prep book for software engineers. It’s a great book. But it was written for a few years ago, and software engineering interviews seem to have changed in the meantime, at least in the Silicon Valley engineering culture which I’m most involved in.</p>
 
 <p>So I’ve written this guide to the book. It contains notes on things which I think have changed since it was written, and a list of the questions from the book which I think are most relevant to people preparing for software engineering interviews at good companies in the Bay Area.</p>
 
 <p>I was inspired to write this by <a href="https://www.interviewcake.com/">InterviewCake</a>, which is a competitor to Cracking the Coding Interview. But InterviewCake is much more expensive than CtCI. I think this list of CtCI questions is about as good a list of interview questions as InterviewCake. There, I just saved you $180.</p>
 
-<p>How have things changed? Most obviously, people use more scripting languages here and less C++ and Java. This has some direct effects, eg how I don’t think there are as many questions about merging arrays given buffer space anymore–that question still makes sense in scripting languages, but it doesn’t come up as much as it does in C. And I think Silicon Valley dislikes what it sees as verbose enterprise trivia bullshit, and purposefully doesn’t talk about such things. I think this is why I don’t hear about people being asked about design patterns.</p>
+<p>How have things changed? Most obviously, people use more scripting languages here and less C++ and Java. This has some direct effects. For example, there aren’t as many questions about merging arrays given buffer space anymore: that question still makes sense in scripting languages, but it doesn’t come up as much as it does in C. And I think Silicon Valley dislikes what it sees as verbose enterprise trivia bullshit, and purposefully doesn’t talk about such things. I think this is why I don’t hear about people being asked about design patterns.</p>
 
-<p><strong>This is about the 4th edition of CtCI. I have not seen the new editions. In my defence, I almost always see version 4 in the wild (eg at bootcamps and on bookshelves).</strong></p>
+<p>The 5th edition is somewhat better than the 4th edition, because it has more content at the start of every chapter. I have not seen the 6th edition.</p>
 
 <h2 id="the-most-relevant-questions">The most relevant questions</h2>
 
 <p>Here is a subset of the questions which I think reflects SF software interviews more accurately:</p>
 
+<p>Questions in the 4th edition:</p>
+
 <p>1.1, 1.7, 1.8, 2.1, 3.1, 3.2, 3.3, 3.5, 4.1, 4.2, 4.3, 4.5, 4.8, 7.1, 7.2, 7.4, 8.1, 8.2, 8.3, 8.4, 8.5, 8.6, 8.7, 8.8, 9.2, 9.3, 9.6, 12.1, 12.2, 12.6, 12.7, 15.3, 17.5, 18.1, 18.2, 19.2, 19.7, 19.11, 20.10, 20.11.</p>
 
+<p>Questions in the 5th edition:</p>
+
+<p>1.1, 1.7, 1.8, 2.1, 3.1, 3.2, 3.3, 3.5, 3.7, 4.1, 4.2, 4.3, 4.5, 4.6, 4.8, 5.1, 8.1, 8.2, 8.5, 8.7, 8.9, 8.10, 9.1, 9.2, 9.3, 9.4, 9.5, 10.1, 10.2, 10.5, 10.6, 11.3, 11.6, 11.8, 15.5, 16.1, 17.2, 17.8, 17.12, 18.10, 18.11.</p>
+
+<p>(Making those two lists felt like maintaining a codebase to work in both Python 2 and 3)</p>
+
 <p>I would recommend giving these questions higher priority in your study.</p>
+
+<p>Many of the questions that I didn’t include there are still good practice. If you want more practise on a particular topic, you should definitely do even the questions I didn’t include.</p>
 
 <h2 id="general-notes">General notes</h2>
 
@@ -76,7 +86,7 @@
 
 <p><strong>At the Interview</strong>: You don’t have to use C, C++, or Java. People will possibly be biased against you if you do. Ruby, Python, and Javascript are fine choices. I think it’s fine to do the problem in whatever language you want. You can ask your recruiter about this before the interview.</p>
 
-<h2 id="comments-on-individual-question-chapters">Comments on individual question chapters:</h2>
+<h2 id="comments-on-individual-question-chapters-in-the-4th-edition">Comments on individual question chapters (in the 4th edition):</h2>
 
 <h3 id="chapter-1-arrays-and-strings">Chapter 1: Arrays and Strings</h3>
 
@@ -101,6 +111,8 @@
 <h3 id="chapter-5-bit-manipulation">Chapter 5: Bit manipulation</h3>
 
 <p>I’ve rarely seen these problems come up, even when I interviewed for a C++ systems job.</p>
+
+<p>I include one question of this type in my list above.</p>
 
 <h3 id="chapter-6-brainteasers">Chapter 6: Brainteasers</h3>
 
@@ -166,6 +178,8 @@
     <a class="prev" href="/2016/06/16/kth-richest.html">&laquo; 'Who is the kth richest person with age between x and y'</a>
   
   
+    <a class="pull-right" href="/2016/06/30/triplebyte.html">You should work at Triplebyte &raquo;</a>
+  
 </div>
 
     </div>
@@ -205,6 +219,14 @@
     <ul>
       
         <li>
+          <a class="arrow" href="/2016/07/02/hash-ordered-treaps.html">Hash-ordered treaps</a>
+        </li>
+      
+        <li>
+          <a class="arrow" href="/2016/06/30/triplebyte.html">You should work at Triplebyte</a>
+        </li>
+      
+        <li>
           <a class="arrow" href="/2016/06/22/ctci.html">Studying for startup interviews with 'Cracking the Coding Interview'</a>
         </li>
       
@@ -226,14 +248,6 @@
       
         <li>
           <a class="arrow" href="/2016/06/02/say.html">Not thinking of things I can't say</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/05/29/explicit.html">Optimize dating for non-interference with platonic relationships</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/05/29/flinching.html">Flinching away from hard things</a>
         </li>
       
     </ul>

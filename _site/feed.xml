@@ -8,10 +8,36 @@
     <atom:link href="http://bshlgrs.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Hash-ordered treaps</title>
+        
+        
+          <description>&lt;p&gt;Hash-ordered treaps are a cool kind of binary search tree. They have the neat property that there mapping from ordered sets to hash-ordered treaps is one-to-one and onto. That is, for every ordered set, there’s exactly one valid hash-ordered treap which represents it.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sat, 02 Jul 2016 00:00:00 -0700</pubDate>
+        <link>http://bshlgrs.github.io/2016/07/02/hash-ordered-treaps.html</link>
+        <guid isPermaLink="true">http://bshlgrs.github.io/2016/07/02/hash-ordered-treaps.html</guid>
+      </item>
+    
+      <item>
+        <title>You should work at Triplebyte</title>
+        
+        
+          <description>&lt;p&gt;Triplebyte, the startup where I work, is hiring. We’re looking for engineers, a writer, a UX designer, and some generalist roles.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Thu, 30 Jun 2016 00:00:00 -0700</pubDate>
+        <link>http://bshlgrs.github.io/2016/06/30/triplebyte.html</link>
+        <guid isPermaLink="true">http://bshlgrs.github.io/2016/06/30/triplebyte.html</guid>
+      </item>
+    
+      <item>
         <title>Studying for startup interviews with &#39;Cracking the Coding Interview&#39;</title>
         
         
-          <description>&lt;p&gt;&lt;a href=&quot;https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X&quot;&gt;Cracking the Coding Interview&lt;/a&gt; is by far the most popular interview prep book for software engineers. But it was written for a few years ago, and software engineering interviews seem to have changed in the meantime, at least in the Silicon Valley engineering culture which I’m most involved in.&lt;/p&gt;
+          <description>&lt;p&gt;&lt;a href=&quot;https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X&quot;&gt;Cracking the Coding Interview&lt;/a&gt; is by far the most popular interview prep book for software engineers. It’s a great book. But it was written for a few years ago, and software engineering interviews seem to have changed in the meantime, at least in the Silicon Valley engineering culture which I’m most involved in.&lt;/p&gt;
 
 </description>
         
@@ -109,32 +135,6 @@
         <pubDate>Sun, 29 May 2016 00:00:00 -0700</pubDate>
         <link>http://bshlgrs.github.io/2016/05/29/flinching.html</link>
         <guid isPermaLink="true">http://bshlgrs.github.io/2016/05/29/flinching.html</guid>
-      </item>
-    
-      <item>
-        <title>My main effective altruism mistakes so far</title>
-        
-        
-          <description>&lt;p&gt;Here are the biggest things I got wrong in my attempts at effective altruism over the last ~3 years.&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Tue, 24 May 2016 00:00:00 -0700</pubDate>
-        <link>http://bshlgrs.github.io/2016/05/24/mistakes.html</link>
-        <guid isPermaLink="true">http://bshlgrs.github.io/2016/05/24/mistakes.html</guid>
-      </item>
-    
-      <item>
-        <title>The dumbest algorithm problem in the entire world</title>
-        
-        
-          <description>&lt;p&gt;Want to know the dumbest algorithm problem in the entire world? Here it is:&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Fri, 22 Apr 2016 00:00:00 -0700</pubDate>
-        <link>http://bshlgrs.github.io/2016/04/22/dumbest-algorithm-problem.html</link>
-        <guid isPermaLink="true">http://bshlgrs.github.io/2016/04/22/dumbest-algorithm-problem.html</guid>
       </item>
     
   </channel>

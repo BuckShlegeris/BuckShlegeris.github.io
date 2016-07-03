@@ -50,32 +50,107 @@
       <h1>Buck Shlegeris</h1>
 
 <div class="lead">
-I am a software engineer from Australia. I have lived in San Francisco for most of the last three years. I'm interested in data structures and effective altruism. Here are some things that I've written recently:
+<p>I am a software engineer from Australia. I have lived in San Francisco for most of the last three years. I'm interested in data structures and effective altruism.</p>
+
+<p>Here are some things that I've written recently:</p>
 </div>
 
+
+  <h2><a href="/2016/07/02/hash-ordered-treaps.html"> Hash-ordered treaps</a></h2>
+
+  <p class="post-meta"><time datetime="2016-07-02T00:00:00-07:00" itemprop="datePublished">Jul 2, 2016</time></p>
+
+  <div class="shrink-headings">
+    <p>Hash-ordered treaps are a cool kind of binary search tree. They have the neat property that there mapping from ordered sets to hash-ordered treaps is one-to-one and onto. That is, for every ordered set, there’s exactly one valid hash-ordered treap which represents it.</p>
+
+<p>So what’s a hash-ordered treap? Well, choose your favorite hash function and call it h. A hash-ordered treap is a binary search tree which follows one additional restriction: for every parent and child, h(value of parent) &gt; h(value of child).</p>
+
+<p>(It’s called a hash-ordered treap because as well as being a tree, it’s also a heap ordered on the hash of the node value.)</p>
+
+<p>There’s exactly one hash-ordered treap for a given ordered set. This wasn’t totally obvious to me at first, but the proof is pretty simple. Suppose you have a ordered set. One of its values must have the highest hash value. That value is going to be the root of the tree. Everything in the ordered set less than the root is going to be in a hash-ordered treap on the left, and everything greater than the root is going to be in a hash-ordered treap on the right. So by structural induction, QED.</p>
+
+<p>Insertion is pretty simple: you just search down for the right place to insert as usual, then you do tree rotations up to restore the heap ordering property. I think this takes an average of O(1) time if you’re inserting random keys into random treaps, for the same reason that heap insertion is sort of average O(1) time. (But I made that proof up myself, so it might be wrong. Worst case it’s O(log(n)), so no big deal if so.)</p>
+
+<p>This nice isomorphism between ordered sets and hash-ordered treaps is useful when you want to be able to build BSTs separately places and later merge them together, taking advantage of the fact that the trees will be very similar if
+they have similar elements. I first saw this used in <a href="http://arxiv.org/abs/1301.3388">this paper</a>.</p>
+
+  </div>
+
+  <hr />
+
+  <h2><a href="/2016/06/30/triplebyte.html"> You should work at Triplebyte</a></h2>
+
+  <p class="post-meta"><time datetime="2016-06-30T00:00:00-07:00" itemprop="datePublished">Jun 30, 2016</time></p>
+
+  <div class="shrink-headings">
+    <p>Triplebyte, the startup where I work, is hiring. We’re looking for engineers, a writer, a UX designer, and some generalist roles.</p>
+
+<p>I think Triplebyte is a great place to work. In particular, I think that <strong>if you’re an EA, working at Triplebyte is a great opportunity for you if you would otherwise be earning to give and developing career capital.</strong> Here’s why.</p>
+
+<p>I’ve learned an enormous amount since I started working here. I have a lot of freedom in what I do and how I do it. For example, my first major project had a significant UI component, and I wanted to do it in React; my CTO didn’t know React but was fine with me bringing it into the site. My second project was a complicated backend web project which involved, among other things, learning how to take care of a bunch of complicated servers on AWS. And my current project is essentially a interviewing research project: I’m developing a coding problem very different to everything we currently ask, and currently I’m collecting data to determine whether it correlates with our other measurements well enough that we should use it.</p>
+
+<p>Empiricism is core to what we do. I’ve never before worked in a setting which puts as much work into statistical analysis of its various projects. Almost every task I have involves coming up with a hypothesis that if we work on some particular thing, we’ll improve some particular metric. I then build whatever software is required. After a while, we do a statistical analysis to determine whether my project has a positive effect. If it doesn’t, we modify it or abandon it.</p>
+
+<p>The core skill I’m learning is the extremely useful general skill of figuring out how to make progress on hard and confusing problems, given incomplete information and significant costs to gathering data. I am super glad to be practicing this. This will be extremely useful to me regardless of what I end up doing long term—most obviously, it’s a useful skill for many kinds of direct work, many kinds of research, and entrepreneurship.</p>
+
+<p>I think Triplebyte is an unusually good opportunity to develop these skills for a few reasons. To start with, as companies get bigger, they have more of an idea of what they’re doing, so you don’t get to work on problems with such large scope. Especially if you’re fundamentally just an empirically minded engineer—at most companies you’ll end up just working on engineering specific solutions, rather than broadly investigating the space of solutions. Among small companies, I don’t think many have founding teams as experienced, or engineers as good (I feel qualified to say this because I’ve interviewed a lot of engineers, and my coworkers are generally stronger programmers.)</p>
+
+<p>(Triplebyte also has some downsides. Most obviously, engineers spend like 20 hours a week interviewing people. This is sort of a pain. On the other hand, I’ve certainly gotten something useful out of it: I have a way better understanding of a diverse range of topics in computer science now, and I’m somewhat better at communicating about some things, and I’ve learned that lots of people sound really smart when they talk about things they’ve done, then absolutely go to pieces when you ask them for technical details. I have gotten a much better feel for the ways and the extent that programmers vary.)</p>
+
+<p>One of the projects I’m working on at the moment is something which I came up with on a whim one evening and coded a prototype of—my coworkers liked it, so I’m now building it into the main site. You don’t get to do this kind of thing at most companies.</p>
+
+<p>The company culture is currently very well suited to EAs and rationalists: one reason I want to recruit my friends is that I’d like to keep it that way.</p>
+
+<p>We’re hiring for the following roles (more info <a href="https://triplebyte.com/careers">here</a>):</p>
+
+<ul>
+  <li>Software engineer. You need to be good at thinking and programming. You need really broad knowledge of computer science, because you need to be able to talk intelligently about anything that your interviewee might want to talk about. You need to be friendly, because you spend a bunch of time interviewing.</li>
+  <li>Writer. We would love to hire someone to spend all their time taking our data and turning it into blog posts. If you like writing about data, this would be a great job for you.</li>
+  <li>Designer/UX. We need someone to design all our user interfaces and do all our other visual design work.</li>
+  <li>Talent manager. This is a person who handles all our interaction with our candidates. You need to be really organized, good at interacting with people (especially software engineers), and you need to be excited about doing experiments and using data to improve how we manage candidates.</li>
+  <li>Other generalist roles: Product Operations and an Operation Manager</li>
+</ul>
+
+<p>Get in touch with me if you’re interested in any of these roles. We are specifically interested in talking to you if you’re junior, really smart, and want to be given lots of responsibility to figure out the right way to do your job.</p>
+
+<p>(And as always, even if you aren’t interested in any of this, if you’re a software engineer and you need a new job, you should use us! Talk to me about this too.)</p>
+
+  </div>
+
+  <hr />
 
   <h2><a href="/2016/06/22/ctci.html"> Studying for startup interviews with 'Cracking the Coding Interview'</a></h2>
 
   <p class="post-meta"><time datetime="2016-06-22T00:00:00-07:00" itemprop="datePublished">Jun 22, 2016</time></p>
 
   <div class="shrink-headings">
-    <p><a href="https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X">Cracking the Coding Interview</a> is by far the most popular interview prep book for software engineers. But it was written for a few years ago, and software engineering interviews seem to have changed in the meantime, at least in the Silicon Valley engineering culture which I’m most involved in.</p>
+    <p><a href="https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X">Cracking the Coding Interview</a> is by far the most popular interview prep book for software engineers. It’s a great book. But it was written for a few years ago, and software engineering interviews seem to have changed in the meantime, at least in the Silicon Valley engineering culture which I’m most involved in.</p>
 
 <p>So I’ve written this guide to the book. It contains notes on things which I think have changed since it was written, and a list of the questions from the book which I think are most relevant to people preparing for software engineering interviews at good companies in the Bay Area.</p>
 
 <p>I was inspired to write this by <a href="https://www.interviewcake.com/">InterviewCake</a>, which is a competitor to Cracking the Coding Interview. But InterviewCake is much more expensive than CtCI. I think this list of CtCI questions is about as good a list of interview questions as InterviewCake. There, I just saved you $180.</p>
 
-<p>How have things changed? Most obviously, people use more scripting languages here and less C++ and Java. This has some direct effects, eg how I don’t think there are as many questions about merging arrays given buffer space anymore–that question still makes sense in scripting languages, but it doesn’t come up as much as it does in C. And I think Silicon Valley dislikes what it sees as verbose enterprise trivia bullshit, and purposefully doesn’t talk about such things. I think this is why I don’t hear about people being asked about design patterns.</p>
+<p>How have things changed? Most obviously, people use more scripting languages here and less C++ and Java. This has some direct effects. For example, there aren’t as many questions about merging arrays given buffer space anymore: that question still makes sense in scripting languages, but it doesn’t come up as much as it does in C. And I think Silicon Valley dislikes what it sees as verbose enterprise trivia bullshit, and purposefully doesn’t talk about such things. I think this is why I don’t hear about people being asked about design patterns.</p>
 
-<p><strong>This is about the 4th edition of CtCI. I have not seen the new editions. In my defence, I almost always see version 4 in the wild (eg at bootcamps and on bookshelves).</strong></p>
+<p>The 5th edition is somewhat better than the 4th edition, because it has more content at the start of every chapter. I have not seen the 6th edition.</p>
 
 <h2 id="the-most-relevant-questions">The most relevant questions</h2>
 
 <p>Here is a subset of the questions which I think reflects SF software interviews more accurately:</p>
 
+<p>Questions in the 4th edition:</p>
+
 <p>1.1, 1.7, 1.8, 2.1, 3.1, 3.2, 3.3, 3.5, 4.1, 4.2, 4.3, 4.5, 4.8, 7.1, 7.2, 7.4, 8.1, 8.2, 8.3, 8.4, 8.5, 8.6, 8.7, 8.8, 9.2, 9.3, 9.6, 12.1, 12.2, 12.6, 12.7, 15.3, 17.5, 18.1, 18.2, 19.2, 19.7, 19.11, 20.10, 20.11.</p>
 
+<p>Questions in the 5th edition:</p>
+
+<p>1.1, 1.7, 1.8, 2.1, 3.1, 3.2, 3.3, 3.5, 3.7, 4.1, 4.2, 4.3, 4.5, 4.6, 4.8, 5.1, 8.1, 8.2, 8.5, 8.7, 8.9, 8.10, 9.1, 9.2, 9.3, 9.4, 9.5, 10.1, 10.2, 10.5, 10.6, 11.3, 11.6, 11.8, 15.5, 16.1, 17.2, 17.8, 17.12, 18.10, 18.11.</p>
+
+<p>(Making those two lists felt like maintaining a codebase to work in both Python 2 and 3)</p>
+
 <p>I would recommend giving these questions higher priority in your study.</p>
+
+<p>Many of the questions that I didn’t include there are still good practice. If you want more practise on a particular topic, you should definitely do even the questions I didn’t include.</p>
 
 <h2 id="general-notes">General notes</h2>
 
@@ -89,7 +164,7 @@ I am a software engineer from Australia. I have lived in San Francisco for most 
 
 <p><strong>At the Interview</strong>: You don’t have to use C, C++, or Java. People will possibly be biased against you if you do. Ruby, Python, and Javascript are fine choices. I think it’s fine to do the problem in whatever language you want. You can ask your recruiter about this before the interview.</p>
 
-<h2 id="comments-on-individual-question-chapters">Comments on individual question chapters:</h2>
+<h2 id="comments-on-individual-question-chapters-in-the-4th-edition">Comments on individual question chapters (in the 4th edition):</h2>
 
 <h3 id="chapter-1-arrays-and-strings">Chapter 1: Arrays and Strings</h3>
 
@@ -114,6 +189,8 @@ I am a software engineer from Australia. I have lived in San Francisco for most 
 <h3 id="chapter-5-bit-manipulation">Chapter 5: Bit manipulation</h3>
 
 <p>I’ve rarely seen these problems come up, even when I interviewed for a C++ systems job.</p>
+
+<p>I include one question of this type in my list above.</p>
 
 <h3 id="chapter-6-brainteasers">Chapter 6: Brainteasers</h3>
 
@@ -773,88 +850,6 @@ I am a software engineer from Australia. I have lived in San Francisco for most 
 
   <hr />
 
-  <h2><a href="/2016/05/29/explicit.html"> Optimize dating for non-interference with platonic relationships</a></h2>
-
-  <p class="post-meta"><time datetime="2016-05-29T00:00:00-07:00" itemprop="datePublished">May 29, 2016</time></p>
-
-  <div class="shrink-headings">
-    <p>[content warning—I make a lot of claims that certain ways of hitting on people are much better than other ways. If you have a tendency to freak out about whether you’re a terrible person for being sexually attracted to people, maybe don’t read this.]</p>
-
-<p>It’s often hard for men and women to hang out with each other non-romantically. This is terrible! Terrible! So terrible that reducing this problem should be a major priority for progressive subcultures. I think we can make progress by pushing for better norms about hitting on people. Let’s look at some common dating advice:</p>
-
-<p>“When you’re asking a girl out, don’t explicitly ask her on a date. Instead, ask her if she wants to get coffee with you. It’s obvious that you’re asking her on a date, but this way if she wants to reject you she can do it more subtly and it’s less awkward for everyone involved.”</p>
-
-<p>I think this is absolutely terrible advice! Not for the man who receives that advice, but for the society where that’s the social norm. Because sometimes I meet women and I think they’re interesting, and I would love to meet them again to hang out with them sometime. What do I do? I sure as hell can’t ask them to meet up for coffee or a meal.</p>
-
-<p>So this faux ambiguity ends up creating a situation where it is very hard for men and women to spend time with each other.</p>
-
-<p>This is particularly terrible in a professional context, especially one like programming where hanging out with people is really valuable, and there are relatively few women around. It’s not so hard for me if I can only meet up with male friends and talk about data structures—I’ve only lost 20% or whatever of my total conversational options. It’s much harder for the women who lose 80%.</p>
-
-<p>(one argument you could make: “well if p is the proportion of women who are in a field, and you can’t hang out with people of the other gender, the total hangout opportunities = p**2 + (1-p)**2, which is maximized at p=0 and p=1, therefore we want to segregate everything as much as possible.”)</p>
-
-<p>I’ve heard women talk about how one factor making career development harder for them is that it’s much harder for them to get dinner with their managers or peers without it seeming weird.</p>
-
-<p>Even without that particular gender imbalance element, this is bad and worth fighting against. But I think that as a society and as a subculture, we can make choices which make this less of a problem. Even better, I don’t think we need to totally overhaul society to improve this: as long as individual men are known for having clear and unproblematic behaviors, women don’t have this problem around them.</p>
-
-<hr />
-
-<p>So here goes. Here are some rules which I think might reduce these problems.</p>
-
-<ul>
-  <li>When you ask people out, always ask them out extremely explicitly. “Would you like to go on a date with me next week” is a good sentence to use. (If you’re on a dating website or other environment where everyone is forgoing the ability to make plausibly-non-romantic connections, you don’t have to follow this rule.)</li>
-  <li>If you specifically invite someone to hang out with you and it wasn’t you asking them out, never ask them out or proposition them while you’re hanging out. Relatedly (and this should be obvious but apparently isn’t), don’t hit on people in situations where they can’t get away from you without awkwardness.</li>
-  <li>It’s fine to ask people out over Facebook messages or email. (In fact, it’s probably better to ask people out asynchronously than putting them on the spot by asking in person, especially if it’s someone you already know.)</li>
-</ul>
-
-<p>The goal of the first is to make it easier to hang out with people platonically. The goal of the second is to establish common knowledge that if I invite you to hang out with me sometime, I’m not going to hit on you and cause you to awkwardly have to deflect my advances and consider leaving.</p>
-
-<p>I feel pretty good about following these rules in my current context. I’ve pretty much always followed that first rule.</p>
-
-<p>One objection to the first rule is that it makes it somewhat more awkward for the rejectee. I think that this is better than the problems caused by ambiguity. And you can always add the ambiguity back in by asking, for example, for a date at a specific time; they can reject you by saying they’re busy then if they want. (Incidentally, I don’t think that what makes this less awkward is the faux ambiguity. I think that it’s just less awkward because you’ve set it up so that you’re basically supplied them with a rejection sentence if they want to say no; this means they’re less likely to be caught flat-footed and awkwardly not know what to say.) Alternatively or additionally, you can ask people out online, which reduces the pressure further.</p>
-
-<p>I broke that second rule several times at college, and I really enjoyed that. Hanging out with people late at night and knowing that it might or might not lead to making out was really fun. But college was a much better place for that than adult life. At college you can usually go home, which kind of defuses some of the discomfort. I’m still somewhat confused by my intuitions here—I definitely feel that ambiguity was less of a problem at college than it is in adult life. (I also feel like this is slightly less of a problem within rationalism than in general society—maybe it’s partially because college and rationalism are both promiscuous subcultures? Maybe it’s because rationalists are better at average at talking through some kinds of problems? Maybe it’s because college girls are less cynical and for whatever reason seem to be put off somewhat less by these problems than other women, in my experience?)</p>
-
-<hr />
-
-<p>If the current norm is bad, why is it a stable equilibrium? Partially this problem is worse now than it used to be, because women started joining the workforce recently enough that society might not have shifted properly yet. And partially it’s because the costs are mostly felt by women (and somewhat, men scrupulous enough to worry about imposing them). It’s slightly convenient for individual men to have some ambiguity when they’re asking out women, or asking them to hang out; it’s inconvenient for women but they aren’t the ones making the decision so it happens anyway.</p>
-
-<p>I think there’s legitimately an opportunity for a community to talk about this a lot and come up with significantly better norms about it. Communities which I’m supposedly a part of—reckon we should do this?</p>
-
-<p>[I wrote this after talking to Claire Zabel about this a lot over the last few weeks; many of the ideas are hers.]</p>
-
-<hr />
-
-<p><a href="https://www.facebook.com/bshlgrs/posts/10207777395247586">view comments on Facebook</a></p>
-
-  </div>
-
-  <hr />
-
-  <h2><a href="/2016/05/29/flinching.html"> Flinching away from hard things</a></h2>
-
-  <p class="post-meta"><time datetime="2016-05-29T00:00:00-07:00" itemprop="datePublished">May 29, 2016</time></p>
-
-  <div class="shrink-headings">
-    <p>I have a strong reflex to not do complicated things when I’m writing code—I flinch away and try really hard to avoid them. I think this reflex often serves me well, because complicated code is a pain to maintain and in real life you usually don’t need it. When I watch other people code, I often see them start down a complicated path to solve a problem, and then persevere through it. When faced with the same problems as them, I’m much more inclined to start down a complicated path, then realize it’s going to be complicated and reflexively give up. Most problems that I run across actually have relatively simple solutions, so this serves me well: I end up flailing for longer at the start, but then I end up with simpler code than I would have had otherwise.</p>
-
-<p>But sometimes programming tasks are actually complicated and difficult. And my reflex against doing hard things really serves me wrong there. I find myself procrastinating and circling around the problem. I start attempts and then give up on them. Eventually I notice that I’m not getting anywhere and I need to just suck it up, get a coffee and sit in a quiet room and actually plough through it. But I’m sure I’m much worse at this than many other programmers who are as good as I am at easy things.</p>
-
-<p>For this reason, I’ve never implemented in-place quick sort, or a correct alpha-beta pruned minimax, or any kind of self balancing binary search tree. I’ve started all of them, but I always give up. I’m pretty sure that the most complicated small-scale code I’ve written in my life was written in my technical interviews at Apple, because they asked hard questions and they were watching me so I was motivated to not give up. (But even that pressure wasn’t enough—towards the end of one of the interviews, my interviewer asked if I could modify the code I’d written to handle a more general problem. I basically said “I could, but I really don’t want to” and half-assedly tried to evade the question.)</p>
-
-<hr />
-
-<p><a href="https://www.facebook.com/bshlgrs/posts/10207724688649954">view comments on Facebook</a></p>
-
-<p>Satvik Beri made a <a href="https://www.facebook.com/bshlgrs/posts/10207748156956647?comment_id=10207748263919321&amp;comment_tracking=%7B%22tn%22%3A%22R0%22%7D">particularly great comment</a>:</p>
-
-<blockquote>
-  <p>I try to maintain separate mental modes, searching for simple solutions vs. implementing tricky ones, with a trigger to switch–if I’m stuck on a problem and it genuinely looks like there’s no easy solution, I mutter “I ain’t afraid of nothin’” (stolen from Claude Shannon: https://www.cs.utexas.edu/~dahlin/bookshelf/hamming.html) and dive in.</p>
-</blockquote>
-
-  </div>
-
-  <hr />
-
 
 <p><a href="/posts">All posts</a></p>
 
@@ -919,6 +914,14 @@ $(function() {
     <ul>
       
         <li>
+          <a class="arrow" href="/2016/07/02/hash-ordered-treaps.html">Hash-ordered treaps</a>
+        </li>
+      
+        <li>
+          <a class="arrow" href="/2016/06/30/triplebyte.html">You should work at Triplebyte</a>
+        </li>
+      
+        <li>
           <a class="arrow" href="/2016/06/22/ctci.html">Studying for startup interviews with 'Cracking the Coding Interview'</a>
         </li>
       
@@ -940,14 +943,6 @@ $(function() {
       
         <li>
           <a class="arrow" href="/2016/06/02/say.html">Not thinking of things I can't say</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/05/29/explicit.html">Optimize dating for non-interference with platonic relationships</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/05/29/flinching.html">Flinching away from hard things</a>
         </li>
       
     </ul>
