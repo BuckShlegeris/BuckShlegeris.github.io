@@ -4,7 +4,7 @@ title:  "Hash-ordered treaps"
 date:   2016-07-02
 ---
 
-Hash-ordered treaps are a cool kind of binary search tree. They have the neat property that there mapping from ordered sets to hash-ordered treaps is one-to-one and onto. That is, for every ordered set, there’s exactly one valid hash-ordered treap which represents it.
+Hash-ordered treaps are a cool kind of binary search tree. They have the neat property that the mapping from ordered sets to hash-ordered treaps is one-to-one and onto. That is, for every ordered set, there’s exactly one valid hash-ordered treap which represents it.
 
 So what’s a hash-ordered treap? Well, choose your favorite hash function and call it h. A hash-ordered treap is a binary search tree which follows one additional restriction: for every parent and child, h(value of parent) > h(value of child).
 
