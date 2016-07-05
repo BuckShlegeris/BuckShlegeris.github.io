@@ -11,7 +11,7 @@
         <title>Hash-ordered treaps</title>
         
         
-          <description>&lt;p&gt;Hash-ordered treaps are a cool kind of binary search tree. They have the neat property that there mapping from ordered sets to hash-ordered treaps is one-to-one and onto. That is, for every ordered set, there’s exactly one valid hash-ordered treap which represents it.&lt;/p&gt;
+          <description>&lt;p&gt;Hash-ordered treaps are a cool kind of binary search tree. They have the neat property that the mapping from ordered sets to hash-ordered treaps is one-to-one and onto. That is, for every ordered set, there’s exactly one valid hash-ordered treap which represents it.&lt;/p&gt;
 
 </description>
         
