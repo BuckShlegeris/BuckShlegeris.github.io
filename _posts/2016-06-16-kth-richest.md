@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "'Who is the kth richest person with age between x and y'"
+title:  "A data structure for range kth-smallest queries"
 date:   2016-06-16
 ---
 
