@@ -2,6 +2,7 @@
 <html>
 
   <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,7 +29,7 @@
       "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
     });
   </script>
-  <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   <script src="/jquery.js"></script>
   <script type="text/babel" src="/main.js"></script>
   
@@ -45,7 +46,7 @@
       
       <p class="post-meta"><time datetime="1969-12-31T16:00:00-08:00" itemprop="datePublished"></time></p>
 
-      <hr/>
+      <hr>
 
       <h1>Buck Shlegeris</h1>
 
@@ -54,6 +55,27 @@
 <p>Here are some things that I've written recently:</p>
 </div>
 
+
+  <h2><a href="/2016/07/02/poisson.html"> Testing whether two integers are different</a></h2>
+
+  <p class="post-meta"><time datetime="2016-07-02T00:00:00-07:00" itemprop="datePublished">Jul 2, 2016</time></p>
+
+  <div class="shrink-headings">
+    <p>Here is a super simple statistics question whose answer I didn’t know until just now: How do you test whether one integer is different from another?</p>
+
+<p>Like, I do two things and count 3 the first time and 5 the second time. Did I do the same thing both times? I dunno, maybe I did.</p>
+
+<p>But if I counted 20 the first time and 50 the second time, I’m starting to feel like the things are different. And if I counted 100000 one time and 10 the other, the things seem very different indeed.</p>
+
+<p>The right way to formalize this is apparently to use the Poisson distribution family. You treat each count as a measurement of the rate at which one process does something. And then you can do statistical tests to see whether the two different counts seem to come from processes with different rates.</p>
+
+<p>You can see a calculator for this <a href="http://www.evanmiller.org/ab-testing/poisson-means.html">here</a>.</p>
+
+<p>I’m unsettled by how often I accidentally think of really basic-seeming statistics questions which I can’t answer <img class="emoji" title=":pensive:" alt=":pensive:" src="https://assets.github.com/images/icons/emoji/unicode/1f614.png" height="20" width="20" align="absmiddle"></p>
+
+  </div>
+
+  <hr>
 
   <h2><a href="/2016/07/02/hash-ordered-treaps.html"> Hash-ordered treaps</a></h2>
 
@@ -75,7 +97,7 @@ they have similar elements. I first saw this used in <a href="http://arxiv.org/a
 
   </div>
 
-  <hr />
+  <hr>
 
   <h2><a href="/2016/06/30/triplebyte.html"> You should work at Triplebyte</a></h2>
 
@@ -116,7 +138,7 @@ they have similar elements. I first saw this used in <a href="http://arxiv.org/a
 
   </div>
 
-  <hr />
+  <hr>
 
   <h2><a href="/2016/06/22/ctci.html"> Studying for startup interviews with 'Cracking the Coding Interview'</a></h2>
 
@@ -249,9 +271,9 @@ they have similar elements. I first saw this used in <a href="http://arxiv.org/a
 
   </div>
 
-  <hr />
+  <hr>
 
-  <h2><a href="/2016/06/16/kth-richest.html"> 'Who is the kth richest person with age between x and y'</a></h2>
+  <h2><a href="/2016/06/16/kth-richest.html"> A data structure for range kth-smallest queries</a></h2>
 
   <p class="post-meta"><time datetime="2016-06-16T00:00:00-07:00" itemprop="datePublished">Jun 16, 2016</time></p>
 
@@ -349,7 +371,7 @@ they have similar elements. I first saw this used in <a href="http://arxiv.org/a
 
   </div>
 
-  <hr />
+  <hr>
 
   <h2><a href="/2016/06/16/generalized-multi-quickselect.html"> Generalized multi-quickselect</a></h2>
 
@@ -358,7 +380,8 @@ they have similar elements. I first saw this used in <a href="http://arxiv.org/a
   <div class="shrink-headings">
     <p>I’ve been thinking a lot recently about how you find the $latex k$th smallest element in the disjoint union of several data structures.</p>
 
-<h2 id="multi-quickselect-on-data-structures-with-fast-rank">Multi-quickselect on data structures with fast <code class="highlighter-rouge">rank</code></h2>
+<h2 id="multi-quickselect-on-data-structures-with-fast-rank">Multi-quickselect on data structures with fast <code class="highlighter-rouge">rank</code>
+</h2>
 
 <p>Yesterday I <a href="/2016/06/15/multi-sorted-array-quickselect">came up with an algorithm similar to quickselect</a> for the version of this problem where you have multiple sorted arrays.</p>
 
@@ -399,7 +422,8 @@ they have similar elements. I first saw this used in <a href="http://arxiv.org/a
 
 <p>For data structures with $latex O(log(n))$ <code class="highlighter-rouge">rank</code>, I think this is optimal.</p>
 
-<h2 id="allowing-data-structures-without-fast-rank">Allowing data structures without fast <code class="highlighter-rouge">rank</code></h2>
+<h2 id="allowing-data-structures-without-fast-rank">Allowing data structures without fast <code class="highlighter-rouge">rank</code>
+</h2>
 
 <p>How about if some of your data structures are unsorted?</p>
 
@@ -478,14 +502,14 @@ they have similar elements. I first saw this used in <a href="http://arxiv.org/a
         = &\sum_{w=0}^{\log(n)} \sum_{i=0}^{w} i  \\
         = &\sum_{w=0}^{\log(n)} O\left( w^2 \right) \\
         = &O\left(\log(n)^3\right) \end{align} %]]></script>
-      <p><a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+      <p><a href="#fnref:1" class="reversefootnote">↩</a></p>
     </li>
   </ol>
 </div>
 
   </div>
 
-  <hr />
+  <hr>
 
   <h2><a href="/2016/06/15/multi-sorted-array-quickselect.html"> Quickselect on multiple sorted arrays</a></h2>
 
@@ -506,7 +530,8 @@ they have similar elements. I first saw this used in <a href="http://arxiv.org/a
 
 <p>We’re going to need a <code class="highlighter-rouge">rank</code> method, which does a binary search to determine the number of items in an array smaller than its argument <code class="highlighter-rouge">x</code>. Here is such a method:</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># Returns the number of items in arr smaller than x.</span>
+<div class="language-ruby highlighter-rouge">
+<pre class="highlight"><code><span class="c1"># Returns the number of items in arr smaller than x.</span>
 <span class="k">def</span> <span class="nf">rank</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">start_idx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">end_idx</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">)</span>
   <span class="k">return</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">arr</span><span class="p">.</span><span class="nf">empty?</span>
 
@@ -545,7 +570,8 @@ they have similar elements. I first saw this used in <a href="http://arxiv.org/a
 
 <p>Here’s an implementation of that:</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">quickselect_in_sorted_arrays</span><span class="p">(</span><span class="n">arrays</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+<div class="language-ruby highlighter-rouge">
+<pre class="highlight"><code><span class="k">def</span> <span class="nf">quickselect_in_sorted_arrays</span><span class="p">(</span><span class="n">arrays</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
   <span class="k">return</span> <span class="n">arrays</span><span class="p">.</span><span class="nf">first</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">if</span> <span class="n">arrays</span><span class="p">.</span><span class="nf">length</span> <span class="o">==</span> <span class="mi">1</span>
 
   <span class="n">arrays</span><span class="p">.</span><span class="nf">select!</span> <span class="p">{</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="n">x</span><span class="p">.</span><span class="nf">length</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">}</span>
@@ -627,7 +653,7 @@ they have similar elements. I first saw this used in <a href="http://arxiv.org/a
 
   </div>
 
-  <hr />
+  <hr>
 
   <h2><a href="/2016/06/12/quickselect-lemma.html"> Quickselect on an unordered array and an order statistic tree</a></h2>
 
@@ -651,21 +677,30 @@ they have similar elements. I first saw this used in <a href="http://arxiv.org/a
 <p>I’m going to assume that my OSTs have the following methods:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">smallers</code>: returns the left subtree</li>
-  <li><code class="highlighter-rouge">largers</code>: returns the right subtree</li>
-  <li><code class="highlighter-rouge">pivot</code>: returns the value of the root node</li>
-  <li><code class="highlighter-rouge">count</code>: returns the number of items in the node</li>
-  <li><code class="highlighter-rouge">find_kth_smallest(k)</code>: as discussed above</li>
-  <li><code class="highlighter-rouge">rank(x)</code>: finds the number of elements in the OST smaller than <code class="highlighter-rouge">x</code>. This takes $latex O(\log(n))$ in an OST.</li>
-  <li><code class="highlighter-rouge">split_on_left_by_value(x)</code>: returns a new tree with only the items in the OST which are less than <code class="highlighter-rouge">x</code>. If our OSTs are immutable, this only takes $latex\log(n)$ time.</li>
-  <li><code class="highlighter-rouge">split_on_right_by_value(x)</code>: like <code class="highlighter-rouge">split_on_left_by_value</code>, but the other side.</li>
+  <li>
+<code class="highlighter-rouge">smallers</code>: returns the left subtree</li>
+  <li>
+<code class="highlighter-rouge">largers</code>: returns the right subtree</li>
+  <li>
+<code class="highlighter-rouge">pivot</code>: returns the value of the root node</li>
+  <li>
+<code class="highlighter-rouge">count</code>: returns the number of items in the node</li>
+  <li>
+<code class="highlighter-rouge">find_kth_smallest(k)</code>: as discussed above</li>
+  <li>
+<code class="highlighter-rouge">rank(x)</code>: finds the number of elements in the OST smaller than <code class="highlighter-rouge">x</code>. This takes $latex O(\log(n))$ in an OST.</li>
+  <li>
+<code class="highlighter-rouge">split_on_left_by_value(x)</code>: returns a new tree with only the items in the OST which are less than <code class="highlighter-rouge">x</code>. If our OSTs are immutable, this only takes $latex\log(n)$ time.</li>
+  <li>
+<code class="highlighter-rouge">split_on_right_by_value(x)</code>: like <code class="highlighter-rouge">split_on_left_by_value</code>, but the other side.</li>
 </ul>
 
 <h2 id="standard-quickselect">Standard quickselect</h2>
 
 <p>Just for reference, here’s an unoptimized implementation of quickselect. This has average case performance $latex O(n)$.</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># assumes that the list has all unique elements</span>
+<div class="language-ruby highlighter-rouge">
+<pre class="highlight"><code><span class="c1"># assumes that the list has all unique elements</span>
 <span class="c1"># returns the same thing as array.sort[n]</span>
 <span class="k">def</span> <span class="nf">quickselect</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
   <span class="c1"># choose a random pivot</span>
@@ -693,7 +728,8 @@ they have similar elements. I first saw this used in <a href="http://arxiv.org/a
 
 <p>Let’s modify this to also use an OST.</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># OST has size n</span>
+<div class="language-ruby highlighter-rouge">
+<pre class="highlight"><code><span class="c1"># OST has size n</span>
 <span class="c1"># array has size m</span>
 <span class="c1"># this returns the same thing as (array + ost.to_a).sort[k]</span>
 <span class="k">def</span> <span class="nf">double_quickselect_v1</span><span class="p">(</span><span class="n">ost</span><span class="p">,</span> <span class="n">array</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
@@ -721,7 +757,8 @@ they have similar elements. I first saw this used in <a href="http://arxiv.org/a
 
 <p>Instead of using the OST’s pivot, let’s pivot on a randomly selected member of the array, like in normal quickselect. This means that the array is probably going to shrink with every recursive call.</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># OST has size n</span>
+<div class="language-ruby highlighter-rouge">
+<pre class="highlight"><code><span class="c1"># OST has size n</span>
 <span class="c1"># array has size m</span>
 <span class="c1"># this returns the same thing as (array + ost.to_a).sort[k]</span>
 <span class="k">def</span> <span class="nf">double_quickselect_v2</span><span class="p">(</span><span class="n">ost</span><span class="p">,</span> <span class="n">array</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
@@ -800,7 +837,7 @@ they have similar elements. I first saw this used in <a href="http://arxiv.org/a
 
 <p>Then you compare these two inter-tertile ranges. There are three cases: they can intersect, they can be disjoint, or one can be inside the other. In each of these cases, based on your value of $latex k$ you can rule out at least a third of at least one of the two data structures. This is just a massive mess of cases. Here’s a diagram of one way it can play out when the ranges intersect:</p>
 
-<p><img src="/img/ost_diagram.jpg" alt="diagram" /></p>
+<p><img src="/img/ost_diagram.jpg" alt="diagram"></p>
 
 <p>This is a diagram of what happens when one data structure has 30 items and the other has 60 items. It contains all of the different cases for $latex k$. For example, when $latex k$ is 35, then we can discard the upper and lower thirds of the 30 item data structure, and we can discard the upper third of the 60 item data structure.</p>
 
@@ -826,28 +863,7 @@ they have similar elements. I first saw this used in <a href="http://arxiv.org/a
 
   </div>
 
-  <hr />
-
-  <h2><a href="/2016/06/02/say.html"> Not thinking of things I can't say</a></h2>
-
-  <p class="post-meta"><time datetime="2016-06-02T00:00:00-07:00" itemprop="datePublished">Jun 2, 2016</time></p>
-
-  <div class="shrink-headings">
-    <p>I noticed recently that I usually don’t think of thoughts which I’m not going to be able to say for political correctness reasons. Occasionally when I talk to people who don’t care about offending progressives, they say really insightful things which I would never have thought of on my own, because my brain just blocks those thoughts out before I can think them.</p>
-
-<p>This is annoying, because I’d rather think of things like that and not say them publicly than not think of them at all.</p>
-
-<p>I think the main cause of this is that I do a lot of my thinking while talking to people about things, and if certain kinds of discussion are stifled, I don’t get practice thinking about them.</p>
-
-<p>This has a few implications. Firstly, it means that efforts to stifle offensive thoughts concern me somewhat more than they did previously, because I am more concerned that restricting speech restricts thoughts. Secondly, it makes me think more that private spaces for conversations are important. Third, it makes me really glad for circle-jerking EAs who are privately enjoy biting bullets and saying purposefully controversial things—I’d previously thought of that as harmless fun, but now I think that it might have the important function of countering the natural push towards orthodoxy.</p>
-
-<hr />
-
-<p><a href="https://www.facebook.com/bshlgrs/posts/10207784018613166">view comments on Facebook</a></p>
-
-  </div>
-
-  <hr />
+  <hr>
 
 
 <p><a href="/posts">All posts</a></p>
@@ -869,7 +885,7 @@ $(function() {
 </script>
 
 
-      <hr/>
+      <hr>
 
 <div class="PageNavigation">
   
@@ -880,10 +896,11 @@ $(function() {
     <div class="col-sm-3 col-sm-offset-1">
       <img src="https://scontent-sjc2-1.xx.fbcdn.net/hphotos-xtp1/t31.0-8/11154688_10205041372168719_3725604149367069581_o.jpg" class="img-responsive" alt="Picture of Buck">
       
-<hr/>
+<hr>
 <a class="arrow" href="/"><strong>Buck</strong></a>
 <ul>
-  <li><a class="arrow" href="/about">About</a>
+  <li>
+<a class="arrow" href="/about">About</a>
     <ul>
       <li><a href="http://triplebyte.com?ref=bshlgrs.github.io">Triplebyte</a></li>
     </ul>
@@ -906,8 +923,13 @@ $(function() {
   </li>
   <li><a class="arrow external" href="https://docs.google.com/forms/d/1SOombLPHlKIMut-wJzIRg7DGdJjh9PJV4yAkrmTXKn4/viewform?usp=send_form">Anonymous feedback</a></li>
 
-  <li><a href="/posts" class="arrow">Blog</a>
+  <li>
+<a href="/posts" class="arrow">Blog</a>
     <ul>
+      
+        <li>
+          <a class="arrow" href="/2016/07/02/poisson.html">Testing whether two integers are different</a>
+        </li>
       
         <li>
           <a class="arrow" href="/2016/07/02/hash-ordered-treaps.html">Hash-ordered treaps</a>
@@ -922,7 +944,7 @@ $(function() {
         </li>
       
         <li>
-          <a class="arrow" href="/2016/06/16/kth-richest.html">'Who is the kth richest person with age between x and y'</a>
+          <a class="arrow" href="/2016/06/16/kth-richest.html">A data structure for range kth-smallest queries</a>
         </li>
       
         <li>
@@ -935,10 +957,6 @@ $(function() {
       
         <li>
           <a class="arrow" href="/2016/06/12/quickselect-lemma.html">Quickselect on an unordered array and an order statistic tree</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/06/02/say.html">Not thinking of things I can't say</a>
         </li>
       
     </ul>
@@ -973,7 +991,7 @@ $(function() {
         <ul class="social-media-list">
           
           <li>
-            <a href="https://github.com/bshlgrs"><span class="icon icon--github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+            <a href="https://github.com/bshlgrs"><span class="icon icon--github"><svg viewbox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"></path></svg>
 </span><span class="username">bshlgrs</span></a>
 
           </li>
@@ -981,7 +999,7 @@ $(function() {
 
           
           <li>
-            <a href="https://twitter.com/bshlgrs"><span class="icon icon--twitter"><svg viewBox="0 0 16 16"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+            <a href="https://twitter.com/bshlgrs"><span class="icon icon--twitter"><svg viewbox="0 0 16 16"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"></path></svg>
 </span><span class="username">bshlgrs</span></a>
 
           </li>
@@ -1014,4 +1032,3 @@ $(function() {
 </script>
 
 </html>
-

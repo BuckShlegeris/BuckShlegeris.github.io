@@ -8,6 +8,19 @@
     <atom:link href="http://bshlgrs.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Testing whether two integers are different</title>
+        
+        
+          <description>&lt;p&gt;Here is a super simple statistics question whose answer I didn’t know until just now: How do you test whether one integer is different from another?&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sat, 02 Jul 2016 00:00:00 -0700</pubDate>
+        <link>http://bshlgrs.github.io/2016/07/02/poisson.html</link>
+        <guid isPermaLink="true">http://bshlgrs.github.io/2016/07/02/poisson.html</guid>
+      </item>
+    
+      <item>
         <title>Hash-ordered treaps</title>
         
         
@@ -47,7 +60,7 @@
       </item>
     
       <item>
-        <title>&#39;Who is the kth richest person with age between x and y&#39;</title>
+        <title>A data structure for range kth-smallest queries</title>
         
         
           <description>&lt;p&gt;Suppose I want to maintain a set of people where each has an age and a wealth. I want to be able to quickly insert people, delete people, and answer queries of the form “find the $latex k$th richest person whose age is between $latex x$ and $latex y$”.&lt;/p&gt;
@@ -122,19 +135,6 @@
         <pubDate>Sun, 29 May 2016 00:00:00 -0700</pubDate>
         <link>http://bshlgrs.github.io/2016/05/29/explicit.html</link>
         <guid isPermaLink="true">http://bshlgrs.github.io/2016/05/29/explicit.html</guid>
-      </item>
-    
-      <item>
-        <title>Flinching away from hard things</title>
-        
-        
-          <description>&lt;p&gt;I have a strong reflex to not do complicated things when I’m writing code—I flinch away and try really hard to avoid them. I think this reflex often serves me well, because complicated code is a pain to maintain and in real life you usually don’t need it. When I watch other people code, I often see them start down a complicated path to solve a problem, and then persevere through it. When faced with the same problems as them, I’m much more inclined to start down a complicated path, then realize it’s going to be complicated and reflexively give up. Most problems that I run across actually have relatively simple solutions, so this serves me well: I end up flailing for longer at the start, but then I end up with simpler code than I would have had otherwise.&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Sun, 29 May 2016 00:00:00 -0700</pubDate>
-        <link>http://bshlgrs.github.io/2016/05/29/flinching.html</link>
-        <guid isPermaLink="true">http://bshlgrs.github.io/2016/05/29/flinching.html</guid>
       </item>
     
   </channel>
