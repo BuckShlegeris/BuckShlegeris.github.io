@@ -474,11 +474,3 @@ h2 code {
 
 h3 code {
   font-size: 20px; }
-
-.markdownify ul {
-  list-style: none;
-  margin-left: 10px; }
-.markdownify ul > li {
-  text-indent: -5px; }
-.markdownify ul > li:before {
-  content: "- "; }

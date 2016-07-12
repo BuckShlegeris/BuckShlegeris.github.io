@@ -85,16 +85,3 @@ h3 {
 .markdownify h3::before {
 }
 
-.markdownify {
-  ul {
-    list-style: none;
-    margin-left: 10px;
-  }
-
-  ul > li {
-    text-indent: -5px;
-  }
-  ul > li:before {
-    content: "- ";
-  }
-}
