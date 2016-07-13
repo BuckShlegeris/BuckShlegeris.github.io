@@ -4,6 +4,8 @@ title:  "Pictures of me"
 date:  ""
 ---
 
+![talking to Scott](https://scontent-sjc2-1.xx.fbcdn.net/t31.0-8/12370803_10206581026579117_2867162651575631923_o.jpg)
+
 ![patriotic 2](https://scontent-sjc2-1.xx.fbcdn.net/t31.0-0/p600x600/13403330_10207817262244236_3283251038596284765_o.jpg)
 
 ![patriotic](https://scontent-sjc2-1.xx.fbcdn.net/t31.0-0/p480x480/13391405_10207800227978390_7565112647076166125_o.jpg)
