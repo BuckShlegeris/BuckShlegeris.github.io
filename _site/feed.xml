@@ -8,6 +8,19 @@
     <atom:link href="http://bshlgrs.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>SMS vs email responsiveness</title>
+        
+        
+          <description>&lt;p&gt;Here’s something I’ve learned recently: People are waaaaay more responsive to SMS than email. If you need to get a quick short response from someone, you should definitely text them.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sat, 02 Jul 2016 00:00:00 -0700</pubDate>
+        <link>http://bshlgrs.github.io/2016/07/02/sms.html</link>
+        <guid isPermaLink="true">http://bshlgrs.github.io/2016/07/02/sms.html</guid>
+      </item>
+    
+      <item>
         <title>Testing whether two integers are different</title>
         
         
@@ -122,19 +135,6 @@
         <pubDate>Thu, 02 Jun 2016 00:00:00 -0700</pubDate>
         <link>http://bshlgrs.github.io/2016/06/02/say.html</link>
         <guid isPermaLink="true">http://bshlgrs.github.io/2016/06/02/say.html</guid>
-      </item>
-    
-      <item>
-        <title>Optimize dating for non-interference with platonic relationships</title>
-        
-        
-          <description>&lt;p&gt;[content warning—I make a lot of claims that certain ways of hitting on people are much better than other ways. If you have a tendency to freak out about whether you’re a terrible person for being sexually attracted to people, maybe don’t read this.]&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Sun, 29 May 2016 00:00:00 -0700</pubDate>
-        <link>http://bshlgrs.github.io/2016/05/29/explicit.html</link>
-        <guid isPermaLink="true">http://bshlgrs.github.io/2016/05/29/explicit.html</guid>
       </item>
     
   </channel>
