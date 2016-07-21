@@ -8,6 +8,19 @@
     <atom:link href="http://bshlgrs.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Terse notes on graph algorithms</title>
+        
+        
+          <description>&lt;script src=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js&quot; integrity=&quot;sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
+
+</description>
+        
+        <pubDate>Sat, 02 Jul 2016 00:00:00 -0700</pubDate>
+        <link>http://bshlgrs.github.io/2016/07/02/graph.html</link>
+        <guid isPermaLink="true">http://bshlgrs.github.io/2016/07/02/graph.html</guid>
+      </item>
+    
+      <item>
         <title>SMS vs email responsiveness</title>
         
         
@@ -122,19 +135,6 @@
         <pubDate>Sun, 12 Jun 2016 00:00:00 -0700</pubDate>
         <link>http://bshlgrs.github.io/2016/06/12/quickselect-lemma.html</link>
         <guid isPermaLink="true">http://bshlgrs.github.io/2016/06/12/quickselect-lemma.html</guid>
-      </item>
-    
-      <item>
-        <title>Not thinking of things I can&#39;t say</title>
-        
-        
-          <description>&lt;p&gt;I noticed recently that I usually don’t think of thoughts which I’m not going to be able to say for political correctness reasons. Occasionally when I talk to people who don’t care about offending progressives, they say really insightful things which I would never have thought of on my own, because my brain just blocks those thoughts out before I can think them.&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Thu, 02 Jun 2016 00:00:00 -0700</pubDate>
-        <link>http://bshlgrs.github.io/2016/06/02/say.html</link>
-        <guid isPermaLink="true">http://bshlgrs.github.io/2016/06/02/say.html</guid>
       </item>
     
   </channel>
