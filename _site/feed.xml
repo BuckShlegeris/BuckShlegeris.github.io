@@ -89,7 +89,7 @@
         <title>A data structure for range kth-smallest queries</title>
         
         
-          <description>&lt;p&gt;Suppose I want to maintain a set of people where each has an age and a wealth. I want to be able to quickly insert people, delete people, and answer queries of the form “find the $latex k$th richest person whose age is between $latex x$ and $latex y$”.&lt;/p&gt;
+          <description>&lt;p&gt;Suppose I want to maintain a set of people where each has an age and a wealth. I want to be able to quickly insert people, delete people, and answer queries of the form “find the $l k$th richest person whose age is between $l x$ and $l y$”.&lt;/p&gt;
 
 </description>
         
@@ -102,7 +102,7 @@
         <title>Generalized multi-quickselect</title>
         
         
-          <description>&lt;p&gt;I’ve been thinking a lot recently about how you find the $latex k$th smallest element in the disjoint union of several data structures.&lt;/p&gt;
+          <description>&lt;p&gt;I’ve been thinking a lot recently about how you find the $l k$th smallest element in the disjoint union of several data structures.&lt;/p&gt;
 
 </description>
         

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Generalized multi-quickselect</title>
-  <meta name="description" content="I’ve been thinking a lot recently about how you find the $latex k$th smallest element in the disjoint union of several data structures.">
+  <meta name="description" content="I’ve been thinking a lot recently about how you find the $l k$th smallest element in the disjoint union of several data structures.">
 
 
   <link rel="stylesheet" href="/bootstrap.css">
@@ -18,7 +18,7 @@
     MathJax.Hub.Config({
       jax: ["input/TeX", "output/HTML-CSS"],
       tex2jax: {
-        inlineMath: [ ['$latex', '$'] ],
+        inlineMath: [ ['$l', '$'] ],
         displayMath: [ ['$$', '$$']],
         processEscapes: true,
         skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
@@ -46,15 +46,15 @@
 
       <hr/>
 
-      <p>I’ve been thinking a lot recently about how you find the $latex k$th smallest element in the disjoint union of several data structures.</p>
+      <p>I’ve been thinking a lot recently about how you find the $l k$th smallest element in the disjoint union of several data structures.</p>
 
 <h2 id="multi-quickselect-on-data-structures-with-fast-rank">Multi-quickselect on data structures with fast <code class="highlighter-rouge">rank</code></h2>
 
 <p>Yesterday I <a href="/2016/06/15/multi-sorted-array-quickselect">came up with an algorithm similar to quickselect</a> for the version of this problem where you have multiple sorted arrays.</p>
 
-<p>But this algorithm also works on any other data structure which supports the <code class="highlighter-rouge">rank</code> method in $latex O(\log(n))$ time.</p>
+<p>But this algorithm also works on any other data structure which supports the <code class="highlighter-rouge">rank</code> method in $l O(\log(n))$ time.</p>
 
-<p>On a collection of data structures with a total of $latex O(t)$ elements, the modified quickselect algorithm involves $latex O(log(t))$ iterations. In each iteration, the rank of a random element is computed in every data structure.</p>
+<p>On a collection of data structures with a total of $l O(t)$ elements, the modified quickselect algorithm involves $l O(log(t))$ iterations. In each iteration, the rank of a random element is computed in every data structure.</p>
 
 <p>So the total time taken is (time to calculate rank in every data structure) * (log of total number of elements).</p>
 
@@ -64,36 +64,36 @@
     <th>Time complexity</th>
   </tr>
   <tr>
-    <td>$latex m$ sorted arrays of average length $latex n$</td>
-    <td>$latex \log(m \cdot n) \cdot m \cdot \log(n)$</td>
+    <td>$l m$ sorted arrays of average length $l n$</td>
+    <td>$l \log(m \cdot n) \cdot m \cdot \log(n)$</td>
   </tr>
     <tr>
-    <td>$latex m$ sorted arrays of total length $latex t$</td>
-    <td>$latex \log(t) \cdot m \cdot \log(\frac tm)$</td>
+    <td>$l m$ sorted arrays of total length $l t$</td>
+    <td>$l \log(t) \cdot m \cdot \log(\frac tm)$</td>
   </tr>
   <tr>
-    <td>Two sorted arrays, of lengths $latex a$ and $latex b$</td>
-    <td>$latex \log(a + b)^2$</td>
+    <td>Two sorted arrays, of lengths $l a$ and $l b$</td>
+    <td>$l \log(a + b)^2$</td>
   </tr>
   <tr>
-    <td>$latex m$ order statistic trees of average size $latex n$</td>
-    <td>$latex \log(m \cdot n) \cdot m \cdot \log(n)$</td>
+    <td>$l m$ order statistic trees of average size $l n$</td>
+    <td>$l \log(m \cdot n) \cdot m \cdot \log(n)$</td>
   </tr>
   <tr>
-    <td>$latex \log(n)$ sorted arrays of sizes $latex [1, 2, 4, ...n]$</td>
-    <td>$latex \log(n)^3$ </td>
+    <td>$l \log(n)$ sorted arrays of sizes $l [1, 2, 4, ...n]$</td>
+    <td>$l \log(n)^3$ </td>
   </tr>
 </table>
 
 <p>(See <sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> for more details on the exponentially shrinking arrays.)</p>
 
-<p>For data structures with $latex O(log(n))$ <code class="highlighter-rouge">rank</code>, I think this is optimal.</p>
+<p>For data structures with $l O(log(n))$ <code class="highlighter-rouge">rank</code>, I think this is optimal.</p>
 
 <h2 id="allowing-data-structures-without-fast-rank">Allowing data structures without fast <code class="highlighter-rouge">rank</code></h2>
 
 <p>How about if some of your data structures are unsorted?</p>
 
-<p>This algorithm needs to be modified, because there’s no particular guarantee that any data structure gets smaller on a particular iteration. This is okay in cases where <code class="highlighter-rouge">rank</code> is cheap enough that the asymptotic complexity isn’t affected by having a data structure which stays at its original size for most of the runtime of the algorithm. But on an unsorted array, <code class="highlighter-rouge">rank</code> takes $latex O(n)$ and a key part of the argument for the good runtime of quickselect is that the unordered array usually gets smaller every time you call <code class="highlighter-rouge">rank</code>.</p>
+<p>This algorithm needs to be modified, because there’s no particular guarantee that any data structure gets smaller on a particular iteration. This is okay in cases where <code class="highlighter-rouge">rank</code> is cheap enough that the asymptotic complexity isn’t affected by having a data structure which stays at its original size for most of the runtime of the algorithm. But on an unsorted array, <code class="highlighter-rouge">rank</code> takes $l O(n)$ and a key part of the argument for the good runtime of quickselect is that the unordered array usually gets smaller every time you call <code class="highlighter-rouge">rank</code>.</p>
 
 <p>This issue is why my attempt at an <a href="/2016/06/12/quickselect-lemma.html">optimal algorithm for selection on an OST and an unsorted array</a> was so complex.</p>
 
@@ -101,7 +101,7 @@
 
 <h3 id="non-optimal-solution">Non-optimal solution</h3>
 
-<p>When I have a collection of data structures such that <code class="highlighter-rouge">rank</code> takes time $latex O(r)$ and <code class="highlighter-rouge">select</code> takes time $latex O(s)$, I can run <a href="/2016/06/12/quickselect-lemma.html">my <code class="highlighter-rouge">double_quickselect_v2</code> algorithm</a> on an unordered array of length $latex n$ and that collection, with query time $latex O(\log(n) \cdot r + s)$. For example, this algorithm can deal with a sorted array of size $latex m$ and an unsorted array of size $latex n$ in overall $latex O(\log(n) \cdot \log(m) + \log(m)) = O(\log(m)\cdot\log(n))$.</p>
+<p>When I have a collection of data structures such that <code class="highlighter-rouge">rank</code> takes time $l O(r)$ and <code class="highlighter-rouge">select</code> takes time $l O(s)$, I can run <a href="/2016/06/12/quickselect-lemma.html">my <code class="highlighter-rouge">double_quickselect_v2</code> algorithm</a> on an unordered array of length $l n$ and that collection, with query time $l O(\log(n) \cdot r + s)$. For example, this algorithm can deal with a sorted array of size $l m$ and an unsorted array of size $l n$ in overall $l O(\log(n) \cdot \log(m) + \log(m)) = O(\log(m)\cdot\log(n))$.</p>
 
 <h3 id="what-an-optimal-solution-might-look-like">What an optimal solution might look like</h3>
 
@@ -109,7 +109,7 @@
 
 <h2 id="summary">Summary</h2>
 
-<p>I have a bunch of data structures and want to find the $latex k$th smallest item in their union. How long will it take me?</p>
+<p>I have a bunch of data structures and want to find the $l k$th smallest item in their union. How long will it take me?</p>
 
 <table class="table" id="table1">
   <tr>
@@ -118,34 +118,34 @@
     <th>Time complexity</th>
   </tr>
   <tr>
-    <td>Unsorted array of size $latex n$</td>
+    <td>Unsorted array of size $l n$</td>
     <td>Median of medians</td>
-    <td>Worst case $latex O(n)$</td>
+    <td>Worst case $l O(n)$</td>
   </tr>
   <tr>
-    <td>Sorted array of size $latex n$</td>
+    <td>Sorted array of size $l n$</td>
     <td>Binary search</td>
-    <td>Worst case $latex O(\log(n))$</td>
+    <td>Worst case $l O(\log(n))$</td>
   </tr>
   <tr>
     <td>Order statistic tree</td>
     <td>its native `find` implementation</td>
-    <td>Worst case $latex O(\log(n))$</td>
+    <td>Worst case $l O(\log(n))$</td>
   </tr>
   <tr>
-    <td>A bunch of unsorted data structures, of total size $latex O(n)$</td>
+    <td>A bunch of unsorted data structures, of total size $l O(n)$</td>
     <td>Stick it all in an array then call median of medians</td>
-    <td>Worst case $latex O(\log(n))$</td>
+    <td>Worst case $l O(\log(n))$</td>
   </tr>
   <tr>
-    <td>$latex m$ data structures which support <code>rank</code> in $latex O(\log(n))$, with maximum size $latex O(n)$</td>
+    <td>$l m$ data structures which support <code>rank</code> in $l O(\log(n))$, with maximum size $l O(n)$</td>
     <td><a href="/2016/06/15/multi-sorted-array-quickselect.html">Multi sorted array quickselect</a></td>
-    <td>Average case $latex O(m \cdot \log(n) \cdot \log(m \cdot n))$</td>
+    <td>Average case $l O(m \cdot \log(n) \cdot \log(m \cdot n))$</td>
   </tr>
   <tr>
-    <td>$latex m$ data structures which support <code>rank</code> in $latex O(\log(n))$, with maximum size $latex O(n)$, and also a bunch of unsorted data with total size $latex u$</td>
+    <td>$l m$ data structures which support <code>rank</code> in $l O(\log(n))$, with maximum size $l O(n)$, and also a bunch of unsorted data with total size $l u$</td>
     <td>"Non-optimal solution" as described above</td>
-    <td>Average case $latex O(\log(u) \cdot m \cdot \log(n) +\\ m \cdot \log(n) \cdot \log(m \cdot n))$</td>
+    <td>Average case $l O(\log(u) \cdot m \cdot \log(n) +\\ m \cdot \log(n) \cdot \log(m \cdot n))$</td>
   </tr>
 </table>
 
@@ -157,11 +157,11 @@
   <ol>
     <li id="fn:1">
 
-      <p>There are a total of $latex 2\cdot n - 1 = O(n)$ elements in those $latex n$ arrays. The inner loop will happen $latex \log(n)$ times.</p>
+      <p>There are a total of $l 2\cdot n - 1 = O(n)$ elements in those $l n$ arrays. The inner loop will happen $l \log(n)$ times.</p>
 
-      <p>Each iteration will need to do a binary search within its array. On the first iteration the time taken will be $latex \sum_{i=0}^{\log(n)} \log(2^i) = O(\log(n)^2)$. Further iterations obviously won’t be slower than that. So we can bound above this runtime by $latex \log(n)$.</p>
+      <p>Each iteration will need to do a binary search within its array. On the first iteration the time taken will be $l \sum_{i=0}^{\log(n)} \log(2^i) = O(\log(n)^2)$. Further iterations obviously won’t be slower than that. So we can bound above this runtime by $l \log(n)$.</p>
 
-      <p>We can also give a proof sketch for bounding it below. Suppose that all our arrays have roughly the same distribution, so that on the $latex w$th iteration, every array has a size of only $latex 2^{-w}$ its original size.</p>
+      <p>We can also give a proof sketch for bounding it below. Suppose that all our arrays have roughly the same distribution, so that on the $l w$th iteration, every array has a size of only $l 2^{-w}$ its original size.</p>
 
       <script type="math/tex; mode=display">% <![CDATA[
 \begin{align} &\sum_{w=0}^{\log(n)} \sum_{i=0}^{\log(n)} \log\left(max\left(2^i \cdot 2^{-w}, 0\right)\right)  \\

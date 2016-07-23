@@ -18,7 +18,7 @@
     MathJax.Hub.Config({
       jax: ["input/TeX", "output/HTML-CSS"],
       tex2jax: {
-        inlineMath: [ ['$latex', '$'] ],
+        inlineMath: [ ['$l', '$'] ],
         displayMath: [ ['$$', '$$']],
         processEscapes: true,
         skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
@@ -46,7 +46,7 @@
 
       <hr/>
 
-      <p>Suppose I want to maintain a set of people where each has an age and a wealth. I want to be able to quickly insert people, delete people, and answer queries of the form “find the $latex k$th richest person whose age is between $latex x$ and $latex y$”.</p>
+      <p>Suppose I want to maintain a set of people where each has an age and a wealth. I want to be able to quickly insert people, delete people, and answer queries of the form “find the $l k$th richest person whose age is between $l x$ and $l y$”.</p>
 
 <p>Here is a summary of solutions to different variants on this question:</p>
 
@@ -61,23 +61,23 @@
   <tr>
     <td>No insertion or deletion, one-sided interval</td>
     <td><a href="http://stackoverflow.com/a/31162190/1360429">Persistent binary search trees</a></td>
-    <td>$latex n \cdot \log(n)$</td>
+    <td>$l n \cdot \log(n)$</td>
     <td>N/A</td>
-    <td>$latex \log(n)$</td>
+    <td>$l \log(n)$</td>
   </tr>
   <tr>
     <td>No insertion or deletion, two-sided interval</td>
     <td><a href="http://stackoverflow.com/questions/26296624/order-statistic-on-intervals/26299986#26299986">Persistent binary search trees</a></td>
-    <td>$latex n \cdot \log(n)$</td>
+    <td>$l n \cdot \log(n)$</td>
     <td>N/A</td>
-    <td>$latex \log(n)$</td>
+    <td>$l \log(n)$</td>
   </tr>
   <tr>
     <td>Insertion, deletion, two-sided interval</td>
     <td>My answer, presented here</td>
-    <td>$latex n \cdot \log(n)$</td>
-    <td>$latex \log^2(n)$</td>
-    <td>$latex \log^3(n)$</td>
+    <td>$l n \cdot \log(n)$</td>
+    <td>$l \log^2(n)$</td>
+    <td>$l \log^3(n)$</td>
   </tr>
 </table>
 
@@ -85,57 +85,57 @@
 
 <p>The other day, I ran across <a href="http://stackoverflow.com/a/26299986/1360429">this StackOverflow answer</a>, which presents an answer which I modified to make a full solution, which I’ll present here.</p>
 
-<p>My solution allows insertion and deletion in $latex O(\log^2(n))$, and allows the query in $latex O(\log^3(n))$.</p>
+<p>My solution allows insertion and deletion in $l O(\log^2(n))$, and allows the query in $l O(\log^3(n))$.</p>
 
 <h2 id="solution">Solution</h2>
 
 <p>Store an <a href="https://en.wikipedia.org/wiki/Order_statistic_tree">order statistic tree</a> ordered on age. At every node, store a pointer to an auxiliary order statistic tree, of all of that node’s descendants ordered on income.</p>
 
-<p>At every node, this requires an extra amount of memory which is linear in the number of descendants of that node. So this means that the tree will take $latex O(n\cdot \log(n))$ memory overall.</p>
+<p>At every node, this requires an extra amount of memory which is linear in the number of descendants of that node. So this means that the tree will take $l O(n\cdot \log(n))$ memory overall.</p>
 
 <h3 id="query">Query</h3>
 
 <p>You might want to go read <a href="http://stackoverflow.com/a/26299986/1360429">that second StackOverflow answer</a> again, because this algorithm is similar to that one, and it’s easier to understand the algorithm on arrays.</p>
 
-<p>The query is similar to how queries across ranges of an augmented BST usually work: we start out by finding the set of nodes whose descendants contain the whole subsection of the tree that you care about. There will be $latex \log(n)$ of these nodes, and finding all of them takes $latex \log(n)$ time.</p>
+<p>The query is similar to how queries across ranges of an augmented BST usually work: we start out by finding the set of nodes whose descendants contain the whole subsection of the tree that you care about. There will be $l \log(n)$ of these nodes, and finding all of them takes $l \log(n)$ time.</p>
 
-<p>We end up with $latex \log(n)$ OSTs of maximum size $latex O(n)$, and we want to find the $latex k$th smallest item in their disjoint union.</p>
+<p>We end up with $l \log(n)$ OSTs of maximum size $l O(n)$, and we want to find the $l k$th smallest item in their disjoint union.</p>
 
-<p>As discussed <a href="/2016/06/16/generalized-multi-quickselect.html">here</a>, we can solve that query in $latex O\left(\log(n)^3\right)$.</p>
+<p>As discussed <a href="/2016/06/16/generalized-multi-quickselect.html">here</a>, we can solve that query in $l O\left(\log(n)^3\right)$.</p>
 
-<p>Alternatively, if your $latex k$ is small, you can directly traverse the trees to find the correct answer, which takes $latex k \log(n) + n$ time.</p>
+<p>Alternatively, if your $l k$ is small, you can directly traverse the trees to find the correct answer, which takes $l k \log(n) + n$ time.</p>
 
 <h3 id="updates">Updates</h3>
 
 <p>When I insert a new value into my set, I need to update the auxiliary OSTs of all of the ancestor nodes of my new node.</p>
 
-<p>Usually, it’s easy to argue that maintaining auxiliary data in your OST is fast, because usually your auxiliary data is something like “the sum of your descendants” or something which is $latex O(1)$. In this data structure, the efficiency argument is somewhat more complicated.</p>
+<p>Usually, it’s easy to argue that maintaining auxiliary data in your OST is fast, because usually your auxiliary data is something like “the sum of your descendants” or something which is $l O(1)$. In this data structure, the efficiency argument is somewhat more complicated.</p>
 
-<p>Inserting a single item into an OST takes $latex O(\log(n))$ time. But making the OST from scratch takes $latex O(n)$. This is concerning because it means that tree rotations are potentially extremely expensive. If I had to do tree rotations all the way up from my new node to the root of the tree every single insertion, then insertion would take linear time.</p>
+<p>Inserting a single item into an OST takes $l O(\log(n))$ time. But making the OST from scratch takes $l O(n)$. This is concerning because it means that tree rotations are potentially extremely expensive. If I had to do tree rotations all the way up from my new node to the root of the tree every single insertion, then insertion would take linear time.</p>
 
-<p>Luckily, we can decide that our OST is balanced using the red-black tree rules. Insertion in a red-black tree only involves amortized $latex O(1)$ rotations. (See <a href="web.stanford.edu/class/cs166/lectures/05/Small05.pdf">here</a> for an explanation of this.)</p>
+<p>Luckily, we can decide that our OST is balanced using the red-black tree rules. Insertion in a red-black tree only involves amortized $l O(1)$ rotations. (See <a href="web.stanford.edu/class/cs166/lectures/05/Small05.pdf">here</a> for an explanation of this.)</p>
 
-<p>The node at the lowest level will have to totally regenerate its auxiliary OST every insertion, of course. Its parent will have to do a tree rotation which requires it to totally regenerate its auxiliary OST every second insertion. Its grandparent will need to do that $latex \frac14$ of the time. And then $latex \frac18$ and so on.</p>
+<p>The node at the lowest level will have to totally regenerate its auxiliary OST every insertion, of course. Its parent will have to do a tree rotation which requires it to totally regenerate its auxiliary OST every second insertion. Its grandparent will need to do that $l \frac14$ of the time. And then $l \frac18$ and so on.</p>
 
-<p>At height $latex h$ in the tree, defining the leaves to be $latex h=0$, the amortized cost of insertion is going to be $latex O(\log(2^h)) = O(h)$ for insertion plus $latex O\left(\frac{2^h}{2^h}\right) = O(1)$ for totally recreating the OST after a rebalance, for a total cost of $latex O(h)$.</p>
+<p>At height $l h$ in the tree, defining the leaves to be $l h=0$, the amortized cost of insertion is going to be $l O(\log(2^h)) = O(h)$ for insertion plus $l O\left(\frac{2^h}{2^h}\right) = O(1)$ for totally recreating the OST after a rebalance, for a total cost of $l O(h)$.</p>
 
 <p>The total time required for updating all the auxiliary OSTs after an insert is therefore:</p>
 
 <script type="math/tex; mode=display">O\left(\sum_{h=0}^{log(n)} h \right)= O\left(\log(n)^2\right)</script>
 
-<p>Updating or deleting a node also takes $latex O\left(\log(n)^2\right)$, for the same reason.</p>
+<p>Updating or deleting a node also takes $l O\left(\log(n)^2\right)$, for the same reason.</p>
 
 <h2 id="variations">Variations</h2>
 
-<h3 id="limited-latex-k">limited $latex k$</h3>
+<h3 id="limited-l-k">limited $l k$</h3>
 
-<p>If $latex k$ is always going to fixed below a particular limit $latex l$–say, you know ahead of time that you’re never going to need to know farther back than the 50th richest person between two ages–each node in your main OST can store a smaller auxiliary tree with only $latex l$ elements in it.</p>
+<p>If $l k$ is always going to fixed below a particular limit $l l$–say, you know ahead of time that you’re never going to need to know farther back than the 50th richest person between two ages–each node in your main OST can store a smaller auxiliary tree with only $l l$ elements in it.</p>
 
-<p>This reduces memory requirements to $latex O(n \cdot l)$.</p>
+<p>This reduces memory requirements to $l O(n \cdot l)$.</p>
 
-<p><strong>Queries</strong>: Using the algorithm for OSTs in <a href="/2016/06/16/generalized-multi-quickselect.html#table1">this table</a>, the cost is now $latex \log(\log(n) \cdot l) \cdot \log(n) \cdot \log(l)$, which looks like $latex \log(\log(n)) \cdot \log(n) \cdot \log(l)$ as $latex n$ grows.</p>
+<p><strong>Queries</strong>: Using the algorithm for OSTs in <a href="/2016/06/16/generalized-multi-quickselect.html#table1">this table</a>, the cost is now $l \log(\log(n) \cdot l) \cdot \log(n) \cdot \log(l)$, which looks like $l \log(\log(n)) \cdot \log(n) \cdot \log(l)$ as $l n$ grows.</p>
 
-<p><strong>Updates</strong>: Every ancestor needs to do $latex \log(l)$ work now, instead of $latex \log(n)$, but you still have $latex \log(n)$ ancestors. So update takes overall $latex \log(n)\log(l)$ time.</p>
+<p><strong>Updates</strong>: Every ancestor needs to do $l \log(l)$ work now, instead of $l \log(n)$, but you still have $l \log(n)$ ancestors. So update takes overall $l \log(n)\log(l)$ time.</p>
 
 
       <hr/>

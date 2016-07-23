@@ -6,13 +6,13 @@ date:   2016-06-15
 
 **Edit: Thanks heaps to [Evgeny Kluev](http://stackoverflow.com/users/1009831/evgeny-kluev), the author of that original StackOverflow answer, for noticing that I'd made a mistake in the total time complexity calculation.**
 
-**Edit 2016-06-18: I'd orignally described this with arrays of maximum length $latex n$. But it works just as well with arrays of average length $latex n$, which is a stronger statement, so I'd rather use this one.**
+**Edit 2016-06-18: I'd orignally described this with arrays of maximum length $l n$. But it works just as well with arrays of average length $l n$, which is a stronger statement, so I'd rather use this one.**
 
-Suppose I have $latex m$ sorted arrays of average length $latex n$. How quickly can I search to find the $latex k$th item in them?
+Suppose I have $l m$ sorted arrays of average length $l n$. How quickly can I search to find the $l k$th item in them?
 
-[This StackOverflow answer](http://stackoverflow.com/a/26299986/1360429) mentions this problem offhandedly, but doesn't clearly explain the algorithm, and it implies that the answer it's thinking of is $latex O(m^2 \log(n)^2)$.
+[This StackOverflow answer](http://stackoverflow.com/a/26299986/1360429) mentions this problem offhandedly, but doesn't clearly explain the algorithm, and it implies that the answer it's thinking of is $l O(m^2 \log(n)^2)$.
 
-We can do better. You can modify quickselect to get an algorithm which takes $latex O(m \log(n) \log(m \cdot n))$ average case, and I suspect you can adapt [median of medians](https://en.wikipedia.org/wiki/Median_of_medians) to get that time in the worst case.
+We can do better. You can modify quickselect to get an algorithm which takes $l O(m \log(n) \log(m \cdot n))$ average case, and I suspect you can adapt [median of medians](https://en.wikipedia.org/wiki/Median_of_medians) to get that time in the worst case.
 
 The quickselect adaptation is pretty simple. We're going to be do a simultaneous binary search on every array. For simplicity, let's assume that all items in arrays are unique.
 
@@ -117,9 +117,9 @@ end
 
 For full source code including some random testcases, [look here](https://gist.github.com/bshlgrs/14801efbb27d447fa7a2afba97ab70b4).
 
-How fast is this method? The main loop costs $latex m \log(n)$ per iteration. How many times will we run it? Well, every time we run the iteration, we cut out all the elements which are on the wrong side of the result from our pivot. Worst case, we keep choosing the worst possible pivot and only ruling it out, which means we need to run that iteration once for every item in all of the arrays. This is $latex O(m^2 n \log(n))$.
+How fast is this method? The main loop costs $l m \log(n)$ per iteration. How many times will we run it? Well, every time we run the iteration, we cut out all the elements which are on the wrong side of the result from our pivot. Worst case, we keep choosing the worst possible pivot and only ruling it out, which means we need to run that iteration once for every item in all of the arrays. This is $l O(m^2 n \log(n))$.
 
-But on average, we'll cut a constant fraction of our search space out every time. So we should expect to have to do that iteration $latex \log(m\cdot n) = \log(m) + \log(n)$ times, for an overall time complexity of $latex O(m \log(n) \log(m \cdot n))$.
+But on average, we'll cut a constant fraction of our search space out every time. So we should expect to have to do that iteration $l \log(m\cdot n) = \log(m) + \log(n)$ times, for an overall time complexity of $l O(m \log(n) \log(m \cdot n))$.
 
 (Incidentally, when I was initially thinking about this, I thought we might get some speedup because our call to `rank` is going to be on a smaller and smaller section of its array every iteration throuhgh the loop. But I don't think that's true, because to get an asympotic decrease in the sum of a bunch of logarithms, you need to make your problem sizes decrease extremely quickly; exponentially decaying problem size doesn't cut it. For example:
 
