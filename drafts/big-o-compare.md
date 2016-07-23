@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Big O comparisons"
-date:   2016-09-30
+date:   2016-07-22
 ---
 
 Suppose that $l f$ and $l g$ are both monotonically increasing functions of type $l Int \rightarrow Int$.  I want to compare the asymptotic runtimes of expressions which contain these functions. For example, $l f(n) \cdot g(n) \geq f(n) + g(n)$, asymptotically. How can I automatically decide this?
