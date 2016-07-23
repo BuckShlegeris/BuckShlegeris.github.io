@@ -8,9 +8,7 @@ Suppose that $l f$ and $l g$ are both monotonically increasing functions of type
 
 (By asymptotically, I mean "including constant factors", the same way that people do when they're doing big O analysis. I'm uncomfortable with big O notation, because the way people often use it, the = symbol isn't reflexive. I'd prefer to use subset notation or something. I'm not sure, I'll probably be inconsistent here)
 
-Of course, this is going to be very hard unless I heavily restrict my class of expressions. I'm fine with doing this.
-
-Let's start out restricting ourselves just to polynomials in $l n$, $l f(n)$ and $l g(n)$. So we're only looking at expressions like $l n \cdot f(n) + g(n)$ or $l n \cdot f(n) \cdot g(n)^3$.
+Of course, this is going to be very hard unless I heavily restrict my class of expressions. I'm fine with doing this. Let's start out restricting ourselves just to polynomials in $l n$, $l f(n)$ and $l g(n)$. So we're only looking at expressions like $l n \cdot f(n) + g(n)$ or $l n \cdot f(n) \cdot g(n)^3$.
 
 ## Proposed algorithm
 
