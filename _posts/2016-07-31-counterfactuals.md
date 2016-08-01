@@ -39,3 +39,8 @@ This kind of reasoning is very useful for cause prioritization. It also seems to
 Maybe someone should offer to help train people in this kind of reasoning. You could give people questions along the lines of the one I discussed above, and then get them to write up their thoughts, and then comment on them. Maybe this would be valuable for helping EAs get better at thinking about EA topics.
 
 Is there a better name for this kind of reasoning? Are there any other good resources for learning it? What are the best examples of this kind of reasoning being laid out extremely explicitly in an EA context?
+
+
+-------
+
+Turns out that this line of reasoning really pisses a bunch of people off. You can view the comment shitstorm [here](https://www.facebook.com/bshlgrs/posts/10208229326305580).
