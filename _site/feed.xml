@@ -8,6 +8,19 @@
     <atom:link href="http://bshlgrs.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Counterfactual reasoning</title>
+        
+        
+          <description>&lt;p&gt;There’s a kind of thought process which I enjoy, which I think is pretty core to EA. It’s a particular approach to answering questions of the form “should I do X”. It involves counterfactual reasoning, a bunch of basic microeconomics, and careful attention to your values.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 31 Jul 2016 00:00:00 -0700</pubDate>
+        <link>http://bshlgrs.github.io/2016/07/31/counterfactuals.html</link>
+        <guid isPermaLink="true">http://bshlgrs.github.io/2016/07/31/counterfactuals.html</guid>
+      </item>
+    
+      <item>
         <title>Do people date less if they have easy access to porn?</title>
         
         
@@ -122,19 +135,6 @@
         <pubDate>Thu, 16 Jun 2016 00:00:00 -0700</pubDate>
         <link>http://bshlgrs.github.io/2016/06/16/generalized-multi-quickselect.html</link>
         <guid isPermaLink="true">http://bshlgrs.github.io/2016/06/16/generalized-multi-quickselect.html</guid>
-      </item>
-    
-      <item>
-        <title>Quickselect on multiple sorted arrays</title>
-        
-        
-          <description>&lt;p&gt;&lt;strong&gt;Edit: Thanks heaps to &lt;a href=&quot;http://stackoverflow.com/users/1009831/evgeny-kluev&quot;&gt;Evgeny Kluev&lt;/a&gt;, the author of that original StackOverflow answer, for noticing that I’d made a mistake in the total time complexity calculation.&lt;/strong&gt;&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Wed, 15 Jun 2016 00:00:00 -0700</pubDate>
-        <link>http://bshlgrs.github.io/2016/06/15/multi-sorted-array-quickselect.html</link>
-        <guid isPermaLink="true">http://bshlgrs.github.io/2016/06/15/multi-sorted-array-quickselect.html</guid>
       </item>
     
   </channel>

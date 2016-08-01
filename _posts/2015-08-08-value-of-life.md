@@ -10,6 +10,8 @@ tags:
 
 **Obvious disclaimers: I think it’s a dumb idea to kill poor people. Also, well being varies for reasons other than poverty.**
 
+**Edit in 2016: A major mistake which I made in this post is claiming that AMF causes happy lives. AMF [doesn't actually increase the amount of happy life lived](http://blog.givewell.org/2014/04/17/david-roodmans-draft-writeup-on-the-mortality-fertility-connection/). This makes AMF look much worse to me. See more [here](http://mdickens.me/2016/05/16/givewell's_charity_recommendations_require_taking_an_unusual_stance_on_population_ethics/).**
+
 <div class="panel panel-default"><div class="panel-body">TL; DR: If we're choosing between spending money on saving lives and reducing poverty, we need to consider how to compare the happiness created by saving a life to the happiness created by increasing the consumption in a society. Differentiating an estimate of happiness as a function of income lets you estimate the happiness created by increasing marginal consumption. If you assume happiness is logarithmic in income, then the dollar amount at which you're indifferent between saving a life and increasing total consumption that much increases as income * log(income). My extremely tentative numbers suggest that AMF is a much better charity for hedonic utilitarians than GiveDirectly.</div></div>
 
 **Thanks to Claire Zabel, Marie La, Daniel Filan, and others who helped me with this.**
