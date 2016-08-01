@@ -43,4 +43,4 @@ Is there a better name for this kind of reasoning? Are there any other good reso
 
 -------
 
-Turns out that this line of reasoning really pisses a bunch of people off. You can view the comment shitstorm [here](https://www.facebook.com/bshlgrs/posts/10208229326305580).
+Turns out that this line of reasoning really people off. You can view the comment shitstorm [here](https://www.facebook.com/bshlgrs/posts/10208229326305580).
