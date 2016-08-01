@@ -8,6 +8,19 @@
     <atom:link href="http://bshlgrs.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Do people date less if they have easy access to porn?</title>
+        
+        
+          <description>&lt;p&gt;There’s some evidence that access to pornography decreases sexual assault and child abuse. The proposed mechanism is that horny people get to watch more porn, and this makes them less sexually frustrated, which makes rape seem less tempting. Analogously, violent movies seem to reduce violence in the short term. Slate Star Codex discusses both of these effects &lt;a href=&quot;http://slatestarcodex.com/2013/06/22/social-psychology-is-a-flamethrower/&quot;&gt;here&lt;/a&gt;. In particular, &lt;a href=&quot;https://maggiemcneill.files.wordpress.com/2012/04/pornography-rape-and-the-internet.pdf&quot;&gt;this linked paper&lt;/a&gt; considers all the objections that I’d thought of and seems pretty reasonable.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Fri, 29 Jul 2016 00:00:00 -0700</pubDate>
+        <link>http://bshlgrs.github.io/2016/07/29/porn.html</link>
+        <guid isPermaLink="true">http://bshlgrs.github.io/2016/07/29/porn.html</guid>
+      </item>
+    
+      <item>
         <title>Terse notes on graph algorithms</title>
         
         
@@ -122,19 +135,6 @@
         <pubDate>Wed, 15 Jun 2016 00:00:00 -0700</pubDate>
         <link>http://bshlgrs.github.io/2016/06/15/multi-sorted-array-quickselect.html</link>
         <guid isPermaLink="true">http://bshlgrs.github.io/2016/06/15/multi-sorted-array-quickselect.html</guid>
-      </item>
-    
-      <item>
-        <title>Quickselect on an unordered array and an order statistic tree</title>
-        
-        
-          <description>&lt;p&gt;&lt;strong&gt;I did this work myself, so there are probably mistakes. I think the conclusion is right though.&lt;/strong&gt;&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Sun, 12 Jun 2016 00:00:00 -0700</pubDate>
-        <link>http://bshlgrs.github.io/2016/06/12/quickselect-lemma.html</link>
-        <guid isPermaLink="true">http://bshlgrs.github.io/2016/06/12/quickselect-lemma.html</guid>
       </item>
     
   </channel>
