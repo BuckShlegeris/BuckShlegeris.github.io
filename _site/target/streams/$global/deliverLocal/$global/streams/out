@@ -1,4 +1,4 @@
 [0m[[0minfo[0m] [0m:: delivering :: default#bshlgrs-github-io_2.10;0.1-SNAPSHOT :: 0.1-SNAPSHOT :: integration :: Fri Apr 03 14:55:51 PDT 2015[0m
 [0m[[0mdebug[0m] [0m	options = status=integration pubdate=Fri Apr 03 14:55:51 PDT 2015 validate=true resolveDynamicRevisions=true merge=true resolveId=null pubBranch=null[0m
-[0m[[0minfo[0m] [0m	delivering ivy file to /Users/bshlegeris/Dropbox/repos/bshlgrs.github.io/target/scala-2.10/ivy-0.1-SNAPSHOT.xml[0m
+[0m[[0minfo[0m] [0m	delivering ivy file to /Users/bshlegeris/Dropbox/repos/shlegeris.com/target/scala-2.10/ivy-0.1-SNAPSHOT.xml[0m
 [0m[[0mdebug[0m] [0m	deliver done (12ms)[0m

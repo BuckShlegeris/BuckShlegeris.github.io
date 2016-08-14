@@ -6,4 +6,4 @@ date: ""
 
 Yes, unbearably so!
 
-(see [here](http://bshlgrs.github.io/2016/05/29/explicit.html))
+(see [here](http://shlegeris.com/2016/05/29/explicit.html))
