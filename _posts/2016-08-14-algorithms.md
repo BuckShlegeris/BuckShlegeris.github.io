@@ -8,7 +8,7 @@ Software engineering interviews often ask whiteboard algorithms questions. Here'
 
 **I'm speaking for myself, not for Triplebyte, in this post.**
 
-Other topics than algorithms are also covered in interviews. Triplebyte [has a blog post](blog.triplebyte.com/how-to-pass-a-programming-interview) which has useful information on studying for those.
+Other topics than algorithms are also covered in interviews. Triplebyte [has a blog post](blog.triplebyte.com/how-to-pass-a-programming-interview) which has useful information on studying for those. I primarily intend this post to be a supplement to section 2 of that post.
 
 ## Background: why do companies ask algorithms questions?
 
@@ -87,6 +87,12 @@ Here are the most common central components of algorithms interview problems:
 My main advice is to do a bunch of problems from Cracking the Coding Interview. I listed in my notes on it the problems that I thought were most important.
 
 Here's a general note on studying these problems: I think it's probably fine to "cheat" by reading the answers. I think you're better off giving up on the problems and reading the solutions than giving up totally on doing practice interview problems.
+
+### Non-technical aspects of succeeding at algorithm interviews
+
+It's worth practicing answering these questions under pressure, with a real human asking them to you. For more advice on this, see the [Triplebyte blog post](http://blog.triplebyte.com/how-to-pass-a-programming-interview), particularly points 2, 3, and 7.
+
+
 
 ## Learning further about algorithms and data structures
 
