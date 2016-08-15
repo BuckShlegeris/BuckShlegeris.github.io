@@ -111,6 +111,6 @@ For more interesting data structures material, my favorite resources are:
 
 ## Resources
 
-- Triplebyte, [How To Pass A Programming Interview](blog.triplebyte.com/how-to-pass-a-programming-interview). I endorse most of this content.
+- Triplebyte, [How To Pass A Programming Interview](https://blog.triplebyte.com/how-to-pass-a-programming-interview). I endorse most of this content.
 - Steve Yegge: some old posts like [this one](https://sites.google.com/site/steveyegge2/five-essential-phone-screen-questions), [Get That Job At Google](http://steve-yegge.blogspot.com/2008/03/get-that-job-at-google.html). I think a lot of his ideas are wrong, but they're interesting to read.
 - [InterviewCake.com](https://www.interviewcake.com/) is a more fun and engaging self-study tool than Cracking the Coding Interview.
