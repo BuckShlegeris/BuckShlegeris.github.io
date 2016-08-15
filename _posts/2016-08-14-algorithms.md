@@ -6,6 +6,8 @@ date:   2016-08-14
 
 Software engineering interviews often ask whiteboard algorithms questions. Here's my advice on how to study for them. (My credentials on this topic are:  I have passed a lot of whiteboard interviews, including at Google and Apple;  as part of my job I prepare programmers for these algorithm interviews; I have conducted 200 technical interviews on programmers with a very wide variety of backgrounds.)
 
+**I'm speaking for myself, not for Triplebyte, in this post.**
+
 ## Background: why do companies ask algorithms questions?
 
 In real life, programmers spend almost none of their time implementing binary search trees or graph search algorithms. So why do companies ask so many questions about them?
