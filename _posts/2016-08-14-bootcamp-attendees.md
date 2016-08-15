@@ -1,10 +1,10 @@
 ---
 layout: post
 title:  "My advice to people about to attend bootcamps"
-date:   2016-07-22
+date:   2016-08-14
 ---
 
-An EA who's going to be attending a bootcamp emailed me a few days ago asking for advice. Here is an edited version of our conversation.
+An EA who's going to be attending a bootcamp in a few months emailed me a few days ago asking for advice. Here is an edited version of our conversation.
 
 TL;DR:
 
@@ -18,7 +18,7 @@ Here's his email to me:
   <div class="panel-body">
     <p>I'm curious about what you find to be the main (important) skills lacked by bootcamp graduates, and whether you have any advice on which one can acquire outside of a work environment.  Also, I'm wondering, as I will no longer be aiming to work at somewhere like Google, Slack, etc., should I put less emphasis on studying algorithms than I had been planning to?</p>
 
-    <p>I'll be attending App Academy in November, and want to spend wisely the huge amount of free time I have before then.</p>
+    <p>I'll be attending [a top coding bootcamp in a few months], and want to spend wisely the huge amount of free time I have before then.</p>
 
     <p>Should I shift some of the time I intended to spend on algorithm textbooks on general business books, books about design, and general books on problem solving and development, do you think?  Or is there something else that would be a better use of the next couple of months?</p>
 
@@ -27,6 +27,8 @@ Here's his email to me:
 </div>
 
 And here's my response:
+
+<hr/>
 
 Hey there.
 
@@ -38,7 +40,7 @@ Bootcamp grads don’t tend to totally lack important skills, they’re just ver
 
 > Also, I’m wondering, as I will no longer be aiming to work at somewhere like Google, Slack, etc., should I put less emphasis on studying algorithms than I had been planning to?
 
-Algorithms are covered in interviews at a lot of companies, including lots of companies where the day-to-day work is very practical full stack development. And for many people, implementing algorithms is a good way of getting better at programming. So my advice is to study algorithms even if you don’t plan to take a Google job.
+Algorithms are covered in interviews at a lot of companies, including lots of companies where the day-to-day work is very practical full stack development. And for many people, implementing algorithms is a good way of getting better at programming. So my advice is to study algorithms even if you don’t plan to take a Google job. ([Here's my advice on studying algorithms](/2016/08/14/algorithms.html).)
 
 (FWIW, it’s probably worth applying to Google even if you don't want to work there. Companies will move much faster with you if you tell them that you have a Google onsite scheduled, and they'll be much happier to negotiate.)
 

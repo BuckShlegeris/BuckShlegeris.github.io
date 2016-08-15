@@ -8,6 +8,19 @@
     <atom:link href="http://shlegeris.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>My advice to people about to attend bootcamps</title>
+        
+        
+          <description>&lt;p&gt;An EA who’s going to be attending a bootcamp in a few months emailed me a few days ago asking for advice. Here is an edited version of our conversation.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 14 Aug 2016 00:00:00 -0700</pubDate>
+        <link>http://shlegeris.com/2016/08/14/bootcamp-attendees.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2016/08/14/bootcamp-attendees.html</guid>
+      </item>
+    
+      <item>
         <title>My advice on studying algorithms</title>
         
         
@@ -122,19 +135,6 @@
         <pubDate>Wed, 22 Jun 2016 00:00:00 -0700</pubDate>
         <link>http://shlegeris.com/2016/06/22/ctci.html</link>
         <guid isPermaLink="true">http://shlegeris.com/2016/06/22/ctci.html</guid>
-      </item>
-    
-      <item>
-        <title>A data structure for range kth-smallest queries</title>
-        
-        
-          <description>&lt;p&gt;Suppose I want to maintain a set of people where each has an age and a wealth. I want to be able to quickly insert people, delete people, and answer queries of the form “find the $l k$th richest person whose age is between $l x$ and $l y$”.&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Thu, 16 Jun 2016 00:00:00 -0700</pubDate>
-        <link>http://shlegeris.com/2016/06/16/kth-richest.html</link>
-        <guid isPermaLink="true">http://shlegeris.com/2016/06/16/kth-richest.html</guid>
       </item>
     
   </channel>
