@@ -58,7 +58,7 @@ Other notes on this:
 You should be able to implement all of the following algorithms:
 
 - Graph algorithms: Breadth first search, depth first search, Dijkstra's algorithm
-- One $l O(n \log(n))$ sorting algorithm; I recommend mergesort or quicksort
+- One fast sorting algorithm; I recommend mergesort or quicksort
 - Binary search on an array. This one is super fiddly to get right and it's worth writing the code even if you roughly understand the algorithm.
 
 You should be roughly comfortable with Big O notation.
@@ -90,13 +90,18 @@ Here's a general note on studying these problems: I think it's probably fine to 
 
 ## Learning further about algorithms and data structures
 
-Suppose you're excited about algorithms and data structures for their own sake, as opposed to for the mercentile purpose of getting a job. How should you learn more? Here are some topics I've enjoyed learning about:
+Suppose you're excited about algorithms and data structures for their own sake, as opposed to for the mercentile purpose of getting a job. How should you learn more?
 
-- [2-3-4 tree isomorphism, BTrees](http://web.stanford.edu/class/cs166/lectures/05/Small05.pdf)
-- [Augmented BSTs](http://www.bowdoin.edu/~ltoma/teaching/cs231/fall09/Lectures/10-augmentedTrees/augtrees.pdf)
-- [Disjoint set](https://en.wikipedia.org/wiki/Disjoint-set_data_structure)
-- Range minimum query ([slides 1](http://web.stanford.edu/class/cs166/lectures/00/Small00.pdf), [slides 2](http://web.stanford.edu/class/cs166/lectures/01/Small01.pdf))
-- [Here's some work](/2016/06/16/kth-richest.html) I did on my own that I think is interesting and worth reading!
+The easiest things to learn more about are relatively simple data structures that for whatever reason aren't part of the core data structure canon I described above. For example, [treaps](/2016/07/02/hash-ordered-treaps.html), [skip lists](https://en.wikipedia.org/wiki/Skip_list), [augmented BSTs](http://www.bowdoin.edu/~ltoma/teaching/cs231/fall09/Lectures/10-augmentedTrees/augtrees.pdf), and the [Disjoint set data structure](https://en.wikipedia.org/wiki/Disjoint-set_data_structure) are all pretty easy to understand and I think they're all really cool.
+
+There are some data structure topics which were harder to understand but well worth the effort. For example, [this set of slides](http://web.stanford.edu/class/cs166/lectures/05/Small05.pdf) which explains BTrees and 2-3-4 trees.
+
+For more interesting data structures material, my favorite resources are:
+
+- Chapter 12 of Skiena, and other later chapters of Skiena
+- [CS166](http://web.stanford.edu/class/cs166/), an awesome Stanford class. The slides are awesome and quite readable. I also enjoyed doing some of the problem sets. For further data structures fun, I recommend [the project ideas handout](http://web.stanford.edu/class/cs166/handouts/090%20Final%20Project%20Topics.pdf) from the class.
+- I'm quite proud of the work I did [here](http://shlegeris.com/2016/06/16/kth-richest.html) on a particular data structure problem which isn't actually that hard but was fun as an amateur activity. My solution to that problem involves several ideas from advanced data structures and I think it's quite neat.
+
 
 ## Resources
 
