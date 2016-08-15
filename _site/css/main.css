@@ -474,3 +474,6 @@ h2 code {
 
 h3 code {
   font-size: 20px; }
+
+blockquote {
+  letter-spacing: 0px; }
