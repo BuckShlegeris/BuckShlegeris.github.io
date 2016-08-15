@@ -8,6 +8,19 @@
     <atom:link href="http://shlegeris.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>My advice on studying algorithms</title>
+        
+        
+          <description>&lt;p&gt;Software engineering interviews often ask whiteboard algorithms questions. Here’s my advice on how to study for them. (My credentials on this topic are that I have passed a lot of whiteboard interviews, including at Google and Apple, and as part of my job I prepare programmers for these algorithm interviews.)&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 14 Aug 2016 00:00:00 -0700</pubDate>
+        <link>http://shlegeris.com/2016/08/14/algorithms.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2016/08/14/algorithms.html</guid>
+      </item>
+    
+      <item>
         <title>Counterfactual reasoning</title>
         
         
@@ -122,19 +135,6 @@
         <pubDate>Thu, 16 Jun 2016 00:00:00 -0700</pubDate>
         <link>http://shlegeris.com/2016/06/16/kth-richest.html</link>
         <guid isPermaLink="true">http://shlegeris.com/2016/06/16/kth-richest.html</guid>
-      </item>
-    
-      <item>
-        <title>Generalized multi-quickselect</title>
-        
-        
-          <description>&lt;p&gt;I’ve been thinking a lot recently about how you find the $l k$th smallest element in the disjoint union of several data structures.&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Thu, 16 Jun 2016 00:00:00 -0700</pubDate>
-        <link>http://shlegeris.com/2016/06/16/generalized-multi-quickselect.html</link>
-        <guid isPermaLink="true">http://shlegeris.com/2016/06/16/generalized-multi-quickselect.html</guid>
       </item>
     
   </channel>
