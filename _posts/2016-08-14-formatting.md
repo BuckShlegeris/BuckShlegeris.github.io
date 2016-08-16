@@ -11,3 +11,7 @@ This makes my writing look unsophisticated. If I asked my father, who is a good 
 I think my father would be wrong. English is much richer as a spoken language than a written language. I’m constantly stymied as I write by my inability to express the pattern of stress in the sentences I’m writing. I end up having to write different sentences from the sentences I’d speak, because I’m effectively working with just the small subset of English which happens to lose relatively little information when you destroy one of its main components.
 
 Formatting gives me back some of that expressive power, and I’m very grateful for that. I will continue using gratuitous bold font in my writing, and I’ll just deal with the hit to my perceived classiness.
+
+------
+
+[comments on Facebook](https://www.facebook.com/bshlgrs/posts/10208342088324560)
