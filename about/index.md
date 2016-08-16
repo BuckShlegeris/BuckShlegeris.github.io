@@ -41,15 +41,15 @@ I write songs and used to play them with my band [Buck et al](https://www.facebo
 
 I'm a utilitarian and care a lot about making the world better.
 
-Currently, I'm mostly trying to do good by [earning to give](http://80000hours.org/earning-to-give).
+Currently, I'm mostly trying to do good by [earning to give](http://80000hours.org/earning-to-give). I don't think that earning to give makes sense anymore. I chose my current job partially because I'd have the opportunity to learn about lots of non-programming skills which will be useful after I finish up my programming career.
 
 I'm involved with the effective altruism movement, which has sprung up in recent years around organizations like <a href="http://givingwhatwecan.org">Giving What We Can</a> (of which I am a member), <a href="http://givewell.org">GiveWell</a>, and the <a href="http://centreforeffectivealtruism.org/">Center for Effective Altruism</a>. I regularly attend the Stanford effective altruism meetups.
 
-In 2015, I was on a panel at EA Global in Mountain View.
+In 2015, I was on a panel at EA Global in Mountain View. In 2016, I ran a workshop on advanced career planning for EA software engineers.
 
 I wrote about the biggest effective altruism mistakes I made in 2014 and 2015 <a href="/2016/05/24/mistakes.html">here.</a>
 
-Last year, I differentiated the equation `happiness = log(income)` with respect to income, and tried to use this to decide how much we should be willing to spend to save a life. You can read the disappointingly non-robust results <a href="/2015/08/08/value-of-life.html">here</a>.
+Last year, I differentiated the equation $l happiness = \log(income)$ with respect to income, and tried to use this to decide how much we should be willing to spend to save a life. You can read the disappointingly non-robust results <a href="/2015/08/08/value-of-life.html">here</a>.
 
 ### Donation history
 

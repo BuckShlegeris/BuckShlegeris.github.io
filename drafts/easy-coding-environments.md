@@ -12,7 +12,7 @@ Why is there this threshold effect? I can think of a few reasons.
 - Before I know how all the concepts fit together, it's hard for me to express my questions in ways that search engines or Stack Overflow answerers will understand.
 - When I'm using a bunch of tools and I understand most of them quite well, if I get stuck I can use what I know about the familiar tools to isolate the problem. But if I don't know how to use the tools yet, it's harder for me to be confident that I didn't mess up any particular part.
 
-When you're trying to learn something, I think that one of your main goals should be finding a way of learning it which lets you get over this threshold as quickly as possible. For example, [Jeff Kaufmann recommends](http://www.jefftk.com/p/teach-yourself-any-instrument) learning piano over flute, because it's much easier to play simple, nice tunes on piano.
+When you're trying to learn something, I think that one of your main goals should be finding a way of learning it which lets you get over this threshold as quickly as possible. For example, [Jeff Kaufman recommends](http://www.jefftk.com/p/teach-yourself-any-instrument) learning piano over flute, because it's much easier to play simple, nice tunes on piano.
 
 Examples of this in my life:
 
@@ -22,3 +22,4 @@ Examples of this in my life:
   - A lot of craft things
     - does happen in baking, not other cooking
 
+This is my attempt to collate
