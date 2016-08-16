@@ -8,6 +8,19 @@
     <atom:link href="http://shlegeris.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Using formatting in writing</title>
+        
+        
+          <description>&lt;p&gt;When I’m writing, I often find myself wanting to use formatting to express myself. For example, I like using bold font to emphasize my most important sentences.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 14 Aug 2016 00:00:00 -0700</pubDate>
+        <link>http://shlegeris.com/2016/08/14/formatting.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2016/08/14/formatting.html</guid>
+      </item>
+    
+      <item>
         <title>My advice to people about to attend bootcamps</title>
         
         
@@ -122,19 +135,6 @@
         <pubDate>Thu, 30 Jun 2016 00:00:00 -0700</pubDate>
         <link>http://shlegeris.com/2016/06/30/triplebyte.html</link>
         <guid isPermaLink="true">http://shlegeris.com/2016/06/30/triplebyte.html</guid>
-      </item>
-    
-      <item>
-        <title>Studying for startup interviews with &#39;Cracking the Coding Interview&#39;</title>
-        
-        
-          <description>&lt;p&gt;&lt;a href=&quot;https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X&quot;&gt;Cracking the Coding Interview&lt;/a&gt; is by far the most popular interview prep book for software engineers. It’s a great book. But it was written for a few years ago, and software engineering interviews seem to have changed in the meantime, at least in the Silicon Valley engineering culture which I’m most involved in.&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Wed, 22 Jun 2016 00:00:00 -0700</pubDate>
-        <link>http://shlegeris.com/2016/06/22/ctci.html</link>
-        <guid isPermaLink="true">http://shlegeris.com/2016/06/22/ctci.html</guid>
       </item>
     
   </channel>
