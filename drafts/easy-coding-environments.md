@@ -14,6 +14,10 @@ Why is there this threshold effect? I can think of a few reasons.
 
 When you're trying to learn something, I think that one of your main goals should be finding a way of learning it which lets you get over this threshold as quickly as possible. For example, [Jeff Kaufman recommends](http://www.jefftk.com/p/teach-yourself-any-instrument) learning piano over flute, because it's much easier to play simple, nice tunes on piano.
 
+Maybe the good learning tools are just the best working tools. Like, I think Python is a great tool for learning lots of things, as is Flask. But those are both not toys. Brett Victor has a relevant idea http://worrydream.com/KillMath/#edu
+
+This is mostly just nice for working in.
+
 Examples of this in my life:
 
 - I got good enough at programming to have fun sometime
