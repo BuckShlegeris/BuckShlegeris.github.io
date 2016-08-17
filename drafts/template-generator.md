@@ -10,13 +10,11 @@ As another example, `a[bc]de[f]` is a template expression describing the set $l 
 
 Here's my problem. I have a set of strings and want to find the shortest template expression which produces all of them.
 
-I'm fine if the template expression also produces other strings which are not in my set.
+I'm fine if the template expression also produces other strings which are not in my set. This means that it's trivial to come up with a bad solution, because for any set of strings, eg $l \lbrace X, Y, Z\rbrace$, you can make a template expression like `[X][Y][Z]` which solves the problem.
 
-This is always possible, because for any set of strings, eg $l \lbrace X, Y, Z\rbrace$, you can make a template expression like `[X][Y][Z]` which solves the problem.
+(We need to choose a cost function for templates. For the moment, I'm happy to use the cost function which is just the number of total characters in the template.)
 
-We need to choose a cost function for templates. For the moment, I'm interested in saying that the cost is just the number of non-square-bracket characters in the template.
-
-## algorithm ideas
+## ideas
 
 Suppose you know the optimal way of editing string $l X$ to string $l Y$ using only insertions and deletions. If this takes $l n$ insertions, then you can make a template for the set $l \lbrace X, Y \rbrace$ with cost $l \text{length}(X) + n$.
 
