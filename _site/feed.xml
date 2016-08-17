@@ -8,6 +8,19 @@
     <atom:link href="http://shlegeris.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Dumb ideas</title>
+        
+        
+          <description>&lt;p&gt;I often have ideas to do things that I know everyone else probably thinks are stupid. But I often like my dumb ideas. Using the inside view, my ideas seem very reasonable.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Tue, 16 Aug 2016 00:00:00 -0700</pubDate>
+        <link>http://shlegeris.com/2016/08/16/dumb.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2016/08/16/dumb.html</guid>
+      </item>
+    
+      <item>
         <title>Using formatting in writing</title>
         
         
@@ -122,19 +135,6 @@
         <pubDate>Sat, 02 Jul 2016 00:00:00 -0700</pubDate>
         <link>http://shlegeris.com/2016/07/02/hash-ordered-treaps.html</link>
         <guid isPermaLink="true">http://shlegeris.com/2016/07/02/hash-ordered-treaps.html</guid>
-      </item>
-    
-      <item>
-        <title>You should work at Triplebyte</title>
-        
-        
-          <description>&lt;p&gt;Triplebyte, the startup where I work, is hiring. We’re looking for engineers, a writer, a UX designer, and some generalist roles.&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Thu, 30 Jun 2016 00:00:00 -0700</pubDate>
-        <link>http://shlegeris.com/2016/06/30/triplebyte.html</link>
-        <guid isPermaLink="true">http://shlegeris.com/2016/06/30/triplebyte.html</guid>
       </item>
     
   </channel>
