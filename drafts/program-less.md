@@ -42,3 +42,10 @@ Another risk of a lot of the non-programming work I suggested, especially the jo
 Another problem is that at some jobs, your performance reviews are tied to your technical performance. That makes this strategy worse than it would otherwise be. You might be able to find some kind of leeway with your manager, or you might decide that the other experience is worth the performance review hit. Maybe it's worth talking to your manager or otherwise looking into the metrics that will be used in your performance reviews, to see how important this is. (My guess is that for most teams, you'll end up being more useful to them because of this strategy, because it will cause you to take the initiative on tasks other people might not have wanted.)
 
 The kind of non-programming opportunities you get vary a lot between different companies, and I think this should be an important factor in deciding between job opportunities. I plan to write more about job selection in a future post.
+
+
+## related things
+
+TODO
+
+Satvik Beri [says something sort of related](www.benkuhn.net/satvik)
