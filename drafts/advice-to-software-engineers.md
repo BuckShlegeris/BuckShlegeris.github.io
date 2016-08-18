@@ -42,5 +42,7 @@ table
 
 ## Things to do at your current job
 
+
+
 ## Ways to look for new jobs
 
