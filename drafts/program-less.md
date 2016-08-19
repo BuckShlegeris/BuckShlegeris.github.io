@@ -4,13 +4,20 @@ title:  "EA programmers should program less at work"
 date:   ""
 ---
 
-This post is aimed at software engineers. I think it probably applies somewhat to people who aren't software engineers, but I don't know as much about other jobs so it's harder for me to say. Among software engineers, I think it's much safer advice for those with at least a year's experience.
+<div class="panel panel-danger">
+  <div class="panel-body">
+    This post is aimed at software engineers. I think it probably applies somewhat to people who aren't software engineers, but I don't know as much about other jobs so it's harder for me to say. Among software engineers, I think it's much safer advice for those with at least a year's experience.
+  </div>
+</div>
+
 
 This is a follow up to [EA Programmers should plan exit strategies](TODO). In that post, I argued that programmers should think about what they might want to do in the future, and that there's a good chance they will want the option to move away from programming. I said that while they're programmers, they should take whatever opportunities they get to gain robustly useful skills and learn about their inclinations, so that they'll have more non-programming options in the future.
 
 I think that this is important enough that EA programmers should consider these factors when deciding between jobs. But if you're already working as a programmer, there are often opportunities to take on projects at your current job that aren't strictly software engineering and might help you develop other skills.
 
-Here's a rough framework for assessing how valuable programming experience at work is: It's more valuable if you're learning more quickly and if the thing you're learning about is more relevant to your future plans. So the longer you work as a programmer or work with a particular technology, the less valuable your marginal programming is. Because of this, my arguments are much more applicable to people who aren't at their first job. I wrote HERE TODO about how useful I think different programming skills are. You should look at that list there and customize it based on your interests and long term plans: that will affect what programming tasks seem worth your time.
+Here's a rough framework for assessing how valuable programming experience at work is: It's more valuable if you're learning more quickly and if the thing you're learning about is more relevant to your future plans.
+
+So the longer you work as a programmer or work with a particular technology, the less valuable your marginal programming is. Because of this, my arguments are much more applicable to people who aren't at their first job. I wrote HERE TODO about how useful I think different programming skills are. You should look at that list there and customize it based on your interests and long term plans: that will affect what programming tasks seem worth your time.
 
 
 ## Non-programming tasks

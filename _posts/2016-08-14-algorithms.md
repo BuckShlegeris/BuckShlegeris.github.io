@@ -37,6 +37,8 @@ Overall, I wouldn't ask traditional hard algorithms questions in interviews. At 
 
 ## How to study
 
+**EDIT: I just read [Haseeb Qureshi's blog post](http://haseebq.com/how-to-break-into-tech-job-hunting-and-interviews/#general-study) about this again; he and I agree and I think he goes into slightly more detail. Read the "General Study Strategy" and "Programming Interview Study Guide" sections.**
+
 I think there's sort of two different skills involved in answering algorithms questions. Firstly, you need to know all of the classic algorithm and data structure material. Secondly, you need to be able to quickly produce algorithmic logic on a whiteboard under pressure. I'm going to discuss these topics separately.
 
 ### Canonical algorithms material

@@ -1,8 +1,29 @@
+---
+layout: post
+title:  "Advice to software engineers"
+date:   ""
+---
+
 **I presented a workshop at EA Global a few weeks ago about career planning for EA software engineers. People were pretty surprised by its content and seemed to think it was useful, so I've adapted it to writing.**
 
 I'm aiming this talk at people who are already engineers. I give a bunch of advice here which I don't think is overall good advice for people who plan to become software engineers but haven't been hired yet. I wrote some advice [here](/2016/08/14/bootcamp-attendees.html) for people who plan to attend bootcamps.
 
 80000 Hours is general advice on good paths. I'm going to talk about specific career destinations and how to get there, because that makes it clearer what you should do.
+
+This first post is going to talk about a general framework for
+
+
+This is a series. Posts:
+
+- EtGers should think about exit strategies
+  - talk about why EtG might not make sense long term.
+- Possible target jobs for EtG software engineers
+  - and skills relevant to those
+- Getting robustly useful skills at work
+
+
+
+
 
 ## Key questions
 
@@ -45,4 +66,25 @@ table
 
 
 ## Ways to look for new jobs
+
+
+
+
+
+
+
+
+
+----------------
+
+
+Okay, you're a software engineer and you want to do good in the world.
+
+Think about things you might want to be able to do in five years. maybe you'll want to start a charity, maybe you'll want to EtG.
+
+Here are a list of good options.
+
+How will you know which is best? There are several relevant uncertainties about EA and the world. And there are uncertainties about you.
+
+Here are the uncertainties about EA.
 
