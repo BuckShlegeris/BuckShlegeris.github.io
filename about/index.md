@@ -100,6 +100,4 @@ In 2014, I donated about 10% of my income. In 2015, I donated about 30%. Here's 
 </tr>
 </table>
 
-I donated to a donor-advised fund at the end of 2015, because I was unsure about
-where I should donate. I am still figuring out where to donate it.
-
+I donated to a donor-advised fund at the end of 2015, because I was unsure about where I should donate. I am still figuring out where to donate it.

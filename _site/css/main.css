@@ -1,3 +1,7 @@
+caption {
+  font-weight: bold;
+  color: #111; }
+
 /**
  * Reset some basic elements
  */
@@ -76,12 +80,9 @@ a {
  * Blockquotes
  */
 blockquote {
-  color: #828282;
   border-left: 4px solid #e8e8e8;
   padding-left: 15px;
-  font-size: 18px;
-  letter-spacing: -1px;
-  font-style: italic; }
+  font-size: 16px; }
   blockquote > :last-child {
     margin-bottom: 0; }
 
@@ -289,8 +290,7 @@ pre {
 
 .post-title {
   font-size: 42px;
-  letter-spacing: -1px;
-  line-height: 1; }
+  line-height: 120%; }
   @media screen and (max-width: 800px) {
     .post-title {
       font-size: 36px; } }
