@@ -7,7 +7,7 @@ date:   2016-08-30
 **Content warning/TLDR: It's unreasonable to demand that people calmly discuss topics which are personally charged to them. However, I think that it's praiseworthy to be able to discuss these topics, and I want people to be better at not thinking of their political enemies as monsters.**
 
 
-Someone I know (who could be described as a “white dude”, incidentally) shared this post on Facebook:
+Someone I know (who could be described as a "white dude", incidentally) shared this post on Facebook:
 
  <div class="tumblr-post" data-href="https://embed.tumblr.com/embed/post/yzU0nbutjSBa1PPY9a_vlw/54504046421" data-did="1b7d89912eddb689ed82f44f9af4a0866d4adf5e"><a href="http://blacksentai.tumblr.com/post/54504046421/white-dudes-have-this-thing-where-they-believe">http://blacksentai.tumblr.com/post/54504046421/white-dudes-have-this-thing-where-they-believe</a></div>  <script async src="https://secure.assets.tumblr.com/post.js"></script>
 
