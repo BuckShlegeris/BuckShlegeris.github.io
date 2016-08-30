@@ -4,7 +4,7 @@ title:  "Privilege and polite disagreement"
 date:   2016-08-30
 ---
 
-**Content warning/TLDR: It's unreasonable to demand that people calmly discuss topics which are personally charged to them. However, I think that it's praiseworthy to be able to discuss these topics, and I want people to be better at not thinking of their political enemies as monsters.**
+**Content warning/TLDR: It's usually unreasonable to demand that people calmly discuss topics which are personally charged to them. However, I think that it's praiseworthy to be able to discuss these topics, and I want people to be better at not thinking of their political enemies as monsters.**
 
 
 Someone I know (who could be described as a "white dude", incidentally) shared this post on Facebook:

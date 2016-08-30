@@ -1,3 +1,9 @@
+---
+layout: post
+title:  "Should you date your friends?"
+date:   2016-08-30
+---
+
 A non-rationalist friend of mine asked me whether I thought it was a good idea for them to date someone who was closely socially connected to them. Here's my response:
 
 It depends how good you both are at dating. The main advantage is that it means both of you are more strongly incentivized to avoid doing the wrong thing, because doing the wrong thing will have more long term effects on your reputation. Eg if I’m dating some random stranger and then I cheat on her or otherwise mistreat her, maybe she and all her my friends hate me, but I don’t care because it’s really easy for me to never talk to her or her friends again. So I’m not very strongly incentivized to treat her well. And she likewise has a weaker incentive to be good to me.
