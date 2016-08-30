@@ -4,11 +4,14 @@ title:  "Privilege and polite disagreement"
 date:   2016-08-30
 ---
 
+**Content warning/TLDR: It's unreasonable to demand that people calmly discuss topics which are personally charged to them. However, I think that it's praiseworthy to be able to discuss these topics, and I want people to be better at not thinking of their political enemies as monsters.**
+
+
 Someone I know (who could be described as a “white dude”, incidentally) shared this post on Facebook:
 
  <div class="tumblr-post" data-href="https://embed.tumblr.com/embed/post/yzU0nbutjSBa1PPY9a_vlw/54504046421" data-did="1b7d89912eddb689ed82f44f9af4a0866d4adf5e"><a href="http://blacksentai.tumblr.com/post/54504046421/white-dudes-have-this-thing-where-they-believe">http://blacksentai.tumblr.com/post/54504046421/white-dudes-have-this-thing-where-they-believe</a></div>  <script async src="https://secure.assets.tumblr.com/post.js"></script>
 
- I think the author is making two closely related but distinct claims.
+I think the author is making two closely related but distinct claims.
 
 The first claim is that when you’re privileged, many fewer discussions are viscerally upsetting, and you might not realize that other people might get really upset about things you’re discussing lightly. So we should bear this in mind when we’re talking about potentially upsetting topics, and we shouldn’t look down on people for being unwilling or unable to discuss these comfortably.
 
@@ -20,19 +23,19 @@ I think the post kind of makes a second claim, though, which is that it’s not 
 
 Here’s why I think it’s good to be able to talk dispassionately about things which matter a lot to you. To start with, I think that moral progress occurs more quickly when people who disagree can talk to each other and learn why they disagree. I think a good example is made by the OP writing about people who think that they “don’t deserve health care”. I suspect that the OP is talking about disagreements over how to fund healthcare. I think that’s an extremely inaccurate and unfair summary of the position that the OP’s talking about.[1]
 
-I totally believe that when someone says they don’t think America can afford a single-payer solution, the OP hears that as the person saying that they don’t deserve healthcare. And again, the OP doesn’t have an obligation to talk to people who stress them out. And it’s probably harder not to get stressed out by these conversations when you feel more threatened in your daily life, because of poverty or whatever. But the end result is that in an attempt to make life easier for themselves, the OP has sacrificed their ability to change their mind or change anyone else’s mind on this. That’s a cost that might be worth paying, but it’s worth remembering that it’s definitely a cost.
+I totally believe that when someone says they don’t think America can afford a single-payer solution, the OP hears that as the person saying that they don’t deserve healthcare. And again, the OP doesn’t have an obligation to talk to people who stress them out. And it’s probably harder not to get stressed out by these conversations when you feel more threatened in your daily life, because of poverty or whatever other reason. But the end result is that to make life easier for themselves, the OP has sacrificed their ability to change their mind or change anyone else’s mind on this. That’s a cost that might be worth paying, but it’s worth remembering that it’s definitely a cost.
 
 (Just in general, I think it’s worth erring on the side of trying to convince people of facts rather than values. A few quick reasons I believe this: Fact-spreading is more co-operative. In political discourse, a lot of things can either be viewed as factual disagreements or value disagreements, and I think that trying to think of them as factual disagreements is a useful exercise for increasing your politeness and persuasiveness. And if you spend a while learning about facts to argue with someone, I think you’re possibly more likely to have learned something useful than if you spent that time trying to write emotional appeals to convince third parties that the person you’re arguing against has an abhorrent belief.)
 
-I think this kind of attitude elevates intolerance of political beliefs to a virtue. Posts like this one tell the OP’s friends that their political enemies are monsters who literally believe that “native children should be ripped away from their cultures and people”. This post tells the OP’s enemies that the OP has no idea about why people disagree with them, and it makes the OP’s enemies quite reasonably less enthusiastic about taking the OP seriously in future. Social groups naturally have an evolutionary pressure to make themselves more insular, and hating outsiders is the kind of thing that they’re always going to be drifting towards; I want to oppose that trend, not encourage it.
+I think this kind of attitude elevates intolerance of political beliefs to a virtue. Posts like this one tell the OP’s friends that their political enemies are monsters who literally believe that "native children should be ripped away from their cultures and people". This post tells the OP’s enemies that the OP has no idea about why people disagree with them, and it makes the OP’s enemies quite reasonably less enthusiastic about taking the OP seriously in future. Social groups naturally have an evolutionary pressure to make themselves more insular, and hating outsiders is the kind of thing that they’re always going to be drifting towards; I want to oppose that trend, not encourage it.
 
 So I think there are two very different claims the post is making. I think the reason that the post doesn’t distinguish between them is that they can be phrased very similarly: “it’s unreasonable to expect oppressed people to be able to dispassionately discuss political disagreements which personally affect them” is a sentence which could be taken to mean either claim.
 
 In general, it’s always a subtle and difficult point to say that X is non-optimal but also we shouldn’t force people to not do X if they really want to. I wish English were better at expressing this.
 
-—
+--
 
-One strong agreement I have with this post is that I really hate it when I’m talking about something which I think is incredibly morally important, and the person I’m talking to treats it like a joke and feels no sympathy for the strength of my conviction. (Feminists have written a bunch of articles about how annoying they find it when privileged people “play devil’s advocate” like [this one](http://everydayfeminism.com/2015/09/playing-devils-advocate/) and [this worse one](http://feministing.com/2014/05/30/an-open-letter-to-privileged-people-who-play-devils-advocate/).) They give me a shitty argument that I carefully and honestly try to respond to in good faith, and as soon as I’m done they move on to the next objection. And then at the end they say that they were just kidding and they actually don’t care at all about what I was talking about.
+One strong agreement I have with this post is that I really hate it when I’m talking about something which I think is incredibly morally important, and the person I’m talking to treats it like a joke and feels no sympathy for the strength of my conviction. (Feminists have written a bunch of articles about how annoying they find it when privileged people "play devil’s advocate" in this way.) They give me a shitty argument that I carefully and honestly try to respond to in good faith, and as soon as I’m done they move on to the next objection. And then at the end they say that they were just kidding and they actually don’t care at all about what I was talking about.
 
 Ironically, the person who has most upset me in this way was the white dude who originally shared this post. One time I was saying that I thought that it was terribly wrong to torture animals to eat animal products. He asked me why I was using an Apple product if I cared so much about ethics of consumption. I told him I wasn’t sure what he meant.
 
@@ -42,7 +45,7 @@ So I did—I had a lot of respect for the guy and I thought of him as my friend,
 
 I went to the guy to tell him this. He told me that he didn’t care and didn’t want to talk about it. I was quite taken aback—I said that he’d told me that I should look into something, and I thought it was only reasonable of me to talk to him about what I’d found. His friend scolded me for trying to pressure him into talking about something that he didn’t want to talk about; a few years later, she saw the post which I’m writing about and commented how much she agreed with it.
 
-(For what it’s worth, the guy ended up slightly apologizing for this.)
+(For what it’s worth, he ended up slightly apologizing for this.)
 
 (I’d normally message someone to tell them that I was writing a post about them. But in this case, I think the person in question has clearly communicated his preference against seeing calmly written disagreements, and I see no reason not to do what he seems to want.)
 
