@@ -8,6 +8,19 @@
     <atom:link href="http://shlegeris.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>The Armchair Economist on moral philosophy</title>
+        
+        
+          <description>&lt;p&gt;I read a chapter of The Armchair Economist today. It’s an engagingly written book.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Wed, 24 Aug 2016 00:00:00 -0700</pubDate>
+        <link>http://shlegeris.com/2016/08/24/armchair.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2016/08/24/armchair.html</guid>
+      </item>
+    
+      <item>
         <title>Dumb ideas</title>
         
         
@@ -122,19 +135,6 @@
         <pubDate>Sat, 02 Jul 2016 00:00:00 -0700</pubDate>
         <link>http://shlegeris.com/2016/07/02/poisson.html</link>
         <guid isPermaLink="true">http://shlegeris.com/2016/07/02/poisson.html</guid>
-      </item>
-    
-      <item>
-        <title>Hash-ordered treaps</title>
-        
-        
-          <description>&lt;p&gt;Hash-ordered treaps are a cool kind of binary search tree. They have the neat property that the mapping from ordered sets to hash-ordered treaps is one-to-one and onto. That is, for every ordered set, there’s exactly one valid hash-ordered treap which represents it.&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Sat, 02 Jul 2016 00:00:00 -0700</pubDate>
-        <link>http://shlegeris.com/2016/07/02/hash-ordered-treaps.html</link>
-        <guid isPermaLink="true">http://shlegeris.com/2016/07/02/hash-ordered-treaps.html</guid>
       </item>
     
   </channel>
