@@ -16,13 +16,16 @@ However, some people find that they consistently do badly at graciously exiting 
 
 Incidentally, why is it normal to dislike your exes? I would have thought that publicly admitting that you dislike your ex would be like admitting that you aren't very good at discerning whether people are trustworthy or not, which I'd imagine would make you look bad. People don't normally talk so negatively about their former business partners, coworkers, housemates, or old friends who they don't see as much anymore.
 
-I can think of a few reasons. To start with, I think humans are more irrational
+I think one explanation for this is that society has kind of conflicting ideas about what romance is and what it's for. To some extent, romance is for casual sex, and to some extent, it's for establishing relationships that can last thirty years. This is always going to be a source of tension.
 
+Another reason that I think people often think badly of their exes is that anger cauterizes emotional wounds. It can hurt to be rejected or to reject someone; this plausibly hurts less when you think of the person as a newly revealed asshole.
 
-I think that this is because society has kind of fucked up and inconsistent ideas about how romance should go
-which makes it hard to end relationships well
-If you think that affects you, then that’s a reason to want to be able to avoid the person
-My social group is incredibly romantically incestuous
-Like, if you draw a diagram of who’s dating whom, it’s ridiculously closely connected
-Which works out alright for us, because we tend to have relatively amicable breakups
-And maybe it leads to more amicable breakups.
+People thinking badly of their exes is also going to be a self-fufilling prophecy. If you know that your ex probably won't speak well of you anyway, there's no reason not to be an asshole to them as you're breaking up.
+
+So if it seems likely that the relationship will end badly, you might want to consider not dating people you're socially connected to.
+
+One way of looking at this would be to look at your past romantic relationships. If you have mostly cordial relationships with your exes, dating people who you're socially connected to looks like a better idea.
+
+--
+
+What are your thoughts?
