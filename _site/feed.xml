@@ -8,6 +8,45 @@
     <atom:link href="http://shlegeris.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Should we encourage price discrimination based on income?</title>
+        
+        
+          <description>&lt;p&gt;Here’s a crazy half-baked economics idea:&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sat, 03 Sep 2016 00:00:00 -0700</pubDate>
+        <link>http://shlegeris.com/2016/09/03/tax-percentiles.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2016/09/03/tax-percentiles.html</guid>
+      </item>
+    
+      <item>
+        <title>Printers and price discrimination</title>
+        
+        
+          <description>&lt;p&gt;I’m reading “Modern Principles of Economics” by Alex Tabarrok and Tyler Cowen. I’m really enjoying it—it’s engagingly written and even though I’ve learned most of the material before, I keep learning fun little things.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sat, 03 Sep 2016 00:00:00 -0700</pubDate>
+        <link>http://shlegeris.com/2016/09/03/printers.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2016/09/03/printers.html</guid>
+      </item>
+    
+      <item>
+        <title>Privilege and polite disagreement</title>
+        
+        
+          <description>&lt;p&gt;&lt;strong&gt;Content warning/TLDR: It’s usually unreasonable to demand that people calmly discuss topics which are personally charged to them. However, I think that it’s praiseworthy to be able to discuss these topics, and I want people to be better at not thinking of their political enemies as monsters. In this post I say that people should consider the possibility that they are wrong about things.&lt;/strong&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Tue, 30 Aug 2016 00:00:00 -0700</pubDate>
+        <link>http://shlegeris.com/2016/08/30/white-dudes.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2016/08/30/white-dudes.html</guid>
+      </item>
+    
+      <item>
         <title>The Armchair Economist on moral philosophy</title>
         
         
@@ -96,45 +135,6 @@
         <pubDate>Fri, 29 Jul 2016 00:00:00 -0700</pubDate>
         <link>http://shlegeris.com/2016/07/29/porn.html</link>
         <guid isPermaLink="true">http://shlegeris.com/2016/07/29/porn.html</guid>
-      </item>
-    
-      <item>
-        <title>Terse notes on graph algorithms</title>
-        
-        
-          <description>&lt;script src=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js&quot; integrity=&quot;sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
-
-</description>
-        
-        <pubDate>Sat, 02 Jul 2016 00:00:00 -0700</pubDate>
-        <link>http://shlegeris.com/2016/07/02/graph.html</link>
-        <guid isPermaLink="true">http://shlegeris.com/2016/07/02/graph.html</guid>
-      </item>
-    
-      <item>
-        <title>SMS vs email responsiveness</title>
-        
-        
-          <description>&lt;p&gt;Here’s something I’ve learned recently: People are waaaaay more responsive to SMS than email. If you need to get a quick short response from someone, you should definitely text them.&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Sat, 02 Jul 2016 00:00:00 -0700</pubDate>
-        <link>http://shlegeris.com/2016/07/02/sms.html</link>
-        <guid isPermaLink="true">http://shlegeris.com/2016/07/02/sms.html</guid>
-      </item>
-    
-      <item>
-        <title>Testing whether two integers are different</title>
-        
-        
-          <description>&lt;p&gt;Here is a super simple statistics question whose answer I didn’t know until just now: How do you test whether one integer is different from another?&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Sat, 02 Jul 2016 00:00:00 -0700</pubDate>
-        <link>http://shlegeris.com/2016/07/02/poisson.html</link>
-        <guid isPermaLink="true">http://shlegeris.com/2016/07/02/poisson.html</guid>
       </item>
     
   </channel>
