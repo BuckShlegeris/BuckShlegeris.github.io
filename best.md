@@ -10,7 +10,7 @@ Here are my favorite things I've written.
 
 I thought about the ethics of saving vs improving lives [here](http://shlegeris.com/2015/08/08/value-of-life.html). I think that separating out the seller's price vs buyer's price of a life was a good idea. However, I did a bad job with the counterfactual reasoning in that post.
 
-Others: [Does availability of porn displace romantic relationships?](http://shlegeris.com/2016/07/29/porn.html) I think we should [optimize dating for non-interference with platonic relationships](http://shlegeris.com/2016/05/29/explicit.html).
+Others: I had a [crazy idea](http://shlegeris.com/2016/09/03/tax-percentiles.html) about an economic equilibrium we could be in that we aren't. [Does availability of porn displace romantic relationships?](http://shlegeris.com/2016/07/29/porn.html) I think we should [optimize dating for non-interference with platonic relationships](http://shlegeris.com/2016/05/29/explicit.html).
 
 ## Software engineering
 

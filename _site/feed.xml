@@ -8,10 +8,23 @@
     <atom:link href="http://shlegeris.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Objecting to Holden Karnosfky&#39;s objections to EA</title>
+        
+        
+          <description>&lt;p&gt;Holden Karnofsky published a great post yesterday, called &lt;a href=&quot;https://docs.google.com/document/d/1hKZNRSLm7zubKZmfA7vsXvkIofprQLGUoW43CYXPRrk/edit&quot;&gt;Some Key Ways in Which I’ve Changed My Mind Over the Last Several Years&lt;/a&gt;. Among other things, he wrote that he’s less skeptical of EA than he used to be. He noted that he still has some “concerns and objections” to EA though, and linked to &lt;a href=&quot;http://effective-altruism.com/ea/pf/why_the_open_philanthropy_project_isnt_currently/5ie&quot;&gt;this comment of his&lt;/a&gt; as an example.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 05 Sep 2016 00:00:00 -0700</pubDate>
+        <link>http://shlegeris.com/2016/09/05/holden.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2016/09/05/holden.html</guid>
+      </item>
+    
+      <item>
         <title>Gini coefficient tool</title>
         
         
-          <description>&lt;p&gt;I made a tool for visualizing the Lorenz curve and Gini coefficient of distributions. You can see it &lt;a href=&quot;http://shlegeris.com/gini&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+          <description>&lt;p&gt;I made a tool for visualizing the Lorenz curve and Gini coefficient of a population. You can see it &lt;a href=&quot;http://shlegeris.com/gini&quot;&gt;here&lt;/a&gt;. (The Gini coefficient is a measure of inequality in a distribution; it’s the most way of quantifying income inequality)&lt;/p&gt;
 
 </description>
         
@@ -122,19 +135,6 @@
         <pubDate>Sun, 14 Aug 2016 00:00:00 -0700</pubDate>
         <link>http://shlegeris.com/2016/08/14/algorithms.html</link>
         <guid isPermaLink="true">http://shlegeris.com/2016/08/14/algorithms.html</guid>
-      </item>
-    
-      <item>
-        <title>Counterfactual reasoning</title>
-        
-        
-          <description>&lt;p&gt;There’s a kind of thought process which I enjoy, which I think is pretty core to EA. It’s a particular approach to answering questions of the form “should I do X”. It involves counterfactual reasoning, a bunch of basic microeconomics, and careful attention to your values.&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Sun, 31 Jul 2016 00:00:00 -0700</pubDate>
-        <link>http://shlegeris.com/2016/07/31/counterfactuals.html</link>
-        <guid isPermaLink="true">http://shlegeris.com/2016/07/31/counterfactuals.html</guid>
       </item>
     
   </channel>
