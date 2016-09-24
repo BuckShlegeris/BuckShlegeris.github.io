@@ -8,6 +8,19 @@
     <atom:link href="http://shlegeris.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>A mistake in the Cato institute report on risks from refugees</title>
+        
+        
+          <description>&lt;p&gt;I was reading a &lt;a href=&quot;http://www.vox.com/2016/9/20/12986886/donald-trump-jr-terrorist-skittles-wrong&quot;&gt;Vox article&lt;/a&gt; about the risks of Americans being killed by terrorists refugees. It linked to &lt;a href=&quot;http://object.cato.org/sites/cato.org/files/pubs/pdf/pa798_1_1.pdf&quot;&gt;“Terrorism and Immigration”&lt;/a&gt;, a report by the Cato Institute.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sat, 24 Sep 2016 00:00:00 -0700</pubDate>
+        <link>http://shlegeris.com/2016/09/24/cato.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2016/09/24/cato.html</guid>
+      </item>
+    
+      <item>
         <title>Objecting to Holden Karnosfky&#39;s objections to EA</title>
         
         
@@ -122,19 +135,6 @@
         <pubDate>Sun, 14 Aug 2016 00:00:00 -0700</pubDate>
         <link>http://shlegeris.com/2016/08/14/bootcamp-attendees.html</link>
         <guid isPermaLink="true">http://shlegeris.com/2016/08/14/bootcamp-attendees.html</guid>
-      </item>
-    
-      <item>
-        <title>My advice on studying algorithms</title>
-        
-        
-          <description>&lt;p&gt;Software engineering interviews often ask whiteboard algorithms questions. Here’s my advice on how to study for them. (My credentials on this topic are:  I have passed a lot of whiteboard interviews, including at Google and Apple;  as part of my job I prepare programmers for these algorithm interviews; I have conducted more than 200 technical interviews on programmers with a very wide variety of backgrounds.)&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Sun, 14 Aug 2016 00:00:00 -0700</pubDate>
-        <link>http://shlegeris.com/2016/08/14/algorithms.html</link>
-        <guid isPermaLink="true">http://shlegeris.com/2016/08/14/algorithms.html</guid>
       </item>
     
   </channel>
