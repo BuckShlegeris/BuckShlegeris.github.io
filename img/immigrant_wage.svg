@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="363px" height="416px" viewBox="0 0 363 416" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <title>immigrant_wage</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="immigrant_wage">
+            <polyline id="Combined-Shape" stroke="#979797" points="72.9751964 210 151.335938 210.336412 150.037078 336.292969"></polyline>
+            <polyline id="Combined-Shape" stroke="#979797" points="73.3799452 231.035038 211.132452 229.701447 211.888069 332.606445"></polyline>
+            <path d="M95.5,193.5 L287.5,254.5" id="Path-9" stroke="#FF0000"></path>
+            <path d="M81.2109375,341.351562 C157.006196,335.196157 230.310647,333.977098 306.03125,341.542969" id="Path-2" stroke="#000000"></path>
+            <path d="M304.840146,326.606445 C336.693898,343.771656 332.711662,331.970857 301.945954,364.785156" id="Path-3" stroke="#000000"></path>
+            <text id="Price" transform="translate(18.000000, 208.835938) rotate(270.000000) translate(-18.000000, -208.835938) " font-family="Helvetica" font-size="20" font-weight="normal" fill="#000000">
+                <tspan x="-24" y="215.835938">Price</tspan>
+            </text>
+            <text id="Quantity" font-family="Helvetica" font-size="20" font-weight="normal" fill="#000000">
+                <tspan x="154" y="395.835938">Quantity</tspan>
+            </text>
+            <polyline id="Path-5" stroke="#000000" points="63.140625 210 66.6171875 210 67.5546875 210 68.6953125 210 68.953125 210 69.5234375 210 69.78125 210 70.0390625 210 70.296875 210 70.5546875 210 70.8125 210 71.0703125 210 71.328125 210 71.5859375 210 71.84375 210 72.1015625 210 72.359375 210 72.875 210 73.1328125 210 73.390625 210"></polyline>
+            <path d="M58.6289062,228.879551 C72.7140145,228.879551 75.657212,231.978563 70.7964073,227.695312" id="Path-6" stroke="#000000"></path>
+            <text id="P1" font-family="Helvetica" font-size="20" font-weight="normal" line-spacing="24" fill="#000000">
+                <tspan x="38" y="237.835938">P1</tspan>
+            </text>
+            <text id="P2" font-family="Helvetica" font-size="20" font-weight="normal" line-spacing="24" fill="#000000">
+                <tspan x="36" y="220.835938">P2</tspan>
+            </text>
+            <text id="D" font-family="Helvetica" font-size="20" font-weight="normal" line-spacing="24" fill="#000000">
+                <tspan x="90" y="191">D</tspan>
+            </text>
+            <g id="Cross" transform="translate(205.000000, 223.000000)" stroke="#000000">
+                <g id="Group">
+                    <path d="M0.71875,2.1953125 C4.07682292,5.23177083 7.43489583,8.26822917 10.7929688,11.3046875" id="Path-7"></path>
+                    <path d="M11.0820312,0.62890625 L1.06640625,11.6757812" id="Path-8"></path>
+                </g>
+            </g>
+            <g id="Cross" transform="translate(146.000000, 205.000000)" stroke="#000000">
+                <g id="Group">
+                    <path d="M0.71875,2.1953125 C4.07682292,5.23177083 7.43489583,8.26822917 10.7929688,11.3046875" id="Path-7"></path>
+                    <path d="M11.0820312,0.62890625 L1.06640625,11.6757812" id="Path-8"></path>
+                </g>
+            </g>
+            <polyline id="Path-10" stroke="#000000" points="151.25 337.75 151.25 340.859375 151.25 341.117188 151.25 341.945312 151.25 342.203125 151.25 342.460938 151.25 342.976562 151.25 343.234375 151.25 343.492188 151.25 343.75 151.25 344.007812 151.25 344.265625 151.25 344.523438 151.25 344.78125 151.25 345.039062 151.25 345.296875 151.25 345.554688 151.25 345.8125 151.25 346.070312 151.25 346.328125 151.25 346.585938 151.25 346.84375 151.25 347.101562 151.25 347.359375 151.25 347.617188 151.25 347.875 151.25 348.132812 151.25 348.648438 151.25 348.90625 151.25 349.164062 151.25 349.421875 151.25 349.679688 151.25 349.9375 151.25 350.195312 151.25 350.453125 151.25 350.710938 151.25 350.96875"></polyline>
+            <path d="M211.433594,337 L210.859375,353.695312" id="Path-11" stroke="#000000"></path>
+            <text id="Q2" font-family="Helvetica" font-size="20" font-weight="normal" fill="#000000">
+                <tspan x="196" y="369.835938">Q2</tspan>
+            </text>
+            <text id="Q1" font-family="Helvetica" font-size="20" font-weight="normal" fill="#000000">
+                <tspan x="139.5" y="370">Q1</tspan>
+            </text>
+            <text id="“Immigrants-don’t-re" font-family="Helvetica" font-size="20" font-weight="normal" fill="#000000">
+                <tspan x="74.3994141" y="34">“Immigrants don’t reduce </tspan>
+                <tspan x="54.9511719" y="58">wages for low-skilled natives”</tspan>
+            </text>
+            <path d="M57.3898582,105.673673 C60.478292,98.6541635 65.7644629,85.0932956 72.4249174,82.6716236 C75.7520721,81.4619047 74.3384938,89.5703737 76.1240192,92.6273784 C78.9823367,97.5211145 82.8593015,101.743875 86.2269426,106.302123" id="Path-14" stroke="#000000"></path>
+            <path d="M69.0672755,81.7925897 C69.0672755,216.943582 68.0521734,64.8488935 72.581818,213.858962 C73.8771755,256.471866 73.0144876,299.509112 79.2200452,341.542969" id="Path-15" stroke="#000000"></path>
+            <path d="M77.7338782,230.056916 C107.515921,217.597898 76.25,211 76.25,211" id="Path-7" stroke="#7ED321" transform="translate(83.423145, 220.528458) scale(1, -1) translate(-83.423145, -220.528458) "></path>
+            <path id="Path-7-decoration-1" d="M88.8549709,228.656453 L77.7338782,230.056916 L86.5393892,223.121285" stroke="#7ED321"></path>
+            <path d="M151.203045,335.053766 C177.375278,316.826956 208.552392,332.637193 208.552392,332.637193" id="Path-8" stroke="#7ED321" transform="translate(179.877718, 330.664491) scale(-1, 1) translate(-179.877718, -330.664491) "></path>
+            <path id="Path-8-decoration-1" d="M161.780102,331.343529 L151.203045,335.053766 L158.351175,326.419866" stroke="#7ED321"></path>
+        </g>
+    </g>
+</svg>
