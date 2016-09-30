@@ -5,6 +5,8 @@ date:   ""
 uses_react: false
 ---
 
+Here's a numerical optimization problem I have. The details aren't that important. I just want to get general advice on how I should go about solving it:
+
 I have a bunch of people and their hourly wages, and I want to choose the optimal flat tax rate $l \hat r$. Each person chooses a number of hours to work $l h$, and their utility is $l \log\left(y\right) - h$, where $l y$ is their after-tax income and $l h$ is the number of hours they're working.
 
 I have a vector $l \mathbf{w}$ of length $l l$ representing a list of wages, and I want to solve the following system of equations:
@@ -32,3 +34,5 @@ Key characteristics:
 - they have lots of argmaxes referring to each other
 
 I want to numerically solve this kind of problem. What's the best way to do this?
+
+I don't really know any methods for this except turning this into an optimiztion problem and using gradient descent. Is there something better I should do?
