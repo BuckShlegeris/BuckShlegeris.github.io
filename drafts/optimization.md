@@ -36,3 +36,5 @@ Key characteristics:
 I want to numerically solve this kind of problem. What's the best way to do this?
 
 I don't really know any methods for this except turning this into an optimiztion problem and using gradient descent. Is there something better I should do?
+
+Do I need to do anything fancy because of the argmaxes referring to each other?
