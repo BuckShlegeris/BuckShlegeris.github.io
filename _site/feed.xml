@@ -8,6 +8,19 @@
     <atom:link href="http://shlegeris.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>The great thing about regressive taxes</title>
+        
+        
+          <description>&lt;p&gt;Suppose you’re trying to effectively tax a bunch of software engineers who are all making around $100k a year.  Your current tax system charges 0% tax between $0k and $50k, then 50% after $50k.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 02 Oct 2016 00:00:00 -0700</pubDate>
+        <link>http://shlegeris.com/2016/10/02/tax.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2016/10/02/tax.html</guid>
+      </item>
+    
+      <item>
         <title>Contradictory claims in labor economics</title>
         
         
@@ -122,19 +135,6 @@
         <pubDate>Tue, 16 Aug 2016 00:00:00 -0700</pubDate>
         <link>http://shlegeris.com/2016/08/16/dumb.html</link>
         <guid isPermaLink="true">http://shlegeris.com/2016/08/16/dumb.html</guid>
-      </item>
-    
-      <item>
-        <title>Using formatting in writing</title>
-        
-        
-          <description>&lt;p&gt;When I’m writing, I often find myself wanting to use formatting to express myself. For example, I like using bold font to emphasize my most important sentences.&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Sun, 14 Aug 2016 00:00:00 -0700</pubDate>
-        <link>http://shlegeris.com/2016/08/14/formatting.html</link>
-        <guid isPermaLink="true">http://shlegeris.com/2016/08/14/formatting.html</guid>
       </item>
     
   </channel>
