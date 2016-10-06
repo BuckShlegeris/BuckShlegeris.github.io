@@ -28,7 +28,7 @@ Here are some ways to extend these projects:
 
 ## Math
 
-One really fun project is to build a computer algebra system, which is a library which lets you do symbolic manipulation. It should be able to represent expressions like $l x + 2y$. It should know that $l 2(x + y) = 2x + 2y$. This turns out to be pretty tricky, and making it work is a great learning experience.
+One really fun project is to build a computer algebra system, which is a library which lets you do symbolic manipulation. It should be able to represent expressions like $$ x + 2y$$. It should know that $$ 2(x + y) = 2x + 2y$$. This turns out to be pretty tricky, and making it work is a great learning experience.
 
 Another project I enjoyed when I was younger was writing a circuit simulator. You gave the program a graph of circuit components, and it turned the graph into a system of linear equations, then solved them for current.
 

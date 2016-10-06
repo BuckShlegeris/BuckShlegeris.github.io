@@ -19,8 +19,8 @@
     MathJax.Hub.Config({
       jax: ["input/TeX", "output/HTML-CSS"],
       tex2jax: {
-        inlineMath: [ ['$l', '$'] ],
-        displayMath: [ ['$$', '$$']],
+        inlineMath: [ ['$$', '$$'] ],
+        displayMath: [ ['$^$', '$^$']],
         processEscapes: true,
         skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
       },
@@ -50,7 +50,7 @@
       <h1>Buck Shlegeris</h1>
 
 <div class="lead">
-<p>I am a software engineer from Australia. I have lived in San Francisco for most of the last three years. I'm interested in data structures and effective altruism.</p>
+<p>I am a software engineer from Australia. I have lived in San Francisco for most of the last three years. I'm interested in data structures, economics, and effective altruism.</p>
 <p>Here are some things that I've written recently:</p>
 </div>
 
@@ -61,9 +61,9 @@
     <p class="post-meta"><time datetime="2016-10-02T00:00:00-07:00" itemprop="datePublished">Oct 2, 2016</time></p>
 
     <div class="shrink-headings">
-      <p>Sometimes people say that a universal basic income would be good, because unlike the current welfare system which phases out benefits as your income increases, imposing an effective high marginal tax rate, the UBI stays as your income rises. As a result, these people claim, the UBI does not disincentivise work.</p>
+      <p>Sometimes people say that a universal basic income would be good, because unlike the current welfare system which phases out benefits as your income increases, imposing an effective high marginal tax rate, the UBI stays constant as your income rises. As a result, these people claim, the UBI does not disincentivise work.</p>
 
-<p>This is false. Increasing the UBI means that your $l n$th hour of work has lower utility than it would have had otherwise, because of diminishing marginal returns. So the UBI discourages work.</p>
+<p>This is false. Increasing the UBI means that your <script type="math/tex">n</script>th hour of work has lower utility than it would have had otherwise, because of diminishing marginal returns. So the UBI discourages work.</p>
 
 <p>–</p>
 
@@ -71,9 +71,9 @@
 
 <p>Suppose a worker’s utility function is</p>
 
-<script type="math/tex; mode=display">\text{utility} = \log(\text{wage} \cdot \text{tax rate} \cdot \text{hours worked} + \text{UBI}) - \text{hours worked}</script>
+<p>$^$\text{utility} = \log(\text{wage} \cdot \text{tax rate} \cdot \text{hours worked} + \text{UBI}) - \text{hours worked}$^$</p>
 
-<p>Let the wage be $l w$, tax rate $l 1 - r$, hours worked $l h$, UBI $l c$. Assume flat tax for simplicity. So $l U = \log(w \cdot h \cdot r + c) - h$. The optimal amount of work happens when $l \frac{dU}{dh}$ is zero.</p>
+<p>Let the wage be <script type="math/tex">w</script>, tax rate <script type="math/tex">1 - r</script>, hours worked <script type="math/tex">h</script>, UBI <script type="math/tex">c</script>. Assume flat tax for simplicity. So <script type="math/tex">U = \log(w \cdot h \cdot r + c) - h</script>. The optimal amount of work happens when <script type="math/tex">\frac{dU}{dh}</script> is zero.</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{align}

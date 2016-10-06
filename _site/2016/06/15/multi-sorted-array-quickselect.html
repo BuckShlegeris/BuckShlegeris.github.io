@@ -18,8 +18,8 @@
     MathJax.Hub.Config({
       jax: ["input/TeX", "output/HTML-CSS"],
       tex2jax: {
-        inlineMath: [ ['$l', '$'] ],
-        displayMath: [ ['$$', '$$']],
+        inlineMath: [ ['$$', '$$'] ],
+        displayMath: [ ['$^$', '$^$']],
         processEscapes: true,
         skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
       },
@@ -48,13 +48,13 @@
 
       <p><strong>Edit: Thanks heaps to <a href="http://stackoverflow.com/users/1009831/evgeny-kluev">Evgeny Kluev</a>, the author of that original StackOverflow answer, for noticing that I’d made a mistake in the total time complexity calculation.</strong></p>
 
-<p><strong>Edit 2016-06-18: I’d orignally described this with arrays of maximum length $l n$. But it works just as well with arrays of average length $l n$, which is a stronger statement, so I’d rather use this one.</strong></p>
+<p><strong>Edit 2016-06-18: I’d orignally described this with arrays of maximum length <script type="math/tex">n</script>. But it works just as well with arrays of average length <script type="math/tex">n</script>, which is a stronger statement, so I’d rather use this one.</strong></p>
 
-<p>Suppose I have $l m$ sorted arrays of average length $l n$. How quickly can I search to find the $l k$th item in them?</p>
+<p>Suppose I have <script type="math/tex">m</script> sorted arrays of average length <script type="math/tex">n</script>. How quickly can I search to find the <script type="math/tex">k</script>th item in them?</p>
 
-<p><a href="http://stackoverflow.com/a/26299986/1360429">This StackOverflow answer</a> mentions this problem offhandedly, but doesn’t clearly explain the algorithm, and it implies that the answer it’s thinking of is $l O(m^2 \log(n)^2)$.</p>
+<p><a href="http://stackoverflow.com/a/26299986/1360429">This StackOverflow answer</a> mentions this problem offhandedly, but doesn’t clearly explain the algorithm, and it implies that the answer it’s thinking of is <script type="math/tex">O(m^2 \log(n)^2)</script>.</p>
 
-<p>We can do better. You can modify quickselect to get an algorithm which takes $l O(m \log(n) \log(m \cdot n))$ average case, and I suspect you can adapt <a href="https://en.wikipedia.org/wiki/Median_of_medians">median of medians</a> to get that time in the worst case.</p>
+<p>We can do better. You can modify quickselect to get an algorithm which takes <script type="math/tex">O(m \log(n) \log(m \cdot n))</script> average case, and I suspect you can adapt <a href="https://en.wikipedia.org/wiki/Median_of_medians">median of medians</a> to get that time in the worst case.</p>
 
 <p>The quickselect adaptation is pretty simple. We’re going to be do a simultaneous binary search on every array. For simplicity, let’s assume that all items in arrays are unique.</p>
 
@@ -159,17 +159,17 @@
 
 <p>For full source code including some random testcases, <a href="https://gist.github.com/bshlgrs/14801efbb27d447fa7a2afba97ab70b4">look here</a>.</p>
 
-<p>How fast is this method? The main loop costs $l m \log(n)$ per iteration. How many times will we run it? Well, every time we run the iteration, we cut out all the elements which are on the wrong side of the result from our pivot. Worst case, we keep choosing the worst possible pivot and only ruling it out, which means we need to run that iteration once for every item in all of the arrays. This is $l O(m^2 n \log(n))$.</p>
+<p>How fast is this method? The main loop costs <script type="math/tex">m \log(n)</script> per iteration. How many times will we run it? Well, every time we run the iteration, we cut out all the elements which are on the wrong side of the result from our pivot. Worst case, we keep choosing the worst possible pivot and only ruling it out, which means we need to run that iteration once for every item in all of the arrays. This is <script type="math/tex">O(m^2 n \log(n))</script>.</p>
 
-<p>But on average, we’ll cut a constant fraction of our search space out every time. So we should expect to have to do that iteration $l \log(m\cdot n) = \log(m) + \log(n)$ times, for an overall time complexity of $l O(m \log(n) \log(m \cdot n))$.</p>
+<p>But on average, we’ll cut a constant fraction of our search space out every time. So we should expect to have to do that iteration <script type="math/tex">\log(m\cdot n) = \log(m) + \log(n)</script> times, for an overall time complexity of <script type="math/tex">O(m \log(n) \log(m \cdot n))</script>.</p>
 
 <p>(Incidentally, when I was initially thinking about this, I thought we might get some speedup because our call to <code class="highlighter-rouge">rank</code> is going to be on a smaller and smaller section of its array every iteration throuhgh the loop. But I don’t think that’s true, because to get an asympotic decrease in the sum of a bunch of logarithms, you need to make your problem sizes decrease extremely quickly; exponentially decaying problem size doesn’t cut it. For example:</p>
 
-<script type="math/tex; mode=display">O\left(\sum_{i=0}^n \log\left(2^i\right) \right) = O(\log(n)^2) = O\left(\sum_{i=0}^n \log\left(2^n\right) \right)</script>
+<p>$^$O\left(\sum_{i=0}^n \log\left(2^i\right) \right) = O(\log(n)^2) = O\left(\sum_{i=0}^n \log\left(2^n\right) \right)$^$</p>
 
 <p>because</p>
 
-<script type="math/tex; mode=display">O\left(\sum_{i=0}^n i \right) = O(n^2) = O\left(\sum_{i=0}^n n \right)</script>
+<p>$^$O\left(\sum_{i=0}^n i \right) = O(n^2) = O\left(\sum_{i=0}^n n \right)$^$</p>
 
 <p>So I don’t think we can make that work.)</p>
 

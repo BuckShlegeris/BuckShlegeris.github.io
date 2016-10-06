@@ -24,49 +24,49 @@ So we need to have a way of comparing the damage done by reducing the consumptio
 
 ## Logarithmic happiness
 
-It’s pretty common to approximate happiness as linear in the logarithm of income, which I’m going to equivocate with consumption for the rest of this post. Consumption just means “the total value of all the things you consume in a given year”. Average happiness in a population where everyone has consumption $l c$ can be written as:
+It’s pretty common to approximate happiness as linear in the logarithm of income, which I’m going to equivocate with consumption for the rest of this post. Consumption just means “the total value of all the things you consume in a given year”. Average happiness in a population where everyone has consumption $$ c$$ can be written as:
 
 <div class="math">
-average happiness = $l \log c + k$
+average happiness = $$ \log c + k$$
 </div>
 
-where $l c$ is consumption and $l k$ is a constant that tells us about the consumption level at which a life is so meagre and deprived that it isn’t worth living, and also tells us how rapidly happiness increases relative to wealth. If people have a life expectancy of $l t$ years, then we have the total happiness-years of a person as $l t \log c + t k$.
+where $$ c$$ is consumption and $$ k$$ is a constant that tells us about the consumption level at which a life is so meagre and deprived that it isn’t worth living, and also tells us how rapidly happiness increases relative to wealth. If people have a life expectancy of $$ t$$ years, then we have the total happiness-years of a person as $$ t \log c + t k$$.
 
-Anyway, back to the math. The derivative of this function with respect to consumption is $l \frac{1}{y}$. So if we reduce the size of an entire economy by some small amount $l \Delta c$ evenly spread across the whole population of n people, then the reduction in happiness per person is:
+Anyway, back to the math. The derivative of this function with respect to consumption is $$ \frac{1}{y}$$. So if we reduce the size of an entire economy by some small amount $$ \Delta c$$ evenly spread across the whole population of n people, then the reduction in happiness per person is:
 
 <div class="math">
-$l \Delta \text{happiness per person} = \frac{\Delta c}{c n}$
+$$ \Delta \text{happiness per person} = \frac{\Delta c}{c n}$$
 </div>
 
-but there are $l n$ people, so the total reduction in happiness is:
+but there are $$ n$$ people, so the total reduction in happiness is:
 
 <div class="math">
-$l \Delta \text{total happiness} = \frac{n \Delta c}{n c} = \frac{\Delta c}c$.
+$$ \Delta \text{total happiness} = \frac{n \Delta c}{n c} = \frac{\Delta c}c$$.
 </div>
 
-So if we have the option to spend $l \Delta c$ to save a life, we should be indifferent to doing so if the total reduction of happiness caused by reducing the total consumption by $l \Delta c$ would be the same as the happiness of a given person:
+So if we have the option to spend $$ \Delta c$$ to save a life, we should be indifferent to doing so if the total reduction of happiness caused by reducing the total consumption by $$ \Delta c$$ would be the same as the happiness of a given person:
 
 <div class="math">
-$l t (\log c + k) = \frac{\Delta c}{c}$
+$$ t (\log c + k) = \frac{\Delta c}{c}$$
 </div>
 
-We can solve this for $l \Delta c$:
+We can solve this for $$ \Delta c$$:
 
 <div class="math">
-$l \Delta c = c t (\log c + k)$
+$$ \Delta c = c t (\log c + k)$$
 </div>
 
-Now we can substitute the value that we end up choosing for $l k$ below to figure out that America should be willing to spend up to about $10 million to save an American baby. You can see the calculation [here](https://docs.google.com/spreadsheets/d/1ofwjlxGFlgG7cVnuySiga8yApl6AWLDlyZPa-c5ZHRc/edit#gid=0).
+Now we can substitute the value that we end up choosing for $$ k$$ below to figure out that America should be willing to spend up to about $10 million to save an American baby. You can see the calculation [here](https://docs.google.com/spreadsheets/d/1ofwjlxGFlgG7cVnuySiga8yApl6AWLDlyZPa-c5ZHRc/edit#gid=0).
 
 That’s all the math. Now, let’s spend two thousand words trying to figure out precisely how much fun it is to be extremely poor!
 
-## Thinking theoretically about $l k$
+## Thinking theoretically about $$ k$$
 
-The biggest judgement call in this essay is that $l k$ constant. The consumption at which a life has 0 value according to the above formula is $l 10^{-k}$. So if you think that life isn’t worth living if you’re consuming less than $1000 a year, then you think $l k$ is -3.
+The biggest judgement call in this essay is that $$ k$$ constant. The consumption at which a life has 0 value according to the above formula is $$ 10^{-k}$$. So if you think that life isn’t worth living if you’re consuming less than $1000 a year, then you think $$ k$$ is -3.
 
-That’s the literal meaning of $l k$. However, it seems plausible to me that our log model breaks down when people are incredibly poor. So I think we should use two different strategies to think about $l k$. **Firstly**, we should think about it assuming the model is correct, looking for the level of consumption at which life seems to not be worth living. **Secondly**, we should try ignoring its literal meaning and just trying to directly estimate it by looking at happiness variation across relatively small consumption variations. This should hopefully provide a good estimate over the kind of range we’re interested in.
+That’s the literal meaning of $$ k$$. However, it seems plausible to me that our log model breaks down when people are incredibly poor. So I think we should use two different strategies to think about $$ k$$. **Firstly**, we should think about it assuming the model is correct, looking for the level of consumption at which life seems to not be worth living. **Secondly**, we should try ignoring its literal meaning and just trying to directly estimate it by looking at happiness variation across relatively small consumption variations. This should hopefully provide a good estimate over the kind of range we’re interested in.
 
-Imagine we decided that living on $100,000 a year is twice as much fun as living on $10,000 a year. This would mean that $l log 100000 + k$ is twice as much as $l log 10000 + k$. So $l k$ would be -3\. If we thought poverty was not as bad as that, then maybe we’d be saying that living on $1,000 a year is half as good as $10,000\. In that case, $l k$ would be -2\. I think that the first of those is probably truer, so this is another argument for estimating $l k$ as about -3.
+Imagine we decided that living on $100,000 a year is twice as much fun as living on $10,000 a year. This would mean that $$ log 100000 + k$$ is twice as much as $$ log 10000 + k$$. So $$ k$$ would be -3\. If we thought poverty was not as bad as that, then maybe we’d be saying that living on $1,000 a year is half as good as $10,000\. In that case, $$ k$$ would be -2\. I think that the first of those is probably truer, so this is another argument for estimating $$ k$$ as about -3.
 
 Maybe we should be concerned by this, because more than a billion humans have less than $1000 annual consumption. I have a few thoughts on this. To start with, it seems plausible that the purchasing power parity adjustment I’m using isn’t powerful enough. It’s cheap to have a place to sleep in rural Malawi, much more than it is in America. If there were a Malawian rural town within commuting distance of my office in SoMa, I’d be ecstatic to pay $200 a month to live in a thatch-roofed hut there. (I’m not kidding: I lived on an air mattress on the floor of my office for six months last year.) There are lots of really cheap goods available to Malawians, like thatched roof huts and really cheap shitty rice, which are unavailable to me but make it much more easy to live cheaply.
 
@@ -88,20 +88,20 @@ The variability of consumption also plays into this. If it costs you a dollar a 
 
 Marie La points out that another way of estimating this would be to look at the mortal risks people take when they are starving. We could look at situations where people had a choice between remaining in a place suffering from famine, or doing something extremely dangerous to escape. She points out the example of post-war Vietnam, where the South Vietnamese who tried to escape faced about a 50% chance of death and tried to escape anyway, partially because they were so enormously hungry. One particularly good way of estimating this would be to look at neighboring regions where escaping is roughly as risky but the levels of famine were different, and comparing the rates at which people tried to escape. There would obviously be a million confounders here, like how unpleasant the regime was or how much people expected the situation to improve, but we might get some useful data regardless.
 
-That’s all been trying to estimate $l k$ by looking at happiness at the lowest end: how about if we try to estimate it by looking at how much a 10% change in consumption changes happiness in a nation? This has fewer philosophical issues, so I’m not going to discuss them. This way of indirectly estimating $l k$ is closer to how we’re going to estimate it in the next section.
+That’s all been trying to estimate $$ k$$ by looking at happiness at the lowest end: how about if we try to estimate it by looking at how much a 10% change in consumption changes happiness in a nation? This has fewer philosophical issues, so I’m not going to discuss them. This way of indirectly estimating $$ k$$ is closer to how we’re going to estimate it in the next section.
 
-You also might be interested in looking up the paper which had happiness as a function of consumption _within_ particular poor countries, then trying to solve for $l k$ within that much smaller and easier to measure range. However, this requires making a judgement call about how to translate the descriptions of happiness into real numbers. Depending on your feelings, this judgement call might be worse or better than what I did.
+You also might be interested in looking up the paper which had happiness as a function of consumption _within_ particular poor countries, then trying to solve for $$ k$$ within that much smaller and easier to measure range. However, this requires making a judgement call about how to translate the descriptions of happiness into real numbers. Depending on your feelings, this judgement call might be worse or better than what I did.
 
-## Numerically estimating $l k$
+## Numerically estimating $$ k$$
 
-Here’s a few data points to use to estimate $l k$:
+Here’s a few data points to use to estimate $$ k$$:
 
 *   A few weeks ago I was talking to this dude who grew up in poverty in Mexico and illegally immigrated to America when he was 12\. We chatted about his previous quality of life for a while: not getting enough food, only getting one pair of shoes a year, and so on. My impression is that his life in Mexico seemed about half as worth living as his life here is. From his description of his quality of life, and my understanding of Mexican poverty, I would guess he was living on maybe $4000 a year. I wish that I’d thought to ask him for a numeric statement of how much better his life here was, but I didn’t think of this. Next time.
 *   Slate Star Codex [did a survey](http://slatestarcodex.com/2013/04/30/utility-weight-results/) trying to calculate the relative quality of life in different situations. Respondents thought that Ethiopian life is 50% as good as American life, and Chinese life was 85% as good.
 
 I’m a lot more averse to poverty than SSC readers, apparently.
 
-From these [we get an average estimate](https://docs.google.com/spreadsheets/d/1ofwjlxGFlgG7cVnuySiga8yApl6AWLDlyZPa-c5ZHRc/edit?usp=sharing) of $l k$ as about -2.2\. This number is low enough that nations with average consumption PPP less than $l 10^{2.2} = 158$ are classified to have a negative quality of life. I think this is an inaccurately high bar. I removed the China data point because I think that the people answering the Slate Star Codex survey overestimated how rich China is. I vaguely recall the survey implying that you lived in a city in China or something, as opposed to living in rural China as 50% of Chinese actually do.
+From these [we get an average estimate](https://docs.google.com/spreadsheets/d/1ofwjlxGFlgG7cVnuySiga8yApl6AWLDlyZPa-c5ZHRc/edit?usp=sharing) of $$ k$$ as about -2.2\. This number is low enough that nations with average consumption PPP less than $$ 10^{2.2} = 158$$ are classified to have a negative quality of life. I think this is an inaccurately high bar. I removed the China data point because I think that the people answering the Slate Star Codex survey overestimated how rich China is. I vaguely recall the survey implying that you lived in a city in China or something, as opposed to living in rural China as 50% of Chinese actually do.
 
 Overall, I think that this model of happiness as logarithmic in consumption is good but gives bad results for extremely poor countries, because we are underestimating the consumption of extremely poor people.
 
@@ -115,7 +115,7 @@ Kenyans who receive GiveDirectly grants have a [median nominal consumption of $0
 
 We’ve got a plethora of extra factors in this particular case. To start with, maybe there are flow-through effects of cash transfers which case them to increase consumption more. Also, bednets have other positive effects than saving lives, like preventing developmental impairments from malaria that limit lifetime earning potential, preventing malaria death in the above-5 year old age group (which isn’t counted) and prevention of other mosquito-borne illnesses. And having a marginal human might increase the consumption of other people in their society in some situations, but I don’t know which situations that is. Also, GiveDirectly might save lives as well, by giving people money to buy things like medicine and medical care and better food, or indirectly by allowing people to get e.g. metal roofs and thus having better hygiene in their houses.
 
-I think that my formula is totally useless for answering the question of how much we should be willing to spend per life saved by AMF if our alternative is giving to GiveDirectly, because it’s so sensitive to changes in my $l k$. However, I did get some feeling about it from doing the research into poverty in Malawi and Kenya I did to write this discussion section. The people whose lives you save by giving to AMF seem to be pretty intensely impoverished. If 30% of Malawians are undernourished in general, and people saved by AMF are unusually poor, I suspect that probably a majority of the lives saved there are undernourished. That means that these people feel hungry _all the time_. I some sympathy for the perspective that those lives sound perhaps not worth living, in which case making them better is the better option. I also think it’s pretty plausible that these lives are actually pretty okay. At the moment, I am probably inclined to think that the lives of the extremely poor are worth living.
+I think that my formula is totally useless for answering the question of how much we should be willing to spend per life saved by AMF if our alternative is giving to GiveDirectly, because it’s so sensitive to changes in my $$ k$$. However, I did get some feeling about it from doing the research into poverty in Malawi and Kenya I did to write this discussion section. The people whose lives you save by giving to AMF seem to be pretty intensely impoverished. If 30% of Malawians are undernourished in general, and people saved by AMF are unusually poor, I suspect that probably a majority of the lives saved there are undernourished. That means that these people feel hungry _all the time_. I some sympathy for the perspective that those lives sound perhaps not worth living, in which case making them better is the better option. I also think it’s pretty plausible that these lives are actually pretty okay. At the moment, I am probably inclined to think that the lives of the extremely poor are worth living.
 
 GiveWell has obviously thought about how to compare saving lives to increasing consumption, but AFAICT they haven’t considered it this explicitly. In 2012 they said that they suspected AMF was a [much better deal](http://blog.givewell.org/2012/12/19/cost-effectiveness-of-nets-vs-deworming-vs-cash-transfers/) than GiveDirectly. However, GiveWell hasn’t tried to quantify the value of increasing consumption vs saving lives like I have here. They probably haven’t tried because it turns out that when you do, you get relatively difficult-to-interpret results, as I did above.
 
@@ -129,6 +129,6 @@ If I donated to global poverty causes, I really don’t know which of these I’
 
 The value of saving a life increases linearithmicly with consumption. This is neat. I am pretty sure this is correct, and I’m really happy to have a principled derivation for it.
 
-I think my equation for the value of saving a life is quite good for richer countries where it’s easier to measure consumption. Maybe one day, we will have ended global poverty, and the $l \Delta c = c t (\log c + k)$ equation will be actually useful when we’re trying to decide whether a particular hovercar safety measure is worth it.
+I think my equation for the value of saving a life is quite good for richer countries where it’s easier to measure consumption. Maybe one day, we will have ended global poverty, and the $$ \Delta c = c t (\log c + k)$$ equation will be actually useful when we’re trying to decide whether a particular hovercar safety measure is worth it.
 
 *You can see earlier comments on this post [here](http://effective-altruism.com/ea/m1/a_way_of_thinking_about_saving_vs_improving_lives/)*.

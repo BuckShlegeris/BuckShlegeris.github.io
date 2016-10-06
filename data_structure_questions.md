@@ -8,7 +8,7 @@ Here are some data structure questions which I enjoy. I came up with all of thes
 
 ## Giant tic-tac-toe
 
-We want to make a data structure to support a giant $l(k, m, n)$ game. That is, players take turns to place pieces on an $l m$ by $l n$ grid and win if they get $l k$ in a row. The data structure needs to support one method, `int placePiece(int x, int y, Player player)`, which takes a position and returns the length of the longest line of that player's pieces which the new piece was a part of.
+We want to make a data structure to support a giant $$(k, m, n)$$ game. That is, players take turns to place pieces on an $$ m$$ by $$ n$$ grid and win if they get $$ k$$ in a row. The data structure needs to support one method, `int placePiece(int x, int y, Player player)`, which takes a position and returns the length of the longest line of that player's pieces which the new piece was a part of.
 
 How fast can you do this?
 

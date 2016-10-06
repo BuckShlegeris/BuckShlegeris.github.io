@@ -18,8 +18,8 @@
     MathJax.Hub.Config({
       jax: ["input/TeX", "output/HTML-CSS"],
       tex2jax: {
-        inlineMath: [ ['$l', '$'] ],
-        displayMath: [ ['$$', '$$']],
+        inlineMath: [ ['$$', '$$'] ],
+        displayMath: [ ['$^$', '$^$']],
         processEscapes: true,
         skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
       },
@@ -49,20 +49,20 @@
       <p>Want to know the dumbest algorithm problem in the entire world? Here it is:</p>
 
 <blockquote>
-  <p>Find the $l k$th last element of a linked list, in a single pass, with constant memory.</p>
+  <p>Find the <script type="math/tex">k</script>th last element of a linked list, in a single pass, with constant memory.</p>
 </blockquote>
 
-<p>Let the length of the linked list be $l n$. If we didn’t have to follow the single-pass constraint, we’d solve this by finding the length of the linked list (which takes $l n$ steps), then looking for the $l(n - k)$th element. In total, we traversed $l(2n - k)$ links.</p>
+<p>Let the length of the linked list be <script type="math/tex">n</script>. If we didn’t have to follow the single-pass constraint, we’d solve this by finding the length of the linked list (which takes <script type="math/tex">n</script> steps), then looking for the <script type="math/tex">(n - k)</script>th element. In total, we traversed <script type="math/tex">(2n - k)</script> links.</p>
 
 <p>However, this interviewer apparently measures code efficiency by “number of while loops in the function body”, so we have to do better.</p>
 
-<p>The canonical answer to this question is to make a while loop with two pointers, one of which trails $l k$ links behind the other. As soon as you get to the end with your leading pointer, you return whatever’s at your trailing pointer.</p>
+<p>The canonical answer to this question is to make a while loop with two pointers, one of which trails <script type="math/tex">k</script> links behind the other. As soon as you get to the end with your leading pointer, you return whatever’s at your trailing pointer.</p>
 
 <p>Wow, so efficient, only one while loop! Let’s see how much faster we made it!</p>
 
-<p>Well, the leading pointer traversed $l n$ links, and the trailing pointer traversed $l (n - k)$ links. That’s…uh…exactly the same as the previous answer! Except you had to write a custom function instead of just calling <code class="highlighter-rouge">.length</code> and <code class="highlighter-rouge">.get</code>, which I assume your linked list already had! And now you’re more exposed to a bug when the linked list is too short to have a $l k$th last element!</p>
+<p>Well, the leading pointer traversed <script type="math/tex">n</script> links, and the trailing pointer traversed <script type="math/tex">(n - k)</script> links. That’s…uh…exactly the same as the previous answer! Except you had to write a custom function instead of just calling <code class="highlighter-rouge">.length</code> and <code class="highlighter-rouge">.get</code>, which I assume your linked list already had! And now you’re more exposed to a bug when the linked list is too short to have a <script type="math/tex">k</script>th last element!</p>
 
-<p>(Full disclosure: for small $l k$, this solution might be faster because of memory locality. But I’ve never heard anyone mention that as the rationale for this problem, so I’m not going to give any credit for that.)</p>
+<p>(Full disclosure: for small <script type="math/tex">k</script>, this solution might be faster because of memory locality. But I’ve never heard anyone mention that as the rationale for this problem, so I’m not going to give any credit for that.)</p>
 
 <p>In real life, if this was method call was going to happen a lot you’d just store the length of your linked list in a wrapper object. Knowing that you should maintain the length as a field is a million times more useful than being able to solve the problem as written.</p>
 

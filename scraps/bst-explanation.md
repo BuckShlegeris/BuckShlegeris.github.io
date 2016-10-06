@@ -18,7 +18,7 @@ Let's start out by figuring out how balanced we need our tree to be.
 
 Why do we care about trees being balanced in the first place? Well, all our primary operations (find, insert, delete) involve searching to the bottom of the tree. So to control the maximum time requirement of those operations, we need to control the maximum height of the tree.
 
-If the tree doesn't have any balancing logic, then if you insert data in sorted order, your BST ends up being totally unbalanced, with height equal to its number of nodes. This means that all your operations will take $l O(n)$ time.
+If the tree doesn't have any balancing logic, then if you insert data in sorted order, your BST ends up being totally unbalanced, with height equal to its number of nodes. This means that all your operations will take $$ O(n)$$ time.
 
 If your tree happens to be perfectly balanced, then its height will clearly be logarithmic in the number of elements. So perfect balance is sufficient.
 
