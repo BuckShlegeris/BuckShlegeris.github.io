@@ -70,9 +70,9 @@ Let's substitute in the other expression for $$Y$$ we have, and try to solve for
 So
 
 ```python
-    import sympy
-    r, n, c, W = symbols("r n c W")
-    print sympy.solve(((1 - r)/n) * (W - (n * c)/r) - c, c)
+import sympy
+r, n, c, W = symbols("r n c W")
+print sympy.solve(((1 - r)/n) * (W - (n * c)/r) - c, c)
 ```
 
 yields $$\frac{W \cdot r}{n} \left(1 - r\right)$$.
