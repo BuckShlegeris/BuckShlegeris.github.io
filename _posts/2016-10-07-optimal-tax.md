@@ -121,3 +121,13 @@ I [posted on Facebook](https://www.facebook.com/photo.php?fbid=10208780739570567
 So overall:
 
 $^$\text{Optimal flat tax rate} = 1 - \frac{\text{Harmonic mean of wages}}{\text{Arithmetic mean of wages}}$^$
+
+## Further questions
+
+I am interested to see if this process could be extended to find optimal tax structures for other situations. For example:
+
+- What happens if people have different levels of avarice: that is, some of them get more pleasure from money than others?
+- What happens if leisure time had diminishing marginal returns?
+- What about if we don't want to be restricted to a flat tax? Can we solve for the optimal tax function, where a tax function is a function from different pre-tax incomes to post-tax incomes?
+
+I should also look to see if my result here is already known in the optimal tax literature. I think this result is really neat and I'm very glad to know it.

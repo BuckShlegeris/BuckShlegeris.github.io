@@ -8,6 +8,19 @@
     <atom:link href="http://shlegeris.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Optimal redistribution with a flat tax</title>
+        
+        
+          <description>&lt;p&gt;Suppose you have a bunch of people differ only in their wage &lt;script type=&quot;math/tex&quot;&gt;w&lt;/script&gt;. Everyone has utility logarithmic in their consumption. As the government, you want to promote welfare by redistributing consumption. You decide to do this by instituting a flat tax and using it to fund a universal basic income.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Fri, 07 Oct 2016 00:00:00 -0700</pubDate>
+        <link>http://shlegeris.com/2016/10/07/optimal-tax.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2016/10/07/optimal-tax.html</guid>
+      </item>
+    
+      <item>
         <title>Universal basic incomes disincentivise work</title>
         
         
@@ -122,19 +135,6 @@
         <pubDate>Tue, 30 Aug 2016 00:00:00 -0700</pubDate>
         <link>http://shlegeris.com/2016/08/30/white-dudes.html</link>
         <guid isPermaLink="true">http://shlegeris.com/2016/08/30/white-dudes.html</guid>
-      </item>
-    
-      <item>
-        <title>The Armchair Economist on moral philosophy</title>
-        
-        
-          <description>&lt;p&gt;I read a chapter of The Armchair Economist today. It’s an engagingly written book.&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Wed, 24 Aug 2016 00:00:00 -0700</pubDate>
-        <link>http://shlegeris.com/2016/08/24/armchair.html</link>
-        <guid isPermaLink="true">http://shlegeris.com/2016/08/24/armchair.html</guid>
       </item>
     
   </channel>

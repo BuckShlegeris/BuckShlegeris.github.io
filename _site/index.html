@@ -56,6 +56,149 @@
 
 
   <div class="buck-post">
+    <h2><a href="/2016/10/07/optimal-tax.html"> Optimal redistribution with a flat tax</a></h2>
+
+    <p class="post-meta"><time datetime="2016-10-07T00:00:00-07:00" itemprop="datePublished">Oct 7, 2016</time></p>
+
+    <div class="shrink-headings">
+      <p>Suppose you have a bunch of people differ only in their wage <script type="math/tex">w</script>. Everyone has utility logarithmic in their consumption. As the government, you want to promote welfare by redistributing consumption. You decide to do this by instituting a flat tax and using it to fund a universal basic income.</p>
+
+<p>The more revenue you raise with your tax, the higher the UBI can be. But if you raise the tax too high, you will excessively deter people from working. So what’s the optimal tax rate?</p>
+
+<p>Somwhat surprisingly, Ben Weinstein-Raun and I managed to find an analytical solution to this problem. The optimal flat tax rate is a simple function of the wage distribution:</p>
+
+<p>$^$\text{Optimal flat tax rate} = 1 - \frac{\text{Harmonic mean of wages}}{\text{Arithmetic mean of wages}}$^$</p>
+
+<p>The functional form checks out: Harmonic mean equals arithmetic mean on a set which is perfectly equal; in that case the fraction will be 1 and the tax rate will be 0. Inequality causes the harmonic mean to become smaller than the arithmetic mean; at most, the fraction might go to 0 and the tax rate will approach 100%.</p>
+
+<p>Another way of phrasing that fraction is “the average time it takes for someone to make a dollar, multiplied by the average wage”.</p>
+
+<p>I did most of the algebra in Sympy; almost all of the math I write here is replicated in <a href="https://github.com/bshlgrs/economics-demos/blob/master/python/optimal_tax.py">this Python script</a>. Because of that, I’m reasonably confident in this result.</p>
+
+<h2 id="proof">Proof</h2>
+
+<p>Let’s define all our variables:</p>
+
+<ul>
+  <li><script type="math/tex">w</script> is the wage of an individual</li>
+  <li><script type="math/tex">r</script> is 1 minus the tax rate</li>
+  <li><script type="math/tex">h</script> is the number of hours that a person works</li>
+  <li><script type="math/tex">c</script> is the UBI</li>
+  <li><script type="math/tex">u</script> is utility</li>
+  <li><script type="math/tex">y</script> is the pre-tax, pre-transfers income of an individual, <script type="math/tex">Y</script> is the income of all of society</li>
+  <li>there are <script type="math/tex">n</script> people. The set of people is <script type="math/tex">P</script>.</li>
+</ul>
+
+<p>So individuals have utility <script type="math/tex">u = \log(w \cdot h \cdot r + c)</script>.</p>
+
+<h3 id="what-is-individual-behavior-as-a-function-of-r-and-c">What is individual behavior, as a function of <script type="math/tex">r</script> and <script type="math/tex">c</script>?</h3>
+
+<p>First we find the optimal hours worked for an individual by differentiating utility with respect to hours worked:</p>
+
+<p>$^$\frac{du}{dh} = \frac{w \cdot r}{w \cdot h \cdot r + c} - 1$^$</p>
+
+<p>Setting the derivative to 0 and solving for <script type="math/tex">h</script>, you get</p>
+
+<p>$^$h = 1 - \frac{c}{r \cdot w} $^$</p>
+
+<p>Let’s check functional form–we expect workers to work more if they have lower UBI, lower taxes, or higher wages. This function has all those behaviors (remember that <script type="math/tex">r</script> is the proportion of your income you get to keep, not the tax rate).</p>
+
+<p>The optimal income is that time multiplied by <script type="math/tex">w</script>, so:</p>
+
+<p>$^$y = w - \frac{c}{r}$^$</p>
+
+<p>Note that this means that everyone forgoes the same amount of income due to the distortionary effects of the UBI and taxes.</p>
+
+<p>At this income, utility for an individual is:</p>
+
+<p>$^$u = \log(r) - 1 + \log(w) + \frac{c}{r\cdot w}$^$</p>
+
+<p>And utility over all of society is therefore:</p>
+
+<p>$^$U = n\cdot\log(r) - n + \sum_{p \in P}\log(w_p) + \frac{c}{r\cdot w_p}$^$</p>
+
+<p>We can rewrite this to</p>
+
+<p>$^$U = n\cdot\log(r) - n + \sum_{p \in P}\left[\log(w_p)\right] + \frac{c}{r} \cdot \sum_{p \in P} \left[\frac{1}{w_p} \right]$^$</p>
+
+<h4 id="total-societal-income">Total societal income</h4>
+
+<p>Given <script type="math/tex">r</script> and <script type="math/tex">c</script>, the income of the whole population is</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+  Y &= \sum_{p \in P} y_p \\
+   &=  \sum_{p \in P} \left(w_p - \frac{c}{r}\right)
+\end{align} %]]></script>
+
+<p>Conveniently, the <script type="math/tex">\frac{c}{r}</script> term is constant in the sum, so we can take it out:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+ Y  &=  - \frac{n \cdot c}{r} + \sum_{p \in P} w_p \\
+    &=  -\frac{n \cdot c}{r} + W
+\end{align} %]]></script>
+
+<p>where the total wage of the whole population is <script type="math/tex">W = \sum_{p \in P} w_p</script>.</p>
+
+<h3 id="what-is-c-given-r">What is <script type="math/tex">c</script>, given <script type="math/tex">r</script>?</h3>
+
+<p>At a given tax rate <script type="math/tex">r</script>, the UBI (by definition) is:</p>
+
+<p>$^$c = \frac{1-r}{n} \cdot Y $^$</p>
+
+<p>We can substitute the other expression we found for <script type="math/tex">Y</script> above into this equation:</p>
+
+<p>$^$c = \frac{1-r}{n} \cdot \left( -\frac{n \cdot c}{r} + W \right) $^$</p>
+
+<p>and solve for <script type="math/tex">c</script>, which gets us</p>
+
+<p>$^$c = \frac{-r \cdot w \cdot (r - 1)}n$^$</p>
+
+<p>So given a tax rate, we now know the equilibrium UBI.</p>
+
+<h3 id="what-is-u-given-r">What is <script type="math/tex">U</script>, given <script type="math/tex">r</script>?</h3>
+
+<p>We can now substitute the equilibrium UBI into our global utility formula to determine global utility at this tax rate:</p>
+
+<p>$^$U = n\cdot(\log(r) - 1) + \sum_{p \in P}\left[\log(w_p)\right] - \frac{\sum_{p \in P}\left[\frac{1}{w_p}\right]\cdot W\cdot(r - 1)}n$^$</p>
+
+<h3 id="what-is-the-optimal-choice-of-r">What is the optimal choice of <script type="math/tex">r</script>?</h3>
+
+<p>Now we differentiate <script type="math/tex">U</script> with respect to <script type="math/tex">r</script>:</p>
+
+<p>$^$\frac{dU}{dr} = \frac{-\sum_{p \in P}\left[\frac{1}{w_p}\right] \cdot W}{n} + \frac{n}{r}$^$</p>
+
+<p>Set this to zero and solve for <script type="math/tex">r</script>, and you get:</p>
+
+<p>$^$\frac{n^2}{\sum_{p \in P}\left[\frac{1}{w_p}\right] \cdot W}$^$</p>
+
+<p>Remember that <script type="math/tex">W</script> is the sum of wages. So this can be written as</p>
+
+<p>$^$\frac{n^2}{\sum_{p \in P}\left[\frac{1}{w_p}\right] \cdot \sum_{p \in P}\left[w_p\right]}$^$</p>
+
+<p>I <a href="https://www.facebook.com/photo.php?fbid=10208780739570567&amp;set=a.1254922647920.38754.1075180788&amp;type=3">posted on Facebook</a> asking for someone to make sense of this expression for me. Matt Alger and Ben Weinstein-Raun both figured out that it is the harmonic mean of the wages divided by the arithmetic mean of the wages.</p>
+
+<p>So overall:</p>
+
+<p>$^$\text{Optimal flat tax rate} = 1 - \frac{\text{Harmonic mean of wages}}{\text{Arithmetic mean of wages}}$^$</p>
+
+<h2 id="further-questions">Further questions</h2>
+
+<p>I am interested to see if this process could be extended to find optimal tax structures for other situations. For example:</p>
+
+<ul>
+  <li>What happens if people have different levels of avarice: that is, some of them get more pleasure from money than others?</li>
+  <li>What happens if leisure time had diminishing marginal returns?</li>
+  <li>What about if we don’t want to be restricted to a flat tax? Can we solve for the optimal tax function, where a tax function is a function from different pre-tax incomes to post-tax incomes?</li>
+</ul>
+
+<p>I should also look to see if my result here is already known in the optimal tax literature. I think this result is really neat and I’m very glad to know it.</p>
+
+    </div>
+  </div>
+
+  <div class="buck-post">
     <h2><a href="/2016/10/02/ubi.html"> Universal basic incomes disincentivise work</a></h2>
 
     <p class="post-meta"><time datetime="2016-10-02T00:00:00-07:00" itemprop="datePublished">Oct 2, 2016</time></p>
@@ -326,33 +469,6 @@
     </div>
   </div>
 
-  <div class="buck-post">
-    <h2><a href="/2016/09/03/printers.html"> Printers and price discrimination</a></h2>
-
-    <p class="post-meta"><time datetime="2016-09-03T00:00:00-07:00" itemprop="datePublished">Sep 3, 2016</time></p>
-
-    <div class="shrink-headings">
-      <p>I’m reading “Modern Principles of Economics” by Alex Tabarrok and Tyler Cowen. I’m really enjoying it—it’s engagingly written and even though I’ve learned most of the material before, I keep learning fun little things.</p>
-
-<p>Here’s my favorite tidbit so far. Printer companies usually sell printers relatively cheaply and set high prices on toner. Similarly, game consoles are usually sold cheaply, with the cost recouped by sales of games. Why is this? (Note that in both cases, the goods are “tied”: there’s competition between Xbox and Playstation on both console prices and game prices, but Xbox games can only be played on Xbox—-Microsoft and Sony aren’t competing on price for games on the other’s console.)</p>
-
-<p>There are a bunch of reasons which are probably true to some extent but aren’t as interesting, so I’ll quickly mention them. Maybe customers are fooled by the low printer price and then get suckered into paying more for the toner. (But often companies buy printers and you’d expect them to take both prices into consideration. And there’s competition between printer companies, so maybe customers should be able to learn to buy the printers with cheaper toner after enough trips to the printer shop where they see cheaper options on the different toner brand.) Or maybe consumers have higher time discounting than companies, so this is effectively a small loan from the company to the consumer.</p>
-
-<p>I’m interested in an explanation which isn’t about that kind of factor. You should think about this yourself, because I think it’s really fun!</p>
-
-<p>Here’s a hint:</p>
-
-<p>It’s about price discrimination. Printer companies would love to charge higher prices to people who want their services more, and charge lower prices to people who want their services less.</p>
-
-<p>And here’s the answer:</p>
-
-<p>People vary in how much they want printers. One way of guessing how much value someone derives from a a printer is seeing how many pages they print. So people who print more probably derive much more value from a printer than people who don’t print very much. Setting a high price on toner and a low price on printers lets you effectively price discriminate so that people who get more value from your product pay you more for it.</p>
-
-<p>Isn’t that neat! It’s obvious once you think about it but I’d never thought about it before.</p>
-
-    </div>
-  </div>
-
 
 <p><a href="/posts">All posts</a></p>
 
@@ -426,6 +542,10 @@ $(function() {
     <ul>
       
         <li>
+          <a class="arrow" href="/2016/10/07/optimal-tax.html">Optimal redistribution with a flat tax</a>
+        </li>
+      
+        <li>
           <a class="arrow" href="/2016/10/02/ubi.html">Universal basic incomes disincentivise work</a>
         </li>
       
@@ -451,10 +571,6 @@ $(function() {
       
         <li>
           <a class="arrow" href="/2016/09/03/tax-percentiles.html">Should we encourage price discrimination based on income?</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/09/03/printers.html">Printers and price discrimination</a>
         </li>
       
     </ul>
