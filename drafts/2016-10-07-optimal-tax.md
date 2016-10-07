@@ -4,7 +4,7 @@ title:  "Optimal redistribution with a flat tax"
 date:   2016-10-07
 ---
 
-Suppose you have a bunch of people differ only in their wage $$w$$. Everyone has utility logarithmic in their consumption. As the government, you want to promote welfare by redistributing consumption. You decide to do via a flat tax rate combined with a universal basic income.
+Suppose you have a bunch of people differ only in their wage $$w$$. Everyone has utility logarithmic in their consumption. As the government, you want to promote welfare by redistributing consumption. You decide to do this by instituting a flat tax and using it to fund a universal basic income.
 
 The more revenue you raise with your tax, the higher the UBI can be. But if you raise the tax too high, you will excessively deter people from working. So what's the optimal tax rate?
 
