@@ -30,7 +30,7 @@ Let's define all our variables:
 - $$y$$ is the pre-tax, pre-transfers income of an individual, $$Y$$ is the income of all of society
 - there are $$n$$ people. The set of people is $$P$$.
 
-So individuals have utility $$ u = \log(w \cdot h \cdot r + c)$$.
+So individuals have utility $$ u = \log(w \cdot h \cdot r + c) - h$$.
 
 ### What is individual behavior, as a function of $$r$$ and $$c$$?
 
