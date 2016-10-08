@@ -130,4 +130,10 @@ I am interested to see if this process could be extended to find optimal tax str
 - What happens if leisure time has diminishing marginal returns?
 - What about if we don't want to be restricted to a flat tax? Can we solve for the optimal tax function, where a tax function is a function from different pre-tax incomes to post-tax incomes?
 
-I should also look to see if my result here is already known in the optimal tax literature. I think this result is really neat and I'm very glad to know it.
+I should also look harder to see if my result here is already known in the optimal tax literature. My impression is that economists aren't that interested in this particular question, because they don't like the rigidity of my assumed utility function. But I stil think this result is really neat, and I'm very glad to know it.
+
+<!-- ## Other work
+
+- **Sheshinski, 1971: ["The Optimal Linear Income Tax"](http://darp.lse.ac.uk/papersdb/Sheshinski_(REStud_72).pdf)**. This discusses a more general version of the problem, where we have a flat tax but utility isn't assumed to be logarithmic in consumption and linear in leisure.
+- **Slemrod et al, 1992: ["The optimal two-bracket linear income tax"](https://deepblue.lib.umich.edu/bitstream/handle/2027.42/31813/0000759.pdf?sequence=1&isAllowed=y). This doesn't contain this result.
+ -->
