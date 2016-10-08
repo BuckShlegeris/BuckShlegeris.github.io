@@ -92,7 +92,7 @@ $^$c = \frac{1-r}{n} \cdot \left( -\frac{n \cdot c}{r} + W \right) $^$
 
 and solve for $$c$$, which gets us
 
-$^$c = \frac{-r \cdot w \cdot (r - 1)}n$^$
+$^$c = \frac{-r \cdot W \cdot (r - 1)}n$^$
 
 So given a tax rate, we now know the equilibrium UBI.
 
