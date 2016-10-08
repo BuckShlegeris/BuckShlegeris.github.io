@@ -8,7 +8,7 @@ Suppose you have a bunch of people differ only in their wage $$w$$. Everyone has
 
 The more revenue you raise with your tax, the higher the UBI can be. But if you raise the tax too high, you will excessively deter people from working. So what's the optimal tax rate?
 
-Somwhat surprisingly, Ben Weinstein-Raun and I managed to find an analytical solution to this problem. The optimal flat tax rate is a simple function of the wage distribution:
+Somewhat surprisingly, Ben Weinstein-Raun and I managed to find an analytical solution to this problem. The optimal flat tax rate is a simple function of the wage distribution:
 
 $^$\text{Optimal flat tax rate} = 1 - \frac{\text{Harmonic mean of wages}}{\text{Arithmetic mean of wages}}$^$
 
