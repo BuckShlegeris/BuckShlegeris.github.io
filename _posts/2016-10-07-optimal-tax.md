@@ -24,7 +24,7 @@ Let's define all our variables:
 
 - $$ w $$ is the wage of an individual
 - $$r$$ is 1 minus the tax rate
-- $$h$$ is the number of hours that a person works
+- $$h$$ is the amount of time that a person works, in some unit. The units don't affect the optimal tax rate.
 - $$c$$ is the UBI
 - $$u$$ is utility
 - $$y$$ is the pre-tax, pre-transfers income of an individual, $$Y$$ is the income of all of society
