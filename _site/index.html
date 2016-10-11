@@ -82,14 +82,14 @@
 <ul>
   <li><script type="math/tex">w</script> is the wage of an individual</li>
   <li><script type="math/tex">r</script> is 1 minus the tax rate</li>
-  <li><script type="math/tex">h</script> is the number of hours that a person works</li>
+  <li><script type="math/tex">h</script> is the amount of time that a person works, in some unit. The units don’t affect the optimal tax rate.</li>
   <li><script type="math/tex">c</script> is the UBI</li>
   <li><script type="math/tex">u</script> is utility</li>
   <li><script type="math/tex">y</script> is the pre-tax, pre-transfers income of an individual, <script type="math/tex">Y</script> is the income of all of society</li>
   <li>there are <script type="math/tex">n</script> people. The set of people is <script type="math/tex">P</script>.</li>
 </ul>
 
-<p>So individuals have utility <script type="math/tex">u = \log(w \cdot h \cdot r + c)</script>.</p>
+<p>So individuals have utility <script type="math/tex">u = \log(w \cdot h \cdot r + c) - h</script>.</p>
 
 <h3 id="what-is-individual-behavior-as-a-function-of-r-and-c">What is individual behavior, as a function of <script type="math/tex">r</script> and <script type="math/tex">c</script>?</h3>
 
@@ -153,7 +153,7 @@
 
 <p>and solve for <script type="math/tex">c</script>, which gets us</p>
 
-<p>$^$c = \frac{-r \cdot w \cdot (r - 1)}n$^$</p>
+<p>$^$c = \frac{-r \cdot W \cdot (r - 1)}n$^$</p>
 
 <p>So given a tax rate, we now know the equilibrium UBI.</p>
 
@@ -193,7 +193,7 @@
   <li>What about if we don’t want to be restricted to a flat tax? Can we solve for the optimal tax function, where a tax function is a function from different pre-tax incomes to post-tax incomes?</li>
 </ul>
 
-<p>I should also look harder to see if my result here is already known in the optimal tax literature. My impression is that economists aren’t that interested in this particular question, because they don’t like the rigidity of my assumed utility function. But I stil think this result is really neat, and I’m very glad to know it.</p>
+<p>I should also look harder to see if my result here is already known in the optimal tax literature. My impression is that economists aren’t that interested in this particular question, because they don’t like the rigidity of my assumed utility function. But I still think this result is really neat, and I’m very glad to know it.</p>
 
 <!-- ## Other work
 
@@ -580,6 +580,9 @@ $(function() {
         </li>
       
     </ul>
+  </li>
+  <li>
+      <a class="arrow" href="/to-prove-list">My "to-prove" list</a>
   </li>
   <li>
       <a class="arrow" href="/cute">Pictures of me</a>
