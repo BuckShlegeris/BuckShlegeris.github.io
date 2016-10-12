@@ -16,7 +16,7 @@ The functional form checks out: Harmonic mean equals arithmetic mean on a set wh
 
 Another way of phrasing that fraction is "the average time it takes for someone to make a dollar, multiplied by the average wage".
 
-I did most of the algebra in Sympy; almost all of the math I write here is replicated in [this Python script](https://github.com/bshlgrs/economics-demos/blob/master/python/optimal_tax.py). Because of that, I'm reasonably confident in this result.
+I did most of the algebra in Sympy; almost all of the math I write here is replicated in [this Python script](https://github.com/bshlgrs/economics-demos/blob/master/python/optimal_tax.py), which I also put online as a Sage workbook [here](https://cloud.sagemath.com/projects/0a4323fd-9bc8-4276-a48c-cb0de6ecf3fe/files/2016-10-11-195016.html). Because of that, I'm reasonably confident in this result.
 
 ## Proof
 
@@ -137,3 +137,7 @@ I should also look harder to see if my result here is already known in the optim
 - **Sheshinski, 1971: ["The Optimal Linear Income Tax"](http://darp.lse.ac.uk/papersdb/Sheshinski_(REStud_72).pdf)**. This discusses a more general version of the problem, where we have a flat tax but utility isn't assumed to be logarithmic in consumption and linear in leisure.
 - **Slemrod et al, 1992: ["The optimal two-bracket linear income tax"](https://deepblue.lib.umich.edu/bitstream/handle/2027.42/31813/0000759.pdf?sequence=1&isAllowed=y). This doesn't contain this result.
  -->
+
+---
+
+[view comments on Facebook here](https://www.facebook.com/bshlgrs/posts/10208786840283081)
