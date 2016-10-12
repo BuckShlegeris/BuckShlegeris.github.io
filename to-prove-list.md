@@ -12,4 +12,5 @@ Here is a list of mathematical questions I want to investigate.
   - Another generalization: what about if demand for labor isn't totally price inelastic?
   - What about if working has positive or negative externalities?
 - Travelling coke salesman: prove it's NP hard
+- Finding [optimally short templates](/drafts/template-generator)
 
