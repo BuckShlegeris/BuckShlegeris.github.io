@@ -8,6 +8,8 @@ title: "To-prove list"
 Here is a list of mathematical questions I want to investigate.
 
 - [Optimal bundling](https://www.facebook.com/bshlgrs/posts/10208574426092859): find a fast algorithm or prove none exists
-- Generalizations of my optimal tax results, as discussed by Toby and Owen [here](https://www.facebook.com/bshlgrs/posts/10208786840283081?comment_id=10208788070393833)
+- Generalizations of my optimal tax results, as discussed by Toby and Owen [here](https://www.facebook.com/bshlgrs/posts/10208786840283081?comment_id=10208788070393833): "versions where there was redistribution by UBI (i.e. the problem you've analysed); versions where tax went to provide some public goods (such as legal systems) whose value is higher to those with more wealth; versions with diminishing utility of leisure time; allowing consumption and leisure to be complements (because of more leisure time to enjoy consumption) or substitutes (principally because consumption can buy you more genuine leisure time by removing unpaid work)."
+  - Another generalization: what about if demand for labor isn't totally price inelastic?
+  - What about if working has positive or negative externalities?
 - Travelling coke salesman: prove it's NP hard
 
