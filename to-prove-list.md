@@ -12,5 +12,6 @@ Here is a list of mathematical questions I want to investigate.
   - Another generalization: what about if demand for labor isn't totally price inelastic?
   - What about if working has positive or negative externalities?
 - Travelling maze coke salesman: prove it's NP hard. This problem is like TSP, except it's in a maze on a 2D plane, and every time the salesman gets to a city they double their speed.
+  - If it's not on a 2D plane, then the proof is easy--you just apply the usual reduction from the Hamiltonian cycle problem. I can almost certainly solve this problem by reading the proof that TSP is hard even on a plane, and just applying it to this.
 - Finding [optimally short templates](/drafts/template-generator)
 - How should you incentivise CEOs? [Discussion here](https://www.facebook.com/bshlgrs/posts/10208850864523647). If you pay them no stock, then they don't care about how well your company does. If you pay them entirely in stock, and that's a significant proportion of their income, then they're risk averse. If you pay them in something weird like an exponential function of share price, then they might have the right risk profile but they might end up demanding a higher-EV pay package than they'd require if it was less risky.
