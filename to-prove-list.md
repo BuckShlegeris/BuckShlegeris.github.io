@@ -13,4 +13,4 @@ Here is a list of mathematical questions I want to investigate.
   - What about if working has positive or negative externalities?
 - Travelling coke salesman: prove it's NP hard
 - Finding [optimally short templates](/drafts/template-generator)
-
+- How should you incentivise CEOs? [Discussion here](https://www.facebook.com/bshlgrs/posts/10208850864523647). If you pay them no stock, then they don't care about how well your company does. If you pay them entirely in stock, and that's a significant proportion of their income, then they're risk averse. If you pay them in something weird like an exponential function of share price, then they might have the right risk profile but they might end up demanding a higher-EV pay package than they'd require if it was less risky.
