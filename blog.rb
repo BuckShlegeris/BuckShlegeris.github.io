@@ -29,9 +29,9 @@ when "unpost"
   `mv #{ARGV[1]} drafts/#{ARGV[1].split("/").last}`
 when "fb"
   string = File.read(ARGV[1])
-  # references = string.scan(/\[[^\]]*\]\(([\)]*\))/)
   references = string.scan(/\[[^\]]*\]\(([^\)]*)\)/).map(&:first)
-  p references
   n = 0
-  puts string.gsub(/\[([^\]]*)\]\([^\)]*\)/) { n += 1; Regexp.last_match[1] + "[#{n.to_s}]" }
+  body = string.gsub(/\[([^\]]*)\]\([^\)]*\)/) { n += 1; Regexp.last_match[1] + "[#{n.to_s}]" }
+
+  puts body + "\n\n" + references.map.with_index { |x, idx| "[#{idx}] #{x}" }.join("\n")
 end
