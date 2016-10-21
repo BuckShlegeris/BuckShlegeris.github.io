@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Against the Gini coefficient"
-date:   2016-09-04
+date:   2016-10-20
 ---
 
 The Gini coefficient is the most common statistic used to describe income inequality. I made a tool for visualizing the Gini coefficient of populations; [check it out](http://shlegeris.com/gini) if you want to quickly improve your intuitions about it.
