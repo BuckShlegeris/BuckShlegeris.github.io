@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Poor college graduates vs rich high-school dropouts"
+title:  "Poor college graduates do much better than rich high-school dropouts"
 date: "2016-10-23"
 ---
 
