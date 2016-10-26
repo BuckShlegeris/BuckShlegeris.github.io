@@ -32,4 +32,4 @@ EDIT: In the comments, David gives a great solution that is way smarter than the
 
 -----
 
-[view comments on Facebook](https://www.facebook.com/endofunctor/posts/10207496299980380?pnref=story)
+[view comments on Facebook](https://www.facebook.com/bshlgrs/posts/10207496299980380?pnref=story)

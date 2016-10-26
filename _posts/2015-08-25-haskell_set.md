@@ -36,5 +36,5 @@ intersection set1 set2 = \x -> set1 x && set2 x
 ```
 
 
-[view comments on Facebook](https://www.facebook.com/endofunctor/posts/10205930729562098)
+[view comments on Facebook](https://www.facebook.com/bshlgrs/posts/10205930729562098)
 

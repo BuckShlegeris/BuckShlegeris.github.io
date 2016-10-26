@@ -32,4 +32,4 @@ Classic examples of things which CS classes teach which do not work well as over
 
 -----
 
-[view comments on Facebook](https://www.facebook.com/endofunctor/posts/10207490190427645?pnref=story)
+[view comments on Facebook](https://www.facebook.com/bshlgrs/posts/10207490190427645?pnref=story)
