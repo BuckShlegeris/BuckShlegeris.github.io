@@ -8,7 +8,7 @@ when "draft"
   File.write("drafts/#{ARGV[1]}.md", <<-MD
 ---
 layout: post
-title:  "#{ARGV[1]}"
+title:  "#{ARGV[1].split("-").join(" ").capitalize}"
 date: "not a real date"
 ---
 
