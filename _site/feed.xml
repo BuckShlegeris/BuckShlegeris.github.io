@@ -8,6 +8,19 @@
     <atom:link href="http://shlegeris.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>A geometric description of when to bundle goods</title>
+        
+        
+          <description>&lt;p&gt;I recently interviewed Chen-Yu Yang at work, and after the interview he scored basically the maximum possible number of unofficial bonus points by looking at my website and emailing me most of the answer to a question I posed here a while ago.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sat, 29 Oct 2016 00:00:00 -0700</pubDate>
+        <link>http://shlegeris.com/2016/10/29/bundling.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2016/10/29/bundling.html</guid>
+      </item>
+    
+      <item>
         <title>Poor college graduates do much better than rich high-school dropouts</title>
         
         
@@ -122,19 +135,6 @@
         <pubDate>Mon, 05 Sep 2016 00:00:00 -0700</pubDate>
         <link>http://shlegeris.com/2016/09/05/gini.html</link>
         <guid isPermaLink="true">http://shlegeris.com/2016/09/05/gini.html</guid>
-      </item>
-    
-      <item>
-        <title>EA donation amounts</title>
-        
-        
-          <description>&lt;p&gt;One commonly-cited figure from the 2015 survey of the effective altruism movement (&lt;a href=&quot;http://effective-altruism.com/ea/zw/the_2015_survey_of_effective_altruists_results/&quot;&gt;posted here&lt;/a&gt;) is that the median donation was only $333.&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Sun, 04 Sep 2016 00:00:00 -0700</pubDate>
-        <link>http://shlegeris.com/2016/09/04/ea-donations.html</link>
-        <guid isPermaLink="true">http://shlegeris.com/2016/09/04/ea-donations.html</guid>
       </item>
     
   </channel>
