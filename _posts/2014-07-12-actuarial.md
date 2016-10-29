@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Actuarial tables for romantic relationships"
+title:  "Actuarial tables for romantic relationships?"
 date:   2014-07-12
 ---
 
