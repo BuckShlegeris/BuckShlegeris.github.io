@@ -3,7 +3,11 @@ layout: default
 ---
 <div class="container">
   <div class="row">
-    <div class="col-sm-7 col-sm-offset-1 markdownify">
+    <div class="col-sm-3">
+      {% include sidebar.html %}
+    </div>
+
+    <div class="col-sm-7 col-sm-offset-1 col-sm-offset-1 markdownify">
       {% if page.title %}<h1 class="post-title " itemprop="name headline">{{ page.title }}</h1>{% endif %}
       <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
 
@@ -23,10 +27,7 @@ layout: default
 </div>
 
     </div>
-    <div class="col-sm-3 col-sm-offset-1">
-      <img src="/img/dual_n_buck.jpeg" class="img-responsive" alt="Picture of Buck" height="213" width="213">
-      {% include sidebar.html %}
-    </div>
+
   </div>
 </div>
 

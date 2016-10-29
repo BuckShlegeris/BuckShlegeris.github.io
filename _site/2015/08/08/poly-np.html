@@ -40,49 +40,8 @@
 
     <div class="container">
   <div class="row">
-    <div class="col-sm-7 col-sm-offset-1 markdownify">
-      <h1 class="post-title " itemprop="name headline">Poly NP</h1>
-      <p class="post-meta"><time datetime="2015-08-08T00:00:00-07:00" itemprop="datePublished">Aug 8, 2015</time></p>
-
-      <hr/>
-
-      <p>content warning: polyamory, NP-complete problems</p>
-
-<blockquote>
-  <p>“It’s a shame that Facebook doesn’t let people list multiple romantic partners. Get with the times, Facebook.”
-- Amanda MacAskill</p>
-</blockquote>
-
-<p>I think Amanda’s right: this limitation turns out to generate some pretty complicated algorithmic problems, and they’re an unwelcome addition to my dating life.</p>
-
-<p>Suppose you’re in a polycule (that is, a connected component of the relationship graph) and you want to represent your relationships on Facebook. Obviously, you can’t represent them all: every person in the polycule can only be in a single relationship.</p>
-
-<p>Which relationships should you show on Facebook? Well, presumably you want to show the most important ones. Let’s just say that we’re measuring importance by the length of the relationship. So the question becomes: How do you decide a subset of relationships of a polycule, such that no-one is in more than one of those relationships, and the sum of lengths of relationships is maximized? Or equivalently: given a connected, weighted, undirected graph, choose a subset of edges with no shared nodes to maximize the sum of weights of edges.</p>
-
-<p>This at first looked to me like the <a href="https://en.wikipedia.org/wiki/Set_packing">weighted set packing problem</a>, one of Karp’s original NP-complete problems—each edge in the polycule corresponding to a two-element set in the set packing problem.</p>
-
-<p>But then I looked into it more, and it turns out that for the specific case of relationships between only two people (sorry, triad participants), this problem is known as weighted maximum matching, and there’s a fast algorithm for it! You can read about the fast algorithm in <a href="http://pub.ist.ac.at/~vnk/papers/BLOSSOM5.html">this paper</a>, and you can download the implementation <a href="http://pub.ist.ac.at/~vnk/software.html#BLOSSOM5">here</a>. It says it’s licensed for research only: I’m not sure whether that license permits usage for personal romantic relationships, but I think the likelihood of getting in trouble for it is pretty low.</p>
-
-<hr />
-
-<p><a href="https://www.facebook.com/bshlgrs/posts/10206413578553021">view comments on Facebook</a></p>
-
-
-      <hr/>
-
-<div class="PageNavigation">
-  
-    <a class="prev" href="/technical/2015/08/08/haskell_set.html">&laquo; Sets as functions</a>
-  
-  
-    <a class="pull-right" href="/2016/01/17/piano.html">Tips for learning to play rock piano &raquo;</a>
-  
-</div>
-
-    </div>
-    <div class="col-sm-3 col-sm-offset-1">
+    <div class="col-sm-3">
       <img src="/img/dual_n_buck.jpeg" class="img-responsive" alt="Picture of Buck" height="213" width="213">
-      
 <hr/>
 <a class="arrow" href="/"><strong>Buck</strong></a>
 <ul>
@@ -167,6 +126,48 @@
 </ul>
 
     </div>
+
+    <div class="col-sm-7 col-sm-offset-1 col-sm-offset-1 markdownify">
+      <h1 class="post-title " itemprop="name headline">Poly NP</h1>
+      <p class="post-meta"><time datetime="2015-08-08T00:00:00-07:00" itemprop="datePublished">Aug 8, 2015</time></p>
+
+      <hr/>
+
+      <p>content warning: polyamory, NP-complete problems</p>
+
+<blockquote>
+  <p>“It’s a shame that Facebook doesn’t let people list multiple romantic partners. Get with the times, Facebook.”
+- Amanda MacAskill</p>
+</blockquote>
+
+<p>I think Amanda’s right: this limitation turns out to generate some pretty complicated algorithmic problems, and they’re an unwelcome addition to my dating life.</p>
+
+<p>Suppose you’re in a polycule (that is, a connected component of the relationship graph) and you want to represent your relationships on Facebook. Obviously, you can’t represent them all: every person in the polycule can only be in a single relationship.</p>
+
+<p>Which relationships should you show on Facebook? Well, presumably you want to show the most important ones. Let’s just say that we’re measuring importance by the length of the relationship. So the question becomes: How do you decide a subset of relationships of a polycule, such that no-one is in more than one of those relationships, and the sum of lengths of relationships is maximized? Or equivalently: given a connected, weighted, undirected graph, choose a subset of edges with no shared nodes to maximize the sum of weights of edges.</p>
+
+<p>This at first looked to me like the <a href="https://en.wikipedia.org/wiki/Set_packing">weighted set packing problem</a>, one of Karp’s original NP-complete problems—each edge in the polycule corresponding to a two-element set in the set packing problem.</p>
+
+<p>But then I looked into it more, and it turns out that for the specific case of relationships between only two people (sorry, triad participants), this problem is known as weighted maximum matching, and there’s a fast algorithm for it! You can read about the fast algorithm in <a href="http://pub.ist.ac.at/~vnk/papers/BLOSSOM5.html">this paper</a>, and you can download the implementation <a href="http://pub.ist.ac.at/~vnk/software.html#BLOSSOM5">here</a>. It says it’s licensed for research only: I’m not sure whether that license permits usage for personal romantic relationships, but I think the likelihood of getting in trouble for it is pretty low.</p>
+
+<hr />
+
+<p><a href="https://www.facebook.com/bshlgrs/posts/10206413578553021">view comments on Facebook</a></p>
+
+
+      <hr/>
+
+<div class="PageNavigation">
+  
+    <a class="prev" href="/technical/2015/08/08/haskell_set.html">&laquo; Sets as functions</a>
+  
+  
+    <a class="pull-right" href="/2016/01/17/piano.html">Tips for learning to play rock piano &raquo;</a>
+  
+</div>
+
+    </div>
+
   </div>
 </div>
 

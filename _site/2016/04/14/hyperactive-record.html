@@ -40,54 +40,8 @@
 
     <div class="container">
   <div class="row">
-    <div class="col-sm-7 col-sm-offset-1 markdownify">
-      <h1 class="post-title " itemprop="name headline">Hyperactive Record</h1>
-      <p class="post-meta"><time datetime="2016-04-14T00:00:00-07:00" itemprop="datePublished">Apr 14, 2016</time></p>
-
-      <hr/>
-
-      <p>Here is a fun open source project which someone should build! I’ve written a readme and put it <a href="https://github.com/bshlgrs/HyperactiveRecord/blob/master/README.md">on Github</a> but I don’t think I have the time to actually build this. I present it here in the hope that one of you might decide that you like it and want to build it!</p>
-
-<p>It’s called HyperactiveRecord. It’s an ActiveRecord plugin which tries harder to provide an intuitive, consistent, simple interface for SQL.</p>
-
-<p>For example. You’re making a blog site. You have posts and comments. Posts are either public or private. I want to load all of the publicly available comments of a user–that is, all their comments which are on public posts. (I use this example because it’s analogous to something that I did at work today.)</p>
-
-<p>Here’s what I intuitively want to do: <code class="highlighter-rouge">user.comments.filter { |c| c.post.public }</code>. This is much simpler and more readable than the ActiveRecord solution. I want to make a library whose goal is to be as simple, composable, and unsurprising as that. We’re already used to the APIs of map, flatMap, filter, reduce, and so on. That’s how our queries should work.</p>
-
-<p>This would be written basically the same way ActiveRecord is: each query method is just constructing a lazy query object which is only actually executed when accessed. Making DSLs which accept blocks is already done in Ruby all over the place; why not do it here too?</p>
-
-<p>There are some super fun places you could take this project. For example, a SQL enthusiast could devote themselves to the project of building a query generator for recursive method calls. That is, compiling</p>
-
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Comment</span>
-  <span class="k">def</span> <span class="nf">descendants</span>
-     <span class="no">Hyperactive</span><span class="p">.</span><span class="nf">union</span><span class="p">(</span><span class="nb">self</span><span class="p">,</span> <span class="nb">self</span><span class="p">.</span><span class="nf">children</span><span class="p">.</span><span class="nf">flat_map</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:descendants</span><span class="p">)</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre>
-</div>
-
-<p>into something which you can do in SQL with stored procedures or whatever. You’d have to do this by building the query graph, detecting the cycle, and doing magic SQL things which I don’t understand.</p>
-
-<p>I think this would be a super fun project! The one downside is that it involves learning to deal with ActiveRecord, which seems potentially difficult. If you want to just build a proof of concept, you could build this as a standalone library with Arel or just building SQL queries manually.</p>
-
-<p>I’d love to work with someone on this if they wanted to do the bulk of the implementation work!</p>
-
-
-      <hr/>
-
-<div class="PageNavigation">
-  
-    <a class="prev" href="/2016/04/03/data-structure-projects.html">&laquo; Data structure projects</a>
-  
-  
-    <a class="pull-right" href="/2016/04/20/overteaching.html">Overteaching and overlearning &raquo;</a>
-  
-</div>
-
-    </div>
-    <div class="col-sm-3 col-sm-offset-1">
+    <div class="col-sm-3">
       <img src="/img/dual_n_buck.jpeg" class="img-responsive" alt="Picture of Buck" height="213" width="213">
-      
 <hr/>
 <a class="arrow" href="/"><strong>Buck</strong></a>
 <ul>
@@ -172,6 +126,53 @@
 </ul>
 
     </div>
+
+    <div class="col-sm-7 col-sm-offset-1 col-sm-offset-1 markdownify">
+      <h1 class="post-title " itemprop="name headline">Hyperactive Record</h1>
+      <p class="post-meta"><time datetime="2016-04-14T00:00:00-07:00" itemprop="datePublished">Apr 14, 2016</time></p>
+
+      <hr/>
+
+      <p>Here is a fun open source project which someone should build! I’ve written a readme and put it <a href="https://github.com/bshlgrs/HyperactiveRecord/blob/master/README.md">on Github</a> but I don’t think I have the time to actually build this. I present it here in the hope that one of you might decide that you like it and want to build it!</p>
+
+<p>It’s called HyperactiveRecord. It’s an ActiveRecord plugin which tries harder to provide an intuitive, consistent, simple interface for SQL.</p>
+
+<p>For example. You’re making a blog site. You have posts and comments. Posts are either public or private. I want to load all of the publicly available comments of a user–that is, all their comments which are on public posts. (I use this example because it’s analogous to something that I did at work today.)</p>
+
+<p>Here’s what I intuitively want to do: <code class="highlighter-rouge">user.comments.filter { |c| c.post.public }</code>. This is much simpler and more readable than the ActiveRecord solution. I want to make a library whose goal is to be as simple, composable, and unsurprising as that. We’re already used to the APIs of map, flatMap, filter, reduce, and so on. That’s how our queries should work.</p>
+
+<p>This would be written basically the same way ActiveRecord is: each query method is just constructing a lazy query object which is only actually executed when accessed. Making DSLs which accept blocks is already done in Ruby all over the place; why not do it here too?</p>
+
+<p>There are some super fun places you could take this project. For example, a SQL enthusiast could devote themselves to the project of building a query generator for recursive method calls. That is, compiling</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Comment</span>
+  <span class="k">def</span> <span class="nf">descendants</span>
+     <span class="no">Hyperactive</span><span class="p">.</span><span class="nf">union</span><span class="p">(</span><span class="nb">self</span><span class="p">,</span> <span class="nb">self</span><span class="p">.</span><span class="nf">children</span><span class="p">.</span><span class="nf">flat_map</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:descendants</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>into something which you can do in SQL with stored procedures or whatever. You’d have to do this by building the query graph, detecting the cycle, and doing magic SQL things which I don’t understand.</p>
+
+<p>I think this would be a super fun project! The one downside is that it involves learning to deal with ActiveRecord, which seems potentially difficult. If you want to just build a proof of concept, you could build this as a standalone library with Arel or just building SQL queries manually.</p>
+
+<p>I’d love to work with someone on this if they wanted to do the bulk of the implementation work!</p>
+
+
+      <hr/>
+
+<div class="PageNavigation">
+  
+    <a class="prev" href="/2016/04/03/data-structure-projects.html">&laquo; Data structure projects</a>
+  
+  
+    <a class="pull-right" href="/2016/04/20/overteaching.html">Overteaching and overlearning &raquo;</a>
+  
+</div>
+
+    </div>
+
   </div>
 </div>
 

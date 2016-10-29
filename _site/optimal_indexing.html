@@ -41,79 +41,8 @@
 
     <div class="container">
   <div class="row">
-    <div class="col-sm-7 col-sm-offset-1 markdownify">
-      <h1 class="post-title " itemprop="name headline">Optimal indexing</h1>
-      <p class="post-meta"><time datetime="1969-12-31T16:00:00-08:00" itemprop="datePublished"></time></p>
-
-      <hr/>
-
-      <p><strong>this is in progress</strong></p>
-
-<p>This is my notes on how to index collections of data for fast support of various queries.</p>
-
-<h2 id="where-clauses-are-easy-when-constant">Where clauses are easy when constant</h2>
-
-<p>For any query which contains a predicate like this:</p>
-
-<p><code class="highlighter-rouge">WHERE f(item) = arg</code></p>
-
-<p>you can just split up any other indexing structure according to that, and keep them in a hash map.</p>
-
-<h2 id="where-clauses-with-a-single-range-component">Where clauses with a single range component</h2>
-
-<p>use B-trees</p>
-
-<h2 id="general-phrasing">General phrasing</h2>
-
-<p>Given a list <code class="highlighter-rouge">xs</code> of items, choose a data structure such that the following call is fast:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>class Query[NodeType, ArgumentsType, OrderingType &lt;: Comparable, ResultType](
-  predicate: (NodeType, ArgumentsType) =&gt; Boolean,
-  ordering: (NodeType, ArgumentsType) =&gt; OrderingType,
-  limit: (ArgumentsType =&gt; Option[Integer]),
-  reduction: (List[NodeType], ArgumentsType) =&gt; ResultType) {
-
-  def compute(args: ArgumentType) = {
-    nodes.filter((x) =&gt; predicate(x, args))
-         .orderBy((x) =&gt; ordering(x, args))
-         .maybeTake((x) =&gt; limit(args))
-         .apply(reduction(_, args))
-  }
-}
-</code></pre>
-</div>
-
-<p>Properties:</p>
-
-<p>predicate:
-  - Try splitting it into a conjunction. Then classify conditions like this:
-    - ignores arguments: this makes it trivial
-    - of the form <code class="highlighter-rouge">f(args) = g(node)</code>. This means you make a hash map from the range of <code class="highlighter-rouge">f(args)</code> to
-      whatever other data structure you wanted.
-reduction:
-  - I think this is always trivial to store if you can store the other things.</p>
-
-<p>Other cases:</p>
-
-<ul>
-  <li>Predicate is like <code class="highlighter-rouge">f(args) &lt; g(node)</code> or <code class="highlighter-rouge">f(args) &lt; g(node) &lt; h(args)</code>. In this case just use a BST.</li>
-  <li>Predicate is conjunction of d range queries. In this case use a KD tree. Construction is log time. Queries are O(n**{1-1/d} + m).</li>
-  <li>Predicate like <code class="highlighter-rouge">f(args) &lt; g(node) &lt; h(args)</code>, order by <code class="highlighter-rouge">j(node)</code>, limit <code class="highlighter-rouge">k(args)</code>. Use <a href="http://stackoverflow.com/questions/26296624/order-statistic-on-intervals">this</a> idea, but make a skip list.</li>
-</ul>
-
-
-
-      <hr/>
-
-<div class="PageNavigation">
-  
-  
-</div>
-
-    </div>
-    <div class="col-sm-3 col-sm-offset-1">
+    <div class="col-sm-3">
       <img src="/img/dual_n_buck.jpeg" class="img-responsive" alt="Picture of Buck" height="213" width="213">
-      
 <hr/>
 <a class="arrow" href="/"><strong>Buck</strong></a>
 <ul>
@@ -198,6 +127,78 @@ reduction:
 </ul>
 
     </div>
+
+    <div class="col-sm-7 col-sm-offset-1 col-sm-offset-1 markdownify">
+      <h1 class="post-title " itemprop="name headline">Optimal indexing</h1>
+      <p class="post-meta"><time datetime="1969-12-31T16:00:00-08:00" itemprop="datePublished"></time></p>
+
+      <hr/>
+
+      <p><strong>this is in progress</strong></p>
+
+<p>This is my notes on how to index collections of data for fast support of various queries.</p>
+
+<h2 id="where-clauses-are-easy-when-constant">Where clauses are easy when constant</h2>
+
+<p>For any query which contains a predicate like this:</p>
+
+<p><code class="highlighter-rouge">WHERE f(item) = arg</code></p>
+
+<p>you can just split up any other indexing structure according to that, and keep them in a hash map.</p>
+
+<h2 id="where-clauses-with-a-single-range-component">Where clauses with a single range component</h2>
+
+<p>use B-trees</p>
+
+<h2 id="general-phrasing">General phrasing</h2>
+
+<p>Given a list <code class="highlighter-rouge">xs</code> of items, choose a data structure such that the following call is fast:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>class Query[NodeType, ArgumentsType, OrderingType &lt;: Comparable, ResultType](
+  predicate: (NodeType, ArgumentsType) =&gt; Boolean,
+  ordering: (NodeType, ArgumentsType) =&gt; OrderingType,
+  limit: (ArgumentsType =&gt; Option[Integer]),
+  reduction: (List[NodeType], ArgumentsType) =&gt; ResultType) {
+
+  def compute(args: ArgumentType) = {
+    nodes.filter((x) =&gt; predicate(x, args))
+         .orderBy((x) =&gt; ordering(x, args))
+         .maybeTake((x) =&gt; limit(args))
+         .apply(reduction(_, args))
+  }
+}
+</code></pre>
+</div>
+
+<p>Properties:</p>
+
+<p>predicate:
+  - Try splitting it into a conjunction. Then classify conditions like this:
+    - ignores arguments: this makes it trivial
+    - of the form <code class="highlighter-rouge">f(args) = g(node)</code>. This means you make a hash map from the range of <code class="highlighter-rouge">f(args)</code> to
+      whatever other data structure you wanted.
+reduction:
+  - I think this is always trivial to store if you can store the other things.</p>
+
+<p>Other cases:</p>
+
+<ul>
+  <li>Predicate is like <code class="highlighter-rouge">f(args) &lt; g(node)</code> or <code class="highlighter-rouge">f(args) &lt; g(node) &lt; h(args)</code>. In this case just use a BST.</li>
+  <li>Predicate is conjunction of d range queries. In this case use a KD tree. Construction is log time. Queries are O(n**{1-1/d} + m).</li>
+  <li>Predicate like <code class="highlighter-rouge">f(args) &lt; g(node) &lt; h(args)</code>, order by <code class="highlighter-rouge">j(node)</code>, limit <code class="highlighter-rouge">k(args)</code>. Use <a href="http://stackoverflow.com/questions/26296624/order-statistic-on-intervals">this</a> idea, but make a skip list.</li>
+</ul>
+
+
+
+      <hr/>
+
+<div class="PageNavigation">
+  
+  
+</div>
+
+    </div>
+
   </div>
 </div>
 

@@ -41,7 +41,94 @@
 
     <div class="container">
   <div class="row">
-    <div class="col-sm-7 col-sm-offset-1 markdownify">
+    <div class="col-sm-3">
+      <img src="/img/dual_n_buck.jpeg" class="img-responsive" alt="Picture of Buck" height="213" width="213">
+<hr/>
+<a class="arrow" href="/"><strong>Buck</strong></a>
+<ul>
+  <li><a class="arrow" href="/about">About</a>
+    <ul>
+      <li><a href="http://triplebyte.com?ref=shlegeris.com">Triplebyte</a></li>
+    </ul>
+  </li>
+  <li>Links
+    <ul>
+      <li>
+          <a class="arrow" href="http://github.com/bshlgrs">GitHub</a>
+      </li>
+      <li>
+          <a class="arrow" href="mailto:bshlegeris@gmail.com">Email</a>
+      </li>
+      <li>
+          <a class="arrow" href="http://www.facebook.com/bshlgrs">Facebook</a>
+      </li>
+      <li>
+          <a class="arrow" href="http://lnkd.in/bnBJ6EF">LinkedIn</a>
+      </li>
+    </ul>
+  </li>
+  <li><a class="arrow external" href="/anonymous_feedback">Anonymous feedback</a></li>
+  <li>Software to play with
+    <ul>
+      <li>
+          <a class="arrow" href="https://bshlgrs.github.io/music-game/">Relative pitch game</a>
+      </li>
+      <li>
+          <a class="arrow" href="http://shlegeris.com/gini">Gini coefficient tool</a>
+      </li>
+      <li>
+          <a class="arrow" href="http://shlegeris.com/dice">Extremely serious election probability tool</a>
+      </li>
+    </ul>
+  </li>
+  <li><a href="/posts" class="arrow">Blog</a> (<a href="/best" class="arrow">Best posts</a>) (<a href="/feed.xml">RSS</a>)
+    <ul>
+      
+        <li>
+          <a class="arrow" href="/2016/10/23/poor-college-graduates.html">Poor college graduates do much better than rich high-school dropouts</a>
+        </li>
+      
+        <li>
+          <a class="arrow" href="/2016/10/20/libertarians.html">Left-libertarianism</a>
+        </li>
+      
+        <li>
+          <a class="arrow" href="/2016/10/07/optimal-tax.html">Optimal redistribution with a flat tax</a>
+        </li>
+      
+        <li>
+          <a class="arrow" href="/2016/10/02/ubi.html">Universal basic incomes disincentivise work</a>
+        </li>
+      
+        <li>
+          <a class="arrow" href="/2016/10/02/tax.html">The great thing about regressive taxes</a>
+        </li>
+      
+        <li>
+          <a class="arrow" href="/2016/09/27/wages.html">Contradictory claims in labor economics</a>
+        </li>
+      
+        <li>
+          <a class="arrow" href="/2016/09/24/cato.html">A mistake in the Cato institute report on risks from refugees</a>
+        </li>
+      
+        <li>
+          <a class="arrow" href="/2016/09/05/holden.html">Objecting to Holden Karnosfky's objections to EA</a>
+        </li>
+      
+    </ul>
+  </li>
+  <li>
+      <a class="arrow" href="/to-prove-list">My "to-prove" list</a>
+  </li>
+  <li>
+      <a class="arrow" href="/cute">Pictures of me</a>
+  </li>
+</ul>
+
+    </div>
+
+    <div class="col-sm-7 col-sm-offset-1 col-sm-offset-1 markdownify">
       
       <p class="post-meta"><time datetime="1969-12-31T16:00:00-08:00" itemprop="datePublished"></time></p>
 
@@ -258,229 +345,6 @@
     </div>
   </div>
 
-  <div class="buck-post">
-    <h2><a href="/2016/10/02/ubi.html"> Universal basic incomes disincentivise work</a></h2>
-
-    <p class="post-meta"><time datetime="2016-10-02T00:00:00-07:00" itemprop="datePublished">Oct 2, 2016</time></p>
-
-    <div class="shrink-headings">
-      <p><strong>epistemic status: pedantic point about math which probably isn’t too relevant to most real life questions</strong></p>
-
-<p>Sometimes people say that a universal basic income would be good, because unlike the current welfare system which phases out benefits as your income increases, imposing an effective high marginal tax rate, the UBI stays constant as your income rises. As a result, these people claim, the UBI does not disincentivise work.</p>
-
-<p>This is false. Increasing the UBI means that your <script type="math/tex">n</script>th hour of work has lower utility than it would have had otherwise, because of diminishing marginal returns. So the UBI discourages work.</p>
-
-<p>–</p>
-
-<p>Just for fun, here’s what the math looks like for this.</p>
-
-<p>Suppose a worker’s utility function is</p>
-
-<p>$^$\text{utility} = \log(\text{wage} \cdot \text{tax rate} \cdot \text{hours worked} + \text{UBI}) - \text{hours worked}$^$</p>
-
-<p>Let the wage be <script type="math/tex">w</script>, tax rate <script type="math/tex">1 - r</script>, hours worked <script type="math/tex">h</script>, UBI <script type="math/tex">c</script>. Assume flat tax for simplicity. So <script type="math/tex">U = \log(w \cdot h \cdot r + c) - h</script>. The optimal amount of work happens when <script type="math/tex">\frac{dU}{dh}</script> is zero.</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-  0 &= \frac{dU}{dh} \\
-    &= \frac{r \cdot w}{c + h \cdot r \cdot w} - 1 \\
-  r \cdot w &= c + h \cdot r \cdot w \\
-  r \cdot w - c &= h \cdot r \cdot w \\
-  h &= \frac{r \cdot w - c}{r \cdot w}
-\end{align} %]]></script>
-
-<p>So increasing the UBI decreases hours worked, and the effect is stronger if your wage is lower.</p>
-
-    </div>
-  </div>
-
-  <div class="buck-post">
-    <h2><a href="/2016/10/02/tax.html"> The great thing about regressive taxes</a></h2>
-
-    <p class="post-meta"><time datetime="2016-10-02T00:00:00-07:00" itemprop="datePublished">Oct 2, 2016</time></p>
-
-    <div class="shrink-headings">
-      <p><strong>Epistemic status: mostly interesting as a tool to clarify your thinking about how tax rates should be decided. For a variety of practical reasons (especially <a href="https://www.facebook.com/bshlgrs/posts/10208748763091175?comment_id=10208748871013873&amp;comment_tracking=%7B%22tn%22%3A%22R2%22%7D">these ones</a>), we might want to have low marginal tax rates on the poor.</strong></p>
-
-<p>Suppose you’re trying to effectively tax a bunch of software engineers who are all making around $100k a year.  Your current tax system charges 0% tax between $0k and $50k, then 50% after $50k.</p>
-
-<p>This is very progressive. You consider changing it to the following regressive scheme: Charge 50% tax between $0k and $50k, then 0% after $50k.</p>
-
-<p>Which tax is better, the regressive or the progressive tax?</p>
-
-<p>–</p>
-
-<p>The regressive tax is probably a Pareto improvement. It raises the same amount of revenue, but it’s less distortionary. A 60% marginal tax is going to discourage the engineers from working, and a 0% marginal tax won’t.</p>
-
-<p>The key insight here is that when we’re taxing high-income people, we want to maximize average tax rates (for equitability) and minimize marginal tax rates (for efficiency). Because average tax rates come from the integral of marginal tax rates, you have to weigh between these two goals when you’re choosing tax systems.</p>
-
-<p>–</p>
-
-<p>What about if our society is pretty unequal? Let’s say it has two types of people, software engineers and musicians. Engineers make about $100k, musicians make about $40k. What’s the best redistributive system?</p>
-
-<p>It’s going to be a regressive tax with a universal basic income. It turns out that it’s more important to have low marginal tax rates on engineers than musicians. As a utilitarian social planner, it’s much worse to discourage engineers from working than to discourage musicians from working, because if we want to increase the incomes of musicians, we can just give them free money as a UBI. So we want to put all the high marginal tax rates on the musicians, down at a low enough income level so that the engineers won’t be discouraged by them.</p>
-
-<p>–</p>
-
-<p>I’m not just making this up. Most economists seem to agree with me, including leftists like Emmanuel Saez—he’s a good friend of Piketty and a big supporter of increasing tax rates on the rich. His <a href="https://eml.berkeley.edu/~saez/derive.pdf">famous 2001 paper</a> on deriving optimal marginal tax rates came up with these graphs which show a marginal tax rate of more than 60% for people making minimum wage:</p>
-
-<p><img src="/img/saez_marginal_rates.png" alt="Saez graph of marginal tax rates" /></p>
-
-<p>And the more right-learning economists who wrote <a href="https://dash.harvard.edu/bitstream/handle/1/4263739/Mankiw_OptimalTaxationTheory.pdf?sequence=2">Optimal Taxation in Theory and Practice</a> say</p>
-
-<blockquote>
-  <p>One perhaps counterintuitive result of these kinds of simulations is that they imply that marginal taxes should be higher at low wages than for most of the rest of the distribution. The intuition behind this result is that high marginal rates at low incomes allow for large lump-sum transfers to be given to those of the lowest ability levels without tempting higher-ability workers to work less and claim those transfers. For higher-ability workers, the net value of marginal income is too high at low incomes, so they are deterred from working less despite the generous redistribution offered to those with low ability.</p>
-</blockquote>
-
-<p>So should we increase marginal tax rates on the poor? It turns out we don’t need to. We already have high marginal tax rates on the poor, because most welfare programs phase out their support as incomes increase. In the past, I’ve seen a bunch of people argue that this means-testing is bad, because of the extremely high marginal tax rates it imposes. But now that I’ve been convinced that high marginal tax rates on the poor are good, I’m not as concerned by this anymore.</p>
-
-<hr />
-
-<p><a href="https://www.facebook.com/bshlgrs/posts/10208748763091175">view comments on Facebook</a></p>
-
-    </div>
-  </div>
-
-  <div class="buck-post">
-    <h2><a href="/2016/09/27/wages.html"> Contradictory claims in labor economics</a></h2>
-
-    <p class="post-meta"><time datetime="2016-09-27T00:00:00-07:00" itemprop="datePublished">Sep 27, 2016</time></p>
-
-    <div class="shrink-headings">
-      <p>Here are two claims you could make about the market for unskilled labor:</p>
-
-<ul>
-  <li>Increasing the minimum wage won’t decrease employment among unskilled workers.</li>
-  <li>Unskilled immigrants don’t reduce wages for unskilled natives.</li>
-</ul>
-
-<p>I recently saw someone point out that these can’t both be true, because they imply opposite things about the shape of the demand curve. (I don’t remember where I read this. After writing this post, I found <a href="http://econlog.econlib.org/archives/2005/05/infinite_contra.html">this very similar article</a> by Bryan Caplan from 2005; possibly this whole post is just rehashing that post of his after I forgot the source.)</p>
-
-<p>Here’s a diagram of a world where the first claim is true:</p>
-
-<p><img src="/img/min_wage.png" alt="supply and demand diagram" /></p>
-
-<p>So the minumum wage used to be P1, then it got increased to P2. This slightly decreased the number of jobs (from Q1 to Q2), but not by very much.</p>
-
-<p>This means that the demand curve for low-wage employment is <a href="https://en.wikipedia.org/wiki/Price_elasticity_of_demand">inelastic</a>.</p>
-
-<p>What would things look like if the second claim were true–that unskilled immigrants don’t reduce wages for unskilled natives?</p>
-
-<p><img src="/img/immigrant_wage.png" alt="supply and demand diagram" /></p>
-
-<p>In this situation, we had a bunch of immigration, and this increased the quantity of low-skilled labor available from Q1 to Q2. (This could be represented as a shift in the supply curve, but representing it as just a shift in quantity works fine for our purposes.) This resulted in only a small decrease in wages, from P1 to P2.</p>
-
-<p>If this is true, then the demand curve is highly elastic!</p>
-
-<p>So these claims, interpreted naively, are contradictory.</p>
-
-<hr />
-
-<p>I understand this now that someone has pointed it out, but I definitely didn’t think of it on my own. I want to notice this kind of thing automatically, just like I automatically notice the discrepancy when someone tells me that an investment is unusually high-return and also low-risk.</p>
-
-<p>I think the best way for me to get good at this to mentally translate all claims about elasticity into “inelastic” or “elastic” every time I hear them. If I can tag claims by their implied elasticities, then I might be better at noticing this kind of thing.</p>
-
-<p>I think the reason that I didn’t notice this is that one of the claims involves an increase in price, and the other involves an increase in quantity. So here is an enumeration of all the different things that it means for demand to be <strong>inelastic</strong>, like it was in the minimum wage case above:</p>
-
-<ul>
-  <li>If price increases, quantity decreases a bit.</li>
-  <li>If price decreases, quantity increases a bit.</li>
-  <li>If quantity increases, price decreases a lot.</li>
-  <li>If quantity decreases, price increases a lot.</li>
-</ul>
-
-<p>And if demand is <strong>elastic</strong>:</p>
-
-<ul>
-  <li>If price increases, quantity decreases a lot.</li>
-  <li>If price decreases, quantity increases a lot.</li>
-  <li>If quantity increases, price decreases a bit.</li>
-  <li>If quantity decreases, price increases a bit.</li>
-</ul>
-
-<p>Here are the two graphs, for reference:</p>
-
-<p><img src="/img/both_elasticities.png" alt="supply and demand diagram" /></p>
-
-<p>I should probably make flashcards or something.</p>
-
-<p>Incidentally, what’s the actual truth about the elasticity of low-skilled labor? Bryan Caplan <a href="http://econlog.econlib.org/archives/2013/03/the_vice_of_sel.html">argues convincingly</a> that despite the famous high quality study which found that minimum wage increases didn’t cause significant unemployment in one labor market, we should probably just disbelieve that evidence. He gives more arguments <a href="http://econlog.econlib.org/archives/2005/05/infinite_contra.html">here</a>. There’s also an effect where new immigrants increase the demand for labor of unskilled workers, but we should probably a priori expect that effect to be small–as Bryan says <a href="http://econlog.econlib.org/archives/2013/03/immigration_the_1.html">here</a>, “Low-skill workers only spend a tiny fraction of their income on goods produced by other low-skill workers.  The same goes for every other narrow category of worker.”</p>
-
-    </div>
-  </div>
-
-  <div class="buck-post">
-    <h2><a href="/2016/09/24/cato.html"> A mistake in the Cato institute report on risks from refugees</a></h2>
-
-    <p class="post-meta"><time datetime="2016-09-24T00:00:00-07:00" itemprop="datePublished">Sep 24, 2016</time></p>
-
-    <div class="shrink-headings">
-      <p>I was reading a <a href="http://www.vox.com/2016/9/20/12986886/donald-trump-jr-terrorist-skittles-wrong">Vox article</a> about the risks of Americans being killed by terrorists refugees. It linked to <a href="http://object.cato.org/sites/cato.org/files/pubs/pdf/pa798_1_1.pdf">“Terrorism and Immigration”</a>, a report by the Cato Institute.</p>
-
-<p>Here’s a graph from that report:</p>
-
-<p><img src="/img/cato_graph.png" alt="Graph of murder rates over time" /></p>
-
-<p>This purports to show the US murder rate over time, both including and excluding deaths from foreign-born terrorism. Unsurprisingly, foreign-born terrorism had a measurable impact in 2001 and in no other years.</p>
-
-<p>But something else caught my eye about this graph–the downward jump in 2001 in murder excluding foreign-born terrorism. The jump is abrupt and lasts one year and almost exactly cancels out the effect of the 9/11 attacks. According to the legend of the graph, the murder rate excluding foreign-born terrorism comes from author calculation.</p>
-
-<p>What happened here? Maybe Americans decided to kill each other a lot less after 9/11, in a short-lived burst of patriotism? Maybe they got scared of flying and <a href="http://www.americanscientist.org/issues/pub/flying-and-driving-after-the-september-11-attacks">drove their cars more</a>, which consumed enough of their free time that they were too busy to go on their usual murderous rampages?</p>
-
-<p>Or maybe the author totally fucked up and subtracted the 9/11 casualties from a statistical source which wasn’t including terrorism deaths in the first place, and then didn’t notice the obviously weird blip in their resulting data! Anyone want to take bets on which it was?</p>
-
-<p>Well, the author says they got their crime data from <a href="http://www.disastercenter.com/crime/uscrime.htm">Disaster Center</a>. Disaster Center gets their data from the FBI’s UCS Annual Crime Reports. According to <a href="https://ucr.fbi.gov/crime-in-the-u.s/2001/01sec5.pdf">Section 5 of the 2001 UCS report</a>:</p>
-
-<blockquote>
-  <p>The statistics of September 11 are not a part of the traditional Crime in the United States publication because they are different from the day-to-day crimes committed in this country.</p>
-</blockquote>
-
-<p>Oh dear!</p>
-
-<p>I emailed the author of the report, <a href="http://www.cato.org/people/alex-nowrasteh">Alex Nowrasteh</a>; he agrees that this is a mistake.</p>
-
-    </div>
-  </div>
-
-  <div class="buck-post">
-    <h2><a href="/2016/09/05/holden.html"> Objecting to Holden Karnosfky's objections to EA</a></h2>
-
-    <p class="post-meta"><time datetime="2016-09-05T00:00:00-07:00" itemprop="datePublished">Sep 5, 2016</time></p>
-
-    <div class="shrink-headings">
-      <p><strong>epistemic status: uncertain</strong></p>
-
-<p>Holden Karnofsky published a great post yesterday, called <a href="https://docs.google.com/document/d/1hKZNRSLm7zubKZmfA7vsXvkIofprQLGUoW43CYXPRrk/edit">Some Key Ways in Which I’ve Changed My Mind Over the Last Several Years</a>. Among other things, he wrote that he’s less skeptical of EA than he used to be. He noted that he still has some “concerns and objections” to EA though, and linked to <a href="http://effective-altruism.com/ea/pf/why_the_open_philanthropy_project_isnt_currently/5ie">this comment of his</a> as an example.</p>
-
-<p>I disagree with the objections he made in that comment.</p>
-
-<p>He wrote:</p>
-
-<blockquote>
-  <p>I’m generally uncomfortable with (and disagree with) the “obligation” frame of EA. I’m particularly uncomfortable with messages along the lines of “The arts are a waste when there are people suffering,” “You should feel bad about (or feel the need to defend) every dollar you spend on yourself beyond necessities,” etc. I think messages along these lines make EA sound overly demanding/costly to affiliate with as well as intellectually misguided.</p>
-</blockquote>
-
-<p>I don’t think this message is particularly widespread in EA. I hear people disagreeing with it more than I hear them agreeing with it (eg <a href="https://www.facebook.com/julia.galef/posts/10102614039440802">Julia Galef</a> and <a href="https://thingofthings.wordpress.com/2016/08/31/the-thorny-issue-of-effective-altruism-and-art/">Ozy</a>, just this week). I don’t think any of the EAs I know think “You should feel bad about (or feel the need to defend) every dollar you spend on yourself beyond necessities” (though I guess they might not admit that they think that, even if they do).</p>
-
-<p>The 2015 EA survey described <a href="http://effective-altruism.com/ea/zw/the_2015_survey_of_effective_altruists_results/7x6">the median EA donation of $333</a> as “Certainly good, but not as impressive [as the mean donation]”. That doesn’t sound like a community where they shame people for every dollar not spent on necessities.</p>
-
-<blockquote>
-  <p>I think there are a variety of messages associated with EA that communicate unwarranted confidence on a variety of dimensions, implying that we know more than we do about what the best causes are and to what extent EAs are “outperforming” the rest of the world in terms of accomplishing good. “Effective altruism could be the last social movement we ever need” and “Global poverty is a rounding error compared to other causes” are both examples of this; both messages have been prominently enough expressed to get in <a href="http://www.vox.com/2015/8/10/9124145/effective-altruism-global-ai">this article</a>, and both messages are problematic in my view.</p>
-</blockquote>
-
-<p>I don’t buy “both messages have been prominently enough expressed to get in this article”. Journalists specifically look out for problematic things to quote; you should implicitly prepend every quote you see with “After spending a while looking for things that make [whatever group] look bad, the worst I could find was …”.</p>
-
-<p>(The “EA could be the last social movement we ever need” thing was pretty cringeworthy. But that’s by far the cringiest instance of that opinion I’ve ever heard expressed, either privately or publicly.)</p>
-
-<p>I also have criticisms about EAs being overconfident and acting as if they know way more than they do about a wide variety of things, but my criticisms are very different from that. For example, I’m super unimpressed that so many EAs didn’t know that GiveWell thinks that deworming has a <a href="http://blog.givewell.org/2015/11/18/our-updated-top-charities-for-giving-season-2015/">relatively low probability of very high impact</a>. I’m also unimpressed by how many people are incredibly confident that animals aren’t morally relevant despite knowing very little about the topic.</p>
-
-<p>And some EAs (especially rationalists) have this awful habit of proposing incredibly dumb solutions to problems that imply that they think that everyone else in the world is incompetent and that it’s easy to just plow past political problems with shitty amateur subterfuge. Eg yesterday I saw someone proposing that we establish a lab and just unilaterally try to eradicate malarial mosquitos, and I see people propose doing geoengineering without consent of any governments, both of which are terrible ideas.</p>
-
-<p>But that’s pretty different from the complaints that Dylan Matthews was making and that Holden is endorsing.</p>
-
-    </div>
-  </div>
-
 
 <p><a href="/posts">All posts</a></p>
 
@@ -509,93 +373,7 @@ $(function() {
 </div>
 
     </div>
-    <div class="col-sm-3 col-sm-offset-1">
-      <img src="/img/dual_n_buck.jpeg" class="img-responsive" alt="Picture of Buck" height="213" width="213">
-      
-<hr/>
-<a class="arrow" href="/"><strong>Buck</strong></a>
-<ul>
-  <li><a class="arrow" href="/about">About</a>
-    <ul>
-      <li><a href="http://triplebyte.com?ref=shlegeris.com">Triplebyte</a></li>
-    </ul>
-  </li>
-  <li>Links
-    <ul>
-      <li>
-          <a class="arrow" href="http://github.com/bshlgrs">GitHub</a>
-      </li>
-      <li>
-          <a class="arrow" href="mailto:bshlegeris@gmail.com">Email</a>
-      </li>
-      <li>
-          <a class="arrow" href="http://www.facebook.com/bshlgrs">Facebook</a>
-      </li>
-      <li>
-          <a class="arrow" href="http://lnkd.in/bnBJ6EF">LinkedIn</a>
-      </li>
-    </ul>
-  </li>
-  <li><a class="arrow external" href="/anonymous_feedback">Anonymous feedback</a></li>
-  <li>Software to play with
-    <ul>
-      <li>
-          <a class="arrow" href="https://bshlgrs.github.io/music-game/">Relative pitch game</a>
-      </li>
-      <li>
-          <a class="arrow" href="http://shlegeris.com/gini">Gini coefficient tool</a>
-      </li>
-      <li>
-          <a class="arrow" href="http://shlegeris.com/dice">Extremely serious election probability tool</a>
-      </li>
-    </ul>
-  </li>
-  <li><a href="/posts" class="arrow">Blog</a> (<a href="/best" class="arrow">Best posts</a>) (<a href="/feed.xml">RSS</a>)
-    <ul>
-      
-        <li>
-          <a class="arrow" href="/2016/10/23/poor-college-graduates.html">Poor college graduates do much better than rich high-school dropouts</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/10/20/libertarians.html">Left-libertarianism</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/10/07/optimal-tax.html">Optimal redistribution with a flat tax</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/10/02/ubi.html">Universal basic incomes disincentivise work</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/10/02/tax.html">The great thing about regressive taxes</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/09/27/wages.html">Contradictory claims in labor economics</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/09/24/cato.html">A mistake in the Cato institute report on risks from refugees</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/09/05/holden.html">Objecting to Holden Karnosfky's objections to EA</a>
-        </li>
-      
-    </ul>
-  </li>
-  <li>
-      <a class="arrow" href="/to-prove-list">My "to-prove" list</a>
-  </li>
-  <li>
-      <a class="arrow" href="/cute">Pictures of me</a>
-  </li>
-</ul>
 
-    </div>
   </div>
 </div>
 
