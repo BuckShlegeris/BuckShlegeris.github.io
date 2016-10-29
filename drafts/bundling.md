@@ -4,7 +4,9 @@ title:  "A geometric description of when to bundle goods"
 date: 2016-10-29
 ---
 
-I recently interviewed Chen-Yu Yang at work, and after the interview he scored basically the maximum possible number of unofficial bonus points by looking at my website and emailing me most of the answer to a question I posed here a while ago.
+I recently interviewed Chen-Yu Yang at work, and after the interview he scored basically the maximum possible number of unofficial bonus points by looking at my website and emailing me most of the answer to [a question I posed a while ago](https://www.facebook.com/bshlgrs/posts/10208574426092859).
+
+**EDIT: This is wrong!**
 
 My question was, suppose you have a bunch of goods and you want to maximize profit by bundling the goods. (Bundling is the super neat thing where you can increase your profit by selling two products together instead of separately. See the description [here](http://market.subwiki.org/wiki/Price_bundling) if you haven't heard of it before.) How do you efficiently figure out the optimal bundling strategy?
 
