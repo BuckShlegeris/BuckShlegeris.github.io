@@ -12,7 +12,7 @@ date:   ""
 
 ## Background
 
-I grew up in Townsville, Australia. After high school, I studied computer science and physics at the Australian National University for two years. At the end of 2013, after completing enough courses to get a computer science major, I moved to San Francisco for App Academy. After the nine week course, App Academy offered me a job as a TA. I worked there until returning to Australia for university in June. You can read an interview I did about App Academy [here](http://80000hours.org/blog/329-interview-with-buck-shlegeris-from-app-academy).
+I grew up in Townsville, Australia. After high school, I studied computer science and physics at the Australian National University for two years. At the end of 2013, I moved to San Francisco for App Academy. After the nine week course, App Academy offered me a job as a TA. I worked there until returning to Australia for university in June. You can read an interview I did about App Academy [here](http://80000hours.org/blog/329-interview-with-buck-shlegeris-from-app-academy). Somehow I managed to convince ANU that App Academy counted as a semester abroad, so I graduated with just one more semester of university.
 
 After graduating, I moved back to SF; I worked for PayPal in Scala for most of a year, then left to work at Triplebyte.
 
