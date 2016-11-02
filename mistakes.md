@@ -7,7 +7,7 @@ date:   ""
 Here is an incomplete list of mistakes I've made:
 
 - I wrote about mistakes I've made in my effective altruism efforts [here](/2016/05/24/mistakes.html).
-- math things:
+- Factual mistakes:
   - I [thought I had found a proof](https://www.facebook.com/photo.php?fbid=10208985027237631&set=a.1254922647920.38754.1075180788&type=3) related to bundling, but I was wrong. I posted the proof to Facebook very late at night.
     - Process which would have prevented this mistake:
       - I should have checked my conjecture against the toy simulation of the problem which I'd already built
