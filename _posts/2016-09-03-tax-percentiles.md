@@ -37,3 +37,7 @@ I suspect prices would drop a *lot* for poor people on items where there's low m
 
 This is a fun example of a redistributive policy which theoretically doesn't require a government to do anything except enforce contracts. I think it's legal to ask people to sign a contract where they state their taxable income for the previous year and promise they're telling the truth. So a company could set this up without any government intervention at all.
 
+
+----
+
+[view many comments on Facebook here](https://www.facebook.com/bshlgrs/posts/10208514682599309)
