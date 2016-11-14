@@ -11,7 +11,7 @@
         <title>Building a search engine for data structures</title>
         
         
-          <description>&lt;p&gt;Today I &lt;a href=&quot;https://scalaebythebay2016.sched.org/event/7iUk/automatic-composition-of-fast-data-structures&quot;&gt;presented at Scala By The Bay&lt;/a&gt; about my project to build a search engine for data structures. I’ve deployed the project at &lt;a href=&quot;http://ds.shlegeris.com&quot;&gt;ds.shlegeris.com&lt;/a&gt;; you can play with it there.&lt;/p&gt;
+          <description>&lt;p&gt;Today I &lt;a href=&quot;https://scalaebythebay2016.sched.org/event/7iUk/automatic-composition-of-fast-data-structures&quot;&gt;presented at Scala By The Bay&lt;/a&gt; about my project to build a search engine for data structures. I’ve deployed the project at &lt;a href=&quot;http://ds.shlegeris.com&quot;&gt;ds.shlegeris.com&lt;/a&gt;; you can play with it there. You can also read the source code &lt;a href=&quot;https://github.com/bshlgrs/data-structure-composer&quot;&gt;on Github&lt;/a&gt;.&lt;/p&gt;
 
 </description>
         
