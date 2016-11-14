@@ -475,3 +475,7 @@ h3 code {
 
 blockquote {
   letter-spacing: 0px; }
+
+.shadow-img {
+  box-shadow: 5px 5px 5px #888888;
+  border: solid 1px; }
