@@ -158,7 +158,7 @@
 
 <h2 id="a-search-engine-for-data-structures">A search engine for data structures</h2>
 
-<p>A data structure is a way of organizing data to efficiently support a particular API. So a data structure search engine takes an API and returns an efficient implementation.</p>
+<p>A data structure is a way of organizing data to efficiently support a particular API. So a data structure search engine is a program which takes an API and returns an efficient implementation.</p>
 
 <p>Let’s look at some examples of queries that the search engine is able to support. Here’s one from Cracking the Coding Interview:</p>
 
@@ -198,7 +198,7 @@
 
 <p>So we compute the times taken for all the methods by each possible composite data structure. Then we choose the best data structures for our use case.</p>
 
-<h3 id="preliminaries">Preliminaries</h3>
+<h3 id="aside-dominance-frontiers">Aside: Dominance frontiers</h3>
 
 <p>One type that I use a lot in this code is what I’m calling a <code class="highlighter-rouge">DominanceFrontier</code>, for lack of a better name. A dominance frontier is a set of items <code class="highlighter-rouge">A</code> with a partial ordering on them, such that no item is strictly dominated by any other. For example, in the type of algebraic expressions with free variables <script type="math/tex">x</script> and <script type="math/tex">y</script> where our partial ordering is based on their asymptotic growth, I might have the set <script type="math/tex">\{x + y, x \log(x), y^2\}</script>, because no element is strictly less than any other. However, I couldn’t add <script type="math/tex">\{x\}</script> to that set, because it’s not asymptotically greater than <script type="math/tex">\{x + y\}</script>.</p>
 
