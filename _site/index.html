@@ -322,7 +322,7 @@ reduce[f] &lt;- getFirst + n * getNext + n * f
 </code></pre>
 </div>
 
-<p>The <code class="highlighter-rouge">bind</code> method of Impl only returns a <code class="highlighter-rouge">Some</code> if it can substitute out all the free variables in the right hand side of the Impl. For example, <code class="highlighter-rouge">bind</code> will return <code class="highlighter-rouge">getByIndex &lt;- n</code> when called on <code class="highlighter-rouge">getByIndex &lt;- getFirst + n * getNext</code> with a result set containing <code class="highlighter-rouge">getFirst &lt;- 1</code> and <code class="highlighter-rouge">getNext &lt;- 1</code>. But it will never return something like <code class="highlighter-rouge">getByIndex &lt;- getFirst + n</code>.</p>
+<p>The <code class="highlighter-rouge">bind</code> method of Impl only returns a non-empty set if it can substitute out all the free variables in the right hand side of the Impl. For example, <code class="highlighter-rouge">bind</code> will return <code class="highlighter-rouge">getByIndex &lt;- n</code> when called on <code class="highlighter-rouge">getByIndex &lt;- getFirst + n * getNext</code> with a result set containing <code class="highlighter-rouge">getFirst &lt;- 1</code> and <code class="highlighter-rouge">getNext &lt;- 1</code>. But it will never return something like <code class="highlighter-rouge">getByIndex &lt;- getFirst + n</code>.</p>
 
 <p>For non-parameterized Impls, there is always a fastest way of doing them. This isn’t true for parameterized Impls, because different implementations might have different conditions and costs which don’t strictly dominate each other. For example, the Impls</p>
 
