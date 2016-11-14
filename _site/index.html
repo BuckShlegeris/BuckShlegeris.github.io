@@ -242,11 +242,13 @@ getNext &lt;- getByIndex
 
 <p>So you can implement <code class="highlighter-rouge">getByIndex</code> with O(1) calls to <code class="highlighter-rouge">getFirst</code> and O(n) calls to <code class="highlighter-rouge">getNext</code>. You can also implement <code class="highlighter-rouge">getFirst</code> or <code class="highlighter-rouge">getNext</code> with O(1) calls to <code class="highlighter-rouge">getByIndex</code>.</p>
 
-<p>Facts of this type are called Impls in my system. Impls can either belong to data structures, like <code class="highlighter-rouge">getByIndex &lt;- 1</code> above, or they can be universally true, like <code class="highlighter-rouge">getByIndex &lt;- getFirst + n * getNext</code>.</p>
+<p>Facts of this type are called ‘implementations’ in my system; they have the class <code class="highlighter-rouge">Impl</code>. Implementations can either belong to data structures, like <code class="highlighter-rouge">getByIndex &lt;- 1</code> above, or they can be universally true, like <code class="highlighter-rouge">getByIndex &lt;- getFirst + n * getNext</code>.</p>
+
+<p>There’s a useful distinction between implementations with free variables (like <code class="highlighter-rouge">f &lt;- g</code>) and those without (<code class="highlighter-rouge">f &lt;- 1</code>). I call the former type free and the latter type bound. Bound implementations are a subset of free implementations. I represent these with the classes FreeImpl and BoundImpl. (These names aren’t great, I’d be happy to hear suggestions for better ones. In lambda calculus a term with no free variables is called a combinator, but almost no-one would actually think that’s an intuitive term for what I’m talking about here.)</p>
 
 <h5 id="parameterization">Parameterization</h5>
 
-<p>Additional complexity comes from the fact that Impls can be parameterized, and can have conditions attached to their parameters. For example, the method <code class="highlighter-rouge">reduce[f]</code> is parameterized by the function it’s reducing. The difference between a method being parameterized and it taking an argument is that the parameter must be known at the time of data structure initialization.</p>
+<p>Additional complexity comes from the fact that implementations can be parameterized, and can have conditions attached to their parameters. For example, the method <code class="highlighter-rouge">reduce[f]</code> is parameterized by the function it’s reducing. The difference between a method being parameterized and it taking an argument is that the parameter must be known at the time of data structure initialization.</p>
 
 <p>For example, if I want to have a list which maintains its sum, I can just store the sum as an Int somewhere, and add new values to my sum as they’re inserted and subtract them as they’re removed. This is possible because <code class="highlighter-rouge">+</code> is invertible. So I want to be able to write down a data structure for maintaining this kind of reduction. (simplified from <a href="https://github.com/bshlgrs/data-structure-composer/blob/d18a104400e214e589cefb72f8d466b97ae44c5f/data/data_structures/InvertibleReductionMemoizer.txt">here</a>)</p>
 
@@ -265,18 +267,20 @@ getNext &lt;- getByIndex
 
 <p>This data structure lets you push and pop values and maintains the reduction for any invertible function <code class="highlighter-rouge">f</code>. In addition, if <code class="highlighter-rouge">f</code> is commutative, you’re allowed to do random modifications to the list.</p>
 
-<p>These constraints need to be propogated through the code. For example, my code contains these Impls</p>
+<p>These constraints need to be propogated through the code. For example, my code contains these implementations:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>getMinimum &lt;- getFirstBy[valueOrdering]
 getFirstBy[f] &lt;- reduce[_{commutative, idempotent} &lt;- f]
 </code></pre>
 </div>
 
-<p>The <code class="highlighter-rouge">getFirstBy</code> Impl means that you can implement <code class="highlighter-rouge">getFirstBy[f]</code> by using <code class="highlighter-rouge">reduce</code> with a parameter which is commutative and idempotent, and which requires calling <code class="highlighter-rouge">f</code> every time it is called.</p>
+<p>The <code class="highlighter-rouge">getFirstBy</code> implementation means that you can implement <code class="highlighter-rouge">getFirstBy[f]</code> by using <code class="highlighter-rouge">reduce</code> with a parameter which is commutative and idempotent, and which requires calling <code class="highlighter-rouge">f</code> every time it is called.</p>
 
-<h4 id="searching-through-impls">Searching through Impls</h4>
+<p>We still have the distinction between free and bound implementations: <code class="highlighter-rouge">f[x] &lt;- x</code> is bound and <code class="highlighter-rouge">f[y] &lt;- z</code> is free.</p>
 
-<p>To search for method times for a given data structure, we start out by taking the union of all the Impls for a data structure and all the universal Impls, so in the case of the LinkedList above we have</p>
+<h4 id="searching-through-implementations">Searching through implementations</h4>
+
+<p>To search for method times for a given data structure, we start out by taking the union of all the implementations for a data structure and all the universal implementations, so in the case of the LinkedList above we have</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>getNext &lt;- 1
 getFirst &lt;- 1
@@ -289,9 +293,9 @@ reduce[f] &lt;- getFirst + n * getNext + n * f
 
 <p>We want to end up with a map from methods to their final cost. To do this, we will basically graph search over our <code class="highlighter-rouge">Set[Impl]</code>. The code for that search looks something like this (real version <a href="https://github.com/bshlgrs/data-structure-composer/blob/cf5b29d5610cc7633ac86f40dabe697afef2f206/src/main/scala/implementationSearcher/Searcher.scala#L23-L68">here</a>):</p>
 
-<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="n">getAllTimes</span><span class="o">(</span><span class="n">impls</span><span class="k">:</span> <span class="kt">Set</span><span class="o">[</span><span class="kt">Impl</span><span class="o">])</span><span class="k">:</span> <span class="kt">MethodTimes</span> <span class="o">=</span> <span class="o">{</span>
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="n">getAllTimes</span><span class="o">(</span><span class="n">implementations</span><span class="k">:</span> <span class="kt">Set</span><span class="o">[</span><span class="kt">Impl</span><span class="o">])</span><span class="k">:</span> <span class="kt">MethodTimes</span> <span class="o">=</span> <span class="o">{</span>
   <span class="k">val</span> <span class="n">result</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">MethodTimes</span><span class="o">()</span>
-  <span class="k">val</span> <span class="n">queue</span> <span class="k">=</span> <span class="n">mutable</span><span class="o">.</span><span class="nc">PriorityQueue</span><span class="o">(</span><span class="n">impls</span><span class="o">.</span><span class="n">filter</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">hasNoFreeVariables</span><span class="o">))</span>
+  <span class="k">val</span> <span class="n">queue</span> <span class="k">=</span> <span class="n">mutable</span><span class="o">.</span><span class="nc">PriorityQueue</span><span class="o">[</span><span class="kt">BoundImpl</span><span class="o">](</span><span class="n">implementations</span><span class="o">.</span><span class="n">filter</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">hasNoFreeVariables</span><span class="o">))</span>
 
   <span class="k">while</span> <span class="o">(</span><span class="n">queue</span><span class="o">.</span><span class="n">nonEmpty</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">val</span> <span class="n">impl</span> <span class="k">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">pop</span><span class="o">()</span>
@@ -300,14 +304,15 @@ reduce[f] &lt;- getFirst + n * getNext + n * f
 </span>    <span class="k">if</span> <span class="o">(</span><span class="n">result</span><span class="o">.</span><span class="n">implIsUseful</span><span class="o">(</span><span class="n">impl</span><span class="o">))</span> <span class="o">{</span>
       <span class="n">result</span><span class="o">.</span><span class="n">addImpl</span><span class="o">(</span><span class="n">impl</span><span class="o">)</span>
 
-      <span class="n">impls</span><span class="o">.</span><span class="n">foreach</span><span class="o">((</span><span class="n">neighbor</span><span class="k">:</span> <span class="kt">Impl</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="o">{</span>
+      <span class="n">implementations</span><span class="o">.</span><span class="n">foreach</span><span class="o">((</span><span class="n">neighbor</span><span class="k">:</span> <span class="kt">Impl</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="o">{</span>
         <span class="k">if</span> <span class="o">(</span><span class="n">neighbor</span><span class="o">.</span><span class="n">uses</span><span class="o">(</span><span class="n">impl</span><span class="o">.</span><span class="n">methodProvided</span><span class="o">))</span> <span class="o">{</span>
           <span class="c1">// Take the neighbor, like `getByIndex &lt;- getFirst + n * getNext`
 </span>          <span class="c1">// and see if it can be used -- in this case, seeing whether you have
 </span>          <span class="c1">// a time for both getFirst and getNext. If so, push it to the queue.
 </span>
-          <span class="c1">// this can return multiple things in the case of parameterized Impls
-</span>          <span class="n">neighbor</span><span class="o">.</span><span class="n">bind</span><span class="o">(</span><span class="n">result</span><span class="o">).</span><span class="n">map</span><span class="o">((</span><span class="n">boundNeighbor</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="o">{</span>
+          <span class="c1">// this can return multiple things in the case of
+</span>          <span class="c1">// parameterized implementations
+</span>          <span class="n">neighbor</span><span class="o">.</span><span class="n">bind</span><span class="o">(</span><span class="n">result</span><span class="o">).</span><span class="n">map</span><span class="o">((</span><span class="n">boundNeighbor</span><span class="k">:</span> <span class="kt">BoundImpl</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="o">{</span>
             <span class="k">if</span> <span class="o">(</span><span class="n">result</span><span class="o">.</span><span class="n">implIsUseful</span><span class="o">(</span><span class="n">boundNeighbor</span><span class="o">))</span> <span class="o">{</span>
               <span class="n">queue</span><span class="o">.</span><span class="n">push</span><span class="o">(</span><span class="n">boundNeighbor</span><span class="o">)</span>
             <span class="o">}</span>
@@ -324,7 +329,7 @@ reduce[f] &lt;- getFirst + n * getNext + n * f
 
 <p>The <code class="highlighter-rouge">bind</code> method of Impl only returns a non-empty set if it can substitute out all the free variables in the right hand side of the Impl. For example, <code class="highlighter-rouge">bind</code> will return <code class="highlighter-rouge">getByIndex &lt;- n</code> when called on <code class="highlighter-rouge">getByIndex &lt;- getFirst + n * getNext</code> with a result set containing <code class="highlighter-rouge">getFirst &lt;- 1</code> and <code class="highlighter-rouge">getNext &lt;- 1</code>. But it will never return something like <code class="highlighter-rouge">getByIndex &lt;- getFirst + n</code>.</p>
 
-<p>For non-parameterized Impls, there is always a fastest way of doing them. This isn’t true for parameterized Impls, because different implementations might have different conditions and costs which don’t strictly dominate each other. For example, the Impls</p>
+<p>For non-parameterized implementations, there is always a fastest way of doing them. This isn’t true for parameterized implementations, because different implementations might have different conditions and costs which don’t strictly dominate each other. For example, the implementations</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>foo[f] if f.bar &lt;- 1
 foo[f] if f.baz &lt;- 1
@@ -367,7 +372,7 @@ foo[f] &lt;- f
 
 <p>Parameterizated data structures work very nicely with this, albeit in a slightly counterintuitive way. Basically, during the search we ignore the fact that an <code class="highlighter-rouge">InvertibleReductionMemoizer[f]</code> has to actually choose a single value of <code class="highlighter-rouge">f</code>; we let everyone use the <code class="highlighter-rouge">reduce[f]</code> Impl without reservation. At the end of the search, we can figure out how many different instances of <code class="highlighter-rouge">InvertibleReductionMemoizer</code> we actually need: perhaps we need one for <code class="highlighter-rouge">getSum</code> and one for <code class="highlighter-rouge">getXor</code> or whatever other implementation we wanted to memoize. The number of instances of a data structure that we require only affects our write times by a constant multiple, so it’s irrelevant for the search we’re doing here.</p>
 
-<p>The main other complexity is that the search needs to maintain its paths: we want to be able to know which data structures were used for which methods. This is maintained by storing this source information and passing it around with the Impls throughout.</p>
+<p>The main other complexity is that the search needs to maintain its paths: we want to be able to know which data structures were used for which methods. This is maintained by storing this source information and passing it around with the implementations throughout.</p>
 
 <h3 id="optimizations">Optimizations</h3>
 
@@ -375,7 +380,7 @@ foo[f] &lt;- f
 
 <p>Firstly, data structures are only considered if they have a read method which could plausibly help with the implementation of one of the read methods in the ADT. “Could plausibly help” is determined by considering the directed graph formed by turning an Impl like <code class="highlighter-rouge">f &lt;- g + h</code> into the edges <code class="highlighter-rouge">g -&gt; f</code> and <code class="highlighter-rouge">h -&gt; f</code>–if there’s a path in that graph from <code class="highlighter-rouge">x</code> to <code class="highlighter-rouge">y</code>, a data structure providing <code class="highlighter-rouge">x</code> could plausibly help with an ADT requiring <code class="highlighter-rouge">y</code>. This usually cuts off half of the 15-or-so data structures I have, which makes things like 50 times faster. <a href="https://github.com/bshlgrs/data-structure-composer/blob/d18a104400e214e589cefb72f8d466b97ae44c5f/src/main/scala/implementationSearcher/ImplLibrary.scala#L55">This logic lives here.</a></p>
 
-<p>Secondly, when searching through subsets, if I figure out method times for the set of data structures <script type="math/tex">\{A, B, C\}</script> and I’m considering looking at the set <script type="math/tex">\{A, B, C, D\}</script>, I look at whether any of the Impls provided by <script type="math/tex">D</script> are useful given the result of <script type="math/tex">\{A, B, C\}</script>. If not I don’t explore any subsets including all of <script type="math/tex">\{A, B, C, D\}</script>. <a href="https://github.com/bshlgrs/data-structure-composer/blob/d18a104400e214e589cefb72f8d466b97ae44c5f/src/main/scala/implementationSearcher/Searcher.scala#L118-L119">Here’s the source</a>. This makes things a few times faster.</p>
+<p>Secondly, when searching through subsets, if I figure out method times for the set of data structures <script type="math/tex">\{A, B, C\}</script> and I’m considering looking at the set <script type="math/tex">\{A, B, C, D\}</script>, I look at whether any of the implementations provided by <script type="math/tex">D</script> are useful given the result of <script type="math/tex">\{A, B, C\}</script>. If not I don’t explore any subsets including all of <script type="math/tex">\{A, B, C, D\}</script>. <a href="https://github.com/bshlgrs/data-structure-composer/blob/d18a104400e214e589cefb72f8d466b97ae44c5f/src/main/scala/implementationSearcher/Searcher.scala#L118-L119">Here’s the source</a>. This makes things a few times faster.</p>
 
 <p>I also cache results of calls to <code class="highlighter-rouge">getAllTimes</code>. If I’ve established that the read method <code class="highlighter-rouge">foo</code> takes <script type="math/tex">\log(n)</script> time for the set <script type="math/tex">\{A, B, C\}</script>, then I can immediately put the Impl <code class="highlighter-rouge">foo &lt;- log(n)</code> into the queue when running the search on <script type="math/tex">\{A, B, C, D\}</script>. I am not sure if this improves efficiency.</p>
 
