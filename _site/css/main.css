@@ -91,13 +91,14 @@ blockquote {
  */
 pre,
 code {
-  font-size: 15px;
+  font-size: 12px;
   border: 1px solid #e8e8e8;
   border-radius: 3px;
   background-color: #eef; }
 
 code {
-  padding: 1px 5px; }
+  padding: 1px 5px;
+  color: black; }
 
 pre {
   padding: 8px 12px;

@@ -85,6 +85,10 @@
     <ul>
       
         <li>
+          <a class="arrow" href="/2016/11/13/ds.html">Building a search engine for data structures</a>
+        </li>
+      
+        <li>
           <a class="arrow" href="/2016/10/23/poor-college-graduates.html">Poor college graduates do much better than rich high-school dropouts</a>
         </li>
       
@@ -110,10 +114,6 @@
       
         <li>
           <a class="arrow" href="/2016/09/24/cato.html">A mistake in the Cato institute report on risks from refugees</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/09/05/holden.html">Objecting to Holden Karnosfky's objections to EA</a>
         </li>
       
     </ul>
@@ -145,6 +145,268 @@
 <p>If, <a href="http://www.overcomingbias.com/2008/03/against-news.html">like many</a>, you prefer to consume content ordered by recency rather than quality, here are some things I wrote recently:</p>
 </div>
 
+
+  <div class="buck-post">
+    <h2><a href="/2016/11/13/ds.html"> Building a search engine for data structures</a></h2>
+
+    <p class="post-meta"><time datetime="2016-11-13T00:00:00-08:00" itemprop="datePublished">Nov 13, 2016</time></p>
+
+    <div class="shrink-headings">
+      <p>Today I <a href="https://scalaebythebay2016.sched.org/event/7iUk/automatic-composition-of-fast-data-structures">presented at Scala By The Bay</a> about my project to build a search engine for data structures. I’ve deployed the project at <a href="http://ds.shlegeris.com">ds.shlegeris.com</a>; you can play with it there.</p>
+
+<p>This blog post is a more detailed version of the talk I gave today.</p>
+
+<h2 id="a-search-engine-for-data-structures">A search engine for data structures</h2>
+
+<p>A data structure is a way of organizing data to efficiently support a particular API. So a data structure search engine takes an API and returns an efficient implementation.</p>
+
+<p>Let’s look at some examples of queries that the search engine is able to support. Here’s one from Cracking the Coding Interview:</p>
+
+<p><img class="shadow-img" src="/img/sbtb/ctci.png" /></p>
+
+<p>You can see the answer my software finds <a href="http://ds.shlegeris.com/#getLast,deleteLast!,insertLast!,getMinimum">here</a>.</p>
+
+<p>Here’s one from Quora:</p>
+
+<p><img class="shadow-img" src="/img/sbtb/quora1.png" /></p>
+
+<p>And <a href="http://ds.shlegeris.com/#getMinimum,getMaximum,deleteMaximum!,deleteMinimum!,deleteFirstNodeWithValue!,insertAnywhere!">here’s my answer</a>.</p>
+
+<p>Here’s a third Quora question:</p>
+
+<p><img class="shadow-img" src="/img/sbtb/quora2.png" /></p>
+
+<p><a href="http://ds.shlegeris.com/#getFirst,deleteFirst!,insertLast!,deleteAtIndex!">And my answer.</a>.</p>
+
+<p>The pattern here is that we are being asked to choose a fast data structure to support a given set of methods. I’m going to call that set of methods an <a href="https://en.wikipedia.org/wiki/Abstract_data_type">abstract data type</a>, or ADT for short.</p>
+
+<h2 id="implementation">Implementation</h2>
+
+<p>The whole project is built around a bank of knowledge about data structures and the relationships between different methods.</p>
+
+<p>The core algorithm is something like the following pseudocode:</p>
+
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="n">chooseFastDataStructuresForAdt</span><span class="o">(</span><span class="n">adt</span><span class="k">:</span> <span class="kt">AbstractDataType</span><span class="o">)</span><span class="k">:</span> <span class="kt">Set</span><span class="o">[</span><span class="kt">DataStructureChoice</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
+  <span class="k">val</span> <span class="n">options</span><span class="k">:</span> <span class="kt">Set</span><span class="o">[</span><span class="kt">DataStructureChoice</span><span class="o">]</span> <span class="k">=</span>
+    <span class="n">allDataStructures</span><span class="o">.</span><span class="n">subsets</span>
+                     <span class="o">.</span><span class="n">map</span><span class="o">((</span><span class="n">subset</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">findAllTimes</span><span class="o">(</span><span class="n">subset</span><span class="o">,</span> <span class="n">adt</span><span class="o">))</span>
+
+  <span class="n">adt</span><span class="o">.</span><span class="n">pickBestCompositeDataStructures</span><span class="o">(</span><span class="n">options</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<p>So we compute the times taken for all the methods by each possible composite data structure. Then we choose the best data structures for our use case.</p>
+
+<h3 id="preliminaries">Preliminaries</h3>
+
+<p>One type that I use a lot in this code is what I’m calling a <code class="highlighter-rouge">DominanceFrontier</code>, for lack of a better name. A dominance frontier is a set of items <code class="highlighter-rouge">A</code> with a partial ordering on them, such that no item is strictly dominated by any other. For example, in the type of algebraic expressions with free variables <script type="math/tex">x</script> and <script type="math/tex">y</script> where our partial ordering is based on their asymptotic growth, I might have the set <script type="math/tex">\{x + y, x \log(x), y^2\}</script>, because no element is strictly less than any other. However, I couldn’t add <script type="math/tex">\{x\}</script> to that set, because it’s not asymptotically greater than <script type="math/tex">\{x + y\}</script>.</p>
+
+<p><code class="highlighter-rouge">DominanceFrontier</code> is a monad over the category of partially ordered Scala objects (if you count Set as a monad). It’s a super useful abstraction over the idea of doing a search for the optimal solutions for some problem, and wanting to maintain all plausible subsolutions along the way.</p>
+
+<h3 id="inference-on-method-implementations">Inference on method implementations</h3>
+
+<p>To do this kind of inference, we need to be able to evaluate the runtimes of all methods of a particular composite data structure. Let’s look at how that works.</p>
+
+<p>Throughout this whole thing I’m going to assume we’re talking about methods on an ordered list.</p>
+
+<p>We need to talk about lots of different methods, like <code class="highlighter-rouge">getFirst</code>, <code class="highlighter-rouge">getNext</code>, <code class="highlighter-rouge">getByIndex</code>. These are redundant on purpose. In an array, it’s natural to define <code class="highlighter-rouge">getByIndex</code> and derive <code class="highlighter-rouge">getFirst</code> and <code class="highlighter-rouge">getNext</code> from that. In a linked list, the other way round is nicer.</p>
+
+<p>We will describe the read methods of an ArrayList like this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ds ArrayList {
+  getByIndex &lt;- 1
+}
+</code></pre>
+</div>
+
+<p>And a linked list will look like this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ds LinkedList {
+  getNext &lt;- 1
+  getFirst &lt;- 1
+}
+</code></pre>
+</div>
+
+<p>The central relationship that we care about is how implementations can be used to implement other things. Let’s make some rules like that:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>getByIndex &lt;- getFirst + n * getNext
+getFirst &lt;- getByIndex
+getNext &lt;- getByIndex
+</code></pre>
+</div>
+
+<p>So you can implement <code class="highlighter-rouge">getByIndex</code> with O(1) calls to <code class="highlighter-rouge">getFirst</code> and O(n) calls to <code class="highlighter-rouge">getNext</code>. You can also implement <code class="highlighter-rouge">getFirst</code> or <code class="highlighter-rouge">getNext</code> with O(1) calls to <code class="highlighter-rouge">getByIndex</code>.</p>
+
+<p>Facts of this type are called Impls in my system. Impls can either belong to data structures, like <code class="highlighter-rouge">getByIndex &lt;- 1</code> above, or they can be universally true, like <code class="highlighter-rouge">getByIndex &lt;- getFirst + n * getNext</code>.</p>
+
+<h5 id="parameterization">Parameterization</h5>
+
+<p>Additional complexity comes from the fact that Impls can be parameterized, and can have conditions attached to their parameters. For example, the method <code class="highlighter-rouge">reduce[f]</code> is parameterized by the function it’s reducing. The difference between a method being parameterized and it taking an argument is that the parameter must be known at the time of data structure initialization.</p>
+
+<p>For example, if I want to have a list which maintains its sum, I can just store the sum as an Int somewhere, and add new values to my sum as they’re inserted and subtract them as they’re removed. This is possible because <code class="highlighter-rouge">+</code> is invertible. So I want to be able to write down a data structure for maintaining this kind of reduction. (simplified from <a href="https://github.com/bshlgrs/data-structure-composer/blob/d18a104400e214e589cefb72f8d466b97ae44c5f/data/data_structures/InvertibleReductionMemoizer.txt">here</a>)</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ds InvertibleReductionMemoizer[f] if f.invertible {
+    reduce[f] &lt;- 1
+    insertLast! &lt;- 1
+    deleteLast! &lt;- 1
+
+    // you can do this anywhere if the
+    insertAtIndex! if f.commutative &lt;- 1
+    updateNode! if f.commutative &lt;- 1
+    deleteNode! if f.commutative &lt;- 1
+}
+</code></pre>
+</div>
+
+<p>This data structure lets you push and pop values and maintains the reduction for any invertible function <code class="highlighter-rouge">f</code>. In addition, if <code class="highlighter-rouge">f</code> is commutative, you’re allowed to do random modifications to the list.</p>
+
+<p>These constraints need to be propogated through the code. For example, my code contains these Impls</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>getMinimum &lt;- getFirstBy[valueOrdering]
+getFirstBy[f] &lt;- reduce[_{commutative, idempotent} &lt;- f]
+</code></pre>
+</div>
+
+<p>The <code class="highlighter-rouge">getFirstBy</code> Impl means that you can implement <code class="highlighter-rouge">getFirstBy[f]</code> by using <code class="highlighter-rouge">reduce</code> with a parameter which is commutative and idempotent, and which requires calling <code class="highlighter-rouge">f</code> every time it is called.</p>
+
+<h4 id="searching-through-impls">Searching through Impls</h4>
+
+<p>To search for method times for a given data structure, we start out by taking the union of all the Impls for a data structure and all the universal Impls, so in the case of the LinkedList above we have</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>getNext &lt;- 1
+getFirst &lt;- 1
+getByIndex &lt;- getFirst + n * getNext
+getFirst &lt;- getByIndex
+getNext &lt;- getByIndex
+reduce[f] &lt;- getFirst + n * getNext + n * f
+</code></pre>
+</div>
+
+<p>We want to end up with a map from methods to their final cost. To do this, we will basically graph search over our <code class="highlighter-rouge">Set[Impl]</code>. The code for that search looks something like this (real version <a href="https://github.com/bshlgrs/data-structure-composer/blob/cf5b29d5610cc7633ac86f40dabe697afef2f206/src/main/scala/implementationSearcher/Searcher.scala#L23-L68">here</a>):</p>
+
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="n">getAllTimes</span><span class="o">(</span><span class="n">impls</span><span class="k">:</span> <span class="kt">Set</span><span class="o">[</span><span class="kt">Impl</span><span class="o">])</span><span class="k">:</span> <span class="kt">MethodTimes</span> <span class="o">=</span> <span class="o">{</span>
+  <span class="k">val</span> <span class="n">result</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">MethodTimes</span><span class="o">()</span>
+  <span class="k">val</span> <span class="n">queue</span> <span class="k">=</span> <span class="n">mutable</span><span class="o">.</span><span class="nc">PriorityQueue</span><span class="o">(</span><span class="n">impls</span><span class="o">.</span><span class="n">filter</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">hasNoFreeVariables</span><span class="o">))</span>
+
+  <span class="k">while</span> <span class="o">(</span><span class="n">queue</span><span class="o">.</span><span class="n">nonEmpty</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">val</span> <span class="n">impl</span> <span class="k">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">pop</span><span class="o">()</span>
+
+    <span class="c1">// add impl to the result if it isn't already in there
+</span>    <span class="k">if</span> <span class="o">(</span><span class="n">result</span><span class="o">.</span><span class="n">implIsUseful</span><span class="o">(</span><span class="n">impl</span><span class="o">))</span> <span class="o">{</span>
+      <span class="n">result</span><span class="o">.</span><span class="n">addImpl</span><span class="o">(</span><span class="n">impl</span><span class="o">)</span>
+
+      <span class="n">impls</span><span class="o">.</span><span class="n">foreach</span><span class="o">((</span><span class="n">neighbor</span><span class="k">:</span> <span class="kt">Impl</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">neighbor</span><span class="o">.</span><span class="n">uses</span><span class="o">(</span><span class="n">impl</span><span class="o">.</span><span class="n">methodProvided</span><span class="o">))</span> <span class="o">{</span>
+          <span class="c1">// Take the neighbor, like `getByIndex &lt;- getFirst + n * getNext`
+</span>          <span class="c1">// and see if it can be used -- in this case, seeing whether you have
+</span>          <span class="c1">// a time for both getFirst and getNext. If so, push it to the queue.
+</span>
+          <span class="c1">// this can return multiple things in the case of parameterized Impls
+</span>          <span class="n">neighbor</span><span class="o">.</span><span class="n">bind</span><span class="o">(</span><span class="n">result</span><span class="o">).</span><span class="n">map</span><span class="o">((</span><span class="n">boundNeighbor</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">result</span><span class="o">.</span><span class="n">implIsUseful</span><span class="o">(</span><span class="n">boundNeighbor</span><span class="o">))</span> <span class="o">{</span>
+              <span class="n">queue</span><span class="o">.</span><span class="n">push</span><span class="o">(</span><span class="n">boundNeighbor</span><span class="o">)</span>
+            <span class="o">}</span>
+          <span class="o">})</span>
+        <span class="o">}</span>
+      <span class="o">})</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+
+  <span class="n">result</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<p>The <code class="highlighter-rouge">bind</code> method of Impl only returns a <code class="highlighter-rouge">Some</code> if it can substitute out all the free variables in the right hand side of the Impl. For example, <code class="highlighter-rouge">bind</code> will return <code class="highlighter-rouge">getByIndex &lt;- n</code> when called on <code class="highlighter-rouge">getByIndex &lt;- getFirst + n * getNext</code> with a result set containing <code class="highlighter-rouge">getFirst &lt;- 1</code> and <code class="highlighter-rouge">getNext &lt;- 1</code>. But it will never return something like <code class="highlighter-rouge">getByIndex &lt;- getFirst + n</code>.</p>
+
+<p>For non-parameterized Impls, there is always a fastest way of doing them. This isn’t true for parameterized Impls, because different implementations might have different conditions and costs which don’t strictly dominate each other. For example, the Impls</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>foo[f] if f.bar &lt;- 1
+foo[f] if f.baz &lt;- 1
+foo[f] &lt;- n
+foo[f] &lt;- f
+</code></pre>
+</div>
+
+<p>are all useful in different situations, so we want to return all of them.</p>
+
+<p>(In practice, I haven’t needed to use this expressiveness very often, and it does make my code much more complicated. So I think I might regret adding it. I’m not sure yet. Certainly it’s useful to be able to pass conditions around, I’m not so sure it’s important to be able to refer to bound variables in the RHS of your Impl.)</p>
+
+<h4 id="composing-data-structures">Composing data structures</h4>
+
+<p>When you have a composite data structure, you only have to run your read methods on one of the data structures, but you have to run your write methods on all of them.</p>
+
+<p>However, the write methods of one data structure can rely on read methods of another. Consider again the single Int which we can use to maintain the sum of a list. On its own, it doesn’t support deletion methods like <code class="highlighter-rouge">deleteLast</code>. But if it is paired with an ArrayList, it can use the <code class="highlighter-rouge">getLast</code> method of the ArrayList to find out what it needs to subtract.</p>
+
+<p>So we end up with code approxiately like this (<a href="https://github.com/bshlgrs/data-structure-composer/blob/d18a104400e214e589cefb72f8d466b97ae44c5f/src/main/scala/implementationSearcher/Searcher.scala#L83-L103">real version here</a>):</p>
+
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="n">getAllTimesForDataStructures</span><span class="o">(</span><span class="n">dataStructures</span><span class="k">:</span> <span class="kt">Set</span><span class="o">[</span><span class="kt">DataStructure</span><span class="o">])</span><span class="k">:</span> <span class="kt">MethodTimes</span> <span class="o">=</span> <span class="o">{</span>
+  <span class="c1">// for the read methods, union everything provided by the data structures
+</span>  <span class="c1">// with the defaultReadImpls, then search for times with it
+</span>  <span class="k">val</span> <span class="n">allReadTimes</span> <span class="k">=</span> <span class="n">getAllTimes</span><span class="o">(</span><span class="n">dataStructures</span><span class="o">.</span><span class="n">flatMap</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">readImpls</span><span class="o">)</span> <span class="o">++</span> <span class="n">defaultReadImpls</span><span class="o">)</span>
+
+  <span class="c1">// calculate all write times separately
+</span>  <span class="k">val</span> <span class="n">writeTimesForDataStructures</span> <span class="k">=</span> <span class="n">dataStructures</span><span class="o">.</span><span class="n">flatMap</span><span class="o">((</span><span class="n">ds</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="o">{</span>
+    <span class="n">getAllTimes</span><span class="o">(</span><span class="n">ds</span><span class="o">.</span><span class="n">writeImpls</span> <span class="o">++</span> <span class="n">allReadTimes</span><span class="o">)</span>
+  <span class="o">})</span>
+
+  <span class="c1">// add them to each other
+</span>  <span class="k">val</span> <span class="n">overallWriteTimes</span> <span class="k">=</span> <span class="n">writeTimesForDataStructures</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reduce</span><span class="o">(</span><span class="k">_</span> <span class="n">leastUpperBound</span> <span class="k">_</span><span class="o">)</span>
+
+  <span class="n">allReadTimes</span> <span class="o">++</span> <span class="n">overallWriteTimes</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<p>And now we can find optimally fast composite data structures!</p>
+
+<p>Parameterizated data structures work very nicely with this, albeit in a slightly counterintuitive way. Basically, during the search we ignore the fact that an <code class="highlighter-rouge">InvertibleReductionMemoizer[f]</code> has to actually choose a single value of <code class="highlighter-rouge">f</code>; we let everyone use the <code class="highlighter-rouge">reduce[f]</code> Impl without reservation. At the end of the search, we can figure out how many different instances of <code class="highlighter-rouge">InvertibleReductionMemoizer</code> we actually need: perhaps we need one for <code class="highlighter-rouge">getSum</code> and one for <code class="highlighter-rouge">getXor</code> or whatever other implementation we wanted to memoize. The number of instances of a data structure that we require only affects our write times by a constant multiple, so it’s irrelevant for the search we’re doing here.</p>
+
+<p>The main other complexity is that the search needs to maintain its paths: we want to be able to know which data structures were used for which methods. This is maintained by storing this source information and passing it around with the Impls throughout.</p>
+
+<h3 id="optimizations">Optimizations</h3>
+
+<p>One obvious problem with this is that there are exponentially many potential composite data structures to look at. So I use some simple heuristics to cut down the number of composite data structures that I actually consider.</p>
+
+<p>Firstly, data structures are only considered if they have a read method which could plausibly help with the implementation of one of the read methods in the ADT. “Could plausibly help” is determined by considering the directed graph formed by turning an Impl like <code class="highlighter-rouge">f &lt;- g + h</code> into the edges <code class="highlighter-rouge">g -&gt; f</code> and <code class="highlighter-rouge">h -&gt; f</code>–if there’s a path in that graph from <code class="highlighter-rouge">x</code> to <code class="highlighter-rouge">y</code>, a data structure providing <code class="highlighter-rouge">x</code> could plausibly help with an ADT requiring <code class="highlighter-rouge">y</code>. This usually cuts off half of the 15-or-so data structures I have, which makes things like 50 times faster. <a href="https://github.com/bshlgrs/data-structure-composer/blob/d18a104400e214e589cefb72f8d466b97ae44c5f/src/main/scala/implementationSearcher/ImplLibrary.scala#L55">This logic lives here.</a></p>
+
+<p>Secondly, when searching through subsets, if I figure out method times for the set of data structures <script type="math/tex">\{A, B, C\}</script> and I’m considering looking at the set <script type="math/tex">\{A, B, C, D\}</script>, I look at whether any of the Impls provided by <script type="math/tex">D</script> are useful given the result of <script type="math/tex">\{A, B, C\}</script>. If not I don’t explore any subsets including all of <script type="math/tex">\{A, B, C, D\}</script>. <a href="https://github.com/bshlgrs/data-structure-composer/blob/d18a104400e214e589cefb72f8d466b97ae44c5f/src/main/scala/implementationSearcher/Searcher.scala#L118-L119">Here’s the source</a>. This makes things a few times faster.</p>
+
+<p>I also cache results of calls to <code class="highlighter-rouge">getAllTimes</code>. If I’ve established that the read method <code class="highlighter-rouge">foo</code> takes <script type="math/tex">\log(n)</script> time for the set <script type="math/tex">\{A, B, C\}</script>, then I can immediately put the Impl <code class="highlighter-rouge">foo &lt;- log(n)</code> into the queue when running the search on <script type="math/tex">\{A, B, C, D\}</script>. I am not sure if this improves efficiency.</p>
+
+<h2 id="deployment">Deployment</h2>
+
+<p>The code is deployed as a Finagle server with a React app in front. The React app can display useful information about the internals of composite data structures.</p>
+
+<p>I tried compiling my search code to ScalaJS, but it was too slow to be a pleasant experience. If my code was like 10x faster it would be alright.</p>
+
+<h2 id="further-work">Further work</h2>
+
+<p>Here are things I want to do:</p>
+
+<ul>
+  <li>Generate real code. The result already has all the information we need to generate code, I just haven’t put in the effort to make it work yet.</li>
+  <li>Acquire users. I plan to use this to answer lots of questions on Quora etc, to get people to look at it, and hopefully people will start using it more regularly.</li>
+  <li>Consider other optimizations. I added in a bunch of cruft in the final push before the conference presentation, and it’s possible that some refactoring might speed things up.</li>
+  <li>Distinguish between different concepts like average case time, worst case time, and amortized time.</li>
+  <li>Instead of minimizing asymptotic time, I could instead get an empirical measure of the speed of different methods in different data structures, and choose the fastest data structures for a given expected data set size using those measurements. This works best with the approach where we are generating real code with real data structure implementations.</li>
+  <li>Extend to talk about other types of queries. In particular, I could try to support more SQL-style queries on multi-column data.</li>
+</ul>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>How useful could a tool like this be? I don’t know. A lot of data structure research can’t yet be fit nicely into the framework of things I can describe with this system.</p>
+
+<p>I also find that writing data structures down for this project forced me to think about them and write down facts about them that aren’t usually said. For example, the <a href="http://www.geeksforgeeks.org/range-minimum-query-for-static-array/">sparse table</a> data structure for <a href="https://en.wikipedia.org/wiki/Range_minimum_query">range minimum query</a> is usually not described as letting you push things on the end in amortized <script type="math/tex">O(\log(n))</script>, even though you can obviously do that by resizing exponentially. This forced clarity is really useful.</p>
+
+<p>Overall the practical usefulness of this project remains to be seen. It was a lot of fun to build though.</p>
+
+<p>Thanks heaps to everyone who helped me out as I was writing this.</p>
+
+    </div>
+  </div>
 
   <div class="buck-post">
     <h2><a href="/2016/10/23/poor-college-graduates.html"> Poor college graduates do much better than rich high-school dropouts</a></h2>
@@ -192,159 +454,6 @@
 <hr />
 
 <p><a href="https://www.facebook.com/bshlgrs/posts/10208902535175381">view comments on Facebook</a></p>
-
-    </div>
-  </div>
-
-  <div class="buck-post">
-    <h2><a href="/2016/10/07/optimal-tax.html"> Optimal redistribution with a flat tax</a></h2>
-
-    <p class="post-meta"><time datetime="2016-10-07T00:00:00-07:00" itemprop="datePublished">Oct 7, 2016</time></p>
-
-    <div class="shrink-headings">
-      <p>Suppose you have a bunch of people differ only in their wage <script type="math/tex">w</script>. Everyone has utility logarithmic in their consumption. As the government, you want to promote welfare by redistributing consumption. You decide to do this by instituting a flat tax and using it to fund a universal basic income.</p>
-
-<p>The more revenue you raise with your tax, the higher the UBI can be. But if you raise the tax too high, you will excessively deter people from working. So what’s the optimal tax rate?</p>
-
-<p>Somewhat surprisingly, Ben Weinstein-Raun and I managed to find an analytical solution to this problem. The optimal flat tax rate is a simple function of the wage distribution:</p>
-
-<p>$^$\text{Optimal flat tax rate} = 1 - \frac{\text{Harmonic mean of wages}}{\text{Arithmetic mean of wages}}$^$</p>
-
-<p>The functional form checks out: Harmonic mean equals arithmetic mean on a set which is perfectly equal; in that case the fraction will be 1 and the tax rate will be 0. Inequality causes the harmonic mean to become smaller than the arithmetic mean; at most, the fraction might go to 0 and the tax rate will approach 100%.</p>
-
-<p>Another way of phrasing that fraction is “the average time it takes for someone to make a dollar, multiplied by the average wage”.</p>
-
-<p>I did most of the algebra in Sympy; almost all of the math I write here is replicated in <a href="https://github.com/bshlgrs/economics-demos/blob/master/python/optimal_tax.py">this Python script</a>, which I also put online as a Sage workbook <a href="https://cloud.sagemath.com/projects/0a4323fd-9bc8-4276-a48c-cb0de6ecf3fe/files/2016-10-11-195016.html">here</a>. Because of that, I’m reasonably confident in this result.</p>
-
-<h2 id="proof">Proof</h2>
-
-<p>Let’s define all our variables:</p>
-
-<ul>
-  <li><script type="math/tex">w</script> is the wage of an individual</li>
-  <li><script type="math/tex">r</script> is 1 minus the tax rate</li>
-  <li><script type="math/tex">h</script> is the amount of time that a person works, in some unit. The units don’t affect the optimal tax rate.</li>
-  <li><script type="math/tex">c</script> is the UBI</li>
-  <li><script type="math/tex">u</script> is utility</li>
-  <li><script type="math/tex">y</script> is the pre-tax, pre-transfers income of an individual, <script type="math/tex">Y</script> is the income of all of society</li>
-  <li>there are <script type="math/tex">n</script> people. The set of people is <script type="math/tex">P</script>.</li>
-</ul>
-
-<p>So individuals have utility <script type="math/tex">u = \log(w \cdot h \cdot r + c) - h</script>.</p>
-
-<h3 id="what-is-individual-behavior-as-a-function-of-r-and-c">What is individual behavior, as a function of <script type="math/tex">r</script> and <script type="math/tex">c</script>?</h3>
-
-<p>First we find the optimal hours worked for an individual by differentiating utility with respect to hours worked:</p>
-
-<p>$^$\frac{du}{dh} = \frac{w \cdot r}{w \cdot h \cdot r + c} - 1$^$</p>
-
-<p>Setting the derivative to 0 and solving for <script type="math/tex">h</script>, you get</p>
-
-<p>$^$h = 1 - \frac{c}{r \cdot w} $^$</p>
-
-<p>Let’s check functional form–we expect workers to work more if they have lower UBI, lower taxes, or higher wages. This function has all those behaviors (remember that <script type="math/tex">r</script> is the proportion of your income you get to keep, not the tax rate).</p>
-
-<p>The optimal income is that time multiplied by <script type="math/tex">w</script>, so:</p>
-
-<p>$^$y = w - \frac{c}{r}$^$</p>
-
-<p>Note that this means that everyone forgoes the same amount of income due to the distortionary effects of the UBI and taxes.</p>
-
-<p>At this income, utility for an individual is:</p>
-
-<p>$^$u = \log(r) - 1 + \log(w) + \frac{c}{r\cdot w}$^$</p>
-
-<p>And utility over all of society is therefore:</p>
-
-<p>$^$U = n\cdot\log(r) - n + \sum_{p \in P}\log(w_p) + \frac{c}{r\cdot w_p}$^$</p>
-
-<p>We can rewrite this to</p>
-
-<p>$^$U = n\cdot\log(r) - n + \sum_{p \in P}\left[\log(w_p)\right] + \frac{c}{r} \cdot \sum_{p \in P} \left[\frac{1}{w_p} \right]$^$</p>
-
-<h4 id="total-societal-income">Total societal income</h4>
-
-<p>Given <script type="math/tex">r</script> and <script type="math/tex">c</script>, the income of the whole population is</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-  Y &= \sum_{p \in P} y_p \\
-   &=  \sum_{p \in P} \left(w_p - \frac{c}{r}\right)
-\end{align} %]]></script>
-
-<p>Conveniently, the <script type="math/tex">\frac{c}{r}</script> term is constant in the sum, so we can take it out:</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
- Y  &=  - \frac{n \cdot c}{r} + \sum_{p \in P} w_p \\
-    &=  -\frac{n \cdot c}{r} + W
-\end{align} %]]></script>
-
-<p>where the total wage of the whole population is <script type="math/tex">W = \sum_{p \in P} w_p</script>.</p>
-
-<h3 id="what-is-c-given-r">What is <script type="math/tex">c</script>, given <script type="math/tex">r</script>?</h3>
-
-<p>At a given tax rate <script type="math/tex">r</script>, the UBI (by definition) is:</p>
-
-<p>$^$c = \frac{1-r}{n} \cdot Y $^$</p>
-
-<p>We can substitute the other expression we found for <script type="math/tex">Y</script> above into this equation:</p>
-
-<p>$^$c = \frac{1-r}{n} \cdot \left( -\frac{n \cdot c}{r} + W \right) $^$</p>
-
-<p>and solve for <script type="math/tex">c</script>, which gets us</p>
-
-<p>$^$c = \frac{-r \cdot W \cdot (r - 1)}n$^$</p>
-
-<p>So given a tax rate, we now know the equilibrium UBI.</p>
-
-<h3 id="what-is-u-given-r">What is <script type="math/tex">U</script>, given <script type="math/tex">r</script>?</h3>
-
-<p>We can now substitute the equilibrium UBI into our global utility formula to determine global utility at this tax rate:</p>
-
-<p>$^$U = n\cdot(\log(r) - 1) + \sum_{p \in P}\left[\log(w_p)\right] - \frac{\sum_{p \in P}\left[\frac{1}{w_p}\right]\cdot W\cdot(r - 1)}n$^$</p>
-
-<h3 id="what-is-the-optimal-choice-of-r">What is the optimal choice of <script type="math/tex">r</script>?</h3>
-
-<p>Now we differentiate <script type="math/tex">U</script> with respect to <script type="math/tex">r</script>:</p>
-
-<p>$^$\frac{dU}{dr} = \frac{-\sum_{p \in P}\left[\frac{1}{w_p}\right] \cdot W}{n} + \frac{n}{r}$^$</p>
-
-<p>Set this to zero and solve for <script type="math/tex">r</script>, and you get:</p>
-
-<p>$^$\frac{n^2}{\sum_{p \in P}\left[\frac{1}{w_p}\right] \cdot W}$^$</p>
-
-<p>Remember that <script type="math/tex">W</script> is the sum of wages. So this can be written as</p>
-
-<p>$^$\frac{n^2}{\sum_{p \in P}\left[\frac{1}{w_p}\right] \cdot \sum_{p \in P}\left[w_p\right]}$^$</p>
-
-<p>I <a href="https://www.facebook.com/photo.php?fbid=10208780739570567&amp;set=a.1254922647920.38754.1075180788&amp;type=3">posted on Facebook</a> asking for someone to make sense of this expression for me. Matt Alger and Ben Weinstein-Raun both figured out that it is the harmonic mean of the wages divided by the arithmetic mean of the wages.</p>
-
-<p>So overall:</p>
-
-<p>$^$\text{Optimal flat tax rate} = 1 - \frac{\text{Harmonic mean of wages}}{\text{Arithmetic mean of wages}}$^$</p>
-
-<h2 id="further-questions">Further questions</h2>
-
-<p>I am interested to see if this process could be extended to find optimal tax structures for other situations. For example:</p>
-
-<ul>
-  <li>What happens if people have different levels of avarice: that is, some of them get more pleasure from money than others?</li>
-  <li>What happens if leisure time has diminishing marginal returns?</li>
-  <li>What about if we don’t want to be restricted to a flat tax? Can we solve for the optimal tax function, where a tax function is a function from different pre-tax incomes to post-tax incomes?</li>
-</ul>
-
-<p>I should also look harder to see if my result here is already known in the optimal tax literature. My impression is that economists aren’t that interested in this particular question, because they don’t like the rigidity of my assumed utility function. But I still think this result is really neat, and I’m very glad to know it.</p>
-
-<!-- ## Other work
-
-- **Sheshinski, 1971: ["The Optimal Linear Income Tax"](http://darp.lse.ac.uk/papersdb/Sheshinski_(REStud_72).pdf)**. This discusses a more general version of the problem, where we have a flat tax but utility isn't assumed to be logarithmic in consumption and linear in leisure.
-- **Slemrod et al, 1992: ["The optimal two-bracket linear income tax"](https://deepblue.lib.umich.edu/bitstream/handle/2027.42/31813/0000759.pdf?sequence=1&isAllowed=y). This doesn't contain this result.
- -->
-
-<hr />
-
-<p><a href="https://www.facebook.com/bshlgrs/posts/10208786840283081">view comments on Facebook here</a></p>
 
     </div>
   </div>
@@ -422,6 +531,10 @@ $(function() {
     <ul>
       
         <li>
+          <a class="arrow" href="/2016/11/13/ds.html">Building a search engine for data structures</a>
+        </li>
+      
+        <li>
           <a class="arrow" href="/2016/10/23/poor-college-graduates.html">Poor college graduates do much better than rich high-school dropouts</a>
         </li>
       
@@ -447,10 +560,6 @@ $(function() {
       
         <li>
           <a class="arrow" href="/2016/09/24/cato.html">A mistake in the Cato institute report on risks from refugees</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/09/05/holden.html">Objecting to Holden Karnosfky's objections to EA</a>
         </li>
       
     </ul>

@@ -8,6 +8,19 @@
     <atom:link href="http://shlegeris.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Building a search engine for data structures</title>
+        
+        
+          <description>&lt;p&gt;Today I &lt;a href=&quot;https://scalaebythebay2016.sched.org/event/7iUk/automatic-composition-of-fast-data-structures&quot;&gt;presented at Scala By The Bay&lt;/a&gt; about my project to build a search engine for data structures. I’ve deployed the project at &lt;a href=&quot;http://ds.shlegeris.com&quot;&gt;ds.shlegeris.com&lt;/a&gt;; you can play with it there.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 13 Nov 2016 00:00:00 -0800</pubDate>
+        <link>http://shlegeris.com/2016/11/13/ds.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2016/11/13/ds.html</guid>
+      </item>
+    
+      <item>
         <title>Poor college graduates do much better than rich high-school dropouts</title>
         
         
@@ -122,19 +135,6 @@
         <pubDate>Mon, 05 Sep 2016 00:00:00 -0700</pubDate>
         <link>http://shlegeris.com/2016/09/05/gini.html</link>
         <guid isPermaLink="true">http://shlegeris.com/2016/09/05/gini.html</guid>
-      </item>
-    
-      <item>
-        <title>EA donation amounts</title>
-        
-        
-          <description>&lt;p&gt;One commonly-cited figure from the 2015 survey of the effective altruism movement (&lt;a href=&quot;http://effective-altruism.com/ea/zw/the_2015_survey_of_effective_altruists_results/&quot;&gt;posted here&lt;/a&gt;) is that the median donation was only $333.&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Sun, 04 Sep 2016 00:00:00 -0700</pubDate>
-        <link>http://shlegeris.com/2016/09/04/ea-donations.html</link>
-        <guid isPermaLink="true">http://shlegeris.com/2016/09/04/ea-donations.html</guid>
       </item>
     
   </channel>
