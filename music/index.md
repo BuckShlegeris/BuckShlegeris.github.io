@@ -14,7 +14,7 @@ Finished songs that I'm sort of okay with playing:
 
 Half-written songs:
 
-- If You Touch My Girlfriend I'll Kill You
+- [If You Touch My Girlfriend I'll Kill You](girlfriend)
 - Fragile things
 - New York
 - Miss your face
