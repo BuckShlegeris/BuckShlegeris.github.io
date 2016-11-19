@@ -1,10 +1,12 @@
 ---
 layout: post
 date:   ""
-title: "If you touch my girlfriend I'll kill you"
+title: "If you touch my girlfrien..."
 ---
 
-this song is not done yet. I've been writing it since early 2015, so it's not about anyone in particular.
+this song is not finished yet. I've been writing it since early 2015, so it's not about anyone in particular.
+
+There's a bad recording [here](/files/girlfriend.m4a)
 
 ```
 Intro:
@@ -16,8 +18,8 @@ E                       A  E                     A    E   B
 I thought that I was an expert, the world’s best polyamorist
 E            A  E           A   E         B
 I’d read polyhacking before I’d ever been kissed
-E                           A  E                 A E    B
-And when I moved to San Francisco, I thought I’d ???
+E                           A  E                  A E         B
+And when I fucked around in college, I never got jealous of myself
            F#m
 But now my heart’s started beating just a little too fast
           D
@@ -66,7 +68,8 @@ Prechorus 2:
                  E
 But maybe I’m as bad
 Why the fuck else would she fuck you?
-Why the fuck else would I ??? ?? ?? ??? ??? ? ? ?????
+Why the fuck else would she decide that instead of a Buck in her bed
+She wants a ?? ?? ?? motherfucker?
 
 Chorus 2:
 
