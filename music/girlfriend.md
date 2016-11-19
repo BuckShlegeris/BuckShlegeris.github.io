@@ -1,7 +1,7 @@
 ---
 layout: post
 date:   ""
-title: "If you touch my girlfrien..."
+title: "If you touch my girlfriend..."
 ---
 
 this song is not finished yet. I've been writing it since early 2015, so it's not about anyone in particular.
