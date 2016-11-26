@@ -4,7 +4,18 @@ date:   ""
 title: "Worldview"
 ---
 
+<!-- Here are my favorite articles.
+
+
 ## Ethics
+
+### Effective altruism
+
+### Politics
+
+-
+ -->
+<!-- ## Ethics
 
 
 
@@ -16,3 +27,4 @@ title: "Worldview"
 ### Education
 
 A curious
+ -->

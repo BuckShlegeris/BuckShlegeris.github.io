@@ -6,14 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <title>Quickselect on an unordered array and an order statistic tree</title>
   <meta name="description" content="I did this work myself, so there are probably mistakes. I think the conclusion is right though.">
 
-
   <link rel="stylesheet" href="/bootstrap.css">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://shlegeris.com/2016/06/12/quickselect-lemma.html">
-  <link rel="alternate" type="application/rss+xml" title="Buck Shlegeris" href="http://shlegeris.com/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/2016/06/12/quickselect-lemma.html">
+  <link rel="alternate" type="application/rss+xml" title="Buck Shlegeris" href="http://localhost:4000/feed.xml">
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
       jax: ["input/TeX", "output/HTML-CSS"],
@@ -194,7 +194,7 @@
 
 <p>$^$f(n) = f\left(\frac{n}2\right) + n$^$</p>
 
-<h2 id="modified-quickselect-attempt-1--om-cdot-logn">Modified quickselect, attempt 1: <script type="math/tex">O(m \cdot \log(n))</script></h2>
+<h2 id="modified-quickselect-attempt-1-">Modified quickselect, attempt 1: <script type="math/tex">O(m \cdot \log(n))</script></h2>
 
 <p>Let’s modify this to also use an OST.</p>
 
@@ -222,7 +222,7 @@
 
 <p>Can we do better? I think we can. Intuitively, it seems like this algorithm works to shrink the OST as fast as possible, and not really worry about the array. But the array is where most of the cost comes from. So we should try to organize this algorithm so that instead of halving the size of the OST every time, it halves the size of the array every time.</p>
 
-<h2 id="modified-quickselect-attempt-2--om--logm-cdot-logn">Modified quickselect, attempt 2: <script type="math/tex">O(m + \log(m) \cdot \log(n))</script></h2>
+<h2 id="modified-quickselect-attempt-2-">Modified quickselect, attempt 2: <script type="math/tex">O(m + \log(m) \cdot \log(n))</script></h2>
 
 <p>Instead of using the OST’s pivot, let’s pivot on a randomly selected member of the array, like in normal quickselect. This means that the array is probably going to shrink with every recursive call.</p>
 
@@ -257,7 +257,7 @@
 
 <p>Okay, this is better. But can we improve it even more?</p>
 
-<h2 id="sketch-of-a--om--logn-solution">Sketch of a <script type="math/tex">O(m + \log(n))</script> solution</h2>
+<h2 id="sketch-of-a--solution">Sketch of a <script type="math/tex">O(m + \log(n))</script> solution</h2>
 
 <p>I’m pretty sure I have an optimal solution, but it’s really complicated and annoying.</p>
 

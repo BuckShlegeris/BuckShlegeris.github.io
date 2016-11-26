@@ -6,14 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <title>A data structure for range kth-smallest queries</title>
   <meta name="description" content="Suppose I want to maintain a set of people where each has an age and a wealth. I want to be able to quickly insert people, delete people, and answer queries ...">
 
-
   <link rel="stylesheet" href="/bootstrap.css">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://shlegeris.com/2016/06/16/kth-richest.html">
-  <link rel="alternate" type="application/rss+xml" title="Buck Shlegeris" href="http://shlegeris.com/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/2016/06/16/kth-richest.html">
+  <link rel="alternate" type="application/rss+xml" title="Buck Shlegeris" href="http://localhost:4000/feed.xml">
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
       jax: ["input/TeX", "output/HTML-CSS"],
@@ -220,7 +220,7 @@
 
 <h2 id="variations">Variations</h2>
 
-<h3 id="limited--k">limited <script type="math/tex">k</script></h3>
+<h3 id="limited-">limited <script type="math/tex">k</script></h3>
 
 <p>If <script type="math/tex">k</script> is always going to fixed below a particular limit <script type="math/tex">l</script>–say, you know ahead of time that you’re never going to need to know farther back than the 50th richest person between two ages–each node in your main OST can store a smaller auxiliary tree with only <script type="math/tex">l</script> elements in it.</p>
 

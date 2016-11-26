@@ -6,14 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <title>Saving lives vs improving them</title>
   <meta name="description" content="Throughout this essay I ignore flow through effects, non human animals, and effects on the distant future, even though I don’t discount those in my personal ...">
 
-
   <link rel="stylesheet" href="/bootstrap.css">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://shlegeris.com/2015/08/08/value-of-life.html">
-  <link rel="alternate" type="application/rss+xml" title="Buck Shlegeris" href="http://shlegeris.com/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/2015/08/08/value-of-life.html">
+  <link rel="alternate" type="application/rss+xml" title="Buck Shlegeris" href="http://localhost:4000/feed.xml">
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
       jax: ["input/TeX", "output/HTML-CSS"],
@@ -145,6 +145,8 @@
 
 <p><strong>Edit in 2016: A major mistake which I made in this post is claiming that AMF causes happy lives. AMF <a href="http://blog.givewell.org/2014/04/17/david-roodmans-draft-writeup-on-the-mortality-fertility-connection/">doesn’t actually increase the amount of happy life lived</a>. This makes AMF look much worse to me. See more <a href="http://mdickens.me/2016/05/16/givewell's_charity_recommendations_require_taking_an_unusual_stance_on_population_ethics/">here</a>.</strong></p>
 
+<p><strong>Carl Shulman wrote relevant articles (<a href="http://reflectivedisequilibrium.blogspot.com/2014/01/turning-log-consumption-into-measure-of.html">1</a>, <a href="http://reflectivedisequilibrium.blogspot.com/2014/03/givedirectly-happiness-and-log-income.html">2</a>) two years before I wrote this.</strong></p>
+
 <div class="panel panel-default"><div class="panel-body">TL; DR: If we're choosing between spending money on saving lives and reducing poverty, we need to consider how to compare the happiness created by saving a life to the happiness created by increasing the consumption in a society. Differentiating an estimate of happiness as a function of income lets you estimate the happiness created by increasing marginal consumption. If you assume happiness is logarithmic in income, then the dollar amount at which you're indifferent between saving a life and increasing total consumption that much increases as income * log(income). My extremely tentative numbers suggest that AMF is a much better charity for hedonic utilitarians than GiveDirectly.</div></div>
 
 <p><strong>Thanks to Claire Zabel, Marie La, Daniel Filan, and others who helped me with this.</strong></p>
@@ -193,7 +195,7 @@ $$ \Delta c = c t (\log c + k)$$
 
 <p>That’s all the math. Now, let’s spend two thousand words trying to figure out precisely how much fun it is to be extremely poor!</p>
 
-<h2 id="thinking-theoretically-about--k">Thinking theoretically about <script type="math/tex">k</script></h2>
+<h2 id="thinking-theoretically-about-">Thinking theoretically about <script type="math/tex">k</script></h2>
 
 <p>The biggest judgement call in this essay is that <script type="math/tex">k</script> constant. The consumption at which a life has 0 value according to the above formula is <script type="math/tex">10^{-k}</script>. So if you think that life isn’t worth living if you’re consuming less than $1000 a year, then you think <script type="math/tex">k</script> is -3.</p>
 
@@ -227,7 +229,7 @@ $$ \Delta c = c t (\log c + k)$$
 
 <p>You also might be interested in looking up the paper which had happiness as a function of consumption <em>within</em> particular poor countries, then trying to solve for <script type="math/tex">k</script> within that much smaller and easier to measure range. However, this requires making a judgement call about how to translate the descriptions of happiness into real numbers. Depending on your feelings, this judgement call might be worse or better than what I did.</p>
 
-<h2 id="numerically-estimating--k">Numerically estimating <script type="math/tex">k</script></h2>
+<h2 id="numerically-estimating-">Numerically estimating <script type="math/tex">k</script></h2>
 
 <p>Here’s a few data points to use to estimate <script type="math/tex">k</script>:</p>
 

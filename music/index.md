@@ -4,17 +4,20 @@ date:   ""
 title: "My music"
 ---
 
-Finished songs that I'm sort of okay with playing:
+Finished songs that I'm at least sort-of okay with playing:
 
-- [Brazilian](brazilian)
-- [Fluff](fluff)
-- [Jezebel](jezebel)
-- [Saturday Nights](saturday-nights)
-- [Single](single)
+- [Brazilian](/music/brazilian)
+- [Fluff](/music/fluff)
+- [Jezebel](/music/jezebel)
+- [Saturday Nights](/music/saturday-nights)
+- [Single](/music/single)
+
+New songs that I'm excited about
+
+- [If You Touch My Girlfriend...](/music/girlfriend)
 
 Half-written songs:
 
-- [If You Touch My Girlfriend I'll Kill You](girlfriend)
 - Fragile things
 - New York
 - Miss your face

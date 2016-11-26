@@ -15,7 +15,7 @@ dl, dd, ol, ul, figure {
  * Basic styling
  */
 body {
-  font: 400 16px/1.5 sans-serif;
+  font: 400 16px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
   -moz-font-feature-settings: "kern" 1;
@@ -457,7 +457,7 @@ pre {
 
 .markdownify h1, h2, h3 {
   color: darkblue;
-  font-family: sans-serif; }
+  font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 div.math {
   width: 60%;
