@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "Would a paperclip-maximizing AI have a positive subjective experience?"
+title:  "What is it like to be a paperclip maximizer?"
 date: "not a real date"
 ---
 
-[content warning: futurism. epistemic status: pretty confident in my conclusions.]
+[content warning: futurism.]
 
 I think it's pretty plausible that humanity will accidentally wipe itself out by creating a superintelligent AI that optimizes the universe for some goal that is totally morally neutral to me--the canonical example being a paperclip maximizer whose goal is maximizing the number of paperclips in the universe. If you haven't heard of any of this before, [go read the Wait But Why post explaining it](waitbutwhy.com/2015/01/artificial-intelligence-revolution-1.html).
 
@@ -38,28 +38,12 @@ Michael Dickens [writes](http://mdickens.me/2016/04/17/preventing_human_extincti
 
 ## My opinion
 
-I think that paperclip maximizers would probably not create a universe with much conscious experience relative to their energy consumption, and I think that their conscious experience has an expected value near zero.
+I think that paperclip maximizers would plausibly create a universe with lots conscious experience relative to their energy consumption. However, I think that their conscious experience has an expected value near zero.
 
-Brian writes:
+I think there are a few different broad categories of activities that paperclippers might spend the universe's energy on:
 
-> If the paperclip maximizer is actually generally intelligent, then it won't stop at tiling the solar system with paperclips. It will want to do science, perform lab experiments on sentient creatures, possibly run suffering subroutines, and so forth. It will require lots of intelligent and potentially sentient robots to coordinate and maintain its paperclip factories, energy harvesters, and mining operations, as well as scientists and engineers to design them.
+- Working on their their terminal goal (eg, making paperclips). This involves direct effort, which I'll call "manufacturing", and it involves thinking about ways to execute their goal more efficiently, which is science or engineering work.
+- Defence--they might spend effort on defending themselves against others with competing goals. Again, some of this is engineering and some is manufacturing.
 
-Here are all my disagreements with that.
+### How much energy will go into thinking vs manufacturing?
 
-Brian says that the paperclipper will cause suffering by doing science involving the suffering of experimental subjects or subroutines. But I think that only a small proportion of the energy consumption of a paperclipper will go into doing science on conscious experimental subjects. There's only so much experimentation on conscious subjects that you need to do, and I suspect that it would be approximately zero as a proportion of the total energy usage of the paperclipper.
-
-And it's not even obvious to me that this
-
-Painful experiments on humans and nonhumans animals are largely caused by the fact that humans and animals have greater capacity for pain than pleasure.
-
-
-  - And I don't think it's obvious whether the average experience in that situation is positive or negative.
-
-- Brian says that it will require lots of possibly sentient robots, which might suffer.
-  - I think that only a very small proportion of the energy used by the AI will be used for intelligent systems.
-  - And I don't particularly think that experience will be net negative.
-
-
-### Suffering and pleasure in paperclip maximizer subagents
-
-http://reflectivedisequilibrium.blogspot.com/2012/03/are-pain-and-pleasure-equally-energy.html
