@@ -4,20 +4,20 @@
     <title></title>
     <description>Website of Buck Shlegeris.
 </description>
-    <link>http://localhost:4000</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://shlegeris.com</link>
+    <atom:link href="http://shlegeris.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>How much of a paperclip maximizer's resources should be spend on research?</title>
+        <title>Optimal resource allocation between manufacturing and research</title>
         
         
-          <description>&lt;p&gt;Suppose you’re a paperclip maximizer who has just finished exterminating humanity. You want to build as many paperclips as you can. This involves two activities: researching how to build paperclips as efficiently as possible, and then executing on the optimal manufacturing technique that you’ve discovered.&lt;/p&gt;
+          <description>&lt;p&gt;Suppose you’ve just inherited a bunch of money, and you want to spend it all on producing as much of some good as you can, for example paperclips. You have to decide how much of your wealth you want to spend on researching the efficient production of paperclips, and how much you want to spend on manufacturing the paperclips. The right move is probably to do all the research and then manufacture all your paperclips after you’ve found the most efficient way of producing them.&lt;/p&gt;
 
 </description>
         
         <pubDate>Sat, 26 Nov 2016 00:00:00 -0800</pubDate>
-        <link>http://localhost:4000/2016/11/26/research.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/11/26/research.html</guid>
+        <link>http://shlegeris.com/2016/11/26/research.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2016/11/26/research.html</guid>
       </item>
     
       <item>
@@ -29,8 +29,8 @@
 </description>
         
         <pubDate>Sun, 13 Nov 2016 00:00:00 -0800</pubDate>
-        <link>http://localhost:4000/2016/11/13/phd.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/11/13/phd.html</guid>
+        <link>http://shlegeris.com/2016/11/13/phd.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2016/11/13/phd.html</guid>
       </item>
     
       <item>
@@ -42,8 +42,8 @@
 </description>
         
         <pubDate>Sun, 13 Nov 2016 00:00:00 -0800</pubDate>
-        <link>http://localhost:4000/2016/11/13/ds.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/11/13/ds.html</guid>
+        <link>http://shlegeris.com/2016/11/13/ds.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2016/11/13/ds.html</guid>
       </item>
     
       <item>
@@ -55,8 +55,8 @@
 </description>
         
         <pubDate>Sun, 23 Oct 2016 00:00:00 -0700</pubDate>
-        <link>http://localhost:4000/2016/10/23/poor-college-graduates.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/10/23/poor-college-graduates.html</guid>
+        <link>http://shlegeris.com/2016/10/23/poor-college-graduates.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2016/10/23/poor-college-graduates.html</guid>
       </item>
     
       <item>
@@ -68,8 +68,8 @@
 </description>
         
         <pubDate>Thu, 20 Oct 2016 00:00:00 -0700</pubDate>
-        <link>http://localhost:4000/2016/10/20/libertarians.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/10/20/libertarians.html</guid>
+        <link>http://shlegeris.com/2016/10/20/libertarians.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2016/10/20/libertarians.html</guid>
       </item>
     
       <item>
@@ -81,8 +81,8 @@
 </description>
         
         <pubDate>Fri, 07 Oct 2016 00:00:00 -0700</pubDate>
-        <link>http://localhost:4000/2016/10/07/optimal-tax.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/10/07/optimal-tax.html</guid>
+        <link>http://shlegeris.com/2016/10/07/optimal-tax.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2016/10/07/optimal-tax.html</guid>
       </item>
     
       <item>
@@ -94,8 +94,8 @@
 </description>
         
         <pubDate>Sun, 02 Oct 2016 00:00:00 -0700</pubDate>
-        <link>http://localhost:4000/2016/10/02/ubi.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/10/02/ubi.html</guid>
+        <link>http://shlegeris.com/2016/10/02/ubi.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2016/10/02/ubi.html</guid>
       </item>
     
       <item>
@@ -107,8 +107,8 @@
 </description>
         
         <pubDate>Sun, 02 Oct 2016 00:00:00 -0700</pubDate>
-        <link>http://localhost:4000/2016/10/02/tax.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/10/02/tax.html</guid>
+        <link>http://shlegeris.com/2016/10/02/tax.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2016/10/02/tax.html</guid>
       </item>
     
       <item>
@@ -120,8 +120,8 @@
 </description>
         
         <pubDate>Tue, 27 Sep 2016 00:00:00 -0700</pubDate>
-        <link>http://localhost:4000/2016/09/27/wages.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/09/27/wages.html</guid>
+        <link>http://shlegeris.com/2016/09/27/wages.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2016/09/27/wages.html</guid>
       </item>
     
       <item>
@@ -133,8 +133,8 @@
 </description>
         
         <pubDate>Sat, 24 Sep 2016 00:00:00 -0700</pubDate>
-        <link>http://localhost:4000/2016/09/24/cato.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/09/24/cato.html</guid>
+        <link>http://shlegeris.com/2016/09/24/cato.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2016/09/24/cato.html</guid>
       </item>
     
   </channel>

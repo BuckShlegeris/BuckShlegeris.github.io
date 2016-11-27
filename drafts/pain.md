@@ -21,6 +21,8 @@ Ng then presents a proof of the following proposition:
 symmetrical functions relating costs to enjoyment and suffering, evolutionary
 economizing results in the excess of total suffering over total enjoyment.
 
+His argument IS THIS...
+
 Carl Shulman writes, in [Are pain and pleasure equally energy-efficient?](http://reflectivedisequilibrium.blogspot.com/2012/03/are-pain-and-pleasure-equally-energy.html):
 
 > So hedonistic utilitarians could approximate the net pleasure generated in our galaxy by colonization as the expected production of hedonium, multiplied by the "hedons per joule" or "hedons per computation" of hedonium (call this H), minus the expected production of dolorium, multiplied by "dolors per joule" or "dolors per computation" (call this D).
@@ -34,3 +36,4 @@ Carl Shulman writes, in [Are pain and pleasure equally energy-efficient?](http:/
 
 [happiness](https://jan.leike.name/publications/A%20Definition%20of%20Happiness%20for%20Reinforcement%20Learning%20Agents%20-%20Daswani,%20Leike%202015.pdf)
 
+Subroutines probably get averaged more, so they don't feel things as lopsidedly.

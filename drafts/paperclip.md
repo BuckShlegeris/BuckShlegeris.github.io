@@ -4,9 +4,9 @@ title:  "What is it like to be a paperclip maximizer?"
 date: "not a real date"
 ---
 
-[content warning: futurism.]
+[content warning: futurism mixed with predictions about the subjective experiences of alien minds. Epistemic status: wild speculation.]
 
-I think it's pretty plausible that humanity will accidentally wipe itself out by creating a superintelligent AI that optimizes the universe for some goal that is totally morally neutral to me--the canonical example being a paperclip maximizer whose goal is maximizing the number of paperclips in the universe. If you haven't heard of any of this before, [go read the Wait But Why post explaining it](waitbutwhy.com/2015/01/artificial-intelligence-revolution-1.html).
+I think it's pretty plausible that humanity will accidentally wipe itself out by creating a superintelligent AI that optimizes the universe for some goal that is totally morally neutral to me--the canonical example being a paperclip maximizer whose goal is maximizing the number of paperclips in the universe. If you haven't heard of any of this before, [go read the Wait But Why post about superintelligence](waitbutwhy.com/2015/01/artificial-intelligence-revolution-1.html).
 
 One obvious question is whether the paperclip-maximizing AI would overall suffer or feel pleasure, and how much pleasure or suffering it would end up feeling.
 
@@ -38,7 +38,7 @@ Michael Dickens [writes](http://mdickens.me/2016/04/17/preventing_human_extincti
 
 ## My opinion
 
-I think that paperclip maximizers would plausibly create a universe with lots conscious experience relative to their energy consumption. However, I think that their conscious experience has an expected value near zero.
+I think that paperclip maximizers would plausibly create a universe with a reasonable amount of conscious experience relative to their energy consumption. However, I think that their conscious experience has an expected valence near zero.
 
 I think there are a few different broad categories of activities that paperclippers might spend the universe's energy on:
 
@@ -47,3 +47,20 @@ I think there are a few different broad categories of activities that paperclipp
 
 ### How much energy will go into thinking vs manufacturing?
 
+I [argue here](/2016/11/26/research) that paperclippers will spend a non-negligible proportion of their total energy consumption on researching better manufacturing methods.
+
+### What is the subjective experience of manufacturing paperclips?
+
+Most of the energy that goes into manufacturing paperclips will probably not go into running computations, and the computations that are run will probably be extremely simple.
+
+In manufacturing in the US, [about 0.01%](https://www.getguesstimate.com/models/7764) of the energy input is spent in the brains of the humans involved. I imagine that with improved technologies we could reduce the amount of intelligence used for manufacturing much more.
+
+Is intelligence a
+
+### What is the subjective experience of researching paperclip-making?
+
+### Does it matter if what they're manufacturing is computation?
+
+### Thinking should be minimized everywhere
+
+### Would we use much more thinking if it was cheaper?

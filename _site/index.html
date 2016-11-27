@@ -16,8 +16,8 @@
 
   <link rel="stylesheet" href="/bootstrap.css">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://localhost:4000/">
-  <link rel="alternate" type="application/rss+xml" title="Buck Shlegeris" href="http://localhost:4000/feed.xml">
+  <link rel="canonical" href="http://shlegeris.com/">
+  <link rel="alternate" type="application/rss+xml" title="Buck Shlegeris" href="http://shlegeris.com/feed.xml">
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
       jax: ["input/TeX", "output/HTML-CSS"],
@@ -91,7 +91,7 @@
     <ul>
       
         <li>
-          <a class="arrow" href="/2016/11/26/research.html">How much of a paperclip maximizer's resources should be spend on research?</a>
+          <a class="arrow" href="/2016/11/26/research.html">Optimal resource allocation between manufacturing and research</a>
         </li>
       
         <li>
@@ -153,20 +153,20 @@
 
 
   <div class="buck-post">
-    <h2><a href="/2016/11/26/research.html"> How much of a paperclip maximizer's resources should be spend on research?</a></h2>
+    <h2><a href="/2016/11/26/research.html"> Optimal resource allocation between manufacturing and research</a></h2>
 
     <p class="post-meta"><time datetime="2016-11-26T00:00:00-08:00" itemprop="datePublished">Nov 26, 2016</time></p>
 
     <div class="shrink-headings">
-      <p>Suppose you’re a paperclip maximizer who has just finished exterminating humanity. You want to build as many paperclips as you can. This involves two activities: researching how to build paperclips as efficiently as possible, and then executing on the optimal manufacturing technique that you’ve discovered.</p>
+      <p>Suppose you’ve just inherited a bunch of money, and you want to spend it all on producing as much of some good as you can, for example paperclips. You have to decide how much of your wealth you want to spend on researching the efficient production of paperclips, and how much you want to spend on manufacturing the paperclips. The right move is probably to do all the research and then manufacture all your paperclips after you’ve found the most efficient way of producing them.</p>
 
-<p>Research has diminishing marginal returns. When I started thinking about this, my guess was that the proportion of your effort you’d spend on research would decrease quickly as you increased the amount of resources you control.</p>
+<p>Research has diminishing marginal returns. When I started thinking about this, my guess was that the proportion of your effort you’d spend on research would decrease quickly as you increased the amount of wealth you control. But then I tried making a mathematical model for it and now I don’t think that anymore. <strong>For all the plausible models of marginal returns to research I considered (except the case where research is literally useless after a point), the amount of effort you put into research grows only slightly slower than linearly with your overall wealth.</strong></p>
 
-<p>But then I tried making a mathematical model for it and now I don’t think that anymore.</p>
+<p>(I started wondering about this because I was wondering about the subjective experience of a <a href="https://wiki.lesswrong.com/wiki/Paperclip_maximizer">paperclip maximizer</a>, and the answer to this question informs that. The actual manufacturing work of a paperclip maximizer is probably not very computationally intensive, but the research work probably is. It seems possible that the research work of the paperclip maximizer involves subjective experience, but it seems much less likely that the manufacturing work does.)</p>
 
 <h2 id="logarithmic-returns">Logarithmic returns</h2>
 
-<p>Suppose the returns to thinking are logarithmic. Maybe the cost of manufacturing a paperclip after you’ve expended <script type="math/tex">r</script> effort on researching paperclip manufacturing is <script type="math/tex">\frac{1}{\log(r)}</script>. Now if you have <script type="math/tex">x</script> total resources, the total paperclip manufacture you get done is</p>
+<p>Suppose the returns to research are logarithmic. (Owen Cotton-Barratt has <a href="http://www.fhi.ox.ac.uk/theory-of-log-returns/">previously argued</a> that they are.) So the cost of manufacturing a paperclip after you’ve expended <script type="math/tex">r</script> effort on researching paperclip manufacturing is <script type="math/tex">\frac{1}{\log(r)}</script>. Now if you have <script type="math/tex">x</script> total wealth, the total paperclip manufacture you get done is</p>
 
 <p>$^$\frac{x - r}{\log(r)}$^$</p>
 
@@ -211,18 +211,23 @@
 
 <h2 id="other-functional-forms-for-returns-to-research">Other functional forms for returns to research</h2>
 
-<p>If returns diminish more slowly than logarithmically, eg if your cost function is <script type="math/tex">\frac{1}{\sqrt{r}}</script>, you end up spending a larger fraction of your resources on research–in that particular case, you spend exactly <script type="math/tex">\frac13</script> on research. More generally, the cost function <script type="math/tex">\frac{1}{\sqrt[p]{r}}</script> has an optimal research expenditure of <script type="math/tex">\frac{1}{p + 1}\cdot x</script>.</p>
+<p>If returns diminish more slowly than logarithmically, eg if your cost function is <script type="math/tex">\frac{1}{\sqrt{r}}</script>, you end up spending a larger fraction of your wealth on research–in that particular case, you spend exactly <script type="math/tex">\frac13</script> on research. More generally, the cost function <script type="math/tex">\frac{1}{\sqrt[p]{r}}</script> has an optimal research expenditure of <script type="math/tex">\frac{1}{p + 1}\cdot x</script>.</p>
 
-<p>If returns diminish more quickly than logarithmically, you spend less on research. But not that much. I can’t find a closed form solution for the case where paperclip cost looks like <script type="math/tex">frac{1}{\log(\log(r))}</script>, but when I <a href="https://github.com/bshlgrs/economics-demos/blob/master/python/paperclip_log_log.py">solve it numerically</a>, research expenditure looks only slightly slower growing than it was in the log case.</p>
+<p>If returns diminish more quickly than logarithmically, you spend less on research. But not that much. I can’t find a closed form solution for the case where paperclip cost looks like <script type="math/tex">\frac{1}{\log(\log(r))}</script>, but when I <a href="https://github.com/bshlgrs/economics-demos/blob/master/python/paperclip_log_log.py">solve it numerically</a>, research expenditure looks only slightly slower growing than it was in the log case.</p>
 
 <h2 id="could-returns-to-research-ever-hit-literally-zero">Could returns to research ever hit literally zero?</h2>
 
 <p>I don’t see any obvious reasons that they would, but I guess it could happen. Even if they did, you’d have to be extremely confident that you were never going to get anything useful out of research in order to stop doing it.</p>
 
+<h2 id="what-about-if-the-maximizer-has-an-unbounded-utility-function">What about if the maximizer has an unbounded utility function?</h2>
+
+<p>If your utility function is literally the expected number of paperclips in the universe, then you might spend all of your wealth looking for a way to gain control over an infinitely large amount of energy, because if the probability of this strategy working is nonzero it will have a higher EV than any other option, and you will plausibly never be able to be confident enough that this strategy won’t work in order to stop working on it. If you think that this is rational behavior, then with probability 1 you will spend all of your wealth on researching perpetual motion machines or whatever.</p>
+
 <h2 id="conclusion">Conclusion</h2>
 
-<p>Given that research spending is a reasonably large proportion of industry now, and that research looks like it should grow almost proportionally with your overall resource budget even when you have extremely large amounts of resources, I think that a paperclipper would probably continue to spend a noticeable proportion of its resources on optimizing its existing processes.</p>
+<p>Given that research spending is a reasonably large proportion of industry now, and that research looks like it should grow almost proportionally with your overall resource budget even when you have extremely large amounts of wealth, I think that a paperclip maximizer would probably spend a noticeable proportion of its wealth on optimizing its manufacturing processes, even if it has <a href="http://www.nickbostrom.com/astronomical/waste.html">astronomically large</a> wealth.</p>
 
+<p>This looks kind of like an exploitation-exploration question. I don’t know the results on that kind of tradeoff well enough to know if they apply here.</p>
 
     </div>
   </div>
@@ -639,7 +644,7 @@ $(function() {
     <ul>
       
         <li>
-          <a class="arrow" href="/2016/11/26/research.html">How much of a paperclip maximizer's resources should be spend on research?</a>
+          <a class="arrow" href="/2016/11/26/research.html">Optimal resource allocation between manufacturing and research</a>
         </li>
       
         <li>
