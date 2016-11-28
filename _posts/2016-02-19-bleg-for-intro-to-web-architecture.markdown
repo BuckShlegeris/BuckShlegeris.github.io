@@ -2,8 +2,7 @@
 layout: post
 title:  "Bleg for intro to web architecture"
 date:   2016-02-19
-tags:
-- programming
+tags: programming
 ---
 I want a good resource for learning about general concepts in web application architecture?
 Most of the content would be grouped by application layer. So the main sections would be like: data persistence, application servers, caching layers...

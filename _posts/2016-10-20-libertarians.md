@@ -2,6 +2,9 @@
 layout: post
 title:  "Left-libertarianism"
 date:   2016-10-20
+tags:
+  economics
+  effective-altruism
 ---
 
 I know a lot of people who identify as left-libertarians, or bleeding-heart libertarians, or whatever. Scott argued for this position [here](slatestarcodex.com/2013/12/08/a-something-sort-of-like-left-libertarianism-ist-manifesto/). Gary Johnson has [posed wearing a Bleeding Heart Libertarians shirt](http://bleedingheartlibertarians.com/wp-content/uploads/2016/07/GaryJohnson1-1.jpg). A lot of rationalists and EAs seem to think of this as the political position of utilitarians who are aware of the benefits of free markets but also the costs of externalities and inequality.

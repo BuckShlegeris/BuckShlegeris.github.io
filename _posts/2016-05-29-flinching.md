@@ -2,6 +2,7 @@
 layout: post
 title:  "Flinching away from hard things"
 date:   2016-05-29
+tags: rationality
 ---
 
 I have a strong reflex to not do complicated things when I’m writing code—I flinch away and try really hard to avoid them. I think this reflex often serves me well, because complicated code is a pain to maintain and in real life you usually don’t need it. When I watch other people code, I often see them start down a complicated path to solve a problem, and then persevere through it. When faced with the same problems as them, I'm much more inclined to start down a complicated path, then realize it's going to be complicated and reflexively give up. Most problems that I run across actually have relatively simple solutions, so this serves me well: I end up flailing for longer at the start, but then I end up with simpler code than I would have had otherwise.

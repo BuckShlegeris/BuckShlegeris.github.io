@@ -2,6 +2,7 @@
 layout: post
 title:  "Quickselect on an unordered array and an order statistic tree"
 date:   2016-06-12
+tags: algorithms
 ---
 
 **I did this work myself, so there are probably mistakes. I think the conclusion is right though.**

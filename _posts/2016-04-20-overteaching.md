@@ -2,6 +2,7 @@
 layout: post
 title:  "Overteaching and overlearning"
 date:   2016-04-20
+tags: education
 ---
 
 (I’m talking about computer science here because that’s the only topic I know really well, but this might generalize anyway.)

@@ -2,6 +2,7 @@
 layout: post
 title:  "EA donation amounts"
 date: "2016-09-04"
+tags: effective-altruism
 ---
 
 One commonly-cited figure from the 2015 survey of the effective altruism movement ([posted here](http://effective-altruism.com/ea/zw/the_2015_survey_of_effective_altruists_results/)) is that the median donation was only $333.

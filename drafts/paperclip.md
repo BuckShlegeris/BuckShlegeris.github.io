@@ -47,13 +47,17 @@ I think there are a few different broad categories of activities that paperclipp
 
 ### How much energy will go into thinking vs manufacturing?
 
-I [argue here](/2016/11/26/research) that paperclippers will spend a non-negligible proportion of their total energy consumption on researching better manufacturing methods.
+I [argue here](/2016/11/26/research) that paperclippers will spend a non-negligible proportion of their total energy consumption on researching better manufacturing methods, assuming that the marginal returns to efficiency of research are not extremely rapidly diminishing.
 
 ### What is the subjective experience of manufacturing paperclips?
 
 Most of the energy that goes into manufacturing paperclips will probably not go into running computations, and the computations that are run will probably be extremely simple.
 
-In manufacturing in the US, [about 0.01%](https://www.getguesstimate.com/models/7764) of the energy input is spent in the brains of the humans involved. I imagine that with improved technologies we could reduce the amount of intelligence used for manufacturing much more.
+In manufacturing in the US, [about 0.01%](https://www.getguesstimate.com/models/7764) of the energy input is spent in the brains of the humans involved. I imagine that with improved technologies we could reduce the amount of intelligence used for manufacturing much more. Currently we employ humans in manufacturing because they're extremely adaptable and they can walk around and have good fine motor skills.
+
+
+
+So I think that the vast majority of energy used by the paperclipper would be used on
 
 Is intelligence a
 

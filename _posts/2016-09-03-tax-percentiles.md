@@ -2,6 +2,7 @@
 layout: post
 title:  "Should we encourage price discrimination based on income?"
 date:   2016-09-03
+tags: economics
 ---
 
 Here's a crazy half-baked economics idea:

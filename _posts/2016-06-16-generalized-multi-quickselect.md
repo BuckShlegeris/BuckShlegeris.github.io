@@ -2,6 +2,7 @@
 layout: post
 title:  "Generalized multi-quickselect"
 date:   2016-06-16
+tags: algorithms
 ---
 
 I've been thinking a lot recently about how you find the $$ k$$th smallest element in the disjoint union of several data structures.

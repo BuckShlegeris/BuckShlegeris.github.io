@@ -108,7 +108,22 @@ G  | G  | em  | Cm |
 G  | G  | em  | Cm | G | A |
 F  | F  | C   | C
 
-Then repeat Intro.
+Then, intro again, like this:
+
+|G  | | Em   |  Cm  | G
+I read Jezebel every day
+  |    | Em  |  Cm  | G
+I read Jezebel every day
+
+ |       Em            Cm
+I spell trans* with a star
+  |          G         A
+I know what privileges are
+   |          F               |     C
+And when the lights go out you'll say
+C   B   C    B   C   B C   B   C    B    C   B    C B C   B  A  G
+How you wish you had a man who says that he reads Jezebel every day
+
 
 Then there's a guitar solo with no other instruments.
 

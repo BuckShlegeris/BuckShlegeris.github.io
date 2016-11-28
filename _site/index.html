@@ -16,8 +16,8 @@
 
   <link rel="stylesheet" href="/bootstrap.css">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://shlegeris.com/">
-  <link rel="alternate" type="application/rss+xml" title="Buck Shlegeris" href="http://shlegeris.com/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="alternate" type="application/rss+xml" title="Buck Shlegeris" href="http://localhost:4000/feed.xml">
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
       jax: ["input/TeX", "output/HTML-CSS"],
@@ -91,10 +91,6 @@
     <ul>
       
         <li>
-          <a class="arrow" href="/2016/11/26/research.html">Optimal resource allocation between manufacturing and research</a>
-        </li>
-      
-        <li>
           <a class="arrow" href="/2016/11/13/phd.html">Advice on whether you should get a PhD in engineering</a>
         </li>
       
@@ -122,6 +118,10 @@
           <a class="arrow" href="/2016/10/02/tax.html">The great thing about regressive taxes</a>
         </li>
       
+        <li>
+          <a class="arrow" href="/2016/09/27/wages.html">Contradictory claims in labor economics</a>
+        </li>
+      
     </ul>
   </li>
   <li>
@@ -140,7 +140,6 @@
     <div class="col-sm-7 col-sm-offset-1 markdownify">
       
       <p class="post-meta"><time datetime="1969-12-31T16:00:00-08:00" itemprop="datePublished"></time></p>
-
       <hr/>
 
       <h1>Buck Shlegeris</h1>
@@ -151,86 +150,6 @@
 <p>If, <a href="http://www.overcomingbias.com/2008/03/against-news.html">like many</a>, you prefer to consume content ordered by recency rather than quality, here are some things I wrote recently:</p>
 </div>
 
-
-  <div class="buck-post">
-    <h2><a href="/2016/11/26/research.html"> Optimal resource allocation between manufacturing and research</a></h2>
-
-    <p class="post-meta"><time datetime="2016-11-26T00:00:00-08:00" itemprop="datePublished">Nov 26, 2016</time></p>
-
-    <div class="shrink-headings">
-      <p>Suppose you’ve just inherited a bunch of money, and you want to spend it all on producing as much of some good as you can, for example paperclips. You have to decide how much of your wealth you want to spend on researching the efficient production of paperclips, and how much you want to spend on manufacturing the paperclips. The right move is probably to do all the research and then manufacture all your paperclips after you’ve found the most efficient way of producing them.</p>
-
-<p>Research has diminishing marginal returns. When I started thinking about this, my guess was that the proportion of your effort you’d spend on research would decrease quickly as you increased the amount of wealth you control. But then I tried making a mathematical model for it and now I don’t think that anymore. <strong>For all the plausible models of marginal returns to research I considered (except the case where research is literally useless after a point), the amount of effort you put into research grows only slightly slower than linearly with your overall wealth.</strong></p>
-
-<p>(I started wondering about this because I was wondering about the subjective experience of a <a href="https://wiki.lesswrong.com/wiki/Paperclip_maximizer">paperclip maximizer</a>, and the answer to this question informs that. The actual manufacturing work of a paperclip maximizer is probably not very computationally intensive, but the research work probably is. It seems possible that the research work of the paperclip maximizer involves subjective experience, but it seems much less likely that the manufacturing work does.)</p>
-
-<h2 id="logarithmic-returns">Logarithmic returns</h2>
-
-<p>Suppose the returns to research are logarithmic. (Owen Cotton-Barratt has <a href="http://www.fhi.ox.ac.uk/theory-of-log-returns/">previously argued</a> that they are.) So the cost of manufacturing a paperclip after you’ve expended <script type="math/tex">r</script> effort on researching paperclip manufacturing is <script type="math/tex">\frac{1}{\log(r)}</script>. Now if you have <script type="math/tex">x</script> total wealth, the total paperclip manufacture you get done is</p>
-
-<p>$^$\frac{x - r}{\log(r)}$^$</p>
-
-<p>which you can solve to get the optimal value of <script type="math/tex">r</script> (full working <a href="https://github.com/bshlgrs/economics-demos/blob/master/python/paperclip.py">here</a>):</p>
-
-<p>$^$ e^{\operatorname{LambertW}{\left (e \cdot x \right )} - 1} $^$</p>
-
-<p>Not gonna lie, I had to look up what the Lambert W function is. It’s asymptotially equal to <script type="math/tex">\log(x) - \log(\log(x)) + o(1)</script>. So overall we have</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-   e^{\operatorname{LambertW}{\left (e \cdot x \right )} - 1} &= e^{\log(e \cdot x) - \log(\log(e \cdot x)) + o(1) - 1} \\
- &= \frac{e \cdot x}{\log(e \cdot x)} \cdot o(1)
-\end{align} %]]></script>
-
-<p>So the proportion of energy dedicated to research increases like <script type="math/tex">\frac{x}{\log(x)}</script>.</p>
-
-<p>Here’s a table of some values of the solution:</p>
-
-<table class="table">
-  <thead>
-    <tr>
-      <td>$$x$$</td><td>$$r$$</td>
-    </tr>
-  </thead>
-  <tbody>
-<tr><td> $$10^0$$ </td><td> 1.0 </td></tr>
-<tr><td> $$10^1$$ </td><td> 4.13</td></tr>
-<tr><td> $$10^2$$ </td><td> 23.9 </td></tr>
-<tr><td> $$10^3$$ </td><td> 164 </td></tr>
-<tr><td> $$10^4$$ </td><td> 1232 </td></tr>
-<tr><td> $$10^5$$ </td><td> 9812 </td></tr>
-<tr><td> $$10^6$$ </td><td> 81264 </td></tr>
-<tr><td> $$10^7$$ </td><td> 692157 </td></tr>
-<tr><td> $$10^8$$ </td><td> 6020238 </td></tr>
-<tr><td> $$10^{20}$$ </td><td> 2.310e+18</td></tr>
-<tr><td> $$10^{50}$$ </td><td> 8.975e+47 </td></tr>
-<tr><td> $$10^{100}$$ </td><td> 4.428e+97 </td></tr>
-<tr><td> $$10^{200}$$ </td><td> 2.196e+197 </td></tr>
-</tbody>
-</table>
-
-<h2 id="other-functional-forms-for-returns-to-research">Other functional forms for returns to research</h2>
-
-<p>If returns diminish more slowly than logarithmically, eg if your cost function is <script type="math/tex">\frac{1}{\sqrt{r}}</script>, you end up spending a larger fraction of your wealth on research–in that particular case, you spend exactly <script type="math/tex">\frac13</script> on research. More generally, the cost function <script type="math/tex">\frac{1}{\sqrt[p]{r}}</script> has an optimal research expenditure of <script type="math/tex">\frac{1}{p + 1}\cdot x</script>.</p>
-
-<p>If returns diminish more quickly than logarithmically, you spend less on research. But not that much. I can’t find a closed form solution for the case where paperclip cost looks like <script type="math/tex">\frac{1}{\log(\log(r))}</script>, but when I <a href="https://github.com/bshlgrs/economics-demos/blob/master/python/paperclip_log_log.py">solve it numerically</a>, research expenditure looks only slightly slower growing than it was in the log case.</p>
-
-<h2 id="could-returns-to-research-ever-hit-literally-zero">Could returns to research ever hit literally zero?</h2>
-
-<p>I don’t see any obvious reasons that they would, but I guess it could happen. Even if they did, you’d have to be extremely confident that you were never going to get anything useful out of research in order to stop doing it.</p>
-
-<h2 id="what-about-if-the-maximizer-has-an-unbounded-utility-function">What about if the maximizer has an unbounded utility function?</h2>
-
-<p>If your utility function is literally the expected number of paperclips in the universe, then you might spend all of your wealth looking for a way to gain control over an infinitely large amount of energy, because if the probability of this strategy working is nonzero it will have a higher EV than any other option, and you will plausibly never be able to be confident enough that this strategy won’t work in order to stop working on it. If you think that this is rational behavior, then with probability 1 you will spend all of your wealth on researching perpetual motion machines or whatever.</p>
-
-<h2 id="conclusion">Conclusion</h2>
-
-<p>Given that research spending is a reasonably large proportion of industry now, and that research looks like it should grow almost proportionally with your overall resource budget even when you have extremely large amounts of wealth, I think that a paperclip maximizer would probably spend a noticeable proportion of its wealth on optimizing its manufacturing processes, even if it has <a href="http://www.nickbostrom.com/astronomical/waste.html">astronomically large</a> wealth.</p>
-
-<p>This looks kind of like an exploitation-exploration question. I don’t know the results on that kind of tradeoff well enough to know if they apply here.</p>
-
-    </div>
-  </div>
 
   <div class="buck-post">
     <h2><a href="/2016/11/13/phd.html"> Advice on whether you should get a PhD in engineering</a></h2>
@@ -568,6 +487,31 @@ foo[f] &lt;- f
     </div>
   </div>
 
+  <div class="buck-post">
+    <h2><a href="/2016/10/23/poor-college-graduates.html"> Poor college graduates do much better than rich high-school dropouts</a></h2>
+
+    <p class="post-meta"><time datetime="2016-10-23T00:00:00-07:00" itemprop="datePublished">Oct 23, 2016</time></p>
+
+    <div class="shrink-headings">
+      <p><a href="https://www.washingtonpost.com/news/wonk/wp/2014/10/18/poor-kids-who-do-everything-right-dont-do-better-than-rich-kids-who-do-everything-wrong/">This article from 2014</a>, with the provocative title “Poor kids who do everything right don’t do better than rich kids who do everything wrong” is terrible. It makes a shitty and misleading graph, and makes a variety of nonsensical judgements based on it.</p>
+
+<p>The graph used makes it really hard to see what the actual distributions of overall income are. If you make, say, a bar graph of the income distributions, you’ll see that poor college grads do much better than rich high school dropouts. I made such a graph (<a href="https://docs.google.com/spreadsheets/d/112K9ejdFQMPcnvEqERT2k2Oe7Tk7zJ-YHFuA3LikFRA/edit?usp=sharing">here’s the spreadsheet</a>):</p>
+
+<p><img src="/img/poor-college-grads.png" alt="Bar chart" /></p>
+
+<p>I also estimated the average incomes of both groups based on the given statistics, and found an average income of $78k for the poor college grads and $60k for the rich high school dropouts.</p>
+
+<p>The main piece of evidence that this blog post uses to support its thesis is: “Specifically, rich high school dropouts remain in the top about as much as poor college grads stay stuck in the bottom — 14 versus 16 percent, respectively. Not only that, but these low-income strivers are just as likely to end up in the bottom as these wealthy ne’er-do-wells. Some meritocracy.”</p>
+
+<p>The first of these statistics is not clearly related to meritocracy. If you want high income mobility, you want both these numbers to be low. The sentence is phrased as if it’s bad that the numbers are similar; that doesn’t make sense.</p>
+
+<p>The second of these statistics is correctly interpreted, but seems cherry-picked: I could just as easily point out that 41% of poor college grads end up in the top 40% of income, while only 19% of rich high school dropouts do. To prevent such cherry-picking, we should probably use the Schelling point summary statistics like mean income or median income, both of which indicate that the poor college grads are doing <em>significantly</em> better.</p>
+
+<p>As far as I can tell, the original paper didn’t do anything wrong, this “reporter” just decided to make up some bullshit conclusions from the statistics. This is even worse than most reporting–the mistake isn’t something you have to read the original source to find, the mistake is right there in the graph that Facebook is suggesting as the image preview. Alas!</p>
+
+    </div>
+  </div>
+
 
 <p><a href="/posts">All posts</a></p>
 
@@ -644,10 +588,6 @@ $(function() {
     <ul>
       
         <li>
-          <a class="arrow" href="/2016/11/26/research.html">Optimal resource allocation between manufacturing and research</a>
-        </li>
-      
-        <li>
           <a class="arrow" href="/2016/11/13/phd.html">Advice on whether you should get a PhD in engineering</a>
         </li>
       
@@ -673,6 +613,10 @@ $(function() {
       
         <li>
           <a class="arrow" href="/2016/10/02/tax.html">The great thing about regressive taxes</a>
+        </li>
+      
+        <li>
+          <a class="arrow" href="/2016/09/27/wages.html">Contradictory claims in labor economics</a>
         </li>
       
     </ul>

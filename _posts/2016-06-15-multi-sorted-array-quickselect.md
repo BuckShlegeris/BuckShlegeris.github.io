@@ -2,6 +2,7 @@
 layout: post
 title:  "Quickselect on multiple sorted arrays"
 date:   2016-06-15
+tags: algorithms
 ---
 
 **Edit: Thanks heaps to [Evgeny Kluev](http://stackoverflow.com/users/1009831/evgeny-kluev), the author of that original StackOverflow answer, for noticing that I'd made a mistake in the total time complexity calculation.**

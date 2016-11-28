@@ -2,6 +2,9 @@
 layout: post
 title:  "Optimal redistribution with a flat tax"
 date:   2016-10-07
+tags:
+  economics
+  math
 ---
 
 Suppose you have a bunch of people differ only in their wage $$w$$. Everyone has utility logarithmic in their consumption. As the government, you want to promote welfare by redistributing consumption. You decide to do this by instituting a flat tax and using it to fund a universal basic income.

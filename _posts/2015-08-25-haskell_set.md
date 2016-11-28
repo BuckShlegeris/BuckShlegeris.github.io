@@ -2,9 +2,7 @@
 layout: post
 title:  "Sets as functions"
 date:   2015-08-08
-categories: technical
-tags:
-- programming
+tags: programming
 ---
 
 ```haskell

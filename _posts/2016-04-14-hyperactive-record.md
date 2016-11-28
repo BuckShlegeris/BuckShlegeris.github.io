@@ -2,6 +2,7 @@
 layout: post
 title:  "Hyperactive Record"
 date:   2016-04-14
+tags: programming
 ---
 
 Here is a fun open source project which someone should build! I've written a readme and put it [on Github](https://github.com/bshlgrs/HyperactiveRecord/blob/master/README.md) but I don't think I have the time to actually build this. I present it here in the hope that one of you might decide that you like it and want to build it!

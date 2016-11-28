@@ -2,6 +2,7 @@
 layout: post
 title:  "Optimize for fun when you're trying to learn"
 date:   2016-02-21
+tags: education
 ---
 
 When people ask me what they should learn to get better at something--playing piano, programming, doing math--they want me to tell them a particular skill which they should focus on.

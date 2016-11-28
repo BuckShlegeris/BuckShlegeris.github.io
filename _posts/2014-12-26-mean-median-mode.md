@@ -2,6 +2,7 @@
 layout: post
 title:  "Mean, median, mode"
 date:   2014-12-26
+tags: math
 ---
 
 Probably four years ago, a friend told me that he wanted to find nice axioms for averages like the ones you learn in high school–mean, median, and mode.

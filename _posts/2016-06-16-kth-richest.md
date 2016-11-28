@@ -2,6 +2,7 @@
 layout: post
 title:  "A data structure for range kth-smallest queries"
 date:   2016-06-16
+tags: algorithms
 ---
 
 Suppose I want to maintain a set of people where each has an age and a wealth. I want to be able to quickly insert people, delete people, and answer queries of the form "find the $$ k$$th richest person whose age is between $$ x$$ and $$ y$$".

@@ -2,6 +2,7 @@
 layout: post
 title:  "Counterfactual reasoning"
 date:   2016-07-31
+tags: effective-altruism
 ---
 
 There’s a kind of thought process which I enjoy, which I think is pretty core to EA. It’s a particular approach to answering questions of the form “should I do X”. It involves counterfactual reasoning, a bunch of basic microeconomics, and careful attention to your values.

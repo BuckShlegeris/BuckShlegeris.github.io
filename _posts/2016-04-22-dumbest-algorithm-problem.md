@@ -2,6 +2,7 @@
 layout: post
 title:  "The dumbest algorithm problem in the entire world"
 date:   2016-04-22
+tags: programming
 ---
 
 Want to know the dumbest algorithm problem in the entire world? Here it is:

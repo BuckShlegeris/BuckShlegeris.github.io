@@ -3,7 +3,9 @@ layout: post
 title:  "Saving lives vs improving them"
 date:   2015-08-08
 tags:
-- ea
+  effective-altruism
+  math
+  economics
 ---
 
 **Throughout this essay I ignore flow through effects, non human animals, and effects on the distant future, even though I don’t discount those in my personal altruistic decisions. Feel free to expand this analysis if you want to include those factors.**

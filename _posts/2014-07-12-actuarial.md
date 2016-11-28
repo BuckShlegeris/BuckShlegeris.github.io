@@ -2,6 +2,7 @@
 layout: post
 title:  "Actuarial tables for romantic relationships?"
 date:   2014-07-12
+tags: romance
 ---
 
 I’m considering moving into an apartment with my girlfriend Emily﻿ next semester. Probably the biggest risk here is us breaking up and then being unable to bear the sight of each other, leaving one of us with an inconveniently expensive lease.

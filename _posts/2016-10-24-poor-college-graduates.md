@@ -2,6 +2,7 @@
 layout: post
 title:  "Poor college graduates do much better than rich high-school dropouts"
 date: "2016-10-23"
+tags: economics
 ---
 
 [This article from 2014](https://www.washingtonpost.com/news/wonk/wp/2014/10/18/poor-kids-who-do-everything-right-dont-do-better-than-rich-kids-who-do-everything-wrong/), with the provocative title "Poor kids who do everything right don’t do better than rich kids who do everything wrong" is terrible. It makes a shitty and misleading graph, and makes a variety of nonsensical judgements based on it.

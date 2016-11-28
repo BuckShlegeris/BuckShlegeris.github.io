@@ -45,7 +45,7 @@ E             A       E          A     E         B
 Maybe I’m too old for this shit, maybe Claire is right
 E                    A       E          A         E/G#    G     B
 That polyamory's not good for me, cause I wind up whining every night
-E                     A    E       A       E       B
+E                     A    E       A       E       A         B
 And I always cause my metamours an awkward pause because the force
   F#m                            D
 Of jealousy’s too much for me to not act like a dick
