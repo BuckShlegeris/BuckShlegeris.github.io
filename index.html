@@ -33,9 +33,9 @@ $(function() {
     $(div).html(
       $(div)
         .html()
-        .replace(/<h4/g, "<h5")
-        .replace(/<h3/g, "<h4")
-        .replace(/<h2/g, "<h3")
+        .replace(/h4>/g, "h5>")
+        .replace(/h3>/g, "h4>")
+        .replace(/h2>/g, "h3>")
     )
   })
 })

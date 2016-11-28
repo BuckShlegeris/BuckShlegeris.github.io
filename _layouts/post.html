@@ -1,36 +1,15 @@
 ---
-layout: default
+layout: page
 ---
-<div class="container">
-  <div class="row">
-    <div class="col-sm-3 hidden-xs">
-      {% include sidebar.html %}
-    </div>
 
-    <div class="col-sm-7 col-sm-offset-1 markdownify">
-      {% if page.title %}<h1 class="post-title " itemprop="name headline">{{ page.title }}</h1>{% endif %}
-      <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
-      <hr/>
+{% if page.title %}<h1 class="post-title " itemprop="name headline">{{ page.title }}</h1>{% endif %}
+<p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+{% if tags %}
+  tags: {% for tag in page.tags %}
+    <a href="/tag/{{tag}}">{{tag}}</a>
+  {% endfor %}
+{% endif %}
+</p>
+<hr/>
 
-      {{ content }}
-
-      <hr/>
-
-      <div class="PageNavigation">
-        {% if page.previous.url %}
-          <a class="prev" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
-        {% endif %}
-        {% if page.next.url %}
-          <a class="pull-right" href="{{page.next.url}}">{{page.next.title}} &raquo;</a>
-        {% endif %}
-      </div>
-
-    </div>
-
-    <div class="col-sm-3 visible-xs-block">
-      {% include sidebar.html %}
-    </div>
-  </div>
-</div>
-
-
+{{ content }}

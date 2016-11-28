@@ -139,10 +139,12 @@
 
     <div class="col-sm-7 col-sm-offset-1 markdownify">
       
-      <p class="post-meta"><time datetime="1969-12-31T16:00:00-08:00" itemprop="datePublished"></time></p>
-      <hr/>
+<p class="post-meta"><time datetime="1969-12-31T16:00:00-08:00" itemprop="datePublished"></time></p>
 
-      <h1>Buck Shlegeris</h1>
+</p>
+<hr/>
+
+<h1>Buck Shlegeris</h1>
 
 <div class="lead">
 <p>I am a software engineer from Australia. I have lived in San Francisco for most of the last three years. I'm interested in data structures, economics, and effective altruism.</p>
@@ -523,16 +525,16 @@ $(function() {
     $(div).html(
       $(div)
         .html()
-        .replace(/<h4/g, "<h5")
-        .replace(/<h3/g, "<h4")
-        .replace(/<h2/g, "<h3")
+        .replace(/h4>/g, "h5>")
+        .replace(/h3>/g, "h4>")
+        .replace(/h2>/g, "h3>")
     )
   })
 })
 </script>
 
 
-      <hr/>
+    <hr/>
 
       <div class="PageNavigation">
         

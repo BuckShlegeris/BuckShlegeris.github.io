@@ -15,16 +15,15 @@ title: "Worldview"
 
 -
  -->
-<!-- ## Ethics
+## Ethics
 
 
 
 ## Society and politics
 
 - Moloch
-- The media is incentivised to be inaccurate certain ways.
+- The media is incentivised to be inaccurate certain ways, eg as written in Toxoplasmosis of Rage
 
-### Education
+### Life
 
-A curious
- -->
+http://www.overcomingbias.com/2016/11/myplay.html
