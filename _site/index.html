@@ -125,6 +125,9 @@
     </ul>
   </li>
   <li>
+      <a class="arrow" href="/talks">Talks</a>
+  </li>
+  <li>
       <a class="arrow" href="/to-prove-list">My "to-prove" list</a>
   </li>
   <li>
@@ -138,7 +141,9 @@
     </div>
 
     <div class="col-sm-7 col-sm-offset-1 markdownify">
-      
+      <script async src="//genius.codes"></script>
+
+
 <p class="post-meta"><time datetime="1969-12-31T16:00:00-08:00" itemprop="datePublished"></time></p>
   
 </p>
@@ -151,6 +156,8 @@
 <p><a href="/best">Here</a> are the most interesting things I've written. My most notable software project is <a href="http://ds.shlegeris.com">a search engine for data structures</a>.</p>
 <p>If, <a href="http://www.overcomingbias.com/2008/03/against-news.html">like many</a>, you prefer to consume content ordered by recency rather than quality, here are some things I wrote recently:</p>
 </div>
+
+
 
 
   <div class="buck-post">
@@ -520,18 +527,19 @@ foo[f] &lt;- f
 <p><a href="/feed.xml">RSS feed</a></p>
 
 <script>
-$(function() {
+$(() => {
   $(".shrink-headings").map(function(idx, div) {
     $(div).html(
       $(div)
         .html()
-        .replace(/h4>/g, "h5>")
-        .replace(/h3>/g, "h4>")
-        .replace(/h2>/g, "h3>")
+        .replace(/<h4/g, "<h5")
+        .replace(/<h3/g, "<h4")
+        .replace(/<h2/g, "<h3")
     )
-  })
+  });
 })
 </script>
+<script async src="//genius.codes"></script>
 
 
     <hr/>
@@ -622,6 +630,9 @@ $(function() {
         </li>
       
     </ul>
+  </li>
+  <li>
+      <a class="arrow" href="/talks">Talks</a>
   </li>
   <li>
       <a class="arrow" href="/to-prove-list">My "to-prove" list</a>

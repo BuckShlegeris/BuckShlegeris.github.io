@@ -11,6 +11,8 @@ date:   ""
 <p>If, <a href="http://www.overcomingbias.com/2008/03/against-news.html">like many</a>, you prefer to consume content ordered by recency rather than quality, here are some things I wrote recently:</p>
 </div>
 
+
+
 {%for post in site.posts limit:3 %}
   <div class="buck-post">
     <h2><a href="{{ post.url }}"> {{ post.title }}</a></h2>
@@ -28,15 +30,16 @@ date:   ""
 <p><a href="/feed.xml">RSS feed</a></p>
 
 <script>
-$(function() {
+$(() => {
   $(".shrink-headings").map(function(idx, div) {
     $(div).html(
       $(div)
         .html()
-        .replace(/h4>/g, "h5>")
-        .replace(/h3>/g, "h4>")
-        .replace(/h2>/g, "h3>")
+        .replace(/<h4/g, "<h5")
+        .replace(/<h3/g, "<h4")
+        .replace(/<h2/g, "<h3")
     )
-  })
+  });
 })
 </script>
+<script async src="//genius.codes"></script>
