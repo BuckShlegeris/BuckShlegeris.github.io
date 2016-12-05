@@ -42,3 +42,15 @@ Things I should read
 
 - http://www.plantinghappiness.co.uk/the-unproven-and-unprovable-case-for-wild-animal-suffering/
 - http://opentheory.net/PrincipiaQualia.pdf
+
+
+RL theory that is useful:
+
+- [Learning to Optimize Via Information-Directed Sampling](https://arxiv.org/pdf/1403.5556v5.pdf)
+
+Thanks to:
+
+- Carl Shulman
+- Claire Zabel
+- Jan Leike
+- Daniel Filan
