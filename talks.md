@@ -13,6 +13,8 @@ Programmers often have trouble finding fast data structures to support a given A
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Ey5fOCcWpM8" frameborder="0" allowfullscreen></iframe>
 
+If you're interested, I wrote a postmortem for this talk [here](notes/sbtb2016-postmortem).
+
 ## Scala By The Bay 2015, "Automatically deriving efficient data structures in Scala"
 
 It's common to need a collection data structure which supports a particular set of operations efficiently. For example, hash maps are a good choice if you just need to support get and set, and a min heap is a good choice if you need add and getMin. I describe a system I'm building which takes a Scala specification of the methods needed in a collection class, then works interactively with the user to decide on the best set of data structures to use to implement the desired interface with maximum efficiency, then generates the necessary code for this optimized collection class.

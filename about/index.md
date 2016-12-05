@@ -98,4 +98,4 @@ I donated to a donor-advised fund at the end of 2015, because I was unsure about
 
 ## Family
 
-My father, Joe Shlegeris, used to be a businessman and is now a [running for state parliment as a Green](http://www.joefornoosa.com.au/).
+My father, Joe Shlegeris, used to be a businessman and is now [running for state parliment as a Green](http://www.joefornoosa.com.au/).

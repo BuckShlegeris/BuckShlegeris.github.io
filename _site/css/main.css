@@ -15,7 +15,7 @@ dl, dd, ol, ul, figure {
  * Basic styling
  */
 body {
-  font: 400 16px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
   -moz-font-feature-settings: "kern" 1;
@@ -458,9 +458,9 @@ pre {
   .highlight .il {
     color: #099; }
 
-.markdownify h1, h2, h3 {
+.markdownify h1, h2, h3, h4, h5 {
   color: darkblue;
-  font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 div.math {
   width: 60%;
@@ -483,3 +483,6 @@ blockquote {
 .shadow-img {
   box-shadow: 5px 5px 5px #888888;
   border: solid 1px; }
+
+.lead p {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }

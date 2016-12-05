@@ -35,11 +35,15 @@ The software would have the following components:
 - UI, which lets users choose the posts they want in a single book.
 - Renderer, which takes the data for the posts and turns it into a book. This probably just involves turning the data into LaTeX and choosing good LaTeX settings. (This might be too slow to happen synchronously.)
 
-The MVP is just to make this work for a couple of blogs, like Marginal Revolution and Bryan Caplan's blog or something, and make the UI and the Renderer work.
+The MVP is just to make the Scraper work for a couple of blogs, like SSC and  Marginal Revolution and Bryan Caplan's blog or something, and make the UI and the Renderer work.
 
 Other potential markets:
 
 - fanfiction.net. I would certainly have bought some printed-out fanfiction if that was easy.
+
+Related idea: I would love to be able to subscribe to PDF copies or ePub copies of new posts. Also I'd like to be able to download separate PDFs or ePubs of all the SSC posts.
+
+Also there are probably lots of projects which do parts of this work already.
 
 ## Math writing app
 
@@ -65,19 +69,33 @@ Another nice and possibly-useful feature would be to have a Medium-style feature
 
 ## RescueTime clone, but with more features
 
-RescueTime is bizarrely bad.
+RescueTime is bizarrely bad. I want it to be able to track the app I’m in, the Git repo I’m in, the branch I’m on. I want to be able to answer questions like "How long did it take me to build this feature?". Because I build new features in specific Git branches, that should be answerable by searching "How much time did I spend on this Git branch in my IDE and terminal + reading the Github issue page about the feature + on localhost:3000 while the Rails app was running in this branch".
 
-Track the app I’m in, the Git repo I’m in, the branch I’m on.
+or questions like
 
-When I’m in the terminal, do the same.
+- How much time did I spend working on my Rails app today?
 
-Current scrap [here](https://github.com/bshlgrs/omniscience)
+One part of this is writing AppleScript to get information about what the user is doing. I already put some work into that [here](https://github.com/bshlgrs/omniscience).
 
 ## projects which I need to spec
 
-- Economic equilibrium solver
+- Economic equilibrium solver (perhaps using PPL?)
 - Fun with filesystems
   - mount databases
   - mount Git branches
   - convenient high level library for file system composition
 - Super simple text-formatting utility
+- Simple search engine for personally indexed items
+- Site for keeping private tabs on people.
+
+## Economics equilibrium solver
+
+Suppose there's two business partners, Alice and Bob, and they share the money they make. Both are selfish log-income maximizers. Alice works for $$a$$ hours and Bob works for $$b$$ hours. Alice's utility is $$U_A = \log(a + b) - a$$, Bob's is the symmetrical one. How long do they work for? What about if they can negotiate?
+
+    a, b = symbols("a b")
+    u_a = log(a + b) - a
+    u_b = log(a + b) - b
+
+    print maximize({ u_a: [a], u_b: [b] })
+
+

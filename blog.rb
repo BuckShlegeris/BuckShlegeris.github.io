@@ -9,7 +9,7 @@ when "draft"
 ---
 layout: post
 title:  "#{ARGV[1].split("-").join(" ").capitalize}"
-date: "not a real date"
+date: "unpublished"
 ---
 
 hello!
