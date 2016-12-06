@@ -100,6 +100,6 @@ Let's say that evolution is trying to maximize the sum of your rewards, minus th
 
 Now we can ask: what's the optimal shape of the valence function $$v$$, and what's its expected value for the lifetime of an agent? I conjecture with 80% confidence that the expected value is zero, and with 50% confidence that the shape is linear. But I need to actually do this math, or at least demonstrate it experimentally!
 
-## An environment with nonzero EV
+## An environment with nonzero expected valence
 
-i can construct an environment with nonzero EV, I claim!
+i can construct an environment with nonzero expected valence, I claim!
