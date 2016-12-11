@@ -3,13 +3,16 @@ layout: default
 ---
 <div class="container">
   <div class="row">
-    <div class="col-sm-3 hidden-xs">
+    <div class="sidebar-on-large-screens">
       {% include sidebar.html %}
     </div>
 
-    <div class="col-sm-7 col-sm-offset-1 markdownify">
+    <div class="main-column">
+      <div class="title-on-small-screens">
+        <a href="/">website of Buck Shlegeris</a>
+      </div>
+
       {{ content }}
-    <hr/>
 
       <div class="PageNavigation">
         {% if page.previous.url %}
@@ -19,12 +22,13 @@ layout: default
           <a class="pull-right" href="{{page.next.url}}">{{page.next.title}} &raquo;</a>
         {% endif %}
       </div>
-
     </div>
 
-    <div class="col-sm-3 visible-xs-block">
+    <div class="sidebar-on-small-screens">
       {% include sidebar.html %}
     </div>
+
+    <div class="clear" />
   </div>
 </div>
 

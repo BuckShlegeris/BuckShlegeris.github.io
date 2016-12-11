@@ -27,3 +27,7 @@ title: "Worldview"
 ### Life
 
 http://www.overcomingbias.com/2016/11/myplay.html
+
+## random things
+
+- Holden Karnofsky posseses a quality that makes him more reliable on other topics

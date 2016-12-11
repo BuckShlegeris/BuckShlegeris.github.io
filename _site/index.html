@@ -15,7 +15,6 @@
   <meta name="description" content="Website of Buck Shlegeris.
 ">
 
-  <link rel="stylesheet" href="/bootstrap.css">
   <link rel="stylesheet" href="/css/main.css">
   <link rel="canonical" href="http://localhost:4000/">
   <link rel="alternate" type="application/rss+xml" title="Buck Shlegeris" href="http://localhost:4000/feed.xml">
@@ -45,10 +44,10 @@
 
     <div class="container">
   <div class="row">
-    <div class="col-sm-3 hidden-xs">
+    <div class="sidebar-on-large-screens">
       <img src="/img/dual_n_buck.jpeg" class="img-responsive" alt="Picture of Buck" height="213" width="213">
-<hr>
-<a class="arrow" href="/"><strong>Buck</strong></a>
+<br>
+<a class="arrow" href="/"><strong>Buck Shlegeris</strong></a>
 <ul>
   <li>
 <a class="arrow" href="/about">About</a>
@@ -137,14 +136,21 @@
       <a class="arrow" href="/mistakes">Mistakes</a>
   </li>
   <li>
+      <a class="arrow" href="/notes">Notes</a>
+  </li>
+  <li>
       <a class="arrow" href="/cute">Pictures of me</a>
   </li>
 </ul>
 
     </div>
 
-    <div class="col-sm-7 col-sm-offset-1 markdownify">
-      <script async src="//genius.codes"></script>
+    <div class="main-column">
+      <div class="title-on-small-screens">
+        <a href="/">website of Buck Shlegeris</a>
+      </div>
+
+      <!-- <script async src="//genius.codes"></script> -->
 
 
 <p class="post-meta"><time datetime="1969-12-31T16:00:00-08:00" itemprop="datePublished"></time></p>
@@ -172,7 +178,7 @@
     <p class="post-meta"><time datetime="2016-11-26T00:00:00-08:00" itemprop="datePublished">Nov 26, 2016</time></p>
 
     <div class="shrink-headings">
-      <p><strong>Thanks heaps to Ben Weinstein-Raun, without whose comments this post would have a confident and wrong conclusion.</strong></p>
+      <p><strong>Thanks heaps to Ben Weinstein-Raun, without whose comments this post would have a confident and wrong conclusion. Thanks also to Chen-Yu Yang for spotting a typo.</strong></p>
 
 <p>Suppose you’ve just inherited a bunch of money, and you want to spend it all on producing as much of some good as you can, for example paperclips. You have to decide how much of your wealth you want to spend on researching the efficient production of paperclips, and how much you want to spend on manufacturing the paperclips. The right move is probably to do all the research and then manufacture all your paperclips after you’ve found the most efficient way of producing them.</p>
 
@@ -190,7 +196,7 @@
 
 <p>So the cost of manufacturing a paperclip after you’ve expended <script type="math/tex">r</script> effort on researching paperclip manufacturing is <script type="math/tex">\frac{1}{\log(r)}</script>. Now if you have <script type="math/tex">x</script> total wealth, the total paperclip manufacture you get done is</p>
 
-<p>$^$\frac{x - r}{\log(r)}$^$</p>
+<p>$^$(x - r) \cdot \log(r)$^$</p>
 
 <p>which you can solve to get the optimal value of <script type="math/tex">r</script> (full working <a href="https://github.com/bshlgrs/economics-demos/blob/master/python/paperclip.py">here</a>):</p>
 
@@ -627,19 +633,17 @@ $(() => {
 <script async src="//genius.codes"></script>
 
 
-    <hr>
 
       <div class="PageNavigation">
         
         
       </div>
-
     </div>
 
-    <div class="col-sm-3 visible-xs-block">
+    <div class="sidebar-on-small-screens">
       <img src="/img/dual_n_buck.jpeg" class="img-responsive" alt="Picture of Buck" height="213" width="213">
-<hr>
-<a class="arrow" href="/"><strong>Buck</strong></a>
+<br>
+<a class="arrow" href="/"><strong>Buck Shlegeris</strong></a>
 <ul>
   <li>
 <a class="arrow" href="/about">About</a>
@@ -728,11 +732,16 @@ $(() => {
       <a class="arrow" href="/mistakes">Mistakes</a>
   </li>
   <li>
+      <a class="arrow" href="/notes">Notes</a>
+  </li>
+  <li>
       <a class="arrow" href="/cute">Pictures of me</a>
   </li>
 </ul>
 
     </div>
+
+    <div class="clear"></div>
   </div>
 </div>
 

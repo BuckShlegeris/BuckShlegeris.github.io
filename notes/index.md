@@ -6,5 +6,6 @@ title: "Personal notes"
 
 Here are some notes I've taken on some things. Feel free to read them if you're interested.
 
-- [Open source projects that I want to remember](os)
-- [Various software projects I'd be interested in seeing someone make](software-ideas)
+- [Open source projects that I want to remember](./os)
+- [Various software projects I'd be interested in seeing someone make](./software-ideas)
+- [Useful resources for cause prioritization](./causepri)

@@ -317,6 +317,47 @@ pre {
       .post-content h4 {
         font-size: 18px; } }
 
+.main-column {
+  margin-left: 350px;
+  padding-left: 30px;
+  padding-right: 30px;
+  max-width: 600px;
+  /* Change this to whatever the width of your left column is*/ }
+
+/* Big screens! */
+@media only screen and (min-width: 500px) {
+  .sidebar-on-large-screens {
+    padding-left: 30px;
+    width: 300px;
+    max-width: 400px;
+    float: left; }
+
+  .sidebar-on-small-screens {
+    display: none; }
+
+  .title-on-small-screens {
+    display: none; } }
+/* Small screens! */
+@media only screen and (max-width: 500px) {
+  .title-on-small-screens {
+    display: block; }
+
+  .sidebar-on-large-screens {
+    display: none; }
+
+  .sidebar-on-small-screens {
+    display: block;
+    padding: 10px; }
+
+  .main-column {
+    margin-left: 10px;
+    padding: 10px; } }
+.clear {
+  clear: both; }
+
+.lead {
+  font-size: 18px; }
+
 /**
  * Syntax highlighting styles
  */

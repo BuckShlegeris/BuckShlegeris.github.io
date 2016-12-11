@@ -12,6 +12,7 @@ thanks heaps to Kent Ross for helping me out with a bunch of this.
 
 - what kind of hash map do you use? linear probing, quadratic probing, chaining?
 - if linear probing or quadratic probing, what do you use as your tombstone?
+  - You don't need a tombstone in linear probing.
 
 ### Practical implementations
 
@@ -34,6 +35,7 @@ do {
 }
 ```
 
+  - Python now has a [new implementation for its dicts!](https://mail.python.org/pipermail/python-dev/2012-December/123028.html)
 - Java: [chaining](http://netjs.blogspot.in/2015/05/how-hashmap-internally-works-in-java.html)
   > in Java 8 hash elements use balanced trees instead of linked lists after a certain threshold is reached. Which means HashMap starts with storing Entry objects in linked list but after the number of items in a hash becomes larger than a certain threshold, the hash will change from using a linked list to a balanced tree, this will improve the worst case performance from O(n) to O(log n).
   - According to [here](http://www.nurkiewicz.com/2014/04/hashmap-performance-improvements-in.html) the threshold is 8 elements
