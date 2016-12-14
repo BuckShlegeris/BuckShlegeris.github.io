@@ -15,7 +15,7 @@ dl, dd, ol, ul, figure {
  * Basic styling
  */
 body {
-  font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 400 16px/1.5 Times, serif;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
   -moz-font-feature-settings: "kern" 1;
@@ -325,7 +325,7 @@ pre {
   /* Change this to whatever the width of your left column is*/ }
 
 /* Big screens! */
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 600px) {
   .sidebar-on-large-screens {
     padding-left: 30px;
     width: 300px;
@@ -338,7 +338,7 @@ pre {
   .title-on-small-screens {
     display: none; } }
 /* Small screens! */
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
   .title-on-small-screens {
     display: block; }
 
@@ -351,6 +351,7 @@ pre {
 
   .main-column {
     margin-left: 10px;
+    margin-right: 10px;
     padding: 10px; } }
 .clear {
   clear: both; }
@@ -501,7 +502,7 @@ pre {
 
 .markdownify h1, h2, h3, h4, h5 {
   color: darkblue;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  font-family: Times, serif; }
 
 div.math {
   width: 60%;
@@ -526,4 +527,11 @@ blockquote {
   border: solid 1px; }
 
 .lead p {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  font-family: Times, serif; }
+
+.post-content {
+  text-align: justify;
+  text-justify: inter-word; }
+
+h1 {
+  font-size: 40px; }

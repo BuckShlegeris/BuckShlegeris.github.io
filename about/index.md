@@ -46,7 +46,7 @@ In 2015, I was on a panel at EA Global in Mountain View. In 2016, I ran a worksh
 
 I wrote about the biggest effective altruism mistakes I made in 2014 and 2015 <a href="/2016/05/24/mistakes.html">here.</a>
 
-My diet is [vegan, but not minding occasional accidental consumption of dairy which happens incidentally](https://www.facebook.com/bshlgrs/posts/10209241377086217).
+My diet is [vegan, except that I eat bivalves, but not minding occasional accidental consumption of dairy which happens incidentally](https://www.facebook.com/bshlgrs/posts/10209241377086217).
 
 
 

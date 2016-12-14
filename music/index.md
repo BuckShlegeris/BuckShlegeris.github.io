@@ -19,7 +19,13 @@ New songs that I'm excited about
 Half-written songs:
 
 - Fragile things
-- New York
 - Miss your face
 - Well-Dressed Man
+
+Fragments:
+
+- I've got a fake id and a voter hat
+- Beta cuckold orbiter
+- New York
+- Sleep debt
 
