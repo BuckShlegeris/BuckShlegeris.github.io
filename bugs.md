@@ -13,4 +13,8 @@ This is a semi-private log of different ways that I've accidentally put bad code
   - e.g. with the email template generator, I forgot we used it for company suggestions.
   - How to avoid this: write a list of everywhere that my API is used, and have a checklist that confirms I've checked it with all of them. This problem is much better in situations with weird hacky APIs, or in languages without good semantic code search.
 - putting a non-existent CSS class on a table, not noticing it was non-existent
+- pushing changes to debug challenge without checking the already_passing_tests ?!
 
+Things that have been noticed at PR stage:
+
+- forgetting .freeze

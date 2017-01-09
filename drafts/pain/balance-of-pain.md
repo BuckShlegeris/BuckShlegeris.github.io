@@ -18,7 +18,7 @@ One of the few discussions of this question I'm aware of is by Yew-Kwang Ng, in 
 
 > First, both enjoyment and suffering are costly in terms of energy requirement, tissue maintenance, etc. This is why we feel neutral most of the time when we are not starving, eating, having sex, etc. (It would be nice if we could be programmed to feel ecstatic most of the time.) Secondly, it is likely that the extra (or marginal) costs involved in having an extra unit of enjoyment (or suffering) increases with the amount of enjoyment (suffering). Viewed differently, we have diminishing marginal returns in both enjoyment and suffering per unit of cost. Thirdly, it is likely that the costs (generalized resource costs, not subjective welfare costs) of suffering are unlikely to be significantly less, and maybe actually more, than those of enjoyment.
 
-I think that the key idea here -- that the metabolic cost of a reward signal increases faster than linearly with its absolute value -- is a really useful insight. This gives an explanation for why reward signals would be clustered around zero.
+I think that the key idea here -- that the metabolic cost of a reward signal increases with its absolute value -- is a really useful insight. This gives an explanation for why reward signals would be clustered around zero.
 
 That is, suppose evolution has a utility function corresponding to the number of offspring you have, and it's trying to decide on a mapping from the utility function to the reward function experienced by the creature.  Let's suppose that we've decided that
 

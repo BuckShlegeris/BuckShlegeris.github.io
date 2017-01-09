@@ -43,3 +43,7 @@ Chorus 2, like Chorus 1.
 
 Bridge 2, like bridge 1 but with like 2 more lines.
 ```
+
+Lyrics:
+
+When we met, you weren't single, and neither was I

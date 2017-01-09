@@ -15,7 +15,7 @@ dl, dd, ol, ul, figure {
  * Basic styling
  */
 body {
-  font: 400 16px/1.5 Times, serif;
+  font: 400 15px/1.5 Arial, sans-serif;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
   -moz-font-feature-settings: "kern" 1;
@@ -46,7 +46,7 @@ figure > img {
   display: block; }
 
 figcaption {
-  font-size: 14px; }
+  font-size: 13.125px; }
 
 /**
  * Lists
@@ -279,7 +279,7 @@ pre {
     margin-bottom: 30px; }
 
 .post-meta {
-  font-size: 14px;
+  font-size: 13.125px;
   color: #828282; }
 
 .post-link {
@@ -502,7 +502,7 @@ pre {
 
 .markdownify h1, h2, h3, h4, h5 {
   color: darkblue;
-  font-family: Times, serif; }
+  font-family: Arial, sans-serif; }
 
 div.math {
   width: 60%;
@@ -527,11 +527,14 @@ blockquote {
   border: solid 1px; }
 
 .lead p {
-  font-family: Times, serif; }
+  font-family: Arial, sans-serif; }
 
-.post-content {
-  text-align: justify;
-  text-justify: inter-word; }
-
+/*.post-content {
+    text-align: justify;
+    text-justify: inter-word;
+}*/
 h1 {
   font-size: 40px; }
+
+hr {
+  margin-bottom: 12px; }

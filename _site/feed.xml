@@ -8,6 +8,45 @@
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Hash map implementations in practice</title>
+        
+        
+          <description>&lt;p&gt;&lt;strong&gt;Thanks to Kent Ross for finding several of the details which I list here.&lt;/strong&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Fri, 06 Jan 2017 00:00:00 -0800</pubDate>
+        <link>http://localhost:4000/2017/01/06/hash-maps.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/01/06/hash-maps.html</guid>
+      </item>
+    
+      <item>
+        <title>Wild speculations on the balance of pain and pleasure</title>
+        
+        
+          <description>&lt;p&gt;&lt;em&gt;Epistemic status: mad speculation, mixed with math that’s so much fun that I find it hard to believe it’s useful. I’m serious about thinking these questions are important, I’m much less confident in any of my answers.&lt;/em&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Fri, 30 Dec 2016 00:00:00 -0800</pubDate>
+        <link>http://localhost:4000/2016/12/30/pain.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/12/30/pain.html</guid>
+      </item>
+    
+      <item>
+        <title>A dynamic programming algorithm for the Gini coefficient</title>
+        
+        
+          <description>&lt;p&gt;There’s a very simple &lt;script type=&quot;math/tex&quot;&gt;O(n)&lt;/script&gt; DP algorithm for calculating the &lt;a href=&quot;https://en.wikipedia.org/wiki/Gini_coefficient&quot;&gt;Gini coefficient&lt;/a&gt; of a sorted list. The code for it honestly looks almost simpler than the naive formula. Code is at the bottom.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Thu, 29 Dec 2016 00:00:00 -0800</pubDate>
+        <link>http://localhost:4000/2016/12/29/gini.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/12/29/gini.html</guid>
+      </item>
+    
+      <item>
         <title>Optimal resource allocation between manufacturing and research</title>
         
         
@@ -96,45 +135,6 @@
         <pubDate>Sun, 02 Oct 2016 00:00:00 -0700</pubDate>
         <link>http://localhost:4000/2016/10/02/ubi.html</link>
         <guid isPermaLink="true">http://localhost:4000/2016/10/02/ubi.html</guid>
-      </item>
-    
-      <item>
-        <title>The great thing about regressive taxes</title>
-        
-        
-          <description>&lt;p&gt;&lt;strong&gt;Epistemic status: mostly interesting as a tool to clarify your thinking about how tax rates should be decided. For a variety of practical reasons (especially &lt;a href=&quot;https://www.facebook.com/bshlgrs/posts/10208748763091175?comment_id=10208748871013873&amp;amp;comment_tracking=%7B%22tn%22%3A%22R2%22%7D&quot;&gt;these ones&lt;/a&gt;), we might want to have low marginal tax rates on the poor.&lt;/strong&gt;&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Sun, 02 Oct 2016 00:00:00 -0700</pubDate>
-        <link>http://localhost:4000/2016/10/02/tax.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/10/02/tax.html</guid>
-      </item>
-    
-      <item>
-        <title>Contradictory claims in labor economics</title>
-        
-        
-          <description>&lt;p&gt;Here are two claims you could make about the market for unskilled labor:&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Tue, 27 Sep 2016 00:00:00 -0700</pubDate>
-        <link>http://localhost:4000/2016/09/27/wages.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/09/27/wages.html</guid>
-      </item>
-    
-      <item>
-        <title>A mistake in the Cato institute report on risks from refugees</title>
-        
-        
-          <description>&lt;p&gt;I was reading a &lt;a href=&quot;http://www.vox.com/2016/9/20/12986886/donald-trump-jr-terrorist-skittles-wrong&quot;&gt;Vox article&lt;/a&gt; about the risks of Americans being killed by terrorists refugees. It linked to &lt;a href=&quot;http://object.cato.org/sites/cato.org/files/pubs/pdf/pa798_1_1.pdf&quot;&gt;“Terrorism and Immigration”&lt;/a&gt;, a report by the Cato Institute.&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Sat, 24 Sep 2016 00:00:00 -0700</pubDate>
-        <link>http://localhost:4000/2016/09/24/cato.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/09/24/cato.html</guid>
       </item>
     
   </channel>

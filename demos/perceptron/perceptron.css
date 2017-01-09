@@ -1,0 +1,15 @@
+
+.circle {
+  stroke: black;
+  stroke-width: 1;
+  fill: green;
+}
+
+.circle:hover {
+  fill: yellow;
+}
+
+.axis {
+  stroke-width: 2;
+  stroke: black;
+}

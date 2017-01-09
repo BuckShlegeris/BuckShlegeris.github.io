@@ -77,6 +77,18 @@ or questions like
 
 One part of this is writing AppleScript to get information about what the user is doing. I already put some work into that [here](https://github.com/bshlgrs/omniscience).
 
+Here are examples of questions I’d like to be able to answer:
+
+- How much time did I spend writing code for this particular feature? This would be super useful for estimating time requirements of projects in the future.
+- Which of my coworkers has spent the most time reading this particular file? I’d like to talk to the one who’s the most knowledgeable about it.
+- How much time did I spend writing this document?
+- How much time has my team spent on email correspondence with this particular client? How much time do we spend in total emailing our clients?
+- What time did I get to work on January 6th?
+
+And it seems like it should be pretty doable to get rough estimates of proxies for many of these things. For example, it’s feasible to track what git branch you’re on, and what window is in focus, and who you’re writing emails to.
+
+It seems like this would provide extremely valuable analytics to businesses.
+
 ## projects which I need to spec
 
 - Economic equilibrium solver (perhaps using PPL?)

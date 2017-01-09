@@ -13,7 +13,7 @@ Here is a list of mathematical questions I want to investigate or find the answe
   - What about if working has positive or negative externalities?
 - Travelling maze coke salesman: prove it's NP hard. This problem is like TSP, except it's in a maze on a 2D plane, and every time the salesman gets to a city they double their speed.
   - If it's not on a 2D plane, then the proof is easy--you just apply the usual reduction from the Hamiltonian cycle problem. I can almost certainly solve this problem by reading the proof that TSP is hard even on a plane, and just applying it to this.
-- Finding [optimally short templates](/drafts/template-generator)
+- Finding [optimally short templates](/notes/template-generator)
 
 ## Things that I wanted to prove, but then finished proving or found a proof of
 

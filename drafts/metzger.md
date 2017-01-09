@@ -18,6 +18,8 @@ date: "not a real date"
 - How do you balance complexity between choruses and verses?
 - how does your mental state affect your songwriting? How about sleep deprivation?
 
+
+
 Specific to my songs:
 
 

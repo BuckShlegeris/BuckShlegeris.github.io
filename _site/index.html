@@ -2,7 +2,6 @@
 <html>
 
   <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,7 +30,7 @@
       "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
     });
   </script>
-  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
   <script src="/jquery.js"></script>
   <script type="text/babel" src="/main.js"></script>
   
@@ -46,11 +45,10 @@
   <div class="row">
     <div class="sidebar-on-large-screens">
       <img src="/img/dual_n_buck.jpeg" class="img-responsive" alt="Picture of Buck" height="213" width="213">
-<br>
+<br/>
 <a class="arrow" href="/"><strong>Buck Shlegeris</strong></a>
 <ul>
-  <li>
-<a class="arrow" href="/about">About</a>
+  <li><a class="arrow" href="/about">About</a>
     <ul>
       <li><a href="http://triplebyte.com?ref=shlegeris.com">Triplebyte</a></li>
     </ul>
@@ -88,9 +86,20 @@
       </li>
     </ul>
   </li>
-  <li>
-<a href="/posts" class="arrow">Blog</a> (<a href="/best" class="arrow">Best posts</a>) (<a href="/feed.xml">RSS</a>)
+  <li><a href="/posts" class="arrow">Blog</a> (<a href="/best" class="arrow">Best posts</a>) (<a href="/feed.xml">RSS</a>)
     <ul>
+      
+        <li>
+          <a class="arrow" href="/2017/01/06/hash-maps.html">Hash map implementations in practice</a>
+        </li>
+      
+        <li>
+          <a class="arrow" href="/2016/12/30/pain.html">Wild speculations on the balance of pain and pleasure</a>
+        </li>
+      
+        <li>
+          <a class="arrow" href="/2016/12/29/gini.html">A dynamic programming algorithm for the Gini coefficient</a>
+        </li>
       
         <li>
           <a class="arrow" href="/2016/11/26/research.html">Optimal resource allocation between manufacturing and research</a>
@@ -110,18 +119,6 @@
       
         <li>
           <a class="arrow" href="/2016/10/20/libertarians.html">Left-libertarianism</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/10/07/optimal-tax.html">Optimal redistribution with a flat tax</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/10/02/ubi.html">Universal basic incomes disincentivise work</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/10/02/tax.html">The great thing about regressive taxes</a>
         </li>
       
     </ul>
@@ -157,7 +154,7 @@
 <p>
   
 </p>
-<hr>
+<hr/>
 
 <div class="post-content">
   <h1>Buck Shlegeris</h1>
@@ -170,137 +167,7 @@
 
 
   <div class="buck-post">
-    <h2><a href="/2016/11/26/research.html"> Optimal resource allocation between manufacturing and research</a></h2>
-
-    <p>
-      
-    </p>
-
-    <p class="post-meta"><time datetime="2016-11-26T00:00:00-08:00" itemprop="datePublished">Nov 26, 2016</time></p>
-
-    <div class="shrink-headings">
-      <p><strong>Thanks heaps to Ben Weinstein-Raun, without whose comments this post would have a confident and wrong conclusion. Thanks also to Chen-Yu Yang for spotting a typo.</strong></p>
-
-<p>Suppose you’ve just inherited a bunch of money, and you want to spend it all on producing as much of some good as you can, for example paperclips. You have to decide how much of your wealth you want to spend on researching the efficient production of paperclips, and how much you want to spend on manufacturing the paperclips. The right move is probably to do all the research and then manufacture all your paperclips after you’ve found the most efficient way of producing them.</p>
-
-<p>Research has diminishing marginal returns. When I started thinking about this, my guess was that the proportion of your effort you’d spend on research would decrease quickly as you increased the amount of wealth you control. But then I tried making a mathematical model for it and now I am not sure.</p>
-
-<p>My result: <strong>If the price of making a paperclip decreases and gets arbitrarily close to zero after sufficent research, you probably end up doing a lot of research. If the price does not get arbitrarily close to zero, you end up doing much less.</strong></p>
-
-<p>(I started wondering about this because I was wondering about the subjective experience of a <a href="https://wiki.lesswrong.com/wiki/Paperclip_maximizer">paperclip maximizer</a>, and the answer to this question informs that. The actual manufacturing work of a paperclip maximizer is probably not very computationally intensive, but the research work probably is. It seems possible that the research work of the paperclip maximizer involves subjective experience, but it seems much less likely that the manufacturing work does.)</p>
-
-<h2 id="logarithmic-returns">Logarithmic returns</h2>
-
-<p>Let’s investigate what happens if returns to research are logarithmic and unlimited.</p>
-
-<p>(Owen Cotton-Barratt has <a href="http://www.fhi.ox.ac.uk/theory-of-log-returns/">previously argued</a> that some kinds of research have logarithmic returns. One nice argument for it is that your returns are logarithmic if on day <script type="math/tex">n</script> you’re twice as productive as you’ll be on day <script type="math/tex">2n</script>, and this inverse law of progress seems plausible and natural.)</p>
-
-<p>So the cost of manufacturing a paperclip after you’ve expended <script type="math/tex">r</script> effort on researching paperclip manufacturing is <script type="math/tex">\frac{1}{\log(r)}</script>. Now if you have <script type="math/tex">x</script> total wealth, the total paperclip manufacture you get done is</p>
-
-<p>$^$(x - r) \cdot \log(r)$^$</p>
-
-<p>which you can solve to get the optimal value of <script type="math/tex">r</script> (full working <a href="https://github.com/bshlgrs/economics-demos/blob/master/python/paperclip.py">here</a>):</p>
-
-<p>$^$ e^{\operatorname{LambertW}{\left (e \cdot x \right )} - 1} $^$</p>
-
-<p>Not gonna lie, I had to look up what the Lambert W function is. It’s asymptotially equal to <script type="math/tex">\log(x) - \log(\log(x)) + o(1)</script>. So overall we have</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-   e^{\operatorname{LambertW}{\left (e \cdot x \right )} - 1} &= e^{\log(e \cdot x) - \log(\log(e \cdot x)) + o(1) - 1} \\
- &= \frac{e \cdot x}{\log(e \cdot x)} \cdot o(1) \\
- &\propto \frac{x}{\log(x)}
-\end{align} %]]></script>
-
-<p>So the proportion of energy dedicated to research increases like <script type="math/tex">\frac{1}{\log(x)}</script>.</p>
-
-<h3 id="other-functional-forms">Other functional forms</h3>
-
-<p>If the cost of a paperclip after <script type="math/tex">r</script> research is <script type="math/tex">\frac{1}{\sqrt[n]{r}}</script>, the proportion of your resources that you should spend on research is the constant <script type="math/tex">\frac{1}{n + 1}</script>.</p>
-
-<h2 id="returns-which-approach-an-asymptote">Returns which approach an asymptote</h2>
-
-<p>How about if there’s some minimum paperclip cost, and as you do more research you approach that asymptotically?</p>
-
-<p>If your cost is <script type="math/tex">1 + \frac{1}{r}</script>, which represents a situation where you can get more and more efficient, but there’s a fundamental cost you can’t get better than, then optimal <script type="math/tex">r</script> is <script type="math/tex">\sqrt{x + 1} - 1</script>.</p>
-
-<p>So in this case, <script type="math/tex">r</script> grows much slower than <script type="math/tex">x</script>.</p>
-
-<h2 id="conclusion">Conclusion</h2>
-
-<p>I have no idea what the answer to this question is! Depending on the returns to research, you might do a lot of it or not much of it.</p>
-
-<p>This looks kind of like an exploitation-exploration question. I don’t know the results on that kind of tradeoff well enough to know if they apply here.</p>
-
-<h2 id="aside-what-about-if-the-maximizer-has-an-unbounded-utility-function">Aside: What about if the maximizer has an unbounded utility function?</h2>
-
-<p>If your utility function is literally the expected number of paperclips in the universe, then you might spend all of your wealth looking for a way to gain control over an infinitely large amount of energy, because if the probability of this strategy working is nonzero it will have a higher EV than any other option, and you will plausibly never be able to be confident enough that this strategy won’t work in order to stop working on it. If you think that this is rational behavior, then with probability 1 you will spend all of your wealth on researching perpetual motion machines or whatever.</p>
-
-    </div>
-  </div>
-
-  <div class="buck-post">
-    <h2><a href="/2016/11/13/phd.html"> Advice on whether you should get a PhD in engineering</a></h2>
-
-    <p>
-      
-    </p>
-
-    <p class="post-meta"><time datetime="2016-11-13T00:00:00-08:00" itemprop="datePublished">Nov 13, 2016</time></p>
-
-    <div class="shrink-headings">
-      <p>Lewis Collins, who I incidentally first met when I was eleven, recently asked me for some advice about whether he should get do a PhD in mechatronic engineering. I ended up writing about PhDs more generally. I’m interested in the thoughts of people who have experience with this stuff. Here’s what I wrote.</p>
-
-<p>A disclaimer: I know about software engineering and a few other nearby fields, but not mechatronic engineering. I’ve slightly reorganized your questions.</p>
-
-<blockquote>
-  <p>So I just got offered a PhD scholarship in mechatronic engineering at the University of Sydney. I’ve been trying to weigh up whether it’s worth it for me, and one of the major reasons for doing it would be the chance to work at a high level in R&amp;D at an American tech company or a start up.</p>
-
-  <p>What I was hoping you’d be able to help me with, is gauging how much of a benefit having a PhD would be in the labour market over there.</p>
-
-  <p>What would be the type of role I would be looking at, would it be entry level (the same as a bachelor graduate) or would a PhD give me the chance to work at a bit of a higher level straight out?</p>
-</blockquote>
-
-<p>I can’t speak to mechatronic engineering. Here’s how I would have answered if you asked me that question about computer science PhDs.</p>
-
-<p>Computer science PhDs are not very relevant to the majority of software engineering jobs. Around here, you would be much better off with three years software engineering experience than a PhD, if your goal is to work at most of the most prestigious Silicon Valley companies. A PhD is probably the equivalent of about one year’s experience in terms of how much companies like it.</p>
-
-<p>This obviously varies by field. Let’s talk about three different fields: distributed systems, machine learning, and programming language implementation.</p>
-
-<p>Distributed systems—that is, building really large web systems which work for giant Internet companies like Google or Facebook or whatever—is one of the most highly paid disciplines in software. The state of the art in industry is miles ahead of academia, so you’re much better off studying that in industry. And there are lots of software jobs which involve building large web systems, so if you want to get experience in the field it’s really easy to do so in industry (assuming you’re a good engineer, but not assuming that you spent much time studying distributed systems specifically). If you want a really top distributed systems job, you’re definitely better off by going straight into industry.</p>
-
-<p>On the other side of the spectrum, I know a lot of people who want to transition from software engineering to machine learning work. Because ML is so cool right now, it’s quite difficult for them to make that transition. It’s much easier to get a good ML job with a PhD in ML than with a few years’ software engineering experience. So the PhD is absolutely the right path there. However, if you can find some way of breaking into industry without the PhD, that might be the best path of all. (That’s risky though: companies sometimes tell potential employees that they’ll be doing really interesting ML, then give them other tasks once they get there.)</p>
-
-<p>Programming language implementation is another interesting case. Unlike distributed systems, programming language implementation is an extremely academic field, and lots of research is done within academia. However, big companies also work on this, because it’s relevant to their businesses—for example, all the major browsers spend very large amounts of money making fast Javascript engines. The heads of these projects usually have academic experience, but it’s quite easy to get a job working on this stuff without that academic background—Apple offered me a job working on Safari’s JS engine last year without me really talking to them about programming language implementation much at all, they just wanted me to demonstrate that I’m a fast and competent programmer. So it seems plausible that even in that fairly academic field, I would have been better off spending time in industry than doing a PhD.</p>
-
-<blockquote>
-  <p>Do companies see PhD’s as a bonus or more of a hindrance? I have read that some companies don’t like how specialized PhD’s can be, and they see lack of industry experience as a weakness.</p>
-</blockquote>
-
-<p>This varies strongly by company. If you’re trying to get a job as a specialist in the field which you got your PhD in, obviously the PhD will be helpful. If you’re trying to get a generalist position, companies will consider it to be something between a mild advantage and a mild disadvantage.</p>
-
-<p>Again, companies would usually usually prefer industry experience to academic experience, except in the most academic fields. So if you have a way of sneaking into industry, it’s worth seeking that out.</p>
-
-<p>Mechatronics seems like it might be more credentials based than software engineering, because good software engineers are in such high demand that companies have had to learn to deal with people with weird backgrounds, and I have the weak impression that mechatronics might mostly happen at older and less flexible companies.</p>
-
-<blockquote>
-  <p>Also how big of a disadvantage is being Australian? I can imagine getting sponsored visas and all that is a major downside for a company.</p>
-</blockquote>
-
-<p>It’s easy for Australians to get visas. I wouldn’t worry about that, unless Trump fucks with the relevant regulations, which I suspect won’t happen.</p>
-
-<blockquote>
-  <p>I know all that you can offer me is incredibly general advice but it’s better than none, I’m just trying to work out all my options before I decide to dedicate 3 years into this…</p>
-</blockquote>
-
-<p>I think people almost always spend insufficient time trying to decide whether they should make big decisions like this. I reckon you should try to talk to at least one person who makes hiring decisions for the kind of roles you’d be trying to get after the PhD, and several people who got into the kind of jobs you want, one way or another.</p>
-
-
-    </div>
-  </div>
-
-  <div class="buck-post">
-    <h2><a href="/2016/11/13/ds.html"> Building a search engine for data structures</a></h2>
+    <h2><a href="/2017/01/06/hash-maps.html"> Hash map implementations in practice</a></h2>
 
     <p>
       
@@ -310,305 +177,482 @@
       
     </p>
 
-    <p class="post-meta"><time datetime="2016-11-13T00:00:00-08:00" itemprop="datePublished">Nov 13, 2016</time></p>
+    <p class="post-meta"><time datetime="2017-01-06T00:00:00-08:00" itemprop="datePublished">Jan 6, 2017</time></p>
 
     <div class="shrink-headings">
-      <p>Today I <a href="https://scalaebythebay2016.sched.org/event/7iUk/automatic-composition-of-fast-data-structures">presented at Scala By The Bay</a> about my project to build a search engine for data structures. I’ve deployed the project at <a href="http://ds.shlegeris.com">ds.shlegeris.com</a>; you can play with it there. You can also read the source code <a href="https://github.com/bshlgrs/data-structure-composer">on Github</a>.</p>
+      <p><strong>Thanks to Kent Ross for finding several of the details which I list here.</strong></p>
 
-<p>This blog post is a more detailed version of the talk I gave today.</p>
+<p>I think hash maps are a really interesting data structure. They’re probably the second most widely used data structure in modern programming languages, behind dynamic arrays. But they involve many much more complicated design decisions than dynamic arrays do. So they’re probably the data structure where we can learn the most about how they’re used in practice.</p>
 
-<p>You can also watch the talk:</p>
+<p>(I don’t mean to imply dynamic arrays don’t have any interesting subtleties. To start with, there’s a way to modify dynamic arrays so that their <script type="math/tex">O(1)</script> time to append is worst case instead of amortized. There’s also a fun way to make them so that they only waste <script type="math/tex">O(\sqrt{n})</script> space instead of <script type="math/tex">O(n)</script>. <a href="https://cs.uwaterloo.ca/~imunro/cs840/ResizableArrays.pdf">This paper</a> is about the latter; it explains the former in passing.)</p>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Ey5fOCcWpM8" frameborder="0" allowfullscreen=""></iframe>
+<p>In this post, I’ll briefly describe a few of the key ways that hash map implementations vary, and then I’ll do a review of the hash map implementations in Ruby, Python, Go, Rust, Java, C++, PHP, and C#, as well as some other influential implementations such as those in Google’s SparseHash package.</p>
 
-<h2 id="a-search-engine-for-data-structures">A search engine for data structures</h2>
+<h2 id="key-concepts-in-hash-map-design">Key concepts in hash map design</h2>
 
-<p>A data structure is a way of organizing data to efficiently support a particular API. So a data structure search engine is a program which takes an API and returns an efficient implementation.</p>
+<p>Hash maps differ in their collision resolution strategies. The simplest strategy to implement is probably chaining. There’s a decent explanation of chaining <a href="http://www.algolist.net/Data_structures/Hash_table/Chaining">here</a>. When you’re implementing a hash map with chaining, you need to choose a maximum load factor–that is, the number of elements per bucket at which you resize the hash map. Most languages which use chaining seem to use a load factor of about 5x. Another fun detail here is that you can use data structures that aren’t linked lists for your buckets. For example, Java switches buckets to be balanced trees instead of linked lists if they have more than 8 elements, in an effort to make the worst case runtime logarithmic instead of linear.</p>
 
-<p>Let’s look at some examples of queries that the search engine is able to support. Here’s one from Cracking the Coding Interview:</p>
+<p>A wide variety of different open addressing strategies are also used in practice–linear probing, quadratic probing, double hashing, and others.</p>
 
-<p><img class="shadow-img" src="/img/sbtb/ctci.png"></p>
+<p>One exciting and relatively recent development in hash map implementations is Robin Hood hashing. Here’s a quote from a <a href="http://www.sebastiansylvan.com/post/robin-hood-hashing-should-be-your-default-hash-table-implementation/">great article about it</a>:</p>
 
-<p>You can see the answer my software finds <a href="http://ds.shlegeris.com/#getLast,deleteLast!,insertLast!,getMinimum">here</a>.</p>
+<blockquote>
+  <p>The clever trick is just this: when you probe for a position to insert a new element, if the probe length for the existing element is less than the current probe length for the element being inserted, swap the two elements and keep going.</p>
 
-<p>Here’s one from Quora:</p>
+  <p>That way elements that were inserted early and thus “lucked out” on their probe lengths, will gradually be moved away from their preferred slot as new elements come in that could make better use of that place in the table (hence the name - the insertion “takes from the rich”, i.e. the elements with low probe counts). It leads to an “evening out” of the probe lengths.</p>
 
-<p><img class="shadow-img" src="/img/sbtb/quora1.png"></p>
+  <p>Why is low variance better? Well, with modern cache architectures a probe count of 1 isn’t really much faster than a probe count of 3, because the main cost is fetching the cache line, so the ideal scenario is for all elements to have the same probe count, and having that probe count fitting within one cache line.</p>
 
-<p>And <a href="http://ds.shlegeris.com/#getMinimum,getMaximum,deleteMaximum!,deleteMinimum!,deleteFirstNodeWithValue!,insertAnywhere!">here’s my answer</a>.</p>
+  <p>It turns out that Robin Hood hashing has the same expected probe count as normal open addressing (about 2.55) - it just has substantially less variance, and therefore ends up with far fewer cache misses. Yes, there are fewer elements that can early out after 1 probe, but there also far fewer elements that end up needing to fetch multiple cache lines because of long probe lengths.</p>
+</blockquote>
 
-<p>Here’s a third Quora question:</p>
+<p>Currently, Rust is the only mainstream language which uses Robin Hood hashing in its default hash map implementation.</p>
 
-<p><img class="shadow-img" src="/img/sbtb/quora2.png"></p>
+<h2 id="hash-maps-in-practice">Hash maps in practice</h2>
 
-<p><a href="http://ds.shlegeris.com/#getFirst,deleteFirst!,insertLast!,deleteAtIndex!">And my answer</a>.</p>
+<h3 id="python">Python</h3>
 
-<p>The pattern here is that we are being asked to choose a fast data structure to support a given set of methods. I’m going to call that set of methods an <a href="https://en.wikipedia.org/wiki/Abstract_data_type">abstract data type</a>, or ADT for short.</p>
+<p>Python’s dictionary implementation uses an open addressing scheme. It resizes when the hash map is 2/3 full. You can read the source code <a href="https://github.com/python/cpython/blob/master/Objects/dictobject.c">here</a>.</p>
 
-<h2 id="implementation">Implementation</h2>
+<p>Unlike most programming languages, Python doesn’t try to use a hash function which appears random. To quote the source:</p>
 
-<p>The whole project is built around a bank of knowledge about data structures and the relationships between different methods.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>Major subtleties ahead:  Most hash schemes depend on having a "good" hash
+function, in the sense of simulating randomness.  Python doesn't:  its most
+important hash functions (for ints) are very regular in common
+cases:
 
-<p>The core algorithm is something like the following pseudocode:</p>
+  &gt;&gt;&gt;[hash(i) for i in range(4)]
+  [0, 1, 2, 3]
 
-<div class="language-scala highlighter-rouge">
-<pre class="highlight"><code><span class="k">def</span> <span class="n">chooseFastDataStructuresForAdt</span><span class="o">(</span><span class="n">adt</span><span class="k">:</span> <span class="kt">AbstractDataType</span><span class="o">)</span><span class="k">:</span> <span class="kt">Set</span><span class="o">[</span><span class="kt">DataStructureChoice</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
-  <span class="k">val</span> <span class="n">options</span><span class="k">:</span> <span class="kt">Set</span><span class="o">[</span><span class="kt">DataStructureChoice</span><span class="o">]</span> <span class="k">=</span>
-    <span class="n">allDataStructures</span><span class="o">.</span><span class="n">subsets</span>
-                     <span class="o">.</span><span class="n">map</span><span class="o">((</span><span class="n">subset</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">findAllTimes</span><span class="o">(</span><span class="n">subset</span><span class="o">,</span> <span class="n">adt</span><span class="o">))</span>
+This isn't necessarily bad!  To the contrary, in a table of size 2**i, taking
+the low-order i bits as the initial table index is extremely fast, and there
+are no collisions at all for dicts indexed by a contiguous range of ints. So
+this gives better-than-random behavior in common cases, and that's very
+desirable.
 
-  <span class="n">adt</span><span class="o">.</span><span class="n">pickBestCompositeDataStructures</span><span class="o">(</span><span class="n">options</span><span class="o">)</span>
-<span class="o">}</span>
+OTOH, when collisions occur, the tendency to fill contiguous slices of the
+hash table makes a good collision resolution strategy crucial.  Taking only
+the last i bits of the hash code is also vulnerable:  for example, consider
+the list [i &lt;&lt; 16 for i in range(20000)] as a set of keys.  Since ints are
+their own hash codes, and this fits in a dict of size 2**15, the last 15 bits
+of every hash code are all 0:  they *all* map to the same table index.
+
+But catering to unusual cases should not slow the usual ones, so we just take
+the last i bits anyway.  It's up to collision resolution to do the rest.  If
+we *usually* find the key we're looking for on the first try (and, it turns
+out, we usually do -- the table load factor is kept under 2/3, so the odds
+are solidly in our favor), then it makes best sense to keep the initial index
+computation dirt cheap.
 </code></pre>
 </div>
 
-<p>So we compute the times taken for all the methods by each possible composite data structure. Then we choose the best data structures for our use case.</p>
+<p>In Python 3.6, an additional layer of indirection <a href="https://mail.python.org/pipermail/python-dev/2012-December/123028.html">was added</a>, with the following reasoning:</p>
 
-<!--
-<p>
-### Aside: Dominance frontiers
+<div class="highlighter-rouge"><pre class="highlight"><code>The current memory layout for dictionaries is
+unnecessarily inefficient.  It has a sparse table of
+24-byte entries containing the hash value, key pointer,
+and value pointer.
 
-One type that I use a lot in this code is what I'm calling a `DominanceFrontier`, for lack of a better name. A dominance frontier is a set of items `A` with a partial ordering on them, such that no item is strictly dominated by any other. For example, in the type of algebraic expressions with free variables $$x$$ and $$y$$ where our partial ordering is based on their asymptotic growth, I might have the set $$\{x + y, x \log(x), y^2\}$$, because no element is strictly less than any other. However, I couldn't add $$\{x\}$$ to that set, because it's not asymptotically greater than $$\{x + y\}$$.
+Instead, the 24-byte entries should be stored in a
+dense table referenced by a sparse table of indices.
 
-`DominanceFrontier` is a monad over the category of partially ordered Scala objects (if you count Set as a monad). It's a super useful abstraction over the idea of doing a search for the optimal solutions for some problem, and wanting to maintain all plausible subsolutions along the way.
-</p> -->
+For example, the dictionary:
 
-<h3 id="inference-on-method-implementations">Inference on method implementations</h3>
+    d = {'timmy': 'red', 'barry': 'green', 'guido': 'blue'}
 
-<p>To do this kind of inference, we need to be able to evaluate the runtimes of all methods of a particular composite data structure. Let’s look at how that works.</p>
+is currently stored as:
 
-<p>Throughout this whole thing I’m going to assume we’re talking about methods on an ordered list.</p>
+    entries = [['--', '--', '--'],
+               [-8522787127447073495, 'barry', 'green'],
+               ['--', '--', '--'],
+               ['--', '--', '--'],
+               ['--', '--', '--'],
+               [-9092791511155847987, 'timmy', 'red'],
+               ['--', '--', '--'],
+               [-6480567542315338377, 'guido', 'blue']]
 
-<p>We need to talk about lots of different methods, like <code class="highlighter-rouge">getFirst</code>, <code class="highlighter-rouge">getNext</code>, <code class="highlighter-rouge">getByIndex</code>. These are redundant on purpose. In an array, it’s natural to define <code class="highlighter-rouge">getByIndex</code> and derive <code class="highlighter-rouge">getFirst</code> and <code class="highlighter-rouge">getNext</code> from that. In a linked list, the other way round is nicer.</p>
+Instead, the data should be organized as follows:
 
-<p>We will describe the read methods of an ArrayList like this:</p>
-
-<div class="highlighter-rouge">
-<pre class="highlight"><code>ds ArrayList {
-  getByIndex &lt;- 1
-}
+    indices =  [None, 1, None, None, None, 0, None, 2]
+    entries =  [[-9092791511155847987, 'timmy', 'red'],
+                [-8522787127447073495, 'barry', 'green'],
+                [-6480567542315338377, 'guido', 'blue']]
 </code></pre>
 </div>
 
-<p>And a linked list will look like this:</p>
+<p>This significantly reduces memory usage. It also means that Python dictionaries are now ordered, which makes <a href="https://news.ycombinator.com/item?id=12460936">Hacker News</a> (and me) unhappy.</p>
 
-<div class="highlighter-rouge">
-<pre class="highlight"><code>ds LinkedList {
-  getNext &lt;- 1
-  getFirst &lt;- 1
-}
+<p>Since version 3.3, Python dicts double in size when they resize. Before version 3.3, it <a href="https://github.com/python/cpython/blob/master/Objects/dictobject.c#L401-L411">quadrupled its capacity on resize</a>.</p>
+
+<h3 id="v8">V8</h3>
+
+<p><a href="https://github.com/v8/v8/blob/master/src/base/hashmap.h">Source here</a>.</p>
+
+<p>This uses open addressing and has a maximum load capacity of 80%.</p>
+
+<p><a href="https://github.com/v8/v8/blob/master/src/base/hashmap.h#L193-L202">One interesting detail</a>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// To remove an entry we need to ensure that it does not create an empty
+// entry that will cause the search for another entry to stop too soon. If all
+// the entries between the entry to remove and the next empty slot have their
+// initial position inside this interval, clearing the entry to remove will
+// not break the search. If, while searching for the next empty entry, an
+// entry is encountered which does not have its initial position between the
+// entry to remove and the position looked at, then this entry can be moved to
+// the place of the entry to remove without breaking the search for it. The
+// entry made vacant by this move is now the entry to remove and the process
+// starts over.
 </code></pre>
 </div>
 
-<p>The central relationship that we care about is how implementations can be used to implement other things. Let’s make some rules like that:</p>
+<h3 id="java">Java</h3>
 
-<div class="highlighter-rouge">
-<pre class="highlight"><code>getByIndex &lt;- getFirst + n * getNext
-getFirst &lt;- getByIndex
-getNext &lt;- getByIndex
-</code></pre>
-</div>
+<p>Java’s HashMap class <a href="http://netjs.blogspot.in/2015/05/how-hashmap-internally-works-in-java.html">uses chaining</a>, but with a neat twist!</p>
 
-<p>So you can implement <code class="highlighter-rouge">getByIndex</code> with O(1) calls to <code class="highlighter-rouge">getFirst</code> and O(n) calls to <code class="highlighter-rouge">getNext</code>. You can also implement <code class="highlighter-rouge">getFirst</code> or <code class="highlighter-rouge">getNext</code> with O(1) calls to <code class="highlighter-rouge">getByIndex</code>.</p>
+<blockquote>
+  <p>in Java 8 hash elements use balanced trees instead of linked lists after a certain threshold is reached. Which means HashMap starts with storing Entry objects in linked list but after the number of items in a hash becomes larger than a certain threshold, the hash will change from using a linked list to a balanced tree, this will improve the worst case performance from O(n) to O(log n).</p>
+</blockquote>
 
-<p>Facts of this type are called ‘implementations’ in my system; they have the class <code class="highlighter-rouge">Impl</code>. Implementations can either belong to data structures, like <code class="highlighter-rouge">getByIndex &lt;- 1</code> above, or they can be universally true, like <code class="highlighter-rouge">getByIndex &lt;- getFirst + n * getNext</code>.</p>
+<p>According to <a href="http://www.nurkiewicz.com/2014/04/hashmap-performance-improvements-in.html">this page</a> the threshold is 8 elements:</p>
 
-<p>There’s a useful distinction between implementations with free variables (like <code class="highlighter-rouge">f &lt;- g</code>) and those without (<code class="highlighter-rouge">f &lt;- 1</code>). I call the former type free and the latter type bound. Bound implementations are a subset of free implementations. I represent these with the classes FreeImpl and BoundImpl. (These names aren’t great, I’d be happy to hear suggestions for better ones. In lambda calculus a term with no free variables is called a combinator, but almost no-one would actually think that’s an intuitive term for what I’m talking about here.)</p>
+<blockquote>
+  <p>Well, this optimization is described in <a href="http://openjdk.java.net/jeps/180">JEP-180</a>. Basically when a bucket becomes too big (currently: <code class="highlighter-rouge">TREEIFY_THRESHOLD = 8</code>), <code class="highlighter-rouge">HashMap</code> dynamically replaces it with an ad-hoc implementation of tree map. This way rather than having pessimistic O(n) we get much better O(logn). How does it work? Well, previously entries with conflicting keys were simply appended to linked list, which later had to be traversed. Now <code class="highlighter-rouge">HashMap</code> promotes list into binary tree, using hash code as a branching variable. If two hashes are different but ended up in the same bucket, one is considered bigger and goes to the right. If hashes are equal (as in our case), <code class="highlighter-rouge">HashMap</code> hopes that the keys are <code class="highlighter-rouge">Comparable</code>, so that it can establish some order. This is not a requirement of <code class="highlighter-rouge">HashMap</code> keys, but apparently a good practice. If keys are not comparable, don’t expect any performance improvements in case of heavy hash collisions.</p>
+</blockquote>
 
-<h5 id="parameterization">Parameterization</h5>
+<p>So if you implement <code class="highlighter-rouge">Comparable</code> properly, hash map retrieval is worst case <script type="math/tex">O(log(n))</script>! What an exciting world we live in!</p>
 
-<p>Additional complexity comes from the fact that implementations can be parameterized, and can have conditions attached to their parameters. For example, the method <code class="highlighter-rouge">reduce[f]</code> is parameterized by the function it’s reducing. The difference between a method being parameterized and it taking an argument is that the parameter must be known at the time of data structure initialization.</p>
+<h3 id="c-stl">C++ STL</h3>
 
-<p>For example, if I want to have a list which maintains its sum, I can just store the sum as an Int somewhere, and add new values to my sum as they’re inserted and subtract them as they’re removed. This is possible because <code class="highlighter-rouge">+</code> is invertible. So I want to be able to write down a data structure for maintaining this kind of reduction. (simplified from <a href="https://github.com/bshlgrs/data-structure-composer/blob/d18a104400e214e589cefb72f8d466b97ae44c5f/data/data_structures/InvertibleReductionMemoizer.txt">here</a>)</p>
+<p><a href="http://stackoverflow.com/a/31113618/1360429">chaining</a>. Amusingly enough, this seem to be a direct result of a requirement in the C++ standard:</p>
 
-<div class="highlighter-rouge">
-<pre class="highlight"><code>ds InvertibleReductionMemoizer[f] if f.invertible {
-    reduce[f] &lt;- 1
-    insertLast! &lt;- 1
-    deleteLast! &lt;- 1
+<blockquote>
+  <p>The Standard effectively mandates std::unordered_set and std::unordered_map implementations that use open hashing, which means an array of buckets, each of which holds the head of a logical (and typically actual) list. That requirement is subtle: it’s a consequence of the default max load factor being 1.0 and the guarantee that the table will not be rehashed unless grown beyond that load factor: that would be impractical without chaining, as the collisions with closed hashing become overwhelming as the load factor approaches 1</p>
+</blockquote>
 
-    // you can do this anywhere if the
-    insertAtIndex! if f.commutative &lt;- 1
-    updateNode! if f.commutative &lt;- 1
-    deleteNode! if f.commutative &lt;- 1
-}
-</code></pre>
-</div>
+<h3 id="linux-hashtable">Linux hashtable</h3>
 
-<p>This data structure lets you push and pop values and maintains the reduction for any invertible function <code class="highlighter-rouge">f</code>. In addition, if <code class="highlighter-rouge">f</code> is commutative, you’re allowed to do random modifications to the list.</p>
+<p>Linux has a <a href="http://lxr.free-electrons.com/source/include/linux/hashtable.h">fixed sized hashtable which uses chaining</a>, which it uses internally <a href="https://www.quora.com/How-are-hash-tables-implemented-in-Linux-Kernel-How-do-they-work-for-different-data-types-and-structures/answer/Davidlohr-Bueso">a bunch of places</a>.</p>
 
-<p>These constraints need to be propogated through the code. For example, my code contains these implementations:</p>
+<h3 id="google-sparsehashmap-and-densehashmap">Google SparseHashMap and DenseHashMap</h3>
 
-<div class="highlighter-rouge">
-<pre class="highlight"><code>getMinimum &lt;- getFirstBy[valueOrdering]
-getFirstBy[f] &lt;- reduce[_{commutative, idempotent} &lt;- f]
-</code></pre>
-</div>
+<p>Google SparseHashMap and DenseHashMap: <a href="https://github.com/sparsehash/sparsehash">quadratic probing</a></p>
 
-<p>The <code class="highlighter-rouge">getFirstBy</code> implementation means that you can implement <code class="highlighter-rouge">getFirstBy[f]</code> by using <code class="highlighter-rouge">reduce</code> with a parameter which is commutative and idempotent, and which requires calling <code class="highlighter-rouge">f</code> every time it is called.</p>
+<blockquote>
+  <p>This directory contains several hash-map implementations, similar in API to SGI’s hash_map class, but with different performance characteristics.  sparse_hash_map uses very little space overhead, 1-2 bits per entry.  dense_hash_map is very fast, particulary on lookup. (sparse_hash_set and dense_hash_set are the set versions of these routines.)  On the other hand, these classes have requirements that may not make them appropriate for all applications.</p>
 
-<p>We still have the distinction between free and bound implementations: <code class="highlighter-rouge">f[x] &lt;- x</code> is bound and <code class="highlighter-rouge">f[y] &lt;- z</code> is free.</p>
+  <p>All these implementation use a hashtable with internal quadratic probing.  This method is space-efficient – there is no pointer overhead – and time-efficient for good hash functions.</p>
 
-<h4 id="searching-through-implementations">Searching through implementations</h4>
+  <p>…</p>
 
-<p>To search for method times for a given data structure, we start out by taking the union of all the implementations for a data structure and all the universal implementations, so in the case of the LinkedList above we have</p>
+  <p>The usage of these classes differ from SGI’s hash_map, and other
+ hashtable implementations, in the following major ways:</p>
 
-<div class="highlighter-rouge">
-<pre class="highlight"><code>getNext &lt;- 1
-getFirst &lt;- 1
-getByIndex &lt;- getFirst + n * getNext
-getFirst &lt;- getByIndex
-getNext &lt;- getByIndex
-reduce[f] &lt;- getFirst + n * getNext + n * f
-</code></pre>
-</div>
+  <p>1) dense_hash_map requires you to set aside one key value as the ‘empty bucket’ value, set via the set_empty_key() method.  This <em>MUST</em> be called before you can use the dense_hash_map.  It is illegal to insert any elements into a dense_hash_map whose key is equal to the empty-key.</p>
 
-<p>We want to end up with a map from methods to their final cost. To do this, we will basically graph search over our <code class="highlighter-rouge">Set[Impl]</code>. The code for that search looks something like this (real version <a href="https://github.com/bshlgrs/data-structure-composer/blob/cf5b29d5610cc7633ac86f40dabe697afef2f206/src/main/scala/implementationSearcher/Searcher.scala#L23-L68">here</a>):</p>
+  <p>2) For both dense_hash_map and sparse_hash_map, if you wish to delete elements from the hashtable, you must set aside a key value as the ‘deleted bucket’ value, set via the set_deleted_key() method.  If your hash-map is insert-only, there is no need to call this method.  If you call set_deleted_key(), it is illegal to insert any elements into a dense_hash_map or sparse_hash_map whose key is equal to the deleted-key.</p>
+</blockquote>
 
-<div class="language-scala highlighter-rouge">
-<pre class="highlight"><code><span class="k">def</span> <span class="n">getAllTimes</span><span class="o">(</span><span class="n">implementations</span><span class="k">:</span> <span class="kt">Set</span><span class="o">[</span><span class="kt">Impl</span><span class="o">])</span><span class="k">:</span> <span class="kt">MethodTimes</span> <span class="o">=</span> <span class="o">{</span>
-  <span class="k">val</span> <span class="n">result</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">MethodTimes</span><span class="o">()</span>
-  <span class="k">val</span> <span class="n">queue</span> <span class="k">=</span> <span class="n">mutable</span><span class="o">.</span><span class="nc">PriorityQueue</span><span class="o">[</span><span class="kt">BoundImpl</span><span class="o">](</span><span class="n">implementations</span><span class="o">.</span><span class="n">filter</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">hasNoFreeVariables</span><span class="o">))</span>
+<h3 id="ruby">Ruby</h3>
 
-  <span class="k">while</span> <span class="o">(</span><span class="n">queue</span><span class="o">.</span><span class="n">nonEmpty</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">val</span> <span class="n">impl</span> <span class="k">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">pop</span><span class="o">()</span>
+<p>According to <a href="https://github.com/ruby/ruby/blob/trunk/st.c">the source</a>, Ruby used chaining (with a threshold load factor of 5x) until 2.4, when it decided to follow Python’s lead and switch to a similar scheme with open addressing and two separate tables. As my colleague Kent points out, the Ruby hash table is basically the same as the Python one, except Ruby misspells “perturb” as “perterb” for some reason, and in Ruby the hash code is shifted down 11 bits instead of 5 in each perturbation.</p>
 
-    <span class="c1">// add impl to the result if it isn't already in there
-</span>    <span class="k">if</span> <span class="o">(</span><span class="n">result</span><span class="o">.</span><span class="n">implIsUseful</span><span class="o">(</span><span class="n">impl</span><span class="o">))</span> <span class="o">{</span>
-      <span class="n">result</span><span class="o">.</span><span class="n">addImpl</span><span class="o">(</span><span class="n">impl</span><span class="o">)</span>
+<h3 id="rust">Rust</h3>
 
-      <span class="n">implementations</span><span class="o">.</span><span class="n">foreach</span><span class="o">((</span><span class="n">neighbor</span><span class="k">:</span> <span class="kt">Impl</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="o">{</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">neighbor</span><span class="o">.</span><span class="n">uses</span><span class="o">(</span><span class="n">impl</span><span class="o">.</span><span class="n">methodProvided</span><span class="o">))</span> <span class="o">{</span>
-          <span class="c1">// Take the neighbor, like `getByIndex &lt;- getFirst + n * getNext`
-</span>          <span class="c1">// and see if it can be used -- in this case, seeing whether you have
-</span>          <span class="c1">// a time for both getFirst and getNext. If so, push it to the queue.
-</span>
-          <span class="c1">// this can return multiple things in the case of
-</span>          <span class="c1">// parameterized implementations
-</span>          <span class="n">neighbor</span><span class="o">.</span><span class="n">bind</span><span class="o">(</span><span class="n">result</span><span class="o">).</span><span class="n">map</span><span class="o">((</span><span class="n">boundNeighbor</span><span class="k">:</span> <span class="kt">BoundImpl</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="o">{</span>
-            <span class="k">if</span> <span class="o">(</span><span class="n">result</span><span class="o">.</span><span class="n">implIsUseful</span><span class="o">(</span><span class="n">boundNeighbor</span><span class="o">))</span> <span class="o">{</span>
-              <span class="n">queue</span><span class="o">.</span><span class="n">push</span><span class="o">(</span><span class="n">boundNeighbor</span><span class="o">)</span>
-            <span class="o">}</span>
-          <span class="o">})</span>
-        <span class="o">}</span>
-      <span class="o">})</span>
-    <span class="o">}</span>
-  <span class="o">}</span>
+<p>In an exciting change of pace, Rust uses <a href="https://doc.rust-lang.org/std/collections/struct.HashMap.html">“linear probing with Robin Hood bucket stealing.”</a></p>
 
-  <span class="n">result</span>
-<span class="o">}</span>
-</code></pre>
-</div>
+<p>This had a <a href="http://accidentallyquadratic.tumblr.com/post/153545455987/rust-hash-iteration-reinsertion">super neat bug</a> which led to a sequence of hash map insertions taking quadratic time.</p>
 
-<p>The <code class="highlighter-rouge">bind</code> method of Impl only returns a non-empty set if it can substitute out all the free variables in the right hand side of the Impl. For example, <code class="highlighter-rouge">bind</code> will return <code class="highlighter-rouge">getByIndex &lt;- n</code> when called on <code class="highlighter-rouge">getByIndex &lt;- getFirst + n * getNext</code> with a result set containing <code class="highlighter-rouge">getFirst &lt;- 1</code> and <code class="highlighter-rouge">getNext &lt;- 1</code>. But it will never return something like <code class="highlighter-rouge">getByIndex &lt;- getFirst + n</code>.</p>
+<p>To quote that Tumblr piece:</p>
 
-<p>For non-parameterized implementations, there is always a fastest way of doing them. This isn’t true for parameterized implementations, because different implementations might have different conditions and costs which don’t strictly dominate each other. For example, the implementations</p>
+<blockquote>
+  <p>Surprisingly to me, the specific dynamics of Robin Hood hashing end up being relatively unimportant here; I believe that vanilla linear probing would exhibit similar behaviors. The key effect of Robin Hood hashing is just that it gives you confidence and/or hubris to push a table to 90% capacity, which greatly exacerbates the problem.</p>
+</blockquote>
 
-<div class="highlighter-rouge">
-<pre class="highlight"><code>foo[f] if f.bar &lt;- 1
-foo[f] if f.baz &lt;- 1
-foo[f] &lt;- n
-foo[f] &lt;- f
-</code></pre>
-</div>
+<p>I’m glad that Rust is doing the trailblazing here. I think that long term,  more languages should probably switch to some kind of Robin Hood hashing, and it’s nice that we’re working out these kinks now.</p>
 
-<p>are all useful in different situations, so we want to return all of them.</p>
+<h3 id="c">C</h3>
 
-<p>(In practice, I haven’t needed to use this expressiveness very often, and it does make my code much more complicated. So I think I might regret adding it. I’m not sure yet. Certainly it’s useful to be able to pass conditions around, I’m not so sure it’s important to be able to refer to bound variables in the RHS of your Impl.)</p>
+<p>C# uses <a href="https://msdn.microsoft.com/en-us/library/ms379571(v=vs.80).aspx#datastructures20_2_topic5">open addressing with double hashing</a>. That article also contains this hilarious tidbit:</p>
 
-<h4 id="composing-data-structures">Composing data structures</h4>
+<blockquote>
+  <p>In an overloaded form of the Hashtable’s constructor, you can specify a loadFactor value between 0.1 and 1.0. Realize, however, that whatever value you provide, it is scaled down 72%, so even if you pass in a value of 1.0 the Hashtable class’s actual loadFactor will be 0.72. The 0.72 was found by Microsoft to be the optimal load factor, so consider using the default 1.0 load factor value (which gets scaled automatically to 0.72). Therefore, you would be encouraged to use the default of 1.0 (which is really 0.72).</p>
+</blockquote>
 
-<p>When you have a composite data structure, you only have to run your read methods on one of the data structures, but you have to run your write methods on all of them.</p>
+<p>Also, that documentation consistently writes ‘rehasing’ when I am almost sure they mean ‘rehashing’. Apparently Ruby isn’t the only programming language which needs a copy editor.</p>
 
-<p>However, the write methods of one data structure can rely on read methods of another. Consider again the single Int which we can use to maintain the sum of a list. On its own, it doesn’t support deletion methods like <code class="highlighter-rouge">deleteLast</code>. But if it is paired with an ArrayList, it can use the <code class="highlighter-rouge">getLast</code> method of the ArrayList to find out what it needs to subtract.</p>
+<h3 id="golang">Golang</h3>
 
-<p>So we end up with code approxiately like this (<a href="https://github.com/bshlgrs/data-structure-composer/blob/d18a104400e214e589cefb72f8d466b97ae44c5f/src/main/scala/implementationSearcher/Searcher.scala#L83-L103">real version here</a>):</p>
+<p>Golang <a href="https://golang.org/src/runtime/hashmap.go">uses chaining</a>:</p>
 
-<div class="language-scala highlighter-rouge">
-<pre class="highlight"><code><span class="k">def</span> <span class="n">getAllTimesForDataStructures</span><span class="o">(</span><span class="n">dataStructures</span><span class="k">:</span> <span class="kt">Set</span><span class="o">[</span><span class="kt">DataStructure</span><span class="o">])</span><span class="k">:</span> <span class="kt">MethodTimes</span> <span class="o">=</span> <span class="o">{</span>
-  <span class="c1">// for the read methods, union everything provided by the data structures
-</span>  <span class="c1">// with the defaultReadImpls, then search for times with it
-</span>  <span class="k">val</span> <span class="n">allReadTimes</span> <span class="k">=</span> <span class="n">getAllTimes</span><span class="o">(</span><span class="n">dataStructures</span><span class="o">.</span><span class="n">flatMap</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">readImpls</span><span class="o">)</span> <span class="o">++</span> <span class="n">defaultReadImpls</span><span class="o">)</span>
+<blockquote>
+  <p>A map is just a hash table. The data is arranged
+into an array of buckets. Each bucket contains up to
+8 key/value pairs. The low-order bits of the hash are
+used to select a bucket. Each bucket contains a few
+high-order bits of each hash to distinguish the entries
+within a single bucket.</p>
 
-  <span class="c1">// calculate all write times separately
-</span>  <span class="k">val</span> <span class="n">writeTimesForDataStructures</span> <span class="k">=</span> <span class="n">dataStructures</span><span class="o">.</span><span class="n">flatMap</span><span class="o">((</span><span class="n">ds</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="o">{</span>
-    <span class="n">getAllTimes</span><span class="o">(</span><span class="n">ds</span><span class="o">.</span><span class="n">writeImpls</span> <span class="o">++</span> <span class="n">allReadTimes</span><span class="o">)</span>
-  <span class="o">})</span>
+  <p>If more than 8 keys hash to a bucket, we chain on
+extra buckets.</p>
 
-  <span class="c1">// add them to each other
-</span>  <span class="k">val</span> <span class="n">overallWriteTimes</span> <span class="k">=</span> <span class="n">writeTimesForDataStructures</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reduce</span><span class="o">(</span><span class="k">_</span> <span class="n">leastUpperBound</span> <span class="k">_</span><span class="o">)</span>
+  <p>When the hashtable grows, we allocate a new array
+of buckets twice as big. Buckets are incrementally
+copied from the old bucket array to the new bucket array.</p>
 
-  <span class="n">allReadTimes</span> <span class="o">++</span> <span class="n">overallWriteTimes</span>
-<span class="o">}</span>
-</code></pre>
-</div>
+</blockquote>
 
-<p>And now we can find optimally fast composite data structures!</p>
+<p>According to the same file, the default average load factor at which a resizing is triggered is 6.5.</p>
 
-<p>Parameterizated data structures work very nicely with this, albeit in a slightly counterintuitive way. Basically, during the search we ignore the fact that an <code class="highlighter-rouge">InvertibleReductionMemoizer[f]</code> has to actually choose a single value of <code class="highlighter-rouge">f</code>; we let everyone use the <code class="highlighter-rouge">reduce[f]</code> Impl without reservation. At the end of the search, we can figure out how many different instances of <code class="highlighter-rouge">InvertibleReductionMemoizer</code> we actually need: perhaps we need one for <code class="highlighter-rouge">getSum</code> and one for <code class="highlighter-rouge">getXor</code> or whatever other implementation we wanted to memoize. The number of instances of a data structure that we require only affects our write times by a constant multiple, so it’s irrelevant for the search we’re doing here.</p>
+<h3 id="php">PHP</h3>
 
-<p>The main other complexity is that the search needs to maintain its paths: we want to be able to know which data structures were used for which methods. This is maintained by storing this source information and passing it around with the implementations throughout.</p>
+<p>PHP <a href="http://nikic.github.io/2014/12/22/PHPs-new-hashtable-implementation.html">uses chaining</a>, with the additional constraint that PHP semantics require that PHP hash tables be ordered by default, which <a href="https://news.ycombinator.com/item?id=8787638">sparks controversy on HN</a>.</p>
 
-<h3 id="optimizations">Optimizations</h3>
+<p>PHP’s hash map implementation uses the identity function as the hash function for integers. This has great performance in the case where your hash keys are a contiguous sequence of integers. However, it also means that if you have a hash map with capacity 64, and you insert a bunch of numbers which all have the same remainder mod 64, they’ll be in the same hash bucket, so insert will take linear time. Under this condition, inserts can take linear time. <a href="https://nikic.github.io/2011/12/28/Supercolliding-a-PHP-array.html">This blog post</a> shows how inserting 65536 evil elements can take 30 seconds.</p>
 
-<p>One obvious problem with this is that there are exponentially many potential composite data structures to look at. So I use some simple heuristics to cut down the number of composite data structures that I actually consider.</p>
+<!-- ### Others
 
-<p>Firstly, data structures are only considered if they have a read method which could plausibly help with the implementation of one of the read methods in the ADT. “Could plausibly help” is determined by considering the directed graph formed by turning an Impl like <code class="highlighter-rouge">f &lt;- g + h</code> into the edges <code class="highlighter-rouge">g -&gt; f</code> and <code class="highlighter-rouge">h -&gt; f</code>–if there’s a path in that graph from <code class="highlighter-rouge">x</code> to <code class="highlighter-rouge">y</code>, a data structure providing <code class="highlighter-rouge">x</code> could plausibly help with an ADT requiring <code class="highlighter-rouge">y</code>. This usually cuts off half of the 15-or-so data structures I have, which makes things like 50 times faster. <a href="https://github.com/bshlgrs/data-structure-composer/blob/d18a104400e214e589cefb72f8d466b97ae44c5f/src/main/scala/implementationSearcher/ImplLibrary.scala#L55">This logic lives here.</a></p>
+- JRuby [uses chaining](https://github.com/jruby/jruby/blob/master/core/src/main/java/org/jruby/RubyHash.java).
+ -->
 
-<p>Secondly, when searching through subsets, if I figure out method times for the set of data structures <script type="math/tex">\{A, B, C\}</script> and I’m considering looking at the set <script type="math/tex">\{A, B, C, D\}</script>, I look at whether any of the implementations provided by <script type="math/tex">D</script> are useful given the result of <script type="math/tex">\{A, B, C\}</script>. If not I don’t explore any subsets including all of <script type="math/tex">\{A, B, C, D\}</script>. <a href="https://github.com/bshlgrs/data-structure-composer/blob/d18a104400e214e589cefb72f8d466b97ae44c5f/src/main/scala/implementationSearcher/Searcher.scala#L118-L119">Here’s the source</a>. This makes things a few times faster.</p>
+<h2 id="other-topics-in-hash-maps">Other topics in hash maps</h2>
 
-<p>I also cache results of calls to <code class="highlighter-rouge">getAllTimes</code>. If I’ve established that the read method <code class="highlighter-rouge">foo</code> takes <script type="math/tex">\log(n)</script> time for the set <script type="math/tex">\{A, B, C\}</script>, then I can immediately put the Impl <code class="highlighter-rouge">foo &lt;- log(n)</code> into the queue when running the search on <script type="math/tex">\{A, B, C, D\}</script>. I am not sure if this improves efficiency.</p>
-
-<h2 id="deployment">Deployment</h2>
-
-<p>The code is deployed as a Finagle server with a React app in front. The React app can display useful information about the internals of composite data structures.</p>
-
-<p>I tried compiling my search code to ScalaJS, but it was too slow to be a pleasant experience. If my code was like 10x faster it would be alright.</p>
-
-<h2 id="further-work">Further work</h2>
-
-<p>Here are things I want to do:</p>
+<p>If you want to learn more about hash maps, here are some topics to look up:</p>
 
 <ul>
-  <li>Generate real code. The result already has all the information we need to generate code, I just haven’t put in the effort to make it work yet.</li>
-  <li>Acquire users. I plan to use this to answer lots of questions on Quora etc, to get people to look at it, and hopefully people will start using it more regularly.</li>
-  <li>Consider other optimizations. I added in a bunch of cruft in the final push before the conference presentation, and it’s possible that some refactoring might speed things up.</li>
-  <li>Distinguish between different concepts like average case time, worst case time, and amortized time.</li>
-  <li>Instead of minimizing asymptotic time, I could instead get an empirical measure of the speed of different methods in different data structures, and choose the fastest data structures for a given expected data set size using those measurements. This works best with the approach where we are generating real code with real data structure implementations.</li>
-  <li>Extend to talk about other types of queries. In particular, I could try to support more SQL-style queries on multi-column data.</li>
+  <li><a href="https://en.wikipedia.org/wiki/Cuckoo_hashing">Cuckoo hashing</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Hopscotch_hashing">Hopscotch hashing</a></li>
+  <li>Concurrent hash maps</li>
+  <li>Distributed hash maps</li>
 </ul>
 
-<h2 id="conclusion">Conclusion</h2>
+    </div>
+  </div>
 
-<p>How useful could a tool like this be? I don’t know. A lot of data structure research can’t yet be fit nicely into the framework of things I can describe with this system.</p>
+  <div class="buck-post">
+    <h2><a href="/2016/12/30/pain.html"> Wild speculations on the balance of pain and pleasure</a></h2>
 
-<p>I also find that writing data structures down for this project forced me to think about them and write down facts about them that aren’t usually said. For example, the <a href="http://www.geeksforgeeks.org/range-minimum-query-for-static-array/">sparse table</a> data structure for <a href="https://en.wikipedia.org/wiki/Range_minimum_query">range minimum query</a> is usually not described as letting you push things on the end in amortized <script type="math/tex">O(\log(n))</script>, even though you can obviously do that by resizing exponentially. This forced clarity is really useful.</p>
+    <p>
+      
+    </p>
 
-<p>Overall the practical usefulness of this project remains to be seen. It was a lot of fun to build though.</p>
+    <p class="post-meta"><time datetime="2016-12-30T00:00:00-08:00" itemprop="datePublished">Dec 30, 2016</time></p>
 
-<p>Thanks heaps to everyone who helped me out as I was writing this.</p>
+    <div class="shrink-headings">
+      <p><em>Epistemic status: mad speculation, mixed with math that’s so much fun that I find it hard to believe it’s useful. I’m serious about thinking these questions are important, I’m much less confident in any of my answers.</em></p>
 
-<h2 id="appendix-how-long-did-i-spend-on-this">Appendix: how long did I spend on this?</h2>
+<p>It’s kind of interesting that living creatures seem to feel both pain and pleasure, which seem like distinctly negative and positive experiences. When you construct a theory of reinforcement learning, you don’t see anything like this distinction between positive and negative sensations: reward is just a real-valued function, and the behavior of agents isn’t affected by any transformation of their reward function which is either a shift (eg you feel +3 happy about every outcome) or a positive scaling (eg your reward function is multiplied by two). Obviously humans aren’t literally reinforcement learners, but it’s surprising that our sense of reward is <em>so</em> different.</p>
 
-<p>According to RescueTime, I’ve spend 94 hours in IntelliJ this year. Almost all of that time was spent working on this project. A lot of the time I spent working on this project is not included in that number: the frontend was written using Sublime Text, and I had to spend a lot of time thinking in front of a whiteboard, and I spent the usual amount of time on StackOverflow or in a terminal.</p>
+<p>So why do humans experience reward as a function centered around zero? Why does it feel meaningful to think about what it would be like for all your sensations to be twice as powerful? And given that we seem to have experiences that work this way, what factors determine where the zero point for an organism is, and how powerful its sensations are?</p>
 
-<p>My subjective experience is that I spent a bunch of time on this on most of my weekends and many of my evenings for the past two months. If I did on average four hours of work on each weekend day and ten hours of work over the week, that’s 14 hours a week times 8 weeks = 112 hours. I also took off two days from work to work entirely on this, and got about 8 hours done on each of those days.</p>
+<hr />
 
-<p>When I feel like I am working on my software, I also often end up reading Facebook or whatever for 25% of the time. So the 94 hours I spent in IJ probably also involved spending an extra 30 on the internet.</p>
+<p>Suppose I’m trying to train a little robot to pick up trash for me. Every day, it goes out and picks up some trash and brings it home for inspection. I need to give it a reward signal so that it knows how well it’s done. The reward signal that works for it is slightly costly though: I need to either give it small chocolates as a reward, or small pieces of coal as punishment. The cost of a piece of chocolate or coal is $1, and the robot views one piece of coal as exactly as bad as a piece of chocolate is good.</p>
 
-<p>My overall guess is that I spent between 150 and 200 hours on this project.</p>
+<p>There’s some distribution of robot success which I’m expecting. Let’s say the robot always brings home 10, 11, or 13 pieces of trash. I need to choose how to reward the robot. That is, I need to choose a function from the success of the robot to the reward experienced by the robot.</p>
 
-<h2 id="appendix-2-scala-libraries-used">Appendix 2: Scala libraries used</h2>
+<p>One really simple option is to just give the robot one chocolate per piece of trash that it brings home. But this is pointlessly inefficient: you’re always going to be giving the robot a bunch of chocolate regardless of its actual success level.</p>
+
+<p>Or you could give the robot a number of chocolates equal to the amount of trash minus 10. This is more efficient—you give out 0, 1, or 3 chocolates.</p>
+
+<p>More efficient still, you could give the robot a punishment of 1 when it brings home 10 pieces of trash, give it nothing for 11 pieces, and give it a reward of 2 for bringing home 13 pieces. This is the best option.</p>
+
+<p>So given a distribution, we need to choose a zero point for the reward function of the robot. What’s the optimal choice? Why, it’s the point which minimizes the expected cost, so it’s the point with minimum expected absolute distance to a randomly chosen point in the distribution. The median of a distribution is the number with this property.</p>
+
+<p>(Why? Suppose that you want to choose a point to minimize the sum of absolute distance to the set [10, 11, 13, 16, 20, 23, 28]. Which point is better out of 20 and 23? Well, if you go from 23 to 20 you’re only making the distance longer for the two points 23 and 28, and you’re making it shorter for all 5 smaller points. And all these distance changes are the same magnitude, so all that matters is how many points you’re getting closer to. So 20 is better than 23. So the sum of absolute distances is minimized if you choose the point in the middle of the list.)</p>
+
+<p>Now, I don’t care about my little robot. But suppose you do care about my little robot. You might care about how it likes its reward scheme. You care about its mean reward, which is (-1 + 0 + 2)/3 = 0.33. This is positive, which is great—the robot has a life worth living!</p>
+
+<p>So in this situation, the robot-master will set the zero point to the median amount of trash, and the utilitarian onlooker cares about the mean value of this reward. The mean value of the reward is going to be positive iff the mean of the trash distribution is greater than the median of the trash distribution.</p>
+
+<p>The median of a distribution is greater than the mean if the distribution is skewed to the left:</p>
+
+<p><img src="http://shlegeris.com/img/skewedness.svg" alt="" /></p>
+
+<p>So left-skewed trash distributions will lead to overall sad robots.</p>
+
+<hr />
+
+<p>I’ve been thinking a lot recently about cases like this where one optimization function is choosing the reward function for another system to maximize some function of its own. For example, evolution tries to pick reward functions for animals to maximize the animal’s reproductive fitness. But evolution has a bunch of constraints on this choice of reward function, and it’s also a really stupid optimization process, so the reward function is only a pretty rough approximation of the fitness benefit of various actions.</p>
+
+<p>For example, humans have a tendency to consume an unhealthy amount of sugar: this is because evolution gave me a reward function that tries to motivate me to get sugar, which made sense in the ancestral environment but doesn’t make as much sense now. Other examples are when people are scared of the dark, or when they watch porn and masturbate, or do drugs.</p>
+
+<p>The way that optimization functions choose reward functions is crucially important for utilitarians. Understanding the factors which affect the shape of reward functions is essential to predicting the welfare of beings like: ems in a competitive em world, subroutines in a paperclip maximizer, subroutines used by a galactic human civilization, factory farms if they exist a thousand years in the future, and wild animals.</p>
+
+<p>I have lots of speculations about all this. I’ve been having trouble writing it all up, because there are a lot of different angles to approach these issues from. But with this post, at least I’ve made a start. Let me know if you’re interested in hearing my less well-formed crazy ideas on this topic.</p>
+
+<hr />
+
+<p>The only academic discussion of this general question I’ve seen is in the 1995 paper “Towards Welfare Biology”, which was one of the first academic papers about the ethical importance of wild animal suffering, where Yew-Kwang Ng writes:</p>
+
+<blockquote>
+  <p>Our common sense recognition of the suffering of a typical non-surviving individual in most species may be supported by a simple argument based on evolution. We start by asking, why do we enjoy eating but suffer in starvation? The answer is that this genetic program provides us with the right incentives to do things favourable to survival. But why suffering? Why not just less enjoyment when starving and more enjoyment when eating? If the difference in the degrees of enjoyment between the two is big enough, we will still do the “right things”. However, the existence of suffering may be explained below.</p>
+
+  <p>First, both enjoyment and suffering are costly in terms of energy requirement, tissue maintenance, etc. This is why we feel neutral most of the time when we are not starving, eating, having sex, etc. (It would be nice if we could be programmed to feel ecstatic most of the time.) Secondly, it is likely that the extra (or marginal) costs involved in having an extra unit of enjoyment (or suffering) increases with the amount of enjoyment (suffering). Viewed differently, we have diminishing marginal returns in both enjoyment and suffering per unit of cost. Thirdly, it is likely that the costs (generalized resource costs, not subjective welfare costs) of suffering are unlikely to be significantly less, and maybe actually more, than those of enjoyment.</p>
+</blockquote>
+
+<p>I used the first and third these claims in my robot story, and ignored the second.</p>
+
+<p>If we also assume that the metabolic cost of rewards increases superlinearly with their absolute value, then some other things might happen. For example, if the cost of a reward is the square of its magnitude, then the reward distribution will have mean zero. More generally, if the cost of a reward is its magnitude to the power of p, then:</p>
 
 <ul>
-  <li>
-<a href="http://www.lihaoyi.com/fastparse/">FastParse</a> is a parser combinator library. It’s amazing–it’s by far the best experience I’ve ever had writing a parser. The docs are reasonably good. Li Haoyi, the author, is super responsive on Gitter to answer questions, and he even helped me in person when I was stuck on something while making some last minute changes at Scala By The Bay <img class="emoji" title=":smile:" alt=":smile:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f604.png" height="20" width="20" align="absmiddle">.</li>
-  <li>ScalaTest is a fine testing library; no complaints, but it’s not particularly inspiring.</li>
-  <li>
-<a href="https://github.com/adamw/quicklens">QuickLens</a> is amazing! It’s a super simple and easy-to-use lens library. Lenses are a tool for solving the problem of nested updates in immutable data–if I want to get a copy of my nested list, but with the first element having an incremented <code class="highlighter-rouge">foo</code> attribute, it lets me write something like <code class="highlighter-rouge">nestedList.modify(_.head.foo).using(_ + 1)</code>. Strongly recommend!</li>
-  <li>
-<a href="http://www.scalactic.org/">Scalactic</a> gives you a <code class="highlighter-rouge">===</code> operator, which checks equality and throws a compile error if you’re doing a futile equality check. Strongly recommend!</li>
+  <li>if p == 1, then the zero point is the median, and the creature has a life worth living iff the distribution is skewed to the right.</li>
+  <li>if 1 &lt; p &lt; 2, again the creature has a life worth living iff the distribution is skewed to the right.</li>
+  <li>if p == 2, the reward distribution has mean zero.</li>
+  <li>if p &gt; 2, the creature has a life worth living iff the distribution is skewed to the left.</li>
 </ul>
+
+<hr />
+
+<p>view Facebook comments <a href="https://www.facebook.com/bshlgrs/posts/10209575825887228">here</a></p>
+
+    </div>
+  </div>
+
+  <div class="buck-post">
+    <h2><a href="/2016/12/29/gini.html"> A dynamic programming algorithm for the Gini coefficient</a></h2>
+
+    <p>
+      
+        <a href="/tag/algorithms">algorithms</a>
+      
+        <a href="/tag/programming">programming</a>
+      
+    </p>
+
+    <p class="post-meta"><time datetime="2016-12-29T00:00:00-08:00" itemprop="datePublished">Dec 29, 2016</time></p>
+
+    <div class="shrink-headings">
+      <p>There’s a very simple <script type="math/tex">O(n)</script> DP algorithm for calculating the <a href="https://en.wikipedia.org/wiki/Gini_coefficient">Gini coefficient</a> of a sorted list. The code for it honestly looks almost simpler than the naive formula. Code is at the bottom.</p>
+
+<p>If <script type="math/tex">x</script> is a sorted list of values of length <script type="math/tex">n</script>, then the Gini coefficient <script type="math/tex">G</script> is given by:</p>
+
+<p>$^$ G = \frac{\sum_{i=0}^n \sum_{j=0}^n \text{abs}(x_i - x_j) }{2 \cdot n^2 \cdot \text{mean}(x)} $^$</p>
+
+<p>Where does this come from?</p>
+
+<p>Here’s one way of looking at it. The <a href="https://en.wikipedia.org/wiki/Mean_absolute_difference">mean absolute difference</a> of a distribution is the expected value of drawing two items from the distribution and returning the absolute value of their difference. Here’s a formula for the mean absolute difference <script type="math/tex">MD</script> of the sorted list <script type="math/tex">x</script> from before:</p>
+
+<p>$^$MD = \frac{\sum_{i=0}^n \sum_{j=0}^n \text{abs}(x_i - x_j)}{n^2}$^$</p>
+
+<p>Using this, we can write the Gini coefficient as</p>
+
+<p>$^$G = \frac{MD}{2 \cdot \text{mean}(x)}$^$</p>
+
+<p>This makes more sense. We divide by the mean because we want the Gini coefficient of a distribution to be unaffected by multiplying by a constant. (<script type="math/tex">\frac{MD}{\text{mean}(x)}</script> is known as <a href="https://en.wikipedia.org/wiki/Mean_absolute_difference#Relative_mean_absolute_difference">relative mean absolute distance</a>.) And then we divide by 2 so that our Gini coefficient varies between 0 meaning perfect equality and 1 meaning perfect inequality.</p>
+
+<h2 id="calculating-it">Calculating it</h2>
+
+<p>We can calculate this directly. But this takes <script type="math/tex">O(n^2)</script>, which is super slow.</p>
+
+<p>Alternatively, we can use a dynamic programming approach to cut the runtime down to <script type="math/tex">O(n)</script> plus the cost of getting the list in sorted order (which is <script type="math/tex">O(n \log(n))</script> if we start out with an unsorted list of incomes, but we plausibly get our data in some other form than that).</p>
+
+<p>Let’s look at the sum on the numerator of the Mean Absolute Difference formula:</p>
+
+<p>$^$ \sum_{i=0}^n \sum_{j=0}^n \text{abs}(x_i - x_j) $^$</p>
+
+<p>Here’s a table of absolute differences for items in the list <script type="math/tex">[1, 3, 4, 5]</script>.</p>
+
+<style>
+.table {
+  margin: auto;
+  text-align: center;
+}
+
+.table td,th {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+</style>
+
+<table class="table">
+  <tbody>
+    <tr><th> </th><th>1</th><th>3</th><th>4</th><th>5</th></tr>
+    <tr><th>1</th><td>0</td><td>2</td><td>3</td><td>4</td></tr>
+    <tr><th>3</th><td>2</td><td>0</td><td>1</td><td>2</td> </tr>
+    <tr><th>4</th><td>3</td><td>1</td><td>0</td><td>1</td></tr>
+    <tr><th>5</th><td>4</td><td>2</td><td>1</td><td>0</td></tr>
+  </tbody>
+</table>
+
+<p>First thing to notice here is that the table is symmetrical around its diagonal. If we can calculate the sum of one of those sides, we’re done. Let’s choose the lower triangle.</p>
+
+<table class="table">
+  <tbody>
+    <tr><th> </th><th>1</th><th>3</th><th>4</th><th>5</th></tr>
+    <tr><th>1</th><td>0</td><td> </td><td> </td><td> </td></tr>
+    <tr><th>3</th><td>2</td><td>0</td><td> </td><td> </td> </tr>
+    <tr><th>4</th><td>3</td><td>1</td><td>0</td><td> </td></tr>
+    <tr><th>5</th><td>4</td><td>2</td><td>1</td><td>0</td></tr>
+  </tbody>
+</table>
+
+<p>Let’s see how to compute the sum of that triangle efficiently.</p>
+
+<p>First, let’s compute a list <script type="math/tex">y</script> of prefix sums of <script type="math/tex">x</script>–that is, <script type="math/tex">y_i</script> is the sum of the first <script type="math/tex">i</script> elements in <script type="math/tex">x</script>. So <script type="math/tex">y_0 = 0</script>, and <script type="math/tex">y_i = y_{i-1} + x_{i-1}</script>.</p>
+
+<p>Let’s see what this list looks like. Let’s also look at the sum of the elements in the <script type="math/tex">i</script>th row of the table.</p>
+
+<table class="table">
+  <tbody>
+    <tr><th>$$i$$</th><th>0</th><th>1</th><th>2</th><th>3</th></tr>
+    <tr><th>$$x_i$$</th><td>1</td><td>3</td><td>4</td><td>5</td></tr>
+    <tr><th>$$y_i$$</th><td>0</td><td>1</td><td>4</td><td>8</td></tr>
+    <tr><th>$$\sum_{j=0}^i x_i - x_j$$</th><td>0</td><td>2</td><td>4</td><td>7</td></tr>
+  </tbody>
+</table>
+
+<p>Can we rewrite this</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+  &\sum_{j=0}^{i} \left| x_i - x_j \right|\\
+  = &\sum_{j=0}^{i} \left(x_i - x_j \right) \\
+  = &i\cdot x_i - \left( \sum_{j=0}^i x_j \right)
+  \end{align} %]]></script>
+
+<p>Or, taking advantage of <script type="math/tex">y</script>:</p>
+
+<p>$^$i\cdot x_i - \left( \sum_{j=0}^i x_j \right) =i \cdot x_i - y_i$^$</p>
+
+<p>Feel free to verify that this is correct:</p>
+
+<table class="table">
+  <tbody>
+    <tr><th>$$i$$</th><th>0</th><th>1</th><th>2</th><th>3</th></tr>
+    <tr><th>$$x_i$$</th><td>1</td><td>3</td><td>4</td><td>5</td></tr>
+    <tr><th>$$y_i$$</th><td>0</td><td>1</td><td>4</td><td>8</td></tr>
+    <tr><th>$$\sum_{j=0}^i x_i - x_j$$</th><td>0</td><td>2</td><td>4</td><td>7</td></tr>
+    <tr><th>$$i \cdot x_i - y_i$$</th><td>0</td><td>2</td><td>4</td><td>7</td></tr>
+  </tbody>
+</table>
+
+<p>Now we can write a single <code class="highlighter-rouge">for</code> loop to calculate our sum of absolute differences. And so we can write a very fast function for the Gini coefficient of a list of incomes:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">gini</span><span class="p">(</span><span class="n">incomes</span><span class="p">):</span>
+    <span class="c"># skip this if it's unneeded</span>
+    <span class="n">incomes</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+
+    <span class="n">sum_of_absolute_differences</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">subsum</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">incomes</span><span class="p">):</span>
+        <span class="n">sum_of_absolute_differences</span> <span class="o">+=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="n">subsum</span>
+        <span class="n">subsum</span> <span class="o">+=</span> <span class="n">x</span>
+
+    <span class="k">return</span> <span class="n">sum_of_absolute_differences</span> <span class="o">/</span> <span class="n">subsum</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">incomes</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<pre><code class="language-{.python}">&gt;&gt;&gt; gini([1, 1, 1])
+0.0
+&gt;&gt;&gt; gini([0, 0, 0, 0, 10])
+0.8
+&gt;&gt;&gt; gini([1, 2, 3, 4, 5])
+0.26666666666666666
+
+</code></pre>
+
+<p>All of these match <a href="/gini">my what Gini coefficient visualizer says</a>.</p>
 
     </div>
   </div>
@@ -644,11 +688,10 @@ $(() => {
 
     <div class="sidebar-on-small-screens">
       <img src="/img/dual_n_buck.jpeg" class="img-responsive" alt="Picture of Buck" height="213" width="213">
-<br>
+<br/>
 <a class="arrow" href="/"><strong>Buck Shlegeris</strong></a>
 <ul>
-  <li>
-<a class="arrow" href="/about">About</a>
+  <li><a class="arrow" href="/about">About</a>
     <ul>
       <li><a href="http://triplebyte.com?ref=shlegeris.com">Triplebyte</a></li>
     </ul>
@@ -686,9 +729,20 @@ $(() => {
       </li>
     </ul>
   </li>
-  <li>
-<a href="/posts" class="arrow">Blog</a> (<a href="/best" class="arrow">Best posts</a>) (<a href="/feed.xml">RSS</a>)
+  <li><a href="/posts" class="arrow">Blog</a> (<a href="/best" class="arrow">Best posts</a>) (<a href="/feed.xml">RSS</a>)
     <ul>
+      
+        <li>
+          <a class="arrow" href="/2017/01/06/hash-maps.html">Hash map implementations in practice</a>
+        </li>
+      
+        <li>
+          <a class="arrow" href="/2016/12/30/pain.html">Wild speculations on the balance of pain and pleasure</a>
+        </li>
+      
+        <li>
+          <a class="arrow" href="/2016/12/29/gini.html">A dynamic programming algorithm for the Gini coefficient</a>
+        </li>
       
         <li>
           <a class="arrow" href="/2016/11/26/research.html">Optimal resource allocation between manufacturing and research</a>
@@ -708,18 +762,6 @@ $(() => {
       
         <li>
           <a class="arrow" href="/2016/10/20/libertarians.html">Left-libertarianism</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/10/07/optimal-tax.html">Optimal redistribution with a flat tax</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/10/02/ubi.html">Universal basic incomes disincentivise work</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/10/02/tax.html">The great thing about regressive taxes</a>
         </li>
       
     </ul>
@@ -743,7 +785,7 @@ $(() => {
 
     </div>
 
-    <div class="clear"></div>
+    <div class="clear" />
   </div>
 </div>
 
@@ -768,7 +810,7 @@ $(() => {
         <ul class="social-media-list">
           
           <li>
-            <a href="https://github.com/bshlgrs"><span class="icon icon--github"><svg viewbox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"></path></svg>
+            <a href="https://github.com/bshlgrs"><span class="icon icon--github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
 </span><span class="username">bshlgrs</span></a>
 
           </li>
@@ -776,7 +818,7 @@ $(() => {
 
           
           <li>
-            <a href="https://twitter.com/bshlgrs"><span class="icon icon--twitter"><svg viewbox="0 0 16 16"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"></path></svg>
+            <a href="https://twitter.com/bshlgrs"><span class="icon icon--twitter"><svg viewBox="0 0 16 16"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
 </span><span class="username">bshlgrs</span></a>
 
           </li>
@@ -814,3 +856,4 @@ if (window.location.hostname == "bshlgrs.github.io") {
 </script>
 
 </html>
+

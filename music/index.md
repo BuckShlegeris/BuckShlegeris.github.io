@@ -28,4 +28,8 @@ Fragments:
 - Beta cuckold orbiter
 - New York
 - Sleep debt
+- That's all, that's the end of the set, you should clap now, so that I can sit down
 
+Songs I want to write:
+
+- Punk song about economic liberalism
