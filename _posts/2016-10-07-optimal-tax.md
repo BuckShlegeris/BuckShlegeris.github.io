@@ -7,7 +7,7 @@ tags:
   math
 ---
 
-Suppose you have a bunch of people differ only in their wage $$w$$. Everyone has utility logarithmic in their consumption. As the government, you want to promote welfare by redistributing consumption. You decide to do this by instituting a flat tax and using it to fund a universal basic income.
+Suppose you have a bunch of people who differ only in their wage $$w$$. Everyone has utility logarithmic in their consumption. As the government, you want to promote welfare by redistributing consumption. You decide to do this by instituting a flat tax and using it to fund a universal basic income.
 
 The more revenue you raise with your tax, the higher the UBI can be. But if you raise the tax too high, you will excessively deter people from working. So what's the optimal tax rate?
 
@@ -69,17 +69,17 @@ $^$U = n\cdot\log(r) - n + \sum_{p \in P}\left[\log(w_p)\right] + \frac{c}{r} \c
 
 Given $$r$$ and $$c$$, the income of the whole population is
 
-$$\begin{align}
+$$\begin{aligned}
   Y &= \sum_{p \in P} y_p \\
    &=  \sum_{p \in P} \left(w_p - \frac{c}{r}\right)
-\end{align}$$
+\end{aligned}$$
 
 Conveniently, the $$\frac{c}{r}$$ term is constant in the sum, so we can take it out:
 
-$$\begin{align}
+$$\begin{aligned}
  Y  &=  - \frac{n \cdot c}{r} + \sum_{p \in P} w_p \\
     &=  -\frac{n \cdot c}{r} + W
-\end{align}$$
+\end{aligned}$$
 
 where the total wage of the whole population is $$W = \sum_{p \in P} w_p$$.
 

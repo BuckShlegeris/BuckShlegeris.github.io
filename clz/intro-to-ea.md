@@ -1,0 +1,11 @@
+---
+layout: post
+date:   ""
+title: "intro to EA"
+---
+
+I would individualize your approach, and I think you're going to need at least 5 minutes or so to get anywhere. To simplify that, in my experience there are two main angles on EA for newcomers, an inter-cause angle and an intra-cause angle, and they lend themselves to very different pitches and are attractive to fairly different (though still overlapping) clusters.
+
+The inter-cause angle focuses on cause prioritization and pitches around it usually focus on scope sensitivity+speculative numbers of moral patients (and lead to arguments about switching from developed to developing world, helping nonhuman animals, or doing something with the far future). It contains few explicit example or specific charities. I think it's good for people that are contrarian-ish, like philosophy, and like hierarchical thinking. These people often come in with an idea about what's most important and will be put off with discussions about increasing effectiveness in a different cause (which will generally seem unimportant to them). If they're pretty weird, I find talking about wild animal suffering to be a good start because it's nonobvious but doesn't require specialized knowledge, it draws them into an argument, and it shows them there's a group of people in EA that won't be offended easily and might appreciate their contrarianism. If less weird, I use the drowning child thought experiment. This cluster is easier because there are more distinct ideas you can predict they'll think are cool.
+
+The intra-cause angle tends to focus on increasing effectiveness for a given set of values. Arguments about specific interventions and their failures/success land better. These people, if they come into EA, like to hear about how data and tight feedback loops can lead to improvements. In my experience they tend to be conscientious, fairly obviously altruistic, and broadly successful. If they're on the weird/philosophical side, I use the drowning child thought experiment. Otherwise or in addition, I've had success with sharing the test: https://80000hours.org/articles/can-you-guess/ (if they're young) or talking about why you can't take charity's numbers at face value and GiveWell's lessons learned. I find this cluster more challenging to attract.

@@ -110,4 +110,39 @@ Suppose there's two business partners, Alice and Bob, and they share the money t
 
     print maximize({ u_a: [a], u_b: [b] })
 
+Results that this should be able to replicate:
 
+- http://hse-econ.fi/tervio/MediocritiesAndSuperstars.pdf
+
+## Interactive post maker
+
+Inspired by the ["You Draw Obama's Legacy"](https://www.nytimes.com/interactive/2017/01/15/us/politics/you-draw-obama-legacy.html) thing.
+
+I am considering making a website that makes it easy to make little quizzes along the lines of that NYT article. The features are: you can make these quizzes and share them with people. After a user goes through the quiz, they can share their answers and score with friends.
+
+It would also be nice if I could integrate this in with my blog.
+
+- bar charts
+- line charts
+- pie chart
+- ordering
+
+Applications
+
+- GDPs
+- large countries
+- populations
+
+### Number quiz
+
+just a quiz on numbers.
+
+Topics:
+
+- Populations of large world nations
+
+Gimmick: just look at big things. For nations, < 10 million is a fine answer.
+
+## Maps
+
+I want to get google maps to tell me how to get from one place to another, bearing in mind things like "I can get an Uber to the Caltrain station" etc.

@@ -4,9 +4,11 @@ date:   ""
 title: "If you touch my girlfriend..."
 ---
 
-this song is not finished yet. I've been writing it since early 2015, so it's not about anyone in particular.
+The girl who this is about gave me permission to sing and record it. I don't actually feel as negatively towards her as the song implies.
 
-There's a bad recording [here](/files/girlfriend.m4a)
+I feel bad for using the word "bitch" in this song--I disapprove of gendered slurs, and I think they're particularly harmful when complaining about your ex-girlfriend. But there really isn't a substitute that works nicely, and especially given that the girl in question gave the okay to the song, I don't feel too bad about it. I considered replacing "dick" with "bitch" when describing my behavior in verse 2, but I don't think that this would actually be particularly helpful.
+
+There's an approximate recording [here](/files/girlfriend.m4a). These days I play it somewhat more slowly than I play it there.
 
 ```
 Intro:

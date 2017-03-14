@@ -19,7 +19,6 @@ date: "not a real date"
 - how does your mental state affect your songwriting? How about sleep deprivation?
 
 
-
 Specific to my songs:
 
 

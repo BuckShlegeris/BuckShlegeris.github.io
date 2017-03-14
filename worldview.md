@@ -37,3 +37,7 @@ http://www.overcomingbias.com/2016/11/myplay.html
 
 You're better off making models for things than just going off your shitty intuitions, at least about morality.
 
+http://theunitofcaring.tumblr.com/post/100561778176/safe-spaces-and-competing-access-needs
+
+
+http://balioc.tumblr.com/post/157623427056/this-is-probably-very-obvious-to-everyone-else

@@ -18,9 +18,6 @@
       <li>
           <a class="arrow" href="http://www.facebook.com/bshlgrs">Facebook</a>
       </li>
-      <li>
-          <a class="arrow" href="http://lnkd.in/bnBJ6EF">LinkedIn</a>
-      </li>
     </ul>
   </li>
   <li><a class="arrow external" href="/anonymous_feedback">Anonymous feedback</a></li>
@@ -35,18 +32,6 @@
       <li>
           <a class="arrow" href="http://shlegeris.com/gini">Gini coefficient tool</a>
       </li>
-      <li>
-          <a class="arrow" href="http://shlegeris.com/dice">Extremely serious election probability tool</a>
-      </li>
-    </ul>
-  </li>
-  <li><a href="/posts" class="arrow">Blog</a> (<a href="/best" class="arrow">Best posts</a>) (<a href="/feed.xml">RSS</a>)
-    <ul>
-      {% for post in site.posts limit:8 %}
-        <li>
-          <a class="arrow" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </li>
-      {% endfor %}
     </ul>
   </li>
   <li>
@@ -61,7 +46,13 @@
   <li>
       <a class="arrow" href="/notes">Notes</a>
   </li>
-  <li>
-      <a class="arrow" href="/cute">Pictures of me</a>
+  <li><a href="/posts" class="arrow">Blog</a> (<a href="/best" class="arrow">Best posts</a>) (<a href="/feed.xml">RSS</a>)
+    <ul>
+      {% for post in site.posts limit:20 %}
+        <li>
+          <a class="arrow" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
   </li>
 </ul>

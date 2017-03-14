@@ -4,8 +4,21 @@
     <title></title>
     <description>Website of Buck Shlegeris.
 </description>
-    <link>http://localhost:4000</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://shlegeris.com</link>
+    <atom:link href="http://shlegeris.com/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>Why are less intelligent people more racist?</title>
+        
+        
+          <description>&lt;p&gt;&lt;strong&gt;(Epistemic status: I think there’s a 75% chance that less intelligent people have at least a 20% higher relative probability of agreeing to racist or segregationist claims like “blacks tend to be lazy”. I think my explanation of this phenomenon is probably roughly right. I don’t think my explanation is very nonobvious to people with the right background knowledge; I just applied primitive evo psych reasoning to the problem and was happy with what came out.)&lt;/strong&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 13 Mar 2017 00:00:00 -0700</pubDate>
+        <link>http://shlegeris.com/2017/03/13/racist.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2017/03/13/racist.html</guid>
+      </item>
     
       <item>
         <title>Hash map implementations in practice</title>
@@ -16,8 +29,8 @@
 </description>
         
         <pubDate>Fri, 06 Jan 2017 00:00:00 -0800</pubDate>
-        <link>http://localhost:4000/2017/01/06/hash-maps.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/01/06/hash-maps.html</guid>
+        <link>http://shlegeris.com/2017/01/06/hash-maps.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2017/01/06/hash-maps.html</guid>
       </item>
     
       <item>
@@ -29,8 +42,8 @@
 </description>
         
         <pubDate>Fri, 30 Dec 2016 00:00:00 -0800</pubDate>
-        <link>http://localhost:4000/2016/12/30/pain.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/12/30/pain.html</guid>
+        <link>http://shlegeris.com/2016/12/30/pain.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2016/12/30/pain.html</guid>
       </item>
     
       <item>
@@ -42,8 +55,8 @@
 </description>
         
         <pubDate>Thu, 29 Dec 2016 00:00:00 -0800</pubDate>
-        <link>http://localhost:4000/2016/12/29/gini.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/12/29/gini.html</guid>
+        <link>http://shlegeris.com/2016/12/29/gini.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2016/12/29/gini.html</guid>
       </item>
     
       <item>
@@ -55,8 +68,8 @@
 </description>
         
         <pubDate>Sat, 26 Nov 2016 00:00:00 -0800</pubDate>
-        <link>http://localhost:4000/2016/11/26/research.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/11/26/research.html</guid>
+        <link>http://shlegeris.com/2016/11/26/research.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2016/11/26/research.html</guid>
       </item>
     
       <item>
@@ -68,8 +81,8 @@
 </description>
         
         <pubDate>Sun, 13 Nov 2016 00:00:00 -0800</pubDate>
-        <link>http://localhost:4000/2016/11/13/phd.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/11/13/phd.html</guid>
+        <link>http://shlegeris.com/2016/11/13/phd.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2016/11/13/phd.html</guid>
       </item>
     
       <item>
@@ -81,8 +94,8 @@
 </description>
         
         <pubDate>Sun, 13 Nov 2016 00:00:00 -0800</pubDate>
-        <link>http://localhost:4000/2016/11/13/ds.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/11/13/ds.html</guid>
+        <link>http://shlegeris.com/2016/11/13/ds.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2016/11/13/ds.html</guid>
       </item>
     
       <item>
@@ -94,8 +107,8 @@
 </description>
         
         <pubDate>Sun, 23 Oct 2016 00:00:00 -0700</pubDate>
-        <link>http://localhost:4000/2016/10/23/poor-college-graduates.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/10/23/poor-college-graduates.html</guid>
+        <link>http://shlegeris.com/2016/10/23/poor-college-graduates.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2016/10/23/poor-college-graduates.html</guid>
       </item>
     
       <item>
@@ -107,34 +120,21 @@
 </description>
         
         <pubDate>Thu, 20 Oct 2016 00:00:00 -0700</pubDate>
-        <link>http://localhost:4000/2016/10/20/libertarians.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/10/20/libertarians.html</guid>
+        <link>http://shlegeris.com/2016/10/20/libertarians.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2016/10/20/libertarians.html</guid>
       </item>
     
       <item>
         <title>Optimal redistribution with a flat tax</title>
         
         
-          <description>&lt;p&gt;Suppose you have a bunch of people differ only in their wage &lt;script type=&quot;math/tex&quot;&gt;w&lt;/script&gt;. Everyone has utility logarithmic in their consumption. As the government, you want to promote welfare by redistributing consumption. You decide to do this by instituting a flat tax and using it to fund a universal basic income.&lt;/p&gt;
+          <description>&lt;p&gt;Suppose you have a bunch of people who differ only in their wage &lt;script type=&quot;math/tex&quot;&gt;w&lt;/script&gt;. Everyone has utility logarithmic in their consumption. As the government, you want to promote welfare by redistributing consumption. You decide to do this by instituting a flat tax and using it to fund a universal basic income.&lt;/p&gt;
 
 </description>
         
         <pubDate>Fri, 07 Oct 2016 00:00:00 -0700</pubDate>
-        <link>http://localhost:4000/2016/10/07/optimal-tax.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/10/07/optimal-tax.html</guid>
-      </item>
-    
-      <item>
-        <title>Universal basic incomes disincentivise work</title>
-        
-        
-          <description>&lt;p&gt;&lt;strong&gt;epistemic status: pedantic point about math which probably isn’t too relevant to most real life questions&lt;/strong&gt;&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Sun, 02 Oct 2016 00:00:00 -0700</pubDate>
-        <link>http://localhost:4000/2016/10/02/ubi.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/10/02/ubi.html</guid>
+        <link>http://shlegeris.com/2016/10/07/optimal-tax.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2016/10/07/optimal-tax.html</guid>
       </item>
     
   </channel>
