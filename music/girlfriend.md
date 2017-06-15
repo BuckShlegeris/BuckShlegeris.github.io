@@ -8,7 +8,9 @@ The girl who this is about gave me permission to sing and record it. I don't act
 
 I feel bad for using the word "bitch" in this song--I disapprove of gendered slurs, and I think they're particularly harmful when complaining about your ex-girlfriend. But there really isn't a substitute that works nicely, and especially given that the girl in question gave the okay to the song, I don't feel too bad about it. I considered replacing "dick" with "bitch" when describing my behavior in verse 2, but I don't think that this would actually be particularly helpful.
 
-There's an approximate recording [here](/files/girlfriend.m4a). These days I play it somewhat more slowly than I play it there.
+<audio controls>
+  <source src="/music/girlfriend-draft-ft-jess.mp3" type="audio/mp3">
+</audio>
 
 ```
 Intro:
@@ -19,7 +21,7 @@ Verse 1:
 E                       A  E                     A    E   B
 I thought that I was an expert, the world’s best polyamorist
 E            A  E           A   E         B
-I’d read polyhacking before I’d ever been kissed
+I’d read "Polyhacking" before I’d ever been kissed
 E                           A  E                  A E         B
 And when I fucked around in college, I never got jealous of myself
            F#m

@@ -6,9 +6,9 @@ title: "My music"
 
 Finished songs that I'm at least sort-of okay with playing:
 
-- [Brazilian](/music/brazilian)
-- [Fluff](/music/fluff)
 - [Jezebel](/music/jezebel)
+- [Fluff](/music/fluff)
+- [Brazilian](/music/brazilian)
 - [Saturday Nights](/music/saturday-nights)
 - [Single](/music/single)
 

@@ -38,7 +38,7 @@ I write songs and used to play them with my band [Buck et al](https://www.facebo
 
 I'm a utilitarian and care a lot about making the world better.
 
-Currently, I'm mostly trying to do good by [earning to give](http://80000hours.org/earning-to-give). I don't think that earning to give makes sense anymore. I chose my current job partially because I'd have the opportunity to learn about lots of non-programming skills which will be useful after I finish up my programming career.
+Currently, I'm mostly trying to do good by [earning to give](http://80000hours.org/earning-to-give). I don't think that earning to give makes as much sense as I used to. I chose my current job partially because I'd have the opportunity to learn about lots of non-programming skills which will be useful after I finish up my earning-to-give programming career.
 
 I'm involved with the effective altruism movement, which has sprung up in recent years around organizations like <a href="http://givingwhatwecan.org">Giving What We Can</a> (of which I am a member), <a href="http://givewell.org">GiveWell</a>, and the <a href="http://centreforeffectivealtruism.org/">Center for Effective Altruism</a>. I regularly attend the Stanford effective altruism meetups.
 
@@ -95,11 +95,3 @@ My diet is [vegan, except that I eat bivalves, but not minding occasional accide
 </table>
 
 I donated to a donor-advised fund at the end of 2015, because I was unsure about where I should donate. -->
-
-## Family
-
-My father, Joe Shlegeris, used to be a businessman and is now [running for state parliment as a Green](http://www.joefornoosa.com.au/).
-
-My mother, Karen Shlegeris, is a childbirth educator in Noosa.
-
-My little brother James is a student.
