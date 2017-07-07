@@ -15,8 +15,9 @@
 ">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://shlegeris.com/">
-  <link rel="alternate" type="application/rss+xml" title="Buck Shlegeris" href="http://shlegeris.com/feed.xml">
+  <link rel="stylesheet" href="/css/tufte.css">
+  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="alternate" type="application/rss+xml" title="Buck Shlegeris" href="http://localhost:4000/feed.xml">
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
       jax: ["input/TeX", "output/HTML-CSS"],
@@ -30,7 +31,7 @@
       "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
     });
   </script>
-  <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
   <script src="/jquery.js"></script>
   <script type="text/babel" src="/main.js"></script>
   
@@ -43,729 +44,160 @@
 
     <div class="container">
   <div class="row">
-    <div class="sidebar-on-large-screens">
-      <img src="/img/icecream.jpg" class="img-responsive" alt="Picture of Buck" height="213" width="213">
-<br/>
-<a class="arrow" href="/"><strong>Buck Shlegeris</strong></a>
-<ul>
-  <li><a class="arrow" href="/about">About</a>
-    <ul>
-      <li><a href="http://triplebyte.com?ref=shlegeris.com">Triplebyte</a></li>
-    </ul>
-  </li>
-  <li>Links
-    <ul>
-      <li>
-          <a class="arrow" href="http://github.com/bshlgrs">GitHub</a>
-      </li>
-      <li>
-          <a class="arrow" href="mailto:bshlegeris@gmail.com">Email</a>
-      </li>
-      <li>
-          <a class="arrow" href="http://www.facebook.com/bshlgrs">Facebook</a>
-      </li>
-    </ul>
-  </li>
-  <li><a class="arrow external" href="/anonymous_feedback">Anonymous feedback</a></li>
-  <li>Software to play with
-    <ul>
-      <li>
-          <a class="arrow" href="http://ds.shlegeris.com/">Data structure search engine</a>
-      </li>
-      <li>
-          <a class="arrow" href="https://bshlgrs.github.io/music-game/">Relative pitch game</a>
-      </li>
-      <li>
-          <a class="arrow" href="http://shlegeris.com/gini">Gini coefficient tool</a>
-      </li>
-    </ul>
-  </li>
-  <li>
-      <a class="arrow" href="/talks">Talks</a>
-  </li>
-  <li>
-      <a class="arrow" href="/to-prove-list">My "to-prove" list</a>
-  </li>
-  <li>
-      <a class="arrow" href="/mistakes">Mistakes</a>
-  </li>
-  <li>
-      <a class="arrow" href="/notes">Notes</a>
-  </li>
-  <li><a href="/posts" class="arrow">Blog</a> (<a href="/best" class="arrow">Best posts</a>) (<a href="/feed.xml">RSS</a>)
-    <ul>
-      
-        <li>
-          <a class="arrow" href="/2017/03/30/chavez.html">Cesar Chavez</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2017/03/13/racist.html">Why are less intelligent people more racist?</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2017/01/06/hash-maps.html">Hash map implementations in practice</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/12/30/pain.html">Wild speculations on the balance of pain and pleasure</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/12/29/gini.html">A dynamic programming algorithm for the Gini coefficient</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/11/26/research.html">Optimal resource allocation between manufacturing and research</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/11/13/phd.html">Advice on whether you should get a PhD in engineering</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/11/13/ds.html">Building a search engine for data structures</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/10/23/poor-college-graduates.html">Poor college graduates do much better than rich high-school dropouts</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/10/20/libertarians.html">Left-libertarianism</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/10/07/optimal-tax.html">Optimal redistribution with a flat tax</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/10/02/ubi.html">Universal basic incomes disincentivise work</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/10/02/tax.html">The great thing about regressive taxes</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/09/27/wages.html">Contradictory claims in labor economics</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/09/24/cato.html">A mistake in the Cato institute report on risks from refugees</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/09/05/holden.html">Objecting to Holden Karnosfky's objections to EA</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/09/05/gini.html">Gini coefficient tool</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/09/04/ea-donations.html">EA donation amounts</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/09/03/tax-percentiles.html">Should we encourage price discrimination based on income?</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/09/03/printers.html">Printers and price discrimination</a>
-        </li>
-      
-    </ul>
-  </li>
-</ul>
-
-    </div>
-
     <div class="main-column">
-      <div class="title-on-small-screens">
-        <a href="/">website of Buck Shlegeris</a>
-      </div>
-
-      <!-- <script async src="//genius.codes"></script> -->
+      <h1>Buck Shlegeris</h1>
 
 
-<p class="post-meta"><time datetime="1969-12-31T16:00:00-08:00" itemprop="datePublished"></time></p>
-<p>
+<p>I am a software engineer from Australia. I have lived in San Francisco for most of the last three years. I'm interested in data structures, physics, economics, and effective altruism.</p>
+<p><a href="/best">Here</a> are the most interesting things I've written. My most interesting software project is <a href="http://ds.shlegeris.com">a search engine for data structures</a>.</p>
+
+<img src="/img/icecream.jpg" class="img-responsive" alt="Picture of Buck" height="213" width="213">
+<br/>
+
+
+<h3><a class="arrow" href="/about">About</a></h3>
+
+<h3>Links</h3>
+  <ul>
+    <li>
+        <a class="arrow" href="http://github.com/bshlgrs">GitHub</a>
+    </li>
+    <li>
+        <a class="arrow" href="mailto:bshlegeris@gmail.com">Email</a>
+    </li>
+    <li>
+        <a class="arrow" href="http://www.facebook.com/bshlgrs">Facebook</a>
+    </li>
+  </ul>
+
+
+
+<h3>Software to play with</h3>
+  <ul>
+    <li>
+        <a class="arrow" href="http://ds.shlegeris.com/">Data structure search engine</a>
+    </li>
+    <li>
+        <a class="arrow" href="https://bshlgrs.github.io/music-game/">Relative pitch game</a>
+    </li>
+    <li>
+        <a class="arrow" href="http://shlegeris.com/gini">Gini coefficient tool</a>
+    </li>
+  </ul>
+
+<h3><a href="/posts" class="arrow">Blog</a>
+(<a href="/posts">All posts</a>)
+(<a href="/best" class="arrow">Best posts</a>)
+(<a href="/feed.xml">RSS</a>)</h3>
+
+
+<ul>
   
-</p>
-<hr/>
-
-<div class="post-content">
-  <h1>Buck Shlegeris</h1>
-
-<div class="lead">
-<p>I am a software engineer from Australia. I have lived in San Francisco for most of the last three years. I'm interested in data structures, economics, and effective altruism.</p>
-<p><a href="/best">Here</a> are the most interesting things I've written. My most notable software project is <a href="http://ds.shlegeris.com">a search engine for data structures</a>.</p>
-<p>If, <a href="http://www.overcomingbias.com/2008/03/against-news.html">like many</a>, you prefer to consume content ordered by recency rather than quality, here are some things I wrote recently:</p>
-</div>
-
-
-  <div class="buck-post">
-    <h2><a href="/2017/03/30/chavez.html"> Cesar Chavez</a></h2>
-
-    <p>
-      
-    </p>
-
-    <p class="post-meta"><time datetime="2017-03-30T00:00:00-07:00" itemprop="datePublished">Mar 30, 2017</time></p>
-
-    <div class="shrink-headings">
-      <p><strong>[epistemic status: Quite uncertain. I’ve spent a few hours reading about this over the last few days, but I’m not very knowledgeable about anything here. If I’m wrong, it’s probably because there’s historical context which makes Chavez’s actions more reasonable. I tried to look for this kind of context a little, but couldn’t find it quickly so stopped looking.]</strong></p>
-
-<p>Cesar Chavez, as far as I can tell, overall made the world a worse place by doing immoral things. I don’t see why he should be memorialized.</p>
-
-<p>I’m mostly upset by all the shitty things he did while opposing Mexican immigration. One columnist wrote at the time: “Cesar Chavez, a labor leader intent on protecting union membership, was as effective a surrogate for the INS as ever existed. Indeed, Chavez and the United Farm Workers Union [UFW] he headed routinely reported, to the INS, for deportation, suspected illegal immigrants who served as strikebreakers or refused to unionize.” (from [1], but see also [4])</p>
-
-<p>His UFW patrolled the US-Mexico border, trying to stop Mexicans from crossing. They were like the Militiamen, but more violent: directed by his brother Manuel, on at least a few occasions they beat Mexicans who were trying to cross the border. [1] [4]</p>
-
-<p>And he deserves a lot of the blame for the immigration restrictions which meant these Mexicans couldn’t enter the US legally. He first rose to prominence opposing the Braceros[2] program, which was a guest worker program allowing Mexicans to work as farm workers in the US with a variety of pretty reasonable-seeming conditions—all their contracts had to be in Spanish, their employers had to provide free medical care, and so on. This program reduced the bargaining power of workers who already lived in the US. So Chavez organized strikes and protests; this seems to be a major factor[3] leading to the program being cancelled. (The program seemed to be quite bad in several ways, but overall I think it was still much better than not letting those people work in the US at all. Read more about this here: [3] [5])</p>
-
-<p>He also did a bunch of things which all seem somewhat petty and power-hungry: the UFW ended up in violent conflict with the International Brotherhood of Teamsters because the IBT was representing farm workers, and his union thought that it should get to represent all the farm workers. A few of the people from UFW got killed. I don’t understand what happened here well enough to decide whether I think he did the wrong thing or not, but I’m skeptical. His insistence on not allowing semi-autonomous local chapters of his union similarly seems kind of sketchy to me.</p>
-
-<p>One thing that surprised me about this story is how willing Chavez seemed to be to hurt Mexican farm laborors for the sake of his union of Mexican farm laborors. The cynical reading is that he was power hungry, but the more idealistic reading of his whole life is that he really believed that unions were the way forward for the world, and he was so single-mindedly focused on achieving this that he didn’t notice how many millions of lives he made worse by his actions. I think the idealistic option is even more depressing.</p>
-
-<p>I feel kind of dumb complaining about a Chavez state holiday while Columbus Day is still a thing. But the truth is important. As [6] writes:</p>
-
-<blockquote>
-  <p>I raise this issue because it speaks to a gaping hole in this nation’s historical memory. The fact that craven politicians-of every stripe-will lie with impunity in order to advance their agendas is nothing new. However, the notion that they can so easily manipulate the public in an age where access to information is quite literally at the fingertips of each and every American, should be profoundly disturbing to anyone who values our republican form of government.</p>
-
-  <p>If the philosophy of such an historic figure-who was alive less than two decades ago-can be willfully distorted-despite the abundance of evidence clearly establishing his views on this subject-in pursuit of a tendentious agenda, then what hope is there for engaging in an honest, open debate during this most contentious of presidential elections? [Note: The author wrote this in 2012, talk about “most contentious of presidential elections”.] If the American public is not able to differentiate fact from fiction, then what hope is there that it will make an informed decision as our country casts its ballots this November? As the great Spanish philosopher, poet, and novelist George Santayana once wrote, those who cannot remember the past, are condemned to repeat it.</p>
-</blockquote>
-
-<ul>
-  <li>[1] <a href="www.theamericanconservative.com/articles/-cesar-chavez-minuteman/">“Cesar Chavez, Minuteman”</a></li>
-  <li>[2] <a href="https://en.wikipedia.org/wiki/Bracero_program">Wikipedia, Bracero program</a></li>
-  <li>[3] <a href="https://-www.cato.org/publications/policy-analysis/how-make-guest-worker-visas-work">Alex Nowrasteh, “How to Make Guest Worker Visas Work”</a></li>
-  <li>[4] <a href="https://en.wikipedia.org/wiki/-Cesar_Chavez#Immigration">Wikipedia, Cesar Chavez on immigration</a></li>
-  <li>[5] <a href="www.unco.edu/-cohmlp/pdfs/bracero_program_powerpoint.pdf">random powerpoint presentation about the Bracero program</a></li>
-  <li>[6] <a href="http://american-rattlesnake.org/2012/10/rewriting-history/">“Rewriting History”</a></li>
+    <li>
+      <a class="arrow" href="/2017/03/30/chavez.html">Cesar Chavez</a>
+    </li>
+  
+    <li>
+      <a class="arrow" href="/2017/03/13/racist.html">Why are less intelligent people more racist?</a>
+    </li>
+  
+    <li>
+      <a class="arrow" href="/2017/01/06/hash-maps.html">Hash map implementations in practice</a>
+    </li>
+  
+    <li>
+      <a class="arrow" href="/2016/12/30/pain.html">Wild speculations on the balance of pain and pleasure</a>
+    </li>
+  
+    <li>
+      <a class="arrow" href="/2016/12/29/gini.html">A dynamic programming algorithm for the Gini coefficient</a>
+    </li>
+  
+    <li>
+      <a class="arrow" href="/2016/11/26/research.html">Optimal resource allocation between manufacturing and research</a>
+    </li>
+  
+    <li>
+      <a class="arrow" href="/2016/11/13/phd.html">Advice on whether you should get a PhD in engineering</a>
+    </li>
+  
+    <li>
+      <a class="arrow" href="/2016/11/13/ds.html">Building a search engine for data structures</a>
+    </li>
+  
+    <li>
+      <a class="arrow" href="/2016/10/23/poor-college-graduates.html">Poor college graduates do much better than rich high-school dropouts</a>
+    </li>
+  
+    <li>
+      <a class="arrow" href="/2016/10/20/libertarians.html">Left-libertarianism</a>
+    </li>
+  
+    <li>
+      <a class="arrow" href="/2016/10/07/optimal-tax.html">Optimal redistribution with a flat tax</a>
+    </li>
+  
+    <li>
+      <a class="arrow" href="/2016/10/02/ubi.html">Universal basic incomes disincentivise work</a>
+    </li>
+  
+    <li>
+      <a class="arrow" href="/2016/10/02/tax.html">The great thing about regressive taxes</a>
+    </li>
+  
+    <li>
+      <a class="arrow" href="/2016/09/27/wages.html">Contradictory claims in labor economics</a>
+    </li>
+  
+    <li>
+      <a class="arrow" href="/2016/09/24/cato.html">A mistake in the Cato institute report on risks from refugees</a>
+    </li>
+  
+    <li>
+      <a class="arrow" href="/2016/09/05/holden.html">Objecting to Holden Karnosfky's objections to EA</a>
+    </li>
+  
+    <li>
+      <a class="arrow" href="/2016/09/05/gini.html">Gini coefficient tool</a>
+    </li>
+  
+    <li>
+      <a class="arrow" href="/2016/09/04/ea-donations.html">EA donation amounts</a>
+    </li>
+  
+    <li>
+      <a class="arrow" href="/2016/09/03/tax-percentiles.html">Should we encourage price discrimination based on income?</a>
+    </li>
+  
+    <li>
+      <a class="arrow" href="/2016/09/03/printers.html">Printers and price discrimination</a>
+    </li>
+  
 </ul>
 
-    </div>
-  </div>
 
-  <div class="buck-post">
-    <h2><a href="/2017/03/13/racist.html"> Why are less intelligent people more racist?</a></h2>
-
-    <p>
-      
-    </p>
-
-    <p class="post-meta"><time datetime="2017-03-13T00:00:00-07:00" itemprop="datePublished">Mar 13, 2017</time></p>
-
-    <div class="shrink-headings">
-      <p><strong>(Epistemic status: I think there’s a 75% chance that less intelligent people have at least a 20% higher relative probability of agreeing to racist or segregationist claims like “blacks tend to be lazy”. I think my explanation of this phenomenon is probably roughly right. I don’t think my explanation is very nonobvious to people with the right background knowledge; I just applied primitive evo psych reasoning to the problem and was happy with what came out.)</strong></p>
-
-<p>There seems to be evidence that dumb people are more explicitly racist than smarter people. Research on how political views correlate with intelligence normally finds the following things:</p>
-
-<ul>
-  <li>Less intelligent people are more likely to agree with explicitly racist statements like “Blacks tend to be unintelligent”, “Blacks tend to be lazy”, or “White people have a right to keep blacks out of their neighborhoods if they want to, and blacks should respect that right.”.
-    <ul>
-      <li>One paper found that 21%, 43%, and 29% of people in the bottom third of intelligence agree with those statements, while 14%, 33%, and 18% of people in the top third of intelligence do (Table 3, Wodtke 2016). So this effect isn’t totally overpowering, but is pretty strong.</li>
-    </ul>
-  </li>
-  <li>Less intelligent people are more likely to endorse that flavor of comment about homosexuality, gender roles, and so on.</li>
-  <li>This effect is detected only in socially conservative attitudes, not other conservative attitudes–Republican voters are probably slightly smarter than Democrat voters on average (Carl 2014), as well as <a href="http://www.people-press.org/2011/11/07/what-the-public-knows-in-words-and-pictures/">better informed about the world in general and current events</a>. And dumb people are no more likely than smart people to support some racially redistributive policies like tax breaks for businesses in predominantly black areas.</li>
-</ul>
-
-<p>Why do we find that effect of intelligence on social conservatism? I find the answers traditionally offered by researchers and writers pretty condescending and unconvincing. <a href="http://www.csmonitor.com/USA/Society/2016/0127/The-surprising-relationship-between-intelligence-and-racism">It’s common</a> <a href="http://www.huffingtonpost.com/2012/01/27/intelligence-study-links-prejudice_n_1237796.html">for them</a> <a href="http://www.psychologicalscience.org/news/were-only-human/is-racism-just-a-form-of-stupidity.html#.WMX-MRLytP0">to say</a> that conservatism is more attractive for less intelligent people because it suggests a simpler view of the world, which is comforting for their tiny minds. But this doesn’t really feel sufficient to me. Human behaviors were optimized by evolution. If humans have a tendency to err in a particular direction (by being too mistrustful of weird strangers, or <a href="https://en.wikipedia.org/wiki/Dodo#Extinction">too trustful</a>), then the tendency generally has a fitness advantage, and it’s often productive to try to investigate what that fitness advantage is.</p>
-
-<h2 id="racism-as-a-strategy">Racism as a strategy</h2>
-
-<p>I think racism is an evolved behavior which makes more sense if you’re less intelligent, and our brains are built to adapt our level of racism to many aspects of our situation, including how dumb we are.</p>
-
-<p>Statistical discrimination and broad generalizations make more sense if you’re worse at accurately evaluating things. If you’re good at accurately estimating the qualities of people by interacting with them and using your judgement, then it isn’t very useful to make judgements based on their race. But if you’re not very smart, then it’s a better idea to learn heuristics and use them.</p>
-
-<p>Also, if you’re less intelligent, you should be more inclined to be suspicious of people you don’t know. One risk of making decisions with explicit reasoning is that someone much smarter than you can trick you. A sensible defense against this is to be suspicious of people who might be trying to trick you. People in your outgroup are more likely to be trying to trick you, because you’ll have less social recourse if they scam you. This strategy is more useful if you’re less smart. (I could phrase this hypothesis as “dumb people should be more prone to engage in <a href="http://squid314.livejournal.com/350090.html">epistemic learned helplessness</a>”.)</p>
-
-<p>More generally, if you’re less smart, you should be more reluctant to approve of social changes based on verbal arguments. So we should expect less intelligent people to hear the arguments for things like same-sex marriage, and then say “I don’t know, it just seems wrong and your arguments don’t convince me.” (This fits with the evidence that higher IQ people have more <a href="https://en.wikipedia.org/wiki/Openness_to_experience#Intelligence_and_knowledge">Openness to Experience</a>.)</p>
-
-<hr />
-
-<p>This explanation predicts that social conservatism will generally be unfashionable among intellectuals, because social liberalism will consistently be an effective signal of intelligence. I don’t know how universally this is true.</p>
-
-<p>One final mystery: How are there so many dumb liberals, if dumbness inclines you to social conservatism? My guess is that dumb liberals really don’t see gay people and black people as their outgroup, so these factors don’t affect them. And in their subcultures, gender roles have already shifted in the direction that they want society as a whole to change, so this doesn’t feel scary to them.</p>
-
-<p>Why do I propose that humans adapt our level of racism to fit our situation, instead of thinking that racism is determined by genetics? I’m mostly just believing “The Moral Animal”. It argues that choosing strategies based on your experiences while you’re a child is more effective than doing it based on genes, because that’s more a more adoptable strategy. I haven’t looked into how heritable explicitly racist views are, but any research on that would obviously have to control for intelligence for it to be worth anything.</p>
-
-<h2 id="are-smart-people-less-racist-and-other-papers">“Are Smart People Less Racist” and other papers</h2>
-
-<p>Let’s review Wodtke’s 2016 paper “Are Smart People Less Racist?” in detail, then briefly look at a bunch of other papers. It found that people who do better on the <a href="http://inductivist.blogspot.com/2010/04/gss-vocabulary-test.html">GSS vocabulary test</a>, which is often used by social psychologists as a proxy for intelligence, were less likely to agree with explicitly racist statements.</p>
-
-<p>This isn’t just smarter people being more liberal, or smarter people being more inclined to say liberal-sounding things. Smarter people were no more likely to agree with supposedly leftist policy prescriptions:</p>
-
-<blockquote>
-  <p>But, despite these liberalizing effects, whites with higher cognitive ability are no more likely to support open housing laws, special government aid for blacks, tax breaks for businesses to locate in largely black areas, and targeted spending on predominantly black schools, and they are significantly less likely to support school busing programs and preferential hiring policies, compared to their counterparts with lower cognitive ability.</p>
-</blockquote>
-
-<p>This makes sense to me–I think that both conservatives and liberals can be reasonable people, and smart conservatives who oppose these policies probably do so out of a legitimate disagreement with those proposals, rather than because they’re really racist deep down.</p>
-
-<p>It makes less sense to Wodtke, who writes:</p>
-
-<blockquote>
-  <p>These seemingly paradoxical findings challenge the enlightenment hypothesis that higher cognitive ability promotes a sincere commitment to racial equality.</p>
-</blockquote>
-
-<p><img src="/img/skinner-racist.jpg" alt="Principal Skinner: are my leftist policy ideas really not unambiguously correct? no, my opponents must be secret racists" /></p>
-
-<p>Later, he considers the possibility that smarter people are opposed to these policies because they’re more libertarian, instead of just being secretly racist. He notes that in his data, smarter people are more likely than less intelligent people to have environmentalist attitudes. He takes this to be evidence that smarter people are not actually more libertarian. I appreciate that he did this, but I really wish that instead of this he’d investigated people’s feelings towards non-racially-charged redistributive policies–I think that that would have provided much more relevant evidence. As it is, I don’t feel like it’s very strong evidence against my hypothesis that smart people might legitimately think that some of these policy ideas aren’t very good.</p>
-
-<p>I also have a bunch of minor methodological issues with the paper. His respondents filled in their answers on a <a href="https://en.wikipedia.org/wiki/Likert_scale">Likert scale</a>, which were recoded as a binary variable. That is, people who were neutral on things like “Giving business and industry special tax breaks for locating in largely black areas” are coded the same as people who are strongly opposed. I don’t know if this is standard practice in social psychology but it seems foolish to me. Also, social desirability bias could have affected people’s enthusiasm about answering affirmatively to questions like “Would you object to having a coworker of a different race?”. Also, I know I often defend the legitimacy of intelligence tests, but using a vocabulary test as an intelligence test seem kind of sketchy–perhaps it’s picking up on some cultural factors as well as intelligence.</p>
-
-<p>Here are some of the other papers I looked at:</p>
-
-<ul>
-  <li>Hodson and Busseri (2012), “Bright Minds and Dark Attitudes”. This paper finds, with a methodology I find weak (the intelligence test was done twenty years earlier than the racism test), that lower intelligence predicts social conservatism which predicts explicitly racist beliefs, but intelligence doesn’t predict racism given social conservatism. This matches the results here. This paper doesn’t check how intelligence affects race-related political questions.</li>
-  <li>Dhont and Hodson (2014), “Does Lower Cognitive Ability Predict Greater
-Prejudice?”. This reviews a bunch of research and, defying Betteridge, says that the consensus is that lower cognitive ability predicts greater prejudice. This paper says that less intelligent people are more prejudiced and authoritarian; it says nothing about their economic beliefs.</li>
-  <li>Carl (2015), “Cognitive ability and political beliefs in the United States”. This paper thinks that intelligence is correlated with fiscal conservatism, but the trend reverses at high IQs. It also finds that intelligence is correlated with social liberalism.</li>
-  <li>Carl (2014), “Cognitive ability and party identity in the United States”. This paper finds that Republican voters are a few IQ points smarter than Democrat voters. The author says “These results are consistent with Carl’s (2014) hypothesis that higher intelligence among classically liberal Republicans compensates for lower intelligence among socially conservative Republicans.”</li>
-  <li>Duarte et al (2015), “Political diversity will improve social psychological science”. This paper, co-written by Haidt, is mostly about other things, but talks about intelligence differences between liberals and conservatives as a hypothesis for why conservatives are underrepresented in academia. The paper refers to some of the other papers I’ve looked at here and treats them as reasonable; coming from critics of political bias in social psychology, this caused a mild positive update for my opinion on the quality of the research.</li>
-</ul>
-
-<p>How legit do I think this is overall? This is <a href="https://slatestarcodex.com/2013/06/22/social-psychology-is-a-flamethrower/">social psychology research</a>, so we should always be pretty suspicious that it’s actually just totally wrong for some reason too fundamental for us to notice, and we should <a href="https://slatestarcodex.com/2017/02/27/ssc-journal-club-analytical-thinking-style-and-religion/">treat all results as provisional until they’re replicated</a>.</p>
-
-<p>I guess one point in the favor of these studies is that they doesn’t totally play into the worldview of the liberal academics running them. Their data makes more sense to me than it does to them, I think. This seems true of other research on similar topics too: research on political attitudes seems to often have results that conflict with the biases of the researchers–eg that smarter people are <a href="https://www.psychologytoday.com/blog/unique-everybody-else/201305/intelligence-and-politics-have-complex-relationship">more economically liberal</a>.</p>
-
-<p>Overall, I think that the findings of these researchers seem plausible.</p>
-
-    </div>
-  </div>
-
-  <div class="buck-post">
-    <h2><a href="/2017/01/06/hash-maps.html"> Hash map implementations in practice</a></h2>
-
-    <p>
-      
-        <a href="/tag/algorithms">algorithms</a>
-      
-        <a href="/tag/programming">programming</a>
-      
-    </p>
-
-    <p class="post-meta"><time datetime="2017-01-06T00:00:00-08:00" itemprop="datePublished">Jan 6, 2017</time></p>
-
-    <div class="shrink-headings">
-      <p><strong>Thanks to Kent Ross for finding several of the details which I list here.</strong></p>
-
-<p>I think hash maps are a really interesting data structure. They’re probably the second most widely used data structure in modern programming languages, behind dynamic arrays. But they involve many much more complicated design decisions than dynamic arrays do. So they’re probably the data structure where we can learn the most about how they’re used in practice.</p>
-
-<p>(I don’t mean to imply dynamic arrays don’t have any interesting subtleties. To start with, there’s a way to modify dynamic arrays so that their <script type="math/tex">O(1)</script> time to append is worst case instead of amortized. There’s also a fun way to make them so that they only waste <script type="math/tex">O(\sqrt{n})</script> space instead of <script type="math/tex">O(n)</script>. <a href="https://cs.uwaterloo.ca/~imunro/cs840/ResizableArrays.pdf">This paper</a> is about the latter; it explains the former in passing.)</p>
-
-<p>In this post, I’ll briefly describe a few of the key ways that hash map implementations vary, and then I’ll do a review of the hash map implementations in Ruby, Python, Go, Rust, Java, C++, PHP, and C#, as well as some other influential implementations such as those in Google’s SparseHash package.</p>
-
-<h2 id="key-concepts-in-hash-map-design">Key concepts in hash map design</h2>
-
-<p>Hash maps differ in their collision resolution strategies. The simplest strategy to implement is probably chaining. There’s a decent explanation of chaining <a href="http://www.algolist.net/Data_structures/Hash_table/Chaining">here</a>. When you’re implementing a hash map with chaining, you need to choose a maximum load factor–that is, the number of elements per bucket at which you resize the hash map. Most languages which use chaining seem to use a load factor that’s a bit less than 1. Another fun detail here is that you can use data structures that aren’t linked lists for your buckets. For example, Java switches buckets to be balanced trees instead of linked lists if they have more than 8 elements, in an effort to make the worst case runtime logarithmic instead of linear.</p>
-
-<p>A wide variety of different open addressing strategies are also used in practice–linear probing, quadratic probing, double hashing, and others.</p>
-
-<p>One exciting and relatively recent development in hash map implementations is Robin Hood hashing. Here’s a quote from a <a href="http://www.sebastiansylvan.com/post/robin-hood-hashing-should-be-your-default-hash-table-implementation/">great article about it</a>:</p>
-
-<blockquote>
-  <p>The clever trick is just this: when you probe for a position to insert a new element, if the probe length for the existing element is less than the current probe length for the element being inserted, swap the two elements and keep going.</p>
-
-  <p>That way elements that were inserted early and thus “lucked out” on their probe lengths, will gradually be moved away from their preferred slot as new elements come in that could make better use of that place in the table (hence the name - the insertion “takes from the rich”, i.e. the elements with low probe counts). It leads to an “evening out” of the probe lengths.</p>
-
-  <p>Why is low variance better? Well, with modern cache architectures a probe count of 1 isn’t really much faster than a probe count of 3, because the main cost is fetching the cache line, so the ideal scenario is for all elements to have the same probe count, and having that probe count fitting within one cache line.</p>
-
-  <p>It turns out that Robin Hood hashing has the same expected probe count as normal open addressing (about 2.55) - it just has substantially less variance, and therefore ends up with far fewer cache misses. Yes, there are fewer elements that can early out after 1 probe, but there also far fewer elements that end up needing to fetch multiple cache lines because of long probe lengths.</p>
-</blockquote>
-
-<p>Currently, Rust is the only mainstream language which uses Robin Hood hashing in its default hash map implementation.</p>
-
-<h2 id="hash-maps-in-practice">Hash maps in practice</h2>
-
-<h3 id="python">Python</h3>
-
-<p>Python’s dictionary implementation uses an open addressing scheme. It resizes when the hash map is 2/3 full. You can read the source code <a href="https://github.com/python/cpython/blob/master/Objects/dictobject.c">here</a>.</p>
-
-<p>Unlike most programming languages, Python doesn’t try to use a hash function which appears random. To quote the source:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>Major subtleties ahead:  Most hash schemes depend on having a "good" hash
-function, in the sense of simulating randomness.  Python doesn't:  its most
-important hash functions (for ints) are very regular in common
-cases:
-
-  &gt;&gt;&gt;[hash(i) for i in range(4)]
-  [0, 1, 2, 3]
-
-This isn't necessarily bad!  To the contrary, in a table of size 2**i, taking
-the low-order i bits as the initial table index is extremely fast, and there
-are no collisions at all for dicts indexed by a contiguous range of ints. So
-this gives better-than-random behavior in common cases, and that's very
-desirable.
-
-OTOH, when collisions occur, the tendency to fill contiguous slices of the
-hash table makes a good collision resolution strategy crucial.  Taking only
-the last i bits of the hash code is also vulnerable:  for example, consider
-the list [i &lt;&lt; 16 for i in range(20000)] as a set of keys.  Since ints are
-their own hash codes, and this fits in a dict of size 2**15, the last 15 bits
-of every hash code are all 0:  they *all* map to the same table index.
-
-But catering to unusual cases should not slow the usual ones, so we just take
-the last i bits anyway.  It's up to collision resolution to do the rest.  If
-we *usually* find the key we're looking for on the first try (and, it turns
-out, we usually do -- the table load factor is kept under 2/3, so the odds
-are solidly in our favor), then it makes best sense to keep the initial index
-computation dirt cheap.
-</code></pre>
-</div>
-
-<p>In Python 3.6, an additional layer of indirection <a href="https://mail.python.org/pipermail/python-dev/2012-December/123028.html">was added</a>, with the following reasoning:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>The current memory layout for dictionaries is
-unnecessarily inefficient.  It has a sparse table of
-24-byte entries containing the hash value, key pointer,
-and value pointer.
-
-Instead, the 24-byte entries should be stored in a
-dense table referenced by a sparse table of indices.
-
-For example, the dictionary:
-
-    d = {'timmy': 'red', 'barry': 'green', 'guido': 'blue'}
-
-is currently stored as:
-
-    entries = [['--', '--', '--'],
-               [-8522787127447073495, 'barry', 'green'],
-               ['--', '--', '--'],
-               ['--', '--', '--'],
-               ['--', '--', '--'],
-               [-9092791511155847987, 'timmy', 'red'],
-               ['--', '--', '--'],
-               [-6480567542315338377, 'guido', 'blue']]
-
-Instead, the data should be organized as follows:
-
-    indices =  [None, 1, None, None, None, 0, None, 2]
-    entries =  [[-9092791511155847987, 'timmy', 'red'],
-                [-8522787127447073495, 'barry', 'green'],
-                [-6480567542315338377, 'guido', 'blue']]
-</code></pre>
-</div>
-
-<p>This significantly reduces memory usage. It also means that Python dictionaries are now ordered, which makes <a href="https://news.ycombinator.com/item?id=12460936">Hacker News</a> (and me) unhappy.</p>
-
-<p>Since version 3.3, Python dicts double in size when they resize. Before version 3.3, it <a href="https://github.com/python/cpython/blob/master/Objects/dictobject.c#L401-L411">quadrupled its capacity on resize</a>.</p>
-
-<h3 id="v8">V8</h3>
-
-<p><a href="https://github.com/v8/v8/blob/master/src/base/hashmap.h">Source here</a>.</p>
-
-<p>This uses open addressing and has a maximum load capacity of 80%.</p>
-
-<p><a href="https://github.com/v8/v8/blob/master/src/base/hashmap.h#L193-L202">One interesting detail</a>:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>// To remove an entry we need to ensure that it does not create an empty
-// entry that will cause the search for another entry to stop too soon. If all
-// the entries between the entry to remove and the next empty slot have their
-// initial position inside this interval, clearing the entry to remove will
-// not break the search. If, while searching for the next empty entry, an
-// entry is encountered which does not have its initial position between the
-// entry to remove and the position looked at, then this entry can be moved to
-// the place of the entry to remove without breaking the search for it. The
-// entry made vacant by this move is now the entry to remove and the process
-// starts over.
-</code></pre>
-</div>
-
-<h3 id="java">Java</h3>
-
-<p>Java’s HashMap class <a href="http://netjs.blogspot.in/2015/05/how-hashmap-internally-works-in-java.html">uses chaining</a>, but with a neat twist!</p>
-
-<blockquote>
-  <p>in Java 8 hash elements use balanced trees instead of linked lists after a certain threshold is reached. Which means HashMap starts with storing Entry objects in linked list but after the number of items in a hash becomes larger than a certain threshold, the hash will change from using a linked list to a balanced tree, this will improve the worst case performance from O(n) to O(log n).</p>
-</blockquote>
-
-<p>According to <a href="http://www.nurkiewicz.com/2014/04/hashmap-performance-improvements-in.html">this page</a> the threshold is 8 elements:</p>
-
-<blockquote>
-  <p>Well, this optimization is described in <a href="http://openjdk.java.net/jeps/180">JEP-180</a>. Basically when a bucket becomes too big (currently: <code class="highlighter-rouge">TREEIFY_THRESHOLD = 8</code>), <code class="highlighter-rouge">HashMap</code> dynamically replaces it with an ad-hoc implementation of tree map. This way rather than having pessimistic O(n) we get much better O(logn). How does it work? Well, previously entries with conflicting keys were simply appended to linked list, which later had to be traversed. Now <code class="highlighter-rouge">HashMap</code> promotes list into binary tree, using hash code as a branching variable. If two hashes are different but ended up in the same bucket, one is considered bigger and goes to the right. If hashes are equal (as in our case), <code class="highlighter-rouge">HashMap</code> hopes that the keys are <code class="highlighter-rouge">Comparable</code>, so that it can establish some order. This is not a requirement of <code class="highlighter-rouge">HashMap</code> keys, but apparently a good practice. If keys are not comparable, don’t expect any performance improvements in case of heavy hash collisions.</p>
-</blockquote>
-
-<p>So if you implement <code class="highlighter-rouge">Comparable</code> properly, hash map retrieval is worst case <script type="math/tex">O(log(n))</script>! What an exciting world we live in!</p>
-
-<p>The default load factor in Java hash maps <a href="http://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html">is 0.75</a>, and has been since at least Java version 5.</p>
-
-<h3 id="c-stl">C++ STL</h3>
-
-<p><a href="http://stackoverflow.com/a/31113618/1360429">chaining</a>. Amusingly enough, this seem to be a direct result of a requirement in the C++ standard:</p>
-
-<blockquote>
-  <p>The Standard effectively mandates std::unordered_set and std::unordered_map implementations that use open hashing, which means an array of buckets, each of which holds the head of a logical (and typically actual) list. That requirement is subtle: it’s a consequence of the default max load factor being 1.0 and the guarantee that the table will not be rehashed unless grown beyond that load factor: that would be impractical without chaining, as the collisions with closed hashing become overwhelming as the load factor approaches 1</p>
-</blockquote>
-
-<h3 id="linux-hashtable">Linux hashtable</h3>
-
-<p>Linux has a <a href="http://lxr.free-electrons.com/source/include/linux/hashtable.h">fixed sized hashtable which uses chaining</a>, which it uses internally <a href="https://www.quora.com/How-are-hash-tables-implemented-in-Linux-Kernel-How-do-they-work-for-different-data-types-and-structures/answer/Davidlohr-Bueso">a bunch of places</a>.</p>
-
-<h3 id="google-sparsehashmap-and-densehashmap">Google SparseHashMap and DenseHashMap</h3>
-
-<p>Google SparseHashMap and DenseHashMap: <a href="https://github.com/sparsehash/sparsehash">quadratic probing</a></p>
-
-<blockquote>
-  <p>This directory contains several hash-map implementations, similar in API to SGI’s hash_map class, but with different performance characteristics.  sparse_hash_map uses very little space overhead, 1-2 bits per entry.  dense_hash_map is very fast, particulary on lookup. (sparse_hash_set and dense_hash_set are the set versions of these routines.)  On the other hand, these classes have requirements that may not make them appropriate for all applications.</p>
-
-  <p>All these implementation use a hashtable with internal quadratic probing.  This method is space-efficient – there is no pointer overhead – and time-efficient for good hash functions.</p>
-
-  <p>…</p>
-
-  <p>The usage of these classes differ from SGI’s hash_map, and other
- hashtable implementations, in the following major ways:</p>
-
-  <p>1) dense_hash_map requires you to set aside one key value as the ‘empty bucket’ value, set via the set_empty_key() method.  This <em>MUST</em> be called before you can use the dense_hash_map.  It is illegal to insert any elements into a dense_hash_map whose key is equal to the empty-key.</p>
-
-  <p>2) For both dense_hash_map and sparse_hash_map, if you wish to delete elements from the hashtable, you must set aside a key value as the ‘deleted bucket’ value, set via the set_deleted_key() method.  If your hash-map is insert-only, there is no need to call this method.  If you call set_deleted_key(), it is illegal to insert any elements into a dense_hash_map or sparse_hash_map whose key is equal to the deleted-key.</p>
-</blockquote>
-
-<h3 id="ruby">Ruby</h3>
-
-<p>According to <a href="https://github.com/ruby/ruby/blob/trunk/st.c">the source</a>, Ruby used chaining (with a threshold load factor of 5x) until 2.4, when it decided to follow Python’s lead and <a href="https://bugs.ruby-lang.org/issues/12142">switch to a similar scheme with open addressing and two separate tables</a>. As my colleague Kent points out, the Ruby hash table is basically the same as the Python one, except Ruby misspells “perturb” as “perterb” for some reason, and in Ruby the hash code is shifted down 11 bits instead of 5 in each perturbation.</p>
-
-<h3 id="rust">Rust</h3>
-
-<p>In an exciting change of pace, Rust uses <a href="https://doc.rust-lang.org/std/collections/struct.HashMap.html">“linear probing with Robin Hood bucket stealing.”</a></p>
-
-<p>This had a <a href="http://accidentallyquadratic.tumblr.com/post/153545455987/rust-hash-iteration-reinsertion">super neat bug</a> which led to a sequence of hash map insertions taking quadratic time.</p>
-
-<p>To quote that Tumblr piece:</p>
-
-<blockquote>
-  <p>Surprisingly to me, the specific dynamics of Robin Hood hashing end up being relatively unimportant here; I believe that vanilla linear probing would exhibit similar behaviors. The key effect of Robin Hood hashing is just that it gives you confidence and/or hubris to push a table to 90% capacity, which greatly exacerbates the problem.</p>
-</blockquote>
-
-<p>I’m glad that Rust is doing the trailblazing here. I think that long term,  more languages should probably switch to some kind of Robin Hood hashing, and it’s nice that we’re working out these kinks now.</p>
-
-<h3 id="c">C#</h3>
-
-<p>C# uses <a href="https://msdn.microsoft.com/en-us/library/ms379571(v=vs.80).aspx#datastructures20_2_topic5">open addressing with double hashing</a>. That article also contains this hilarious tidbit:</p>
-
-<blockquote>
-  <p>In an overloaded form of the Hashtable’s constructor, you can specify a loadFactor value between 0.1 and 1.0. Realize, however, that whatever value you provide, it is scaled down 72%, so even if you pass in a value of 1.0 the Hashtable class’s actual loadFactor will be 0.72. The 0.72 was found by Microsoft to be the optimal load factor, so consider using the default 1.0 load factor value (which gets scaled automatically to 0.72). Therefore, you would be encouraged to use the default of 1.0 (which is really 0.72).</p>
-</blockquote>
-
-<p>Also, that documentation consistently writes ‘rehasing’ when I am almost sure they mean ‘rehashing’. Apparently Ruby isn’t the only programming language which needs a copy editor.</p>
-
-<h3 id="golang">Golang</h3>
-
-<p>Golang <a href="https://golang.org/src/runtime/hashmap.go">uses chaining</a>:</p>
-
-<blockquote>
-  <p>A map is just a hash table. The data is arranged
-into an array of buckets. Each bucket contains up to
-8 key/value pairs. The low-order bits of the hash are
-used to select a bucket. Each bucket contains a few
-high-order bits of each hash to distinguish the entries
-within a single bucket.</p>
-
-  <p>If more than 8 keys hash to a bucket, we chain on
-extra buckets.</p>
-
-  <p>When the hashtable grows, we allocate a new array
-of buckets twice as big. Buckets are incrementally
-copied from the old bucket array to the new bucket array.</p>
-
-</blockquote>
-
-<p>According to the same file, the default average load factor at which a resizing is triggered is 6.5.</p>
-
-<h3 id="php">PHP</h3>
-
-<p>PHP <a href="http://nikic.github.io/2014/12/22/PHPs-new-hashtable-implementation.html">uses chaining</a>, with the additional constraint that PHP semantics require that PHP hash tables be ordered by default, which <a href="https://news.ycombinator.com/item?id=8787638">sparks controversy on HN</a>.</p>
-
-<p>PHP’s hash map implementation uses the identity function as the hash function for integers. This has great performance in the case where your hash keys are a contiguous sequence of integers. However, it also means that if you have a hash map with capacity 64, and you insert a bunch of numbers which all have the same remainder mod 64, they’ll be in the same hash bucket, so insert will take linear time. Under this condition, inserts can take linear time. <a href="https://nikic.github.io/2011/12/28/Supercolliding-a-PHP-array.html">This blog post</a> shows how inserting 65536 evil elements can take 30 seconds.</p>
-
-<!-- ### Others
-
-- JRuby [uses chaining](https://github.com/jruby/jruby/blob/master/core/src/main/java/org/jruby/RubyHash.java).
- -->
-
-<h2 id="other-topics-in-hash-maps">Other topics in hash maps</h2>
-
-<p>If you want to learn more about hash maps, here are some topics to look up:</p>
-
-<ul>
-  <li><a href="https://en.wikipedia.org/wiki/Cuckoo_hashing">Cuckoo hashing</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/Hopscotch_hashing">Hopscotch hashing</a></li>
-  <li>Concurrent hash maps</li>
-  <li>Distributed hash maps</li>
-</ul>
-
-    </div>
-  </div>
-
-
-<p><a href="/posts">All posts</a></p>
-
-<p><a href="/feed.xml">RSS feed</a></p>
-
-<script>
-$(() => {
-  $(".shrink-headings").map(function(idx, div) {
-    $(div).html(
-      $(div)
-        .html()
-        .replace(/<h4/g, "<h5")
-        .replace(/<h3/g, "<h4")
-        .replace(/<h2/g, "<h3")
-    )
-  });
-})
-</script>
-<script async src="//genius.codes"></script>
-
-</div>
+<h3>
+    <a class="arrow" href="/talks">Talks</a>
+</h3>
+
+<h3>
+    <a class="arrow" href="/to-prove-list">My "to-prove" list</a>
+</h3>
+<h3>
+    <a class="arrow" href="/mistakes">Mistakes</a>
+</h3>
+
+<h3>
+    <a class="arrow" href="/notes">Notes</a>
+</h3>
+
+<h3><a class="arrow external" href="/anonymous_feedback">Anonymous feedback</a></h3>
 
 
       <div class="PageNavigation">
         
         
       </div>
-    </div>
-
-    <div class="sidebar-on-small-screens">
-      <img src="/img/icecream.jpg" class="img-responsive" alt="Picture of Buck" height="213" width="213">
-<br/>
-<a class="arrow" href="/"><strong>Buck Shlegeris</strong></a>
-<ul>
-  <li><a class="arrow" href="/about">About</a>
-    <ul>
-      <li><a href="http://triplebyte.com?ref=shlegeris.com">Triplebyte</a></li>
-    </ul>
-  </li>
-  <li>Links
-    <ul>
-      <li>
-          <a class="arrow" href="http://github.com/bshlgrs">GitHub</a>
-      </li>
-      <li>
-          <a class="arrow" href="mailto:bshlegeris@gmail.com">Email</a>
-      </li>
-      <li>
-          <a class="arrow" href="http://www.facebook.com/bshlgrs">Facebook</a>
-      </li>
-    </ul>
-  </li>
-  <li><a class="arrow external" href="/anonymous_feedback">Anonymous feedback</a></li>
-  <li>Software to play with
-    <ul>
-      <li>
-          <a class="arrow" href="http://ds.shlegeris.com/">Data structure search engine</a>
-      </li>
-      <li>
-          <a class="arrow" href="https://bshlgrs.github.io/music-game/">Relative pitch game</a>
-      </li>
-      <li>
-          <a class="arrow" href="http://shlegeris.com/gini">Gini coefficient tool</a>
-      </li>
-    </ul>
-  </li>
-  <li>
-      <a class="arrow" href="/talks">Talks</a>
-  </li>
-  <li>
-      <a class="arrow" href="/to-prove-list">My "to-prove" list</a>
-  </li>
-  <li>
-      <a class="arrow" href="/mistakes">Mistakes</a>
-  </li>
-  <li>
-      <a class="arrow" href="/notes">Notes</a>
-  </li>
-  <li><a href="/posts" class="arrow">Blog</a> (<a href="/best" class="arrow">Best posts</a>) (<a href="/feed.xml">RSS</a>)
-    <ul>
-      
-        <li>
-          <a class="arrow" href="/2017/03/30/chavez.html">Cesar Chavez</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2017/03/13/racist.html">Why are less intelligent people more racist?</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2017/01/06/hash-maps.html">Hash map implementations in practice</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/12/30/pain.html">Wild speculations on the balance of pain and pleasure</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/12/29/gini.html">A dynamic programming algorithm for the Gini coefficient</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/11/26/research.html">Optimal resource allocation between manufacturing and research</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/11/13/phd.html">Advice on whether you should get a PhD in engineering</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/11/13/ds.html">Building a search engine for data structures</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/10/23/poor-college-graduates.html">Poor college graduates do much better than rich high-school dropouts</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/10/20/libertarians.html">Left-libertarianism</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/10/07/optimal-tax.html">Optimal redistribution with a flat tax</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/10/02/ubi.html">Universal basic incomes disincentivise work</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/10/02/tax.html">The great thing about regressive taxes</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/09/27/wages.html">Contradictory claims in labor economics</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/09/24/cato.html">A mistake in the Cato institute report on risks from refugees</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/09/05/holden.html">Objecting to Holden Karnosfky's objections to EA</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/09/05/gini.html">Gini coefficient tool</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/09/04/ea-donations.html">EA donation amounts</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/09/03/tax-percentiles.html">Should we encourage price discrimination based on income?</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/09/03/printers.html">Printers and price discrimination</a>
-        </li>
-      
-    </ul>
-  </li>
-</ul>
-
     </div>
 
     <div class="clear" />
@@ -775,7 +207,7 @@ $(() => {
 
 
 
-    <footer class="site-footer">
+    <div class="site-footer">
 
   <div class="wrapper">
 
@@ -817,12 +249,13 @@ $(() => {
 
   </div>
 
-</footer>
+</div>
 
 
   </body>
 <script>
 if (window.location.hostname == "bshlgrs.github.io") {
+  window.location.scheme = "http";
   window.location.hostname = "shlegeris.com";
 }
 </script>

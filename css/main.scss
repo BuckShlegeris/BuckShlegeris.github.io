@@ -49,15 +49,14 @@ caption {
 
 
 // Import partials from `sass_dir` (defaults to `_sass`)
-@import "base",
-        "layout",
+@import "base", "layout",
         "syntax-highlighting"
 ;
-
+/*
 .markdownify h1,h2,h3,h4,h5 {
   color: darkblue;
   font-family: $base-font-family;
-}
+}*/
 
 div.math {
   width: 60%;
@@ -114,11 +113,13 @@ blockquote {
     text-justify: inter-word;
 }*/
 
-h1 {
+/*h1 {
   font-size: 40px;
 }
 
 hr {
   margin-bottom: 12px;
 }
+
+*/
 

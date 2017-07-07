@@ -14,8 +14,9 @@
   <meta name="description" content="content warning: polyamory, NP-complete problems">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://shlegeris.com/2015/08/08/poly-np.html">
-  <link rel="alternate" type="application/rss+xml" title="Buck Shlegeris" href="http://shlegeris.com/feed.xml">
+  <link rel="stylesheet" href="/css/tufte.css">
+  <link rel="canonical" href="http://localhost:4000/2015/08/08/poly-np.html">
+  <link rel="alternate" type="application/rss+xml" title="Buck Shlegeris" href="http://localhost:4000/feed.xml">
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
       jax: ["input/TeX", "output/HTML-CSS"],
@@ -29,7 +30,7 @@
       "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
     });
   </script>
-  <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
   <script src="/jquery.js"></script>
   <script type="text/babel" src="/main.js"></script>
   
@@ -42,152 +43,13 @@
 
     <div class="container">
   <div class="row">
-    <div class="sidebar-on-large-screens">
-      <img src="/img/icecream.jpg" class="img-responsive" alt="Picture of Buck" height="213" width="213">
-<br/>
-<a class="arrow" href="/"><strong>Buck Shlegeris</strong></a>
-<ul>
-  <li><a class="arrow" href="/about">About</a>
-    <ul>
-      <li><a href="http://triplebyte.com?ref=shlegeris.com">Triplebyte</a></li>
-    </ul>
-  </li>
-  <li>Links
-    <ul>
-      <li>
-          <a class="arrow" href="http://github.com/bshlgrs">GitHub</a>
-      </li>
-      <li>
-          <a class="arrow" href="mailto:bshlegeris@gmail.com">Email</a>
-      </li>
-      <li>
-          <a class="arrow" href="http://www.facebook.com/bshlgrs">Facebook</a>
-      </li>
-    </ul>
-  </li>
-  <li><a class="arrow external" href="/anonymous_feedback">Anonymous feedback</a></li>
-  <li>Software to play with
-    <ul>
-      <li>
-          <a class="arrow" href="http://ds.shlegeris.com/">Data structure search engine</a>
-      </li>
-      <li>
-          <a class="arrow" href="https://bshlgrs.github.io/music-game/">Relative pitch game</a>
-      </li>
-      <li>
-          <a class="arrow" href="http://shlegeris.com/gini">Gini coefficient tool</a>
-      </li>
-    </ul>
-  </li>
-  <li>
-      <a class="arrow" href="/talks">Talks</a>
-  </li>
-  <li>
-      <a class="arrow" href="/to-prove-list">My "to-prove" list</a>
-  </li>
-  <li>
-      <a class="arrow" href="/mistakes">Mistakes</a>
-  </li>
-  <li>
-      <a class="arrow" href="/notes">Notes</a>
-  </li>
-  <li><a href="/posts" class="arrow">Blog</a> (<a href="/best" class="arrow">Best posts</a>) (<a href="/feed.xml">RSS</a>)
-    <ul>
-      
-        <li>
-          <a class="arrow" href="/2017/03/30/chavez.html">Cesar Chavez</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2017/03/13/racist.html">Why are less intelligent people more racist?</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2017/01/06/hash-maps.html">Hash map implementations in practice</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/12/30/pain.html">Wild speculations on the balance of pain and pleasure</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/12/29/gini.html">A dynamic programming algorithm for the Gini coefficient</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/11/26/research.html">Optimal resource allocation between manufacturing and research</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/11/13/phd.html">Advice on whether you should get a PhD in engineering</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/11/13/ds.html">Building a search engine for data structures</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/10/23/poor-college-graduates.html">Poor college graduates do much better than rich high-school dropouts</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/10/20/libertarians.html">Left-libertarianism</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/10/07/optimal-tax.html">Optimal redistribution with a flat tax</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/10/02/ubi.html">Universal basic incomes disincentivise work</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/10/02/tax.html">The great thing about regressive taxes</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/09/27/wages.html">Contradictory claims in labor economics</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/09/24/cato.html">A mistake in the Cato institute report on risks from refugees</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/09/05/holden.html">Objecting to Holden Karnosfky's objections to EA</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/09/05/gini.html">Gini coefficient tool</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/09/04/ea-donations.html">EA donation amounts</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/09/03/tax-percentiles.html">Should we encourage price discrimination based on income?</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/09/03/printers.html">Printers and price discrimination</a>
-        </li>
-      
-    </ul>
-  </li>
-</ul>
-
-    </div>
-
     <div class="main-column">
-      <div class="title-on-small-screens">
-        <a href="/">website of Buck Shlegeris</a>
-      </div>
-
       <!-- <script async src="//genius.codes"></script> -->
 
+<article>
 <h1 class="post-title " itemprop="name headline">Poly NP</h1>
+<p class="subtitle"><a href="/">Buck Shlegeris</a></p>
+
 <p class="post-meta"><time datetime="2015-08-08T00:00:00-07:00" itemprop="datePublished">Aug 8, 2015</time></p>
 <p>
   
@@ -221,6 +83,7 @@
 <p><a href="https://www.facebook.com/bshlgrs/posts/10206413578553021">view comments on Facebook</a></p>
 
 </div>
+</article>
 
 
       <div class="PageNavigation">
@@ -233,144 +96,6 @@
       </div>
     </div>
 
-    <div class="sidebar-on-small-screens">
-      <img src="/img/icecream.jpg" class="img-responsive" alt="Picture of Buck" height="213" width="213">
-<br/>
-<a class="arrow" href="/"><strong>Buck Shlegeris</strong></a>
-<ul>
-  <li><a class="arrow" href="/about">About</a>
-    <ul>
-      <li><a href="http://triplebyte.com?ref=shlegeris.com">Triplebyte</a></li>
-    </ul>
-  </li>
-  <li>Links
-    <ul>
-      <li>
-          <a class="arrow" href="http://github.com/bshlgrs">GitHub</a>
-      </li>
-      <li>
-          <a class="arrow" href="mailto:bshlegeris@gmail.com">Email</a>
-      </li>
-      <li>
-          <a class="arrow" href="http://www.facebook.com/bshlgrs">Facebook</a>
-      </li>
-    </ul>
-  </li>
-  <li><a class="arrow external" href="/anonymous_feedback">Anonymous feedback</a></li>
-  <li>Software to play with
-    <ul>
-      <li>
-          <a class="arrow" href="http://ds.shlegeris.com/">Data structure search engine</a>
-      </li>
-      <li>
-          <a class="arrow" href="https://bshlgrs.github.io/music-game/">Relative pitch game</a>
-      </li>
-      <li>
-          <a class="arrow" href="http://shlegeris.com/gini">Gini coefficient tool</a>
-      </li>
-    </ul>
-  </li>
-  <li>
-      <a class="arrow" href="/talks">Talks</a>
-  </li>
-  <li>
-      <a class="arrow" href="/to-prove-list">My "to-prove" list</a>
-  </li>
-  <li>
-      <a class="arrow" href="/mistakes">Mistakes</a>
-  </li>
-  <li>
-      <a class="arrow" href="/notes">Notes</a>
-  </li>
-  <li><a href="/posts" class="arrow">Blog</a> (<a href="/best" class="arrow">Best posts</a>) (<a href="/feed.xml">RSS</a>)
-    <ul>
-      
-        <li>
-          <a class="arrow" href="/2017/03/30/chavez.html">Cesar Chavez</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2017/03/13/racist.html">Why are less intelligent people more racist?</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2017/01/06/hash-maps.html">Hash map implementations in practice</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/12/30/pain.html">Wild speculations on the balance of pain and pleasure</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/12/29/gini.html">A dynamic programming algorithm for the Gini coefficient</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/11/26/research.html">Optimal resource allocation between manufacturing and research</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/11/13/phd.html">Advice on whether you should get a PhD in engineering</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/11/13/ds.html">Building a search engine for data structures</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/10/23/poor-college-graduates.html">Poor college graduates do much better than rich high-school dropouts</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/10/20/libertarians.html">Left-libertarianism</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/10/07/optimal-tax.html">Optimal redistribution with a flat tax</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/10/02/ubi.html">Universal basic incomes disincentivise work</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/10/02/tax.html">The great thing about regressive taxes</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/09/27/wages.html">Contradictory claims in labor economics</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/09/24/cato.html">A mistake in the Cato institute report on risks from refugees</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/09/05/holden.html">Objecting to Holden Karnosfky's objections to EA</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/09/05/gini.html">Gini coefficient tool</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/09/04/ea-donations.html">EA donation amounts</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/09/03/tax-percentiles.html">Should we encourage price discrimination based on income?</a>
-        </li>
-      
-        <li>
-          <a class="arrow" href="/2016/09/03/printers.html">Printers and price discrimination</a>
-        </li>
-      
-    </ul>
-  </li>
-</ul>
-
-    </div>
-
     <div class="clear" />
   </div>
 </div>
@@ -378,7 +103,7 @@
 
 
 
-    <footer class="site-footer">
+    <div class="site-footer">
 
   <div class="wrapper">
 
@@ -420,12 +145,13 @@
 
   </div>
 
-</footer>
+</div>
 
 
   </body>
 <script>
 if (window.location.hostname == "bshlgrs.github.io") {
+  window.location.scheme = "http";
   window.location.hostname = "shlegeris.com";
 }
 </script>

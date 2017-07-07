@@ -6,7 +6,7 @@ date:   ""
 
 In approximately descending order of interestingness:
 
-I wrote a search engine for data structures; read about it [here](http://shlegeris.com/2016/11/13/ds.html) and try it out [here](http://ds.shlegeris.com/).
+I wrote a search engine for data structures; read about it [here](/2016/11/13/ds.html) and try it out [here](http://ds.shlegeris.com/).
 
 I [proved](/2016/10/07/optimal-tax.html) that if you have a population with logarithmic utility in income and linear in leisure time, and you want to maximize utility with a flat tax rate funding a universal basic income, you want to set the tax rate to 1 - harmonic mean of wages / arithmetic mean of wages.
 
