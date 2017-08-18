@@ -4,11 +4,37 @@
     <title></title>
     <description>Website of Buck Shlegeris.
 </description>
-    <link>http://localhost:4000</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://shlegeris.com</link>
+    <atom:link href="http://shlegeris.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>Cesar Chavez</title>
+        <title>Would I survive in a universe made of nonrelativistic quantum mechanics?</title>
+        
+        
+          <description>&lt;p&gt;[Epistemic status: I am reasonably confident in my thoughts here; I spent a reasonable time thinking about them and asking other people about them. But obviously it’s really speculative. Expected background knowledge: You should be able to understand most of this if you paid some attention in high school science classes. Thanks to everyone who talked to me about this.]&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Wed, 16 Aug 2017 00:00:00 -0700</pubDate>
+        <link>http://shlegeris.com/2017/08/16/qm.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2017/08/16/qm.html</guid>
+      </item>
+    
+      <item>
+        <title>Ways I've changed my mind about EA over the past year</title>
+        
+        
+          <description>&lt;p&gt;Here are some ways that I think differently about effective-altruism-relevant topics compared to a year or two ago.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Fri, 21 Jul 2017 00:00:00 -0700</pubDate>
+        <link>http://shlegeris.com/2017/07/21/ea.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2017/07/21/ea.html</guid>
+      </item>
+    
+      <item>
+        <title>Cesar Chavez Day</title>
         
         
           <description>&lt;p&gt;&lt;strong&gt;[epistemic status: Quite uncertain. I’ve spent a few hours reading about this over the last few days, but I’m not very knowledgeable about anything here. If I’m wrong, it’s probably because there’s historical context which makes Chavez’s actions more reasonable. I tried to look for this kind of context a little, but couldn’t find it quickly so stopped looking.]&lt;/strong&gt;&lt;/p&gt;
@@ -16,8 +42,8 @@
 </description>
         
         <pubDate>Thu, 30 Mar 2017 00:00:00 -0700</pubDate>
-        <link>http://localhost:4000/2017/03/30/chavez.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/03/30/chavez.html</guid>
+        <link>http://shlegeris.com/2017/03/30/chavez.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2017/03/30/chavez.html</guid>
       </item>
     
       <item>
@@ -29,8 +55,8 @@
 </description>
         
         <pubDate>Mon, 13 Mar 2017 00:00:00 -0700</pubDate>
-        <link>http://localhost:4000/2017/03/13/racist.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/03/13/racist.html</guid>
+        <link>http://shlegeris.com/2017/03/13/racist.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2017/03/13/racist.html</guid>
       </item>
     
       <item>
@@ -42,8 +68,8 @@
 </description>
         
         <pubDate>Fri, 06 Jan 2017 00:00:00 -0800</pubDate>
-        <link>http://localhost:4000/2017/01/06/hash-maps.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/01/06/hash-maps.html</guid>
+        <link>http://shlegeris.com/2017/01/06/hash-maps.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2017/01/06/hash-maps.html</guid>
       </item>
     
       <item>
@@ -55,8 +81,8 @@
 </description>
         
         <pubDate>Fri, 30 Dec 2016 00:00:00 -0800</pubDate>
-        <link>http://localhost:4000/2016/12/30/pain.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/12/30/pain.html</guid>
+        <link>http://shlegeris.com/2016/12/30/pain.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2016/12/30/pain.html</guid>
       </item>
     
       <item>
@@ -68,8 +94,8 @@
 </description>
         
         <pubDate>Thu, 29 Dec 2016 00:00:00 -0800</pubDate>
-        <link>http://localhost:4000/2016/12/29/gini.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/12/29/gini.html</guid>
+        <link>http://shlegeris.com/2016/12/29/gini.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2016/12/29/gini.html</guid>
       </item>
     
       <item>
@@ -81,8 +107,8 @@
 </description>
         
         <pubDate>Sat, 26 Nov 2016 00:00:00 -0800</pubDate>
-        <link>http://localhost:4000/2016/11/26/research.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/11/26/research.html</guid>
+        <link>http://shlegeris.com/2016/11/26/research.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2016/11/26/research.html</guid>
       </item>
     
       <item>
@@ -94,8 +120,8 @@
 </description>
         
         <pubDate>Sun, 13 Nov 2016 00:00:00 -0800</pubDate>
-        <link>http://localhost:4000/2016/11/13/phd.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/11/13/phd.html</guid>
+        <link>http://shlegeris.com/2016/11/13/phd.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2016/11/13/phd.html</guid>
       </item>
     
       <item>
@@ -107,34 +133,8 @@
 </description>
         
         <pubDate>Sun, 13 Nov 2016 00:00:00 -0800</pubDate>
-        <link>http://localhost:4000/2016/11/13/ds.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/11/13/ds.html</guid>
-      </item>
-    
-      <item>
-        <title>Poor college graduates do much better than rich high-school dropouts</title>
-        
-        
-          <description>&lt;p&gt;&lt;a href=&quot;https://www.washingtonpost.com/news/wonk/wp/2014/10/18/poor-kids-who-do-everything-right-dont-do-better-than-rich-kids-who-do-everything-wrong/&quot;&gt;This article from 2014&lt;/a&gt;, with the provocative title “Poor kids who do everything right don’t do better than rich kids who do everything wrong” is terrible. It makes a shitty and misleading graph, and makes a variety of nonsensical judgements based on it.&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Sun, 23 Oct 2016 00:00:00 -0700</pubDate>
-        <link>http://localhost:4000/2016/10/23/poor-college-graduates.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/10/23/poor-college-graduates.html</guid>
-      </item>
-    
-      <item>
-        <title>Left-libertarianism</title>
-        
-        
-          <description>&lt;p&gt;I know a lot of people who identify as left-libertarians, or bleeding-heart libertarians, or whatever. Scott argued for this position &lt;a href=&quot;slatestarcodex.com/2013/12/08/a-something-sort-of-like-left-libertarianism-ist-manifesto/&quot;&gt;here&lt;/a&gt;. Gary Johnson has &lt;a href=&quot;http://bleedingheartlibertarians.com/wp-content/uploads/2016/07/GaryJohnson1-1.jpg&quot;&gt;posed wearing a Bleeding Heart Libertarians shirt&lt;/a&gt;. A lot of rationalists and EAs seem to think of this as the political position of utilitarians who are aware of the benefits of free markets but also the costs of externalities and inequality.&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Thu, 20 Oct 2016 00:00:00 -0700</pubDate>
-        <link>http://localhost:4000/2016/10/20/libertarians.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/10/20/libertarians.html</guid>
+        <link>http://shlegeris.com/2016/11/13/ds.html</link>
+        <guid isPermaLink="true">http://shlegeris.com/2016/11/13/ds.html</guid>
       </item>
     
   </channel>
