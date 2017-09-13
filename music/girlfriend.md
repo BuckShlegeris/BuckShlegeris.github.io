@@ -1,12 +1,13 @@
 ---
 layout: post
 date:   ""
-title: "If you touch my girlfriend..."
+title: "Girlfriend"
 ---
 
-The girl who this is about gave me permission to sing and record it. I don't actually feel as negatively towards her as the song implies.
+If you haven't heard this song before, maybe read the lyrics along with the song.
 
-I feel bad for using the word "bitch" in this song--I disapprove of gendered slurs, and I think they're particularly harmful when complaining about your ex-girlfriend. But there really isn't a substitute that works nicely, and especially given that the girl in question gave the okay to the song, I don't feel too bad about it. I considered replacing "dick" with "bitch" when describing my behavior in verse 2, but I don't think that this would actually be particularly helpful.
+This song is in private beta--I'm sending it around to occasional people but haven't finished the recording so I'm not distributing it too widely yet.
+
 
 <audio controls>
   <source src="/music/girlfriend-draft-ft-jess.mp3" type="audio/mp3">
