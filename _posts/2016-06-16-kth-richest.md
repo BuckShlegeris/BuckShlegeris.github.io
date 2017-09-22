@@ -5,6 +5,8 @@ date:   2016-06-16
 tags: algorithms
 ---
 
+**UPDATE: Daniel Ziegler found a way to improve my query time from $$O(log(n)^3)$$ to $$O(log(n)^2)$$. I'll write it up eventually. If you need it for some reason in the meantime feel free to email me.**
+
 Suppose I want to maintain a set of people where each has an age and a wealth. I want to be able to quickly insert people, delete people, and answer queries of the form "find the $$ k$$th richest person whose age is between $$ x$$ and $$ y$$".
 
 Here is a summary of solutions to different variants on this question:

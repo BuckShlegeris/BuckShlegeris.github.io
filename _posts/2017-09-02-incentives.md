@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Different ways that humans follow incentives"
+title:  "Different mechanisms by which humans follow incentives"
 date:   "2017-09-02"
 ---
 
