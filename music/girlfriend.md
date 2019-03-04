@@ -6,11 +6,10 @@ title: "Girlfriend"
 
 If you haven't heard this song before, maybe read the lyrics along with the song.
 
-This song is in private beta--I'm sending it around to occasional people but haven't finished the recording so I'm not distributing it too widely yet.
 
 
 <audio controls>
-  <source src="/music/girlfriend-draft-ft-jess.mp3" type="audio/mp3">
+  <source src="/music/girlfriend.mp3" type="audio/mp3">
 </audio>
 
 ```

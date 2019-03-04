@@ -2,9 +2,11 @@
 layout: post
 title:  "Unaligned optimization processes as a general problem for society"
 date:   "2017-09-13"
+tags:
+  economics
 ---
 
-[Epistemic status: The concrete claims might all be wrong, and the abstract ideas might not be useful. I am extremely unconfident in all this. I'm writing this down because I often have opinions that are more specific examples of the kind of reasoning I describe here, and I think it's handy to have a single place where I describe the general idea. This post is longer than it would otherwise be, because I think that giving lots of examples is handy for people who find the ideas useful and want an opportunity to practice thinking about them. Also, a lot of this is really unoriginal; I owe a lot of credit to Eliezer Yudkowsky and Slate Star Codex.]
+[Epistemic status: The concrete claims might all be wrong, and the abstract ideas might not be useful. I am extremely unconfident in all this. I'm writing this down because I often have opinions that are more specific examples of the kind of reasoning I describe here, and I think it's handy to have a single place where I describe the general idea. This post is longer than it would otherwise be, because I think that giving lots of examples is handy for people who find the ideas useful and want an opportunity to practice thinking about them. Also, a lot of this is really unoriginal; I owe a lot of credit to Eliezer Yudkowsky (eg [Goodhart's Curse](https://agentfoundations.org/item?id=1621)) and Slate Star Codex (eg [Meditations on Moloch](http://slatestarcodex.com/2014/07/30/meditations-on-moloch/) and [Toxoplasma of Rage](http://slatestarcodex.com/2014/12/17/the-toxoplasma-of-rage/).)
 
 **TL;DR: There are lots of systems in society which seem to fit the pattern of "the incentives for this system are a pretty good approximation of what we actually want, so the system produces good results until it gets powerful, at which point it gets terrible results."**
 

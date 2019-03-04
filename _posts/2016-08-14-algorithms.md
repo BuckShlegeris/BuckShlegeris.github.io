@@ -9,7 +9,7 @@ Software engineering interviews often ask whiteboard algorithms questions. Here'
 
 **I'm speaking for myself, not for Triplebyte, in this post.**
 
-Other topics than algorithms are also covered in interviews. Triplebyte [has a blog post](blog.triplebyte.com/how-to-pass-a-programming-interview) which has useful information on studying for those. I primarily intend this post to be a supplement to section 2 of that post.
+Other topics than algorithms are also covered in interviews. Triplebyte [has a blog post](https://triplebyte.com/blog/how-to-pass-a-programming-interview) which has useful information on studying for those. I primarily intend this post to be a supplement to section 2 of that post.
 
 ## Background: why do companies ask algorithms questions?
 

@@ -4,15 +4,40 @@ date:   ""
 ---
 
 <h1>Buck Shlegeris</h1>
-
-<p>I am a software engineer from Australia. I have lived in San Francisco since 2013. I'm interested in data structures, physics, economics, and effective altruism.</p>
-<p><a href="/best">Here</a> are the most interesting things I've written. My most interesting software project is <a href="http://ds.shlegeris.com">a search engine for data structures</a>.</p>
-
 <img src="/img/icecream.jpg" style="width: auto;" class="img-responsive" alt="Picture of Buck" height="213" width="213">
 <br/>
 
+<p>I am a software engineer from Australia. I have lived in San Francisco since 2013. Among other things, I'm interested in data structures, physics, economics, functional programming, and effective altruism. I work at the <a href="https://intelligence.org/">Machine Intelligence Research Institute</a>.</p>
 
-<h3><a class="arrow" href="/about">About</a></h3>
+<p><a href="/best">Here</a> are the most interesting things I've written. My most interesting open source projects are:</p>
+
+<div style="display: flex; flex-wrap: wrap; min-width: 800px;">
+  <div style="margin-right: 10px;">
+    <a href="http://shlegeris.com/2016/11/13/ds">
+      <p>Search engine for data structures</p>
+      <img src="img/ds-search-demo.png" style="width: auto;" class="img-responsive shadow-img" alt="Search engine demo" height="335" width="600" />
+    </a>
+  </div>
+
+  <div>
+    <a href="http://physics.shlegeris.com">
+      <p>Software for solving physics problems</p>
+      <img src="https://github.com/bshlgrs/neato-physics-notepad/raw/master/demo%20gif.gif" style="width: auto;" class="img-responsive shadow-img" alt="Picture of Buck" height="335" width="600" />
+    </a>
+  </div>
+
+  <div>
+    <p>
+      <a href="https://www.openphilanthropy.org/software-agent-illustrating-some-features-illusionist-account-consciousness">A software agent illustrating some features of an illusionist account of consciousness (with Luke Muehlhauser).</a>
+      This work was <a href="https://philpapers.org/rec/CHATMO-32">cited by David Chalmers!</a>
+    </p>
+    <a href="https://www.openphilanthropy.org/software-agent-illustrating-some-features-illusionist-account-consciousness">
+      <img src="/img/agent-diagram.svg" style="width: auto;" class="img-responsive shadow-img" alt="Agent diagram" height="335" width="600" />
+    </a>
+  </div>
+
+</div>
+<br/>
 
 <h3>Links</h3>
   <ul>
@@ -27,21 +52,6 @@ date:   ""
     </li>
   </ul>
 
-
-
-<h3>Software to play with</h3>
-  <ul>
-    <li>
-        <a class="arrow" href="http://ds.shlegeris.com/">Data structure search engine</a>
-    </li>
-    <li>
-        <a class="arrow" href="https://bshlgrs.github.io/music-game/">Relative pitch game</a>
-    </li>
-    <li>
-        <a class="arrow" href="http://shlegeris.com/gini">Gini coefficient tool</a>
-    </li>
-  </ul>
-
 <h3><a href="/posts" class="arrow">Blog</a>
 (<a href="/posts">All posts</a>)
 (<a href="/best" class="arrow">Best posts</a>)
@@ -49,27 +59,30 @@ date:   ""
 
 
 <ul>
-  {% for post in site.posts limit:20 %}
+  {% for post in site.posts limit:25 %}
     <li>
       <a class="arrow" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
     </li>
   {% endfor %}
 </ul>
 
-
+<!-- <h3>
+    <a class="arrow" href="/idk">Current frontiers of my knowledge</a>
+</h3>
+ -->
 <h3>
     <a class="arrow" href="/talks">Talks</a>
 </h3>
 
-<h3>
+<!-- <h3>
     <a class="arrow" href="/to-prove-list">My "to-prove" list</a>
-</h3>
-<h3>
+</h3> -->
+<!-- <h3>
     <a class="arrow" href="/mistakes">Mistakes</a>
 </h3>
 
 <h3>
     <a class="arrow" href="/notes">Notes</a>
 </h3>
-
+ -->
 <h3><a class="arrow external" href="/anonymous_feedback">Anonymous feedback</a></h3>

@@ -1,0 +1,29 @@
+<body>
+  <h2>Stripper</h2>
+  <p>Paste stuff in the green box:</p>
+  <div contenteditable id='paste-target' style='padding: 10px; background-color: lightgreen;'>
+
+  </div>
+  <hr/>
+  <p>And the unformatted version will appear below:</p>
+  <hr/>
+  <div id='target' />
+</body>
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  crossorigin="anonymous"></script>
+
+<script>
+$("#paste-target").on("paste", function (e) {
+  var data = e.originalEvent.clipboardData;
+  if (data.getData('text/html')) {
+    $('#target').html(data.getData('text/html')
+                          .replace(/style="[^"]+"/g, "")
+                          .replace(/style='[^']+'/g, ""));
+  } else {
+    $('#target').text(data.getData('text/plain'));
+  }
+})
+</script>

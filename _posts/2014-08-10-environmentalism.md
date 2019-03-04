@@ -5,7 +5,7 @@ date:   2014-07-12
 tags: effective-altruism
 ---
 
-**Note: I wrote this in 2014 and so some of the reasoning is probably sloppy, but the factual claims are probably legit.**
+**Note: I wrote this in 2014 and so some of the reasoning is sloppy, but I still agree with the overall conclusion. Also, I edited out some arguments that I no longer agree with. If you really care about ways I was wrong in 2014, feel free to use archive.org to look them up.**
 
 **Summary: I investigated a variety of possible pro-environment actions, and concluded that none of them were worth my time. I don’t think that any pro-environmental actions are as time/money efficient as giving to the best climate change charities, and I don’t think that those climate change charities are anywhere near the best human-oriented charities we currently have available as donation targets. I briefly consider non-direct effects of pro-environmental actions.**
 
@@ -20,8 +20,8 @@ For example, I’m aware that all the following things are costly to the environ
 * not recycling glass
 * using lots of paper
 * throwing batteries into landfill
-* eating beef (this one’s irrelevant to me because I’m vegan, but I know some people don’t eat beef for this reason)
-* choosing not to donate to Cool Earth, which Katja Grace [thinks](http://t.umblr.com/redirect?z=http%3A%2F%2Fwww.givingwhatwecan.org%2Fblog%2F2013-11-14%2Fless-burn-for-your-buck-part-ii&t=ZGYxNGI5YWFjNDUxMjdkZjkzMmIzMDE5MzY4MTM1MGU3OWM1YWE1ZixLZkRWdzF4MQ%3D%3D) is the most cost effective way to reduce carbon emissions, at about $1.50 per tonne of CO2.
+* eating beef
+* choosing not to donate to Cool Earth, which Katja Grace [thinks](https://www.givingwhatwecan.org/post/2013/08/less-burn-for-your-buck-which-climate-charities-are-most-effective-in-reducing/) is the most cost effective way to reduce carbon emissions, at about $1.50 per tonne of CO2.
 
 But before I started researching this article, I had no idea how to weigh between these.
 
@@ -29,7 +29,7 @@ Central to my thoughts here is the idea that we should try to use our time and e
 
 In particular, lots of these environmental concerns seem to just be normal economic issues. I’ll talk about water consumption a bit more later, but it seems to me like a great example of an environmental issues which shouldn’t really be considered as such. Water is a resource that I can choose to consume. I don’t see any reasons why there would be large costs from my water consumption which don’t factor into the price of water. I am totally on board with saving money by purchasing more efficient showers, but that seems like a primarily practical matter rather than a moral one.
 
-To me, the obvious comparison for enviromnentalism is veganism. When I choose not to eat a meal with 200g of chicken, I prevent (in expectation) [about four days](http://t.umblr.com/redirect?z=http%3A%2F%2Feverydayutilitarian.com%2Fessays%2Fhow-much-suffering-is-in-the-standard-american-diet&t=NGEwYzgzMDQwNDlkYjUxZjFjN2E5MjFiMDU4MzgzZTQ4MWNjYjIxMSxLZkRWdzF4MQ%3D%3D) of suffering for a chicken in a factory farm. I don’t get nearly enough pleasure out of eating that chicken to justify four days of confinement in a factory farm. It is very easy for me to make this calculation and become vegan.
+One comparison for enviromnentalism is veganism. When you choose not to eat a meal with 200g of chicken, you prevent (in expectation) [about four days](http://t.umblr.com/redirect?z=http%3A%2F%2Feverydayutilitarian.com%2Fessays%2Fhow-much-suffering-is-in-the-standard-american-diet&t=NGEwYzgzMDQwNDlkYjUxZjFjN2E5MjFiMDU4MzgzZTQ4MWNjYjIxMSxLZkRWdzF4MQ%3D%3D) of suffering for a chicken in a factory farm. You probably don’t get nearly enough pleasure out of eating that chicken to justify four days of confinement in a factory farm.
 
 But I have very little idea how to do a similar analysis for environmental issues. There are two main problems with trying to make that analysis.
 
@@ -37,7 +37,7 @@ Firstly, the causal relationship between my actions and environmental outcomes i
 
 Second, I don’t know which environmental issues I actually care about, or how much I should care about them. Anthropogenic global warming seems bad enough for humanity that I think it’s probably worth reducing on the margin. However, I’m less sure about many other environmentalist issues.
 
-I am not in general in favor of preserving ecosystems, because I’m worried about [wild animal suffering](http://t.umblr.com/redirect?z=http%3A%2F%2Fwww.stafforini.com%2Flibrary%2Fng-1995.pdf&t=NDc3OTI1YTM4ODFkNmQ5MzE2NjMzZjQyMjRlMmI4NTIxOTY2NWQzZixLZkRWdzF4MQ%3D%3D), and conservation is not an obvious way of improving wild animal lives. This means that I am unsure how to feel about deforestation, for example.
+I am not sure that I'm in general in favor of preserving ecosystems, because I’m worried about [wild animal suffering](http://t.umblr.com/redirect?z=http%3A%2F%2Fwww.stafforini.com%2Flibrary%2Fng-1995.pdf&t=NDc3OTI1YTM4ODFkNmQ5MzE2NjMzZjQyMjRlMmI4NTIxOTY2NWQzZixLZkRWdzF4MQ%3D%3D), and conservation is not an obvious way of improving wild animal lives. This means that I am unsure how to feel about deforestation, for example.
 
 ## Evaluations of particular issues
 
@@ -63,14 +63,13 @@ When we recycle an aluminium can, that means that we don’t need to smelt enoug
 
 Aluminium is the most energy intensive thing which we are asked to recycle. I suspect everything else is worth less. So recycling is fine if you’re into it, but probably not very valuable for the world.
 
+And recycling everything else is probably much less valuable per gram than recycling aluminium.
+
+My guess (70% confident) is that recycling is overall net harmful to the environment, in that it wastes more resources than it saves.
+
 ## Non-direct effects
 
-[Jeff Kaufman](http://t.umblr.com/redirect?z=http%3A%2F%2Fwww.jefftk.com%2Fp%2Fpay-other-people-to-go-vegetarian-for-you&t=YmNmY2NhNTRlMmM5ZDZiNDFiNjViMWIyZTRlNjYxYWIxMDFlYTRhNyxLZkRWdzF4MQ%3D%3D) and others have pointed out that given that a $100 donation to The Humane League plausibly leads to much more than one person being vegetarian for a year, if you’d pay $100 for access to meat for a year, then you’re better off giving the $100 to the vegan outreach organization every year and eating meat to your heart’s content. This is one of the few utilitarian calculations which actually makes me feel icky. I can really easily generate a whole bunch of objections to his argument, about why my veganism is has more effects beyond just the direct ones:
-
-*   I can convince others to be vegan. I probably deserve credit for maybe five vegans in the world, though it’s hard to know how long they’ll last.
-*   Eating animals encourages a culture which believes that eating animals, and more generally exploiting them, is morally acceptable.
-
-I can try to translate those reasons across to get reasons why looking environmentalist is indirectly useful.
+There might be reasons why looking environmentalist is indirectly useful.
 
 _Other people might be convinced to care more about their power consumption, and I might have a multiplier on my impact that way._ Maybe. But the effect of reducing personal power consumption is so trivial anyway compared to the effect of promoting frugality that I suspect we’re better off doing the latter. People are pretty enthusiastic about having more money.
 
@@ -142,4 +141,4 @@ And obviously, I’m far happier to spend public money than my own on relatively
 
 I am not aware of any pro-environment action I can take which is worth my time. If you pay a little bit of attention to frugality, you’re already doing as much for the environment as I think it is sensible to do.
 
-If I were an environmentalist, I would try to reduce consumption, by promoting frugality or ideally reducing incomes. (Interesting side question: what’s the relationship between income inequality and consumption/environmental damage in a society?) I’d tell my friends to read [Mr Money Moustache](http://t.umblr.com/redirect?z=http%3A%2F%2Fwww.mrmoneymustache.com%2F&t=ZGZlZGIyZDRiYTYzMGViMjQ5MTdiY2UyZDk1OGNjODYwNDQ3NTJjZSxLZkRWdzF4MQ%3D%3D) and save more of their money.
+If I were an environmentalist, I would try to reduce consumption, by promoting frugality or reducing incomes. I’d tell my friends to read [Mr Money Moustache](http://t.umblr.com/redirect?z=http%3A%2F%2Fwww.mrmoneymustache.com%2F&t=ZGZlZGIyZDRiYTYzMGViMjQ5MTdiY2UyZDk1OGNjODYwNDQ3NTJjZSxLZkRWdzF4MQ%3D%3D) and save more of their money.

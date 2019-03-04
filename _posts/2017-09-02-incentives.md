@@ -2,6 +2,8 @@
 layout: post
 title:  "Different mechanisms by which humans follow incentives"
 date:   "2017-09-02"
+tags:
+  economics
 ---
 
 A pretty key part of my worldview is that individuals and groups are very likely to do bad things if they’re incentivized to do so. A lot of people object to this. They think that it’s too cynical a claim—they say that most humans are fundamentally not evil and aren’t arbitrarily willing to harm others to make their own life more convenient.
