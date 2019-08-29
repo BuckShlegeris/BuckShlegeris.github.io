@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Will most sentient beings feel more pleasure or suffering?"
-date: "not a real date"
+date: ""
 ---
 
 [this is more a sequence of notes and citations than a readable intro to the topic]

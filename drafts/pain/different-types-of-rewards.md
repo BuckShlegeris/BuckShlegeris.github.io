@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Different purposes for pain and pleasure"
-date: "not a real date"
+date: ""
 ---
 
 In this post I list many different evolutionary purposes that suffering and pleasure serve, and also list situations in which creatures will feel suffering or pleasure as an incidental effect of how evolution plays out.

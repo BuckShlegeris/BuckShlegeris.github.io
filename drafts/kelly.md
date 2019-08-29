@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Bayesian mixtures and Kelly betting in prediction markets"
-date: "not a real date"
+date: ""
 ---
 
 Daniel Filan recently proved a really cool result about a connection between the behavior of bettors in prediction markets and the behavior of rational agents deciding between multiple hypotheses based on evidence. Here's a summary of his result. You can read the whole thing [here](http://danielfilan.com/2016/11/18/kelly.html).

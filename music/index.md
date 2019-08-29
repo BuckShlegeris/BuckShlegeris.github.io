@@ -4,32 +4,13 @@ date:   ""
 title: "My music"
 ---
 
-Finished songs that I'm at least sort-of okay with playing:
+If you just stumbled here and want my best songs, I think they're these:
 
-- [Jezebel](/music/jezebel)
-- [Fluff](/music/fluff)
-- [Brazilian](/music/brazilian)
-- [Saturday Nights](/music/saturday-nights)
-- [Single](/music/single)
-
-New songs that I'm excited about
-
-- [If You Touch My Girlfriend...](/music/girlfriend)
-
-Half-written songs:
-
-- Fragile things
-- Miss your face
-- Well-Dressed Man
-
-Fragments:
-
-- I've got a fake id and a voter hat
-- Beta cuckold orbiter
-- New York
-- Sleep debt
-- That's all, that's the end of the set, you should clap now, so that I can sit down
-
-Songs I want to write:
-
-- Punk song about economic liberalism
+- [Plate](https://docs.google.com/document/d/1DqzLlBHFBlkKcJb8xpJbLPTli-KaX_TLcCkYilLZvgc/edit?usp=sharing)
+- [Girlfriend](http://shlegeris.com/music/girlfriend)
+- [Jezebel](http://shlegeris.com/music/jezebel)
+- [Fluff](http://shlegeris.com/music/fluff)
+- [Brazilian](http://shlegeris.com/music/brazilian)
+- [Saturday Nights](http://shlegeris.com/music/saturday-nights)
+- [Single](http://shlegeris.com/music/single)
+- Well Dressed Man

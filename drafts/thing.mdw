@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Post with Python"
-date: "not a real date"
+date: ""
 ---
 
 # Introduction

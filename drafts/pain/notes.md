@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "notes on pain"
-date: "not a real date"
+date: ""
 ---
 
 ## Notes to myself

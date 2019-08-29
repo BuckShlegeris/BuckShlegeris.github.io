@@ -31,11 +31,6 @@ GEM
       sass (~> 3.4)
     jekyll-watch (1.5.0)
       listen (~> 3.0, < 3.1)
-    jemoji (0.8.0)
-      activesupport (~> 4.0)
-      gemoji (~> 3.0)
-      html-pipeline (~> 2.2)
-      jekyll (>= 3.0)
     kramdown (1.13.2)
     liquid (3.0.6)
     listen (3.0.8)
@@ -61,9 +56,6 @@ GEM
 
 PLATFORMS
   ruby
-
-DEPENDENCIES
-  jemoji
 
 BUNDLED WITH
    1.14.6

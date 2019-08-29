@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Pleasure and pain are balanced by default"
-date: "not a real date"
+date: ""
 ---
 
 It's kind of interesting that living creatures seem feel both pain and pleasure, which seem like distinctly negative and positive experiences. When you construct a [theory of reinforcement learning](https://en.wikipedia.org/wiki/Reinforcement_learning), you don't see anything like this distinction between positive and negative sensations: reward is just a real-valued function, and the behavior of agents isn't affected by any transformation of their reward function which is either a shift (eg you feel +3 happy about every outcome) or a positive scaling (eg your reward function is multiplied by two). So why do humans experience reward as a function centered around zero? Why does it feel meaningful to think about what it would be like for all your sensations to be twice as powerful?

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Questions for Ian Metzger"
-date: "not a real date"
+date: ""
 ---
 
 - Musical ability.

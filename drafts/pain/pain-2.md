@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "pleasure and pain"
-date: "not a real date"
+date: ""
 ---
 
 **Epistemic status: mad speculation, mixed with math that's so much fun that I find it hard to believe it's useful. I'm serious about thinking these questions are important, I'm much less confident in any of my answers.**

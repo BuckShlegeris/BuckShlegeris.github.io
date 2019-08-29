@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Optimism about suffering"
-date: "not a real date"
+date: ""
 ---
 
 I’m not nearly as worried about astronomical future suffering as I used to be. I changed my mind on this over approximately the last year, but I haven’t written about it properly until now.

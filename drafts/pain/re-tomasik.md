@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Thoughts on Brian Tomasik's 'Why organisms feel both suffering and happiness'"
-date: "not a real date"
+date: ""
 ---
 
 [Brian's article](http://reducing-suffering.org/why-organisms-feel-both-suffering-and-happiness/) is pretty good. Here are some thoughts I have on it.

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "What is it like to be a paperclip maximizer?"
-date: "not a real date"
+date: ""
 ---
 
 [content warning: futurism mixed with predictions about the subjective experiences of alien minds. Epistemic status: wild speculation.]

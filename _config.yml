@@ -17,7 +17,5 @@ github_username:  bshlgrs
 
 # Build settings
 markdown: kramdown
-gems:
-  - jemoji
 kramdown:
   extensions: ["footnotes"]

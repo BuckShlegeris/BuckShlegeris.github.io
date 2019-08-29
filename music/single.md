@@ -6,7 +6,7 @@ title: "Single"
 
 <!--On Soundcloud [here](https://soundcloud.com/buckmbs/single/s-XShWZ). -->
 
-I'm pretty uncomfortable with the lyrics to this one and would want to rewrite them significantly before singing them.
+I'm kind of embarrassed by the lyrics to this one.
 
 ```
 Intro:

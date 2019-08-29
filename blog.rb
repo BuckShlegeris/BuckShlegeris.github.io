@@ -23,7 +23,7 @@ when "post"
   now = Time.now
   date_string = "#{Time.now.year}-#{Time.now.month}-#{Time.now.day}"
   new_path = "_posts/#{date_string}-#{name}"
-  `sed -e 's/\"not a real date\"/#{date_string}/' #{ARGV[1]} > #{new_path}`
+  `sed -e 's/\"\"/#{date_string}/' #{ARGV[1]} > #{new_path}`
   `rm #{ARGV[1]}`
 when "unpost"
   `mv #{ARGV[1]} drafts/#{ARGV[1].split("/").last}`

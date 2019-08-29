@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "A model of pain and pleasure in reinforcement learning agents"
-date: "not a real date"
+date: ""
 ---
 
 
