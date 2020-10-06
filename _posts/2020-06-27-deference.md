@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Six economics misconceptions of mine which I've resolved over the last few years"
+title:  "Some thoughts on deference and inside view models"
 date:   "2020-06-27"
 ---
 
