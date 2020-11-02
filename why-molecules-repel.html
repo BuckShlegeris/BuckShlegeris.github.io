@@ -13077,18 +13077,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Why-molecules-repel-each-other">Why molecules repel each other<a class="anchor-link" href="#Why-molecules-repel-each-other">&#182;</a></h1><p>Alternative title: How Bricks Work. In this post, I do some quantum chemistry calculations to more carefully investigate why molecules bounce off each other, as well as providing some heuristic arguments about it.</p>
-<hr>
-<p>Things to do before publication:</p>
-<ul>
-<li>say something about the Lieb, "Stability of matter" result</li>
-<li>comment on how this is relevant to the interactions between atoms inside molecules too</li>
-<li>talk about how electron KE plays into all this</li>
-<li>say something about epistemic modesty</li>
-</ul>
-<hr>
-<p>For a long time, my pet peeve has been when people explain the fact that molecules bounce off each other (or, equivalently, that I don't sink through my chair) by saying that molecules have negative charges on the outside that repel each other.</p>
-<p>This claim appears a million places, but I'll pick on a few:</p>
+<h1 id="Why-molecules-repel-each-other">Why molecules repel each other<a class="anchor-link" href="#Why-molecules-repel-each-other">&#182;</a></h1><p>It is often claimed that molecules bounce off each other because they have negative charges on the outside that repel each other. This claim appears a million places, but I'll pick on a few:</p>
 <p>Clayden et al, "Organic Chemistry", 2nd edition, p108:</p>
 <blockquote><p>Molecules are coated with a layer of electrons which occupy bonding and maybe non-
 bonding orbitals. As a result the surface of each molecule is negatively charged and by and large molecules repel each other.</p>
@@ -13096,17 +13085,17 @@ bonding orbitals. As a result the surface of each molecule is negatively charged
 <p>More ironically, Natalie Angier in "The Canon" writes about public understanding of science:</p>
 <blockquote><p>A fair question to interject here is: Need we do anything at all? Does it matter if the great majority of people know little or nothing about science or the scientific mindset? If the average Joe or Sophie doesn't know the name of the closest star (the sun), or whether tomatoes have genes (they do), or why your hand can't go through a tabletop (because the electrons in each repel each other), what difference does it make?</p>
 </blockquote>
-<p>As far as I can tell, this explanation is basically false.</p>
-<p>When you bring molecules closer together, here's what happens:</p>
+<p>I don't think this explanation is correct.</p>
+<p>When you bring molecules closer together, here's what happens to the components of the energy:</p>
 <ul>
 <li>Electron kinetic energy increases slightly</li>
 <li>Electron-electron Coulomb energy increases slightly, but not as much as the electron kinetic energy</li>
 <li>Electron-nucleon Coulomb energy decreases substantially but not unboundedly</li>
 <li>Nucleon-nucleon Coulomb energy increases substantially and becomes unboundedly large (if you move the atoms literally right on top of each other).</li>
 </ul>
-<p>If you have to explain the repulsion in terms of only one of these factors, I think that the nucleon-nucleon repulsion is the best choice. Electron KE is the next best explanation, because it's a larger factor than electron-electron repulsion, and because it is kind of more fundamental factor determining the length scale of chemistry. <strong>TODO: say more about this.</strong> So electron-electron repulsion is ranked 3 out of 4, which isn't a very good score for the most popular explanation.</p>
+<p>If you have to explain the repulsion in terms of only one of these factors, I think that the nucleon-nucleon repulsion is the best choice. Electron KE is the next best explanation, because it's a larger factor than electron-electron repulsion, and because it is kind of more fundamental factor determining the length scale of chemistry.</p>
 <p>So if you have to give a simple explanation of why molecules repel each other, I think the best one is "Nuclei repel each other. Sometimes, atoms can bond, which allows electrons to get into sufficiently energetically favorable states that it's energetically 'worth it' for the nuclei to be near each other. But if this doesn't happen, then as your molecules get closer, even though electronic energy monotonically decreases, the nuclear repulsion gets stronger and stronger and causes the molecules to bounce off each other."</p>
-<p>To see evidence of this, you can look at all the calculations that I did below.</p>
+<p>A slightly longer true explanation is "Nuclei repel each other. When far away, they are shielded by their electrons. As they get very close, though, the electrons no longer shield them as much, and so they end up repelling strongly. The reason that electrons no longer shield nuclei properly at short ranges is kind of hard to explain because it involves the quantum mechanics of electrons, but a rough heuristic explanation is 'electron states where the electrons are highly localized are high energy, which is exacerbated by the Pauli exclusion principle forcing electrons to occupy different states (because they have to occupy less good highly-localized states, which are even higher energy)'.</p>
 <p>Here are some relevant arguments and intuitions.</p>
 <ul>
 <li><strong>Actual calculations.</strong> Below, I calculate total energy as a function of distance for the following systems: two H2 molecules, two He atoms, and one NH3 and one BH3. For each, you'll observe that as the molecules get closer, the electron energy monotonically decreases, and the nuclear energy monotonically increases, adding up to a net repulsion at short ranges.</li>
@@ -13124,7 +13113,7 @@ bonding orbitals. As a result the surface of each molecule is negatively charged
 <div class="prompt input_prompt">In&nbsp;[63]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-coconut"><pre><span></span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">fci</span>
+<div class=" highlight hl-coconut"><pre><span></span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">fci</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
